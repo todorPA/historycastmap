@@ -2,12 +2,30 @@ import { useEffect, useState } from 'react';
 import type { EpisodesById, GeoData, PlacesById } from '../types/events';
 import { indexById } from '../types/events';
 
-/** Which dataset to load. Phase 3 swaps this for 'data/geo-events.json' — same shape. */
-export const DATA_FILE = 'data/geo-events.sample.json';
+/** Which dataset to load. Phase 3 swaps the default for 'geo-events.json' — same shape. */
+export const DATASETS = {
+  sample: 'data/geo-events.sample.json',
+  full: 'data/geo-events.json',
+  stress: 'data/geo-events.stress.json',
+} as const;
+
+export type DatasetName = keyof typeof DATASETS;
+
+export const DEFAULT_DATASET: DatasetName = 'sample';
+
+/**
+ * `?data=stress` loads the synthetic density dataset (see scripts/make-stress-data.mjs);
+ * `?data=full` the real full set once it exists. Anything else falls back to the sample,
+ * so a bad URL can never break the deployed app.
+ */
+export function datasetFromLocation(search: string = window.location.search): DatasetName {
+  const requested = new URLSearchParams(search).get('data');
+  return requested && requested in DATASETS ? (requested as DatasetName) : DEFAULT_DATASET;
+}
 
 /** Resolve a data path against the deploy base (GitHub Pages serves under /historycastmap/). */
-export function dataUrl(file: string = DATA_FILE): string {
-  return `${import.meta.env.BASE_URL}${file}`;
+export function dataUrl(dataset: DatasetName): string {
+  return `${import.meta.env.BASE_URL}${DATASETS[dataset]}`;
 }
 
 export interface LoadedData {
@@ -36,10 +54,11 @@ export function buildLoadedData(data: GeoData): LoadedData {
 export interface DataState {
   loaded: LoadedData | null;
   error: string | null;
+  dataset: DatasetName;
   reload: () => void;
 }
 
-export function useGeoData(file: string = DATA_FILE): DataState {
+export function useGeoData(dataset: DatasetName = datasetFromLocation()): DataState {
   const [loaded, setLoaded] = useState<LoadedData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
@@ -47,7 +66,7 @@ export function useGeoData(file: string = DATA_FILE): DataState {
   useEffect(() => {
     let cancelled = false;
     setError(null);
-    fetch(dataUrl(file))
+    fetch(dataUrl(dataset))
       .then((res) => {
         if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
         return res.json() as Promise<GeoData>;
@@ -63,7 +82,7 @@ export function useGeoData(file: string = DATA_FILE): DataState {
     return () => {
       cancelled = true;
     };
-  }, [file, attempt]);
+  }, [dataset, attempt]);
 
-  return { loaded, error, reload: () => setAttempt((n) => n + 1) };
+  return { loaded, error, dataset, reload: () => setAttempt((n) => n + 1) };
 }

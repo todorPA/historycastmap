@@ -3,6 +3,10 @@ import type { ReactNode } from 'react';
 import type { Lang } from '../types/events';
 import { DEFAULT_BASEMAP_ID } from '../config/basemaps';
 
+/** Timeline panel height. Shared because the map must re-fit when its own height changes. */
+export const TIMELINE_SIZES = ['s', 'm', 'l'] as const;
+export type TimelineSize = (typeof TIMELINE_SIZES)[number];
+
 interface FilterContextValue {
   /** null = all episodes. */
   activeEpisodeId: string | null;
@@ -19,6 +23,9 @@ interface FilterContextValue {
   /** Basemap is state, not a hardcoded URL — Phase 2 adds the OHM option. */
   basemapId: string;
   setBasemapId: (id: string) => void;
+
+  timelineSize: TimelineSize;
+  cycleTimelineSize: () => void;
 }
 
 const FilterContext = createContext<FilterContextValue | null>(null);
@@ -28,6 +35,13 @@ export function FilterProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>('sr');
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const [basemapId, setBasemapId] = useState<string>(DEFAULT_BASEMAP_ID);
+  const [timelineSize, setTimelineSize] = useState<TimelineSize>('s');
+
+  const cycleTimelineSize = useCallback(() => {
+    setTimelineSize(
+      (prev) => TIMELINE_SIZES[(TIMELINE_SIZES.indexOf(prev) + 1) % TIMELINE_SIZES.length],
+    );
+  }, []);
 
   const toggleEpisode = useCallback((id: string) => {
     setActiveEpisodeId((prev) => (prev === id ? null : id));
@@ -50,8 +64,19 @@ export function FilterProvider({ children }: { children: ReactNode }) {
       setSelectedEventId,
       basemapId,
       setBasemapId,
+      timelineSize,
+      cycleTimelineSize,
     }),
-    [activeEpisodeId, toggleEpisode, clearEpisode, lang, selectedEventId, basemapId],
+    [
+      activeEpisodeId,
+      toggleEpisode,
+      clearEpisode,
+      lang,
+      selectedEventId,
+      basemapId,
+      timelineSize,
+      cycleTimelineSize,
+    ],
   );
 
   return <FilterContext.Provider value={value}>{children}</FilterContext.Provider>;

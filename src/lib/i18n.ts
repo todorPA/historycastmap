@@ -31,6 +31,11 @@ const dict = {
     language: 'Jezik',
     openInNewTab: 'Otvori mp3 u novom tabu',
     type: 'Tip',
+    more: 'još',
+    showLess: 'Prikaži manje',
+    searchEpisodes: 'Pretraži epizode…',
+    noMatches: 'Nema rezultata',
+    resizeTimeline: 'Promeni visinu vremenske ose',
   },
   en: {
     appTitle: 'HistoryCast Map',
@@ -61,6 +66,11 @@ const dict = {
     language: 'Language',
     openInNewTab: 'Open mp3 in a new tab',
     type: 'Type',
+    more: 'more',
+    showLess: 'Show less',
+    searchEpisodes: 'Search episodes…',
+    noMatches: 'No matches',
+    resizeTimeline: 'Resize the timeline',
   },
 } as const;
 
