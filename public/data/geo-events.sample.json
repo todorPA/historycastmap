@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "source": "HistoryCast podcast (rss.com/rs-historycast)",
+    "generated": "2026-07-26T09:00:00Z",
+    "count": 20,
+    "schemaVersion": "1.0",
+    "note": "PROTOTYPE sample — 2 episodes, hand-curated & geocoded by Enchanté for Phase 1. Full dataset (all 181 episodes) comes in Phase 3."
+  },
+
+  "places": [
+    { "id": "skoplje", "name": { "sr": "Skoplje", "en": "Skopje" }, "aliases": ["Skoplju", "Skoplja"], "lat": 41.9981, "lng": 21.4254, "kind": "city" },
+    { "id": "carigrad", "name": { "sr": "Carigrad", "en": "Constantinople" }, "aliases": ["Carigradu", "Carigrada", "Vizantija", "Vizantije"], "lat": 41.0082, "lng": 28.9784, "kind": "city" },
+    { "id": "solun", "name": { "sr": "Solun", "en": "Thessaloniki" }, "aliases": ["Soluna", "Solunu"], "lat": 40.6401, "lng": 22.9444, "kind": "city" },
+    { "id": "galipolje", "name": { "sr": "Galipolje", "en": "Gallipoli" }, "aliases": ["Galipolja"], "lat": 40.4083, "lng": 26.6708, "kind": "city" },
+    { "id": "kosovo-polje", "name": { "sr": "Kosovo polje", "en": "Kosovo Field" }, "aliases": ["Kosovu", "Kosova"], "lat": 42.6667, "lng": 21.1000, "kind": "battle-site" },
+    { "id": "reka-marica", "name": { "sr": "reka Marica (Černomen)", "en": "Maritsa River (Chernomen)" }, "aliases": ["Marica", "Marici"], "lat": 41.7500, "lng": 26.3000, "kind": "battle-site" },
+    { "id": "saurско-polje", "name": { "sr": "Saursko polje", "en": "Battle of Savra (Saurian field)" }, "aliases": ["Savra"], "lat": 41.0000, "lng": 19.7000, "kind": "battle-site" },
+
+    { "id": "lindisfarne", "name": { "sr": "Lindisfarn", "en": "Lindisfarne" }, "aliases": ["Lindisfar", "Lindisfarne"], "lat": 55.6811, "lng": -1.8017, "kind": "landmark" },
+    { "id": "carigrad-rus", "name": { "sr": "Carigrad (napad Rusa)", "en": "Constantinople (Rus' attack)" }, "aliases": ["Carigrad", "Carigrada"], "lat": 41.0082, "lng": 28.9784, "kind": "city" },
+    { "id": "jork", "name": { "sr": "Jork (Nortambrija)", "en": "York (Northumbria)" }, "aliases": ["Nortambrije", "Nortambrija", "Jorvik"], "lat": 53.9599, "lng": -1.0873, "kind": "city" },
+    { "id": "normandija", "name": { "sr": "Normandija", "en": "Normandy" }, "aliases": ["Normani", "Normandije"], "lat": 49.1829, "lng": -0.3707, "kind": "region" },
+    { "id": "island", "name": { "sr": "Island", "en": "Iceland" }, "aliases": ["Islandu", "Islanda", "Islandi"], "lat": 64.9631, "lng": -19.0208, "kind": "region" },
+    { "id": "grenland", "name": { "sr": "Grenland", "en": "Greenland" }, "aliases": ["Grenlandu", "Grenlanda"], "lat": 64.1836, "lng": -51.7214, "kind": "region" },
+    { "id": "vinland", "name": { "sr": "Vinland (Severna Amerika)", "en": "Vinland (North America)" }, "aliases": ["Amerika", "Americi", "Amerike"], "lat": 51.5964, "lng": -55.5316, "kind": "landmark" },
+    { "id": "hejstings", "name": { "sr": "Hejstings", "en": "Hastings" }, "aliases": ["Hastings"], "lat": 50.9110, "lng": 0.4865, "kind": "battle-site" },
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": ["Pariza", "Parizu"], "lat": 48.8566, "lng": 2.3522, "kind": "city" }
+  ],
+
+  "episodes": [
+    {
+      "id": "09",
+      "title": { "sr": "Dušanova Srbija: Uspon carstva", "en": "Dušan's Serbia: Rise of the Empire" },
+      "pubDate": "2023-10-22",
+      "audioUrl": "https://content.rss.com/episodes/186457/1184339/rs-historycast/2023_10_22_19_22_55_792cd8d7-8db8-4be7-b9d9-a97da5e27f0c.mp3",
+      "color": "#c0392b"
+    },
+    {
+      "id": "95",
+      "title": { "sr": "Kosovska bitka (HistoryCast specijal)", "en": "The Battle of Kosovo (HistoryCast special)" },
+      "pubDate": "2025-06-25",
+      "audioUrl": "https://content.rss.com/episodes/186457/2060962/rs-historycast/2025_06_25_22_52_48_300c47eb-0.mp3",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "140",
+      "title": { "sr": "Vikinzi", "en": "The Vikings" },
+      "pubDate": "2026-04-23",
+      "audioUrl": "https://content.rss.com/episodes/186457/2762785/rs-historycast/2026_04_23_22_32_47_76d92797-f338-4a67-8a62-05cbf47abe66.mp3",
+      "color": "#1e8449"
+    }
+  ],
+
+  "events": [
+    {
+      "id": "cetvrti-krstaski-rat-1204",
+      "title": { "sr": "Pad Carigrada u Četvrtom krstaškom ratu", "en": "Sack of Constantinople (Fourth Crusade)" },
+      "year": 1204, "yearEnd": null,
+      "placeId": "carigrad", "episodeId": "09", "timestamp": "27:03",
+      "type": "siege", "actors": ["Vizantija", "krstaši"], "region": "Vizantija",
+      "description": { "sr": "Vizantija je od 1204. oslabljena, što otvara prostor za uspon srpske države.", "en": "From 1204 Byzantium is weakened, opening space for the rise of the Serbian state." },
+      "quote": "ono od 1204. godine ima neke onako epizode koje ugrožavaju Vizantiju",
+      "confidence": "high"
+    },
+    {
+      "id": "dusan-krunisanje-1346",
+      "title": { "sr": "Krunisanje Stefana Dušana za cara", "en": "Coronation of Stefan Dušan as Emperor" },
+      "year": 1346, "yearEnd": null,
+      "placeId": "skoplje", "episodeId": "09", "timestamp": "67:07",
+      "type": "coronation", "actors": ["Stefan Dušan", "Pećka patrijaršija"], "region": "Srpsko carstvo",
+      "description": { "sr": "Na Uskrs 1346. u Skoplju svečano obavljeno ustoličenje cara Srba i Grka.", "en": "At Easter 1346 in Skopje, Dušan is solemnly enthroned as Emperor of the Serbs and Greeks." },
+      "quote": "krunisanje pada tek naredne 1346. godine na uskrs, kada je u Skoplju svečano obavljeno čin ustoličenja cara",
+      "confidence": "high"
+    },
+    {
+      "id": "dusan-solun-ambicija",
+      "title": { "sr": "Dušanova težnja ka Solunu", "en": "Dušan's ambition toward Thessaloniki" },
+      "year": 1350, "yearEnd": 1355,
+      "placeId": "solun", "episodeId": "09", "timestamp": "66:38",
+      "type": "conquest", "actors": ["Stefan Dušan"], "region": "Srpsko carstvo",
+      "description": { "sr": "Dušan nije uspeo da ostvari san o osvajanju Soluna do svoje smrti.", "en": "Dušan never fulfilled his dream of taking Thessaloniki before his death." },
+      "quote": "dušan umire 1355. godine, ne ostvarivši svoj san da osvoji Solun",
+      "confidence": "medium"
+    },
+    {
+      "id": "dusan-smrt-1355",
+      "title": { "sr": "Smrt cara Dušana", "en": "Death of Emperor Dušan" },
+      "year": 1355, "yearEnd": null,
+      "placeId": "skoplje", "episodeId": "09", "timestamp": "66:38",
+      "type": "death", "actors": ["Stefan Dušan"], "region": "Srpsko carstvo",
+      "description": { "sr": "Car Dušan umire 1355. godine; počinje raspad carstva.", "en": "Emperor Dušan dies in 1355; the empire begins to fragment." },
+      "quote": "dušan umire 1355. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "turci-galipolje-1354",
+      "title": { "sr": "Turci prelaze u Evropu — osvajanje Galipolja", "en": "Ottomans cross into Europe — capture of Gallipoli" },
+      "year": 1354, "yearEnd": null,
+      "placeId": "galipolje", "episodeId": "95", "timestamp": "08:01",
+      "type": "conquest", "actors": ["Osmansko carstvo"], "region": "Osmansko carstvo",
+      "description": { "sr": "Turci prelaze na teritoriju Evrope 1354. i osvajaju Galipolje — uporište na Balkanu.", "en": "In 1354 the Ottomans cross into Europe and take Gallipoli, their bridgehead in the Balkans." },
+      "quote": "Turci prelaze na teritoriju Evrope 1354. godine, kada osvajaju Galipolje",
+      "confidence": "high"
+    },
+    {
+      "id": "marica-1371",
+      "title": { "sr": "Maричка bitka (Černomen)", "en": "Battle of Maritsa (Chernomen)" },
+      "year": 1371, "yearEnd": null,
+      "placeId": "reka-marica", "episodeId": "09", "timestamp": "110:04",
+      "type": "battle", "actors": ["Srbija", "Osmansko carstvo"], "region": "Balkan",
+      "description": { "sr": "26. septembra 1371. srpska vojska teško poražena na Marici — put ka Kosovu.", "en": "On 26 September 1371 the Serbian army is crushed on the Maritsa — the road toward Kosovo." },
+      "quote": "26. septembra 1371. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "savra-1385",
+      "title": { "sr": "Bitka na Saurском polju", "en": "Battle of Savra" },
+      "year": 1385, "yearEnd": null,
+      "placeId": "saurско-polje", "episodeId": "95", "timestamp": "62:17",
+      "type": "battle", "actors": ["Balša II", "Osmansko carstvo"], "region": "Balkan",
+      "description": { "sr": "1385. godine sukob sa Turcima; osmanski pritisak na Balkan raste.", "en": "In 1385, clash with the Ottomans; pressure on the Balkans intensifies." },
+      "quote": "1385. godine, u bašu boju sa Turcima",
+      "confidence": "medium"
+    },
+    {
+      "id": "bitka-plocnik-1386",
+      "title": { "sr": "Događaji oko 1386. (Pločnik)", "en": "Events around 1386 (Pločnik)" },
+      "year": 1386, "yearEnd": null,
+      "placeId": "kosovo-polje", "episodeId": "95", "timestamp": "51:14",
+      "type": "battle", "actors": ["Lazar", "Osmansko carstvo"], "region": "Srbija",
+      "description": { "sr": "1386. — narastajući sukobi uoči Kosovske bitke.", "en": "1386 — escalating conflicts on the eve of the Battle of Kosovo." },
+      "quote": "1386. godine",
+      "confidence": "low"
+    },
+    {
+      "id": "kosovska-bitka-1389",
+      "title": { "sr": "Kosovska bitka", "en": "The Battle of Kosovo" },
+      "year": 1389, "yearEnd": null,
+      "placeId": "kosovo-polje", "episodeId": "95", "timestamp": "65:58",
+      "type": "battle", "actors": ["knez Lazar", "sultan Murat", "Miloš Obilić"], "region": "Srbija",
+      "description": { "sr": "15. juna 1389. odigrala se Kosovska bitka između srpske vojske kneza Lazara i Osmanlija sultana Murata.", "en": "On 15 June 1389 the Battle of Kosovo is fought between Prince Lazar's Serbs and Sultan Murad's Ottomans." },
+      "quote": "15. juna 1389. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "osmansko-osvajanje-nastavak",
+      "title": { "sr": "Nastavak osmanskih osvajanja", "en": "Continued Ottoman conquests" },
+      "year": 1395, "yearEnd": null,
+      "placeId": "kosovo-polje", "episodeId": "95", "timestamp": "120:30",
+      "type": "conquest", "actors": ["Osmansko carstvo"], "region": "Balkan",
+      "description": { "sr": "1395. — daljnje širenje osmanske vlasti nakon Kosova.", "en": "1395 — further Ottoman expansion after Kosovo." },
+      "quote": "1395. godine",
+      "confidence": "low"
+    },
+    {
+      "id": "kraj-osmanskog-carstva-1922",
+      "title": { "sr": "Kraj Osmanskog carstva", "en": "End of the Ottoman Empire" },
+      "year": 1922, "yearEnd": null,
+      "placeId": "carigrad", "episodeId": "95", "timestamp": "04:17",
+      "type": "other", "actors": ["Osmansko carstvo"], "region": "Osmansko carstvo",
+      "description": { "sr": "Osmansko carstvo, čiji uspon Kosovo najavljuje, traje sve do 1922.", "en": "The Ottoman Empire, whose rise Kosovo foreshadows, lasts until 1922." },
+      "quote": "sve do zapravo 1922. godine i kraja Osmanskog carstva",
+      "confidence": "high"
+    },
+    {
+      "id": "mongolska-provala-1246",
+      "title": { "sr": "Mongolska provala (kontekst)", "en": "Mongol incursion (context)" },
+      "year": 1246, "yearEnd": null,
+      "placeId": "carigrad", "episodeId": "95", "timestamp": "07:15",
+      "type": "other", "actors": ["Mongoli"], "region": "Istočna Evropa",
+      "description": { "sr": "Velika provala Mongola 1246. kao širi istorijski kontekst epohe.", "en": "The great Mongol incursion of 1246 as broader historical context." },
+      "quote": "veliku provalu Mongola, 1246. godine",
+      "confidence": "medium"
+    },
+    {
+      "id": "viking-lindisfarne-793",
+      "title": { "sr": "Napad na Lindisfarn — početak vikinške ere", "en": "Raid on Lindisfarne — start of the Viking Age" },
+      "year": 793, "yearEnd": null,
+      "placeId": "lindisfarne", "episodeId": "140", "timestamp": "01:45",
+      "type": "battle", "actors": ["Vikinzi"], "region": "Skandinavski svet",
+      "description": { "sr": "793. godine napad na manastir Lindisfarn označio je početak ere vikinga.", "en": "The 793 raid on Lindisfarne monastery marks the beginning of the Viking Age." },
+      "quote": "historiografija je saglasna da je ta 793. godina označila početak ere vikinga",
+      "confidence": "high"
+    },
+    {
+      "id": "viking-carigrad-860",
+      "title": { "sr": "Napad Rusa (Varjaga) na Carigrad", "en": "Rus' (Varangian) attack on Constantinople" },
+      "year": 860, "yearEnd": null,
+      "placeId": "carigrad-rus", "episodeId": "140", "timestamp": "14:18",
+      "type": "siege", "actors": ["Varjazi", "Vizantija"], "region": "Vizantija",
+      "description": { "sr": "860. godine skandinavski Rusi napadaju Carigrad — istočni pravac vikinške ekspanzije.", "en": "In 860 the Scandinavian Rus' attack Constantinople — the eastern axis of Viking expansion." },
+      "quote": "860. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "viking-velika-vojska-865",
+      "title": { "sr": "Velika paganska vojska u Engleskoj", "en": "Great Heathen Army in England" },
+      "year": 865, "yearEnd": null,
+      "placeId": "jork", "episodeId": "140", "timestamp": "42:32",
+      "type": "conquest", "actors": ["Vikinzi", "Ragnarovi sinovi"], "region": "Britanija",
+      "description": { "sr": "865. godine velika vojska napada Englesku i osvaja Nortambriju (Jork).", "en": "In 865 the Great Heathen Army invades England and takes Northumbria (York)." },
+      "quote": "koji jeste 865. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "viking-pariz-911",
+      "title": { "sr": "Ugovor u Sen-Kler-sir-Eptu — osnivanje Normandije", "en": "Treaty of Saint-Clair-sur-Epte — founding of Normandy" },
+      "year": 911, "yearEnd": null,
+      "placeId": "normandija", "episodeId": "140", "timestamp": "60:35",
+      "type": "treaty", "actors": ["Role (Rollo)", "Karlo Prosti"], "region": "Zapadna Evropa",
+      "description": { "sr": "911. godine Vikinzi dobijaju Normandiju; ranije su opsedali Pariz.", "en": "In 911 the Vikings are granted Normandy; earlier they had besieged Paris." },
+      "quote": "koga će obsedati 911. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "viking-island-870",
+      "title": { "sr": "Naseljavanje Islanda", "en": "Settlement of Iceland" },
+      "year": 870, "yearEnd": null,
+      "placeId": "island", "episodeId": "140", "timestamp": "82:55",
+      "type": "founding", "actors": ["Norvežani"], "region": "Skandinavski svet",
+      "description": { "sr": "Oko 870. godine počinje naseljavanje Islanda.", "en": "Around 870 the settlement of Iceland begins." },
+      "quote": "vlada od neke 870. godine",
+      "confidence": "medium"
+    },
+    {
+      "id": "viking-grenland-985",
+      "title": { "sr": "Erik Crveni naseljava Grenland", "en": "Erik the Red settles Greenland" },
+      "year": 985, "yearEnd": null,
+      "placeId": "grenland", "episodeId": "140", "timestamp": "88:39",
+      "type": "founding", "actors": ["Erik Crveni"], "region": "Skandinavski svet",
+      "description": { "sr": "Oko 980-985. godine Erik Crveni osniva naselje na Grenlandu.", "en": "Around 980-985 Erik the Red establishes a settlement in Greenland." },
+      "quote": "neke 980-985. godine",
+      "confidence": "medium"
+    },
+    {
+      "id": "viking-vinland-1000",
+      "title": { "sr": "Vikinzi u Severnoj Americi (Vinland)", "en": "Vikings in North America (Vinland)" },
+      "year": 1000, "yearEnd": null,
+      "placeId": "vinland", "episodeId": "140", "timestamp": "97:12",
+      "type": "founding", "actors": ["Lejf Erikson"], "region": "Severna Amerika",
+      "description": { "sr": "Oko 1000. godine Vikinzi dosežu Severnu Ameriku — Vinland (L'Anse aux Meadows).", "en": "Around 1000 the Vikings reach North America — Vinland (L'Anse aux Meadows)." },
+      "quote": "oko 1000. godine jeste, naravno, ogromno",
+      "confidence": "medium"
+    },
+    {
+      "id": "viking-hejstings-1066",
+      "title": { "sr": "Bitka kod Hejstingsa — kraj vikinške ere", "en": "Battle of Hastings — end of the Viking Age" },
+      "year": 1066, "yearEnd": null,
+      "placeId": "hejstings", "episodeId": "140", "timestamp": "109:02",
+      "type": "battle", "actors": ["Vilijam Osvajač", "Harold Godvinson"], "region": "Zapadna Evropa",
+      "description": { "sr": "1066. godina — Hejstings i normansko osvajanje Engleske; simbolički kraj vikinške ere.", "en": "1066 — Hastings and the Norman conquest of England; the symbolic end of the Viking Age." },
+      "quote": "1066. godine",
+      "confidence": "high"
+    }
+  ]
+}

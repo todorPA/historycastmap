@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/todorPA/historycastmap/geo-events.schema.json",
+  "title": "HistoryCast geo-events",
+  "type": "object",
+  "required": ["meta", "places", "episodes", "events"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["source", "generated", "count"],
+      "properties": {
+        "source": { "type": "string", "description": "HistoryCast podcast (rss.com/rs-historycast)" },
+        "generated": { "type": "string", "format": "date-time" },
+        "count": { "type": "integer", "description": "number of events" },
+        "schemaVersion": { "type": "string", "default": "1.0" }
+      }
+    },
+
+    "places": {
+      "type": "array",
+      "description": "Canonical, de-duplicated places. Events reference these by id.",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "lat", "lng"],
+        "properties": {
+          "id": { "type": "string", "description": "kebab-case canonical id, e.g. 'skoplje'" },
+          "name": {
+            "type": "object",
+            "required": ["sr", "en"],
+            "properties": {
+              "sr": { "type": "string", "description": "Skoplje" },
+              "en": { "type": "string", "description": "Skopje" }
+            }
+          },
+          "aliases": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "All declension/spelling variants seen in transcripts: Skoplju, Skoplja, ..."
+          },
+          "lat": { "type": "number" },
+          "lng": { "type": "number" },
+          "kind": {
+            "type": "string",
+            "enum": ["city", "region", "country", "battle-site", "landmark", "water", "person-seat", "unknown"],
+            "description": "'person-seat' = a person's capital/seat used when an event is tied to a ruler rather than a fixed place"
+          }
+        }
+      }
+    },
+
+    "episodes": {
+      "type": "array",
+      "description": "Episode registry. Events reference these by id.",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "audioUrl"],
+        "properties": {
+          "id": { "type": "string", "description": "episode number as string, e.g. '09'" },
+          "title": {
+            "type": "object",
+            "properties": {
+              "sr": { "type": "string" },
+              "en": { "type": "string", "description": "optional English title; fallback to sr" }
+            },
+            "required": ["sr"]
+          },
+          "pubDate": { "type": "string" },
+          "audioUrl": { "type": "string", "format": "uri", "description": "mp3 URL for deep-linking with ?t= or #t=" },
+          "color": { "type": "string", "description": "hex color for this episode's markers, e.g. '#c0392b'" }
+        }
+      }
+    },
+
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "year", "placeId", "episodeId", "confidence"],
+        "properties": {
+          "id": { "type": "string", "description": "stable slug, e.g. 'dusan-krunisanje-1346'" },
+          "title": {
+            "type": "object",
+            "required": ["sr"],
+            "properties": {
+              "sr": { "type": "string" },
+              "en": { "type": "string" }
+            }
+          },
+          "year": {
+            "type": "integer",
+            "description": "Start year. BC is negative: -431 = 431 BC. AD positive."
+          },
+          "yearEnd": {
+            "type": ["integer", "null"],
+            "description": "End year for a period/span; null for a point event."
+          },
+          "placeId": { "type": "string", "description": "references places[].id" },
+          "episodeId": { "type": "string", "description": "references episodes[].id" },
+          "timestamp": {
+            "type": "string",
+            "pattern": "^\\d{1,3}:\\d{2}$",
+            "description": "MM:SS position in the episode where this is discussed"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["battle", "siege", "conquest", "coronation", "treaty", "founding", "death", "birth", "reign", "uprising", "reform", "other"]
+          },
+          "actors": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "People/peoples involved: 'Stefan Dušan', 'Vizantija'"
+          },
+          "region": {
+            "type": "string",
+            "description": "High-level grouping for filtering: 'Srpsko carstvo', 'Vizantija', 'Zapadna Evropa'..."
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "sr": { "type": "string" },
+              "en": { "type": "string" }
+            },
+            "required": ["sr"]
+          },
+          "quote": {
+            "type": "string",
+            "description": "Optional verbatim transcript sentence this event was derived from (for provenance)."
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "low = year/place uncertain (e.g. Whisper dropped a digit). UI may de-emphasize."
+          }
+        }
+      }
+    }
+  }
+}
