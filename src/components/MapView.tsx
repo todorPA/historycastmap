@@ -28,20 +28,45 @@ interface Positioned {
   color: string;
 }
 
-/** Fits the view to the visible markers whenever that set changes. */
-function FitToMarkers({ points }: { points: LatLngTuple[] }) {
+/**
+ * Fits the view when the *set of events being looked at* changes — i.e. on load and on
+ * episode change. Deliberately NOT on every range change: re-fitting mid-scrub yanks the
+ * map around under the cursor, which makes the timeline feel broken.
+ */
+function FitToMarkers({ points, fitKey }: { points: LatLngTuple[]; fitKey: string }) {
   const map = useMap();
-  const signature = points.map((p) => p.join(',')).join('|');
+  const latest = useRef(points);
+  latest.current = points;
 
   useEffect(() => {
-    if (points.length === 0) return;
-    if (points.length === 1) {
-      map.setView(points[0], 7);
-      return;
-    }
-    map.fitBounds(points as LatLngBoundsExpression, { padding: [48, 48], maxZoom: 8 });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [signature, map]);
+    const pts = latest.current;
+    if (pts.length === 0) return;
+    // Let a container resize settle first, so fitBounds measures the final viewport.
+    const id = window.setTimeout(() => {
+      if (pts.length === 1) {
+        map.setView(pts[0], 7);
+        return;
+      }
+      map.fitBounds(pts as LatLngBoundsExpression, { padding: [48, 48], maxZoom: 8 });
+    }, 210);
+    return () => window.clearTimeout(id);
+  }, [fitKey, map]);
+
+  return null;
+}
+
+/**
+ * Raising the timeline shrinks the map's container. Leaflet doesn't observe that, so tell
+ * it the size changed — otherwise tiles and marker positions stay stale.
+ */
+function InvalidateOnResize({ resizeKey }: { resizeKey: string }) {
+  const map = useMap();
+
+  useEffect(() => {
+    // Wait for the CSS height transition (160ms) to settle before measuring.
+    const id = window.setTimeout(() => map.invalidateSize(), 200);
+    return () => window.clearTimeout(id);
+  }, [resizeKey, map]);
 
   return null;
 }
@@ -61,9 +86,10 @@ function PanToSelected({ points }: { points: Map<string, LatLngTuple> }) {
 }
 
 export default function MapView() {
-  const { placesById, episodesById } = useData();
+  const { placesById, episodesById, data } = useData();
   const visible = useVisibleEvents();
-  const { lang, basemapId, selectedEventId, setSelectedEventId } = useFilters();
+  const { lang, basemapId, selectedEventId, setSelectedEventId, activeEpisodeId, timelineSize } =
+    useFilters();
   const basemap = getBasemap(basemapId);
   const markerRefs = useRef(new Map<string, CircleMarkerType>());
 
@@ -107,7 +133,11 @@ export default function MapView() {
         scrollWheelZoom
       >
         <BasemapLayer basemap={basemap} />
-        <FitToMarkers points={points} />
+        <InvalidateOnResize resizeKey={timelineSize} />
+        <FitToMarkers
+          points={points}
+          fitKey={`${data.meta.generated}|${activeEpisodeId ?? 'all'}|${timelineSize}`}
+        />
         <PanToSelected points={pointsById} />
 
         {positioned.map(({ event, position, color }) => {

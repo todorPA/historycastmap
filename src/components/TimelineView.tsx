@@ -6,9 +6,22 @@ import { useData } from '../state/DataContext';
 import { useTime } from '../state/TimeContext';
 import { useFilters } from '../state/FilterContext';
 import { pick, t } from '../lib/i18n';
-import { dateToYear, formatYearRange, yearToDate } from '../lib/time';
+import { dateToYear, formatYear, formatYearRange, yearToDate } from '../lib/time';
+import type { Lang } from '../types/events';
 
 const RANGE_DEBOUNCE_MS = 150;
+
+/**
+ * vis-timeline labels dates with moment's zero-padded year ("0500", "-0600"). We want
+ * plain historical years: "500", "600. p.n.e." / "600 BC". Callbacks get a moment-like
+ * value, so accept either that or a Date.
+ */
+function axisLabel(value: unknown, lang: Lang): string {
+  const maybeMoment = value as { toDate?: () => Date };
+  const date =
+    typeof maybeMoment?.toDate === 'function' ? maybeMoment.toDate() : new Date(value as string);
+  return formatYear(dateToYear(date), lang);
+}
 
 interface Item {
   id: string;
@@ -24,7 +37,13 @@ interface Item {
 export default function TimelineView() {
   const { data, episodesById } = useData();
   const { range, bounds, setRange } = useTime();
-  const { lang, activeEpisodeId, selectedEventId, setSelectedEventId } = useFilters();
+  const { lang, activeEpisodeId, selectedEventId, setSelectedEventId, timelineSize, cycleTimelineSize } =
+    useFilters();
+  // Panel height cycles small → medium → large: with many region groups the default strip
+  // is too cramped to read, so the user can raise the timeline over the map.
+  const size = timelineSize;
+  const cycleSize = cycleTimelineSize;
+  const sizeLabel = size === 'l' ? '▾' : '▴';
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const timelineRef = useRef<Timeline | null>(null);
@@ -82,6 +101,10 @@ export default function TimelineView() {
       multiselect: false,
       showCurrentTime: false,
       tooltip: { followMouse: true },
+      format: {
+        minorLabels: (date: unknown) => axisLabel(date, lang),
+        majorLabels: () => '',
+      },
     };
 
     const timeline = new Timeline(
@@ -135,16 +158,49 @@ export default function TimelineView() {
     }, RANGE_DEBOUNCE_MS + 50);
   }, [range.from, range.to]);
 
+  // Axis limits live in the create-once options object, so they need their own update:
+  // a dataset swap changes bounds, and stale min/max would clamp navigation to the old extent.
+  useEffect(() => {
+    timelineRef.current?.setOptions({
+      min: yearToDate(bounds.from - 50),
+      max: yearToDate(bounds.to + 50),
+    });
+  }, [bounds.from, bounds.to]);
+
+  // Axis labels are language-dependent ("431. p.n.e." vs "431 BC").
+  useEffect(() => {
+    timelineRef.current?.setOptions({
+      format: {
+        minorLabels: (date: unknown) => axisLabel(date, lang),
+        majorLabels: () => '',
+      },
+    });
+  }, [lang]);
+
+  // The panel grew or shrank — vis needs to recompute its canvas.
+  useEffect(() => {
+    timelineRef.current?.redraw();
+  }, [size]);
+
   // Keep timeline selection in sync with map/sidebar selection.
   useEffect(() => {
     timelineRef.current?.setSelection(selectedEventId ? [selectedEventId] : []);
   }, [selectedEventId]);
 
   return (
-    <section className="timeline">
-      <header className="timeline__head">
+    <section className={`timeline timeline--${size}`}>
+      <header className="timeline__head" onDoubleClick={cycleSize}>
         <h2>{t(lang, 'timeline')}</h2>
         <span className="timeline__range">{formatYearRange(range.from, range.to, lang)}</span>
+        <button
+          type="button"
+          className="timeline__resize"
+          onClick={cycleSize}
+          title={t(lang, 'resizeTimeline')}
+          aria-label={t(lang, 'resizeTimeline')}
+        >
+          {sizeLabel}
+        </button>
       </header>
       <div className="timeline__canvas" ref={containerRef} />
     </section>
