@@ -158,6 +158,15 @@ export default function TimelineView() {
     }, RANGE_DEBOUNCE_MS + 50);
   }, [range.from, range.to]);
 
+  // Axis limits live in the create-once options object, so they need their own update:
+  // a dataset swap changes bounds, and stale min/max would clamp navigation to the old extent.
+  useEffect(() => {
+    timelineRef.current?.setOptions({
+      min: yearToDate(bounds.from - 50),
+      max: yearToDate(bounds.to + 50),
+    });
+  }, [bounds.from, bounds.to]);
+
   // Axis labels are language-dependent ("431. p.n.e." vs "431 BC").
   useEffect(() => {
     timelineRef.current?.setOptions({

@@ -17,10 +17,16 @@ export const DEFAULT_DATASET: DatasetName = 'sample';
  * `?data=stress` loads the synthetic density dataset (see scripts/make-stress-data.mjs);
  * `?data=full` the real full set once it exists. Anything else falls back to the sample,
  * so a bad URL can never break the deployed app.
+ *
+ * Own-property check, not `in`: `in` also matches inherited keys, so `?data=toString`
+ * would pass and resolve to a function instead of a path.
  */
-export function datasetFromLocation(search: string = window.location.search): DatasetName {
-  const requested = new URLSearchParams(search).get('data');
-  return requested && requested in DATASETS ? (requested as DatasetName) : DEFAULT_DATASET;
+export function datasetFromLocation(search?: string): DatasetName {
+  const qs = search ?? (typeof window === 'undefined' ? '' : window.location.search);
+  const requested = new URLSearchParams(qs).get('data');
+  return requested && Object.prototype.hasOwnProperty.call(DATASETS, requested)
+    ? (requested as DatasetName)
+    : DEFAULT_DATASET;
 }
 
 /** Resolve a data path against the deploy base (GitHub Pages serves under /historycastmap/). */
