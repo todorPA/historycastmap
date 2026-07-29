@@ -69,6 +69,7 @@ for (const [i, ev] of (data.events ?? []).entries()) {
   if (!episodeIds.has(ev.episodeId)) err(`${at}: episodeId "${ev.episodeId}" not found in episodes`);
   if (ev.timestamp && !TIMESTAMP.test(ev.timestamp)) err(`${at}: timestamp "${ev.timestamp}" is not MM:SS`);
   if (ev.type && !EVENT_TYPES.includes(ev.type)) err(`${at}: unknown type "${ev.type}"`);
+  if (ev.type === 'reign' && ev.yearEnd == null) warn(`${at}: type "reign" without yearEnd — a reign is almost always a period, worth checking`);
   if (!CONFIDENCE.includes(ev.confidence)) err(`${at}: confidence must be high|medium|low`);
 }
 
