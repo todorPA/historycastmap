@@ -1,0 +1,87 @@
+{
+  "places": [
+    { "id": "zvecan", "name": { "sr": "Zvečan", "en": "Zvečan" }, "aliases": ["Zvečanu", "Zvečana"], "lat": 42.9186, "lng": 20.8447, "kind": "landmark" },
+    { "id": "skoplje", "name": { "sr": "Skoplje", "en": "Skopje" }, "aliases": ["Skoplju", "Skoplja", "Skoplji"], "lat": 41.9981, "lng": 21.4254, "kind": "city" },
+    { "id": "kosovo-polje", "name": { "sr": "Kosovo polje", "en": "Kosovo Field" }, "aliases": ["Kosovo polju"], "lat": 42.7169, "lng": 21.0334, "kind": "battle-site" },
+    { "id": "reka-marica", "name": { "sr": "Marica (Černomen)", "en": "Maritsa (Chernomen)" }, "aliases": ["Marici", "Černomena", "Marička bitka"], "lat": 41.6803, "lng": 26.5559, "kind": "water" },
+    { "id": "carigrad", "name": { "sr": "Carigrad", "en": "Constantinople" }, "aliases": ["Carigradu", "Carigrada", "Konstantinopolju"], "lat": 41.0082, "lng": 28.9784, "kind": "city" },
+    { "id": "prizren", "name": { "sr": "Prizren", "en": "Prizren" }, "aliases": ["Prizrena"], "lat": 42.2139, "lng": 20.7397, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "dusanova-vladavina-1331-1355",
+      "title": { "sr": "Vladavina Stefana Dušana", "en": "Reign of Stefan Dušan" },
+      "year": 1331,
+      "yearEnd": 1355,
+      "placeId": "skoplje",
+      "episodeId": "09",
+      "timestamp": "66:38",
+      "type": "reign",
+      "actors": ["Stefan Dušan"],
+      "region": "Srpsko carstvo",
+      "description": { "sr": "Stefan Dušan vlada od 1331, kada zarobljava oca i preuzima presto, do svoje smrti 1355. godine, ne ostvarivši san o osvajanju Soluna.", "en": "Stefan Dušan ruled from 1331, when he imprisoned his father and took the throne, until his death in 1355, without fulfilling his dream of conquering Thessaloniki." },
+      "quote": "Tako da dušan umire 1355. godine, ne ostvarajuši svoj san da osvoji Solun.",
+      "confidence": "high"
+    },
+    {
+      "id": "dusan-zarobljava-stefana-decanskog-zvecan-1331",
+      "title": { "sr": "Dušan zarobljava oca Stefana Dečanskog u Zvečanu", "en": "Dušan imprisons his father Stefan Dečanski at Zvečan" },
+      "year": 1331,
+      "yearEnd": null,
+      "placeId": "zvecan",
+      "episodeId": "09",
+      "timestamp": "13:16",
+      "type": "other",
+      "actors": ["Stefan Dušan", "Stefan Dečanski"],
+      "region": "Srpska kraljevina",
+      "description": { "sr": "Stefan Dušan iznenađuje i zarobljava svog oca kralja Stefana Dečanskog, zatvarajući ga u tvrdi grad Zvečan zajedno sa njegovom porodicom.", "en": "Stefan Dušan surprised and imprisoned his father King Stefan Dečanski, confining him in the fortress of Zvečan along with his family." },
+      "quote": "uhvatio ga i zatvorio u tvrdi grad Zvečan.",
+      "confidence": "low"
+    },
+    {
+      "id": "dusan-krunisanje-skoplje-1346-ep09",
+      "title": { "sr": "Krunisanje Dušana za cara u Skoplju", "en": "Coronation of Dušan as Emperor in Skopje" },
+      "year": 1346,
+      "yearEnd": null,
+      "placeId": "skoplje",
+      "episodeId": "09",
+      "timestamp": "67:07",
+      "type": "coronation",
+      "actors": ["Stefan Dušan", "Srpski patrijarh", "Ohridski arhijepiskop"],
+      "region": "Srpsko carstvo",
+      "description": { "sr": "Dušan je svečano krunisan za cara Srba i Grka na Uskrs 1346. godine u Skoplju, u obredu koji su zajedno vodili srpski i bugarski patrijarh i ohridski arhijepiskop.", "en": "Dušan was solemnly crowned Emperor of the Serbs and Greeks at Easter 1346 in Skopje, in a ceremony jointly conducted by the Serbian and Bulgarian patriarchs and the Archbishop of Ohrid." },
+      "quote": "A krunisanje pada tek naredne 1346. godine na uskrs, kada je u Skoplju svečano obavljeno čin ustoličenja cara.",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-kosovo-polje-1369",
+      "title": { "sr": "Bitka na Kosovu polju 1369.", "en": "Battle of Kosovo Field, 1369" },
+      "year": 1369,
+      "yearEnd": null,
+      "placeId": "kosovo-polje",
+      "episodeId": "09",
+      "timestamp": "107:22",
+      "type": "battle",
+      "actors": ["Car Uroš", "Vukašin Mrnjavčević", "Nikola Altomanović", "Knez Lazar"],
+      "region": "Srpsko carstvo",
+      "description": { "sr": "U bitci na Kosovu polju 1369. godine, Vukašin Mrnjavčević pobeđuje koaliciju cara Uroša, Nikole Altomanovića i knjaza Lazara; car Uroš biva zarobljen i odveden u Skoplje.", "en": "In the Battle of Kosovo Field in 1369, Vukašin Mrnjavčević defeated the coalition of Emperor Uroš, Nikola Altomanović and Prince Lazar; Emperor Uroš was captured and taken to Skopje." },
+      "quote": "Dešava se da dolazi do bitke na Kosovo polju 1369. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-marica-cernomen-1371-ep09",
+      "title": { "sr": "Bitka na Marici kod Černomena", "en": "Battle of Maritsa at Chernomen" },
+      "year": 1371,
+      "yearEnd": null,
+      "placeId": "reka-marica",
+      "episodeId": "09",
+      "timestamp": "110:04",
+      "type": "battle",
+      "actors": ["Vukašin Mrnjavčević", "Jovan Uglješa", "Osmanlije"],
+      "region": "Balkansko poluostrvo",
+      "description": { "sr": "26. septembra 1371. godine kod Černomena na Marici, brojčano slabija turska vojska iznenađuje i uništava vojsku Vukašina Mrnjavčevića i Jovana Uglješe, u katastrofi koja je, prema sagovorniku, koštala srednjovekovnu srpsku državu više nego kasnija kosovska bitka.", "en": "On September 26, 1371, at Chernomen on the Maritsa, a numerically weaker Ottoman force surprised and annihilated the army of Vukašin Mrnjavčević and Jovan Uglješa, in a disaster described as more costly to the medieval Serbian state than the later Battle of Kosovo." },
+      "quote": "i 26. septembra 1371. godine kod Černomena na Marici, dolazi do iznenadnog napada Turaka na Srbe",
+      "confidence": "high"
+    }
+  ]
+}

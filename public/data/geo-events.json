@@ -1,0 +1,1331 @@
+{
+  "meta": {
+    "source": "HistoryCast podcast (rss.com/rs-historycast)",
+    "generated": "2026-07-28T19:29:21.724Z",
+    "count": 34,
+    "schemaVersion": "1.0"
+  },
+  "places": [
+    {
+      "id": "zvecan",
+      "name": {
+        "sr": "Zvečan",
+        "en": "Zvečan"
+      },
+      "aliases": [
+        "zvečan",
+        "zvečanu",
+        "zvečana"
+      ],
+      "lat": 42.9186,
+      "lng": 20.8447,
+      "kind": "landmark"
+    },
+    {
+      "id": "skoplje",
+      "name": {
+        "sr": "Skoplje",
+        "en": "Skopje"
+      },
+      "aliases": [
+        "skoplje",
+        "skopje",
+        "skoplju",
+        "skoplja",
+        "skoplji"
+      ],
+      "lat": 41.9981,
+      "lng": 21.4254,
+      "kind": "city"
+    },
+    {
+      "id": "kosovo-polje",
+      "name": {
+        "sr": "Kosovo polje",
+        "en": "Kosovo Field"
+      },
+      "aliases": [
+        "kosovo polje",
+        "kosovo field",
+        "kosovo polju",
+        "kosovu",
+        "kosovo",
+        "kosova",
+        "boju na kosovu",
+        "kosovskog boja",
+        "kosovska bitka",
+        "kosovskom boju"
+      ],
+      "lat": 42.7169,
+      "lng": 21.0334,
+      "kind": "battle-site"
+    },
+    {
+      "id": "reka-marica",
+      "name": {
+        "sr": "Marica (Černomen)",
+        "en": "Maritsa (Chernomen)"
+      },
+      "aliases": [
+        "marica (černomen)",
+        "maritsa (chernomen)",
+        "marici",
+        "černomena",
+        "marička bitka",
+        "marica",
+        "maritsa",
+        "boj na marici",
+        "bitka na marici",
+        "boju na marici"
+      ],
+      "lat": 41.6803,
+      "lng": 26.5559,
+      "kind": "water"
+    },
+    {
+      "id": "carigrad",
+      "name": {
+        "sr": "Carigrad",
+        "en": "Constantinople"
+      },
+      "aliases": [
+        "carigrad",
+        "constantinople",
+        "carigradu",
+        "carigrada",
+        "konstantinopolju",
+        "k.",
+        "konstantinopolj"
+      ],
+      "lat": 41.0082,
+      "lng": 28.9784,
+      "kind": "city"
+    },
+    {
+      "id": "prizren",
+      "name": {
+        "sr": "Prizren",
+        "en": "Prizren"
+      },
+      "aliases": [
+        "prizren",
+        "prizrena",
+        "prizrenu",
+        "prizrenka"
+      ],
+      "lat": 42.2139,
+      "lng": 20.7397,
+      "kind": "city"
+    },
+    {
+      "id": "solun",
+      "name": {
+        "sr": "Solun",
+        "en": "Thessaloniki"
+      },
+      "aliases": [
+        "solun",
+        "thessaloniki",
+        "solunu",
+        "soluna"
+      ],
+      "lat": 40.6401,
+      "lng": 22.9444,
+      "kind": "city"
+    },
+    {
+      "id": "sveta-gora",
+      "name": {
+        "sr": "Sveta Gora",
+        "en": "Mount Athos"
+      },
+      "aliases": [
+        "sveta gora",
+        "mount athos",
+        "svetoj gori",
+        "svetogorskog",
+        "halkidik",
+        "halkidiku"
+      ],
+      "lat": 40.1572,
+      "lng": 24.3261,
+      "kind": "region"
+    },
+    {
+      "id": "boston",
+      "name": {
+        "sr": "Boston",
+        "en": "Boston"
+      },
+      "aliases": [
+        "boston",
+        "bostonu",
+        "bostona"
+      ],
+      "lat": 42.3601,
+      "lng": -71.0589,
+      "kind": "city"
+    },
+    {
+      "id": "lexington",
+      "name": {
+        "sr": "Lexington",
+        "en": "Lexington"
+      },
+      "aliases": [
+        "lexington",
+        "lexingtonu",
+        "lexingtona"
+      ],
+      "lat": 42.4473,
+      "lng": -71.2245,
+      "kind": "battle-site"
+    },
+    {
+      "id": "concord",
+      "name": {
+        "sr": "Konkord",
+        "en": "Concord"
+      },
+      "aliases": [
+        "konkord",
+        "concord",
+        "concordu",
+        "concorda"
+      ],
+      "lat": 42.4604,
+      "lng": -71.3489,
+      "kind": "battle-site"
+    },
+    {
+      "id": "saratoga",
+      "name": {
+        "sr": "Saratoga",
+        "en": "Saratoga"
+      },
+      "aliases": [
+        "saratoga",
+        "saratogu",
+        "saratoge"
+      ],
+      "lat": 43.0831,
+      "lng": -73.6462,
+      "kind": "battle-site"
+    },
+    {
+      "id": "filadelfija",
+      "name": {
+        "sr": "Filadelfija",
+        "en": "Philadelphia"
+      },
+      "aliases": [
+        "filadelfija",
+        "philadelphia",
+        "filadelfiji",
+        "filadelfije"
+      ],
+      "lat": 39.9526,
+      "lng": -75.1652,
+      "kind": "city"
+    },
+    {
+      "id": "yorktown",
+      "name": {
+        "sr": "Jorktaun",
+        "en": "Yorktown"
+      },
+      "aliases": [
+        "jorktaun",
+        "yorktown",
+        "yorktowna",
+        "yorktownom"
+      ],
+      "lat": 37.2387,
+      "lng": -76.5081,
+      "kind": "battle-site"
+    },
+    {
+      "id": "bec",
+      "name": {
+        "sr": "Beč",
+        "en": "Vienna"
+      },
+      "aliases": [
+        "beč",
+        "vienna",
+        "beču",
+        "beča"
+      ],
+      "lat": 48.2082,
+      "lng": 16.3738,
+      "kind": "city"
+    },
+    {
+      "id": "berlin",
+      "name": {
+        "sr": "Berlin",
+        "en": "Berlin"
+      },
+      "aliases": [
+        "berlin",
+        "berlinu",
+        "berlina",
+        "berlinskog"
+      ],
+      "lat": 52.52,
+      "lng": 13.405,
+      "kind": "city"
+    },
+    {
+      "id": "petrograd",
+      "name": {
+        "sr": "Sankt Peterburg",
+        "en": "Saint Petersburg"
+      },
+      "aliases": [
+        "sankt peterburg",
+        "saint petersburg",
+        "rusiji",
+        "rusija"
+      ],
+      "lat": 59.9311,
+      "lng": 30.3609,
+      "kind": "city"
+    },
+    {
+      "id": "kenigsgrac",
+      "name": {
+        "sr": "Kenigsgrac (Sadova)",
+        "en": "Königgrätz (Sadová)"
+      },
+      "aliases": [
+        "kenigsgrac (sadova)",
+        "königgrätz (sadová)",
+        "sadove",
+        "kenigsgraca",
+        "kenigsgrac"
+      ],
+      "lat": 50.2092,
+      "lng": 15.8328,
+      "kind": "battle-site"
+    },
+    {
+      "id": "sedan",
+      "name": {
+        "sr": "Sedan",
+        "en": "Sedan"
+      },
+      "aliases": [
+        "sedan",
+        "sedana",
+        "biciku od sedana"
+      ],
+      "lat": 49.7009,
+      "lng": 4.9455,
+      "kind": "battle-site"
+    },
+    {
+      "id": "versaj",
+      "name": {
+        "sr": "Versaj",
+        "en": "Versailles"
+      },
+      "aliases": [
+        "versaj",
+        "versailles",
+        "versaillesu",
+        "dvorana ogledala"
+      ],
+      "lat": 48.8049,
+      "lng": 2.1204,
+      "kind": "landmark"
+    },
+    {
+      "id": "pariz",
+      "name": {
+        "sr": "Pariz",
+        "en": "Paris"
+      },
+      "aliases": [
+        "pariz",
+        "paris",
+        "parizu"
+      ],
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "kind": "city"
+    },
+    {
+      "id": "franjefurt-schoenhausen",
+      "name": {
+        "sr": "Šenhauzen",
+        "en": "Schönhausen"
+      },
+      "aliases": [
+        "šenhauzen",
+        "schönhausen",
+        "schoenhausen"
+      ],
+      "lat": 52.6167,
+      "lng": 12.05,
+      "kind": "person-seat"
+    },
+    {
+      "id": "ohrid",
+      "name": {
+        "sr": "Ohrid",
+        "en": "Ohrid"
+      },
+      "aliases": [
+        "ohrid",
+        "ohridu",
+        "ohrida",
+        "okridu",
+        "okrid",
+        "okredu",
+        "okritska"
+      ],
+      "lat": 41.1231,
+      "lng": 20.8016,
+      "kind": "city"
+    },
+    {
+      "id": "pristina",
+      "name": {
+        "sr": "Priština",
+        "en": "Pristina"
+      },
+      "aliases": [
+        "priština",
+        "pristina",
+        "prištini",
+        "prištinu",
+        "prištine"
+      ],
+      "lat": 42.6629,
+      "lng": 21.1655,
+      "kind": "city"
+    },
+    {
+      "id": "uzice",
+      "name": {
+        "sr": "Užice",
+        "en": "Užice"
+      },
+      "aliases": [
+        "užice",
+        "užicu",
+        "užica"
+      ],
+      "lat": 43.8583,
+      "lng": 19.8408,
+      "kind": "battle-site"
+    },
+    {
+      "id": "rovine",
+      "name": {
+        "sr": "Rovine",
+        "en": "Rovine"
+      },
+      "aliases": [
+        "rovine",
+        "rovinama",
+        "boj na rovinama"
+      ],
+      "lat": 44.3302,
+      "lng": 23.7949,
+      "kind": "battle-site"
+    },
+    {
+      "id": "nikopolj",
+      "name": {
+        "sr": "Nikopolj",
+        "en": "Nicopolis"
+      },
+      "aliases": [
+        "nikopolj",
+        "nicopolis",
+        "nikopolja",
+        "bitka kod nikopolja",
+        "boj kod nikopolja"
+      ],
+      "lat": 43.7181,
+      "lng": 24.8975,
+      "kind": "battle-site"
+    }
+  ],
+  "episodes": [
+    {
+      "id": "09",
+      "title": {
+        "sr": "Dušanova Srbija: Uspon carstva"
+      },
+      "pubDate": "Tue, 24 Oct 2023 15:39:40 GMT",
+      "audioUrl": "https://content.rss.com/episodes/186457/1184339/rs-historycast/2023_10_22_19_22_55_792cd8d7-8db8-4be7-b9d9-a97da5e27f0c.mp3",
+      "color": "#c0392b"
+    },
+    {
+      "id": "68",
+      "title": {
+        "sr": "Dušanov zakonik"
+      },
+      "pubDate": "Tue, 24 Dec 2024 12:34:57 GMT",
+      "audioUrl": "https://content.rss.com/episodes/186457/1810728/rs-historycast/2024_12_20_19_04_39_53090001-13cc-4aea-a408-63c193d84836.mp3",
+      "color": "#2980b9"
+    },
+    {
+      "id": "142",
+      "title": {
+        "sr": "Američki rat za nezavisnost"
+      },
+      "pubDate": "Fri, 03 Jul 2026 06:18:25 GMT",
+      "audioUrl": "https://content.rss.com/episodes/186457/2961400/rs-historycast/2026_07_03_06_03_32_f8fea540-c3eb-43f7-babb-c7b6206ed213.mp3",
+      "color": "#27ae60"
+    },
+    {
+      "id": "143",
+      "title": {
+        "sr": "Bizmark"
+      },
+      "pubDate": "Wed, 15 Jul 2026 20:39:38 GMT",
+      "audioUrl": "https://content.rss.com/episodes/186457/2790943/rs-historycast/2026_05_04_00_24_22_d00d3a80-13d9-478b-be69-a20febed8f61.mp3",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "144",
+      "title": {
+        "sr": "Vuk Branković"
+      },
+      "pubDate": "Wed, 22 Jul 2026 06:11:12 GMT",
+      "audioUrl": "https://content.rss.com/episodes/186457/2926240/rs-historycast/2026_06_18_22_16_54_8a9fc482-ec08-491d-83ce-c78ecf2d69b9.mp3",
+      "color": "#d35400"
+    }
+  ],
+  "events": [
+    {
+      "id": "dusanova-vladavina-1331-1355",
+      "title": {
+        "sr": "Vladavina Stefana Dušana",
+        "en": "Reign of Stefan Dušan"
+      },
+      "year": 1331,
+      "yearEnd": 1355,
+      "placeId": "skoplje",
+      "episodeId": "09",
+      "timestamp": "66:38",
+      "type": "reign",
+      "actors": [
+        "Stefan Dušan"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Stefan Dušan vlada od 1331, kada zarobljava oca i preuzima presto, do svoje smrti 1355. godine, ne ostvarivši san o osvajanju Soluna.",
+        "en": "Stefan Dušan ruled from 1331, when he imprisoned his father and took the throne, until his death in 1355, without fulfilling his dream of conquering Thessaloniki."
+      },
+      "quote": "Tako da dušan umire 1355. godine, ne ostvarajuši svoj san da osvoji Solun.",
+      "confidence": "high"
+    },
+    {
+      "id": "dusan-zarobljava-stefana-decanskog-zvecan-1331",
+      "title": {
+        "sr": "Dušan zarobljava oca Stefana Dečanskog u Zvečanu",
+        "en": "Dušan imprisons his father Stefan Dečanski at Zvečan"
+      },
+      "year": 1331,
+      "yearEnd": null,
+      "placeId": "zvecan",
+      "episodeId": "09",
+      "timestamp": "13:16",
+      "type": "other",
+      "actors": [
+        "Stefan Dušan",
+        "Stefan Dečanski"
+      ],
+      "region": "Srpska kraljevina",
+      "description": {
+        "sr": "Stefan Dušan iznenađuje i zarobljava svog oca kralja Stefana Dečanskog, zatvarajući ga u tvrdi grad Zvečan zajedno sa njegovom porodicom.",
+        "en": "Stefan Dušan surprised and imprisoned his father King Stefan Dečanski, confining him in the fortress of Zvečan along with his family."
+      },
+      "quote": "uhvatio ga i zatvorio u tvrdi grad Zvečan.",
+      "confidence": "low"
+    },
+    {
+      "id": "dusan-krunisanje-skoplje-1346-ep09",
+      "title": {
+        "sr": "Krunisanje Dušana za cara u Skoplju",
+        "en": "Coronation of Dušan as Emperor in Skopje"
+      },
+      "year": 1346,
+      "yearEnd": null,
+      "placeId": "skoplje",
+      "episodeId": "09",
+      "timestamp": "67:07",
+      "type": "coronation",
+      "actors": [
+        "Stefan Dušan",
+        "Srpski patrijarh",
+        "Ohridski arhijepiskop"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Dušan je svečano krunisan za cara Srba i Grka na Uskrs 1346. godine u Skoplju, u obredu koji su zajedno vodili srpski i bugarski patrijarh i ohridski arhijepiskop.",
+        "en": "Dušan was solemnly crowned Emperor of the Serbs and Greeks at Easter 1346 in Skopje, in a ceremony jointly conducted by the Serbian and Bulgarian patriarchs and the Archbishop of Ohrid."
+      },
+      "quote": "A krunisanje pada tek naredne 1346. godine na uskrs, kada je u Skoplju svečano obavljeno čin ustoličenja cara.",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-kosovo-polje-1369",
+      "title": {
+        "sr": "Bitka na Kosovu polju 1369.",
+        "en": "Battle of Kosovo Field, 1369"
+      },
+      "year": 1369,
+      "yearEnd": null,
+      "placeId": "kosovo-polje",
+      "episodeId": "09",
+      "timestamp": "107:22",
+      "type": "battle",
+      "actors": [
+        "Car Uroš",
+        "Vukašin Mrnjavčević",
+        "Nikola Altomanović",
+        "Knez Lazar"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "U bitci na Kosovu polju 1369. godine, Vukašin Mrnjavčević pobeđuje koaliciju cara Uroša, Nikole Altomanovića i knjaza Lazara; car Uroš biva zarobljen i odveden u Skoplje.",
+        "en": "In the Battle of Kosovo Field in 1369, Vukašin Mrnjavčević defeated the coalition of Emperor Uroš, Nikola Altomanović and Prince Lazar; Emperor Uroš was captured and taken to Skopje."
+      },
+      "quote": "Dešava se da dolazi do bitke na Kosovo polju 1369. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-marica-cernomen-1371-ep09",
+      "title": {
+        "sr": "Bitka na Marici kod Černomena",
+        "en": "Battle of Maritsa at Chernomen"
+      },
+      "year": 1371,
+      "yearEnd": null,
+      "placeId": "reka-marica",
+      "episodeId": "09",
+      "timestamp": "110:04",
+      "type": "battle",
+      "actors": [
+        "Vukašin Mrnjavčević",
+        "Jovan Uglješa",
+        "Osmanlije"
+      ],
+      "region": "Balkansko poluostrvo",
+      "description": {
+        "sr": "26. septembra 1371. godine kod Černomena na Marici, brojčano slabija turska vojska iznenađuje i uništava vojsku Vukašina Mrnjavčevića i Jovana Uglješe, u katastrofi koja je, prema sagovorniku, koštala srednjovekovnu srpsku državu više nego kasnija kosovska bitka.",
+        "en": "On September 26, 1371, at Chernomen on the Maritsa, a numerically weaker Ottoman force surprised and annihilated the army of Vukašin Mrnjavčević and Jovan Uglješa, in a disaster described as more costly to the medieval Serbian state than the later Battle of Kosovo."
+      },
+      "quote": "i 26. septembra 1371. godine kod Černomena na Marici, dolazi do iznenadnog napada Turaka na Srbe",
+      "confidence": "high"
+    },
+    {
+      "id": "vrazda-milutin-1308",
+      "title": {
+        "sr": "Kralj Milutin i kazna vražde",
+        "en": "King Milutin and the vražda penalty"
+      },
+      "year": 1308,
+      "yearEnd": null,
+      "placeId": "skoplje",
+      "episodeId": "68",
+      "timestamp": "06:49",
+      "type": "reform",
+      "actors": [
+        "Kralj Milutin"
+      ],
+      "region": "Srpska kraljevina",
+      "description": {
+        "sr": "Godine 1308. kralj Milutin, odbijajući da uvede smrtnu kaznu po evropskom feudalnom obrascu, poziva se na stari srpski običaj vražde — javnopravnu kaznu koja zamenjuje krvnu osvetu.",
+        "en": "In 1308, King Milutin, refusing to introduce the death penalty on the European feudal model, invoked the old Serbian custom of vražda — a public-law penalty replacing blood vengeance."
+      },
+      "quote": "eto, to je 1308. godina, a koristi se neki, da kažemo, običaj koji je već, predpostavimo, vekovima živeo u srpskom narodu.",
+      "confidence": "high"
+    },
+    {
+      "id": "dusan-krunisanje-1346",
+      "title": {
+        "sr": "Krunisanje Stefana Dušana za cara",
+        "en": "Coronation of Stefan Dušan as Emperor"
+      },
+      "year": 1346,
+      "yearEnd": null,
+      "placeId": "skoplje",
+      "episodeId": "68",
+      "timestamp": "28:57",
+      "type": "coronation",
+      "actors": [
+        "Stefan Dušan",
+        "Patrijarh"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Stefan Dušan je krunisan za cara 1346. godine, nakon proglašenja srpske patrijaršije, čime formalizuje svoju carsku titulu nad Srbima i delom romejskih zemalja.",
+        "en": "Stefan Dušan was crowned Emperor in 1346, after the proclamation of the Serbian patriarchate, formalizing his imperial title over the Serbs and part of the Byzantine lands."
+      },
+      "quote": "i dušanovo kasnije, dakle, 1346. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "dusanov-zakonik-1349",
+      "title": {
+        "sr": "Donošenje Dušanovog zakonika na saboru u Skoplju",
+        "en": "Promulgation of Dušan's Code at the Skopje assembly"
+      },
+      "year": 1349,
+      "yearEnd": null,
+      "placeId": "skoplje",
+      "episodeId": "68",
+      "timestamp": "34:37",
+      "type": "reform",
+      "actors": [
+        "Car Dušan"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Na državnom saboru u Skoplju 1349. godine car Dušan proglašava donošenje svog zakonika, kojim želi da uspostavi jedinstven pravni poredak i miran, hrišćanski život za sve podanike carstva.",
+        "en": "At the state assembly in Skopje in 1349, Emperor Dušan proclaimed his law code, aiming to establish a unified legal order and a peaceful Christian life for all subjects of the empire."
+      },
+      "quote": "Uglavnom, na vazim senjeh, 1349. godine, sabor u Skoplju i car Dušan donose zakonik.",
+      "confidence": "high"
+    },
+    {
+      "id": "uros-potvrdjuje-zakonik-dubrovniku-1357",
+      "title": {
+        "sr": "Car Uroš potvrđuje primenu zakonika Dubrovčanima",
+        "en": "Emperor Uroš confirms application of the Code to Dubrovnik traders"
+      },
+      "year": 1357,
+      "yearEnd": null,
+      "placeId": "skoplje",
+      "episodeId": "68",
+      "timestamp": "36:21",
+      "type": "reform",
+      "actors": [
+        "Car Uroš",
+        "Dubrovčani"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Car Uroš se 1357. godine u povelji Dubrovčanima pozivа direktno na odredbe Dušanovog zakonika, potvrđujući slobodu kretanja i trgovačka prava.",
+        "en": "In 1357, Emperor Uroš, in a charter to the citizens of Dubrovnik, directly invoked the provisions of Dušan's Code, confirming freedom of movement and trading rights."
+      },
+      "quote": "i kasnije car Urošić, s 1357. godine, pozivaju upravo na zakonik, kako piše u zakoniku carstvami.",
+      "confidence": "medium"
+    },
+    {
+      "id": "americki-rat-za-nezavisnost-1775-1783",
+      "title": {
+        "sr": "Američki rat za nezavisnost",
+        "en": "American Revolutionary War"
+      },
+      "year": 1775,
+      "yearEnd": 1783,
+      "placeId": "boston",
+      "episodeId": "142",
+      "timestamp": "114:06",
+      "type": "uprising",
+      "actors": [
+        "Trinaest kolonija",
+        "Velika Britanija",
+        "Francuska"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "Rat je trajao od bitaka kod Lexingtona i Konkorda 1775. do mirovnog sporazuma u Parizu 3. septembra 1783. godine, kada Velika Britanija priznaje nezavisnost trinaest američkih kolonija.",
+        "en": "The war lasted from the battles of Lexington and Concord in 1775 until the peace agreement in Paris on September 3, 1783, when Great Britain recognized the independence of the thirteen American colonies."
+      },
+      "quote": "3. septembra 1783. godine, mirom, nakon mirnog sporazuma, dakle, Velika Britanija priznaje nezavisnost",
+      "confidence": "high"
+    },
+    {
+      "id": "bostonska-cajanka-1773",
+      "title": {
+        "sr": "Bostonska čajanka",
+        "en": "Boston Tea Party"
+      },
+      "year": 1773,
+      "yearEnd": null,
+      "placeId": "boston",
+      "episodeId": "142",
+      "timestamp": "103:30",
+      "type": "uprising",
+      "actors": [
+        "Sinovi slobode"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "16. decembra 1773. godine, pripadnici Sinova slobode, maskirani u Mohavke, bacaju čaj sa broda Dartmouth u bostonsku luku u znak protesta protiv britanskog oporezivanja.",
+        "en": "On December 16, 1773, members of the Sons of Liberty, disguised as Mohawks, threw tea from the ship Dartmouth into Boston harbor in protest against British taxation."
+      },
+      "quote": "od 16. decembra 1773. godine ... došli su na brod na Dartmouth",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-lexington-concord-1775",
+      "title": {
+        "sr": "Bitke kod Lexingtona i Konkorda",
+        "en": "Battles of Lexington and Concord"
+      },
+      "year": 1775,
+      "yearEnd": null,
+      "placeId": "lexington",
+      "episodeId": "142",
+      "timestamp": "114:06",
+      "type": "battle",
+      "actors": [
+        "Britanska vojska",
+        "Lokalna milicija"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "19. aprila 1775. godine britanska vojska kreće iz Bostona ka Lexingtonu i Konkordu da uništi skladište municije pobunjenika; taj dan se smatra početkom Američkog rata za nezavisnost.",
+        "en": "On April 19, 1775, British troops marched from Boston toward Lexington and Concord to destroy a rebel arms depot; that day is considered the start of the American Revolutionary War."
+      },
+      "quote": "I to se dešava 19. aprila 1775. godine i taj dan se zapravo smatra početkom američkog rata za nezavisnost.",
+      "confidence": "high"
+    },
+    {
+      "id": "boston-slobodan-grad-1776",
+      "title": {
+        "sr": "Britanci se povlače iz Bostona",
+        "en": "British withdraw from Boston"
+      },
+      "year": 1776,
+      "yearEnd": null,
+      "placeId": "boston",
+      "episodeId": "142",
+      "timestamp": "147:51",
+      "type": "other",
+      "actors": [
+        "Britanska vojska",
+        "Kontinentalna armija"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "1776. godine britanske trupe se povlače iz opsednutog Bostona, koji postaje slobodan grad pod kontrolom pobunjenika.",
+        "en": "In 1776, British forces withdrew from besieged Boston, which became a free city under rebel control."
+      },
+      "quote": "Boston postaje Slobodan grad.",
+      "confidence": "medium"
+    },
+    {
+      "id": "bitke-kod-saratoge-1777",
+      "title": {
+        "sr": "Bitke kod Saratoge",
+        "en": "Battles of Saratoga"
+      },
+      "year": 1777,
+      "yearEnd": null,
+      "placeId": "saratoga",
+      "episodeId": "142",
+      "timestamp": "186:51",
+      "type": "battle",
+      "actors": [
+        "Kontinentalna armija",
+        "General Gates",
+        "Benedikt Arnold",
+        "Britanska vojska"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "19. septembra i 7. oktobra 1777. godine, u dve bitke kod Saratoge, američka vojska ostvaruje neočekivanu pobedu i zarobljava oko 8.000 britanskih vojnika, što ubrzo dovodi do ulaska Francuske u rat.",
+        "en": "On September 19 and October 7, 1777, in two battles at Saratoga, American forces achieved an unexpected victory, capturing around 8,000 British soldiers, soon leading to France entering the war."
+      },
+      "quote": "zapravo imamo dve bitke kod Saratoga 19. septembra i 7. oktobra",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-filadelfije-1777",
+      "title": {
+        "sr": "Pad Filadelfije",
+        "en": "Fall of Philadelphia"
+      },
+      "year": 1777,
+      "yearEnd": null,
+      "placeId": "filadelfija",
+      "episodeId": "142",
+      "timestamp": "186:31",
+      "type": "conquest",
+      "actors": [
+        "Britanska vojska",
+        "Vašington"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "Nakon poraza kod Brandivajna i Germantauna u razmaku od 20 dana, Britanci zauzimaju Filadelfiju, centar pobunjeničke vlade.",
+        "en": "After defeats at Brandywine and Germantown within 20 days of each other, the British captured Philadelphia, the center of the rebel government."
+      },
+      "quote": "Filadelfija pada Britanci ulaze",
+      "confidence": "high"
+    },
+    {
+      "id": "opsada-yorktowna-1781",
+      "title": {
+        "sr": "Opsada Jorktauna",
+        "en": "Siege of Yorktown"
+      },
+      "year": 1781,
+      "yearEnd": null,
+      "placeId": "yorktown",
+      "episodeId": "142",
+      "timestamp": "222:08",
+      "type": "siege",
+      "actors": [
+        "Cornwallis",
+        "Vašington",
+        "Rochambeau",
+        "Lafayette"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "Opsada Jorktauna trajala je oko tri nedelje, od kraja septembra do 19. oktobra 1781. godine; general Cornwallis se opkoljen od kombinovanih američko-francuskih snaga na kraju predaje, čime je praktično odlučen ishod rata.",
+        "en": "The Siege of Yorktown lasted about three weeks, from late September to October 19, 1781; General Cornwallis, surrounded by combined American and French forces, ultimately surrendered, effectively deciding the outcome of the war."
+      },
+      "quote": "opsoda traja ... tri nedelje, negde od kraja septembra ... do 19. oktobera, naravno 1381. godine",
+      "confidence": "medium"
+    },
+    {
+      "id": "bizmark-rodjenje-1815",
+      "title": {
+        "sr": "Rođenje Ota fon Bizmarka",
+        "en": "Birth of Otto von Bismarck"
+      },
+      "year": 1815,
+      "yearEnd": null,
+      "placeId": "franjefurt-schoenhausen",
+      "episodeId": "143",
+      "timestamp": "05:17",
+      "type": "birth",
+      "actors": [
+        "Otto von Bismarck"
+      ],
+      "region": "Pruska",
+      "description": {
+        "sr": "Oto fon Bizmark je rođen 1815. godine, u istoj godini kada počinje Bečki kongres koji krojio kartu posle napoleonovih ratova.",
+        "en": "Otto von Bismarck was born in 1815, the same year the Congress of Vienna began, redrawing the map of Europe after the Napoleonic wars."
+      },
+      "quote": "on je rođen 1815. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "beeki-kongres-1815",
+      "title": {
+        "sr": "Bečki kongres",
+        "en": "Congress of Vienna"
+      },
+      "year": 1815,
+      "yearEnd": null,
+      "placeId": "bec",
+      "episodeId": "143",
+      "timestamp": "06:11",
+      "type": "treaty",
+      "actors": [
+        "Evropske velike sile"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Bečki kongres 1815. godine kroji kartu Evrope nakon Napoleonovih ratova, u vreme kada je Bizmark rođen.",
+        "en": "The Congress of Vienna in 1815 redrew the map of Europe following the Napoleonic wars, the same year Bismarck was born."
+      },
+      "quote": "jedan je 1815. godina u Beču",
+      "confidence": "high"
+    },
+    {
+      "id": "bizmark-kancelar-pruske-1862",
+      "title": {
+        "sr": "Bizmark postaje pruski ministar-predsednik",
+        "en": "Bismarck becomes Prussian Minister President"
+      },
+      "year": 1862,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "143",
+      "timestamp": "81:15",
+      "type": "reform",
+      "actors": [
+        "Otto von Bismarck",
+        "Pruski kralj"
+      ],
+      "region": "Pruska",
+      "description": {
+        "sr": "23. septembra 1862. godine Bizmark dobija kancelarsku, odnosno ministar-predsedničku stolicu Pruske, iz koje će vodi politiku ujedinjenja Nemačke.",
+        "en": "On September 23, 1862, Bismarck was appointed Minister President of Prussia, from which position he would pursue his policy of German unification."
+      },
+      "quote": "koje on dobija 23. septembra 1862. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "rat-sa-danskom-1864",
+      "title": {
+        "sr": "Rat sa Danskom (Šlezvig-Holštajn)",
+        "en": "War with Denmark (Schleswig-Holstein)"
+      },
+      "year": 1864,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "143",
+      "timestamp": "106:02",
+      "type": "battle",
+      "actors": [
+        "Pruska",
+        "Austrija",
+        "Danska"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1864. godine izbija kratak rat Pruske i Austrije protiv Danske oko vojvodstava Šlezvig i Holštajn, koji označava izlazak Pruske na veliku vojnu scenu.",
+        "en": "In 1864 a short war broke out between Prussia and Austria against Denmark over the duchies of Schleswig and Holstein, marking Prussia's emergence as a major military power."
+      },
+      "quote": "to je 1864. godina jedan kratki rat koji je trajao nekoliko meseci",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-kenigsgrac-1866",
+      "title": {
+        "sr": "Bitka kod Kenigsgraca (Sadove)",
+        "en": "Battle of Königgrätz (Sadová)"
+      },
+      "year": 1866,
+      "yearEnd": null,
+      "placeId": "kenigsgrac",
+      "episodeId": "143",
+      "timestamp": "124:13",
+      "type": "battle",
+      "actors": [
+        "Pruska",
+        "Helmut von Moltke",
+        "Austrija"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "3. jula 1866. godine, u odsudnoj bici kod Sadove (Kenigsgraca), pruska vojska pod Moltkeovom strategijom poražava austrijske trupe, odlučujući austro-pruski rat u korist Pruske.",
+        "en": "On July 3, 1866, in the decisive Battle of Sadová (Königgrätz), the Prussian army under Moltke's strategy defeated Austrian troops, deciding the Austro-Prussian War in Prussia's favor."
+      },
+      "quote": "poraze u odsodnoj bici kod Sadove ili Kenigsgraca 3. jula 1866. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-sedan-1870",
+      "title": {
+        "sr": "Bitka kod Sedana i zarobljavanje Napoleona III",
+        "en": "Battle of Sedan and capture of Napoleon III"
+      },
+      "year": 1870,
+      "yearEnd": null,
+      "placeId": "sedan",
+      "episodeId": "143",
+      "timestamp": "159:33",
+      "type": "battle",
+      "actors": [
+        "Pruska",
+        "Napoleon III",
+        "Francuska"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1870. godine, u bici kod Sedana, francuska vojska trpi katastrofalan poraz, a car Napoleon III biva zarobljen zajedno sa 100.000 francuskih vojnika.",
+        "en": "In 1870, at the Battle of Sedan, the French army suffered a catastrophic defeat, and Emperor Napoleon III was captured along with 100,000 French soldiers."
+      },
+      "quote": "ti si lepo primetio biciku od Sedana, ne samo da je zarobljen car Napoleon III, nego i 100.000 francuskih vojnika.",
+      "confidence": "high"
+    },
+    {
+      "id": "bizmark-kancelar-nemackog-carstva-1871-1890",
+      "title": {
+        "sr": "Bizmark kao prvi kancelar Nemačkog carstva",
+        "en": "Bismarck as first Chancellor of the German Empire"
+      },
+      "year": 1871,
+      "yearEnd": 1890,
+      "placeId": "berlin",
+      "episodeId": "143",
+      "timestamp": "162:08",
+      "type": "reign",
+      "actors": [
+        "Otto von Bismarck"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Bizmark postaje prvi kancelar Nemačkog carstva 1871. godine i tu funkciju obavlja punih 19 godina, sve do 1890.",
+        "en": "Bismarck became the first Chancellor of the German Empire in 1871 and held the office for a full 19 years, until 1890."
+      },
+      "quote": "Bismarck postaje prvi kancelar Nemačkog carstva, i tu funkciju obavlja naravnik 19 godina, dakle sve do 1890. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "proglasenje-nemackog-carstva-1871",
+      "title": {
+        "sr": "Proglašenje Nemačkog carstva u Versaju",
+        "en": "Proclamation of the German Empire at Versailles"
+      },
+      "year": 1871,
+      "yearEnd": null,
+      "placeId": "versaj",
+      "episodeId": "143",
+      "timestamp": "160:15",
+      "type": "founding",
+      "actors": [
+        "Otto von Bismarck",
+        "Vilhelm I"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "18. januara 1871. godine, u dvorani ogledala u Versaju, u srcu bivše francuske kraljevske vlasti, proglašeno je Nemačko carstvo, čime se ostvaruje Bizmarkova politika ujedinjenja krvlju i gvožđem.",
+        "en": "On January 18, 1871, in the Hall of Mirrors at Versailles, at the heart of the former French royal power, the German Empire was proclaimed, fulfilling Bismarck's policy of unification through blood and iron."
+      },
+      "quote": "dakle 18. januara 1871. godine Nemačko carstvo je proglašeno u srcu bivše kraljevske vlasti francuske, dakle u Versaillesu, dvorani ogledala",
+      "confidence": "high"
+    },
+    {
+      "id": "vuk-brankovic-rodjenje-ohrid-1345",
+      "title": {
+        "sr": "Rođenje Vuka Brankovića u Ohridu",
+        "en": "Birth of Vuk Branković in Ohrid"
+      },
+      "year": 1345,
+      "yearEnd": null,
+      "placeId": "ohrid",
+      "episodeId": "144",
+      "timestamp": "21:53",
+      "type": "birth",
+      "actors": [
+        "Vuk Branković"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Pretpostavlja se da je Vuk Branković rođen u Ohridu oko 1345. godine.",
+        "en": "Vuk Branković is presumed to have been born in Ohrid around 1345."
+      },
+      "quote": "rekli smo, predpostavlja se rođenje u Okredu, oko 1345. godine.",
+      "confidence": "medium"
+    },
+    {
+      "id": "bitka-marica-1371",
+      "title": {
+        "sr": "Bitka na Marici",
+        "en": "Battle of Maritsa"
+      },
+      "year": 1371,
+      "yearEnd": null,
+      "placeId": "reka-marica",
+      "episodeId": "144",
+      "timestamp": "30:25",
+      "type": "battle",
+      "actors": [
+        "Vukašin Mrnjavčević",
+        "Jovan Uglješa",
+        "Osmanlije"
+      ],
+      "region": "Balkansko poluostrvo",
+      "description": {
+        "sr": "Mrnjavčevići, kralj Vukašin i despot Uglješa, poraženi su od Osmanlija na reci Marici 1371. godine, čime nestaje njihova moć i otvara se prostor za uspon Vuka Brankovića.",
+        "en": "The Mrnjavčević brothers, King Vukašin and Despot Uglješa, were defeated by the Ottomans at the Maritsa river in 1371, opening the way for Vuk Branković's rise."
+      },
+      "quote": "Jer sad dolazimo do fatalne 1371. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "opsada-uzica-1373",
+      "title": {
+        "sr": "Opsada Užica i poraz Nikole Altomanovića",
+        "en": "Siege of Užice and defeat of Nikola Altomanović"
+      },
+      "year": 1373,
+      "yearEnd": null,
+      "placeId": "uzice",
+      "episodeId": "144",
+      "timestamp": "35:15",
+      "type": "siege",
+      "actors": [
+        "Knez Lazar",
+        "Vuk Branković",
+        "Ban Tvrtko",
+        "Nikola Altomanović"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Ujedinjene vojske kneza Lazara, Vuka Brankovića i bana Tvrtka pobedile su Nikolu Altomanovića i osvojile njegov prestoni grad Užice 1373. godine; Nikola je nakon toga zaslepljen.",
+        "en": "The combined armies of Prince Lazar, Vuk Branković and Ban Tvrtko defeated Nikola Altomanović and captured his capital Užice in 1373; Nikola was subsequently blinded."
+      },
+      "quote": "Nakon što su ga 1373. godine zajedničke vojske, bana tvrtka, kneza Lazara i Vuka Brankovića pobedile, oslepele u gradu Užicu",
+      "confidence": "high"
+    },
+    {
+      "id": "vuk-brankovic-osvaja-skoplje-1377",
+      "title": {
+        "sr": "Vuk Branković osvaja Skoplje",
+        "en": "Vuk Branković conquers Skopje"
+      },
+      "year": 1377,
+      "yearEnd": null,
+      "placeId": "skoplje",
+      "episodeId": "144",
+      "timestamp": "35:47",
+      "type": "conquest",
+      "actors": [
+        "Vuk Branković"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Vuk Branković osvaja carski grad Skoplje sredinom 1370-ih godina, verovatno 1377, značajno proširujući svoju teritoriju.",
+        "en": "Vuk Branković conquered the imperial city of Skopje in the mid-1370s, likely 1377, significantly expanding his territory."
+      },
+      "quote": "mislim da je 77. godina kada je osvojio Skoplje",
+      "confidence": "medium"
+    },
+    {
+      "id": "vuk-brankovic-osvaja-prizren-1378",
+      "title": {
+        "sr": "Vuk Branković osvaja Prizren od Balšića",
+        "en": "Vuk Branković takes Prizren from the Balšići"
+      },
+      "year": 1378,
+      "yearEnd": null,
+      "placeId": "prizren",
+      "episodeId": "144",
+      "timestamp": "36:04",
+      "type": "conquest",
+      "actors": [
+        "Vuk Branković",
+        "Balšići"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Vuk Branković preotima carski grad Prizren od porodice Balšić 1378. godine.",
+        "en": "Vuk Branković took the imperial city of Prizren from the Balšić family in 1378."
+      },
+      "quote": "ono što je isto značajno jeste da je recimo od Balšića 1378. godine",
+      "confidence": "medium"
+    },
+    {
+      "id": "boj-na-kosovu-1389",
+      "title": {
+        "sr": "Boj na Kosovu",
+        "en": "Battle of Kosovo"
+      },
+      "year": 1389,
+      "yearEnd": null,
+      "placeId": "kosovo-polje",
+      "episodeId": "144",
+      "timestamp": "46:24",
+      "type": "battle",
+      "actors": [
+        "Vuk Branković",
+        "Knez Lazar",
+        "Sultan Murat"
+      ],
+      "region": "Balkansko poluostrvo",
+      "description": {
+        "sr": "Boj na Kosovu 1389. godine, u kojem Vuk Branković komanduje desnim krilom srpske vojske; prema izvorima, uspešno savladava levo krilo osmanske vojske.",
+        "en": "The Battle of Kosovo in 1389, in which Vuk Branković commanded the right wing of the Serbian army and, per the sources, defeated the Ottoman left wing."
+      },
+      "quote": "Sam boj na Kosovu, rekli smo, imamo posebnu temu, dakle, možete pogledati.",
+      "confidence": "high"
+    },
+    {
+      "id": "boj-na-rovinama-1395",
+      "title": {
+        "sr": "Boj na Rovinama",
+        "en": "Battle of Rovine"
+      },
+      "year": 1395,
+      "yearEnd": null,
+      "placeId": "rovine",
+      "episodeId": "144",
+      "timestamp": "75:01",
+      "type": "battle",
+      "actors": [
+        "Mirča Vlaški",
+        "Stefan Lazarević",
+        "Marko Mrnjavčević",
+        "Konstantin Dejanović"
+      ],
+      "region": "Balkansko poluostrvo",
+      "description": {
+        "sr": "U boju na Rovinama 1395. godine, u okviru osmanskog pohoda na vlaškog vojvodu Mirču, ginu Marko Mrnjavčević i Konstantin Dejanović. Vuk Branković se ne odaziva pozivu na pohod.",
+        "en": "At the Battle of Rovine in 1395, part of an Ottoman campaign against the Wallachian voivode Mircea, Marko Mrnjavčević and Konstantin Dejanović were killed. Vuk Branković did not answer the call to join the campaign."
+      },
+      "quote": "U okviru tog pohoda odigraće se čujeni boj na rovinama narodne godine, 1395.",
+      "confidence": "high"
+    },
+    {
+      "id": "boj-kod-nikopolja-1396",
+      "title": {
+        "sr": "Boj kod Nikopolja",
+        "en": "Battle of Nicopolis"
+      },
+      "year": 1396,
+      "yearEnd": null,
+      "placeId": "nikopolj",
+      "episodeId": "144",
+      "timestamp": "75:57",
+      "type": "battle",
+      "actors": [
+        "Stefan Lazarević",
+        "Osmanlije",
+        "Hrišćanska koalicija"
+      ],
+      "region": "Balkansko poluostrvo",
+      "description": {
+        "sr": "U bici kod Nikopolja 1396. godine osmanska vojska ostvaruje veliku pobedu nad hrišćanskom koalicijom; Stefan Lazarević se borio na osmanskoj strani, dok Vuk Branković ne učestvuje.",
+        "en": "At the Battle of Nicopolis in 1396 the Ottoman army won a great victory over the Christian coalition; Stefan Lazarević fought on the Ottoman side, while Vuk Branković did not take part."
+      },
+      "quote": "Pohod hrišćana do njega dolazi sledeće godine. I imamo čudanu bitku kod Nikopolja.",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-pristine-1396",
+      "title": {
+        "sr": "Turci osvajaju Prištinu",
+        "en": "Ottomans capture Pristina"
+      },
+      "year": 1396,
+      "yearEnd": null,
+      "placeId": "pristina",
+      "episodeId": "144",
+      "timestamp": "76:44",
+      "type": "conquest",
+      "actors": [
+        "Osmanlije",
+        "Vuk Branković"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Turci upadaju i osvajaju Prištinu 1396. godine, ostavljajući Vuka Brankovića bez preostalih teritorija.",
+        "en": "The Ottomans invaded and captured Pristina in 1396, leaving Vuk Branković without his remaining territories."
+      },
+      "quote": "teiste 1396. godine, Turci upadaju i osvajaju Prištinu.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-vuka-brankovica-1397",
+      "title": {
+        "sr": "Smrt Vuka Brankovića u turskom zarobljeništvu",
+        "en": "Death of Vuk Branković in Ottoman captivity"
+      },
+      "year": 1397,
+      "yearEnd": null,
+      "placeId": "pristina",
+      "episodeId": "144",
+      "timestamp": "78:42",
+      "type": "death",
+      "actors": [
+        "Vuk Branković"
+      ],
+      "region": "Srpsko carstvo",
+      "description": {
+        "sr": "Vuk Branković umire u turskom zarobljeništvu u oktobru 1397. godine, nakon što su Turci zarobili njega i osvojili njegove preostale teritorije. Tačno mesto zarobljeništva i smrti nije poznato.",
+        "en": "Vuk Branković died in Ottoman captivity in October 1397, after the Ottomans captured him and seized his remaining territories. The exact place of his captivity and death is unknown."
+      },
+      "quote": "Gde je? Oktobra 1397. godine preminuo.",
+      "confidence": "low"
+    }
+  ]
+}
