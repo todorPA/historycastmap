@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { clampRange } from '../lib/time';
 
@@ -20,11 +20,30 @@ interface TimeContextValue {
 
 const TimeContext = createContext<TimeContextValue | null>(null);
 
-export function TimeProvider({ bounds, children }: { bounds: YearRange; children: ReactNode }) {
-  const [range, setRangeState] = useState<YearRange>(bounds);
+export function TimeProvider({
+  bounds,
+  initialRange,
+  children,
+}: {
+  bounds: YearRange;
+  /** From a shared URL, if it carried a period. Clamped to the dataset's own extent. */
+  initialRange?: YearRange | null;
+  children: ReactNode;
+}) {
+  const [range, setRangeState] = useState<YearRange>(() => {
+    if (!initialRange) return bounds;
+    return clampRange(
+      Math.max(initialRange.from, bounds.from),
+      Math.min(initialRange.to, bounds.to),
+    );
+  });
 
-  // When the dataset changes (sample → full), snap back to its full extent.
+  // When the dataset changes (sample → full), snap back to its full extent. Skips the
+  // first run: on mount the range may have come from a shared URL, which this would erase.
+  const knownBounds = useRef(bounds);
   useEffect(() => {
+    if (knownBounds.current.from === bounds.from && knownBounds.current.to === bounds.to) return;
+    knownBounds.current = bounds;
     setRangeState(bounds);
   }, [bounds.from, bounds.to]);
 

@@ -1,4 +1,6 @@
+import { useMemo } from 'react';
 import { useGeoData } from './lib/data';
+import { parseUrlState } from './lib/urlState';
 import { DataProvider } from './state/DataContext';
 import { TimeProvider } from './state/TimeContext';
 import { FilterProvider, useFilters } from './state/FilterContext';
@@ -6,6 +8,7 @@ import { t } from './lib/i18n';
 import Sidebar from './components/Sidebar';
 import MapView from './components/MapView';
 import TimelineView from './components/TimelineView';
+import UrlSync from './components/UrlSync';
 
 function Shell() {
   return (
@@ -20,9 +23,9 @@ function Shell() {
 }
 
 /** Status screens need the language toggle's default, so they live inside FilterProvider. */
-function Loader() {
+function Loader({ urlState }: { urlState: ReturnType<typeof parseUrlState> }) {
   const { lang } = useFilters();
-  const { loaded, error, reload } = useGeoData();
+  const { loaded, error, reload } = useGeoData(urlState.dataset);
 
   if (error) {
     return (
@@ -38,9 +41,15 @@ function Loader() {
 
   if (!loaded) return <div className="status">{t(lang, 'loading')}</div>;
 
+  const initialRange =
+    urlState.from != null && urlState.to != null
+      ? { from: urlState.from, to: urlState.to }
+      : null;
+
   return (
     <DataProvider value={loaded}>
-      <TimeProvider bounds={loaded.bounds}>
+      <TimeProvider bounds={loaded.bounds} initialRange={initialRange}>
+        <UrlSync dataset={urlState.dataset} />
         <Shell />
       </TimeProvider>
     </DataProvider>
@@ -48,9 +57,18 @@ function Loader() {
 }
 
 export default function App() {
+  // Read once at startup: afterwards the app owns the state and writes it back to the URL.
+  const urlState = useMemo(() => parseUrlState(window.location.search), []);
+
   return (
-    <FilterProvider>
-      <Loader />
+    <FilterProvider
+      initial={{
+        lang: urlState.lang,
+        episodeId: urlState.episodeId,
+        eventId: urlState.eventId,
+      }}
+    >
+      <Loader urlState={urlState} />
     </FilterProvider>
   );
 }
