@@ -36,6 +36,8 @@ const dict = {
     searchEpisodes: 'Pretraži epizode…',
     noMatches: 'Nema rezultata',
     resizeTimeline: 'Promeni visinu vremenske ose',
+    copyLink: 'Kopiraj link na ovaj prikaz',
+    linkCopied: 'Link kopiran ✓',
   },
   en: {
     appTitle: 'HistoryCast Map',
@@ -71,6 +73,8 @@ const dict = {
     searchEpisodes: 'Search episodes…',
     noMatches: 'No matches',
     resizeTimeline: 'Resize the timeline',
+    copyLink: 'Copy link to this view',
+    linkCopied: 'Link copied ✓',
   },
 } as const;
 

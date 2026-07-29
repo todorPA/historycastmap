@@ -5,22 +5,49 @@ import 'vis-timeline/styles/vis-timeline-graph2d.css';
 import { useData } from '../state/DataContext';
 import { useTime } from '../state/TimeContext';
 import { useFilters } from '../state/FilterContext';
+import type { TimelineSize } from '../state/FilterContext';
 import { pick, t } from '../lib/i18n';
 import { dateToYear, formatYear, formatYearRange, yearToDate } from '../lib/time';
 import type { Lang } from '../types/events';
 
 const RANGE_DEBOUNCE_MS = 150;
 
+/** Share of the viewport the timeline may occupy at each size step. */
+const SIZE_FRACTION: Record<TimelineSize, number> = { s: 0.24, m: 0.45, l: 0.7 };
+const MIN_PANEL_PX = 150;
+
+/**
+ * vis gets a cap in pixels, never '100%'. A percentage forces vis to measure its parent at
+ * construction time — and if that height isn't settled yet it lays out at zero and draws
+ * nothing (the blank-on-first-load bug). Pixels also let the panel size itself to its
+ * content, so there's no empty band under the last group.
+ */
+function maxHeightPx(size: TimelineSize, viewportHeight: number): number {
+  return Math.max(MIN_PANEL_PX, Math.round(viewportHeight * SIZE_FRACTION[size]));
+}
+
 /**
  * vis-timeline labels dates with moment's zero-padded year ("0500", "-0600"). We want
  * plain historical years: "500", "600. p.n.e." / "600 BC". Callbacks get a moment-like
  * value, so accept either that or a Date.
+ *
+ * Must never throw: this runs inside vis's render loop, and an exception there leaves the
+ * whole timeline blank.
  */
 function axisLabel(value: unknown, lang: Lang): string {
-  const maybeMoment = value as { toDate?: () => Date };
-  const date =
-    typeof maybeMoment?.toDate === 'function' ? maybeMoment.toDate() : new Date(value as string);
-  return formatYear(dateToYear(date), lang);
+  try {
+    const maybeMoment = value as { toDate?: () => Date };
+    const date =
+      typeof maybeMoment?.toDate === 'function'
+        ? maybeMoment.toDate()
+        : value instanceof Date
+          ? value
+          : new Date(String(value));
+    const year = dateToYear(date);
+    return Number.isFinite(year) ? formatYear(year, lang) : '';
+  } catch {
+    return '';
+  }
 }
 
 interface Item {
@@ -81,9 +108,24 @@ export default function TimelineView() {
     return regions.map((r) => ({ id: r, content: r }));
   }, [items]);
 
+  // Latest values readable from the create-once effect without re-creating the timeline.
+  const latestItems = useRef(items);
+  const latestGroups = useRef(groups);
+  latestItems.current = items;
+  latestGroups.current = groups;
+
   // Create the timeline once.
   useEffect(() => {
     if (!containerRef.current) return;
+
+    // Populate BEFORE constructing. vis measures its content at construction time, and
+    // with empty DataSets it lays out at zero height — items arriving afterwards update
+    // the items but not the panel, so the timeline stayed blank until something forced a
+    // redraw (a click, a resize). The items effect below keeps these in sync afterwards.
+    groupsRef.current.clear();
+    groupsRef.current.add(latestGroups.current);
+    itemsRef.current.clear();
+    itemsRef.current.add(latestItems.current);
 
     const options: TimelineOptions = {
       min: yearToDate(bounds.from - 50),
@@ -92,8 +134,9 @@ export default function TimelineView() {
       end: yearToDate(range.to),
       zoomMin: 1000 * 60 * 60 * 24 * 365 * 5, // ~5 years
       stack: true,
-      height: '100%',
-      // More region groups than fit in the panel: scroll them instead of clipping.
+      // Pixel cap, not '100%' — see maxHeightPx above. vis then scrolls internally when the
+      // region groups don't fit.
+      maxHeight: maxHeightPx(size, window.innerHeight),
       verticalScroll: true,
       margin: { item: 6 },
       orientation: { axis: 'top' },
@@ -103,7 +146,6 @@ export default function TimelineView() {
       tooltip: { followMouse: true },
       format: {
         minorLabels: (date: unknown) => axisLabel(date, lang),
-        majorLabels: () => '',
       },
     };
 
@@ -127,7 +169,11 @@ export default function TimelineView() {
       setSelectedEventId(props.items[0] ?? null);
     });
 
+    // First paint may land before the grid has its final height; redraw once it has.
+    const initialRedraw = window.requestAnimationFrame(() => timeline.redraw());
+
     return () => {
+      window.cancelAnimationFrame(initialRedraw);
       window.clearTimeout(debounceRef.current);
       timeline.destroy();
       timelineRef.current = null;
@@ -172,15 +218,32 @@ export default function TimelineView() {
     timelineRef.current?.setOptions({
       format: {
         minorLabels: (date: unknown) => axisLabel(date, lang),
-        majorLabels: () => '',
       },
     });
   }, [lang]);
 
-  // The panel grew or shrank — vis needs to recompute its canvas.
+  // The panel cap depends on the size step and the viewport, so recompute on both.
   useEffect(() => {
-    timelineRef.current?.redraw();
+    const apply = () =>
+      timelineRef.current?.setOptions({ maxHeight: maxHeightPx(size, window.innerHeight) });
+    apply();
+    window.addEventListener('resize', apply);
+    return () => window.removeEventListener('resize', apply);
   }, [size]);
+
+  /**
+   * vis measures its container once, on construction. In a CSS grid the final height may
+   * not be settled yet, so it can come up with zero height and draw nothing until
+   * something forces a redraw. Observing the container fixes the empty-on-first-load case
+   * and any later layout change (window resize, sidebar drawer on mobile).
+   */
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const observer = new ResizeObserver(() => timelineRef.current?.redraw());
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // Keep timeline selection in sync with map/sidebar selection.
   useEffect(() => {

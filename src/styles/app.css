@@ -47,7 +47,7 @@ body {
 
 .app__main {
   display: grid;
-  /* Timeline sets its own height (see .timeline--s/m/l) so it can be raised over the map. */
+  /* Timeline sizes itself to its content, capped in px by vis (see maxHeightPx). */
   grid-template-rows: 1fr auto;
   min-width: 0;
   min-height: 0;
@@ -536,19 +536,8 @@ body {
   min-height: 0;
   border-top: 1px solid var(--line);
   background: var(--sidebar);
-  transition: height 160ms ease;
-}
-
-.timeline--s {
-  height: 220px;
-}
-
-.timeline--m {
-  height: 45vh;
-}
-
-.timeline--l {
-  height: 70vh;
+  /* No fixed height: the panel is as tall as vis's content, which vis itself caps in pixels
+     (see maxHeightPx). Whatever the timeline doesn't need goes to the map. */
 }
 
 .timeline__resize {
@@ -591,8 +580,8 @@ body {
 }
 
 .timeline__canvas {
-  flex: 1;
-  min-height: 0;
+  /* vis sets its own height (capped in px) and scrolls its groups internally. */
+  overflow: hidden;
 }
 
 /* vis-timeline on a dark panel */
@@ -661,10 +650,6 @@ body {
     border-right: 0;
     border-bottom: 1px solid var(--line);
     max-height: 45vh;
-  }
-
-  .timeline--s {
-    height: 170px;
   }
 
   .legend {
