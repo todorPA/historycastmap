@@ -1,26 +1,61 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { DataSet, Timeline } from 'vis-timeline/standalone';
 import type { TimelineOptions } from 'vis-timeline/standalone';
 import 'vis-timeline/styles/vis-timeline-graph2d.css';
 import { useData } from '../state/DataContext';
 import { useTime } from '../state/TimeContext';
 import { useFilters } from '../state/FilterContext';
+import type { TimelineSize } from '../state/FilterContext';
 import { pick, t } from '../lib/i18n';
 import { dateToYear, formatYear, formatYearRange, yearToDate } from '../lib/time';
 import type { Lang } from '../types/events';
 
 const RANGE_DEBOUNCE_MS = 150;
 
+/** Share of the viewport the timeline may occupy at each size step. */
+const SIZE_FRACTION: Record<TimelineSize, number> = { s: 0.24, m: 0.45, l: 0.7 };
+const MIN_PANEL_PX = 150;
+
+/**
+ * Vertical breathing room per step. Without this, raising the size does nothing visible when
+ * a single episode is selected: the panel is as tall as its content, and a handful of region
+ * groups never reaches the cap. Growing the item margin makes "bigger" mean "more legible",
+ * which is what the control is for.
+ */
+const SIZE_MARGIN: Record<TimelineSize, number> = { s: 6, m: 16, l: 28 };
+
+/**
+ * vis gets a cap in pixels, never '100%'. A percentage forces vis to measure its parent at
+ * construction time — and if that height isn't settled yet it lays out at zero and draws
+ * nothing (the blank-on-first-load bug). Pixels also let the panel size itself to its
+ * content, so there's no empty band under the last group.
+ */
+function maxHeightPx(size: TimelineSize, viewportHeight: number): number {
+  return Math.max(MIN_PANEL_PX, Math.round(viewportHeight * SIZE_FRACTION[size]));
+}
+
 /**
  * vis-timeline labels dates with moment's zero-padded year ("0500", "-0600"). We want
  * plain historical years: "500", "600. p.n.e." / "600 BC". Callbacks get a moment-like
  * value, so accept either that or a Date.
+ *
+ * Must never throw: this runs inside vis's render loop, and an exception there leaves the
+ * whole timeline blank.
  */
 function axisLabel(value: unknown, lang: Lang): string {
-  const maybeMoment = value as { toDate?: () => Date };
-  const date =
-    typeof maybeMoment?.toDate === 'function' ? maybeMoment.toDate() : new Date(value as string);
-  return formatYear(dateToYear(date), lang);
+  try {
+    const maybeMoment = value as { toDate?: () => Date };
+    const date =
+      typeof maybeMoment?.toDate === 'function'
+        ? maybeMoment.toDate()
+        : value instanceof Date
+          ? value
+          : new Date(String(value));
+    const year = dateToYear(date);
+    return Number.isFinite(year) ? formatYear(year, lang) : '';
+  } catch {
+    return '';
+  }
 }
 
 interface Item {
@@ -81,9 +116,24 @@ export default function TimelineView() {
     return regions.map((r) => ({ id: r, content: r }));
   }, [items]);
 
+  // Latest values readable from the create-once effect without re-creating the timeline.
+  const latestItems = useRef(items);
+  const latestGroups = useRef(groups);
+  latestItems.current = items;
+  latestGroups.current = groups;
+
   // Create the timeline once.
   useEffect(() => {
     if (!containerRef.current) return;
+
+    // Populate BEFORE constructing. vis measures its content at construction time, and
+    // with empty DataSets it lays out at zero height — items arriving afterwards update
+    // the items but not the panel, so the timeline stayed blank until something forced a
+    // redraw (a click, a resize). The items effect below keeps these in sync afterwards.
+    groupsRef.current.clear();
+    groupsRef.current.add(latestGroups.current);
+    itemsRef.current.clear();
+    itemsRef.current.add(latestItems.current);
 
     const options: TimelineOptions = {
       min: yearToDate(bounds.from - 50),
@@ -92,10 +142,11 @@ export default function TimelineView() {
       end: yearToDate(range.to),
       zoomMin: 1000 * 60 * 60 * 24 * 365 * 5, // ~5 years
       stack: true,
-      height: '100%',
-      // More region groups than fit in the panel: scroll them instead of clipping.
+      // Pixel cap, not '100%' — see maxHeightPx above. vis then scrolls internally when the
+      // region groups don't fit.
+      maxHeight: maxHeightPx(size, window.innerHeight),
       verticalScroll: true,
-      margin: { item: 6 },
+      margin: { item: SIZE_MARGIN[size] },
       orientation: { axis: 'top' },
       selectable: true,
       multiselect: false,
@@ -103,7 +154,6 @@ export default function TimelineView() {
       tooltip: { followMouse: true },
       format: {
         minorLabels: (date: unknown) => axisLabel(date, lang),
-        majorLabels: () => '',
       },
     };
 
@@ -127,7 +177,13 @@ export default function TimelineView() {
       setSelectedEventId(props.items[0] ?? null);
     });
 
+    // First paint may land before the grid has its final height; redraw once it has.
+    const initialRedraw = window.requestAnimationFrame(() => {
+      if (containerRef.current?.isConnected) timeline.redraw();
+    });
+
     return () => {
+      window.cancelAnimationFrame(initialRedraw);
       window.clearTimeout(debounceRef.current);
       timeline.destroy();
       timelineRef.current = null;
@@ -172,15 +228,55 @@ export default function TimelineView() {
     timelineRef.current?.setOptions({
       format: {
         minorLabels: (date: unknown) => axisLabel(date, lang),
-        majorLabels: () => '',
       },
     });
   }, [lang]);
 
-  // The panel grew or shrank — vis needs to recompute its canvas.
+  /**
+   * Size step drives three things at once, and it has to, to feel like "enlarge":
+   *  - 's' caps the height and lets the panel shrink to its content (no empty band).
+   *  - 'm'/'l' set an explicit pixel height, so the panel visibly fills that space even when
+   *    a single episode has only a few region groups; vis scrolls internally past it.
+   *  - the item margin grows, so rows get more breathing room rather than just more space.
+   * Pixels, never '%': a percentage makes vis measure its parent and it lays out at zero
+   * height before the grid settles.
+   */
   useEffect(() => {
-    timelineRef.current?.redraw();
+    const apply = () => {
+      const px = maxHeightPx(size, window.innerHeight);
+      // vis accepts null to clear height/maxHeight, but its types declare only string|number,
+      // so this cast is about the typings, not the runtime contract.
+      timelineRef.current?.setOptions({
+        height: (size === 's' ? null : px) as unknown as number,
+        maxHeight: (size === 's' ? px : null) as unknown as number,
+        margin: { item: SIZE_MARGIN[size] },
+      });
+    };
+    apply();
+    window.addEventListener('resize', apply);
+    return () => window.removeEventListener('resize', apply);
   }, [size]);
+
+  /**
+   * vis reads DOM geometry during redraw, so calling it while the container is detached
+   * throws ("Cannot read properties of null (reading 'left')"). Both callers below can fire
+   * after unmount — a queued frame, or a ResizeObserver notification.
+   */
+  const safeRedraw = useCallback(() => {
+    const timeline = timelineRef.current;
+    if (!timeline || !containerRef.current?.isConnected) return;
+    timeline.redraw();
+  }, []);
+
+  // Keeps the timeline correct across layout changes: window resizes, the sidebar drawer on
+  // mobile, and the panel's own size steps.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const observer = new ResizeObserver(safeRedraw);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [safeRedraw]);
 
   // Keep timeline selection in sync with map/sidebar selection.
   useEffect(() => {

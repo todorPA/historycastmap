@@ -1,0 +1,207 @@
+{
+  "places": [
+    {
+      "id": "beograd",
+      "name": {
+        "sr": "Beograd",
+        "en": "Belgrade"
+      },
+      "aliases": [
+        "Beogradu"
+      ],
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "kind": "city"
+    },
+    {
+      "id": "marseille",
+      "name": {
+        "sr": "Marsej",
+        "en": "Marseille"
+      },
+      "aliases": [
+        "Marseille",
+        "Marsejom"
+      ],
+      "lat": 43.2965,
+      "lng": 5.3698,
+      "kind": "city"
+    },
+    {
+      "id": "london",
+      "name": {
+        "sr": "London",
+        "en": "London"
+      },
+      "aliases": [
+        "Londonu",
+        "Londona"
+      ],
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "kind": "city"
+    },
+    {
+      "id": "kairo",
+      "name": {
+        "sr": "Kairo",
+        "en": "Cairo"
+      },
+      "aliases": [
+        "Kajru"
+      ],
+      "lat": 30.0444,
+      "lng": 31.2357,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "atentat-aleksandar-marseille-1934",
+      "title": {
+        "sr": "Atentat na kralja Aleksandra u Marseju",
+        "en": "Assassination of King Alexander in Marseille"
+      },
+      "year": 1934,
+      "yearEnd": null,
+      "placeId": "marseille",
+      "episodeId": "120",
+      "timestamp": "59:29",
+      "type": "death",
+      "actors": [
+        "Kralj Aleksandar I",
+        "Kralj Petar II"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1934. godine, u atentatu u Marseju, ubijen je kralj Aleksandar I, čime jedanaestogodišnji Petar II postaje maloletni kralj; postojala je ideja Italije i Nemačke da će se Jugoslavija urušiti, do čega nije došlo.",
+        "en": "In 1934, in the Marseille assassination, King Alexander I was killed, making the eleven-year-old Peter II a minor king; Italy and Germany had believed Yugoslavia would collapse, which did not happen."
+      },
+      "quote": "Recimo, kad se atentat dogodio, 1934. godine, postojala je ideja Italije i Nemačke da će se prosto Jugoslavia survati",
+      "confidence": "high"
+    },
+    {
+      "id": "prevrat-27-mart-1941",
+      "title": {
+        "sr": "Prevrat 27. marta i preuzimanje punoletstva kralja Petra",
+        "en": "Coup of March 27 and King Peter's assumption of majority"
+      },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "120",
+      "timestamp": "76:37",
+      "type": "other",
+      "actors": [
+        "Kralj Petar II",
+        "Dušan Simović",
+        "Knez Pavle"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Sredinom aprila 1941. godine, u kontekstu vojnog prevrata od 27. marta i pitanja pristupanja Trojnom paktu, mladi kralj Petar II preuzima punu vlast od namesnika kneza Pavla.",
+        "en": "In mid-April 1941, in the context of the March 27 coup and the question of joining the Tripartite Pact, the young King Peter II assumed full power from Regent Prince Paul."
+      },
+      "quote": "i sredinom aprila 1941. godine ... gde niti u memoarima kralja Petar ima patrijaka Gavrila",
+      "confidence": "medium"
+    },
+    {
+      "id": "kralj-petar-beg-kairo-london-1941",
+      "title": {
+        "sr": "Kralj Petar beži preko Kaira u London",
+        "en": "King Peter flees via Cairo to London"
+      },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "kairo",
+      "episodeId": "120",
+      "timestamp": "58:22",
+      "type": "other",
+      "actors": [
+        "Kralj Petar II",
+        "Dušan Simović",
+        "Vlada Kraljevine Jugoslavije"
+      ],
+      "region": "Bliski istok",
+      "description": {
+        "sr": "Nakon Aprilskog rata 1941. godine, kralj Petar i vlada beže preko Kaira u London, gde ostaju u egzilu, ispunjeni prvo nadom, a zatim sve većom neizvesnošću oko sudbine monarhije.",
+        "en": "After the April War of 1941, King Peter and the government fled via Cairo to London, where they remained in exile, initially filled with hope and later with growing uncertainty about the monarchy's fate."
+      },
+      "quote": "zato što se to pitanje otvara i u Kajru, kada su oni pobegli, odnosno otišli, 1941. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "vest-o-ustanku-london-1941",
+      "title": {
+        "sr": "Vlada u Londonu prima vest o ustanku u Jugoslaviji",
+        "en": "The government in London receives news of the uprising in Yugoslavia"
+      },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "london",
+      "episodeId": "120",
+      "timestamp": "123:28",
+      "type": "uprising",
+      "actors": [
+        "Kralj Petar II",
+        "Dušan Simović",
+        "Draža Mihajlović"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Kraljevska vlada u Londonu čula je za ustanak u Jugoslaviji iz maja 1941. godine, a u septembru uspostavlja preko Britanaca prvi kontakt sa pokretom Draže Mihajlovića, što ispunjava nadom period do novembra 1941, kada sarađuju i sa komunistima.",
+        "en": "The royal government in London heard of the uprising in Yugoslavia from May 1941, and in September established first contact through the British with Draža Mihajlović's movement, filling the period until November 1941 — when they also cooperated with the communists — with hope."
+      },
+      "quote": "oni su čuli naravno za ustanak u maju 1941. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "proglasenje-republike-1945",
+      "title": {
+        "sr": "Ustavotvorna skupština proglašava Republiku",
+        "en": "The Constituent Assembly proclaims the Republic"
+      },
+      "year": 1945,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "120",
+      "timestamp": "195:43",
+      "type": "founding",
+      "actors": [
+        "Ustavotvorna skupština",
+        "Josip Broz Tito"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "29. novembra 1945. godine Ustavotvorna skupština, bez referenduma, proglašava Republiku, čime se okončava vladavina kralja Petra II, čije 'fantazije' Stalin, prema navodima, otvoreno odbacuje.",
+        "en": "On November 29, 1945, the Constituent Assembly, without a referendum, proclaimed the Republic, ending King Peter II's reign, whose 'fantasies' Stalin reportedly openly dismissed."
+      },
+      "quote": "ti imaš Ustavotvornu skupštinu koja 29. novembra 1945. godine proglašava Republiku.",
+      "confidence": "high"
+    },
+    {
+      "id": "ukidanje-drzavljanstva-kralju-petru-1946",
+      "title": {
+        "sr": "Kralju Petru ukinuto državljanstvo",
+        "en": "King Peter stripped of citizenship"
+      },
+      "year": 1946,
+      "yearEnd": null,
+      "placeId": "london",
+      "episodeId": "120",
+      "timestamp": "195:56",
+      "type": "other",
+      "actors": [
+        "Kralj Petar II",
+        "Princ Tomislav"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1946. godine nova jugoslovenska vlast ukida državljanstvo kralju Petru i princu Tomislavu, dovršavajući pravni raskid sa monarhijom.",
+        "en": "In 1946, the new Yugoslav authorities revoked the citizenship of King Peter and Prince Tomislav, completing the legal break with the monarchy."
+      },
+      "quote": "Nakon toga, 1946. godine, imamo i ukidanje državljanstva, ne samo kralju Petru, nego i kralju Tomislavu",
+      "confidence": "high"
+    }
+  ]
+}

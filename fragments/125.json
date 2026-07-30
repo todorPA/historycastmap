@@ -1,0 +1,189 @@
+{
+  "places": [
+    {
+      "id": "figueres",
+      "name": {
+        "sr": "Figeres",
+        "en": "Figueres"
+      },
+      "aliases": [
+        "Figera",
+        "Figueresu"
+      ],
+      "lat": 42.2662,
+      "lng": 2.9622,
+      "kind": "city"
+    },
+    {
+      "id": "pariz",
+      "name": {
+        "sr": "Pariz",
+        "en": "Paris"
+      },
+      "aliases": [
+        "Parizu",
+        "Parizom",
+        "Parize"
+      ],
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "kind": "city"
+    },
+    {
+      "id": "new-york",
+      "name": {
+        "sr": "Njujork",
+        "en": "New York"
+      },
+      "aliases": [
+        "Njujorku"
+      ],
+      "lat": 40.7128,
+      "lng": -74.006,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "dali-rodjenje-1904",
+      "title": {
+        "sr": "Rođenje Salvadora Dalija",
+        "en": "Birth of Salvador Dalí"
+      },
+      "year": 1904,
+      "yearEnd": null,
+      "placeId": "figueres",
+      "episodeId": "125",
+      "timestamp": "16:46",
+      "type": "birth",
+      "actors": [
+        "Salvador Dalí"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Salvador Dali je rođen 1904. godine u Figeresu, u Kataloniji, u relativno normalnoj srednjoklasnoj porodici, uprkos kasnijim mitovima o tragičnom detinjstvu.",
+        "en": "Salvador Dalí was born in 1904 in Figueres, Catalonia, into a relatively normal middle-class family, despite later myths of a tragic childhood."
+      },
+      "quote": "to je 1904. kad se on rodio",
+      "confidence": "high"
+    },
+    {
+      "id": "dali-upoznaje-pikasa-1926",
+      "title": {
+        "sr": "Dali prvi put odlazi u Pariz i upoznaje Pikasa",
+        "en": "Dalí makes his first trip to Paris and meets Picasso"
+      },
+      "year": 1926,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "125",
+      "timestamp": "29:55",
+      "type": "other",
+      "actors": [
+        "Salvador Dalí",
+        "Pablo Picasso"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1926. godine Dali odlazi u Pariz i upoznaje Pabla Pikasa, praćen tokom prvog boravka od svoje tetke, mada se u grad definitivno seli tri godine kasnije.",
+        "en": "In 1926, Dalí traveled to Paris and met Pablo Picasso, accompanied during that first visit by his aunt, though he would not permanently move to the city until three years later."
+      },
+      "quote": "26. odlazi i upoznaje Pikasa.",
+      "confidence": "high"
+    },
+    {
+      "id": "dali-seli-pariz-1929",
+      "title": {
+        "sr": "Dali se definitivno seli u Pariz i pridružuje nadrealistima",
+        "en": "Dalí permanently moves to Paris and joins the Surrealists"
+      },
+      "year": 1929,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "125",
+      "timestamp": "38:34",
+      "type": "other",
+      "actors": [
+        "Salvador Dalí",
+        "Nadrealisti"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1929. godine Salvador Dali se definitivno seli u Pariz, gde počinje njegov intenzivan angažman sa nadrealističkim pokretom, nastalim kao neminovan produkt Prvog svetskog rata.",
+        "en": "In 1929, Salvador Dalí permanently moved to Paris, beginning his intense engagement with the Surrealist movement, which had emerged as an inevitable product of the First World War."
+      },
+      "quote": "zastavno seli u Pariz tek 29. [1929.]",
+      "confidence": "high"
+    },
+    {
+      "id": "dali-beg-iz-pariza-1940",
+      "title": {
+        "sr": "Dali beži iz Pariza pred nemačkom okupacijom",
+        "en": "Dalí flees Paris ahead of the German occupation"
+      },
+      "year": 1940,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "125",
+      "timestamp": "84:12",
+      "type": "other",
+      "actors": [
+        "Salvador Dalí"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Kad su Nemci okupirali Pariz, Salvador Dali, koji se plašio za sopstveni život i nije se želeo uplitati u rat, beži iz grada.",
+        "en": "When the Germans occupied Paris, Salvador Dalí, who feared for his life and did not want to become entangled in the war, fled the city."
+      },
+      "quote": "on se plaši rata i neće da ode tamo ... zato beže iz Parize.",
+      "confidence": "medium"
+    },
+    {
+      "id": "dali-izlozba-duchamp-njujork-1960",
+      "title": {
+        "sr": "Dali izlaže na Dišanovoj izložbi u Njujorku",
+        "en": "Dalí exhibits at Duchamp's New York show"
+      },
+      "year": 1960,
+      "yearEnd": null,
+      "placeId": "new-york",
+      "episodeId": "125",
+      "timestamp": "103:49",
+      "type": "other",
+      "actors": [
+        "Salvador Dalí",
+        "Marcel Duchamp"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "1960. godine Salvador Dali je pozvan da izlaže na specifičnoj izložbi koju organizuje Marsel Dišan u Njujorku, gde predstavlja religiozne scene (Madonu i raspeće) u svom karakterističnom stilu.",
+        "en": "In 1960, Salvador Dalí was invited to exhibit at a specific show organized by Marcel Duchamp in New York, presenting religious scenes (a Madonna and a crucifixion) in his characteristic style."
+      },
+      "quote": "Ima jedna specifična izložba iz 1960. koju baš Marcel Duchamp organizuje u Njujorku",
+      "confidence": "high"
+    },
+    {
+      "id": "dali-smrt-1974",
+      "title": {
+        "sr": "Smrt Salvadora Dalija",
+        "en": "Death of Salvador Dalí"
+      },
+      "year": 1974,
+      "yearEnd": null,
+      "placeId": "figueres",
+      "episodeId": "125",
+      "timestamp": "115:03",
+      "type": "death",
+      "actors": [
+        "Salvador Dalí"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Salvador Dali je umro 1974. godine slušajući svoju omiljenu operu, Vagnerovog Tristana i Izoldu.",
+        "en": "Salvador Dalí died in 1974 while listening to his favorite opera, Wagner's Tristan and Isolde."
+      },
+      "quote": "on je zaista umro u 1974. godini slušajući svoju omiljnu operu Vagnerovog Tristana i Izoldu.",
+      "confidence": "high"
+    }
+  ]
+}

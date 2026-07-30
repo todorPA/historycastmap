@@ -1,0 +1,204 @@
+{
+  "places": [
+    {
+      "id": "solun",
+      "name": {
+        "sr": "Solun",
+        "en": "Thessaloniki"
+      },
+      "aliases": [
+        "Solunu"
+      ],
+      "lat": 40.6401,
+      "lng": 22.9444,
+      "kind": "city"
+    },
+    {
+      "id": "galipolje",
+      "name": {
+        "sr": "Galipolje",
+        "en": "Gallipoli"
+      },
+      "aliases": [
+        "Galipolja",
+        "Dardanelje"
+      ],
+      "lat": 40.4131,
+      "lng": 26.6975,
+      "kind": "battle-site"
+    },
+    {
+      "id": "izmir",
+      "name": {
+        "sr": "Izmir",
+        "en": "Smyrna (Izmir)"
+      },
+      "aliases": [
+        "Male Azije",
+        "Smirna"
+      ],
+      "lat": 38.4237,
+      "lng": 27.1428,
+      "kind": "city"
+    },
+    {
+      "id": "ankara",
+      "name": {
+        "sr": "Ankara",
+        "en": "Ankara"
+      },
+      "aliases": [
+        "Ankaru"
+      ],
+      "lat": 39.9334,
+      "lng": 32.8597,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "mustafa-kemal-rodjenje-1881",
+      "title": {
+        "sr": "Rođenje Mustafe Kemala (Ataturka)",
+        "en": "Birth of Mustafa Kemal (Atatürk)"
+      },
+      "year": 1881,
+      "yearEnd": null,
+      "placeId": "solun",
+      "episodeId": "126",
+      "timestamp": "06:46",
+      "type": "birth",
+      "actors": [
+        "Mustafa Kemal Atatürk"
+      ],
+      "region": "Osmansko carstvo",
+      "description": {
+        "sr": "Mustafa Kemal, budući Ataturk, rođen je 1881. godine u Solunu, u porodici državnog službenika i trgovca drvima.",
+        "en": "Mustafa Kemal, the future Atatürk, was born in 1881 in Thessaloniki, into the family of a state official and timber merchant."
+      },
+      "quote": "Mustafa, samo Mustafa, rođen 1881. godine u gradu Solunu.",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-za-galipolje-1915",
+      "title": {
+        "sr": "Bitka za Galipolje",
+        "en": "Battle of Gallipoli"
+      },
+      "year": 1915,
+      "yearEnd": 1916,
+      "placeId": "galipolje",
+      "episodeId": "126",
+      "timestamp": "32:00",
+      "type": "battle",
+      "actors": [
+        "Mustafa Kemal",
+        "Osmansko carstvo",
+        "Britanija",
+        "Francuska",
+        "Australija"
+      ],
+      "region": "Osmansko carstvo",
+      "description": {
+        "sr": "Od 1915. do početka 1916. godine, u bici za Galipolje, saveznička ofanziva (Britanija, Francuska, Australija) na Dardanelje biva odbijena; tu Mustafa Kemal stiče mitski status vojnog vođe koji je odlučno spasao odbranu.",
+        "en": "From 1915 into early 1916, in the Battle of Gallipoli, the Allied offensive (Britain, France, Australia) against the Dardanelles was repelled; there Mustafa Kemal gained mythic status as the military leader who decisively saved the defense."
+      },
+      "quote": "Tu kreće taj mitski status Mustafa, generala već tad, Mustafa Kemala.",
+      "confidence": "high"
+    },
+    {
+      "id": "grcka-ofanziva-izmir-1919",
+      "title": {
+        "sr": "Grčka ofanziva u Maloj Aziji nakon iskrcavanja",
+        "en": "Greek offensive in Anatolia after the landing"
+      },
+      "year": 1919,
+      "yearEnd": null,
+      "placeId": "izmir",
+      "episodeId": "126",
+      "timestamp": "52:04",
+      "type": "battle",
+      "actors": [
+        "Grčka",
+        "Venizelos"
+      ],
+      "region": "Osmansko carstvo",
+      "description": {
+        "sr": "1919. godine, nakon iskrcavanja u Izmiru, Grčka pod Venizelosom pokreće ofanzivu u dubinu Male Azije, ne zadovoljavajući se samo grčkim gradovima na zapadnoj obali.",
+        "en": "In 1919, after landing at Smyrna, Greece under Venizelos launched an offensive deep into Anatolia, not content with just the Greek cities on the western coast."
+      },
+      "quote": "1919. godine, nakon iskrcavanja, oni zapravo u tom trenutku kreću u ofanzivu.",
+      "confidence": "high"
+    },
+    {
+      "id": "turska-pobeda-grcka-katastrofa-1922",
+      "title": {
+        "sr": "Turska pobeda i grčko povlačenje iz Male Azije",
+        "en": "Turkish victory and Greek withdrawal from Anatolia"
+      },
+      "year": 1922,
+      "yearEnd": null,
+      "placeId": "izmir",
+      "episodeId": "126",
+      "timestamp": "57:17",
+      "type": "battle",
+      "actors": [
+        "Mustafa Kemal",
+        "Grčka"
+      ],
+      "region": "Osmansko carstvo",
+      "description": {
+        "sr": "14. septembra 1922. godine Turci pod Mustafom Kemalom ostvaruju odsudnu pobedu, a Grci bivaju proterani sa teritorije Male Azije, u obrnutoj slici katastrofe koju su Turci pretrpeli dve godine ranije.",
+        "en": "On September 14, 1922, the Turks under Mustafa Kemal achieved a decisive victory, and the Greeks were driven out of Anatolia, mirroring in reverse the catastrophe the Turks had suffered two years earlier."
+      },
+      "quote": "14. septembra, nismo rekli godinu, naravno 1922. godine, Turci u ovoj odsudnoj bitci pobeđuju",
+      "confidence": "high"
+    },
+    {
+      "id": "proglasenje-turske-republike-1923",
+      "title": {
+        "sr": "Proglašenje Turske Republike i ukidanje sultanata",
+        "en": "Proclamation of the Turkish Republic and abolition of the sultanate"
+      },
+      "year": 1923,
+      "yearEnd": null,
+      "placeId": "ankara",
+      "episodeId": "126",
+      "timestamp": "70:07",
+      "type": "founding",
+      "actors": [
+        "Mustafa Kemal Atatürk"
+      ],
+      "region": "Osmansko carstvo",
+      "description": {
+        "sr": "29. oktobra 1923. godine osnovana je Turska Republika, sultanat i halifat su ukinuti, a poslednji sultan proteran na Maltu; datum se od tada obeležava kao turski nacionalni praznik, Dan Republike.",
+        "en": "On October 29, 1923, the Turkish Republic was founded, the sultanate and caliphate were abolished, and the last sultan was exiled to Malta; the date has since been celebrated as Turkey's national holiday, Republic Day."
+      },
+      "quote": "29. oktober 1923. godine osnovana Turska Republika. I samim tim ukinut sultana.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-ataturka-1938",
+      "title": {
+        "sr": "Smrt Mustafe Kemala Ataturka",
+        "en": "Death of Mustafa Kemal Atatürk"
+      },
+      "year": 1938,
+      "yearEnd": null,
+      "placeId": "ankara",
+      "episodeId": "126",
+      "timestamp": "115:26",
+      "type": "death",
+      "actors": [
+        "Mustafa Kemal Atatürk"
+      ],
+      "region": "Osmansko carstvo",
+      "description": {
+        "sr": "Mustafa Kemal Ataturk je umro 1938. godine, obavljajući dužnost predsednika Turske revnosno sve do samog kraja svog života.",
+        "en": "Mustafa Kemal Atatürk died in 1938, having diligently carried out his duties as President of Turkey until the very end of his life."
+      },
+      "quote": "on je umro... 1938. godine.",
+      "confidence": "high"
+    }
+  ]
+}

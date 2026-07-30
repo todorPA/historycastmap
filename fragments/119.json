@@ -1,0 +1,229 @@
+{
+  "places": [
+    {
+      "id": "karakorum",
+      "name": {
+        "sr": "Karakorum",
+        "en": "Karakorum"
+      },
+      "aliases": [
+        "Karakorumu"
+      ],
+      "lat": 47.1983,
+      "lng": 102.8437,
+      "kind": "city"
+    },
+    {
+      "id": "kina",
+      "name": {
+        "sr": "Kina",
+        "en": "China"
+      },
+      "aliases": [
+        "Kine",
+        "Kini",
+        "Yangtze-Kiang",
+        "dolina reke Yangtze"
+      ],
+      "lat": 34.0479,
+      "lng": 108.9398,
+      "kind": "region"
+    },
+    {
+      "id": "peking",
+      "name": {
+        "sr": "Pekin (Kambaluk)",
+        "en": "Beijing (Khanbaliq)"
+      },
+      "aliases": [
+        "Kambaluk",
+        "Peking",
+        "Pekingu"
+      ],
+      "lat": 39.9042,
+      "lng": 116.4074,
+      "kind": "city"
+    },
+    {
+      "id": "japan",
+      "name": {
+        "sr": "Japan",
+        "en": "Japan"
+      },
+      "aliases": [
+        "Japana",
+        "Japanu"
+      ],
+      "lat": 36.2048,
+      "lng": 138.2529,
+      "kind": "region"
+    }
+  ],
+  "events": [
+    {
+      "id": "kublaj-kan-rodjenje-1215",
+      "title": {
+        "sr": "Rođenje Kublaj-kana",
+        "en": "Birth of Kublai Khan"
+      },
+      "year": 1215,
+      "yearEnd": null,
+      "placeId": "karakorum",
+      "episodeId": "119",
+      "timestamp": "32:44",
+      "type": "birth",
+      "actors": [
+        "Kublaj-kan",
+        "Džingis-kan"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "Kublaj-kan je rođen 1215. godine; kada je imao 7 godina, deda Džingis-kan ga je posetio i primetio da ne izgleda kao pravi Mongol.",
+        "en": "Kublai Khan was born in 1215; when he was 7, his grandfather Genghis Khan visited him and remarked that he did not look like a proper Mongol."
+      },
+      "quote": "Kublaj Khan je rođen u 1215. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-ogadaj-kana-1241",
+      "title": {
+        "sr": "Smrt Ogadaj-kana prekida evropski pohod",
+        "en": "Death of Ögedei Khan halts the European campaign"
+      },
+      "year": 1241,
+      "yearEnd": null,
+      "placeId": "karakorum",
+      "episodeId": "119",
+      "timestamp": "12:02",
+      "type": "death",
+      "actors": [
+        "Ogadaj-kan"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "1241. godine umire veliki kan Ogadaj, Džingis-kanov naslednik, zbog čega se mongolski pohod na Evropu obustavlja — vojskovođe se moraju vratiti u Karakorum na kurultaj radi izbora novog kana.",
+        "en": "In 1241, Great Khan Ögedei, Genghis Khan's successor, died, causing the Mongol campaign into Europe to be halted — commanders had to return to Karakorum for the kurultai to elect a new khan."
+      },
+      "quote": "zato što 1241. godin umire veliki kan Ogadaj i oni jure na Kurultaj",
+      "confidence": "high"
+    },
+    {
+      "id": "kublaj-odustaje-daljih-osvajanja-1259",
+      "title": {
+        "sr": "Kublaj se, na Čabijin savet, bori za vlast umesto daljih osvajanja",
+        "en": "Kublai, on Chabi's advice, fights for power instead of further conquests"
+      },
+      "year": 1259,
+      "yearEnd": null,
+      "placeId": "karakorum",
+      "episodeId": "119",
+      "timestamp": "78:00",
+      "type": "other",
+      "actors": [
+        "Kublaj-kan",
+        "Čabi"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "1259. godine, na savet supruge Čabi, Kublaj-kan odustaje od daljih vojnih pohoda i usmerava se na borbu za vlast unutar mongolskog carstva.",
+        "en": "In 1259, on the advice of his wife Chabi, Kublai Khan abandoned further military campaigns and focused instead on the struggle for power within the Mongol empire."
+      },
+      "quote": "nakon što mu Chabi kaže ej odustani sad od daljih osvajanja 1259.",
+      "confidence": "high"
+    },
+    {
+      "id": "osnivanje-dinastije-yuan-1271",
+      "title": {
+        "sr": "Osnivanje kineske dinastije Yuan",
+        "en": "Founding of the Chinese Yuan dynasty"
+      },
+      "year": 1271,
+      "yearEnd": null,
+      "placeId": "peking",
+      "episodeId": "119",
+      "timestamp": "78:06",
+      "type": "founding",
+      "actors": [
+        "Kublaj-kan"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "1271. godine Kublaj-kan osniva kinesku dinastiju Yuan i preuzima titulu kineskog cara, prihvatajući kinesku filozofiju i tradiciju kao jedini način da uspešno vlada Kinom.",
+        "en": "In 1271, Kublai Khan founded the Chinese Yuan dynasty and assumed the title of Chinese emperor, adopting Chinese philosophy and tradition as the only way to successfully rule China."
+      },
+      "quote": "usposljanje kineske dinastije Yuan odnosno osnivanje preuzimanje titula kineskog cara",
+      "confidence": "high"
+    },
+    {
+      "id": "osvajanje-juzne-kine-1279",
+      "title": {
+        "sr": "Kublaj okončava osvajanje i ujedinjenje Kine",
+        "en": "Kublai completes the conquest and unification of China"
+      },
+      "year": 1279,
+      "yearEnd": null,
+      "placeId": "kina",
+      "episodeId": "119",
+      "timestamp": "70:22",
+      "type": "conquest",
+      "actors": [
+        "Kublaj-kan",
+        "Dinastija Song"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "1279. godine, na kraju velike bitke, Kublaj-kan okončava osvajanje i ujedinjenje Kine, za razliku od dede Džingis-kana ne primenjujući sistematsko rušenje i ubijanje civila.",
+        "en": "In 1279, at the end of a great battle, Kublai Khan completed the conquest and unification of China, unlike his grandfather Genghis Khan not resorting to systematic destruction and killing of civilians."
+      },
+      "quote": "do koje ćemo doći 1279. godine na samom kraju balade i osvajanja i ujedinjenja Kine",
+      "confidence": "high"
+    },
+    {
+      "id": "invazija-japan-1281",
+      "title": {
+        "sr": "Druga neuspešna invazija na Japan",
+        "en": "Second failed invasion of Japan"
+      },
+      "year": 1281,
+      "yearEnd": null,
+      "placeId": "japan",
+      "episodeId": "119",
+      "timestamp": "90:52",
+      "type": "battle",
+      "actors": [
+        "Kublaj-kan",
+        "Japan"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "1281. godine Kublaj-kan pokušava drugu invaziju na Japan, koju je krenuo pre nego što je osvojio celu Kinu, delom da bi presekao vezu Japana s dinastijom Song; oba pokušaja su bila neuspešna.",
+        "en": "In 1281, Kublai Khan attempted a second invasion of Japan, launched even before he had conquered all of China, partly to cut Japan's ties with the Song dynasty; both attempts failed."
+      },
+      "quote": "on će i posle 1281. godine pokušati još jedan da osvoji, da on dva puta neuspešna",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-kublaj-kana-1294",
+      "title": {
+        "sr": "Smrt Kublaj-kana",
+        "en": "Death of Kublai Khan"
+      },
+      "year": 1294,
+      "yearEnd": null,
+      "placeId": "peking",
+      "episodeId": "119",
+      "timestamp": "118:34",
+      "type": "death",
+      "actors": [
+        "Kublaj-kan"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "Kublaj-kan je umro 1294. godine, u 78-79. godini života, dugo nakon smrti dede Džingis-kana koga je dobro pamtio.",
+        "en": "Kublai Khan died in 1294, at the age of 78-79, long after the death of his grandfather Genghis Khan, whom he remembered well."
+      },
+      "quote": "Kubla i Kan umire 1294. godine. Dakle lepo je poživao 78-79 godine",
+      "confidence": "high"
+    }
+  ]
+}

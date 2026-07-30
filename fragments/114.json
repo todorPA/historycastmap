@@ -1,0 +1,178 @@
+{
+  "places": [
+    {
+      "id": "vinci-toskana",
+      "name": {
+        "sr": "Vinci (Toskana)",
+        "en": "Vinci (Tuscany)"
+      },
+      "aliases": [
+        "Vinciju"
+      ],
+      "lat": 43.7847,
+      "lng": 10.9247,
+      "kind": "city"
+    },
+    {
+      "id": "firenca",
+      "name": {
+        "sr": "Firenca",
+        "en": "Florence"
+      },
+      "aliases": [
+        "Firencu",
+        "Firenci",
+        "Firenciju",
+        "Firenciji"
+      ],
+      "lat": 43.7696,
+      "lng": 11.2558,
+      "kind": "city"
+    },
+    {
+      "id": "milano",
+      "name": {
+        "sr": "Milano",
+        "en": "Milan"
+      },
+      "aliases": [
+        "Milanom",
+        "Milana"
+      ],
+      "lat": 45.4642,
+      "lng": 9.19,
+      "kind": "city"
+    },
+    {
+      "id": "amboise",
+      "name": {
+        "sr": "Amboaz (Francuska)",
+        "en": "Amboise (France)"
+      },
+      "aliases": [
+        "Amboazu"
+      ],
+      "lat": 47.4136,
+      "lng": 0.9836,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "leonardo-rodjenje-1452",
+      "title": {
+        "sr": "Rođenje Leonarda da Vinčija",
+        "en": "Birth of Leonardo da Vinci"
+      },
+      "year": 1452,
+      "yearEnd": null,
+      "placeId": "vinci-toskana",
+      "episodeId": "114",
+      "timestamp": "02:22",
+      "type": "birth",
+      "actors": [
+        "Leonardo da Vinci"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Leonardo da Vinči je rođen 1452. godine u mestu Vinci u Toskani.",
+        "en": "Leonardo da Vinci was born in 1452 in the town of Vinci, in Tuscany."
+      },
+      "quote": "da je on rođen 1452. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "leonardo-firenca-mladost",
+      "title": {
+        "sr": "Leonardo dolazi sa ocem u Firencu",
+        "en": "Leonardo moves with his father to Florence"
+      },
+      "year": 1466,
+      "yearEnd": null,
+      "placeId": "firenca",
+      "episodeId": "114",
+      "timestamp": "25:28",
+      "type": "other",
+      "actors": [
+        "Leonardo da Vinci"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Leonardo prelazi sa ocem u Firencu, gde počinje svoje umetničko obrazovanje i formiranje u kontekstu renesansne kulture grada.",
+        "en": "Leonardo moved with his father to Florence, where he began his artistic education and formation within the context of the city's Renaissance culture."
+      },
+      "quote": "prelazi u Firencu. Sa tatom u Firencu.",
+      "confidence": "low"
+    },
+    {
+      "id": "leonardo-milano-poslednja-vecera",
+      "title": {
+        "sr": "Leonardo slika Poslednju večeru u Milanu",
+        "en": "Leonardo paints The Last Supper in Milan"
+      },
+      "year": 1495,
+      "yearEnd": null,
+      "placeId": "milano",
+      "episodeId": "114",
+      "timestamp": "111:12",
+      "type": "other",
+      "actors": [
+        "Leonardo da Vinci"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Leonardo slika Poslednju večeru u manastiru u Milanu; slika je počela da se kruni još za njegovog života, a kasnije je tokom Napoleonovog osvajanja manastir korišćen kao konjušnica, dodatno je oštećujući.",
+        "en": "Leonardo painted The Last Supper in a monastery in Milan; the painting began deteriorating even during his lifetime, and later, during Napoleon's conquest, the monastery was used as stables, further damaging it."
+      },
+      "quote": "Slika je jako uništena i to u više navrata. Ona je krenula da se kruni još za Leonardovog života.",
+      "confidence": "medium"
+    },
+    {
+      "id": "francuzi-zauzimaju-milano",
+      "title": {
+        "sr": "Francuzi zauzimaju Milano, Leonardo beži",
+        "en": "The French take Milan, Leonardo flees"
+      },
+      "year": 1499,
+      "yearEnd": null,
+      "placeId": "milano",
+      "episodeId": "114",
+      "timestamp": "111:29",
+      "type": "conquest",
+      "actors": [
+        "Francuska",
+        "Leonardo da Vinci"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Nakon što Leonardo završava Poslednju večeru, Francuzi osvajaju Milano, primoravajući ga da na kratko pobegne, pre nego što se vrati da radi za nove gospodare grada.",
+        "en": "After Leonardo finished The Last Supper, the French conquered Milan, forcing him to briefly flee before returning to work for the city's new rulers."
+      },
+      "quote": "godinu nakon toga, francuzi dolaze, zauzimaju Milano. On beži na neko kratko vreme",
+      "confidence": "medium"
+    },
+    {
+      "id": "leonardo-smrt-francuska",
+      "title": {
+        "sr": "Smrt Leonarda da Vinčija u Francuskoj",
+        "en": "Death of Leonardo da Vinci in France"
+      },
+      "year": 1519,
+      "yearEnd": null,
+      "placeId": "amboise",
+      "episodeId": "114",
+      "timestamp": "07:55",
+      "type": "death",
+      "actors": [
+        "Leonardo da Vinci"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Leonardo da Vinči je umro u Francuskoj, u posljednjoj iteraciji svog života nakon boravaka u Milanu, Firenci i Rimu, gde se konačno preselio na poziv francuskih vladara.",
+        "en": "Leonardo da Vinci died in France, in the final chapter of his life, after periods spent in Milan, Florence, and Rome, having finally moved there at the invitation of the French rulers."
+      },
+      "quote": "umro u Francuskoj ... od Leonardove smrti.",
+      "confidence": "medium"
+    }
+  ]
+}

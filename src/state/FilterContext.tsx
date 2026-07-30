@@ -30,11 +30,23 @@ interface FilterContextValue {
 
 const FilterContext = createContext<FilterContextValue | null>(null);
 
-export function FilterProvider({ children }: { children: ReactNode }) {
-  const [activeEpisodeId, setActiveEpisodeId] = useState<string | null>(null);
-  const [lang, setLang] = useState<Lang>('sr');
-  const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
-  const [basemapId, setBasemapId] = useState<string>(DEFAULT_BASEMAP_ID);
+export function FilterProvider({
+  initial,
+  children,
+}: {
+  /** Values lifted from a shared URL; anything absent falls back to the defaults. */
+  initial?: {
+    lang?: Lang | null;
+    episodeId?: string | null;
+    eventId?: string | null;
+    basemapId?: string | null;
+  };
+  children: ReactNode;
+}) {
+  const [activeEpisodeId, setActiveEpisodeId] = useState<string | null>(initial?.episodeId ?? null);
+  const [lang, setLang] = useState<Lang>(initial?.lang ?? 'sr');
+  const [selectedEventId, setSelectedEventId] = useState<string | null>(initial?.eventId ?? null);
+  const [basemapId, setBasemapId] = useState<string>(initial?.basemapId ?? DEFAULT_BASEMAP_ID);
   const [timelineSize, setTimelineSize] = useState<TimelineSize>('s');
 
   const cycleTimelineSize = useCallback(() => {

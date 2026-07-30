@@ -1,0 +1,198 @@
+{
+  "places": [
+    {
+      "id": "manastir-hilandar",
+      "name": {
+        "sr": "Hilandar",
+        "en": "Hilandar Monastery"
+      },
+      "aliases": [
+        "Hilandaru",
+        "Svetoj gori"
+      ],
+      "lat": 40.2688,
+      "lng": 23.9198,
+      "kind": "landmark"
+    },
+    {
+      "id": "kijev",
+      "name": {
+        "sr": "Kijev",
+        "en": "Kyiv"
+      },
+      "aliases": [
+        "Kijevskoj",
+        "kijevska izložba"
+      ],
+      "lat": 50.4501,
+      "lng": 30.5234,
+      "kind": "city"
+    },
+    {
+      "id": "beograd",
+      "name": {
+        "sr": "Beograd (Narodna banka / Narodni muzej)",
+        "en": "Belgrade (National Bank / National Museum)"
+      },
+      "aliases": [
+        "Beogradu",
+        "Narodnoj banci",
+        "Narodnom muzeju"
+      ],
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "kind": "landmark"
+    },
+    {
+      "id": "johannesburg",
+      "name": {
+        "sr": "Johanesburg",
+        "en": "Johannesburg"
+      },
+      "aliases": [
+        "Johannesburgu"
+      ],
+      "lat": -26.2041,
+      "lng": 28.0473,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "izrada-miroslavljevog-jevandjelja-1180-1191",
+      "title": {
+        "sr": "Izrada Miroslavljevog jevanđelja",
+        "en": "Creation of the Miroslav Gospel"
+      },
+      "year": 1180,
+      "yearEnd": 1191,
+      "placeId": "manastir-hilandar",
+      "episodeId": "117",
+      "timestamp": "14:58",
+      "type": "other",
+      "actors": [
+        "Knez Miroslav"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Miroslavljevo jevanđelje, najstariji ćirilički spomenik u ovoj formi, nastaje između 1180. i 1191. godine, sa gornjom granicom određenom smrću knjeza Miroslava 1191. godine, koji je bio sahranjen u crkvi za koju je jevanđelje bilo namenjeno.",
+        "en": "The Miroslav Gospel, the oldest Cyrillic monument of this kind, was created between 1180 and 1191, with the upper limit set by the death of Prince Miroslav in 1191, who was buried in the church for which the gospel was intended."
+      },
+      "quote": "on je nastala negde oko 1180. godine do 1191. ... On umere, Miroslav umere 1191. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "izlozba-kijev-1874",
+      "title": {
+        "sr": "Miroslavljevo jevanđelje izloženo u Kijevu i dobija ime",
+        "en": "The Miroslav Gospel exhibited in Kyiv and named"
+      },
+      "year": 1874,
+      "yearEnd": null,
+      "placeId": "kijev",
+      "episodeId": "117",
+      "timestamp": "64:11",
+      "type": "other",
+      "actors": [
+        "Stojan Novaković"
+      ],
+      "region": "Istočna Evropa",
+      "description": {
+        "sr": "1874. godine Miroslavljevo jevanđelje je bilo izloženo na velikoj kijevskoj izložbi, gde ga je zabeležio Stojan Novaković, tadašnji upravnik Narodne biblioteke Srbije, i tada mu dao ime po knjezu Miroslavu.",
+        "en": "In 1874, the Miroslav Gospel was exhibited at a major Kyiv exhibition, where it was recorded by Stojan Novaković, then head of the National Library of Serbia, who at that time named it after Prince Miroslav."
+      },
+      "quote": "bio on je jednoj velikoj kijevskoj izložbi 1874. godine, gde ga je upravo fotografisao ... Stojan Ovaković",
+      "confidence": "high"
+    },
+    {
+      "id": "jevandjelje-sklonjeno-hilandar-1941-1943",
+      "title": {
+        "sr": "Jevanđelje skriveno u Hilandaru tokom rata",
+        "en": "The Gospel hidden at Hilandar during the war"
+      },
+      "year": 1941,
+      "yearEnd": 1943,
+      "placeId": "manastir-hilandar",
+      "episodeId": "117",
+      "timestamp": "101:40",
+      "type": "other",
+      "actors": [
+        "Narodna banka Srbije"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Miroslavljevo jevanđelje je od 1941. do 1943. godine bilo sklonjeno i skriveno na sigurno u manastiru na Svetoj gori, pre nego što je vraćeno nazad u Narodnu banku u Beogradu.",
+        "en": "The Miroslav Gospel was hidden for safekeeping at the monastery on Mount Athos from 1941 to 1943, before being returned to the National Bank in Belgrade."
+      },
+      "quote": "on je u manastiracu bio od 1941. do 1943. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "predaja-narodnom-muzeju-1945",
+      "title": {
+        "sr": "Jevanđelje predato Narodnom muzeju u Beogradu",
+        "en": "The Gospel handed over to the National Museum in Belgrade"
+      },
+      "year": 1945,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "117",
+      "timestamp": "102:41",
+      "type": "other",
+      "actors": [
+        "Vladislav Ribnikar"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "1945. godine Vladislav Ribnikar, na čelu Ministarstva prosvete, osniva komisiju koja utvrđuje stanje rukopisa i predaje Miroslavljevo jevanđelje na čuvanje tadašnjem umetničkom, a današnjem Narodnom muzeju Srbije.",
+        "en": "In 1945, Vladislav Ribnikar, head of the Ministry of Education, established a commission that assessed the manuscript's condition and handed the Miroslav Gospel over for safekeeping to what is now the National Museum of Serbia."
+      },
+      "quote": "on je 1945. godine osnovao jednu komisiju koja je ... predaje zapravo na čuvanje tada umetničkom, a sada Narodnom muzeju Srbije",
+      "confidence": "high"
+    },
+    {
+      "id": "jevandjelje-povuceno-izlaganja-1966",
+      "title": {
+        "sr": "Jevanđelje povučeno sa izlaganja zbog oštećenja",
+        "en": "The Gospel withdrawn from display due to damage"
+      },
+      "year": 1966,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "117",
+      "timestamp": "103:08",
+      "type": "other",
+      "actors": [
+        "Narodni muzej Srbije"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "1966. godine, nakon što je svetlo počelo brzo da oštećuje pergament, Miroslavljevo jevanđelje je sklonjeno u fundus Narodnog muzeja i tek od 1985. godine se povremeno ponovo izlaže.",
+        "en": "In 1966, after light began rapidly damaging the parchment, the Miroslav Gospel was moved into the National Museum's storage, and only from 1985 was it occasionally exhibited again."
+      },
+      "quote": "I 1966. je sklonjeno u funduse. I tek od 1985. godine ono se povremeno samo izlaže.",
+      "confidence": "high"
+    },
+    {
+      "id": "fototipsko-izdanje-johannesburg-1998",
+      "title": {
+        "sr": "Fototipsko izdanje štampano u Johanesburgu",
+        "en": "Facsimile edition printed in Johannesburg"
+      },
+      "year": 1998,
+      "yearEnd": null,
+      "placeId": "johannesburg",
+      "episodeId": "117",
+      "timestamp": "106:48",
+      "type": "other",
+      "actors": [],
+      "region": "Afrika",
+      "description": {
+        "sr": "1998. godine, u teškom periodu sankcija pred bombardovanje, izrađeno je fototipsko izdanje Miroslavljevog jevanđelja, štampano u Johanesburgu u Južnoafričkoj republici.",
+        "en": "In 1998, during the difficult period of sanctions before the bombing, a facsimile edition of the Miroslav Gospel was produced, printed in Johannesburg, South Africa."
+      },
+      "quote": "to fototipsko izdanje ... nastalo 1998. godine ... štampano ... u Johannesburgu, u Južnoafričkoj republici.",
+      "confidence": "high"
+    }
+  ]
+}

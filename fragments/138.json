@@ -1,0 +1,231 @@
+{
+  "places": [
+    {
+      "id": "rim",
+      "name": {
+        "sr": "Rim",
+        "en": "Rome"
+      },
+      "aliases": [
+        "Rimu",
+        "Rima"
+      ],
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "kind": "city"
+    },
+    {
+      "id": "velika-moravska",
+      "name": {
+        "sr": "Velika Moravska",
+        "en": "Great Moravia"
+      },
+      "aliases": [
+        "Velikomoravskoj kneževini",
+        "Velikomoravska država",
+        "Velikoj Moravskoj"
+      ],
+      "lat": 49.0,
+      "lng": 17.5,
+      "kind": "region"
+    },
+    {
+      "id": "herson-krim",
+      "name": {
+        "sr": "Herson (Krim)",
+        "en": "Chersonesus (Crimea)"
+      },
+      "aliases": [
+        "Hersonu"
+      ],
+      "lat": 44.6116,
+      "lng": 33.4894,
+      "kind": "city"
+    },
+    {
+      "id": "veliki-preslav",
+      "name": {
+        "sr": "Veliki Preslav",
+        "en": "Great Preslav"
+      },
+      "aliases": [
+        "Preslavu"
+      ],
+      "lat": 43.1666,
+      "lng": 26.8166,
+      "kind": "city"
+    },
+    {
+      "id": "gnezno-poljska",
+      "name": {
+        "sr": "Poljska (Mješko I)",
+        "en": "Poland (Mieszko I)"
+      },
+      "aliases": [
+        "Poljskoj"
+      ],
+      "lat": 52.5354,
+      "lng": 17.5827,
+      "kind": "region"
+    },
+    {
+      "id": "kijev",
+      "name": {
+        "sr": "Kijev",
+        "en": "Kyiv"
+      },
+      "aliases": [
+        "Kijevu",
+        "Kijevska Rusija"
+      ],
+      "lat": 50.4501,
+      "lng": 30.5234,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "krunisanje-karla-velikog-800",
+      "title": {
+        "sr": "Krunisanje Karla Velikog za cara Zapada",
+        "en": "Coronation of Charlemagne as Emperor of the West"
+      },
+      "year": 800,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "138",
+      "timestamp": "05:57",
+      "type": "coronation",
+      "actors": [
+        "Karlo Veliki",
+        "Papa"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "800. godine na Božić papa krunisa Karla Velikog za prvog cara Zapada, čime se obeležava kontekst u kome se odigrava pokrštavanje Slovena.",
+        "en": "On Christmas Day in 800, the Pope crowned Charlemagne as the first Emperor of the West, marking the broader context in which the Christianization of the Slavs took place."
+      },
+      "quote": "krunisan prvi car zapada koji je bio Varvarin, odnosno Germanin, odnosno Karlo Veliki. I tada je to, znači tu dolazi nekog papaga, krunisa 800. godine na Božić.",
+      "confidence": "high"
+    },
+    {
+      "id": "cirilo-metodije-misija-velika-moravska-863",
+      "title": {
+        "sr": "Ćirilo i Metodije kreću u misiju u Velikoj Moravskoj",
+        "en": "Cyril and Methodius set out on their mission to Great Moravia"
+      },
+      "year": 863,
+      "yearEnd": null,
+      "placeId": "velika-moravska",
+      "episodeId": "138",
+      "timestamp": "34:17",
+      "type": "other",
+      "actors": [
+        "Ćirilo",
+        "Metodije",
+        "Knez Rastislav"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "863. godine Ćirilo i Metodije, pozvani od velikomoravskog knjeza Rastislava, kreću u svoju čuvenu misiju širenja hrišćanstva i slovenske pismenosti.",
+        "en": "In 863, Cyril and Methodius, invited by the Great Moravian prince Rastislav, set out on their famous mission of spreading Christianity and Slavic literacy."
+      },
+      "quote": "Nakon povratka, naravno, Čirila i metodija i učenika, kada, 863. godine, kreću u svoju čuvenu misiju.",
+      "confidence": "high"
+    },
+    {
+      "id": "cirilo-metodije-stizu-velika-moravska-864",
+      "title": {
+        "sr": "Ćirilo i Metodije stižu u Veliku Moravsku",
+        "en": "Cyril and Methodius arrive in Great Moravia"
+      },
+      "year": 864,
+      "yearEnd": null,
+      "placeId": "velika-moravska",
+      "episodeId": "138",
+      "timestamp": "53:08",
+      "type": "other",
+      "actors": [
+        "Ćirilo",
+        "Metodije"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "864. godine Ćirilo i Metodije stižu u Veliku Moravsku, gde za samo tri godine ostvaruju toliki uticaj da ih zbog pritužbi nemačkih sveštenika poziva papa u Rim.",
+        "en": "In 864, Cyril and Methodius arrived in Great Moravia, where in just three years they gained such influence that, due to complaints from German priests, the Pope summoned them to Rome."
+      },
+      "quote": "oni stižu tamo u Velikom Moravsku u 864. godine, čak i ćemo govoriti o tri godine",
+      "confidence": "high"
+    },
+    {
+      "id": "boris-i-vladavina-bugarska-852-889",
+      "title": {
+        "sr": "Vladavina bugarskog knjaza Borisa I",
+        "en": "Reign of Bulgarian Prince Boris I"
+      },
+      "year": 852,
+      "yearEnd": 889,
+      "placeId": "veliki-preslav",
+      "episodeId": "138",
+      "timestamp": "64:03",
+      "type": "reign",
+      "actors": [
+        "Boris I"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Bugarski knjaz Boris I vladao je od 852. do 889. godine, u nastojanju da izbori nezavisnu crkvenu organizaciju po uzoru na Istočno Rimsko carstvo, obraćajući se i Vizantiji i Zapadu kako bi dobio nezavisnost.",
+        "en": "Bulgarian Prince Boris I ruled from 852 to 889, striving to secure an independent church organization modeled on the Eastern Roman Empire, appealing to both Byzantium and the West to gain independence."
+      },
+      "quote": "to je desilo se za njihov veliko kanalistu Borisa I. koji je vladao u 1852. i 1889. godine",
+      "confidence": "low"
+    },
+    {
+      "id": "poljska-pokrstavanje-966",
+      "title": {
+        "sr": "Pokrštavanje Poljske pod Mješkom I",
+        "en": "Christianization of Poland under Mieszko I"
+      },
+      "year": 966,
+      "yearEnd": null,
+      "placeId": "gnezno-poljska",
+      "episodeId": "138",
+      "timestamp": "93:05",
+      "type": "founding",
+      "actors": [
+        "Mješko I"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "14. aprila 966. godine, na Veliku subotu, poljski vladar Mješko I zvanično prima hrišćanstvo zapadne provenijencije, čime Poljska dobija zvaničan datum svog krštenja koji se i danas obeležava.",
+        "en": "On April 14, 966, on Holy Saturday, the Polish ruler Mieszko I officially accepted Western Christianity, giving Poland an official baptism date that is still commemorated today."
+      },
+      "quote": "Poljska, oni imaju baš zvaničan datum kada primaju hrišćanstvo, to je 14. april 966. godine na Veliku subotu, kada je njihov vladar Miješko I.",
+      "confidence": "high"
+    },
+    {
+      "id": "pokrstavanje-kijevske-rusije-988",
+      "title": {
+        "sr": "Pokrštavanje Kijevske Rusije pod knezom Vladimirom",
+        "en": "Christianization of Kievan Rus' under Prince Vladimir"
+      },
+      "year": 988,
+      "yearEnd": null,
+      "placeId": "kijev",
+      "episodeId": "138",
+      "timestamp": "101:40",
+      "type": "founding",
+      "actors": [
+        "Knez Vladimir",
+        "Vasilije II"
+      ],
+      "region": "Istočna Evropa",
+      "description": {
+        "sr": "988. godine (u transkriptu iskvareno kao 1978/1988), knez Vladimir Kijevske Rusije pregovara sa vizantijskim carem Vasilijem II i, uz ženidbu njegovom sestrom, prima hrišćanstvo, čime cela Kijevska Rusija prelazi na pravoslavlje.",
+        "en": "In 988 (corrupted in the transcript as 1978/1988), Prince Vladimir of Kievan Rus' negotiated with Byzantine emperor Basil II and, through marriage to his sister, accepted Christianity, bringing all of Kievan Rus' into Orthodoxy."
+      },
+      "quote": "ovo je malo pre toga, 1988. godine, oni sada pregovaraju. Gde Vladimir zapravo traži da se orodi sa vizantijskim carem",
+      "confidence": "medium"
+    }
+  ]
+}

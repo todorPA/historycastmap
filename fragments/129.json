@@ -1,0 +1,253 @@
+{
+  "places": [
+    {
+      "id": "dublin",
+      "name": {
+        "sr": "Dablin",
+        "en": "Dublin"
+      },
+      "aliases": [
+        "Dablinu"
+      ],
+      "lat": 53.3498,
+      "lng": -6.2603,
+      "kind": "city"
+    },
+    {
+      "id": "cork-city",
+      "name": {
+        "sr": "Kork (Cork City)",
+        "en": "Cork City"
+      },
+      "aliases": [
+        "Korku"
+      ],
+      "lat": 51.8985,
+      "lng": -8.4756,
+      "kind": "city"
+    },
+    {
+      "id": "belfast",
+      "name": {
+        "sr": "Belfast",
+        "en": "Belfast"
+      },
+      "aliases": [
+        "Belfastu"
+      ],
+      "lat": 54.5973,
+      "lng": -5.9301,
+      "kind": "city"
+    },
+    {
+      "id": "irska",
+      "name": {
+        "sr": "Irska (ostrvo)",
+        "en": "Ireland (island)"
+      },
+      "aliases": [
+        "Irske",
+        "Irsko ostrvo",
+        "Irskoj"
+      ],
+      "lat": 53.1424,
+      "lng": -7.6921,
+      "kind": "region"
+    }
+  ],
+  "events": [
+    {
+      "id": "uskrsnji-ustanak-dublin-1916",
+      "title": {
+        "sr": "Uskršnji ustanak u Dablinu",
+        "en": "Easter Rising in Dublin"
+      },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "dublin",
+      "episodeId": "129",
+      "timestamp": "20:54",
+      "type": "uprising",
+      "actors": [
+        "James Connolly",
+        "Patrick Pearse",
+        "Irski republikanci"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1916. godine u Dablinu izbija Uskršnji ustanak, koji organizuju vođe poput Džejmsa Konolija i Patrika Pirsa, tražeći potpunu nezavisnost od Britanije umesto ranije zastupanog Home Rule-a.",
+        "en": "In 1916, the Easter Rising broke out in Dublin, organized by leaders such as James Connolly and Patrick Pearse, demanding full independence from Britain instead of the previously advocated Home Rule."
+      },
+      "quote": "U svakom slučaju, u 1916. godine... Kreću ozbiljne pripreme za organizaciju ustanka.",
+      "confidence": "high"
+    },
+    {
+      "id": "izbori-sinn-fein-pobeda-1918",
+      "title": {
+        "sr": "Sinn Fein osvaja većinu na izborima",
+        "en": "Sinn Féin wins a majority in the elections"
+      },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "dublin",
+      "episodeId": "129",
+      "timestamp": "28:35",
+      "type": "reform",
+      "actors": [
+        "Sinn Fein"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Na izborima 1918. godine za britanski parlament, radikalna republikanska stranka Sinn Fein osvaja većinu irskih mesta, zastupajući potpuno odvajanje od Britanije umesto ranijeg Home Rule pokreta.",
+        "en": "In the 1918 elections for the British parliament, the radical republican party Sinn Féin won a majority of Irish seats, advocating complete separation from Britain instead of the earlier Home Rule movement."
+      },
+      "quote": "Govorimo o izborima 1918. godine ... na izborima Sinn Fein ima većinu.",
+      "confidence": "high"
+    },
+    {
+      "id": "pocetak-irskog-rata-1919",
+      "title": {
+        "sr": "Počinju prvi sukobi Irskog rata za nezavisnost",
+        "en": "First clashes of the Irish War of Independence begin"
+      },
+      "year": 1919,
+      "yearEnd": null,
+      "placeId": "irska",
+      "episodeId": "129",
+      "timestamp": "34:43",
+      "type": "uprising",
+      "actors": [
+        "Irska republikanska armija",
+        "Britanska vojska"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Marta 1919. godine kreću prvi oružani sukobi Irskog rata za nezavisnost — gerilski napadi Irske republikanske armije na engleske postaje, znatno manjeg intenziteta od klasičnog rata, ali dovoljno da uzdrmaju britansku vlast.",
+        "en": "In March 1919, the first armed clashes of the Irish War of Independence began — guerrilla attacks by the IRA on English outposts, of much smaller intensity than a conventional war, but enough to shake British authority."
+      },
+      "quote": "Marta 1919. godine kada kreću ti prvi sukobi, to je dakle manje gobima, to je nekoliko desetina mrtvih",
+      "confidence": "high"
+    },
+    {
+      "id": "krvava-nedelja-dublin-1920",
+      "title": {
+        "sr": "Krvava nedelja u Dablinu",
+        "en": "Bloody Sunday in Dublin"
+      },
+      "year": 1920,
+      "yearEnd": null,
+      "placeId": "dublin",
+      "episodeId": "129",
+      "timestamp": "39:54",
+      "type": "battle",
+      "actors": [
+        "Michael Collins",
+        "Irska republikanska armija",
+        "Britanska policija"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "21. novembra 1920. godine, u operaciji Majkla Kolinsa, ubijeno je nekoliko britanskih obaveštajaca i pomoćnih trupa; istog dana, u odmazdi, britanske snage otvaraju vatru na fudbalskoj utakmici u Dablinu i ubijaju 14 ljudi, od kojih troje dece.",
+        "en": "On November 21, 1920, in an operation led by Michael Collins, several British intelligence officers and auxiliary troops were killed; the same day, in retaliation, British forces opened fire at a football match in Dublin, killing 14 people, including three children."
+      },
+      "quote": "To je bilo 21. novembra 1920. godine. ... poginulo je 14 ljudi, od toga troje dece.",
+      "confidence": "high"
+    },
+    {
+      "id": "primirje-irski-rat-1921",
+      "title": {
+        "sr": "Kraj Irskog rata za nezavisnost i pregovori",
+        "en": "End of the Irish War of Independence and negotiations"
+      },
+      "year": 1921,
+      "yearEnd": null,
+      "placeId": "irska",
+      "episodeId": "129",
+      "timestamp": "48:04",
+      "type": "treaty",
+      "actors": [
+        "Irska republikanska armija",
+        "Britanska kruna"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1921. godine, nakon rata iscrpljivanja bez velikih gubitaka poput ranijih pobuna, Irci i Britanska kruna stupaju u pregovore koji dovode do osnivanja Irske slobodne države.",
+        "en": "In 1921, after a war of attrition without the massive losses of earlier rebellions, the Irish and the British Crown entered negotiations that led to the establishment of the Irish Free State."
+      },
+      "quote": "Irski rat za nezavisnost koji traja 1921. godine ... dolazi do jednog pomeranja tokom 1921. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-corka-kraj-gradjanskog-rata-1923",
+      "title": {
+        "sr": "Pad Korka i kraj Irskog građanskog rata",
+        "en": "Fall of Cork and end of the Irish Civil War"
+      },
+      "year": 1923,
+      "yearEnd": null,
+      "placeId": "cork-city",
+      "episodeId": "129",
+      "timestamp": "77:16",
+      "type": "conquest",
+      "actors": [
+        "Nacionalna irska armija",
+        "Irski republikanci"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "U proleće 1923. godine pada Kork, tvrdo jezgro republikanskog otpora, čime se okončava Irski građanski rat koji je odneo oko 2000 žrtava, izazvan podelom Irske republikanske armije nakon prihvatanja sporazuma sa Britanijom.",
+        "en": "In the spring of 1923, Cork, the republican stronghold, fell, ending the Irish Civil War, which claimed around 2,000 lives, caused by the split of the IRA after acceptance of the treaty with Britain."
+      },
+      "quote": "Cork City je u prolaću 1923. godine osvojen i to je zapravo značilo kraj Građanskog rata",
+      "confidence": "high"
+    },
+    {
+      "id": "irska-nezavisna-drzava-1937",
+      "title": {
+        "sr": "Irska postaje potpuno nezavisna republika",
+        "en": "Ireland becomes a fully independent republic"
+      },
+      "year": 1937,
+      "yearEnd": null,
+      "placeId": "irska",
+      "episodeId": "129",
+      "timestamp": "83:56",
+      "type": "founding",
+      "actors": [
+        "Irska slobodna država"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Od 1937. godine Irska (bez severnog dela ostrva) postaje de facto potpuno nezavisna država, prilično bezbolno u odnosu na prethodni period ratova.",
+        "en": "From 1937, Ireland (excluding the northern part of the island) became a de facto fully independent state, fairly bloodlessly compared to the preceding period of wars."
+      },
+      "quote": "zaista nezavisne države od 1937. godine i to prilično bezbolno",
+      "confidence": "high"
+    },
+    {
+      "id": "sporazum-veliki-petak-1998",
+      "title": {
+        "sr": "Sporazum Velikog petka u Severnoj Irskoj",
+        "en": "Good Friday Agreement in Northern Ireland"
+      },
+      "year": 1998,
+      "yearEnd": null,
+      "placeId": "belfast",
+      "episodeId": "129",
+      "timestamp": "80:14",
+      "type": "treaty",
+      "actors": [
+        "Severna Irska",
+        "Britanija",
+        "Irska"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Sporazum Velikog petka iz 1998. godine zvanično okončava period 'nevolja' (troubles) u Severnoj Irskoj, decenijama tenzija i sukoba u podeljenom gradu Belfastu.",
+        "en": "The 1998 Good Friday Agreement officially ended the 'Troubles' in Northern Ireland, decades of tension and conflict in the divided city of Belfast."
+      },
+      "quote": "zaključno sa sporazumom 1998. godine, ako se ne varam ... Good Friday.",
+      "confidence": "high"
+    }
+  ]
+}

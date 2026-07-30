@@ -1,0 +1,239 @@
+{
+  "places": [
+    {
+      "id": "koreja",
+      "name": {
+        "sr": "Koreja (polustrvo)",
+        "en": "Korea (peninsula)"
+      },
+      "aliases": [
+        "Koreje",
+        "Korejsko poloostrvo"
+      ],
+      "lat": 39.0392,
+      "lng": 127.091,
+      "kind": "region"
+    },
+    {
+      "id": "seul",
+      "name": {
+        "sr": "Seul",
+        "en": "Seoul"
+      },
+      "aliases": [
+        "Seula"
+      ],
+      "lat": 37.5665,
+      "lng": 126.978,
+      "kind": "city"
+    },
+    {
+      "id": "budimpesta",
+      "name": {
+        "sr": "Budimpešta",
+        "en": "Budapest"
+      },
+      "aliases": [
+        "Budimpeštu"
+      ],
+      "lat": 47.4979,
+      "lng": 19.0402,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "japan-okupira-koreju-1910",
+      "title": {
+        "sr": "Japan okupira Koreju",
+        "en": "Japan occupies Korea"
+      },
+      "year": 1910,
+      "yearEnd": null,
+      "placeId": "koreja",
+      "episodeId": "130",
+      "timestamp": "05:47",
+      "type": "conquest",
+      "actors": [
+        "Japan"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "Japan okupira Koreju 1910. godine, neposredno nakon pobede u rusko-japanskom ratu, čime Koreja gubi nezavisnost sve do kraja Drugog svetskog rata.",
+        "en": "Japan occupied Korea in 1910, shortly after its victory in the Russo-Japanese War, and Korea remained without independence until the end of World War II."
+      },
+      "quote": "Japanci neposredno nakon pobede u tom ratu okupirati Koreju u 1910. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "podela-koreje-1945",
+      "title": {
+        "sr": "Podela Koreje na sovjetsku i američku zonu",
+        "en": "Division of Korea into Soviet and American zones"
+      },
+      "year": 1945,
+      "yearEnd": null,
+      "placeId": "koreja",
+      "episodeId": "130",
+      "timestamp": "07:50",
+      "type": "other",
+      "actors": [
+        "Sjedinjene Američke Države",
+        "Sovjetski Savez"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "1945. godine, nakon poraza Japana u Drugom svetskom ratu, saveznici (SAD i Sovjetski Savez) se sreću u Koreji i dogovaraju podelu zemlje na dve okupacione zone, čime počinje razdvajanje na Severnu i Južnu Koreju.",
+        "en": "In 1945, after Japan's defeat in World War II, the Allies (the US and the Soviet Union) met in Korea and agreed to divide the country into two occupation zones, beginning the split into North and South Korea."
+      },
+      "quote": "1945. godine, saveznici ... se sreću u Koreji, i po jednom dogovoru ... isrtavalo, da li na Salveti u Kafani",
+      "confidence": "high"
+    },
+    {
+      "id": "izbijanje-korejskog-rata-1950",
+      "title": {
+        "sr": "Izbijanje Korejskog rata",
+        "en": "Outbreak of the Korean War"
+      },
+      "year": 1950,
+      "yearEnd": null,
+      "placeId": "koreja",
+      "episodeId": "130",
+      "timestamp": "28:28",
+      "type": "battle",
+      "actors": [
+        "Severna Koreja",
+        "Južna Koreja"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "U leto 1950. godine izbija Korejski rat napadom snaga Severne Koreje na Jug; Ujedinjene nacije, uz odsustvo sovjetskog veta (Sovjeti su bojkotovali Savet bezbednosti), šalju trupe pod američkom komandom u pomoć Južnoj Koreji.",
+        "en": "In the summer of 1950, the Korean War broke out with an attack by North Korean forces on the South; the United Nations, with no Soviet veto (the Soviets were boycotting the Security Council), sent troops under American command to help South Korea."
+      },
+      "quote": "dolazimo sada do leta 1950. godine. Sukobi traju.",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-seula-1951",
+      "title": {
+        "sr": "Seul ponovo pada u ruke Severne Koreje i Kine",
+        "en": "Seoul falls again to North Korea and China"
+      },
+      "year": 1951,
+      "yearEnd": null,
+      "placeId": "seul",
+      "episodeId": "130",
+      "timestamp": "50:32",
+      "type": "conquest",
+      "actors": [
+        "Severna Koreja",
+        "Kina",
+        "General Voker"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "Januara 1951. godine Seul ponovo pada u ruke Severne Koreje i kineskih snaga, dok general Voker, komandant na terenu, gine tokom povlačenja.",
+        "en": "In January 1951, Seoul fell again to North Korean and Chinese forces, while General Walker, the field commander, was killed during the retreat."
+      },
+      "quote": "Seul je januara 1951. godine ponovo dopao u ruke Severne Koreje i Kineza.",
+      "confidence": "high"
+    },
+    {
+      "id": "oslobodjenje-seula-1951",
+      "title": {
+        "sr": "Seul ponovo osvojen od američko-korejskih trupa",
+        "en": "Seoul retaken by American-South Korean forces"
+      },
+      "year": 1951,
+      "yearEnd": null,
+      "placeId": "seul",
+      "episodeId": "130",
+      "timestamp": "51:27",
+      "type": "conquest",
+      "actors": [
+        "Sjedinjene Američke Države",
+        "Ujedinjene nacije",
+        "Južna Koreja"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "Marta 1951. godine Seul je ponovo osvojen od strane američkih trupa i trupa Ujedinjenih nacija, nakon čega se front stabilizuje blizu 38. paralele.",
+        "en": "In March 1951, Seoul was retaken by American and United Nations forces, after which the front stabilized near the 38th parallel."
+      },
+      "quote": "Seul, Marta 1951. godine, ponovo biva oslobođen ili osvojen od strane američkih trupa",
+      "confidence": "high"
+    },
+    {
+      "id": "primirje-korejski-rat-1953",
+      "title": {
+        "sr": "Potpisivanje primirja u Korejskom ratu",
+        "en": "Signing of the Korean War armistice"
+      },
+      "year": 1953,
+      "yearEnd": null,
+      "placeId": "koreja",
+      "episodeId": "130",
+      "timestamp": "67:09",
+      "type": "treaty",
+      "actors": [
+        "Severna Koreja",
+        "Kina",
+        "Ujedinjene nacije"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "27. juna 1953. godine potpisano je primirje kojim se granica utvrđuje prema faktičkom rasporedu vojski, ne prema 38. paraleli, i uspostavlja se demilitarizovana zona širine 4 km; ovo je primirje, a ne mirovni sporazum, jer rat formalno nikada nije okončan.",
+        "en": "On June 27, 1953, an armistice was signed establishing the border according to the actual positions of the armies, not the 38th parallel, and a 4-km-wide demilitarized zone was created; this was an armistice, not a peace treaty, since the war has never been formally ended."
+      },
+      "quote": "27. juna 1953. godine je potpisano, šta to primir je?",
+      "confidence": "high"
+    },
+    {
+      "id": "sovjeti-guse-ustanak-istocna-njemacka-1953",
+      "title": {
+        "sr": "Sovjeti gase ustanak u Istočnoj Nemačkoj",
+        "en": "Soviets crush the uprising in East Germany"
+      },
+      "year": 1953,
+      "yearEnd": null,
+      "placeId": "koreja",
+      "episodeId": "130",
+      "timestamp": "77:37",
+      "type": "uprising",
+      "actors": [
+        "Sovjetski Savez"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "Nakon Korejskog rata, ojačan Sovjetski Savez 1953. godine slama pokušaj ustanka u Istočnoj Nemačkoj, demonstrirajući da SAD, za razliku od Koreje, neće intervenisati u sovjetskoj sferi utucaja.",
+        "en": "After the Korean War, an emboldened Soviet Union crushed an uprising attempt in East Germany in 1953, demonstrating that, unlike in Korea, the US would not intervene within the Soviet sphere of influence."
+      },
+      "quote": "Oni će već 1953. godine slomiti pokušaj ustanka u Istočnoj Nemačkoj.",
+      "confidence": "high"
+    },
+    {
+      "id": "sovjeti-slamaju-madjarsku-revoluciju-budimpesta-1956",
+      "title": {
+        "sr": "Sovjeti tenkovima gase mađarsku revoluciju u Budimpešti",
+        "en": "Soviets crush the Hungarian Revolution in Budapest with tanks"
+      },
+      "year": 1956,
+      "yearEnd": null,
+      "placeId": "budimpesta",
+      "episodeId": "130",
+      "timestamp": "77:43",
+      "type": "uprising",
+      "actors": [
+        "Sovjetski Savez",
+        "Mađarska"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "1956. godine sovjetski tenkovi ulaze u Budimpeštu i slamaju mađarski pokušaj revolucije, bez ikakve američke intervencije, na istom principu kao gušenje istočnonemačkog ustanka 1953.",
+        "en": "In 1956, Soviet tanks entered Budapest and crushed the Hungarian attempt at revolution, without any American intervention, on the same principle as the suppression of the East German uprising in 1953."
+      },
+      "quote": "1956. godine će tenkovima ući u Budimpeštu i slomiti mađarski pokušaj revolucije",
+      "confidence": "high"
+    }
+  ]
+}

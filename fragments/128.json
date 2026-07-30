@@ -1,0 +1,107 @@
+{
+  "places": [
+    {
+      "id": "firenca",
+      "name": {
+        "sr": "Firenca",
+        "en": "Florence"
+      },
+      "aliases": [
+        "Firenci",
+        "Firenciji",
+        "Firenze",
+        "Firencinske"
+      ],
+      "lat": 43.7696,
+      "lng": 11.2558,
+      "kind": "city"
+    },
+    {
+      "id": "rim",
+      "name": {
+        "sr": "Rim",
+        "en": "Rome"
+      },
+      "aliases": [
+        "Rimu",
+        "Rima",
+        "Papski Rim"
+      ],
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "mikelandjelo-rodjenje-1475",
+      "title": {
+        "sr": "Rođenje Mikelanđela",
+        "en": "Birth of Michelangelo"
+      },
+      "year": 1475,
+      "yearEnd": null,
+      "placeId": "firenca",
+      "episodeId": "128",
+      "timestamp": "17:37",
+      "type": "birth",
+      "actors": [
+        "Michelangelo Buonarroti"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Mikelanđelo Buonaroti je rođen 1475. godine, u osiromašenoj plemićkoj porodici bliskoj po rangu Medičijima.",
+        "en": "Michelangelo Buonarroti was born in 1475, into an impoverished noble family of similar rank to the Medicis."
+      },
+      "quote": "Michelangelo je rođen ... Pa čekaj, ako je rođen 75.",
+      "confidence": "medium"
+    },
+    {
+      "id": "mikelandjelo-drveno-raspece-1493",
+      "title": {
+        "sr": "Mikelanđelo pravi drveno raspeće za Santo Spirito",
+        "en": "Michelangelo creates a wooden crucifix for Santo Spirito"
+      },
+      "year": 1493,
+      "yearEnd": null,
+      "placeId": "firenca",
+      "episodeId": "128",
+      "timestamp": "54:10",
+      "type": "other",
+      "actors": [
+        "Michelangelo Buonarroti"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1493. godine, na poziv bratije crkve Santo Spirito u Firenci, Mikelanđelo izrađuje drveno raspeće, delo za koje je zauzvrat dobio pristup mrtvačnici radi studiranja anatomije.",
+        "en": "In 1493, at the invitation of the brotherhood of the Santo Spirito church in Florence, Michelangelo created a wooden crucifix, work for which he was in turn given access to the mortuary to study anatomy."
+      },
+      "quote": "već naredne godine, znači 1993. [1493.] uradi jednu drvenu raspeće.",
+      "confidence": "high"
+    },
+    {
+      "id": "mikelandjelo-david-1501-1504",
+      "title": {
+        "sr": "Mikelanđelo izrađuje skulpturu Davida",
+        "en": "Michelangelo carves the statue of David"
+      },
+      "year": 1501,
+      "yearEnd": 1504,
+      "placeId": "firenca",
+      "episodeId": "128",
+      "timestamp": "87:47",
+      "type": "other",
+      "actors": [
+        "Michelangelo Buonarroti",
+        "Firentinska katedrala"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Od 1501. do 1504. godine Mikelanđelo izrađuje skulpturu Davida po narudžbini firentinske katedrale, koristeći ogroman komad kamena koji drugi vajari nisu uspeli da savladaju; David postaje politički simbol Firence.",
+        "en": "From 1501 to 1504, Michelangelo carved the statue of David, commissioned by the Florence Cathedral, using a massive block of stone that other sculptors had failed to master; David became a political symbol of Florence."
+      },
+      "quote": "David Michelangelova, koji je stvoren baš onako u prvim godinama 16. vekla, dakle od 1501. čini mi se, do četvrte.",
+      "confidence": "high"
+    }
+  ]
+}

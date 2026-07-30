@@ -1,0 +1,234 @@
+{
+  "places": [
+    {
+      "id": "lille",
+      "name": {
+        "sr": "Lil",
+        "en": "Lille"
+      },
+      "aliases": [
+        "Lilu"
+      ],
+      "lat": 50.6292,
+      "lng": 3.0573,
+      "kind": "city"
+    },
+    {
+      "id": "verden",
+      "name": {
+        "sr": "Verden",
+        "en": "Verdun"
+      },
+      "aliases": [
+        "Verdenu",
+        "Verdenskoj bitci"
+      ],
+      "lat": 49.1593,
+      "lng": 5.3839,
+      "kind": "battle-site"
+    },
+    {
+      "id": "london",
+      "name": {
+        "sr": "London",
+        "en": "London"
+      },
+      "aliases": [
+        "Londonu"
+      ],
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "kind": "city"
+    },
+    {
+      "id": "pariz",
+      "name": {
+        "sr": "Pariz",
+        "en": "Paris"
+      },
+      "aliases": [
+        "Parizu"
+      ],
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "kind": "city"
+    },
+    {
+      "id": "algir",
+      "name": {
+        "sr": "Alžir",
+        "en": "Algeria"
+      },
+      "aliases": [
+        "Alžiru"
+      ],
+      "lat": 36.7538,
+      "lng": 3.0588,
+      "kind": "region"
+    }
+  ],
+  "events": [
+    {
+      "id": "de-gol-rodjenje-1890",
+      "title": {
+        "sr": "Rođenje Šarla de Gola",
+        "en": "Birth of Charles de Gaulle"
+      },
+      "year": 1890,
+      "yearEnd": null,
+      "placeId": "lille",
+      "episodeId": "116",
+      "timestamp": "10:55",
+      "type": "birth",
+      "actors": [
+        "Charles de Gaulle"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Šarl de Gol je rođen 1890. godine u Lilu, u aristokratskoj porodici čiji koreni sežu u 12. vek, kao treće od ukupno petoro dece.",
+        "en": "Charles de Gaulle was born in 1890 in Lille, into an aristocratic family whose roots reach back to the 12th century, as the third of five children."
+      },
+      "quote": "on se ireče rodio u Lilu 1890. godine i pripadnik je jedne porodice koja je aristokratska",
+      "confidence": "high"
+    },
+    {
+      "id": "de-gol-ranjen-verden-1916",
+      "title": {
+        "sr": "De Gol ranjen kod Verdena",
+        "en": "De Gaulle wounded at Verdun"
+      },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "verden",
+      "episodeId": "116",
+      "timestamp": "27:58",
+      "type": "battle",
+      "actors": [
+        "Charles de Gaulle"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1916. godine, u bici kod Verdena, Šarl de Gol biva treći put ranjen tokom Prvog svetskog rata, pogođen metkom u ruku, nakon čega dospeva u nemačko zarobljeništvo do 1919. godine.",
+        "en": "In 1916, at the Battle of Verdun, Charles de Gaulle was wounded for the third time during World War I, hit by a bullet in the arm, after which he was held in German captivity until 1919."
+      },
+      "quote": "A onda na Verdenu u 1916. godine biva treći put ranjen tako što ga je metak pogodio u ruku.",
+      "confidence": "high"
+    },
+    {
+      "id": "de-gol-apel-london-1940",
+      "title": {
+        "sr": "De Gol upućuje apel iz Londona nakon pada Francuske",
+        "en": "De Gaulle's appeal from London after the fall of France"
+      },
+      "year": 1940,
+      "yearEnd": null,
+      "placeId": "london",
+      "episodeId": "116",
+      "timestamp": "57:28",
+      "type": "other",
+      "actors": [
+        "Charles de Gaulle"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Juna 1940. godine, nakon nemačkog napada na Francusku, Šarl de Gol, koji nikada ranije nije boravio u Britaniji i slabo je govorio engleski, odlazi u London i postaje simbol francuskog otpora protiv nemačke okupacije.",
+        "en": "In June 1940, after the German attack on France, Charles de Gaulle, who had never before been to Britain and spoke poor English, went to London and became the symbol of French resistance against the German occupation."
+      },
+      "quote": "dolazimo do juna 1940. godine, mi prvo treba da kažemo da je u pitanju čoveka koji nikada nije boravio u Velikoj Britaniji.",
+      "confidence": "high"
+    },
+    {
+      "id": "cetvrta-republika-1946",
+      "title": {
+        "sr": "Osnivanje Četvrte republike i povlačenje De Gola",
+        "en": "Founding of the Fourth Republic and De Gaulle's withdrawal"
+      },
+      "year": 1946,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "116",
+      "timestamp": "126:10",
+      "type": "founding",
+      "actors": [
+        "Charles de Gaulle"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1946. godine donesen je ustav Četvrte republike, sa slabom predsedničkom funkcijom po nemačkom modelu; De Gol procenjuje da treba da se povuče iz politike do 1958. godine.",
+        "en": "In 1946, the constitution of the Fourth Republic was adopted, with a weak presidential role modeled on Germany; De Gaulle judged it best to withdraw from politics until 1958."
+      },
+      "quote": "Četvrta republika je nakon 1946. godine ... imamo sad tu pauzu među 1946. i 1958. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "de-gol-peta-republika-1958",
+      "title": {
+        "sr": "De Gol se vraća na vlast, osnivanje Pete republike",
+        "en": "De Gaulle returns to power, founding of the Fifth Republic"
+      },
+      "year": 1958,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "116",
+      "timestamp": "127:04",
+      "type": "founding",
+      "actors": [
+        "Charles de Gaulle"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1958. godine Šarl de Gol se vraća na vlast i osniva Petu republiku sa jakom predsedničkom funkcijom, okončavajući period bez ozvaničene političke uloge koji je trajao od 1946. godine.",
+        "en": "In 1958, Charles de Gaulle returned to power and founded the Fifth Republic with a strong presidency, ending the period without an official political role that had lasted since 1946."
+      },
+      "quote": "i 1958. godine ... on posle 1966. godine odlazi tamo",
+      "confidence": "high"
+    },
+    {
+      "id": "nezavisnost-alzira-1962",
+      "title": {
+        "sr": "Alžir postaje nezavisan",
+        "en": "Algeria becomes independent"
+      },
+      "year": 1962,
+      "yearEnd": null,
+      "placeId": "algir",
+      "episodeId": "116",
+      "timestamp": "144:30",
+      "type": "founding",
+      "actors": [
+        "Charles de Gaulle",
+        "Alžir"
+      ],
+      "region": "Afrika",
+      "description": {
+        "sr": "1962. godine potpisan je sporazum kojim Alžir postaje nezavisan, politički rizičan potez De Gola koji je uzrokovao odlazak miliona Francuza preko Mediterana u Francusku i seriju atentata na njega.",
+        "en": "In 1962, an agreement was signed making Algeria independent, a politically risky move by De Gaulle that caused a million French citizens to cross the Mediterranean to France and led to a series of assassination attempts on him."
+      },
+      "quote": "jer 1962. godine imamo sporazu u mijenu, gde Alžir postaje zapravo nezavisan.",
+      "confidence": "high"
+    },
+    {
+      "id": "de-gol-odlazi-vlast-1969",
+      "title": {
+        "sr": "De Gol napušta vlast nakon referenduma",
+        "en": "De Gaulle leaves power after a referendum"
+      },
+      "year": 1969,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "116",
+      "timestamp": "179:57",
+      "type": "other",
+      "actors": [
+        "Charles de Gaulle"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1969. godine, nakon nepovoljnog rezultata referenduma o reformi senata i regionalne uprave (nastavak nemira iz 1968), Šarl de Gol povlači se sa vlasti.",
+        "en": "In 1969, after an unfavorable referendum result on Senate and regional government reform (in the wake of the 1968 unrest), Charles de Gaulle stepped down from power."
+      },
+      "quote": "On se poveća, dakle, 1969. godine",
+      "confidence": "high"
+    }
+  ]
+}

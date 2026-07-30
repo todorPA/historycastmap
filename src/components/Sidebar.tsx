@@ -24,6 +24,23 @@ export default function Sidebar() {
   const { lang, activeEpisodeId, toggleEpisode, clearEpisode, setSelectedEventId } = useFilters();
   const { range, bounds, resetRange } = useTime();
   const [query, setQuery] = useState('');
+  const [copied, setCopied] = useState(false);
+
+  /**
+   * UrlSync already keeps the address bar current, so the current href *is* the shareable
+   * link. Falls back to a manual prompt where the clipboard API is unavailable (http, or
+   * a browser that refuses without a user-gesture permission).
+   */
+  async function copyLink() {
+    const url = window.location.href;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      window.prompt(t(lang, 'copyLink'), url);
+    }
+  }
 
   const isFullRange = range.from === bounds.from && range.to === bounds.to;
 
@@ -128,6 +145,10 @@ export default function Sidebar() {
             {t(lang, 'resetRange')}
           </button>
         )}
+
+        <button type="button" className="btn btn--ghost" onClick={copyLink}>
+          {copied ? t(lang, 'linkCopied') : t(lang, 'copyLink')}
+        </button>
       </section>
 
       <footer className="sidebar__foot">

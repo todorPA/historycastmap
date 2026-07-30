@@ -1,0 +1,199 @@
+{
+  "places": [
+    {
+      "id": "henan",
+      "name": {
+        "sr": "Provincija Hunan",
+        "en": "Hunan Province"
+      },
+      "aliases": [
+        "Henan"
+      ],
+      "lat": 27.6104,
+      "lng": 111.7088,
+      "kind": "region"
+    },
+    {
+      "id": "peking",
+      "name": {
+        "sr": "Peking",
+        "en": "Beijing"
+      },
+      "aliases": [
+        "Pekingu"
+      ],
+      "lat": 39.9042,
+      "lng": 116.4074,
+      "kind": "city"
+    },
+    {
+      "id": "sangaj",
+      "name": {
+        "sr": "Šangaj",
+        "en": "Shanghai"
+      },
+      "aliases": [
+        "Šangaju"
+      ],
+      "lat": 31.2304,
+      "lng": 121.4737,
+      "kind": "city"
+    },
+    {
+      "id": "sansi",
+      "name": {
+        "sr": "Šansi (kraj Dugog marša)",
+        "en": "Shaanxi (end of the Long March)"
+      },
+      "aliases": [
+        "Šansiju"
+      ],
+      "lat": 35.0,
+      "lng": 108.0,
+      "kind": "region"
+    }
+  ],
+  "events": [
+    {
+      "id": "mao-rodjenje-1893",
+      "title": {
+        "sr": "Rođenje Mao Cedunga",
+        "en": "Birth of Mao Zedong"
+      },
+      "year": 1893,
+      "yearEnd": null,
+      "placeId": "henan",
+      "episodeId": "112",
+      "timestamp": "07:55",
+      "type": "birth",
+      "actors": [
+        "Mao Cedung"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "Mao Cedung je rođen 26. decembra 1893. godine u provinciji Hunan.",
+        "en": "Mao Zedong was born on December 26, 1893, in Hunan Province."
+      },
+      "quote": "on je rođen 26. decembra 1893. godine u provinciji Henan.",
+      "confidence": "high"
+    },
+    {
+      "id": "osnivanje-kineske-komunisticke-partije-1921",
+      "title": {
+        "sr": "Osnivanje Kineske komunističke partije",
+        "en": "Founding of the Chinese Communist Party"
+      },
+      "year": 1921,
+      "yearEnd": null,
+      "placeId": "sangaj",
+      "episodeId": "112",
+      "timestamp": "26:27",
+      "type": "founding",
+      "actors": [
+        "Kineska komunistička partija"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "Kineska komunistička partija osnovana je 1921. godine, pod velikim uticajem Kominterne, u vreme kada se Mao formirao kao politička figura.",
+        "en": "The Chinese Communist Party was founded in 1921, heavily influenced by the Comintern, at the time Mao was developing as a political figure."
+      },
+      "quote": "Kineska komunistička partija, osnovana je 1921. godine, pod naravno velikim utinca",
+      "confidence": "high"
+    },
+    {
+      "id": "pocetak-gradjanskog-rata-kina-1927",
+      "title": {
+        "sr": "Zvanični početak kineskog Građanskog rata",
+        "en": "Official start of the Chinese Civil War"
+      },
+      "year": 1927,
+      "yearEnd": null,
+      "placeId": "sangaj",
+      "episodeId": "112",
+      "timestamp": "42:15",
+      "type": "uprising",
+      "actors": [
+        "Kuomintang",
+        "Kineska komunistička partija",
+        "Čankajšek"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "1927. godina se uzima kao zvanični početak Građanskog rata između Kuomintanga i Komunističke partije Kine, nakon događaja u Šangaju i sloma Jesenjeg ustanka.",
+        "en": "1927 is taken as the official start of the Civil War between the Kuomintang and the Communist Party of China, following events in Shanghai and the collapse of the Autumn Uprising."
+      },
+      "quote": "1927. godina, zvanični početak građanskog rata između Kuomi, Tanga i Komuništke partije Kine",
+      "confidence": "high"
+    },
+    {
+      "id": "dugi-mars-1934-1935",
+      "title": {
+        "sr": "Dugi marš",
+        "en": "The Long March"
+      },
+      "year": 1934,
+      "yearEnd": 1935,
+      "placeId": "sansi",
+      "episodeId": "112",
+      "timestamp": "74:45",
+      "type": "other",
+      "actors": [
+        "Mao Cedung",
+        "Crvena armija"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "Dugi marš, u jesen 1934. i tokom 1935. godine, doveo je Mao Cedunga i preživele komuniste (od 80-90 hiljada na početku, tek nekoliko hiljada na kraju) u Šansi; Mao izlazi iz njega kao neprikosnoveni vođa partije.",
+        "en": "The Long March, in the autumn of 1934 and through 1935, brought Mao Zedong and the surviving communists (from 80-90 thousand at the start to only a few thousand at the end) to Shaanxi; Mao emerged from it as the party's unchallenged leader."
+      },
+      "quote": "To je 1934. godina ... to je sama jesen 1934. godine i 1935.",
+      "confidence": "high"
+    },
+    {
+      "id": "proglasenje-narodne-republike-kine-1949",
+      "title": {
+        "sr": "Proglašenje Narodne Republike Kine",
+        "en": "Proclamation of the People's Republic of China"
+      },
+      "year": 1949,
+      "yearEnd": null,
+      "placeId": "peking",
+      "episodeId": "112",
+      "timestamp": "75:18",
+      "type": "founding",
+      "actors": [
+        "Mao Cedung"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "1. oktobra 1949. godine proglašena je Narodna Republika Kina, čime se okončava Građanski rat i Kuomintang se povlači, dok Mao Cedung postaje vrhovni vođa nove države.",
+        "en": "On October 1, 1949, the People's Republic of China was proclaimed, ending the Civil War as the Kuomintang withdrew, with Mao Zedong becoming the supreme leader of the new state."
+      },
+      "quote": "Ovo ide 1949. godine i 1. oktober kada je proglašena Narodna republika Kina.",
+      "confidence": "high"
+    },
+    {
+      "id": "veliki-skok-napred-1958",
+      "title": {
+        "sr": "Mao pokreće Veliki skok napred",
+        "en": "Mao launches the Great Leap Forward"
+      },
+      "year": 1958,
+      "yearEnd": null,
+      "placeId": "peking",
+      "episodeId": "112",
+      "timestamp": "117:18",
+      "type": "reform",
+      "actors": [
+        "Mao Cedung"
+      ],
+      "region": "Azija",
+      "description": {
+        "sr": "1958. godine Mao Cedung pokreće Veliki skok napred, ambicioznu ekonomsku i socijalnu kampanju čije katastrofalne posledice postaju vidljive tokom 1958. i 1959. godine.",
+        "en": "In 1958, Mao Zedong launched the Great Leap Forward, an ambitious economic and social campaign whose disastrous consequences became apparent during 1958 and 1959."
+      },
+      "quote": "1958. godine ... 1957. i 1958. godine su pokazale",
+      "confidence": "high"
+    }
+  ]
+}

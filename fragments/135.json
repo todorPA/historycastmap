@@ -1,0 +1,269 @@
+{
+  "places": [
+    {
+      "id": "idvor",
+      "name": {
+        "sr": "Idvor",
+        "en": "Idvor"
+      },
+      "aliases": [
+        "Idvoru",
+        "Idvora"
+      ],
+      "lat": 45.3833,
+      "lng": 20.7833,
+      "kind": "city"
+    },
+    {
+      "id": "new-york",
+      "name": {
+        "sr": "Njujork (Kolumbija univerzitet)",
+        "en": "New York (Columbia University)"
+      },
+      "aliases": [
+        "Njujorku",
+        "Columbia univerzitet",
+        "Kolumbije univerzitetu"
+      ],
+      "lat": 40.8075,
+      "lng": -73.9626,
+      "kind": "city"
+    },
+    {
+      "id": "berlin",
+      "name": {
+        "sr": "Berlin",
+        "en": "Berlin"
+      },
+      "aliases": [
+        "Berlinu"
+      ],
+      "lat": 52.52,
+      "lng": 13.405,
+      "kind": "city"
+    },
+    {
+      "id": "washington",
+      "name": {
+        "sr": "Vašington",
+        "en": "Washington"
+      },
+      "aliases": [
+        "Vašingtonu"
+      ],
+      "lat": 38.9072,
+      "lng": -77.0369,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "pupin-rodjenje-1854",
+      "title": {
+        "sr": "Rođenje Mihajla Pupina",
+        "en": "Birth of Mihajlo Pupin"
+      },
+      "year": 1854,
+      "yearEnd": null,
+      "placeId": "idvor",
+      "episodeId": "135",
+      "timestamp": "06:14",
+      "type": "birth",
+      "actors": [
+        "Mihajlo Pupin"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Mihajlo Pupin je rođen 1854. godine u Idvoru, u porodici srpskih graničara koji su čuvali habzburšku granicu od Turaka.",
+        "en": "Mihajlo Pupin was born in 1854 in Idvor, into a family of Serbian border guards who defended the Habsburg frontier against the Ottomans."
+      },
+      "quote": "On je inače rođen 1854. godine u Idvoru.",
+      "confidence": "high"
+    },
+    {
+      "id": "pupin-upisuje-kolumbija-1879",
+      "title": {
+        "sr": "Pupin upisuje Kolumbija univerzitet",
+        "en": "Pupin enrolls at Columbia University"
+      },
+      "year": 1879,
+      "yearEnd": null,
+      "placeId": "new-york",
+      "episodeId": "135",
+      "timestamp": "72:02",
+      "type": "other",
+      "actors": [
+        "Mihajlo Pupin"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "1879. godine, nakon pet godina boravka u Americi i učenja engleskog jezika, Pupin polaže prijemni ispit i upisuje Kolumbija univerzitet.",
+        "en": "In 1879, after five years in America and learning English, Pupin passed the entrance exam and enrolled at Columbia University."
+      },
+      "quote": "jel 1879. godine, on je upisao Kolumbija univerzitet, polago je prijemni ispit, položio ga je.",
+      "confidence": "high"
+    },
+    {
+      "id": "pupin-doktorat-berlin-1889",
+      "title": {
+        "sr": "Pupin se doktorira u Berlinu",
+        "en": "Pupin earns his doctorate in Berlin"
+      },
+      "year": 1889,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "135",
+      "timestamp": "83:46",
+      "type": "other",
+      "actors": [
+        "Mihajlo Pupin"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Mihajlo Pupin se doktorira 1889. godine u Berlinu na temi iz fizičke hemije, o osmotskom pritisku i njegovom utisku na slobodnu energiju.",
+        "en": "Mihajlo Pupin earned his doctorate in 1889 in Berlin on a topic in physical chemistry, concerning osmotic pressure and its effect on free energy."
+      },
+      "quote": "Mihajlo Pupin je se doktorirao 1989. [1889.] godine na temi iz fizičke hemije",
+      "confidence": "high"
+    },
+    {
+      "id": "pupin-profesor-kolumbija-1889",
+      "title": {
+        "sr": "Pupin postaje profesor na Kolumbija univerzitetu",
+        "en": "Pupin becomes a professor at Columbia University"
+      },
+      "year": 1889,
+      "yearEnd": 1929,
+      "placeId": "new-york",
+      "episodeId": "135",
+      "timestamp": "69:12",
+      "type": "reign",
+      "actors": [
+        "Mihajlo Pupin"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "Od 1889. godine Mihajlo Pupin biva proglašen za profesora na Kolumbija univerzitetu u Njujorku i na toj poziciji ostaje punih 40 godina, mentorišući brojne buduće nobelovce.",
+        "en": "From 1889, Mihajlo Pupin was appointed professor at Columbia University in New York and held the position for a full 40 years, mentoring numerous future Nobel laureates."
+      },
+      "quote": "trenutka kada on bude proglašan za profesora, to je 1889. godine, dakle on će 40 godina biti profesor na Kolumbiji univerzitetu",
+      "confidence": "high"
+    },
+    {
+      "id": "pupinovi-kalemovi-patent-1901",
+      "title": {
+        "sr": "Pupinovi kalemovi — patent otkupljen od Bell kompanije",
+        "en": "Pupin coils — patent bought by the Bell company"
+      },
+      "year": 1901,
+      "yearEnd": null,
+      "placeId": "new-york",
+      "episodeId": "135",
+      "timestamp": "87:26",
+      "type": "other",
+      "actors": [
+        "Mihajlo Pupin",
+        "Bell kompanija"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "1901. godine kompanija Bell otkupljuje Pupinov patent za kaleme koji pojačavaju i stabilizuju telefonski i telegrafski signal na velikim rastojanjima.",
+        "en": "In 1901, the Bell company bought Pupin's patent for coils that amplified and stabilized telephone and telegraph signals over long distances."
+      },
+      "quote": "1901. godine naravno čuvena firma kompanija Bell ... otkupljuje taj njegov patent",
+      "confidence": "high"
+    },
+    {
+      "id": "pupin-nezvanicni-konzul-1908",
+      "title": {
+        "sr": "Pupin postaje nezvanični konzul Srbije u Vašingtonu",
+        "en": "Pupin becomes unofficial consul of Serbia in Washington"
+      },
+      "year": 1908,
+      "yearEnd": null,
+      "placeId": "washington",
+      "episodeId": "135",
+      "timestamp": "108:47",
+      "type": "other",
+      "actors": [
+        "Mihajlo Pupin"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "Od 1908. godine, u vreme aneksione krize, Pupin počinje da radi za Srbiju kao nezvanični konzul u Vašingtonu, a 1912. godine praktično postaje gotovo ambasador Srbije.",
+        "en": "From 1908, at the time of the Annexation Crisis, Pupin began working for Serbia as unofficial consul in Washington, and by 1912 practically became Serbia's ambassador."
+      },
+      "quote": "on već od te 908. godine počinje da radi za Srbiju, on je nezvanični konzul Srbije u Vašingtonu",
+      "confidence": "high"
+    },
+    {
+      "id": "pupin-naca-1915",
+      "title": {
+        "sr": "Pupin angažovan u preteči NASA (NACA)",
+        "en": "Pupin engaged with NASA's precursor (NACA)"
+      },
+      "year": 1915,
+      "yearEnd": null,
+      "placeId": "washington",
+      "episodeId": "135",
+      "timestamp": "111:17",
+      "type": "other",
+      "actors": [
+        "Mihajlo Pupin"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "1915. godine Pupin je angažovan zajedno sa desetak naučnika da radi u Nacionalnom savetodavnom komitetu za istraživanje vazduhoplovstva (preteča NASA), gde se bavio i sonarima.",
+        "en": "In 1915, Pupin was engaged along with about ten scientists to work at the National Advisory Committee for Aeronautics (NACA, NASA's precursor), where he also worked on sonar technology."
+      },
+      "quote": "1915. godine njega su angažovali zajedno sa još desetak naučnika da radi u preteči NASA",
+      "confidence": "high"
+    },
+    {
+      "id": "pupin-fond-1940",
+      "title": {
+        "sr": "Osnivanje fonda Pijade Aleksić Pupin",
+        "en": "Founding of the Pijade Aleksić Pupin fund"
+      },
+      "year": 1940,
+      "yearEnd": null,
+      "placeId": "new-york",
+      "episodeId": "135",
+      "timestamp": "114:33",
+      "type": "founding",
+      "actors": [
+        "Mihajlo Pupin"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "1940. godine, još pre nego što je epizoda o njemu bila zamišljena kao vezana za rat, Pupin osniva fond Pijade Aleksić Pupin.",
+        "en": "In 1940, Pupin founded the Pijade Aleksić Pupin fund."
+      },
+      "quote": "on istovremeno još pre dakle rata, 1940. godine osnivao i pomenuti fond koji si rekao fond Pijade Aleksić Pupin.",
+      "confidence": "medium"
+    },
+    {
+      "id": "smrt-pupina-1935",
+      "title": {
+        "sr": "Smrt Mihajla Pupina",
+        "en": "Death of Mihajlo Pupin"
+      },
+      "year": 1935,
+      "yearEnd": null,
+      "placeId": "new-york",
+      "episodeId": "135",
+      "timestamp": "135:46",
+      "type": "death",
+      "actors": [
+        "Mihajlo Pupin"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "Mihajlo Pupin je umro 1935. godine, kao slavan naučnik, izumitelj i pisac, dobitnik Pulicerove nagrade za autobiografiju objavljenu 1924. godine.",
+        "en": "Mihajlo Pupin died in 1935, as a celebrated scientist, inventor and writer, having received the Pulitzer Prize for his autobiography published in 1924."
+      },
+      "quote": "On je umro 1935. godine.",
+      "confidence": "high"
+    }
+  ]
+}

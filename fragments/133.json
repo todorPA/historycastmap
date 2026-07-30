@@ -1,0 +1,83 @@
+{
+  "places": [
+    { "id": "cernobil", "name": { "sr": "Černobilj", "en": "Chernobyl" }, "aliases": ["Černobilju", "Černobilja"], "lat": 51.3890, "lng": 30.0992, "kind": "landmark" },
+    { "id": "pripjat", "name": { "sr": "Pripjat", "en": "Pripyat" }, "aliases": ["Pripjatu"], "lat": 51.4069, "lng": 30.0533, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "cernobiljska-elektrana-izgradnja-1970",
+      "title": { "sr": "Počinje izgradnja černobiljske nuklearne elektrane", "en": "Construction of the Chernobyl nuclear plant begins" },
+      "year": 1970,
+      "yearEnd": null,
+      "placeId": "cernobil",
+      "episodeId": "133",
+      "timestamp": "09:55",
+      "type": "other",
+      "actors": ["Sovjetski Savez"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Izgradnja černobiljske nuklearne elektrane počela je 1970. godine; prvi reaktor je završen 1977. godine, a naredni reaktori su nastavili da se dodaju.", "en": "Construction of the Chernobyl nuclear power plant began in 1970; the first reactor was completed in 1977, with subsequent reactors added afterward." },
+      "quote": "Njena izgradnja je počela 1970. godine. Prvi reaktor je završen 1977. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "reaktor-4-otvoren-1983",
+      "title": { "sr": "Otvoren reaktor broj 4", "en": "Reactor No. 4 opened" },
+      "year": 1983,
+      "yearEnd": null,
+      "placeId": "cernobil",
+      "episodeId": "133",
+      "timestamp": "10:06",
+      "type": "other",
+      "actors": ["Sovjetski Savez"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Reaktor broj 4 u Černobilju svečano je završen i otvoren 1983. godine, mada nikada nije prošao pun test snabdevanja strujom u vanrednoj situaciji.", "en": "Reactor No. 4 at Chernobyl was ceremonially completed and opened in 1983, though it never fully passed the emergency power-supply test." },
+      "quote": "On je svečano završen i otvoren 1983. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "cernobiljska-katastrofa-1986",
+      "title": { "sr": "Nuklearna katastrofa u Černobilju", "en": "Chernobyl nuclear disaster" },
+      "year": 1986,
+      "yearEnd": null,
+      "placeId": "cernobil",
+      "episodeId": "133",
+      "timestamp": "26:07",
+      "type": "other",
+      "actors": ["Osoblje elektrane"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "26. aprila 1986. godine, jedan sat i dvadesetčetiri minuta posle ponoći, dolazi do eksplozije reaktora broj 4 u Černobilju tokom pokušaja izvođenja testa napajanja strujom.", "en": "On April 26, 1986, at one hour and twenty-four minutes past midnight, an explosion occurred at Reactor No. 4 in Chernobyl during an attempted power-supply test." },
+      "quote": "jedan čas i dvajstiri minuta posle ponoći, 26. aprila 1986. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "evakuacija-pripjata-1986",
+      "title": { "sr": "Evakuacija grada Pripjata", "en": "Evacuation of Pripyat" },
+      "year": 1986,
+      "yearEnd": null,
+      "placeId": "pripjat",
+      "episodeId": "133",
+      "timestamp": "48:03",
+      "type": "other",
+      "actors": ["Stanovnici Pripjata", "Sovjetske vlasti"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Aprila 1986. godine Pripjat, najveći grad u okolini elektrane, biva evakuisan zajedno sa desetinama manjih naseljenih mesta.", "en": "In April 1986, Pripyat, the largest city near the plant, was evacuated along with dozens of smaller settlements." },
+      "quote": "Pripjat je najveći grad koji je evakuisan i desetine, ako ne i stotine manjih nekih nalaga.",
+      "confidence": "high"
+    },
+    {
+      "id": "priznanje-uzroka-havarije-1991",
+      "title": { "sr": "Zvanično priznanje o uzroku havarije", "en": "Official admission of the disaster's cause" },
+      "year": 1991,
+      "yearEnd": null,
+      "placeId": "cernobil",
+      "episodeId": "133",
+      "timestamp": "66:12",
+      "type": "other",
+      "actors": ["Sovjetske vlasti"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1991. godine dolazi do prvog zvaničnog priznanja da grafitni vrhovi na kontrolnim šipkama, koje su trebale da ugase reaktor, nisu funkcionisale kako je predviđeno.", "en": "In 1991, the first official admission came that the graphite tips on the control rods, meant to shut down the reactor, had not functioned as intended." },
+      "quote": "I već 1991. godine postoji prvo zvaišno priznanje",
+      "confidence": "high"
+    }
+  ]
+}

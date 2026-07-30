@@ -47,7 +47,7 @@ body {
 
 .app__main {
   display: grid;
-  /* Timeline sets its own height (see .timeline--s/m/l) so it can be raised over the map. */
+  /* Timeline sizes itself to its content, capped in px by vis (see maxHeightPx). */
   grid-template-rows: 1fr auto;
   min-width: 0;
   min-height: 0;
@@ -315,6 +315,11 @@ body {
   background: #dfe4e8;
 }
 
+/* Markers stay above the basemap whichever layer is active (SPEC-ohm.md acceptance). */
+.leaflet-overlay-pane {
+  z-index: 450;
+}
+
 .map-empty {
   position: absolute;
   top: 12px;
@@ -326,6 +331,82 @@ body {
   background: rgba(16, 20, 24, 0.85);
   color: var(--text);
   font-size: 12px;
+}
+
+/* ---------- clusters ---------- */
+.cluster {
+  cursor: zoom-in;
+}
+
+/* The count sits inside the circle; a permanent tooltip is the label. */
+.leaflet-tooltip.cluster__label {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.leaflet-tooltip.cluster__label::before {
+  display: none;
+}
+
+/* ---------- basemap switcher ---------- */
+.basemap {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 500;
+  max-width: 210px;
+  padding: 8px;
+  border-radius: 9px;
+  background: rgba(16, 20, 24, 0.86);
+  color: var(--text);
+  backdrop-filter: blur(4px);
+}
+
+.basemap__row {
+  display: flex;
+  gap: 4px;
+}
+
+.basemap__btn {
+  flex: 1;
+  padding: 5px 9px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.basemap__btn.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #16181c;
+}
+
+.basemap__note {
+  margin: 7px 0 0;
+  font-size: 10px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.basemap__note strong {
+  color: var(--text);
 }
 
 /* ---------- legend ---------- */
@@ -536,19 +617,8 @@ body {
   min-height: 0;
   border-top: 1px solid var(--line);
   background: var(--sidebar);
-  transition: height 160ms ease;
-}
-
-.timeline--s {
-  height: 220px;
-}
-
-.timeline--m {
-  height: 45vh;
-}
-
-.timeline--l {
-  height: 70vh;
+  /* No fixed height: the panel is as tall as vis's content, which vis itself caps in pixels
+     (see maxHeightPx). Whatever the timeline doesn't need goes to the map. */
 }
 
 .timeline__resize {
@@ -591,8 +661,8 @@ body {
 }
 
 .timeline__canvas {
-  flex: 1;
-  min-height: 0;
+  /* vis sets its own height (capped in px) and scrolls its groups internally. */
+  overflow: hidden;
 }
 
 /* vis-timeline on a dark panel */
@@ -661,10 +731,6 @@ body {
     border-right: 0;
     border-bottom: 1px solid var(--line);
     max-height: 45vh;
-  }
-
-  .timeline--s {
-    height: 170px;
   }
 
   .legend {
