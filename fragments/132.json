@@ -1,0 +1,100 @@
+{
+  "places": [
+    { "id": "tel-aviv", "name": { "sr": "Tel Aviv", "en": "Tel Aviv" }, "aliases": ["Tel Avivu"], "lat": 32.0853, "lng": 34.7818, "kind": "city" },
+    { "id": "buenos-aires", "name": { "sr": "Buenos Ajres", "en": "Buenos Aires" }, "aliases": ["Buenos Airesu", "Argentini"], "lat": -34.6037, "lng": -58.3816, "kind": "city" },
+    { "id": "damask", "name": { "sr": "Damask", "en": "Damascus" }, "aliases": ["Damasku", "Siriji"], "lat": 33.5138, "lng": 36.2765, "kind": "city" },
+    { "id": "osirak-irak", "name": { "sr": "Nuklearni reaktor Osirak (Irak)", "en": "Osirak nuclear reactor (Iraq)" }, "aliases": ["Iraka", "Iraku"], "lat": 33.1858, "lng": 44.5225, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "osnivanje-mosada-1949",
+      "title": { "sr": "Osnivanje Mosada", "en": "Founding of the Mossad" },
+      "year": 1949,
+      "yearEnd": null,
+      "placeId": "tel-aviv",
+      "episodeId": "132",
+      "timestamp": "11:34",
+      "type": "founding",
+      "actors": ["David Ben Gurion", "Izraelski parlament"],
+      "region": "Bliski istok",
+      "description": { "sr": "11. decembra 1949. godine izraelski parlament donosi odluku o osnivanju Mosada, instituta za obaveštajne poslove i posebne zadatke.", "en": "On December 11, 1949, the Israeli parliament decided to establish the Mossad, the institute for intelligence and special operations." },
+      "quote": "Pengurion 11. decembra 1949. godine ... donosi se odluka o osnivanju Mosada",
+      "confidence": "high"
+    },
+    {
+      "id": "hvatanje-ajhmana-1960",
+      "title": { "sr": "Hvatanje Adolfa Ajhmana u Buenos Ajresu", "en": "Capture of Adolf Eichmann in Buenos Aires" },
+      "year": 1960,
+      "yearEnd": null,
+      "placeId": "buenos-aires",
+      "episodeId": "132",
+      "timestamp": "27:10",
+      "type": "other",
+      "actors": ["Mosad", "Adolf Ajhman"],
+      "region": "Južna Amerika",
+      "description": { "sr": "11. maja 1960. godine Mosad zaskače i hvata Adolfa Ajhmana u Buenos Ajresu, nakon višemesečnog praćenja, i tajno ga prebacuje u Izrael na suđenje.", "en": "On May 11, 1960, the Mossad ambushed and captured Adolf Eichmann in Buenos Aires, after months of surveillance, and secretly transported him to Israel for trial." },
+      "quote": "Praktično su ga jedne večeri zaskočili u Buenos Airesu, u pitanju je 11. maj 1960. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "pogubljenje-ajhmana-1961",
+      "title": { "sr": "Suđenje i pogubljenje Adolfa Ajhmana", "en": "Trial and execution of Adolf Eichmann" },
+      "year": 1961,
+      "yearEnd": null,
+      "placeId": "tel-aviv",
+      "episodeId": "132",
+      "timestamp": "32:19",
+      "type": "death",
+      "actors": ["Adolf Ajhman", "Izrael"],
+      "region": "Bliski istok",
+      "description": { "sr": "1961. godine, nakon javnog suđenja, Adolf Ajhman je obešen, a njegov pepeo rasejan van teritorijalnih voda kako se ne bi nikada našao.", "en": "In 1961, after a public trial, Adolf Eichmann was hanged, and his ashes were scattered outside territorial waters so that they would never be found." },
+      "quote": "1961. godine, dok je trajalo suđenje, i na kraju, po njegovom ishodu, naravno, Adolf Heifmann zaljulje na konopcu",
+      "confidence": "high"
+    },
+    {
+      "id": "eli-kojen-otkriven-1963",
+      "title": { "sr": "Eli Kojen otkriven u Siriji", "en": "Eli Cohen exposed in Syria" },
+      "year": 1963,
+      "yearEnd": null,
+      "placeId": "damask",
+      "episodeId": "132",
+      "timestamp": "46:39",
+      "type": "other",
+      "actors": ["Eli Kojen", "Sirijska vlast"],
+      "region": "Bliski istok",
+      "description": { "sr": "1963. godine, nakon udara u Siriji i promene vlasti, nova garnitura počinje sa podozrenjem da prati aktivnosti izraelskog špijuna Elija Kojena.", "en": "In 1963, following a coup in Syria and a change of government, the new leadership began suspiciously monitoring the activities of Israeli spy Eli Cohen." },
+      "quote": "jeste 1963. godine kada je dovozi do udara u Siriji.",
+      "confidence": "high"
+    },
+    {
+      "id": "pogubljenje-eli-kojena-damask-1965",
+      "title": { "sr": "Javno pogubljenje Elija Kojena u Damasku", "en": "Public execution of Eli Cohen in Damascus" },
+      "year": 1965,
+      "yearEnd": null,
+      "placeId": "damask",
+      "episodeId": "132",
+      "timestamp": "49:26",
+      "type": "death",
+      "actors": ["Eli Kojen", "Sirija"],
+      "region": "Bliski istok",
+      "description": { "sr": "1965. godine izraelski agent Eli Kojen je, nakon javnog suđenja, obešen pred masom ljudi na trgu u Damasku; borba za povratak njegovih ostataka u Izrael traje do danas.", "en": "In 1965, the Israeli agent Eli Cohen was, after a public trial, hanged before a crowd in a square in Damascus; the struggle to return his remains to Israel continues to this day." },
+      "quote": "pošto je pred masom ljudi obešen 1965. godine. Znači njega su javno obešeni na trgu u Damasku.",
+      "confidence": "high"
+    },
+    {
+      "id": "napad-osirak-irak-1981",
+      "title": { "sr": "Izraelski napad na nuklearni reaktor Osirak u Iraku", "en": "Israeli strike on the Osirak nuclear reactor in Iraq" },
+      "year": 1981,
+      "yearEnd": null,
+      "placeId": "osirak-irak",
+      "episodeId": "132",
+      "timestamp": "115:53",
+      "type": "battle",
+      "actors": ["Izraelsko vazduhoplovstvo"],
+      "region": "Bliski istok",
+      "description": { "sr": "1981. godine izraelski avioni doleću do Iraka i bombama uništavaju nuklearni reaktor Osirak, u presedanskoj operaciji sa direktnim ciljem sprečavanja iračkog nuklearnog programa.", "en": "In 1981, Israeli aircraft flew to Iraq and destroyed the Osirak nuclear reactor with bombs, in a precedent-setting operation directly aimed at halting Iraq's nuclear program." },
+      "quote": "To su i uradili u 1981. godini ... da Izrael avionima doleti do Iraka, da bombarduje i u potpunosti uništi nuklearnu elektranu.",
+      "confidence": "high"
+    }
+  ]
+}

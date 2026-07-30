@@ -1,0 +1,114 @@
+{
+  "places": [
+    {
+      "id": "visoko-bih",
+      "name": {
+        "sr": "Visoko (Visočica)",
+        "en": "Visoko (Visočica hill)"
+      },
+      "aliases": [
+        "Visokom",
+        "Visočici"
+      ],
+      "lat": 43.9864,
+      "lng": 18.1789,
+      "kind": "landmark"
+    },
+    {
+      "id": "beograd",
+      "name": {
+        "sr": "Beograd",
+        "en": "Belgrade"
+      },
+      "aliases": [
+        "Beogradu",
+        "Novom Beogradu"
+      ],
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "kind": "city"
+    },
+    {
+      "id": "mljet",
+      "name": {
+        "sr": "Mljet",
+        "en": "Mljet"
+      },
+      "aliases": [
+        "mljetu"
+      ],
+      "lat": 42.75,
+      "lng": 17.5333,
+      "kind": "landmark"
+    }
+  ],
+  "events": [
+    {
+      "id": "osmanagic-otkriva-piramide-visoko-2005",
+      "title": {
+        "sr": "Osmanagić proglašava 'bosanske piramide' kod Visokog",
+        "en": "Osmanagić proclaims the 'Bosnian pyramids' near Visoko"
+      },
+      "year": 2005,
+      "yearEnd": null,
+      "placeId": "visoko-bih",
+      "episodeId": "131",
+      "timestamp": "52:57",
+      "type": "other",
+      "actors": [
+        "Semir Osmanagić"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "2005. godine Semir Osmanagić se pojavljuje u Visokom i brdo Visočicu proglašava veštačkom 'piramidom Sunca', pokrenuvši pseudoarheološki fenomen bosanskih piramida.",
+        "en": "In 2005, Semir Osmanagić appeared in Visoko and declared the Visočica hill an artificial 'Pyramid of the Sun', launching the pseudoarchaeological phenomenon of the Bosnian pyramids."
+      },
+      "quote": "On se pojavio u Visokom i to je sa 2005. se on tamo pojavio.",
+      "confidence": "medium"
+    },
+    {
+      "id": "salinas-price-predavanje-beograd-2006",
+      "title": {
+        "sr": "Roberto Salinas Price održava predavanje o Troji u Beogradu",
+        "en": "Roberto Salinas Price lectures on Troy in Belgrade"
+      },
+      "year": 2006,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "131",
+      "timestamp": "71:06",
+      "type": "other",
+      "actors": [
+        "Roberto Salinas Price"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Meksički pseudoarheolog Roberto Salinas Price, koji je tvrdio da se antička Troja nalazila kod Gabele u Hercegovini, održao je predavanje na Pravnom fakultetu u Beogradu, otprilike u istom periodu kad se pojavio Semir Osmanagić.",
+        "en": "Mexican pseudoarchaeologist Roberto Salinas Price, who claimed that ancient Troy was located near Gabela in Herzegovina, gave a lecture at the Faculty of Law in Belgrade, around the same period Semir Osmanagić emerged."
+      },
+      "quote": "on je održao predavanje isto u tom nekom vremenskom periodu, tada 2006. ... pojavio predavanje država na pravnom fakultetu.",
+      "confidence": "low"
+    },
+    {
+      "id": "mungosi-doneseni-mljet-1910",
+      "title": {
+        "sr": "Mungosi doneti na Mljet",
+        "en": "Mongooses introduced to Mljet"
+      },
+      "year": 1910,
+      "yearEnd": null,
+      "placeId": "mljet",
+      "episodeId": "131",
+      "timestamp": "69:32",
+      "type": "other",
+      "actors": [],
+      "region": "Balkan",
+      "description": {
+        "sr": "Mungosi su na ostrvo Mljet doneti 1910. godine radi kontrole zmijske populacije — činjenica koja pobija pseudoarheološku tvrdnju da je Mljet antički Itaka/Lezbos zbog prisustva 'divljih pasa' (mungosa) spomenutih u Odiseji, budući da su ti sisari na ostrvo stigli mnogo kasnije nego u vreme za koje se tvrdi da se odigrava Trojanski rat.",
+        "en": "Mongooses were introduced to the island of Mljet in 1910 to control the snake population — a fact that refutes the pseudoarchaeological claim that Mljet was the ancient Ithaca/Lesbos due to the 'wild dogs' (mongooses) mentioned in the Odyssey, since these mammals arrived on the island long after the supposed time of the Trojan War."
+      },
+      "quote": "su Mungosi doneti 1910. na mljet, a svakako ne 1200. pre Nove ere",
+      "confidence": "medium"
+    }
+  ]
+}

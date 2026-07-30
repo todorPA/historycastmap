@@ -21,7 +21,7 @@
       "timestamp": "21:53",
       "type": "birth",
       "actors": ["Vuk Branković"],
-      "region": "Srpsko carstvo",
+      "region": "Balkan",
       "description": { "sr": "Pretpostavlja se da je Vuk Branković rođen u Ohridu oko 1345. godine.", "en": "Vuk Branković is presumed to have been born in Ohrid around 1345." },
       "quote": "rekli smo, predpostavlja se rođenje u Okredu, oko 1345. godine.",
       "confidence": "medium"
@@ -36,7 +36,7 @@
       "timestamp": "30:25",
       "type": "battle",
       "actors": ["Vukašin Mrnjavčević", "Jovan Uglješa", "Osmanlije"],
-      "region": "Balkansko poluostrvo",
+      "region": "Balkan",
       "description": { "sr": "Mrnjavčevići, kralj Vukašin i despot Uglješa, poraženi su od Osmanlija na reci Marici 1371. godine, čime nestaje njihova moć i otvara se prostor za uspon Vuka Brankovića.", "en": "The Mrnjavčević brothers, King Vukašin and Despot Uglješa, were defeated by the Ottomans at the Maritsa river in 1371, opening the way for Vuk Branković's rise." },
       "quote": "Jer sad dolazimo do fatalne 1371. godine.",
       "confidence": "high"
@@ -51,7 +51,7 @@
       "timestamp": "35:15",
       "type": "siege",
       "actors": ["Knez Lazar", "Vuk Branković", "Ban Tvrtko", "Nikola Altomanović"],
-      "region": "Srpsko carstvo",
+      "region": "Balkan",
       "description": { "sr": "Ujedinjene vojske kneza Lazara, Vuka Brankovića i bana Tvrtka pobedile su Nikolu Altomanovića i osvojile njegov prestoni grad Užice 1373. godine; Nikola je nakon toga zaslepljen.", "en": "The combined armies of Prince Lazar, Vuk Branković and Ban Tvrtko defeated Nikola Altomanović and captured his capital Užice in 1373; Nikola was subsequently blinded." },
       "quote": "Nakon što su ga 1373. godine zajedničke vojske, bana tvrtka, kneza Lazara i Vuka Brankovića pobedile, oslepele u gradu Užicu",
       "confidence": "high"
@@ -66,7 +66,7 @@
       "timestamp": "35:47",
       "type": "conquest",
       "actors": ["Vuk Branković"],
-      "region": "Srpsko carstvo",
+      "region": "Balkan",
       "description": { "sr": "Vuk Branković osvaja carski grad Skoplje sredinom 1370-ih godina, verovatno 1377, značajno proširujući svoju teritoriju.", "en": "Vuk Branković conquered the imperial city of Skopje in the mid-1370s, likely 1377, significantly expanding his territory." },
       "quote": "mislim da je 77. godina kada je osvojio Skoplje",
       "confidence": "medium"
@@ -81,7 +81,7 @@
       "timestamp": "36:04",
       "type": "conquest",
       "actors": ["Vuk Branković", "Balšići"],
-      "region": "Srpsko carstvo",
+      "region": "Balkan",
       "description": { "sr": "Vuk Branković preotima carski grad Prizren od porodice Balšić 1378. godine.", "en": "Vuk Branković took the imperial city of Prizren from the Balšić family in 1378." },
       "quote": "ono što je isto značajno jeste da je recimo od Balšića 1378. godine",
       "confidence": "medium"
@@ -96,7 +96,7 @@
       "timestamp": "46:24",
       "type": "battle",
       "actors": ["Vuk Branković", "Knez Lazar", "Sultan Murat"],
-      "region": "Balkansko poluostrvo",
+      "region": "Balkan",
       "description": { "sr": "Boj na Kosovu 1389. godine, u kojem Vuk Branković komanduje desnim krilom srpske vojske; prema izvorima, uspešno savladava levo krilo osmanske vojske.", "en": "The Battle of Kosovo in 1389, in which Vuk Branković commanded the right wing of the Serbian army and, per the sources, defeated the Ottoman left wing." },
       "quote": "Sam boj na Kosovu, rekli smo, imamo posebnu temu, dakle, možete pogledati.",
       "confidence": "high"
@@ -111,7 +111,7 @@
       "timestamp": "75:01",
       "type": "battle",
       "actors": ["Mirča Vlaški", "Stefan Lazarević", "Marko Mrnjavčević", "Konstantin Dejanović"],
-      "region": "Balkansko poluostrvo",
+      "region": "Balkan",
       "description": { "sr": "U boju na Rovinama 1395. godine, u okviru osmanskog pohoda na vlaškog vojvodu Mirču, ginu Marko Mrnjavčević i Konstantin Dejanović. Vuk Branković se ne odaziva pozivu na pohod.", "en": "At the Battle of Rovine in 1395, part of an Ottoman campaign against the Wallachian voivode Mircea, Marko Mrnjavčević and Konstantin Dejanović were killed. Vuk Branković did not answer the call to join the campaign." },
       "quote": "U okviru tog pohoda odigraće se čujeni boj na rovinama narodne godine, 1395.",
       "confidence": "high"
@@ -126,7 +126,7 @@
       "timestamp": "75:57",
       "type": "battle",
       "actors": ["Stefan Lazarević", "Osmanlije", "Hrišćanska koalicija"],
-      "region": "Balkansko poluostrvo",
+      "region": "Balkan",
       "description": { "sr": "U bici kod Nikopolja 1396. godine osmanska vojska ostvaruje veliku pobedu nad hrišćanskom koalicijom; Stefan Lazarević se borio na osmanskoj strani, dok Vuk Branković ne učestvuje.", "en": "At the Battle of Nicopolis in 1396 the Ottoman army won a great victory over the Christian coalition; Stefan Lazarević fought on the Ottoman side, while Vuk Branković did not take part." },
       "quote": "Pohod hrišćana do njega dolazi sledeće godine. I imamo čudanu bitku kod Nikopolja.",
       "confidence": "high"
@@ -141,7 +141,7 @@
       "timestamp": "76:44",
       "type": "conquest",
       "actors": ["Osmanlije", "Vuk Branković"],
-      "region": "Srpsko carstvo",
+      "region": "Balkan",
       "description": { "sr": "Turci upadaju i osvajaju Prištinu 1396. godine, ostavljajući Vuka Brankovića bez preostalih teritorija.", "en": "The Ottomans invaded and captured Pristina in 1396, leaving Vuk Branković without his remaining territories." },
       "quote": "teiste 1396. godine, Turci upadaju i osvajaju Prištinu.",
       "confidence": "high"
@@ -156,7 +156,7 @@
       "timestamp": "78:42",
       "type": "death",
       "actors": ["Vuk Branković"],
-      "region": "Srpsko carstvo",
+      "region": "Balkan",
       "description": { "sr": "Vuk Branković umire u turskom zarobljeništvu u oktobru 1397. godine, nakon što su Turci zarobili njega i osvojili njegove preostale teritorije. Tačno mesto zarobljeništva i smrti nije poznato.", "en": "Vuk Branković died in Ottoman captivity in October 1397, after the Ottomans captured him and seized his remaining territories. The exact place of his captivity and death is unknown." },
       "quote": "Gde je? Oktobra 1397. godine preminuo.",
       "confidence": "low"

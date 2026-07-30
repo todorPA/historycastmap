@@ -1,0 +1,174 @@
+{
+  "places": [
+    {
+      "id": "trsic",
+      "name": {
+        "sr": "Tršić",
+        "en": "Tršić"
+      },
+      "aliases": [
+        "Tršiću"
+      ],
+      "lat": 44.2258,
+      "lng": 19.4272,
+      "kind": "city"
+    },
+    {
+      "id": "sremski-karlovci",
+      "name": {
+        "sr": "Sremski Karlovci",
+        "en": "Sremski Karlovci"
+      },
+      "aliases": [
+        "Karlovcima"
+      ],
+      "lat": 45.2072,
+      "lng": 19.9339,
+      "kind": "city"
+    },
+    {
+      "id": "bec",
+      "name": {
+        "sr": "Beč",
+        "en": "Vienna"
+      },
+      "aliases": [
+        "Beču",
+        "Beča"
+      ],
+      "lat": 48.2082,
+      "lng": 16.3738,
+      "kind": "city"
+    },
+    {
+      "id": "beograd",
+      "name": {
+        "sr": "Beograd (Kneževina Srbija)",
+        "en": "Belgrade (Principality of Serbia)"
+      },
+      "aliases": [
+        "Kneževini Srbiji"
+      ],
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "vuk-rodjenje-1787",
+      "title": {
+        "sr": "Rođenje Vuka Stefanovića Karadžića",
+        "en": "Birth of Vuk Stefanović Karadžić"
+      },
+      "year": 1787,
+      "yearEnd": null,
+      "placeId": "trsic",
+      "episodeId": "115",
+      "timestamp": "07:58",
+      "type": "birth",
+      "actors": [
+        "Vuk Stefanović Karadžić"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Vuk Stefanović Karadžić je rođen 1787. godine u Tršiću, u pravom istorijskom trenutku koji je omogućio njegovu buduću ulogu reformatora srpskog jezika.",
+        "en": "Vuk Stefanović Karadžić was born in 1787 in Tršić, at the right historical moment that would enable his future role as reformer of the Serbian language."
+      },
+      "quote": "koji je rođen u pravom trenutku ... 1787.",
+      "confidence": "high"
+    },
+    {
+      "id": "vuk-boravi-karlovci",
+      "title": {
+        "sr": "Vuk boravi kod bogoslovije u Karlovcima",
+        "en": "Vuk stays at the seminary in Karlovci"
+      },
+      "year": 1804,
+      "yearEnd": null,
+      "placeId": "sremski-karlovci",
+      "episodeId": "115",
+      "timestamp": "21:28",
+      "type": "other",
+      "actors": [
+        "Vuk Stefanović Karadžić"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Tokom svog školovanja Vuk je boravio i radio kod bogoslovije u Karlovcima, pre nego što je otišao preko Zemuna u Beč.",
+        "en": "During his education, Vuk stayed and worked at the seminary in Karlovci, before going via Zemun to Vienna."
+      },
+      "quote": "koji je radio teda bogoslovi u Karlovcima.",
+      "confidence": "low"
+    },
+    {
+      "id": "vuk-srpski-rjecnik-1818",
+      "title": {
+        "sr": "Objavljivanje Srpskog rječnika",
+        "en": "Publication of the Serbian Dictionary"
+      },
+      "year": 1818,
+      "yearEnd": null,
+      "placeId": "bec",
+      "episodeId": "115",
+      "timestamp": "62:56",
+      "type": "reform",
+      "actors": [
+        "Vuk Stefanović Karadžić"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1818. godine Vuk izdaje u Beču Srpski rječnik, ključno delo svoje jezičke reforme, u vreme kada srpski jezik još nema ni gramatiku, ni pravopis, ni rečnik u modernom smislu.",
+        "en": "In 1818, Vuk published the Serbian Dictionary in Vienna, a key work of his language reform, at a time when the Serbian language still had no modern grammar, spelling, or dictionary."
+      },
+      "quote": "jasno je da Vuk 818. izde taj rečnik, dakle, to se zvalo Srpski rječnik",
+      "confidence": "high"
+    },
+    {
+      "id": "vukova-reforma-prihvacena-1860",
+      "title": {
+        "sr": "Vukova jezička reforma zvanično prihvaćena u Srbiji",
+        "en": "Vuk's language reform officially adopted in Serbia"
+      },
+      "year": 1860,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "115",
+      "timestamp": "125:53",
+      "type": "reform",
+      "actors": [
+        "Kneževina Srbija"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Vukova reforma srpskog jezika zvanično je prihvaćena u Kneževini Srbiji 1860. godine, mada Vuk nije doživeo da vidi tu konačnu pobedu svog jezičkog dela.",
+        "en": "Vuk's reform of the Serbian language was officially adopted in the Principality of Serbia in 1860, although Vuk did not live to see this final victory of his linguistic work."
+      },
+      "quote": "prva njegova ta vukova reforma je prihvaćena u Karneževini Srbiji 1860.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-vuka-1864",
+      "title": {
+        "sr": "Smrt Vuka Karadžića u Beču",
+        "en": "Death of Vuk Karadžić in Vienna"
+      },
+      "year": 1864,
+      "yearEnd": null,
+      "placeId": "bec",
+      "episodeId": "115",
+      "timestamp": "126:11",
+      "type": "death",
+      "actors": [
+        "Vuk Stefanović Karadžić"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Vuk Karadžić je umro 1864. godine u Beču, gde je bio prvobitno i sahranjen.",
+        "en": "Vuk Karadžić died in 1864 in Vienna, where he was initially buried as well."
+      },
+      "quote": "On 1864. godina umire.",
+      "confidence": "high"
+    }
+  ]
+}

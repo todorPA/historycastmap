@@ -1,0 +1,155 @@
+{
+  "places": [
+    {
+      "id": "ruklada",
+      "name": {
+        "sr": "Ruklada (Tamnavski kraj)",
+        "en": "Ruklada (Tamnava region)"
+      },
+      "aliases": [
+        "Ruklade"
+      ],
+      "lat": 44.4667,
+      "lng": 19.9167,
+      "kind": "city"
+    },
+    {
+      "id": "beograd",
+      "name": {
+        "sr": "Beograd",
+        "en": "Belgrade"
+      },
+      "aliases": [
+        "Beogradu"
+      ],
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "kind": "city"
+    },
+    {
+      "id": "morava-dolina",
+      "name": {
+        "sr": "Dolina Morave",
+        "en": "Morava Valley"
+      },
+      "aliases": [
+        "Moravi"
+      ],
+      "lat": 43.7833,
+      "lng": 21.3833,
+      "kind": "region"
+    },
+    {
+      "id": "trstenik",
+      "name": {
+        "sr": "Trstenik",
+        "en": "Trstenik"
+      },
+      "aliases": [
+        "Trsteniku"
+      ],
+      "lat": 43.6142,
+      "lng": 21.0072,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "tankosic-rodjenje-1880",
+      "title": {
+        "sr": "Rođenje Vojislava Tankosića",
+        "en": "Birth of Vojislav Tankosić"
+      },
+      "year": 1880,
+      "yearEnd": null,
+      "placeId": "ruklada",
+      "episodeId": "123",
+      "timestamp": "08:40",
+      "type": "birth",
+      "actors": [
+        "Vojislav Tankosić"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Vojislav Tankosić je rođen septembra 1880. godine u mestu Ruklada, u Tamnavskom kraju blizu Uba.",
+        "en": "Vojislav Tankosić was born in September 1880 in the village of Ruklada, in the Tamnava region near Ub."
+      },
+      "quote": "je rođen septembra 1880. godine u mestu Ruklade",
+      "confidence": "high"
+    },
+    {
+      "id": "majski-prevrat-1903",
+      "title": {
+        "sr": "Majski prevrat — ubistvo kraljevskog para",
+        "en": "May Coup — assassination of the royal couple"
+      },
+      "year": 1903,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "123",
+      "timestamp": "30:56",
+      "type": "other",
+      "actors": [
+        "Vojislav Tankosić",
+        "Kralj Aleksandar Obrenović",
+        "Draga Mašin",
+        "Crna ruka (zaverenici)"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "U noći sa 28. na 29. maj 1903. godine, u Majskom prevratu, oficirski zaverenici ubijaju kralja Aleksandra Obrenovića i kraljicu Dragu; uloga Voje Tankosića bila je da se postara za braću Lunjevica.",
+        "en": "On the night of May 28-29, 1903, in the May Coup, officer conspirators killed King Alexander Obrenović and Queen Draga; Voja Tankosić's assigned role was to deal with the Lunjevica brothers."
+      },
+      "quote": "noć 28. na 29. ima, 1903. godine, dolazi do ubisao kraljevskog para.",
+      "confidence": "high"
+    },
+    {
+      "id": "tankosic-brani-dolinu-morave-1915",
+      "title": {
+        "sr": "Tankosić brani Dolinu Morave u odsudnom napadu",
+        "en": "Tankosić defends the Morava Valley during the decisive offensive"
+      },
+      "year": 1915,
+      "yearEnd": null,
+      "placeId": "morava-dolina",
+      "episodeId": "123",
+      "timestamp": "97:39",
+      "type": "battle",
+      "actors": [
+        "Vojislav Tankosić",
+        "Austro-ugarska vojska",
+        "Nemačka vojska"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Oktobra 1915. godine, kada počinje odsudni zajednički napad Austro-Ugarske i Nemačke na Srbiju, Vojislav Tankosić brani ključni potez, Dolinu Morave.",
+        "en": "In October 1915, when the decisive joint Austro-Hungarian and German offensive against Serbia began, Vojislav Tankosić defended the crucial position of the Morava Valley."
+      },
+      "quote": "kreće odsudni napad zajedničke Austro-Ugarske i Nemačkih trupa, oktober 1915. godine na Srbiju, on brani onaj potes koji je bio ključan, to je naravno Dolina Morave.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-tankosica-trstenik-1915",
+      "title": {
+        "sr": "Smrt Vojislava Tankosića u bolnici u Trsteniku",
+        "en": "Death of Vojislav Tankosić in hospital at Trstenik"
+      },
+      "year": 1915,
+      "yearEnd": null,
+      "placeId": "trstenik",
+      "episodeId": "123",
+      "timestamp": "99:34",
+      "type": "death",
+      "actors": [
+        "Vojislav Tankosić"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Vojislav Tankosić je umro 2. novembra 1915. godine u bolnici u Trsteniku, od rana zadobijenih u borbama tokom povlačenja srpske vojske.",
+        "en": "Vojislav Tankosić died on November 2, 1915, in a hospital at Trstenik, from wounds sustained during the fighting as the Serbian army retreated."
+      },
+      "quote": "On će preminuti u toj bolnici u Trsteniku 2. novembra 1915. godine.",
+      "confidence": "high"
+    }
+  ]
+}

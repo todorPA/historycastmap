@@ -1,0 +1,181 @@
+{
+  "places": [
+    {
+      "id": "sevastopolj",
+      "name": {
+        "sr": "Sevastopolj",
+        "en": "Sevastopol"
+      },
+      "aliases": [
+        "Sevastopolja",
+        "Sevastopolju"
+      ],
+      "lat": 44.6054,
+      "lng": 33.522,
+      "kind": "battle-site"
+    },
+    {
+      "id": "balaklava",
+      "name": {
+        "sr": "Balaklava",
+        "en": "Balaklava"
+      },
+      "aliases": [
+        "Balaklave"
+      ],
+      "lat": 44.4993,
+      "lng": 33.5983,
+      "kind": "battle-site"
+    },
+    {
+      "id": "inkerman",
+      "name": {
+        "sr": "Inkerman",
+        "en": "Inkerman"
+      },
+      "aliases": [
+        "Inkermana"
+      ],
+      "lat": 44.6011,
+      "lng": 33.6106,
+      "kind": "battle-site"
+    },
+    {
+      "id": "pariz",
+      "name": {
+        "sr": "Pariz",
+        "en": "Paris"
+      },
+      "aliases": [
+        "Parijski kongres"
+      ],
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "iskrcavanje-krim-1854",
+      "title": {
+        "sr": "Savezničko iskrcavanje na Krimu",
+        "en": "Allied landing in Crimea"
+      },
+      "year": 1854,
+      "yearEnd": null,
+      "placeId": "sevastopolj",
+      "episodeId": "124",
+      "timestamp": "49:18",
+      "type": "other",
+      "actors": [
+        "Francuska",
+        "Britanija"
+      ],
+      "region": "Istočna Evropa",
+      "description": {
+        "sr": "Septembra 1854. godine oko 60.000 francuskih i britanskih vojnika izvodi neplanski desant na Krim, 53 km od Sevastopolja, u jednoj od prvih velikih amfibijskih operacija tog obima u 19. veku.",
+        "en": "In September 1854, around 60,000 French and British troops carried out a largely unplanned landing in Crimea, 53 km from Sevastopol, in one of the first large amphibious operations of that scale in the 19th century."
+      },
+      "quote": "koji se u septembru 1854. godine savaju na 53 km od Sevastopolja",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-balaklava-1854",
+      "title": {
+        "sr": "Bitka kod Balaklave",
+        "en": "Battle of Balaclava"
+      },
+      "year": 1854,
+      "yearEnd": null,
+      "placeId": "balaklava",
+      "episodeId": "124",
+      "timestamp": "64:52",
+      "type": "battle",
+      "actors": [
+        "Ruska vojska",
+        "Britanska vojska"
+      ],
+      "region": "Istočna Evropa",
+      "description": {
+        "sr": "25. oktobra 1854. godine odigrava se čuvena bitka kod Balaklave, koja će kasnije postati mitska tema poezije i filma (uključujući čuveni juriš lake konjice).",
+        "en": "On October 25, 1854, the famous Battle of Balaclava took place, which would later become a mythic subject of poetry and film (including the famous Charge of the Light Brigade)."
+      },
+      "quote": "25. oktobra 1854. godine desi će se čuvena bitka kod Balaklave koja će biti posle ispevana i opevana.",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-inkerman-1854",
+      "title": {
+        "sr": "Bitka kod Inkermana",
+        "en": "Battle of Inkerman"
+      },
+      "year": 1854,
+      "yearEnd": null,
+      "placeId": "inkerman",
+      "episodeId": "124",
+      "timestamp": "73:14",
+      "type": "battle",
+      "actors": [
+        "Admiral Menšikov",
+        "Ruska vojska",
+        "Saveznici"
+      ],
+      "region": "Istočna Evropa",
+      "description": {
+        "sr": "5. novembra 1854. godine odigrava se bitka kod Inkermana, kada ruski komandant admiral Menšikov, uveren da može pobediti, pokreće veliki juriš od 40.000 vojnika na savezničke položaje pored Sevastopolja.",
+        "en": "On November 5, 1854, the Battle of Inkerman took place, when Russian commander Admiral Menshikov, believing he could win, launched a major assault with 40,000 troops on the Allied positions near Sevastopol."
+      },
+      "quote": "5. novembra bitku kod Inkermana ... njihov komadant admiral Menšikov izdaje zapovest",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-nikolaja-i-1855",
+      "title": {
+        "sr": "Smrt ruskog cara Nikolaja I",
+        "en": "Death of Russian Tsar Nicholas I"
+      },
+      "year": 1855,
+      "yearEnd": null,
+      "placeId": "sevastopolj",
+      "episodeId": "124",
+      "timestamp": "87:37",
+      "type": "death",
+      "actors": [
+        "Nikolaj I"
+      ],
+      "region": "Istočna Evropa",
+      "description": {
+        "sr": "1855. godine, razočaran ishodom Krimskog rata koji nije tekao kako je očekivao, ruski car Nikolaj I umire, donoseći promene na ruski dvor.",
+        "en": "In 1855, disillusioned by the course of the Crimean War, which had not gone as expected, Russian Tsar Nicholas I died, bringing changes to the Russian court."
+      },
+      "quote": "on razočaran umire 1855.",
+      "confidence": "high"
+    },
+    {
+      "id": "parizanski-kongres-1856",
+      "title": {
+        "sr": "Parijski kongres i kraj Krimskog rata",
+        "en": "Congress of Paris and end of the Crimean War"
+      },
+      "year": 1856,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "124",
+      "timestamp": "100:55",
+      "type": "treaty",
+      "actors": [
+        "Rusija",
+        "Britanija",
+        "Francuska",
+        "Osmansko carstvo"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Marta 1856. godine potpisan je mir na Parijskom kongresu; Rusija gubi Južnu Besarabiju i pristaje na demilitarizaciju Crnog mora, gubeći svoju regionalnu dominaciju, dok Britanija ulazi u period svetske hegemonije koji traje do 1918. godine.",
+        "en": "In March 1856, peace was signed at the Congress of Paris; Russia lost southern Bessarabia and agreed to the demilitarization of the Black Sea, losing its regional dominance, while Britain entered a period of world hegemony that lasted until 1918."
+      },
+      "quote": "u martu 1856. godine imamo Parijski kongres ... Britanija u periodu između 1856. godine i 1918. godine postaje svetski hegemon.",
+      "confidence": "high"
+    }
+  ]
+}

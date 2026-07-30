@@ -1,0 +1,199 @@
+{
+  "places": [
+    {
+      "id": "pariz",
+      "name": {
+        "sr": "Pariz",
+        "en": "Paris"
+      },
+      "aliases": [
+        "Parizu"
+      ],
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "kind": "city"
+    },
+    {
+      "id": "kongo",
+      "name": {
+        "sr": "Kongo (Slobodna Drž. Kongo)",
+        "en": "Congo (Congo Free State)"
+      },
+      "aliases": [
+        "Kongom",
+        "Kongu"
+      ],
+      "lat": -0.228,
+      "lng": 15.8277,
+      "kind": "region"
+    },
+    {
+      "id": "salem",
+      "name": {
+        "sr": "Salem",
+        "en": "Salem"
+      },
+      "aliases": [
+        "Salemu"
+      ],
+      "lat": 42.5195,
+      "lng": -70.8967,
+      "kind": "city"
+    },
+    {
+      "id": "rim",
+      "name": {
+        "sr": "Rim",
+        "en": "Rome"
+      },
+      "aliases": [
+        "Rimu"
+      ],
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "kind": "city"
+    },
+    {
+      "id": "vatikan",
+      "name": {
+        "sr": "Vatikan (Sikstinska kapela)",
+        "en": "Vatican (Sistine Chapel)"
+      },
+      "aliases": [
+        "Sikstinsku kapelu"
+      ],
+      "lat": 41.9029,
+      "lng": 12.4534,
+      "kind": "landmark"
+    },
+    {
+      "id": "filadelfija",
+      "name": {
+        "sr": "Filadelfija (Kongres SAD)",
+        "en": "Philadelphia (US Congress)"
+      },
+      "aliases": [],
+      "lat": 39.9526,
+      "lng": -75.1652,
+      "kind": "landmark"
+    }
+  ],
+  "events": [
+    {
+      "id": "david-zakletva-horacijevaca-1784",
+      "title": {
+        "sr": "Davidova slika 'Zakletva Horacijevaca' — koren mita o 'rimskom pozdravu'",
+        "en": "David's 'Oath of the Horatii' — root of the 'Roman salute' myth"
+      },
+      "year": 1784,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "118",
+      "timestamp": "33:14",
+      "type": "other",
+      "actors": [
+        "Jacques-Louis David"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1784. godine, tik pre Francuske revolucije, francuski slikar Jacques-Louis David naslikao je pseudo-istorijsku scenu 'Zakletva Horacijevaca', koja postaje prvi vizuelni trag onoga što će vekovima kasnije biti pogrešno nazvano 'antički rimski pozdrav' — motiv koji nacisti i fašisti preuzimaju kao lažno autentičan.",
+        "en": "In 1784, just before the French Revolution, French painter Jacques-Louis David painted the pseudo-historical scene 'Oath of the Horatii', which became the first visual trace of what would later be wrongly called the 'ancient Roman salute' — a motif later adopted by fascists and Nazis as falsely authentic."
+      },
+      "quote": "na slici jednog francuskog slikara Jacques-Louis Davida, koji je 1784. godine ... naslikao jednu predstavu koja je tako kvazi-istorijska",
+      "confidence": "high"
+    },
+    {
+      "id": "leopold-ii-uprava-kongom-1885-1908",
+      "title": {
+        "sr": "Leopold II lično upravlja Kongom",
+        "en": "Leopold II personally rules the Congo"
+      },
+      "year": 1885,
+      "yearEnd": 1908,
+      "placeId": "kongo",
+      "episodeId": "118",
+      "timestamp": "58:45",
+      "type": "reign",
+      "actors": [
+        "Leopold II"
+      ],
+      "region": "Afrika",
+      "description": {
+        "sr": "Od 1885. do 1908. godine belgijski kralj Leopold II lično upravlja Slobodnom Državom Kongo kao svojim privatnim posedom, period obeležen razmerama nasilja i eksploatacije koje su i tada izazivale organizovan otpor i humanitarne pokrete.",
+        "en": "From 1885 to 1908, Belgian King Leopold II personally ruled the Congo Free State as his private property, a period marked by such violence and exploitation that it provoked organized resistance and humanitarian movements even at the time."
+      },
+      "quote": "Leopold upravlja Kongom od 1885. do 1908. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "salemska-vestica-hisretina-1692",
+      "title": {
+        "sr": "Suđenja vešticama u Salemu",
+        "en": "Salem witch trials"
+      },
+      "year": 1692,
+      "yearEnd": 1693,
+      "placeId": "salem",
+      "episodeId": "118",
+      "timestamp": "60:51",
+      "type": "other",
+      "actors": [
+        "Stanovnici Salema"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "1692. i 1693. godine u Salemu pod optužbom za veštičarenje pogubljeno je nešto manje od 50 ljudi, obešenih a ne spaljenih — spaljivanje na lomači je evropski, ne severnoamerički običaj, suprotno popularnoj kulturnoj slici.",
+        "en": "In 1692 and 1693 in Salem, just under 50 people were executed on charges of witchcraft, hanged rather than burned — burning at the stake was a European, not a North American practice, contrary to popular cultural depictions."
+      },
+      "quote": "Govorimo sad o 1692. i 1693. godini ... nijedna nije spaljena.",
+      "confidence": "high"
+    },
+    {
+      "id": "mikelandjelo-pismo-1509",
+      "title": {
+        "sr": "Mikelanđelovo pismo iz 1509. o slikanju Sikstinske kapele",
+        "en": "Michelangelo's 1509 letter about painting the Sistine Chapel"
+      },
+      "year": 1509,
+      "yearEnd": null,
+      "placeId": "vatikan",
+      "episodeId": "118",
+      "timestamp": "63:49",
+      "type": "other",
+      "actors": [
+        "Michelangelo Buonarroti",
+        "Giovanni da Pistoia"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "U pismu iz 1509. godine prijatelju Giovanniju da Pistoji, Mikelanđelo piše sonet o mukama slikanja Sikstinske kapele, dokazujući da je legenda o tome kako je 'ležao na leđima' netačna.",
+        "en": "In a 1509 letter to his friend Giovanni da Pistoia, Michelangelo wrote a sonnet about the torments of painting the Sistine Chapel, proving that the legend of him 'lying on his back' is inaccurate."
+      },
+      "quote": "iskopala jedno njegovo pismo iz 1509. godine, koje je on uputio svom prijatelju Giovanni da Pistoji",
+      "confidence": "high"
+    },
+    {
+      "id": "propao-predlog-njemackog-jezika-1794",
+      "title": {
+        "sr": "Propao predlog o objavljivanju zakona na nemačkom jeziku (mit o jednom glasu)",
+        "en": "Failed proposal to publish laws in German (the 'one vote' myth)"
+      },
+      "year": 1794,
+      "yearEnd": null,
+      "placeId": "filadelfija",
+      "episodeId": "118",
+      "timestamp": "83:55",
+      "type": "reform",
+      "actors": [
+        "Kongres Sjedinjenih Američkih Država"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "1794. godine, predlog da se zakoni objavljuju i na nemačkom jeziku (a ne da engleski postane zvanični jezik SAD, kako glasi popularan mit) odbačen je glasovima 42 protiv 41 — razlikom od jednog glasa, ne dva, kako se često pogrešno navodi.",
+        "en": "In 1794, a proposal to publish laws also in German (not, as the popular myth claims, that English become the official US language) was rejected 42 to 41 — by one vote, not two, as is often incorrectly cited."
+      },
+      "quote": "to je bilo 1794. godine ... odnos glasanja je bio 42 protiv i 41 za. Tako da jeste jedan glas, a ne dva.",
+      "confidence": "high"
+    }
+  ]
+}

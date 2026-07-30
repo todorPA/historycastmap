@@ -105,7 +105,7 @@ let episodeMetaByNumber = new Map();
 if (EPISODES_SOURCE && fs.existsSync(EPISODES_SOURCE)) {
   const eps = JSON.parse(fs.readFileSync(EPISODES_SOURCE, "utf-8"));
   for (const ep of eps) {
-    const m = /^(\d+)\s*-\s*(.+)$/.exec(ep.title || "");
+    const m = /^(\d+)\s*[-=]\s*(.+)$/.exec(ep.title || "");
     if (m) {
       const num = String(parseInt(m[1], 10));
       episodeMetaByNumber.set(num, {

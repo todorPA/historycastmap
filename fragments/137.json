@@ -1,0 +1,98 @@
+{
+  "places": [
+    { "id": "pokrovsko-sibir", "name": { "sr": "Pokrovsko (Sibir)", "en": "Pokrovskoye (Siberia)" }, "aliases": ["Pokrovsku", "Pokrovskom"], "lat": 57.7286, "lng": 66.4013, "kind": "city" },
+    { "id": "petrograd", "name": { "sr": "Sankt Peterburg (Petrograd)", "en": "Saint Petersburg (Petrograd)" }, "aliases": ["Petrogradu", "Sankt-Peterburgu", "petrebuško društvo"], "lat": 59.9311, "lng": 30.3609, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "raspucin-rodjenje-1869",
+      "title": { "sr": "Rođenje Grigorija Raspućina", "en": "Birth of Grigori Rasputin" },
+      "year": 1869,
+      "yearEnd": null,
+      "placeId": "pokrovsko-sibir",
+      "episodeId": "137",
+      "timestamp": "06:34",
+      "type": "birth",
+      "actors": ["Grigori Raspućin"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Grigorije Raspućin je rođen 1869. godine u Pokrovsku u Sibiru, iz skromnih početaka koji su daleko od kasnijeg uticaja na carski dvor.", "en": "Grigori Rasputin was born in 1869 in Pokrovskoye in Siberia, from humble beginnings far from his later influence at the imperial court." },
+      "quote": "gdje je Raspućin rođen 1869. godine, u Pokrovsku",
+      "confidence": "high"
+    },
+    {
+      "id": "raspucin-dolazak-petrograd-1903",
+      "title": { "sr": "Raspućin se obreo u Petrogradu", "en": "Rasputin arrives in Saint Petersburg" },
+      "year": 1903,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "137",
+      "timestamp": "31:15",
+      "type": "other",
+      "actors": ["Grigori Raspućin"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1903. godine Raspućin se obreo u Petrogradu, u svojim zrelim godinama (34), sa već izgrađenim navikama i ritualima koje je upražnjavao sa svojim sledbenicima, i glasom koji se o njemu proneo.", "en": "In 1903, Rasputin arrived in Saint Petersburg, at 34 years of age, with already established habits and rituals practiced with his followers, and a growing reputation." },
+      "quote": "Čini se da se on obreo u Petrogradu, 1903. godine, on praktično tada ima 34 godine",
+      "confidence": "medium"
+    },
+    {
+      "id": "carevic-zdravstvena-kriza-1912",
+      "title": { "sr": "Najveća zdravstvena kriza careviča i Raspućinov uticaj", "en": "The Tsarevich's gravest health crisis and Rasputin's influence" },
+      "year": 1912,
+      "yearEnd": null,
+      "placeId": "pokrovsko-sibir",
+      "episodeId": "137",
+      "timestamp": "45:17",
+      "type": "other",
+      "actors": ["Carević Aleksej", "Grigori Raspućin", "Carica Aleksandra"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1912. godine dolazi do najveće zdravstvene krize careviča, čiji je život visio o koncu; Raspućin, iako fizički u Sibiru a ne u Sankt Peterburgu, telegramom umanjuje krizu, čime carica postaje njegova bespogovorna vernica.", "en": "In 1912, the Tsarevich suffered his gravest health crisis, his life hanging by a thread; Rasputin, though physically in Siberia rather than Saint Petersburg, eased the crisis by telegram, after which the Tsarina became his unwavering believer." },
+      "quote": "Dakle, 1912. godine je sigurno najveća zrastvena kriza gde je praktično njegov život visio o koncu.",
+      "confidence": "high"
+    },
+    {
+      "id": "prvi-atentat-raspucin-1914",
+      "title": { "sr": "Prvi atentat na Raspućina", "en": "First assassination attempt on Rasputin" },
+      "year": 1914,
+      "yearEnd": null,
+      "placeId": "pokrovsko-sibir",
+      "episodeId": "137",
+      "timestamp": "56:16",
+      "type": "other",
+      "actors": ["Grigori Raspućin"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "U leto 1914. godine Raspućin preživljava prvi atentat na svoj život; monah organizator napada uspeva da pobegne od carske ruke.", "en": "In the summer of 1914, Rasputin survived the first assassination attempt on his life; the monk who allegedly organized the attack escaped the reach of the Tsarist authorities." },
+      "quote": "sam Raspućin, recimo, preživljava taj prvi atentat 1914. godine u leto.",
+      "confidence": "high"
+    },
+    {
+      "id": "ubistvo-raspucina-1916",
+      "title": { "sr": "Ubistvo Grigorija Raspućina", "en": "Assassination of Grigori Rasputin" },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "137",
+      "timestamp": "61:23",
+      "type": "death",
+      "actors": ["Grigori Raspućin", "Feliks Jusupov", "Dimitrije Pavlović"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "U noći sa 30. na 31. decembar 1916. godine Grigorije Raspućin je pozvan na dvor Feliksa Jusupova, gde je otrovan i upucan više puta, uz fatalan hitac u čelo — ubistvo je ubrzo otkriveno kao delo Jusupova.", "en": "On the night of December 30–31, 1916, Grigori Rasputin was invited to the estate of Felix Yusupov, where he was poisoned and shot multiple times, including a fatal shot to the forehead — the murder was soon revealed to be Yusupov's doing." },
+      "quote": "Grigori Raspućin je pozvan u noći 30. na 31. decembar 1916. godine na dvor Feliksa Jusupova.",
+      "confidence": "high"
+    },
+    {
+      "id": "raspucin-telo-privremena-vlada-1917",
+      "title": { "sr": "Sudbina Raspućinovog tela pod privremenom vladom", "en": "The fate of Rasputin's body under the Provisional Government" },
+      "year": 1917,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "137",
+      "timestamp": "68:10",
+      "type": "other",
+      "actors": ["Privremena vlada", "Knez Lavov", "Kerenski"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "U proleće 1917. godine, još pre oktobarske revolucije i bolševika, pod privremenom vladom (prvo knez Lavov, zatim Kerenski), rešava se sudbina Raspućinovog tela koje je postalo mesto hodočašća.", "en": "In the spring of 1917, before the October Revolution and the Bolsheviks, under the Provisional Government (first Prince Lvov, then Kerensky), the fate of Rasputin's body—which had become a pilgrimage site—was decided." },
+      "quote": "Raspućinovo telo je već, dakle, ne govorimo o oktobarskoj revoluciji bolševicima, dakle, još u prolaće 1917. godine",
+      "confidence": "medium"
+    }
+  ]
+}

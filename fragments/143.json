@@ -2,7 +2,7 @@
   "places": [
     { "id": "bec", "name": { "sr": "Beč", "en": "Vienna" }, "aliases": ["Beču", "Beča"], "lat": 48.2082, "lng": 16.3738, "kind": "city" },
     { "id": "berlin", "name": { "sr": "Berlin", "en": "Berlin" }, "aliases": ["Berlinu", "Berlina", "Berlinskog"], "lat": 52.5200, "lng": 13.4050, "kind": "city" },
-    { "id": "petrograd", "name": { "sr": "Sankt Peterburg", "en": "Saint Petersburg" }, "aliases": ["Rusiji", "Rusija"], "lat": 59.9311, "lng": 30.3609, "kind": "city" },
+    { "id": "petrograd", "name": { "sr": "Sankt Peterburg", "en": "Saint Petersburg" }, "aliases": [], "lat": 59.9311, "lng": 30.3609, "kind": "city" },
     { "id": "kenigsgrac", "name": { "sr": "Kenigsgrac (Sadova)", "en": "Königgrätz (Sadová)" }, "aliases": ["Sadove", "Kenigsgraca", "Kenigsgrac"], "lat": 50.2092, "lng": 15.8328, "kind": "battle-site" },
     { "id": "sedan", "name": { "sr": "Sedan", "en": "Sedan" }, "aliases": ["Sedana", "biciku od Sedana"], "lat": 49.7009, "lng": 4.9455, "kind": "battle-site" },
     { "id": "versaj", "name": { "sr": "Versaj", "en": "Versailles" }, "aliases": ["Versaillesu", "dvorana ogledala"], "lat": 48.8049, "lng": 2.1204, "kind": "landmark" },
@@ -20,7 +20,7 @@
       "timestamp": "05:17",
       "type": "birth",
       "actors": ["Otto von Bismarck"],
-      "region": "Pruska",
+      "region": "Srednja Evropa",
       "description": { "sr": "Oto fon Bizmark je rođen 1815. godine, u istoj godini kada počinje Bečki kongres koji krojio kartu posle napoleonovih ratova.", "en": "Otto von Bismarck was born in 1815, the same year the Congress of Vienna began, redrawing the map of Europe after the Napoleonic wars." },
       "quote": "on je rođen 1815. godine",
       "confidence": "high"
@@ -50,7 +50,7 @@
       "timestamp": "81:15",
       "type": "reform",
       "actors": ["Otto von Bismarck", "Pruski kralj"],
-      "region": "Pruska",
+      "region": "Srednja Evropa",
       "description": { "sr": "23. septembra 1862. godine Bizmark dobija kancelarsku, odnosno ministar-predsedničku stolicu Pruske, iz koje će vodi politiku ujedinjenja Nemačke.", "en": "On September 23, 1862, Bismarck was appointed Minister President of Prussia, from which position he would pursue his policy of German unification." },
       "quote": "koje on dobija 23. septembra 1862. godine",
       "confidence": "high"

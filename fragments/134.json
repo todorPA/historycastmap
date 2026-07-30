@@ -1,0 +1,234 @@
+{
+  "places": [
+    {
+      "id": "ardeni",
+      "name": {
+        "sr": "Ardeni",
+        "en": "Ardennes"
+      },
+      "aliases": [
+        "Ardenima",
+        "Ardena"
+      ],
+      "lat": 50.2333,
+      "lng": 5.5833,
+      "kind": "battle-site"
+    },
+    {
+      "id": "varsava",
+      "name": {
+        "sr": "Varšava",
+        "en": "Warsaw"
+      },
+      "aliases": [
+        "Varšavu",
+        "Varšave"
+      ],
+      "lat": 52.2297,
+      "lng": 21.0122,
+      "kind": "city"
+    },
+    {
+      "id": "budimpesta",
+      "name": {
+        "sr": "Budimpešta",
+        "en": "Budapest"
+      },
+      "aliases": [
+        "Budimpešte",
+        "impešte"
+      ],
+      "lat": 47.4979,
+      "lng": 19.0402,
+      "kind": "city"
+    },
+    {
+      "id": "berlin",
+      "name": {
+        "sr": "Berlin",
+        "en": "Berlin"
+      },
+      "aliases": [
+        "Berlinu",
+        "Berlina",
+        "Rajskancelarije"
+      ],
+      "lat": 52.52,
+      "lng": 13.405,
+      "kind": "city"
+    },
+    {
+      "id": "beograd",
+      "name": {
+        "sr": "Beograd",
+        "en": "Belgrade"
+      },
+      "aliases": [
+        "Beograda"
+      ],
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "kind": "city"
+    },
+    {
+      "id": "rems-remis",
+      "name": {
+        "sr": "Rems (Reims)",
+        "en": "Reims"
+      },
+      "aliases": [
+        "REMS-u",
+        "Remsu"
+      ],
+      "lat": 49.2583,
+      "lng": 4.0317,
+      "kind": "landmark"
+    }
+  ],
+  "events": [
+    {
+      "id": "kontraofanziva-ardeni-1944",
+      "title": {
+        "sr": "Nemačka kontraofanziva u Ardenima (Bitka za Bulge)",
+        "en": "German counteroffensive in the Ardennes (Battle of the Bulge)"
+      },
+      "year": 1944,
+      "yearEnd": 1945,
+      "placeId": "ardeni",
+      "episodeId": "134",
+      "timestamp": "32:06",
+      "type": "battle",
+      "actors": [
+        "Nemačka vojska",
+        "Saveznici"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Ofanziva u Ardenima počinje 16. decembra 1944. godine kao poslednji veliki nemački pokušaj na zapadnom frontu; borbe traju do januara 1945. godine, kada saveznici konačno stabilizuju front i kreću ka Rajni.",
+        "en": "The Ardennes offensive began on December 16, 1944, as the last major German attempt on the Western Front; fighting continued into January 1945, when the Allies finally stabilized the front and advanced toward the Rhine."
+      },
+      "quote": "I ofanziva počinje 16. decembra 1944. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "oslobodjenje-beograda-1944",
+      "title": {
+        "sr": "Oslobođenje Beograda",
+        "en": "Liberation of Belgrade"
+      },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "134",
+      "timestamp": "12:48",
+      "type": "other",
+      "actors": [
+        "Sovjetska vojska",
+        "Jugoslovenski partizani"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Oktobra 1944. godine Beograd je oslobođen, dok Sovjeti nastavljaju napredovanje kroz Panonsku niziju prema Budimpešti.",
+        "en": "In October 1944, Belgrade was liberated, while Soviet forces continued advancing through the Pannonian Plain toward Budapest."
+      },
+      "quote": "oktober 1944. godine, kao što znamo, Beograd je oslobođen",
+      "confidence": "high"
+    },
+    {
+      "id": "opsada-budimpeste-1944",
+      "title": {
+        "sr": "Opsada Budimpešte",
+        "en": "Siege of Budapest"
+      },
+      "year": 1944,
+      "yearEnd": 1945,
+      "placeId": "budimpesta",
+      "episodeId": "134",
+      "timestamp": "12:48",
+      "type": "siege",
+      "actors": [
+        "Sovjetska vojska",
+        "Nemačka vojska"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "Krajem 1944. godine počinje opsada Budimpešte, koja se otegla do 1945. godine, dok se na severu sovjetske snage nalaze na Visli pred Varšavom.",
+        "en": "In late 1944, the siege of Budapest began, dragging into 1945, while in the north Soviet forces stood on the Vistula before Warsaw."
+      },
+      "quote": "krajem 1944. godine počinje opsa da budu impešte.",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-varsave-1945",
+      "title": {
+        "sr": "Pad Varšave",
+        "en": "Fall of Warsaw"
+      },
+      "year": 1945,
+      "yearEnd": null,
+      "placeId": "varsava",
+      "episodeId": "134",
+      "timestamp": "11:28",
+      "type": "conquest",
+      "actors": [
+        "Sovjetska vojska"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "Nakon što su Sovjeti dugo stajali na Visli, Varšava konačno pada 1945. godine, znatno nakon ugušenog Varšavskog ustanka iz 1944.",
+        "en": "After Soviet forces held for a long time on the Vistula, Warsaw finally fell in 1945, well after the suppressed Warsaw Uprising of 1944."
+      },
+      "quote": "definitivno Varšava će pasti tek 1945. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "hitlerovo-samoubistvo-berlin-1945",
+      "title": {
+        "sr": "Samoubistvo Adolfa Hitlera u berlinskom bunkeru",
+        "en": "Suicide of Adolf Hitler in the Berlin bunker"
+      },
+      "year": 1945,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "134",
+      "timestamp": "108:41",
+      "type": "death",
+      "actors": [
+        "Adolf Hitler",
+        "Jozef Gebels"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "U poslednjim danima bitke za Berlin, aprila 1945. godine, Adolf Hitler izvršava samoubistvo u bunkeru Rajhskancelarije, testamentom prepuštajući vlast Jozefu Gebelsu i vojnu komandu generalu Šeneru.",
+        "en": "In the final days of the Battle of Berlin, in April 1945, Adolf Hitler took his own life in the Reich Chancellery bunker, leaving power to Joseph Goebbels and military command to General Schörner in his will."
+      },
+      "quote": "predsednik nacističke Nemačke nakon hitlerovog samoubistva, dakle, Hitler, svojim testamentom",
+      "confidence": "high"
+    },
+    {
+      "id": "bezuslovna-kapitulacija-1945",
+      "title": {
+        "sr": "Bezuslovna kapitulacija Nemačke",
+        "en": "Unconditional surrender of Germany"
+      },
+      "year": 1945,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "134",
+      "timestamp": "115:57",
+      "type": "treaty",
+      "actors": [
+        "Nemačka",
+        "Saveznici",
+        "Sovjetski Savez"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "Bezuslovna kapitulacija Nemačke potpisana je 7. maja 1945. godine na zapadu, u Remsu, ali je Stalin insistirao da se ponovi u Berlinu, gde je potpisana 8, odnosno po moskovskom vremenu 9. maja — zbog čega Rusija i Zapad slave Dan pobede na različite datume.",
+        "en": "Germany's unconditional surrender was signed on May 7, 1945, in the West, at Reims, but Stalin insisted it be repeated in Berlin, where it was signed on May 8, or by Moscow time May 9 — which is why Russia and the West celebrate Victory Day on different dates."
+      },
+      "quote": "Ona je potpisana na zapadu u REMS-u 7. maja ... u Berlinu mora potpisati kapitulacija, i ona je potpisana 8.",
+      "confidence": "high"
+    }
+  ]
+}

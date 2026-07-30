@@ -1,0 +1,348 @@
+{
+  "places": [
+    {
+      "id": "oak-park",
+      "name": {
+        "sr": "Oak Park",
+        "en": "Oak Park"
+      },
+      "aliases": [
+        "Oak Parku"
+      ],
+      "lat": 41.885,
+      "lng": -87.7845,
+      "kind": "city"
+    },
+    {
+      "id": "pariz",
+      "name": {
+        "sr": "Pariz",
+        "en": "Paris"
+      },
+      "aliases": [
+        "Parizu",
+        "Parizom"
+      ],
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "kind": "city"
+    },
+    {
+      "id": "pamplona",
+      "name": {
+        "sr": "Pamplona",
+        "en": "Pamplona"
+      },
+      "aliases": [
+        "Pamploni",
+        "Pamplonu"
+      ],
+      "lat": 42.8125,
+      "lng": -1.6458,
+      "kind": "city"
+    },
+    {
+      "id": "normandija",
+      "name": {
+        "sr": "Normandija",
+        "en": "Normandy"
+      },
+      "aliases": [
+        "Normandiji"
+      ],
+      "lat": 49.1829,
+      "lng": -0.3707,
+      "kind": "region"
+    },
+    {
+      "id": "havana",
+      "name": {
+        "sr": "Havana",
+        "en": "Havana"
+      },
+      "aliases": [
+        "Havani",
+        "Havanu",
+        "Kuba",
+        "Kubi"
+      ],
+      "lat": 23.1136,
+      "lng": -82.3666,
+      "kind": "city"
+    },
+    {
+      "id": "ketchum-idaho",
+      "name": {
+        "sr": "Ketčum, Ajdaho",
+        "en": "Ketchum, Idaho"
+      },
+      "aliases": [
+        "Ojedaho",
+        "Ajdaho",
+        "Idaho"
+      ],
+      "lat": 43.6805,
+      "lng": -114.3637,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "hemingvej-rodjenje-1899",
+      "title": {
+        "sr": "Rođenje Ernesta Hemingveja",
+        "en": "Birth of Ernest Hemingway"
+      },
+      "year": 1899,
+      "yearEnd": null,
+      "placeId": "oak-park",
+      "episodeId": "139",
+      "timestamp": "08:39",
+      "type": "birth",
+      "actors": [
+        "Ernest Hemingway"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "Ernest Hemingvej je rođen 1899. godine u Oak Parku, kao drugo dete i prvi sin u porodici.",
+        "en": "Ernest Hemingway was born in 1899 in Oak Park, as the second child and first son in the family."
+      },
+      "quote": "On je rođen, ti si lepo rekla, u 1899.",
+      "confidence": "high"
+    },
+    {
+      "id": "hemingvej-dolazi-pariz-1921",
+      "title": {
+        "sr": "Hemingvej dolazi u Pariz",
+        "en": "Hemingway arrives in Paris"
+      },
+      "year": 1921,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "139",
+      "timestamp": "27:51",
+      "type": "other",
+      "actors": [
+        "Ernest Hemingway"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Hemingvej odlazi u Pariz, u pravo vreme i na pravo mesto, jer su tamo tada bili svi značajni pisci i umetnici tog doba, i pokušava da se ostvari kao pisac u tim krugovima.",
+        "en": "Hemingway moved to Paris, at the right time and place, since all the significant writers and artists of the era were there, and tried to establish himself as a writer in those circles."
+      },
+      "quote": "I pravo vreme i pre svega pravo mesto, jer svi koji nešto znača su tamo u Parizu, da onako zapuca u Pariz",
+      "confidence": "medium"
+    },
+    {
+      "id": "hemingvej-upoznaje-ficdzeralda-1924",
+      "title": {
+        "sr": "Hemingvej upoznaje F. Scota Ficdžeralda",
+        "en": "Hemingway meets F. Scott Fitzgerald"
+      },
+      "year": 1924,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "139",
+      "timestamp": "44:50",
+      "type": "other",
+      "actors": [
+        "Ernest Hemingway",
+        "F. Scott Fitzgerald"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1924. godine, kao još neostvareni pisac, Hemingvej upoznaje već slavnog F. Scota Ficdžeralda u Parizu.",
+        "en": "In 1924, as a still unestablished writer, Hemingway met the already famous F. Scott Fitzgerald in Paris."
+      },
+      "quote": "on recimo upozna F. Scotta Fizzrelda, 1924. godine, nakon što je već poznat",
+      "confidence": "high"
+    },
+    {
+      "id": "put-pamplona-1925",
+      "title": {
+        "sr": "Put u Pamplonu sa izgubljenom generacijom",
+        "en": "Trip to Pamplona with the Lost Generation"
+      },
+      "year": 1925,
+      "yearEnd": null,
+      "placeId": "pamplona",
+      "episodeId": "139",
+      "timestamp": "47:41",
+      "type": "other",
+      "actors": [
+        "Ernest Hemingway",
+        "Izgubljena generacija"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1925. godine Hemingvej poziva grupu pisaca i pesnika iz kruga izgubljene generacije da zajedno odu u Pamplonu, iskustvo koje kasnije pretače u roman 'Sunce se ponovo rađa'.",
+        "en": "In 1925, Hemingway invited a group of writers and poets from the Lost Generation circle to travel together to Pamplona, an experience he later turned into the novel 'The Sun Also Rises'."
+      },
+      "quote": "čujenje njegovog odlaza 1925. godine, kada on poziva gomilu tih svojih iz tog kruga, izgubljene generacije",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-oca-1928",
+      "title": {
+        "sr": "Samoubistvo Hemingvejevog oca",
+        "en": "Suicide of Hemingway's father"
+      },
+      "year": 1928,
+      "yearEnd": null,
+      "placeId": "oak-park",
+      "episodeId": "139",
+      "timestamp": "71:23",
+      "type": "death",
+      "actors": [
+        "Klarens Hemingvej"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "1928. godine Hemingvejev otac izvršava samoubistvo, što ga je duboko pogodilo i obeležilo njegov potonji odnos prema životu.",
+        "en": "In 1928, Hemingway's father took his own life, which deeply affected him and shaped his subsequent attitude toward life."
+      },
+      "quote": "njemu se 1928. godine ubija otac. Dakle, izvršava samoubistvo.",
+      "confidence": "high"
+    },
+    {
+      "id": "hemingvej-havana-1939",
+      "title": {
+        "sr": "Hemingvej se skrasi u Havani",
+        "en": "Hemingway settles in Havana"
+      },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "havana",
+      "episodeId": "139",
+      "timestamp": "92:45",
+      "type": "other",
+      "actors": [
+        "Ernest Hemingway",
+        "Marta Gelhorn"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "Nakon povratka iz Španije, Hemingvej se sa Martom Gelhorn seli u Havanu, koja postaje mesto njegovog najdužeg prebivališta.",
+        "en": "After returning from Spain, Hemingway moved with Martha Gellhorn to Havana, which became the place of his longest residence."
+      },
+      "quote": "on je bio upoznat, naravno, sa Kubom i sa Havanom ... Havana će zapravo biti mesto njegovog najdužeg prebivališta",
+      "confidence": "medium"
+    },
+    {
+      "id": "iskrcavanje-normandija-1944",
+      "title": {
+        "sr": "Hemingvej prisutan na iskrcavanju u Normandiji",
+        "en": "Hemingway present at the Normandy landings"
+      },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "normandija",
+      "episodeId": "139",
+      "timestamp": "116:22",
+      "type": "other",
+      "actors": [
+        "Ernest Hemingway"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1944. godine, tokom iskrcavanja u Normandiji (Dan D), Hemingvej je posmatrao dešavanja na plaži iz desantnog čamca, ne kao izveštač koji izlazi na obalu, već kao svedok.",
+        "en": "In 1944, during the D-Day Normandy landings, Hemingway watched events on the beach from a landing craft, not disembarking as a reporter but as a witness."
+      },
+      "quote": "Sprema se odlaze, dakle, sprema se iskrsavanju u Normandiji, koje kreće, naravno, i uvod 1944. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "hemingvej-oslobodjenje-pariza-1944",
+      "title": {
+        "sr": "Hemingvej ulazi u oslobođeni Pariz",
+        "en": "Hemingway enters liberated Paris"
+      },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "139",
+      "timestamp": "119:06",
+      "type": "other",
+      "actors": [
+        "Ernest Hemingway"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1944. godine Hemingvej ulazi prvog dana u oslobođeni Pariz i, prema legendi (a djelimično i istinito), prvi je koji 'oslobađa' bar u hotelu Ritz.",
+        "en": "In 1944, Hemingway entered liberated Paris on its first day and, according to legend (partly true), was the first to 'liberate' the bar at the Hôtel Ritz."
+      },
+      "quote": "on je ušao prvog dana u oslobođeni Pariz ... jeste prvi koji je oslobodio bar u hotelu Ritz.",
+      "confidence": "medium"
+    },
+    {
+      "id": "hemingvej-pulicer-1953",
+      "title": {
+        "sr": "Hemingvej dobija Pulicerovu nagradu",
+        "en": "Hemingway receives the Pulitzer Prize"
+      },
+      "year": 1953,
+      "yearEnd": null,
+      "placeId": "havana",
+      "episodeId": "139",
+      "timestamp": "135:19",
+      "type": "other",
+      "actors": [
+        "Ernest Hemingway"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "1953. godine Hemingvej dobija Pulicerovu nagradu za roman 'Starac i more', koji je te iste godine preveden na desetak stranih jezika.",
+        "en": "In 1953, Hemingway received the Pulitzer Prize for 'The Old Man and the Sea', which was translated into about ten foreign languages that same year."
+      },
+      "quote": "Ona je konačno dobija čujenog pulisera 1953. godine za tu knjigu.",
+      "confidence": "high"
+    },
+    {
+      "id": "hemingvej-napusta-kubu-1960",
+      "title": {
+        "sr": "Hemingvej napušta Kubu",
+        "en": "Hemingway leaves Cuba"
+      },
+      "year": 1960,
+      "yearEnd": null,
+      "placeId": "havana",
+      "episodeId": "139",
+      "timestamp": "145:27",
+      "type": "other",
+      "actors": [
+        "Ernest Hemingway",
+        "Meri Velš"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "U leto 1960. godine Hemingvej i supruga definitivno napuštaju Kubu nakon nacionalizacije imovine; on se tamo nikada neće vratiti.",
+        "en": "In the summer of 1960, Hemingway and his wife left Cuba for good after the nationalization of property; he would never return there."
+      },
+      "quote": "puštaju definitivno Kubu u leto 1960. godine. On se nikad neće vratiti.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-hemingveja-1961",
+      "title": {
+        "sr": "Samoubistvo Ernesta Hemingveja",
+        "en": "Suicide of Ernest Hemingway"
+      },
+      "year": 1961,
+      "yearEnd": null,
+      "placeId": "ketchum-idaho",
+      "episodeId": "139",
+      "timestamp": "147:51",
+      "type": "death",
+      "actors": [
+        "Ernest Hemingway"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "Jula 1961. godine, u Ketčumu u Ajdahu, Ernest Hemingvej izvršava samoubistvo pucajući u glavu sopstvenom puškom, nakon godina depresije i neuspešnih tretmana elektrošokovima.",
+        "en": "In July 1961, in Ketchum, Idaho, Ernest Hemingway took his own life with a shot from his own shotgun, after years of depression and failed electroshock treatments."
+      },
+      "quote": "ispalio je hitac u glavu. Jula 1961. godine, i tako se okončao fizički",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "places": [
+    {
+      "id": "zajecar",
+      "name": {
+        "sr": "Zaječar",
+        "en": "Zaječar"
+      },
+      "aliases": [
+        "Zaječaru"
+      ],
+      "lat": 43.9038,
+      "lng": 22.2683,
+      "kind": "city"
+    },
+    {
+      "id": "petrograd",
+      "name": {
+        "sr": "Sankt Peterburg",
+        "en": "Saint Petersburg"
+      },
+      "aliases": [
+        "Petrogradu",
+        "St. Petersburg"
+      ],
+      "lat": 59.9311,
+      "lng": 30.3609,
+      "kind": "city"
+    },
+    {
+      "id": "beograd",
+      "name": {
+        "sr": "Beograd",
+        "en": "Belgrade"
+      },
+      "aliases": [
+        "Beogradu",
+        "Stari dvor"
+      ],
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "kind": "city"
+    },
+    {
+      "id": "krf",
+      "name": {
+        "sr": "Krf",
+        "en": "Corfu"
+      },
+      "aliases": [
+        "Krfu"
+      ],
+      "lat": 39.6243,
+      "lng": 19.9217,
+      "kind": "landmark"
+    },
+    {
+      "id": "versaj",
+      "name": {
+        "sr": "Versaj (Pariska mirovna konferencija)",
+        "en": "Versailles (Paris Peace Conference)"
+      },
+      "aliases": [
+        "Versaillesu"
+      ],
+      "lat": 48.8049,
+      "lng": 2.1204,
+      "kind": "landmark"
+    }
+  ],
+  "events": [
+    {
+      "id": "pasic-rodjenje-1845",
+      "title": {
+        "sr": "Rođenje Nikole Pašića",
+        "en": "Birth of Nikola Pašić"
+      },
+      "year": 1845,
+      "yearEnd": null,
+      "placeId": "zajecar",
+      "episodeId": "113",
+      "timestamp": "03:14",
+      "type": "birth",
+      "actors": [
+        "Nikola Pašić"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Nikola Pašić je rođen 1845. godine u Zaječaru, u gradskoj trgovačkoj, srednje imućnoj porodici.",
+        "en": "Nikola Pašić was born in 1845 in Zaječar, into a moderately well-off urban merchant family."
+      },
+      "quote": "on je rođen 1845. godine u Zaječaru, umro je 1926.",
+      "confidence": "high"
+    },
+    {
+      "id": "pasic-boravak-petrograd-1893",
+      "title": {
+        "sr": "Pašić poslat u Sankt Peterburg",
+        "en": "Pašić sent to Saint Petersburg"
+      },
+      "year": 1893,
+      "yearEnd": 1894,
+      "placeId": "petrograd",
+      "episodeId": "113",
+      "timestamp": "97:23",
+      "type": "other",
+      "actors": [
+        "Nikola Pašić"
+      ],
+      "region": "Istočna Evropa",
+      "description": {
+        "sr": "1893. i 1894. godine Nikola Pašić boravi kao diplomatski predstavnik u Sankt Peterburgu, u periodu kada je bilo politički zgodno da se udalji sa domaće scene.",
+        "en": "In 1893 and 1894, Nikola Pašić served as a diplomatic representative in Saint Petersburg, a period when it was politically convenient for him to be away from the domestic scene."
+      },
+      "quote": "on odlazi u St. Petersburg, gde će boraviti praktično 1893. i 1894. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "ivanjdanski-atentat-1899",
+      "title": {
+        "sr": "Ivanjdanski atentat na kralja Milana",
+        "en": "The Ivanjdan assassination attempt on King Milan"
+      },
+      "year": 1899,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "113",
+      "timestamp": "104:12",
+      "type": "other",
+      "actors": [
+        "Kralj Milan Obrenović",
+        "Nikola Pašić"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "6. jula (Ivanjdan) 1899. godine odigrao se atentat na kralja Milana u kočiji u blizini Starog dvora u Beogradu, u ulici koja danas nosi njegovo ime.",
+        "en": "On July 6 (Ivanjdan) 1899, an assassination attempt on King Milan took place in his carriage near the Old Palace in Belgrade, on a street that today bears his name."
+      },
+      "quote": "Ivojnacki atentat, pomenili smo ga je misiju Kralju Milanu, odigrao se 6. jula 1899. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "krfska-deklaracija-1917",
+      "title": {
+        "sr": "Sporazum na Krfu tokom Prvog svetskog rata",
+        "en": "Agreement on Corfu during World War I"
+      },
+      "year": 1917,
+      "yearEnd": null,
+      "placeId": "krf",
+      "episodeId": "113",
+      "timestamp": "152:19",
+      "type": "treaty",
+      "actors": [
+        "Nikola Pašić",
+        "Vlada Kraljevine Srbije"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Na Krfu, gde se srpska vlada i vojska povukla tokom Prvog svetskog rata, dogovoreni su ključni politički pravci koji su vodili ka budućem ujedinjenju južnoslovenskih zemalja.",
+        "en": "On Corfu, where the Serbian government and army had withdrawn during World War I, key political directions were agreed upon that led to the future unification of the South Slavic lands."
+      },
+      "quote": "da ono što kao dogovoreno je na Krfu",
+      "confidence": "medium"
+    },
+    {
+      "id": "versajska-konferencija-1918",
+      "title": {
+        "sr": "Pašić na Pariskoj mirovnoj konferenciji u Versaju",
+        "en": "Pašić at the Paris Peace Conference in Versailles"
+      },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "versaj",
+      "episodeId": "113",
+      "timestamp": "142:45",
+      "type": "treaty",
+      "actors": [
+        "Nikola Pašić",
+        "Kralj Aleksandar"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1918. godine Nikola Pašić i kralj Aleksandar učestvuju u pregovorima u Versaju gde se određuju granice nove države; suprotno pojednostavljenoj slici, granice nisu bile proizvoljno 'crtane na papiru' od strane Francuza i Britanaca.",
+        "en": "In 1918, Nikola Pašić and King Alexander took part in negotiations at Versailles where the borders of the new state were determined; contrary to the oversimplified image, the borders were not arbitrarily 'drawn on paper' by the French and British."
+      },
+      "quote": "kao da su sad njih dvojica bili tamo dovedeni u Versaj 1918. godine i da im je neko rekao ja vam papir pa vi crtajte",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-pasica-1926",
+      "title": {
+        "sr": "Smrt Nikole Pašića",
+        "en": "Death of Nikola Pašić"
+      },
+      "year": 1926,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "113",
+      "timestamp": "02:49",
+      "type": "death",
+      "actors": [
+        "Nikola Pašić"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Nikola Pašić je umro u decembru 1926. godine u Kraljevini Jugoslaviji.",
+        "en": "Nikola Pašić died in December 1926 in the Kingdom of Yugoslavia."
+      },
+      "quote": "decembra 1926. godine ... on je rođen 1845. godine u Zaječaru, umro je 1926.",
+      "confidence": "high"
+    }
+  ]
+}

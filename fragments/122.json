@@ -1,0 +1,98 @@
+{
+  "places": [
+    { "id": "carigrad-carice", "name": { "sr": "Carigrad", "en": "Constantinople" }, "aliases": ["Carigradu", "Carigrada", "Hipodrom"], "lat": 41.0082, "lng": 28.9784, "kind": "city" },
+    { "id": "efes", "name": { "sr": "Efes", "en": "Ephesus" }, "aliases": ["Efesu"], "lat": 37.9410, "lng": 27.3417, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "pulherija-carica-414",
+      "title": { "sr": "Pulherija postaje carica-regentkinja", "en": "Pulcheria becomes empress-regent" },
+      "year": 414,
+      "yearEnd": null,
+      "placeId": "carigrad-carice",
+      "episodeId": "122",
+      "timestamp": "21:13",
+      "type": "coronation",
+      "actors": ["Pulherija", "Teodosije II"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "414. godine, nakon smrti oca cara Arkadija, Pulherija kao najstarije dete postaje carica i preuzima ulogu glave porodice, brinući se o vaspitanju mlađeg brata Teodosija II.", "en": "In 414, after the death of her father Emperor Arcadius, Pulcheria, as the eldest child, became empress and took on the role of head of the family, overseeing the upbringing of her younger brother Theodosius II." },
+      "quote": "postaje carica 414. godine nakon smrti oca kao najstarije njegovo dete",
+      "confidence": "high"
+    },
+    {
+      "id": "vaseljenski-sabor-efes-431",
+      "title": { "sr": "Vaseljenski sabor u Efesu na Pulherijinu inicijativu", "en": "Ecumenical Council of Ephesus at Pulcheria's initiative" },
+      "year": 431,
+      "yearEnd": null,
+      "placeId": "efes",
+      "episodeId": "122",
+      "timestamp": "22:40",
+      "type": "other",
+      "actors": ["Pulherija"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "431. godine, na inicijativu carice Pulherije, sazvan je Vaseljenski sabor u Efesu, jedan od najznačajnijih crkvenih sabora ranog hrišćanstva.", "en": "In 431, on the initiative of Empress Pulcheria, the Ecumenical Council of Ephesus was convened, one of the most significant church councils of early Christianity." },
+      "quote": "na njenu inicijativu je sazvan Vasiljanski sabor 431. godine u Efesu.",
+      "confidence": "high"
+    },
+    {
+      "id": "teodora-carica-527",
+      "title": { "sr": "Teodora postaje carica uz Justinijana", "en": "Theodora becomes empress alongside Justinian" },
+      "year": 527,
+      "yearEnd": null,
+      "placeId": "carigrad-carice",
+      "episodeId": "122",
+      "timestamp": "29:57",
+      "type": "coronation",
+      "actors": ["Teodora", "Justinijan I"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "527. godine Teodora, koja je iz burne mladosti prošla kroz produhovljenje u Aleksandriji, postaje carica kada Justinijan postaje car; oboje su skromnog porekla.", "en": "In 527, Theodora, who had undergone a spiritual transformation in Alexandria after a turbulent youth, became empress when Justinian became emperor; both were of humble origin." },
+      "quote": "dolazi do te njihove ljubavi, ona postaje carica 527. godine, kada i on postaje car.",
+      "confidence": "high"
+    },
+    {
+      "id": "pobuna-nika-532",
+      "title": { "sr": "Teodora ključna u gušenju pobune Nika na Hipodromu", "en": "Theodora key to crushing the Nika riots at the Hippodrome" },
+      "year": 532,
+      "yearEnd": null,
+      "placeId": "carigrad-carice",
+      "episodeId": "122",
+      "timestamp": "36:56",
+      "type": "uprising",
+      "actors": ["Teodora", "Justinijan I"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "532. godine izbija pobuna na Hipodromu u Carigradu (pobuna Nika); carica Teodora ima ključnu ulogu u odluci da se pobuna ugasi silom, umesto da car pobegne.", "en": "In 532, a riot broke out at the Hippodrome in Constantinople (the Nika riots); Empress Theodora played a key role in the decision to crush the uprising by force rather than have the emperor flee." },
+      "quote": "ona je ključna zapravo figura u gušenju pobunenika 532. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "sedmi-vaseljenski-sabor-ikonopostovanje-797",
+      "title": { "sr": "Irina i pobeda ikonopoštovanja do svrgavanja sina", "en": "Irene and the victory of icon veneration until her son's overthrow" },
+      "year": 797,
+      "yearEnd": null,
+      "placeId": "carigrad-carice",
+      "episodeId": "122",
+      "timestamp": "66:01",
+      "type": "other",
+      "actors": ["Carica Irina", "Konstantin VI"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Nakon Sedmog vaseljenskog sabora na kome je uspostavljen kult ikona, pristalice carice Irine se održavaju do 797. godine, kada ona svrgava i zaslepljuje svog sina Konstantina VI da bi samostalno vladala kao carica.", "en": "After the Seventh Ecumenical Council, which established the veneration of icons, Empress Irene's supporters held on until 797, when she overthrew and blinded her son Constantine VI in order to rule independently as empress." },
+      "quote": "do te 797. godine, kada je njen sin zarobljen, svrgnut sa vlasti ... ona je naložila da se njen sin oslepi.",
+      "confidence": "high"
+    },
+    {
+      "id": "sabor-843-kraj-ikonoborstva",
+      "title": { "sr": "Sabor 843. godine okončava ikonoborstvo", "en": "843 council ends iconoclasm" },
+      "year": 843,
+      "yearEnd": null,
+      "placeId": "carigrad-carice",
+      "episodeId": "122",
+      "timestamp": "74:12",
+      "type": "other",
+      "actors": ["Carica Teodora (mlađa)"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "843. godine, godinu dana nakon preuzimanja vlasti, na saboru je konačno rešeno pitanje ikonoborstva u korist ikonopoštovanja.", "en": "In 843, a year after taking power, the question of iconoclasm was finally resolved in favor of icon veneration at a church council." },
+      "quote": "to je na saboru 843. godine rešeno, dakle, doslovno godinu dana nakon što je ona preuzela vlast.",
+      "confidence": "high"
+    }
+  ]
+}

@@ -16,7 +16,7 @@
       "timestamp": "06:49",
       "type": "reform",
       "actors": ["Kralj Milutin"],
-      "region": "Srpska kraljevina",
+      "region": "Balkan",
       "description": { "sr": "Godine 1308. kralj Milutin, odbijajući da uvede smrtnu kaznu po evropskom feudalnom obrascu, poziva se na stari srpski običaj vražde — javnopravnu kaznu koja zamenjuje krvnu osvetu.", "en": "In 1308, King Milutin, refusing to introduce the death penalty on the European feudal model, invoked the old Serbian custom of vražda — a public-law penalty replacing blood vengeance." },
       "quote": "eto, to je 1308. godina, a koristi se neki, da kažemo, običaj koji je već, predpostavimo, vekovima živeo u srpskom narodu.",
       "confidence": "high"
@@ -31,7 +31,7 @@
       "timestamp": "28:57",
       "type": "coronation",
       "actors": ["Stefan Dušan", "Patrijarh"],
-      "region": "Srpsko carstvo",
+      "region": "Balkan",
       "description": { "sr": "Stefan Dušan je krunisan za cara 1346. godine, nakon proglašenja srpske patrijaršije, čime formalizuje svoju carsku titulu nad Srbima i delom romejskih zemalja.", "en": "Stefan Dušan was crowned Emperor in 1346, after the proclamation of the Serbian patriarchate, formalizing his imperial title over the Serbs and part of the Byzantine lands." },
       "quote": "i dušanovo kasnije, dakle, 1346. godine",
       "confidence": "high"
@@ -46,7 +46,7 @@
       "timestamp": "34:37",
       "type": "reform",
       "actors": ["Car Dušan"],
-      "region": "Srpsko carstvo",
+      "region": "Balkan",
       "description": { "sr": "Na državnom saboru u Skoplju 1349. godine car Dušan proglašava donošenje svog zakonika, kojim želi da uspostavi jedinstven pravni poredak i miran, hrišćanski život za sve podanike carstva.", "en": "At the state assembly in Skopje in 1349, Emperor Dušan proclaimed his law code, aiming to establish a unified legal order and a peaceful Christian life for all subjects of the empire." },
       "quote": "Uglavnom, na vazim senjeh, 1349. godine, sabor u Skoplju i car Dušan donose zakonik.",
       "confidence": "high"
@@ -61,7 +61,7 @@
       "timestamp": "36:21",
       "type": "reform",
       "actors": ["Car Uroš", "Dubrovčani"],
-      "region": "Srpsko carstvo",
+      "region": "Balkan",
       "description": { "sr": "Car Uroš se 1357. godine u povelji Dubrovčanima pozivа direktno na odredbe Dušanovog zakonika, potvrđujući slobodu kretanja i trgovačka prava.", "en": "In 1357, Emperor Uroš, in a charter to the citizens of Dubrovnik, directly invoked the provisions of Dušan's Code, confirming freedom of movement and trading rights." },
       "quote": "i kasnije car Urošić, s 1357. godine, pozivaju upravo na zakonik, kako piše u zakoniku carstvami.",
       "confidence": "medium"

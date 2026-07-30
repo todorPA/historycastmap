@@ -1,0 +1,140 @@
+{
+  "places": [
+    {
+      "id": "hisarlik-troja",
+      "name": {
+        "sr": "Hisarlik (Troja)",
+        "en": "Hisarlik (Troy)"
+      },
+      "aliases": [
+        "Hisarliku",
+        "Čanakale",
+        "Troji"
+      ],
+      "lat": 39.9576,
+      "lng": 26.2386,
+      "kind": "battle-site"
+    },
+    {
+      "id": "atina",
+      "name": {
+        "sr": "Atina",
+        "en": "Athens"
+      },
+      "aliases": [
+        "Atinu"
+      ],
+      "lat": 37.9838,
+      "lng": 23.7275,
+      "kind": "city"
+    },
+    {
+      "id": "moskva-puskin-muzej",
+      "name": {
+        "sr": "Moskva (Puškinski muzej)",
+        "en": "Moscow (Pushkin Museum)"
+      },
+      "aliases": [
+        "Puškinski muzej"
+      ],
+      "lat": 55.748,
+      "lng": 37.6053,
+      "kind": "landmark"
+    }
+  ],
+  "events": [
+    {
+      "id": "trojanski-rat-1200-pne",
+      "title": {
+        "sr": "Pretpostavljeni Trojanski rat",
+        "en": "Presumed Trojan War"
+      },
+      "year": -1200,
+      "yearEnd": null,
+      "placeId": "hisarlik-troja",
+      "episodeId": "136",
+      "timestamp": "17:08",
+      "type": "battle",
+      "actors": [
+        "Ahajci",
+        "Trojanci"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Pretpostavlja se da se Trojanski rat odigrao oko 1200. godine pre nove ere, mnogo pre nego što su Ilijada i Odiseja zapisane (šesti vek pre nove ere).",
+        "en": "The Trojan War is presumed to have taken place around 1200 BCE, long before the Iliad and Odyssey were put in writing (sixth century BCE)."
+      },
+      "quote": "pretpostavlja se da je, dakle, negde trojanski rad bio ... Oko 1200 godina pre nove ere.",
+      "confidence": "low"
+    },
+    {
+      "id": "sliman-iskopavanja-hisarlik-1870-1873",
+      "title": {
+        "sr": "Šlimanova iskopavanja na Hisarliku",
+        "en": "Schliemann's excavations at Hisarlik"
+      },
+      "year": 1870,
+      "yearEnd": 1873,
+      "placeId": "hisarlik-troja",
+      "episodeId": "136",
+      "timestamp": "25:16",
+      "type": "other",
+      "actors": [
+        "Heinrich Schliemann"
+      ],
+      "region": "Osmansko carstvo",
+      "description": {
+        "sr": "Hajnrih Šliman započinje svoja iskopavanja na Hisarliku krajem 1860-ih/početkom 1870-ih i nastavlja ih do 1873. godine, verujući da je pronašao mesto Troje.",
+        "en": "Heinrich Schliemann began his excavations at Hisarlik in the late 1860s/early 1870s and continued until 1873, believing he had found the site of Troy."
+      },
+      "quote": "Šliman započinje svoja iskopavanja krajem 60. znači 1870. Do 1873.",
+      "confidence": "high"
+    },
+    {
+      "id": "schliemann-grobnica-atina-1998",
+      "title": {
+        "sr": "Prenos Šlimanovih posmrtnih ostataka u Atinu",
+        "en": "Transfer of Schliemann's remains to Athens"
+      },
+      "year": 1998,
+      "yearEnd": null,
+      "placeId": "atina",
+      "episodeId": "136",
+      "timestamp": "98:37",
+      "type": "other",
+      "actors": [
+        "Heinrich Schliemann"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Šlimanovi posmrtni ostaci su preneseni u Atinu i sahranjeni u grobnicu izgrađenu po uzoru na antički hram; transkript ovde daje sumnjivu godinu (1998, verovatno greška transkripcije za period nakon njegove smrti 1890).",
+        "en": "Schliemann's remains were transferred to Athens and buried in a tomb built in the style of an ancient temple; the transcript's stated year (1998) is a likely transcription error, since he died in 1890."
+      },
+      "quote": "prineseno u Atinu i sagrađeno je u tu grobnicu ... koje je 1998. godine.",
+      "confidence": "low"
+    },
+    {
+      "id": "puskin-muzej-priznaje-blago-1994",
+      "title": {
+        "sr": "Puškinski muzej priznaje da poseduje Šlimanovo blago",
+        "en": "The Pushkin Museum admits holding Schliemann's treasure"
+      },
+      "year": 1994,
+      "yearEnd": null,
+      "placeId": "moskva-puskin-muzej",
+      "episodeId": "136",
+      "timestamp": "101:36",
+      "type": "other",
+      "actors": [
+        "Puškinski muzej"
+      ],
+      "region": "Istočna Evropa",
+      "description": {
+        "sr": "1994. godine, nakon raspada SSSR-a, Puškinski muzej u Moskvi priznaje da se Šlimanovo trojansko blago (o kome su ranije kolale različite teorije) nalazi u njihovom posedu.",
+        "en": "In 1994, after the collapse of the USSR, the Pushkin Museum in Moscow admitted that Schliemann's Trojan treasure (about which various theories had previously circulated) was in its possession."
+      },
+      "quote": "1994. godine je Puškino, odnosno Puškinski muzej u Moskvi priznao ... da se nalazi u njihovom posljedu.",
+      "confidence": "high"
+    }
+  ]
+}

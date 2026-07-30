@@ -1,0 +1,193 @@
+{
+  "places": [
+    {
+      "id": "london",
+      "name": {
+        "sr": "London",
+        "en": "London"
+      },
+      "aliases": [
+        "Londonu",
+        "Londona"
+      ],
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "kind": "city"
+    },
+    {
+      "id": "irska",
+      "name": {
+        "sr": "Irska",
+        "en": "Ireland"
+      },
+      "aliases": [
+        "Iraca",
+        "Dablina"
+      ],
+      "lat": 53.1424,
+      "lng": -7.6921,
+      "kind": "region"
+    },
+    {
+      "id": "engleska",
+      "name": {
+        "sr": "Engleska",
+        "en": "England"
+      },
+      "aliases": [
+        "Engleskoj",
+        "Britanija"
+      ],
+      "lat": 52.3555,
+      "lng": -1.1743,
+      "kind": "region"
+    }
+  ],
+  "events": [
+    {
+      "id": "londonska-milicija-1642",
+      "title": {
+        "sr": "London prkosi kralju i formira sopstvenu miliciju",
+        "en": "London defies the king and forms its own militia"
+      },
+      "year": 1642,
+      "yearEnd": null,
+      "placeId": "london",
+      "episodeId": "127",
+      "timestamp": "81:04",
+      "type": "uprising",
+      "actors": [
+        "Parlament",
+        "London"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1642. godine London kao parlamentarni centar odriče poslušnost kralju i parlament saziva sopstvenu (londonsku) miliciju, nezavisnu od krune — dotad nezabeleženo, i ključna podela koja vodi ka Engleskom građanskom ratu.",
+        "en": "In 1642, London, as the parliamentary center, refused obedience to the king, and Parliament summoned its own (London) militia, independent of the Crown — unprecedented, and a key division leading to the English Civil War."
+      },
+      "quote": "to je nezabeleženje događaja 1642. godine, kada parlament saziva londonsku policiju, miliciju",
+      "confidence": "high"
+    },
+    {
+      "id": "irski-rat-1641-1653",
+      "title": {
+        "sr": "Irski rat",
+        "en": "Irish Confederate Wars"
+      },
+      "year": 1641,
+      "yearEnd": 1653,
+      "placeId": "irska",
+      "episodeId": "127",
+      "timestamp": "97:23",
+      "type": "uprising",
+      "actors": [
+        "Irsko katoličko stanovništvo",
+        "Parlament",
+        "Oliver Cromwell"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Irski rat traje od 1641. do 1653. godine, počevši iskorišćavanjem prilike engleskih građanskih ratova, sa katoličkim stanovništvom koje kontroliše veći deo ostrva osim Dablina koji ostaje u rukama parlamentaraca.",
+        "en": "The Irish Confederate Wars lasted from 1641 to 1653, beginning by exploiting the opportunity of the English Civil Wars, with the Catholic population controlling most of the island except Dublin, which remained in parliamentarian hands."
+      },
+      "quote": "Taj irski rat traje od 1641. godine do 1653. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "pogubljenje-charlesa-i-1649",
+      "title": {
+        "sr": "Pogubljenje Charlesa I i proglašenje republike",
+        "en": "Execution of Charles I and proclamation of the republic"
+      },
+      "year": 1649,
+      "yearEnd": null,
+      "placeId": "london",
+      "episodeId": "127",
+      "timestamp": "34:43",
+      "type": "death",
+      "actors": [
+        "Charles I",
+        "Parlament",
+        "Oliver Cromwell"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1649. godine kralj Charles I je detronizovan i pogubljen, čime Engleska postaje republika — period koji će trajati narednih 11 godina; monarhisti odmah proglašavaju Charlesa II za kralja, koji se nalazi u Škotskoj.",
+        "en": "In 1649, King Charles I was deposed and executed, making England a republic — a period that would last for the next 11 years; royalists immediately proclaimed Charles II king, who was in Scotland."
+      },
+      "quote": "u momentu kralj Charles I, on je ne samo detroniziran, on je ubijen i Engleska je krenula jednim novim tokom istorijskim",
+      "confidence": "high"
+    },
+    {
+      "id": "charles-ii-pokusaj-vlasti-1651",
+      "title": {
+        "sr": "Charles II neuspešno pokušava da preuzme vlast",
+        "en": "Charles II unsuccessfully tries to seize power"
+      },
+      "year": 1651,
+      "yearEnd": null,
+      "placeId": "engleska",
+      "episodeId": "127",
+      "timestamp": "71:20",
+      "type": "battle",
+      "actors": [
+        "Charles II",
+        "Oliver Cromwell"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1651. godine Charles II pokušava da preuzme vlast, ali bez uspeha — pokazujući koliko je republika, oslonjena na vojsku pod Kromvelom, utvrdila svoju kontrolu.",
+        "en": "In 1651, Charles II tried to seize power, but without success — showing how firmly the republic, resting on Cromwell's army, had established control."
+      },
+      "quote": "Charles II. je pokušao, on je 1651. godine pokušao da preuzme vlast. Neuspešno.",
+      "confidence": "high"
+    },
+    {
+      "id": "kromvel-raspusta-parlament-1653",
+      "title": {
+        "sr": "Kromvel silom raspušta 'krnji parlament'",
+        "en": "Cromwell forcibly dissolves the 'Rump Parliament'"
+      },
+      "year": 1653,
+      "yearEnd": null,
+      "placeId": "london",
+      "episodeId": "127",
+      "timestamp": "45:07",
+      "type": "reform",
+      "actors": [
+        "Oliver Cromwell"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Aprila 1653. godine Oliver Kromvel silom raspušta 'krnji parlament' nakon svoje čuvene rečenice 'In the name of God, go' i vojskom izbacuje poslanike — znak da nešto u državnom ustrojstvu nije funkcionisalo.",
+        "en": "In April 1653, Oliver Cromwell forcibly dissolved the 'Rump Parliament' after his famous line 'In the name of God, go', using the army to expel the MPs — a sign that something in the state's constitution was not working."
+      },
+      "quote": "I onda smo imali događaj 1653. godine aprila ... on je zapravo ušao ... vi ste svoje završili, vi više niste poslanici, in the name of God, go",
+      "confidence": "high"
+    },
+    {
+      "id": "restauracija-monarhije-1660",
+      "title": {
+        "sr": "Restauracija monarhije u Engleskoj",
+        "en": "Restoration of the monarchy in England"
+      },
+      "year": 1660,
+      "yearEnd": null,
+      "placeId": "london",
+      "episodeId": "127",
+      "timestamp": "03:05",
+      "type": "reform",
+      "actors": [
+        "Parlament",
+        "Charles II"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "1660. godine, nakon smrti Olivera Kromvela i neuspešne vladavine njegovog sina, parlament odlučuje da restaurira monarhiju, okončavajući jedanaestogodišnji period Engleske republike (1649-1660) mešavinom monarhijskih i republikanskih principa.",
+        "en": "In 1660, after Oliver Cromwell's death and the unsuccessful rule of his son, Parliament decided to restore the monarchy, ending the eleven-year period of the English Republic (1649-1660) with a mixture of monarchical and republican principles."
+      },
+      "quote": "oni su se u tom momentu kraja republike, 1660. godine ... restaurirali monarhiju",
+      "confidence": "high"
+    }
+  ]
+}
