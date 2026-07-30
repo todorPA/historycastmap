@@ -6,11 +6,44 @@ How to add time-aware historical borders **without refactoring** the prototype. 
 
 When the user scrubs the timeline to year Y, the map's *basemap* shows historical borders/features valid in year Y (in addition to our event markers on top).
 
+## Status (provereno 29. 7. 2026.) — Option A ne postoji
+
+Rasterski put iz §A je **mrtav**. Izmereno u browseru:
+
+| Endpoint | Rezultat |
+|---|---|
+| `{s}.tiles.openhistoricalmap.org/hot/{z}/{x}/{y}.png?date=` | `ERR_NAME_NOT_RESOLVED` — DNS zapis ne postoji |
+| `tile.openhistoricalmap.org`, `tiles.openhistoricalmap.org`, `www.openhistoricalmap.org` | ne odgovaraju |
+| `static-tiles.openhistoricalmap.org/{z}/{x}/{y}.png` | **200 OK**, `image/png`, ali **bez `date` parametra** |
+| `vtiles.openhistoricalmap.org/maps/ohm/{z}/{x}/{y}.pbf` | vektorske pločice — ovo koristi njihova mapa |
+
+Zaključak: OHM više ne servira vremenski filtrirane rasterske pločice. Datum
+(`openhistoricalmap.org/#date=1826-01-01`) primenjuje **MapLibre na klijentu**, filtriranjem
+po `start_date`/`end_date` nad vektorskim pločicama. Dakle **vremenska dimenzija je moguća
+samo kroz Option B.**
+
+`static-tiles` je probano kao privremena zamena i **odbačeno**: nema vremensku dimenziju, a
+pokrivenost je retka i plitka — nekoliko nivoa zoom-a i van pojedinih regiona mapa je siva
+ploča. Ponuditi to kao „Istorijsku“ znači obećati granice epohe a dati prazno.
+
+**Šta je spremno i čeka Option B** (sve napisano i neiskorišćeno, ništa ne treba refaktorisati):
+`kind: 'ohm'` varijanta u `config/basemaps.ts`, ubacivanje datuma u `BasemapLayer` sa
+debounce-om od 300ms, `yearToOhmDate()` u `lib/time.ts`, `focusYear` na `TimeContext`,
+`basemapId` u state-u i u share-URL-u (`&bm=`), i `BasemapSwitcher` koji se sam sakriva dok
+postoji samo jedna podloga.
+
+**Napomena za Option B:** stil podloge je dizajnerski posao (preuzeti OHM stil ili napisati
+svoj), pa ima smisla čekati dizajn.
+
+---
+
+
+
 ## Source: OpenHistoricalMap (OHM)
 
 OHM is an OSM-style project with a **date dimension**. Two ways to consume it:
 
-### Option A — Raster tiles with date filter (simplest, recommended first)
+### Option A — Raster tiles with date filter (simplest, recommended first) — NE RADI, vidi Status
 OHM serves time-filtered raster tiles. Base pattern:
 ```
 https://{s}.tiles.openhistoricalmap.org/hot/{z}/{x}/{y}.png?date={YYYY-MM-DD}
