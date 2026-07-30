@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { MapContainer, CircleMarker, Popup, useMap } from 'react-leaflet';
-import type { CircleMarker as CircleMarkerType, LatLngBoundsExpression, LatLngTuple } from 'leaflet';
-import type { HistoryEvent } from '../types/events';
+import { MapContainer, useMap } from 'react-leaflet';
+import type { LatLngBoundsExpression, LatLngTuple } from 'leaflet';
 import { getBasemap } from '../config/basemaps';
 import { useData, useVisibleEvents } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
 import { t } from '../lib/i18n';
 import BasemapLayer from './BasemapLayer';
-import EventPopup from './EventPopup';
+import BasemapSwitcher from './BasemapSwitcher';
+import EventMarkers from './EventMarkers';
+import type { PositionedEvent } from './EventMarkers';
 import Legend from './Legend';
 
 const DEFAULT_CENTER: LatLngTuple = [43.5, 20.5];
@@ -20,12 +21,6 @@ function offsetFor(index: number): [number, number] {
   const angle = (index * 2.39996) % (Math.PI * 2); // golden-angle spread
   const radius = step * Math.sqrt(index);
   return [radius * Math.sin(angle), radius * Math.cos(angle)];
-}
-
-interface Positioned {
-  event: HistoryEvent;
-  position: LatLngTuple;
-  color: string;
 }
 
 /**
@@ -43,6 +38,12 @@ function FitToMarkers({ points, fitKey }: { points: LatLngTuple[]; fitKey: strin
     if (pts.length === 0) return;
     // Let a container resize settle first, so fitBounds measures the final viewport.
     const id = window.setTimeout(() => {
+      // Fitting against a zero-sized container yields a nonsense zoom, and Leaflet then
+      // throws "Attempted to load an infinite number of tiles" and renders no basemap at
+      // all. The timeline sizes itself to its content, so the map can briefly measure flat.
+      const size = map.getSize();
+      if (size.x < 50 || size.y < 50) return;
+
       if (pts.length === 1) {
         map.setView(pts[0], 7);
         return;
@@ -88,14 +89,12 @@ function PanToSelected({ points }: { points: Map<string, LatLngTuple> }) {
 export default function MapView() {
   const { placesById, episodesById, data } = useData();
   const visible = useVisibleEvents();
-  const { lang, basemapId, selectedEventId, setSelectedEventId, activeEpisodeId, timelineSize } =
-    useFilters();
+  const { lang, basemapId, activeEpisodeId, timelineSize } = useFilters();
   const basemap = getBasemap(basemapId);
-  const markerRefs = useRef(new Map<string, CircleMarkerType>());
 
-  const positioned = useMemo<Positioned[]>(() => {
+  const positioned = useMemo<PositionedEvent[]>(() => {
     const seenAtPlace = new Map<string, number>();
-    const out: Positioned[] = [];
+    const out: PositionedEvent[] = [];
     for (const event of visible) {
       const place = placesById[event.placeId];
       if (!place) continue; // unknown placeId: skip rather than render at 0,0
@@ -103,6 +102,7 @@ export default function MapView() {
       seenAtPlace.set(event.placeId, index + 1);
       const [dLat, dLng] = offsetFor(index);
       out.push({
+        id: event.id,
         event,
         position: [place.lat + dLat, place.lng + dLng],
         color: episodesById[event.episodeId]?.color ?? '#7f8c8d',
@@ -117,18 +117,13 @@ export default function MapView() {
     [positioned],
   );
 
-  // Selection can come from the timeline as well — open that marker's popup.
-  useEffect(() => {
-    if (!selectedEventId) return;
-    markerRefs.current.get(selectedEventId)?.openPopup();
-  }, [selectedEventId, positioned]);
-
   return (
     <div className="map-wrap">
       <MapContainer
         center={DEFAULT_CENTER}
         zoom={DEFAULT_ZOOM}
         className="map"
+        minZoom={2}
         worldCopyJump
         scrollWheelZoom
       >
@@ -140,39 +135,11 @@ export default function MapView() {
         />
         <PanToSelected points={pointsById} />
 
-        {positioned.map(({ event, position, color }) => {
-          const low = event.confidence === 'low';
-          const selected = event.id === selectedEventId;
-          return (
-            <CircleMarker
-              key={event.id}
-              center={position}
-              radius={selected ? 11 : 8}
-              ref={(instance) => {
-                if (instance) markerRefs.current.set(event.id, instance);
-                else markerRefs.current.delete(event.id);
-              }}
-              pathOptions={{
-                color: selected ? '#ffffff' : color,
-                weight: selected ? 3 : low ? 2 : 1.5,
-                dashArray: low ? '3 3' : undefined,
-                fillColor: color,
-                fillOpacity: low ? 0.6 : 0.95,
-                opacity: low ? 0.6 : 1,
-              }}
-              eventHandlers={{
-                click: () => setSelectedEventId(event.id),
-              }}
-            >
-              <Popup minWidth={280} maxWidth={340}>
-                <EventPopup event={event} />
-              </Popup>
-            </CircleMarker>
-          );
-        })}
+        <EventMarkers items={positioned} />
       </MapContainer>
 
       <Legend />
+      <BasemapSwitcher />
       {positioned.length === 0 && <div className="map-empty">{t(lang, 'noEvents')}</div>}
     </div>
   );

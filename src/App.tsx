@@ -66,6 +66,7 @@ export default function App() {
         lang: urlState.lang,
         episodeId: urlState.episodeId,
         eventId: urlState.eventId,
+        basemapId: urlState.basemapId,
       }}
     >
       <Loader urlState={urlState} />

@@ -38,6 +38,13 @@ const dict = {
     resizeTimeline: 'Promeni visinu vremenske ose',
     copyLink: 'Kopiraj link na ovaj prikaz',
     linkCopied: 'Link kopiran ✓',
+    basemap: 'Podloga',
+    basemapModern: 'Moderna',
+    basemapHistorical: 'Istorijska',
+    bordersFor: 'Granice za',
+    ohmCoverage: 'OpenHistoricalMap — pokrivenost varira po epohi i regionu',
+    ohmStaticNote:
+      'OpenHistoricalMap — ne prati godinu sa ose (rasterske pločice nemaju vremensku dimenziju)',
   },
   en: {
     appTitle: 'HistoryCast Map',
@@ -75,6 +82,13 @@ const dict = {
     resizeTimeline: 'Resize the timeline',
     copyLink: 'Copy link to this view',
     linkCopied: 'Link copied ✓',
+    basemap: 'Basemap',
+    basemapModern: 'Modern',
+    basemapHistorical: 'Historical',
+    bordersFor: 'Borders for',
+    ohmCoverage: 'OpenHistoricalMap — coverage varies by era and region',
+    ohmStaticNote:
+      'OpenHistoricalMap — does not follow the timeline year (raster tiles carry no time dimension)',
   },
 } as const;
 

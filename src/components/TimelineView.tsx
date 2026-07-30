@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { DataSet, Timeline } from 'vis-timeline/standalone';
 import type { TimelineOptions } from 'vis-timeline/standalone';
 import 'vis-timeline/styles/vis-timeline-graph2d.css';
@@ -15,6 +15,14 @@ const RANGE_DEBOUNCE_MS = 150;
 /** Share of the viewport the timeline may occupy at each size step. */
 const SIZE_FRACTION: Record<TimelineSize, number> = { s: 0.24, m: 0.45, l: 0.7 };
 const MIN_PANEL_PX = 150;
+
+/**
+ * Vertical breathing room per step. Without this, raising the size does nothing visible when
+ * a single episode is selected: the panel is as tall as its content, and a handful of region
+ * groups never reaches the cap. Growing the item margin makes "bigger" mean "more legible",
+ * which is what the control is for.
+ */
+const SIZE_MARGIN: Record<TimelineSize, number> = { s: 6, m: 16, l: 28 };
 
 /**
  * vis gets a cap in pixels, never '100%'. A percentage forces vis to measure its parent at
@@ -138,7 +146,7 @@ export default function TimelineView() {
       // region groups don't fit.
       maxHeight: maxHeightPx(size, window.innerHeight),
       verticalScroll: true,
-      margin: { item: 6 },
+      margin: { item: SIZE_MARGIN[size] },
       orientation: { axis: 'top' },
       selectable: true,
       multiselect: false,
@@ -170,7 +178,9 @@ export default function TimelineView() {
     });
 
     // First paint may land before the grid has its final height; redraw once it has.
-    const initialRedraw = window.requestAnimationFrame(() => timeline.redraw());
+    const initialRedraw = window.requestAnimationFrame(() => {
+      if (containerRef.current?.isConnected) timeline.redraw();
+    });
 
     return () => {
       window.cancelAnimationFrame(initialRedraw);
@@ -222,28 +232,51 @@ export default function TimelineView() {
     });
   }, [lang]);
 
-  // The panel cap depends on the size step and the viewport, so recompute on both.
+  /**
+   * Size step drives three things at once, and it has to, to feel like "enlarge":
+   *  - 's' caps the height and lets the panel shrink to its content (no empty band).
+   *  - 'm'/'l' set an explicit pixel height, so the panel visibly fills that space even when
+   *    a single episode has only a few region groups; vis scrolls internally past it.
+   *  - the item margin grows, so rows get more breathing room rather than just more space.
+   * Pixels, never '%': a percentage makes vis measure its parent and it lays out at zero
+   * height before the grid settles.
+   */
   useEffect(() => {
-    const apply = () =>
-      timelineRef.current?.setOptions({ maxHeight: maxHeightPx(size, window.innerHeight) });
+    const apply = () => {
+      const px = maxHeightPx(size, window.innerHeight);
+      // vis accepts null to clear height/maxHeight, but its types declare only string|number,
+      // so this cast is about the typings, not the runtime contract.
+      timelineRef.current?.setOptions({
+        height: (size === 's' ? null : px) as unknown as number,
+        maxHeight: (size === 's' ? px : null) as unknown as number,
+        margin: { item: SIZE_MARGIN[size] },
+      });
+    };
     apply();
     window.addEventListener('resize', apply);
     return () => window.removeEventListener('resize', apply);
   }, [size]);
 
   /**
-   * vis measures its container once, on construction. In a CSS grid the final height may
-   * not be settled yet, so it can come up with zero height and draw nothing until
-   * something forces a redraw. Observing the container fixes the empty-on-first-load case
-   * and any later layout change (window resize, sidebar drawer on mobile).
+   * vis reads DOM geometry during redraw, so calling it while the container is detached
+   * throws ("Cannot read properties of null (reading 'left')"). Both callers below can fire
+   * after unmount — a queued frame, or a ResizeObserver notification.
    */
+  const safeRedraw = useCallback(() => {
+    const timeline = timelineRef.current;
+    if (!timeline || !containerRef.current?.isConnected) return;
+    timeline.redraw();
+  }, []);
+
+  // Keeps the timeline correct across layout changes: window resizes, the sidebar drawer on
+  // mobile, and the panel's own size steps.
   useEffect(() => {
     const el = containerRef.current;
     if (!el || typeof ResizeObserver === 'undefined') return;
-    const observer = new ResizeObserver(() => timelineRef.current?.redraw());
+    const observer = new ResizeObserver(safeRedraw);
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [safeRedraw]);
 
   // Keep timeline selection in sync with map/sidebar selection.
   useEffect(() => {

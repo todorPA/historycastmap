@@ -1,5 +1,6 @@
 import type { Lang } from '../types/events';
 import { DATASETS, DEFAULT_DATASET, type DatasetName } from './data';
+import { BASEMAPS, DEFAULT_BASEMAP_ID } from '../config/basemaps';
 
 /**
  * The shareable view lives in the query string, so a link reproduces exactly what the
@@ -15,6 +16,7 @@ export interface UrlState {
   episodeId: string | null;
   eventId: string | null;
   lang: Lang | null;
+  basemapId: string | null;
 }
 
 const PARAM = {
@@ -24,6 +26,7 @@ const PARAM = {
   episode: 'ep',
   event: 'e',
   lang: 'lang',
+  basemap: 'bm',
 } as const;
 
 function parseYear(raw: string | null): number | null {
@@ -43,6 +46,7 @@ export function parseUrlState(search: string): UrlState {
       : DEFAULT_DATASET;
 
   const rawLang = params.get(PARAM.lang);
+  const rawBasemap = params.get(PARAM.basemap);
 
   return {
     dataset,
@@ -51,6 +55,8 @@ export function parseUrlState(search: string): UrlState {
     episodeId: params.get(PARAM.episode) || null,
     eventId: params.get(PARAM.event) || null,
     lang: rawLang === 'sr' || rawLang === 'en' ? rawLang : null,
+    // Validated against the registry, so an unknown id falls back to the default layer.
+    basemapId: rawBasemap && BASEMAPS.some((b) => b.id === rawBasemap) ? rawBasemap : null,
   };
 }
 
@@ -63,6 +69,7 @@ export function buildSearch(state: {
   episodeId: string | null;
   eventId: string | null;
   lang: Lang;
+  basemapId: string;
 }): string {
   const params = new URLSearchParams();
 
@@ -75,6 +82,7 @@ export function buildSearch(state: {
   if (state.episodeId) params.set(PARAM.episode, state.episodeId);
   if (state.eventId) params.set(PARAM.event, state.eventId);
   if (state.lang !== 'sr') params.set(PARAM.lang, state.lang);
+  if (state.basemapId !== DEFAULT_BASEMAP_ID) params.set(PARAM.basemap, state.basemapId);
 
   const qs = params.toString();
   return qs ? `?${qs}` : '';

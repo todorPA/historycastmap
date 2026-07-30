@@ -13,7 +13,7 @@ const WRITE_DEBOUNCE_MS = 250;
  */
 export default function UrlSync({ dataset }: { dataset: DatasetName }) {
   const { range, bounds } = useTime();
-  const { activeEpisodeId, selectedEventId, lang } = useFilters();
+  const { activeEpisodeId, selectedEventId, lang, basemapId } = useFilters();
 
   useEffect(() => {
     const id = window.setTimeout(() => {
@@ -26,6 +26,7 @@ export default function UrlSync({ dataset }: { dataset: DatasetName }) {
           episodeId: activeEpisodeId,
           eventId: selectedEventId,
           lang,
+          basemapId,
         }),
       );
     }, WRITE_DEBOUNCE_MS);
@@ -39,6 +40,7 @@ export default function UrlSync({ dataset }: { dataset: DatasetName }) {
     activeEpisodeId,
     selectedEventId,
     lang,
+    basemapId,
   ]);
 
   return null;
