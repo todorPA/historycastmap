@@ -2,7 +2,7 @@
 
 Status of the visual redesign carried out on branch `feat/stress-ready-map`,
 commits `c4f69b1`..`dca11f9`, the B1 timeline fix in `7f4ff68`, and a second design pass
-in `250bdc0`..`3a2d751`. Written in English to match the code comments; the older `DESIGN-BRIEF.md` (Serbian)
+in `250bdc0`..`3a2d751`, and a brand-led light theme in `e06874d`..`35508a4`. Written in English to match the code comments; the older `DESIGN-BRIEF.md` (Serbian)
 describes the pre-redesign state and is still the reference for *what the product
 is*.
 
@@ -21,6 +21,7 @@ The project is two products with one token layer.
 | Kind | dense cartographic product UI | editorial archive page |
 | Audience | listeners placing the podcast in space | first-time visitors |
 | Variance / motion / density | 3 / 3 / 7 | 7 / 5 / 3 |
+| Theme | light, warm grey | light, warm grey |
 | Display face | none (sans only) | Literata |
 
 The explorer is a cockpit, so it wants symmetry and density, not asymmetric
@@ -395,3 +396,107 @@ calling `invalidateSize`) were symptom-chasing. The actual cause was that
 `position: static`, the tile grid laid out in normal flow, and markers were projected
 3500px below the map. The sized child is still a genuine improvement and was kept; the
 lesson is the same one B1 taught, which is to measure before patching.
+
+---
+
+## 11. Light theme, from the brand (`e06874d`..`35508a4`)
+
+Milan asked for something brighter and supplied the official HistoryCast logo and merch.
+Both brand values below are sampled from those assets rather than chosen:
+
+| | value | source |
+|---|---|---|
+| gold | `#e9c980` | the flat gold in the wordmark, isolating saturated pixels from the antialiased edges |
+| ground | `#ccc4c1` | the merch fabric |
+
+### Why warm grey and not cream
+
+The reflex for a history brand is cream-and-brass, and it is also the single most
+over-used palette in the genre. The brand's own light register is a cooler warm *grey*, so
+the surface ramp is built from that family. It reads as archival board rather than as
+aged paper, and it is the brand's colour rather than a guess at one.
+
+### The rule that governs gold
+
+**Gold is a fill, never text and never a hairline.** `#e9c980` against the panel surface is
+1.43:1. It can only carry ink on top of it. Anywhere gold must be a glyph or a border there
+is `--gold-deep` (`#6f5a2d`), which clears AA on every surface in the system.
+
+The same logic makes active states *surfaces*: a gold border alone cannot mark selection on
+a light panel, so selected episode rows and facet chips take a `--gold-wash` background
+with a deep-gold edge.
+
+### The data-encoding rule survives
+
+§3's principle was that the chrome spends no hue, so it can never be confused with a
+region. Introducing a brand colour tests that. Measured: gold's nearest region hue is
+Srednja Evropa at CIELAB dE 36.5, with Osmansko carstvo at 41.4. The accent removed in the
+first pass sat at dE 2.9. There is real headroom, which is why gold can be an active state
+at all, and `tokens.css` records it as something to re-measure if either the gold or a
+region hue moves.
+
+### A simplification worth noting
+
+Going light collapsed the dark-chrome / light-popup split that §2 defended as correct. Map
+popups and the chrome around them are now one theme. The `--lit-*` tokens survive as
+aliases onto the single ramp.
+
+### What had to be inverted rather than re-mapped
+
+The token layer carried most of the change, but these were tuned for dark and needed real
+decisions:
+
+- Floating map furniture (legend, basemap switcher, empty-state pill) was translucent
+  near-black. Light chrome over light tiles has no tonal separation to fall back on, so
+  those panels now need a border and a shadow to read as floating at all.
+- Swatch, chip-dot and popup-dot rings flipped direction. Nine of the twelve region fills
+  fall under 3:1 against the panel on their own; the ring is what carries them.
+- Focus rings, the search field's inner glow and the timeline selection ring moved from
+  paper-white to ink. Error text moved from `#e57373` to `#a3211c`.
+- vis-timeline paints its own panel and label backgrounds, which had to be pinned to the
+  new surface.
+
+### Three region hues moved
+
+Timeline event titles are drawn directly on the region colour, and the label colour was
+hardcoded white: about 1.9:1 on Srednja Evropa. `onColor()` now picks ink or white per fill
+by luminance. Three hues could not clear 4.5:1 either way and were nudged in lightness,
+with the dichromacy matrix re-verified:
+
+| region | before | after |
+|---|---|---|
+| Zapadna Evropa | `#568500` | `#548200` |
+| Bliski istok | `#0088a6` | `#007e9b` |
+| Južna Amerika | `#be5399` | `#77065a` |
+
+Worst-case separation moved from 10.64 to 10.28; worst label contrast is now 4.60. Low
+confidence also stopped dropping item opacity to 0.6, which on a light panel washed the
+fill out until the label disappeared. It is the dashed border alone now.
+
+### Bugs found while checking the theme
+
+- **Marker selection ring was still paper-white**, invisible on light tiles. Now ink.
+- **Marker ref cleanup deleted by id.** Under StrictMode's mount/unmount/remount the first
+  teardown removed the registration the second mount had just made, so selection could hold
+  a marker belonging to the discarded map. Replaced with a React 19 ref cleanup that
+  compares identity.
+- **The hero map's deep links used `?event=`** where the explorer's parameter is `e`. Every
+  one of those links opened the app with nothing selected.
+
+### B6. Deep-link popup does not auto-open (UNRESOLVED)
+
+`?ep=43&e=<id>` selects the event correctly: the episode filters, the map zooms, the
+timeline item takes its selection ring, and the marker renders with the thick selected
+ring. The popup does not open. Clicking the same marker opens it immediately, so only the
+automatic path is affected.
+
+I tried three fixes and none of them was the cause: a frame-retry for late marker
+registration, waiting on `getPopup()` as well as the marker, and the StrictMode ref
+identity fix above. Instrumentation showed the final attempt running with marker, popup and
+map all present, and `openPopup()` still producing nothing in the DOM.
+
+Stopped there rather than attempt a fourth speculative fix. Two things to know: the ref
+identity fix is a genuine latent-bug fix and was kept regardless, and Milan's own
+screenshot shows the popup open on this exact URL in a real browser, so this may be
+specific to the headless harness rather than to the app. It needs reproducing in a real
+browser before anyone spends more on it.
