@@ -139,7 +139,7 @@ body {
 /* ---------- language toggle ---------- */
 .lang-toggle {
   display: inline-flex;
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-edge);
   border-radius: var(--r-md);
   overflow: hidden;
   flex: none;
@@ -173,7 +173,7 @@ body {
   font-size: var(--step--1);
   color: var(--text);
   background: var(--bg);
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-edge);
   border-radius: var(--r-md);
 }
 
@@ -319,7 +319,7 @@ body {
   font-size: var(--step--1);
   padding: 7px 11px;
   border-radius: var(--r-md);
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-edge);
   background: var(--sidebar-2);
   color: var(--text);
   cursor: pointer;
@@ -422,7 +422,7 @@ body {
   padding: 3px 8px;
   background: var(--bg);
   color: var(--muted);
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-edge);
   border-radius: var(--r-pill);
   cursor: pointer;
 }
@@ -572,7 +572,7 @@ body {
   white-space: nowrap;
   color: var(--muted);
   background: transparent;
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-edge);
   border-radius: var(--r-sm);
   cursor: pointer;
 }
@@ -818,7 +818,7 @@ body {
   font-size: var(--step--1);
   line-height: 1;
   padding: 5px 9px;
-  border: 1px solid var(--ink-500);
+  border: 1px solid var(--control-edge);
   border-radius: var(--r-sm);
   background: var(--ink-700);
   color: var(--muted);
@@ -1042,7 +1042,7 @@ body {
   font-size: var(--step--1);
   line-height: 1;
   padding: 5px 10px;
-  border: 1px solid var(--ink-500);
+  border: 1px solid var(--control-edge);
   border-radius: var(--r-sm);
   background: var(--ink-700);
   color: var(--text);
@@ -1099,4 +1099,142 @@ body {
 
 .timeline__speed:hover {
   color: var(--text);
+}
+
+/* ---------- one control system ----------
+   Measured drift before this: two border tokens for the same job, press feedback on four
+   of nine controls, hover missing on two. The rule now:
+
+     --control-edge   every pressable edge
+     --line           structure only (section dividers, panel separators)
+     --r-pill         filter chips
+     --r-sm           compact controls sitting in a toolbar or header
+     --r-md           full-size controls, inputs and list rows
+     --r-lg           floating panels
+
+   Radius follows the control's size, not its component. */
+.btn:active,
+.chip--btn:active,
+.episode:active,
+.collection:active,
+.lang-toggle__btn:active,
+.basemap__btn:active,
+.timeline__play:active,
+.timeline__resize:active,
+.timeline__size__btn:active {
+  transform: scale(0.98);
+}
+
+.lang-toggle__btn:hover:not(.is-active),
+.basemap__btn:hover:not(.is-active),
+.timeline__resize:hover {
+  background: var(--ink-600);
+  color: var(--text);
+}
+
+/* Nothing here is ever disabled today, but a control system without the state grows one
+   by accident later. Declared once so it looks deliberate when it arrives. */
+.btn[disabled],
+.chip--btn[disabled],
+.timeline__play[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- leaflet's own controls ----------
+   These were raw defaults: white squares with a light grey border, the one part of the
+   map furniture that had never been brought into the system. */
+.leaflet-touch .leaflet-bar,
+.leaflet-bar {
+  border: 1px solid var(--control-edge);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-panel);
+}
+
+.leaflet-bar a,
+.leaflet-bar a:hover {
+  background: var(--ink-700);
+  color: var(--ink-100);
+  border-bottom-color: var(--control-edge);
+  font-family: var(--font-sans);
+}
+
+.leaflet-bar a:hover {
+  background: var(--ink-600);
+}
+
+.leaflet-bar a:first-child {
+  border-top-left-radius: var(--r-sm);
+  border-top-right-radius: var(--r-sm);
+}
+
+.leaflet-bar a:last-child {
+  border-bottom-left-radius: var(--r-sm);
+  border-bottom-right-radius: var(--r-sm);
+}
+
+.leaflet-bar a:focus-visible {
+  outline: 2px solid var(--ink-100);
+  outline-offset: 2px;
+}
+
+.leaflet-control-attribution {
+  background: rgba(251, 250, 249, 0.86);
+  color: var(--ink-300);
+  font-family: var(--font-sans);
+  font-size: 10px;
+}
+
+.leaflet-control-attribution a {
+  color: var(--gold-deep);
+}
+
+/* ---------- basemap ----------
+   The governing rule of this design is that colour is the data encoding (regions.ts), and
+   raw OSM tiles break it: they bring their own green landmass, blue sea and red motorways,
+   competing with the twelve hues the palette works so hard to keep apart. Desaturating the
+   tile pane alone pushes the basemap back without touching the markers, which live in the
+   overlay pane. Same device already used on the landing hero. */
+.map .leaflet-tile-pane {
+  filter: saturate(0.4) brightness(1.04) contrast(0.94);
+}
+
+/* ---------- timeline height ----------
+   Was a single cycling caret. One glyph cannot say "three steps, you are on the second",
+   so it became a segmented control in the same idiom as the language toggle: the state is
+   visible instead of inferred. */
+.timeline__size {
+  display: inline-flex;
+  border: 1px solid var(--control-edge);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  flex: none;
+}
+
+.timeline__size__btn {
+  padding: 4px 8px;
+  font: inherit;
+  font-size: var(--step--2);
+  font-weight: 600;
+  line-height: 1.2;
+  background: transparent;
+  color: var(--muted);
+  border: 0;
+  cursor: pointer;
+}
+
+.timeline__size__btn:hover:not(.is-active) {
+  background: var(--ink-600);
+  color: var(--text);
+}
+
+.timeline__size__btn:focus-visible {
+  outline: 2px solid var(--ink-100);
+  outline-offset: -2px;
+}
+
+.timeline__size__btn.is-active {
+  background: var(--gold);
+  color: var(--ink-100);
 }

@@ -5,8 +5,10 @@ import 'vis-timeline/styles/vis-timeline-graph2d.css';
 import { useCollectionEpisodes, useData } from '../state/DataContext';
 import { useTime } from '../state/TimeContext';
 import { useFilters } from '../state/FilterContext';
+import { TIMELINE_SIZES } from '../state/FilterContext';
 import type { TimelineSize } from '../state/FilterContext';
 import { pick, t } from '../lib/i18n';
+import type { UiKey } from '../lib/i18n';
 import { onColor, regionColor } from '../config/regions';
 import { dateToYear, formatYear, formatYearRange, yearToDate } from '../lib/time';
 import { useTimelinePlayback } from './useTimelinePlayback';
@@ -81,6 +83,7 @@ export default function TimelineView() {
     selectedEventId,
     setSelectedEventId,
     timelineSize,
+    setTimelineSize,
     cycleTimelineSize,
   } = useFilters();
   const collectionEpisodes = useCollectionEpisodes(activeCollectionId);
@@ -89,7 +92,6 @@ export default function TimelineView() {
   // is too cramped to read, so the user can raise the timeline over the map.
   const size = timelineSize;
   const cycleSize = cycleTimelineSize;
-  const sizeLabel = size === 'l' ? '▾' : '▴';
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const timelineRef = useRef<Timeline | null>(null);
@@ -406,15 +408,23 @@ export default function TimelineView() {
               playback instead of shoving the controls around. */}
           <span className="timeline__range">{formatYearRange(range.from, range.to, lang)}</span>
 
-          <button
-            type="button"
-            className="timeline__resize"
-            onClick={cycleSize}
-            title={t(lang, 'resizeTimeline')}
-            aria-label={t(lang, 'resizeTimeline')}
-          >
-            {sizeLabel}
-          </button>
+          {/* Three explicit steps rather than one cycling caret: a single glyph cannot say
+              "three heights, you are on the second". Same segmented idiom as the language
+              toggle, so the state is visible instead of inferred. */}
+          <div className="timeline__size" role="group" aria-label={t(lang, 'resizeTimeline')}>
+            {TIMELINE_SIZES.map((step) => (
+              <button
+                key={step}
+                type="button"
+                className={`timeline__size__btn${step === size ? ' is-active' : ''}`}
+                onClick={() => setTimelineSize(step)}
+                aria-pressed={step === size}
+                title={t(lang, `size_${step}` as UiKey)}
+              >
+                {step.toUpperCase()}
+              </button>
+            ))}
+          </div>
         </div>
       </header>
       <div className="timeline__canvas" ref={containerRef} />

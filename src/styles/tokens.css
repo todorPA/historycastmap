@@ -44,6 +44,19 @@
   --gold-deep: #6f5a2d; /* gold as text or hairline */
   --gold-wash: #f6e9cd; /* selected rows, so "active" is a surface not a border */
 
+  /**
+   * The edge of a pressable control, solved for 3:1 against the panel surface (WCAG 1.4.11).
+   *
+   * It needs its own token because the button fill (--ink-700) is only 1.09 against the
+   * panel: the fill is not what tells you something is pressable, the edge is. The two
+   * greys previously used for this, --line and --ink-500, came in at 1.41 and 1.59, which
+   * is decoration rather than affordance.
+   *
+   * --line stays, but only for structure: section dividers and panel separators, which
+   * describe layout rather than invite a press.
+   */
+  --control-edge: #938a81;
+
   /* Legacy aliases, still referenced by existing rules. */
   --bg: var(--ink-900);
   --sidebar: var(--ink-800);

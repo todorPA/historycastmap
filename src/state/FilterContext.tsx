@@ -36,6 +36,8 @@ interface FilterContextValue {
   setBasemapId: (id: string) => void;
 
   timelineSize: TimelineSize;
+  setTimelineSize: (size: TimelineSize) => void;
+  /** Kept for the header's double-click shortcut. */
   cycleTimelineSize: () => void;
 }
 
@@ -135,6 +137,7 @@ export function FilterProvider({
       basemapId,
       setBasemapId,
       timelineSize,
+      setTimelineSize,
       cycleTimelineSize,
     }),
     [
@@ -152,6 +155,7 @@ export function FilterProvider({
       selectedEventId,
       basemapId,
       timelineSize,
+      setTimelineSize,
       cycleTimelineSize,
     ],
   );
