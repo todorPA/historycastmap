@@ -1,0 +1,96 @@
+/**
+ * Design tokens: HistoryCast Map.
+ *
+ * The governing rule: colour is the data encoding. Twelve regions carry twelve hues
+ * (config/regions.ts), so the chrome around them spends none. Every surface, border and
+ * active state below is achromatic, which is why an "active episode" can never be mistaken
+ * for a region marker. The previous accent (#d9a13b) sat between the Bliski istok region
+ * hue and the medium-confidence badge, and did exactly that.
+ *
+ * Emphasis is carried by lightness and weight instead of hue. Selection is paper-white.
+ */
+
+:root {
+  /* ---------- chrome: cool neutral ramp, zero chroma ---------- */
+  --ink-900: #0f1317; /* page behind everything */
+  --ink-800: #161b21; /* sidebar, timeline panel */
+  --ink-700: #1d232b; /* raised rows, inputs, buttons */
+  --ink-600: #262e38; /* hover */
+  --ink-500: #323c48; /* borders on raised surfaces */
+  --ink-400: #47535f; /* disabled text, dashed hints */
+  --ink-300: #7d8996; /* muted text */
+  --ink-200: #aab4bf; /* secondary text */
+  --ink-100: #dde3e9; /* primary text */
+  --paper: #f2f5f8; /* the single "accent": active, selected, focused */
+
+  /* Legacy aliases, still referenced by existing rules. */
+  --bg: var(--ink-900);
+  --sidebar: var(--ink-800);
+  --sidebar-2: var(--ink-700);
+  --text: var(--ink-100);
+  --muted: var(--ink-300);
+  --line: #28313b;
+  --accent: var(--paper);
+
+  /* ---------- light surfaces (popups sit on a light basemap) ---------- */
+  --lit-bg: #ffffff;
+  --lit-text: #16202b;
+  --lit-muted: #56636f;
+  --lit-line: #dfe5ea;
+  --lit-raised: #eef2f5;
+
+  /* Markers get this ring on the light basemap so a fill can be any lightness and still
+     read. It is why the region palette is optimised for mutual distinguishability rather
+     than for contrast against the tiles. */
+  --marker-ring: #12171d;
+
+  /* ---------- type ---------- */
+  /* IBM Plex ships Latin Extended-A and Cyrillic under OFL, so Serbian diacritics
+     (č ć š ž đ) and the handful of Cyrillic strings in the data render in one family.
+     Falls back to the system stack until `npm run fonts` fetches the files. */
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font: var(--font-sans);
+
+  --step--2: 0.6875rem; /* 11px - labels, counts */
+  --step--1: 0.75rem; /* 12px - secondary UI */
+  --step-0: 0.8125rem; /* 13px - body UI */
+  --step-1: 0.9375rem; /* 15px - popup titles */
+  --step-2: 1.0625rem; /* 17px - sidebar title */
+
+  /* ---------- shape: one radius scale, §4.4 ---------- */
+  --r-sm: 6px; /* chips inside rows, tiny buttons */
+  --r-md: 8px; /* inputs, buttons, rows */
+  --r-lg: 12px; /* floating map panels */
+  --r-pill: 999px;
+
+  /* ---------- space ---------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+
+  /* ---------- elevation: tinted to the surface, never pure black ---------- */
+  --shadow-panel: 0 8px 28px rgba(8, 11, 15, 0.55);
+
+  /* ---------- z-index scale, §6.F ----------
+     Leaflet owns 0-499 internally; our map furniture sits above its overlay pane. */
+  --z-map-overlay: 450;
+  --z-map-ui: 500;
+  --z-drawer: 600;
+}
+
+/* Motion is opt-in and always escapable. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
