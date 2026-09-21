@@ -3,7 +3,7 @@ import { CircleMarker, Popup, Tooltip, useMap, useMapEvents } from 'react-leafle
 import type { CircleMarker as CircleMarkerType, LatLngBoundsExpression } from 'leaflet';
 import type { HistoryEvent } from '../types/events';
 import { useFilters } from '../state/FilterContext';
-import { clusterByPixel, clusterRadius } from '../lib/cluster';
+import { CELL_PX, clusterByPixel, clusterRadius } from '../lib/cluster';
 import type { Clusterable } from '../lib/cluster';
 import EventPopup from './EventPopup';
 import EventGroupPopup from './EventGroupPopup';
@@ -28,10 +28,15 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
   useMapEvents({ zoomend: () => setZoom(map.getZoom()) });
 
   const clusters = useMemo(
-    () => clusterByPixel(map, items),
+    () =>
+      // The selected dot is held out of clustering, so selecting an event always produces a
+      // marker you can see and a popup that can open, however dense the surrounding area is.
+      clusterByPixel(map, items, CELL_PX, (dot) =>
+        selectedEventId != null && dot.events.some((e) => e.id === selectedEventId),
+      ),
     // `zoom` isn't read here directly — it's what makes the projection change.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [map, items, zoom],
+    [map, items, zoom, selectedEventId],
   );
 
   /**
@@ -84,6 +89,23 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
                 // Registered under every member id, so a timeline selection finds this dot.
                 if (!instance) return;
                 for (const e of events) markerRefs.current.set(e.id, instance);
+
+                /**
+                 * Re-open on (re)mount, not only from the effect below.
+                 *
+                 * The effect keys on [selectedEventId, clusters], so it does not re-run when
+                 * the same marker merely remounts. StrictMode remounts every marker once in
+                 * development, which removed the layer and took the open popup with it
+                 * (popupclose fires from Leaflet's onRemove), leaving the selection visible on
+                 * the timeline with nothing on the map. Production was fine, which is exactly
+                 * the kind of difference that makes this worth handling here: the marker
+                 * itself knows when it exists.
+                 */
+                if (selected) {
+                  requestAnimationFrame(() => {
+                    if (instance.getPopup() && !instance.isPopupOpen()) instance.openPopup();
+                  });
+                }
 
                 /**
                  * React 19 ref cleanup, and it has to compare identity rather than just

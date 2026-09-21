@@ -44,15 +44,28 @@ function dominantColor<T extends Clusterable>(items: T[]): string {
   return best;
 }
 
+/**
+ * @param keepSeparate Items matching this never join a cluster; each becomes its own
+ *   single-member cluster wherever it lands. Used for the selected event: a selection that
+ *   gets swallowed into a count badge has no marker of its own, so it cannot be styled as
+ *   selected and has no popup to open. Clicking a timeline item then looked like nothing
+ *   happened at all, which is exactly what it looked like.
+ */
 export function clusterByPixel<T extends Clusterable>(
   map: LeafletMap,
   items: T[],
   cellPx: number = CELL_PX,
+  keepSeparate?: (item: T) => boolean,
 ): Cluster<T>[] {
   const zoom = map.getZoom();
   const cells = new Map<string, T[]>();
+  const separate: T[] = [];
 
   for (const item of items) {
+    if (keepSeparate?.(item)) {
+      separate.push(item);
+      continue;
+    }
     const point = map.project(item.position, zoom);
     const key = `${Math.floor(point.x / cellPx)}:${Math.floor(point.y / cellPx)}`;
     const bucket = cells.get(key);
@@ -60,7 +73,12 @@ export function clusterByPixel<T extends Clusterable>(
     else cells.set(key, [item]);
   }
 
-  const clusters: Cluster<T>[] = [];
+  const clusters: Cluster<T>[] = separate.map((only) => ({
+    key: only.id,
+    position: only.position,
+    items: [only],
+    color: only.color,
+  }));
   for (const [key, members] of cells) {
     if (members.length === 1) {
       const [only] = members;
