@@ -9,6 +9,7 @@ import type { TimelineSize } from '../state/FilterContext';
 import { pick, t } from '../lib/i18n';
 import { onColor, regionColor } from '../config/regions';
 import { dateToYear, formatYear, formatYearRange, yearToDate } from '../lib/time';
+import { useTimelinePlayback } from './useTimelinePlayback';
 import type { Lang } from '../types/events';
 
 const RANGE_DEBOUNCE_MS = 150;
@@ -83,6 +84,7 @@ export default function TimelineView() {
     cycleTimelineSize,
   } = useFilters();
   const collectionEpisodes = useCollectionEpisodes(activeCollectionId);
+
   // Panel height cycles small → medium → large: with many region groups the default strip
   // is too cramped to read, so the user can raise the timeline over the map.
   const size = timelineSize;
@@ -145,6 +147,16 @@ export default function TimelineView() {
    * empty rows collect below the fold instead of pushing the populated ones out of a panel
    * that is only a few hundred pixels tall.
    */
+  /** Sorted once per item change; playback uses it to skip centuries with no events. */
+  const eventYears = useMemo(
+    () => items.map((i) => dateToYear(i.start)).sort((a, b) => a - b),
+    [items],
+  );
+  const playback = useTimelinePlayback(eventYears);
+  /** Read from the create-once effect without re-creating the timeline when it changes. */
+  const playbackRef = useRef(playback);
+  playbackRef.current = playback;
+
   const groups = useMemo(() => {
     const counts = new Map<string, number>();
     for (const i of items) {
@@ -235,14 +247,25 @@ export default function TimelineView() {
       setSelectedEventId(props.items[0] ?? null);
     });
 
+    /**
+     * The hand always wins. Playback is driving the same window the user is about to grab,
+     * so any press on the axis stops it rather than fighting the drag. Listening for
+     * pointerdown on the container rather than vis's own range events, because those also
+     * fire for the window changes playback itself is making.
+     */
+    const stopOnTouch = () => playbackRef.current.stop();
+    containerRef.current.addEventListener('pointerdown', stopOnTouch);
+
     // First paint may land before the grid has its final height; redraw once it has.
     const initialRedraw = window.requestAnimationFrame(() => {
       if (containerRef.current?.isConnected) timeline.redraw();
     });
 
+    const container = containerRef.current;
     return () => {
       window.cancelAnimationFrame(initialRedraw);
       window.clearTimeout(debounceRef.current);
+      container.removeEventListener('pointerdown', stopOnTouch);
       timeline.destroy();
       timelineRef.current = null;
     };
@@ -266,6 +289,18 @@ export default function TimelineView() {
     if (dateToYear(win.start) === range.from && dateToYear(win.end) === range.to) return;
     applyingRef.current = true;
     timeline.setWindow(yearToDate(range.from), yearToDate(range.to), { animation: false });
+
+    /**
+     * Repaint explicitly. vis only auto-redraws on a range change once `initialDrawDone` is
+     * set, and that flag lives in the same guarded block the `rtl: false` option above skips
+     * past: because we pass start/end, it stays gated on an `initialRangeChangeDone` that
+     * never arrives. The window moves internally and the axis keeps its old extent.
+     *
+     * Nothing noticed until playback, because every other caller that moves the window also
+     * changes `items`, and repopulating the DataSets forces a redraw by another route.
+     * Playback moves only the window, so it painted nothing at all.
+     */
+    if (containerRef.current?.isConnected) timeline.redraw();
     // Release the guard after vis has emitted its own rangechanged for this call.
     window.setTimeout(() => {
       applyingRef.current = false;
@@ -345,6 +380,25 @@ export default function TimelineView() {
     <section className={`timeline timeline--${size}`}>
       <header className="timeline__head" onDoubleClick={cycleSize}>
         <h2>{t(lang, 'timeline')}</h2>
+        <button
+          type="button"
+          className={`timeline__play${playback.isPlaying ? ' is-playing' : ''}`}
+          onClick={playback.toggle}
+          title={t(lang, 'playHint')}
+          aria-pressed={playback.isPlaying}
+        >
+          {t(lang, playback.isPlaying ? 'pause' : 'play')}
+        </button>
+        <button
+          type="button"
+          className="timeline__speed"
+          onClick={playback.cycleSpeed}
+          title={t(lang, 'speedHint')}
+        >
+          {playback.speed} {t(lang, 'perSecond')}
+        </button>
+        {/* Mono and tabular, so the digits climb in place instead of jittering. While
+            playback runs this is the progress display; nothing else is needed. */}
         <span className="timeline__range">{formatYearRange(range.from, range.to, lang)}</span>
         <button
           type="button"
