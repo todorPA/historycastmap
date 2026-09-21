@@ -1,0 +1,417 @@
+/**
+ * Landing page styles.
+ *
+ * Shares the token layer with the explorer (tokens.css) so the two never drift, but runs a
+ * different register: low density, editorial, one display serif. The explorer is a cockpit;
+ * this is a cover. Both are dark, which keeps the theme lock intact across the whole site.
+ *
+ * The region hues are the only colour on the page, exactly as on the map. Nothing here
+ * invents an accent.
+ */
+
+@import './fonts.css';
+@import './tokens.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ink-900);
+  color: var(--ink-100);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--sp-5);
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- nav: single line, 64px ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-drawer);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  background: rgba(15, 19, 23, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--sp-5);
+}
+
+.nav__brand {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.nav__link {
+  font-size: var(--step--1);
+  color: var(--ink-200);
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  color: var(--paper);
+}
+
+@media (max-width: 640px) {
+  .nav__link--secondary {
+    display: none;
+  }
+}
+
+/* ---------- buttons ---------- */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 11px 20px;
+  border-radius: var(--r-md);
+  border: 1px solid transparent;
+  font: inherit;
+  font-size: var(--step-0);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 140ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* paper on near-black: 15.8:1 */
+.cta--primary {
+  background: var(--paper);
+  color: var(--ink-900);
+}
+
+.cta--primary:hover {
+  background: #ffffff;
+}
+
+/* ink-100 text on ink-900: 13.2:1, and the stroke keeps it visible */
+.cta--ghost {
+  background: transparent;
+  color: var(--ink-100);
+  border-color: var(--ink-500);
+}
+
+.cta--ghost:hover {
+  border-color: var(--ink-300);
+}
+
+.cta:active {
+  transform: translateY(1px);
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 3px;
+}
+
+/* ---------- hero: asymmetric split, 4 text elements max ---------- */
+.hero {
+  padding: var(--sp-6) 0 var(--sp-6);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero__grid {
+    grid-template-columns: 5fr 7fr;
+    gap: var(--sp-6);
+  }
+}
+
+.hero__title {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 3.6vw, 2.875rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.hero__title em {
+  font-style: italic;
+  /* Descender clearance for the italic 'j' and 'g'. */
+  line-height: 1.12;
+  padding-bottom: 0.08em;
+}
+
+.hero__sub {
+  margin: var(--sp-4) 0 0;
+  max-width: 46ch;
+  color: var(--ink-200);
+  font-size: 1.0625rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+}
+
+.hero__figure {
+  margin: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-panel);
+  background: var(--ink-800);
+}
+
+.hero__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1240px) {
+  /* The screenshot is the argument, so let it run past the grid column. */
+  .hero__figure {
+    width: calc(100% + 4rem);
+  }
+}
+
+/* ---------- counts: plain layout, no cards, mono numerals ---------- */
+.counts {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: var(--sp-5) 0;
+}
+
+.counts__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-5) var(--sp-4);
+}
+
+@media (min-width: 720px) {
+  .counts__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.count__n {
+  display: block;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.count__label {
+  display: block;
+  margin-top: var(--sp-2);
+  font-size: var(--step--1);
+  color: var(--ink-300);
+}
+
+/* ---------- section scaffolding ---------- */
+.section {
+  padding: 4.5rem 0;
+}
+
+.section__title {
+  margin: 0;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.section__body {
+  margin: var(--sp-3) 0 0;
+  max-width: 62ch;
+  color: var(--ink-200);
+}
+
+/* ---------- how it works: vertical stack, verbs as labels ---------- */
+.steps {
+  list-style: none;
+  margin: var(--sp-5) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-4);
+  counter-reset: step;
+}
+
+@media (min-width: 860px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-5);
+  }
+}
+
+.step {
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--ink-500);
+}
+
+.step__verb {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.step__text {
+  margin: var(--sp-2) 0 0;
+  color: var(--ink-300);
+  font-size: var(--step-0);
+}
+
+/* ---------- regions: the palette is the content ---------- */
+.regions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: var(--sp-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.region {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px 12px 6px 10px;
+  border: 1px solid var(--ink-500);
+  border-radius: var(--r-pill);
+  font-size: var(--step--1);
+  color: var(--ink-200);
+}
+
+.region__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(242, 245, 248, 0.45);
+}
+
+/* ---------- split feature ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-6);
+  }
+
+  .split--flip .split__media {
+    order: -1;
+  }
+}
+
+.split__media {
+  margin: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--ink-800);
+}
+
+.split__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- closing ---------- */
+.close-band {
+  border-top: 1px solid var(--line);
+  padding: 4.5rem 0;
+  text-align: center;
+}
+
+.close-band .cta {
+  margin-top: var(--sp-5);
+}
+
+/* ---------- footer ---------- */
+.foot {
+  border-top: 1px solid var(--line);
+  padding: var(--sp-5) 0;
+  color: var(--ink-300);
+  font-size: var(--step--1);
+}
+
+.foot__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-5);
+  align-items: center;
+}
+
+.foot a {
+  color: var(--ink-200);
+}
+
+/* ---------- motion: entrance only, reason is hierarchy ---------- *
+   IntersectionObserver adds .is-in; no scroll listener anywhere (§5.D). The
+   prefers-reduced-motion block in tokens.css collapses these to instant. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 620ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -3,14 +3,205 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HistoryCast Map</title>
+    <title>HistoryCast Map - mapa podkasta HistoryCast</title>
     <meta
       name="description"
-      content="Interaktivna mapa i vremenska osa istorijskih događaja iz podkasta HistoryCast."
+      content="456 istorijskih događaja iz 102 epizode podkasta HistoryCast, na mapi i vremenskoj osi. Svaki događaj vodi na tačan minut u epizodi."
     />
+    <meta property="og:title" content="HistoryCast Map" />
+    <meta
+      property="og:description"
+      content="456 istorijskih događaja iz 102 epizode podkasta HistoryCast, na mapi i vremenskoj osi."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/landing.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <nav class="nav">
+      <div class="nav__inner">
+        <a class="nav__brand" href="./">HistoryCast Map</a>
+        <a class="nav__link nav__link--secondary" href="#kako">Kako radi</a>
+        <a class="nav__link nav__link--secondary" href="#regioni">Regioni</a>
+        <a class="nav__link" href="./app.html">Otvori mapu</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap hero__grid">
+        <div>
+          <h1 class="hero__title">Podkast, <em>razmešten</em> po mapi.</h1>
+          <p class="hero__sub">
+            Svaki događaj iz podkasta dobio je mesto i godinu. Kliknite ga i čujte tačan
+            minut u kojem se o njemu priča.
+          </p>
+          <div class="hero__actions">
+            <a class="cta cta--primary" href="./app.html">Otvori mapu</a>
+            <a class="cta cta--ghost" href="#kako">Kako radi</a>
+          </div>
+        </div>
+
+        <figure class="hero__figure">
+          <img
+            src="./img/explorer.jpg"
+            width="1500"
+            height="1000"
+            alt="Mapa sveta sa grupisanim markerima događaja, obojenim po regionu, uz vremensku osu."
+            fetchpriority="high"
+          />
+        </figure>
+      </div>
+    </header>
+
+    <section class="counts">
+      <div class="wrap counts__grid">
+        <div>
+          <span class="count__n">456</span>
+          <span class="count__label">događaja</span>
+        </div>
+        <div>
+          <span class="count__n">102</span>
+          <span class="count__label">epizode</span>
+        </div>
+        <div>
+          <span class="count__n">204</span>
+          <span class="count__label">mesta</span>
+        </div>
+        <div>
+          <span class="count__n">1200</span>
+          <span class="count__label">p.n.e. do 2006, najstariji događaj</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kako">
+      <div class="wrap">
+        <h2 class="section__title reveal">Od transkripta do tačnog minuta</h2>
+        <p class="section__body reveal">
+          Epizode su transkribovane, događaji izvučeni i geokodirani, a svaki nosi godinu,
+          mesto i vremensku oznaku u snimku.
+        </p>
+        <ol class="steps">
+          <li class="step reveal">
+            <h3 class="step__verb">Pretražite</h3>
+            <p class="step__text">
+              Filtrirajte po epizodi, regionu ili tipu događaja. Vremenska osa sužava mapu na
+              period koji vas zanima.
+            </p>
+          </li>
+          <li class="step reveal">
+            <h3 class="step__verb">Uporedite</h3>
+            <p class="step__text">
+              Kada se više događaja desi na istom mestu iste godine, mapa ih grupiše u jednu
+              tačku i izlistava zajedno.
+            </p>
+          </li>
+          <li class="step reveal">
+            <h3 class="step__verb">Slušajte</h3>
+            <p class="step__text">
+              Svaki događaj ima dugme koje otvara epizodu na sekundi na kojoj priča o njemu
+              počinje.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="regioni">
+      <div class="wrap split">
+        <div>
+          <h2 class="section__title reveal">Boja na mapi nešto znači</h2>
+          <p class="section__body reveal">
+            Dvanaest regiona, dvanaest boja. Nijanse nisu birane po oku nego izračunate:
+            razmak između svake dve proveren je i za normalan vid i za tri tipa daltonizma,
+            pa grozd boje &bdquo;sedam događaja na Balkanu&ldquo; ostaje čitljiv podatak.
+          </p>
+          <ul class="regions reveal">
+            <li class="region"><span class="region__dot" style="background:#aa2e4e"></span>Balkan</li>
+            <li class="region"><span class="region__dot" style="background:#d86727"></span>Vizantija i Egejski svet</li>
+            <li class="region"><span class="region__dot" style="background:#ea9602"></span>Osmansko carstvo</li>
+            <li class="region"><span class="region__dot" style="background:#a9c641"></span>Srednja Evropa</li>
+            <li class="region"><span class="region__dot" style="background:#568500"></span>Zapadna Evropa</li>
+            <li class="region"><span class="region__dot" style="background:#009f68"></span>Istočna Evropa</li>
+            <li class="region"><span class="region__dot" style="background:#00736e"></span>Severna Evropa i Atlantik</li>
+            <li class="region"><span class="region__dot" style="background:#0088a6"></span>Bliski istok</li>
+            <li class="region"><span class="region__dot" style="background:#50a9ff"></span>Afrika</li>
+            <li class="region"><span class="region__dot" style="background:#5552bb"></span>Azija</li>
+            <li class="region"><span class="region__dot" style="background:#853f9f"></span>Severna Amerika</li>
+            <li class="region"><span class="region__dot" style="background:#be5399"></span>Južna Amerika</li>
+          </ul>
+        </div>
+
+        <figure class="split__media reveal">
+          <img
+            src="./img/regions.jpg"
+            width="1200"
+            height="760"
+            alt="Legenda sa regionima i njihovim bojama, pored grupisanih markera na mapi."
+            loading="lazy"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split split--flip">
+        <div>
+          <h2 class="section__title reveal">Vremenska osa vodi mapu</h2>
+          <p class="section__body reveal">
+            Postoji jedan izvor vremena za ceo prikaz. Pomerite opseg na osi i mapa prikazuje
+            samo ono što se u tom periodu dogodilo, od 1200. godine pre nove ere do 2006.
+          </p>
+        </div>
+
+        <figure class="split__media reveal">
+          <img
+            src="./img/timeline.jpg"
+            width="1400"
+            height="391"
+            alt="Vremenska osa sa događajima raspoređenim po godinama, od 1200. p.n.e. do 2006."
+            loading="lazy"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="close-band">
+      <div class="wrap">
+        <h2 class="section__title">Počnite od bilo koje tačke</h2>
+        <a class="cta cta--primary" href="./app.html">Otvori mapu</a>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="wrap foot__inner">
+        <span>HistoryCast Map</span>
+        <a href="https://github.com/todorPA/historycastmap">Izvorni kod</a>
+        <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap doprinosioci</a>
+      </div>
+    </footer>
+
+    <script type="module">
+      // Entrance reveals. IntersectionObserver, never a scroll listener.
+      // The .js class is what arms the hidden state, so if this script never runs the
+      // content is simply visible rather than stuck at opacity 0.
+      document.documentElement.classList.add('js');
+      const items = document.querySelectorAll('.reveal');
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        items.forEach((el) => el.classList.add('is-in'));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              entry.target.classList.add('is-in');
+              io.unobserve(entry.target);
+            }
+          },
+          { threshold: 0.2, rootMargin: '0px 0px -8% 0px' },
+        );
+        items.forEach((el) => io.observe(el));
+      }
+    </script>
   </body>
 </html>
