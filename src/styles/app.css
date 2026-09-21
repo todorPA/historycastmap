@@ -1,5 +1,6 @@
-/* HistoryCast Map - map-first layout: dark chrome, light map.
-   Tokens live in tokens.css; colour here is achromatic on purpose (see regions.ts). */
+/* HistoryCast Map - map-first layout, light chrome over a light basemap.
+   Tokens live in tokens.css. The chrome carries one brand colour (gold, as a fill only);
+   everything else is warm grey, so region hue stays the only meaningful colour. */
 
 @import './fonts.css';
 @import './tokens.css';
@@ -58,7 +59,7 @@ body {
 
 .status code {
   font-size: var(--step--1);
-  color: #e57373;
+  color: #a3211c;
 }
 
 /* ---------- sidebar ---------- */
@@ -67,7 +68,7 @@ body {
   flex-direction: column;
   gap: 4px;
   background: var(--sidebar);
-  border-right: 1px solid var(--line);
+  border-right: 1px solid var(--ink-500);
   /* The episode list scrolls on its own so stats and the range reset stay reachable
      even with 181 episodes. */
   overflow: hidden;
@@ -98,8 +99,10 @@ body {
 
 .sidebar__title {
   margin: 0;
-  font-size: var(--step-2);
-  letter-spacing: 0.2px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
 }
 
 .sidebar__subtitle {
@@ -154,8 +157,8 @@ body {
 }
 
 .lang-toggle__btn.is-active {
-  background: var(--paper);
-  color: var(--ink-900);
+  background: var(--gold);
+  color: var(--ink-100);
 }
 
 /* ---------- search ---------- */
@@ -180,8 +183,8 @@ body {
 
 .search__input:focus-visible {
   outline: none;
-  border-color: var(--paper);
-  box-shadow: 0 0 0 3px rgba(242, 245, 248, 0.16);
+  border-color: var(--ink-100);
+  box-shadow: 0 0 0 3px rgba(26, 23, 19, 0.14);
 }
 
 /* One focus treatment for every interactive control, keyboard only. */
@@ -193,7 +196,7 @@ body {
 .legend__more:focus-visible,
 .facets__clear:focus-visible,
 .timeline__resize:focus-visible {
-  outline: 2px solid var(--paper);
+  outline: 2px solid var(--ink-100);
   outline-offset: 2px;
 }
 
@@ -250,9 +253,11 @@ body {
   background: var(--sidebar-2);
 }
 
+/* Gold at 1.43:1 against the panel is far too weak to mark selection on its own, so the
+   active row is a surface: a gold wash with a deep-gold edge. */
 .episode.is-active {
-  background: var(--sidebar-2);
-  border-color: var(--accent);
+  background: var(--gold-wash);
+  border-color: var(--gold-deep);
 }
 
 .episode__num {
@@ -269,7 +274,7 @@ body {
 }
 
 .episode__num--all {
-  color: var(--accent);
+  color: var(--gold-deep);
 }
 
 .episode__title {
@@ -364,8 +369,10 @@ body {
   z-index: var(--z-map-ui);
   padding: 7px 13px;
   border-radius: var(--r-pill);
-  background: rgba(15, 19, 23, 0.88);
+  background: rgba(251, 250, 249, 0.93);
   color: var(--text);
+  border: 1px solid var(--ink-500);
+  box-shadow: var(--shadow-panel);
   font-size: var(--step--1);
 }
 
@@ -389,7 +396,7 @@ body {
   font-size: var(--step--2);
   background: none;
   border: 0;
-  color: var(--accent);
+  color: var(--gold-deep);
   cursor: pointer;
 }
 
@@ -425,9 +432,9 @@ body {
 }
 
 .chip--btn.is-active {
-  background: var(--sidebar-2);
-  border-color: var(--accent);
-  color: var(--text);
+  background: var(--gold-wash);
+  border-color: var(--gold-deep);
+  color: var(--ink-100);
 }
 
 .chip__dot {
@@ -435,7 +442,7 @@ body {
   height: 8px;
   border-radius: 50%;
   flex: none;
-  box-shadow: 0 0 0 1px rgba(242, 245, 248, 0.4);
+  box-shadow: 0 0 0 1px var(--swatch-ring);
 }
 
 .chip__count {
@@ -482,7 +489,7 @@ body {
   margin-top: 4px;
   border-radius: 50%;
   flex: none;
-  box-shadow: 0 0 0 1px rgba(22, 32, 43, 0.35);
+  box-shadow: 0 0 0 1px var(--swatch-ring);
 }
 
 .group-popup__body {
@@ -526,7 +533,7 @@ body {
   font-weight: 600;
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 2px rgba(26, 23, 19, 0.75);
   pointer-events: none;
   white-space: nowrap;
 }
@@ -544,10 +551,10 @@ body {
   max-width: 210px;
   padding: 8px;
   border-radius: var(--r-lg);
-  background: rgba(15, 19, 23, 0.88);
+  background: rgba(251, 250, 249, 0.93);
   color: var(--text);
   backdrop-filter: blur(8px);
-  border: 1px solid var(--line);
+  border: 1px solid var(--ink-500);
   box-shadow: var(--shadow-panel);
 }
 
@@ -571,9 +578,9 @@ body {
 }
 
 .basemap__btn.is-active {
-  background: var(--paper);
-  border-color: var(--paper);
-  color: var(--ink-900);
+  background: var(--gold);
+  border-color: var(--gold-deep);
+  color: var(--ink-100);
 }
 
 .basemap__note {
@@ -599,10 +606,12 @@ body {
   overflow-y: auto;
   padding: 10px 12px;
   border-radius: var(--r-lg);
-  background: rgba(15, 19, 23, 0.88);
+  background: rgba(251, 250, 249, 0.93);
   color: var(--text);
   font-size: var(--step--2);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--ink-500);
+  box-shadow: var(--shadow-panel);
 }
 
 .legend__more {
@@ -612,7 +621,7 @@ body {
   font-size: var(--step--2);
   background: none;
   border: 0;
-  color: var(--accent);
+  color: var(--gold-deep);
   cursor: pointer;
 }
 
@@ -645,7 +654,7 @@ body {
   height: 10px;
   border-radius: 50%;
   flex: none;
-  box-shadow: 0 0 0 1px rgba(242, 245, 248, 0.45);
+  box-shadow: 0 0 0 1px var(--swatch-ring);
 }
 
 .legend__label {
@@ -779,7 +788,7 @@ body {
   height: 9px;
   border-radius: 50%;
   flex: none;
-  box-shadow: 0 0 0 1px rgba(22, 32, 43, 0.35);
+  box-shadow: 0 0 0 1px var(--swatch-ring);
 }
 
 .event-popup__actions {
@@ -798,7 +807,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--ink-500);
   background: var(--sidebar);
   /* No fixed height: the panel is as tall as vis's content, which vis itself caps in pixels
      (see maxHeightPx). Whatever the timeline doesn't need goes to the map. */
@@ -871,11 +880,20 @@ body {
 }
 
 .vis-time-axis .vis-grid.vis-minor {
-  border-color: var(--line);
+  border-color: #e2dcd5;
 }
 
 .vis-time-axis .vis-grid.vis-major {
   border-color: var(--ink-500);
+}
+
+/* vis paints its own group/label backgrounds; keep them on the panel surface. */
+.vis-labelset .vis-label,
+.vis-foreground .vis-group,
+.vis-panel.vis-left,
+.vis-panel.vis-center,
+.vis-panel.vis-top {
+  background: var(--sidebar);
 }
 
 .vis-labelset .vis-label,
@@ -884,19 +902,23 @@ body {
   color: var(--muted);
 }
 
+/* Label colour arrives per item from TimelineView (see onColor in config/regions.ts),
+   because no single value is readable on all twelve region fills. */
 .vis-item {
-  color: #fff;
   border-width: 1px;
   border-radius: var(--r-sm);
 }
 
 .vis-item.vis-selected {
-  box-shadow: 0 0 0 2px var(--accent);
-  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px var(--ink-100);
+  border-color: var(--ink-100) !important;
 }
 
+/* Low confidence reads as a dashed edge. It must not be an opacity change: on a light
+   panel that washes the fill out and takes the label with it. */
 .vis-item--low {
   border-style: dashed;
+  border-color: var(--ink-100) !important;
 }
 
 .vis-tooltip {

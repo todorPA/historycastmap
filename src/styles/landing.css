@@ -3,10 +3,10 @@
  *
  * Shares the token layer with the explorer (tokens.css) so the two never drift, but runs a
  * different register: low density, editorial, one display serif. The explorer is a cockpit;
- * this is a cover. Both are dark, which keeps the theme lock intact across the whole site.
+ * this is a cover. Both are light, which keeps one theme across the whole site.
  *
- * The region hues are the only colour on the page, exactly as on the map. Nothing here
- * invents an accent.
+ * The only chroma here is the brand gold (as a fill) and the twelve region hues. Nothing
+ * on this page invents a colour.
  */
 
 @import './fonts.css';
@@ -50,9 +50,11 @@ a {
   display: flex;
   align-items: center;
   gap: var(--sp-4);
-  background: rgba(15, 19, 23, 0.82);
+  background: rgba(224, 219, 214, 0.88);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  /* A deep-gold hairline is the one place the brand colour appears as a line rather than
+     a fill; at 4.9:1 on this ground it is legible rather than decorative haze. */
+  border-bottom: 1px solid var(--gold-deep);
 }
 
 .nav__inner {
@@ -65,11 +67,14 @@ a {
   padding: 0 var(--sp-5);
 }
 
-/* Was tracked-out caps in mono, which is template chrome rather than a wordmark.
-   Now it is just the product's name, set in the display face at text size. */
+/* Was tracked-out caps in mono, which is template chrome rather than a wordmark. Now the
+   product's name in the display face. No attempt is made to imitate the real HistoryCast
+   badge (ornate gold lettering on black); when that artwork is available it should replace
+   this text outright rather than be approximated here. */
 .nav__brand {
-  font-family: 'Literata', Georgia, serif;
-  font-size: 1.0625rem;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
   letter-spacing: -0.01em;
   text-decoration: none;
   margin-right: auto;
@@ -109,25 +114,27 @@ a {
     border-color 140ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* paper on near-black: 15.8:1 */
+/* Brand gold, carrying ink: 11.2:1. Gold can only ever be a fill (see tokens.css). */
 .cta--primary {
-  background: var(--paper);
-  color: var(--ink-900);
+  background: var(--gold);
+  color: var(--ink-100);
+  border-color: var(--gold-deep);
 }
 
 .cta--primary:hover {
-  background: #ffffff;
+  background: #f0d492;
 }
 
-/* ink-100 text on ink-900: 13.2:1, and the stroke keeps it visible */
+/* ink on the page ground: 13.0:1, with a stroke so the target edge is visible */
 .cta--ghost {
   background: transparent;
   color: var(--ink-100);
-  border-color: var(--ink-500);
+  border-color: var(--ink-400);
 }
 
 .cta--ghost:hover {
   border-color: var(--ink-300);
+  background: var(--ink-700);
 }
 
 .cta:active {
@@ -135,7 +142,7 @@ a {
 }
 
 .cta:focus-visible {
-  outline: 2px solid var(--paper);
+  outline: 2px solid var(--ink-100);
   outline-offset: 3px;
 }
 
@@ -165,7 +172,7 @@ a {
 
 .hero__title {
   margin: 0;
-  font-family: 'Literata', Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(2.25rem, 3.6vw, 2.875rem);
   line-height: 1.12;
@@ -197,7 +204,7 @@ a {
   margin: 0;
   border-radius: var(--r-lg);
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid var(--ink-500);
   box-shadow: var(--shadow-panel);
   background: var(--ink-800);
 }
@@ -257,7 +264,7 @@ a {
 
 .section__title {
   margin: 0;
-  font-family: 'Literata', Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   line-height: 1.15;
@@ -299,7 +306,7 @@ a {
 
 .step__verb {
   margin: 0;
-  font-family: 'Literata', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.375rem;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -353,7 +360,7 @@ a {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(242, 245, 248, 0.45);
+  box-shadow: 0 0 0 1px var(--swatch-ring);
 }
 
 /* ---------- full-width band ----------
@@ -362,7 +369,7 @@ a {
    thing being shown. */
 .band {
   margin: var(--sp-5) 0 0;
-  border: 1px solid var(--line);
+  border: 1px solid var(--ink-500);
   border-radius: var(--r-lg);
   overflow: hidden;
   background: var(--ink-800);
@@ -515,7 +522,7 @@ a {
 
 /* Leaflet chrome, toned to the page rather than left at library defaults. */
 .hero__map .leaflet-container {
-  background: #dfe4e8;
+  background: var(--ink-600);
   font-family: var(--font-sans);
 }
 
@@ -523,7 +530,7 @@ a {
    the tile pane pushes the green landmass and blue sea back, and leaves the region hues
    (which live in the overlay pane) at full strength. */
 .hero__map .leaflet-tile-pane {
-  filter: saturate(0.42) brightness(1.04) contrast(0.96);
+  filter: saturate(0.62) contrast(0.98);
 }
 
 .hero__map .leaflet-control-attribution {
