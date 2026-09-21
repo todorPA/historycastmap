@@ -1,6 +1,7 @@
 import type { Lang } from '../types/events';
 import { DATASETS, DEFAULT_DATASET, type DatasetName } from './data';
 import { BASEMAPS, DEFAULT_BASEMAP_ID } from '../config/basemaps';
+import { COLLECTIONS } from '../config/collections';
 
 /**
  * The shareable view lives in the query string, so a link reproduces exactly what the
@@ -13,6 +14,7 @@ export interface UrlState {
   dataset: DatasetName;
   from: number | null;
   to: number | null;
+  collectionId: string | null;
   episodeId: string | null;
   eventId: string | null;
   lang: Lang | null;
@@ -25,6 +27,7 @@ const PARAM = {
   data: 'data',
   from: 'from',
   to: 'to',
+  collection: 'col',
   episode: 'ep',
   event: 'e',
   lang: 'lang',
@@ -63,6 +66,10 @@ export function parseUrlState(search: string): UrlState {
     dataset,
     from: parseYear(params.get(PARAM.from)),
     to: parseYear(params.get(PARAM.to)),
+    // Validated against the curated list, so a renamed collection degrades to "all".
+    collectionId: COLLECTIONS.some((c) => c.id === params.get(PARAM.collection))
+      ? params.get(PARAM.collection)
+      : null,
     episodeId: params.get(PARAM.episode) || null,
     eventId: params.get(PARAM.event) || null,
     lang: rawLang === 'sr' || rawLang === 'en' ? rawLang : null,
@@ -79,6 +86,7 @@ export function buildSearch(state: {
   from: number;
   to: number;
   isFullRange: boolean;
+  collectionId: string | null;
   episodeId: string | null;
   eventId: string | null;
   lang: Lang;
@@ -94,6 +102,7 @@ export function buildSearch(state: {
     params.set(PARAM.from, String(state.from));
     params.set(PARAM.to, String(state.to));
   }
+  if (state.collectionId) params.set(PARAM.collection, state.collectionId);
   if (state.episodeId) params.set(PARAM.episode, state.episodeId);
   if (state.eventId) params.set(PARAM.event, state.eventId);
   if (state.lang !== 'sr') params.set(PARAM.lang, state.lang);

@@ -5,6 +5,7 @@ const dict = {
   sr: {
     appTitle: 'HistoryCast Map',
     appSubtitle: 'Mapa i vremenska osa istorijskih događaja',
+    collections: 'Zbirke',
     episodes: 'Epizode',
     allEpisodes: 'Sve epizode',
     visibleEvents: 'Vidljivih događaja',
@@ -65,6 +66,7 @@ const dict = {
   en: {
     appTitle: 'HistoryCast Map',
     appSubtitle: 'Map and timeline of historical events',
+    collections: 'Collections',
     episodes: 'Episodes',
     allEpisodes: 'All episodes',
     visibleEvents: 'Visible events',

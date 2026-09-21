@@ -6,6 +6,8 @@ import { pick, t } from '../lib/i18n';
 import { formatYearRange } from '../lib/time';
 import LangToggle from './LangToggle';
 import FacetFilters from './FacetFilters';
+import Collections from './Collections';
+import { getCollection } from '../config/collections';
 
 /** Diacritic- and case-insensitive so "dusan" finds "Dušanova". */
 function normalize(value: string): string {
@@ -22,7 +24,8 @@ function normalize(value: string): string {
 export default function Sidebar() {
   const { data } = useData();
   const visible = useVisibleEvents();
-  const { lang, activeEpisodeId, toggleEpisode, clearEpisode, setSelectedEventId } = useFilters();
+  const { lang, activeCollectionId, activeEpisodeId, toggleEpisode, clearEpisode, setSelectedEventId } =
+    useFilters();
   const { range, bounds, resetRange } = useTime();
   const [query, setQuery] = useState('');
   const [copied, setCopied] = useState(false);
@@ -54,17 +57,33 @@ export default function Sidebar() {
     [data.events],
   );
 
-  // Matches the episode number too, so "95" jumps straight to episode 95.
+  /**
+   * The episode list is scoped to the active collection, so choosing one narrows the list
+   * you then pick from rather than leaving 102 rows of which six are relevant. Search still
+   * runs inside that scope; matching the number too, so "95" jumps straight to episode 95.
+   */
   const filtered = useMemo(() => {
+    const collection = getCollection(activeCollectionId);
+    const inScope = collection
+      ? data.episodes.filter((ep) => collection.episodeIds.includes(ep.id))
+      : data.episodes;
+
     const q = normalize(query.trim());
-    if (!q) return data.episodes;
-    return data.episodes.filter(
+    if (!q) return inScope;
+    return inScope.filter(
       (ep) =>
         normalize(ep.id).includes(q) ||
         normalize(ep.title.sr).includes(q) ||
         normalize(ep.title.en ?? '').includes(q),
     );
-  }, [data.episodes, query]);
+  }, [data.episodes, activeCollectionId, query]);
+
+  const scopeCount = useMemo(() => {
+    const collection = getCollection(activeCollectionId);
+    if (!collection) return data.events.length;
+    const set = new Set(collection.episodeIds);
+    return data.events.reduce((n, e) => (set.has(e.episodeId) ? n + 1 : n), 0);
+  }, [data.events, activeCollectionId]);
 
   return (
     <aside className="sidebar">
@@ -75,6 +94,8 @@ export default function Sidebar() {
         </div>
         <LangToggle />
       </header>
+
+      <Collections />
 
       <section className="sidebar__section sidebar__section--episodes">
         <h2 className="sidebar__h2">{t(lang, 'episodes')}</h2>
@@ -100,7 +121,7 @@ export default function Sidebar() {
               >
                 <span className="episode__num episode__num--all">∗</span>
                 <span className="episode__title">{t(lang, 'allEpisodes')}</span>
-                <span className="episode__count">{data.events.length}</span>
+                <span className="episode__count">{scopeCount}</span>
               </button>
             </li>
           )}

@@ -8,6 +8,10 @@ export const TIMELINE_SIZES = ['s', 'm', 'l'] as const;
 export type TimelineSize = (typeof TIMELINE_SIZES)[number];
 
 interface FilterContextValue {
+  /** null = the whole archive. A curated set of episodes; see config/collections.ts. */
+  activeCollectionId: string | null;
+  toggleCollection: (id: string) => void;
+
   /** null = all episodes. */
   activeEpisodeId: string | null;
   /** Clicking the active episode again clears the filter. */
@@ -44,6 +48,7 @@ export function FilterProvider({
   /** Values lifted from a shared URL; anything absent falls back to the defaults. */
   initial?: {
     lang?: Lang | null;
+    collectionId?: string | null;
     episodeId?: string | null;
     eventId?: string | null;
     basemapId?: string | null;
@@ -52,6 +57,9 @@ export function FilterProvider({
   };
   children: ReactNode;
 }) {
+  const [activeCollectionId, setActiveCollectionId] = useState<string | null>(
+    initial?.collectionId ?? null,
+  );
   const [activeEpisodeId, setActiveEpisodeId] = useState<string | null>(initial?.episodeId ?? null);
   const [activeRegions, setActiveRegions] = useState<string[]>(initial?.regions ?? []);
   const [activeTypes, setActiveTypes] = useState<string[]>(initial?.types ?? []);
@@ -64,6 +72,18 @@ export function FilterProvider({
     setTimelineSize(
       (prev) => TIMELINE_SIZES[(TIMELINE_SIZES.indexOf(prev) + 1) % TIMELINE_SIZES.length],
     );
+  }, []);
+
+  /**
+   * Picking a collection drops the episode filter. The two compose (a collection narrows the
+   * archive, an episode narrows it further) but an episode chosen before the collection is
+   * usually not in it, and that combination reads as a broken filter: a named collection
+   * showing nothing.
+   */
+  const toggleCollection = useCallback((id: string) => {
+    setActiveCollectionId((prev) => (prev === id ? null : id));
+    setActiveEpisodeId(null);
+    setSelectedEventId(null);
   }, []);
 
   const toggleEpisode = useCallback((id: string) => {
@@ -98,6 +118,8 @@ export function FilterProvider({
 
   const value = useMemo<FilterContextValue>(
     () => ({
+      activeCollectionId,
+      toggleCollection,
       activeEpisodeId,
       toggleEpisode,
       clearEpisode,
@@ -116,6 +138,8 @@ export function FilterProvider({
       cycleTimelineSize,
     }),
     [
+      activeCollectionId,
+      toggleCollection,
       activeEpisodeId,
       toggleEpisode,
       clearEpisode,

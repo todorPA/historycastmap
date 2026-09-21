@@ -13,8 +13,15 @@ const WRITE_DEBOUNCE_MS = 250;
  */
 export default function UrlSync({ dataset }: { dataset: DatasetName }) {
   const { range, bounds } = useTime();
-  const { activeEpisodeId, selectedEventId, lang, basemapId, activeRegions, activeTypes } =
-    useFilters();
+  const {
+    activeCollectionId,
+    activeEpisodeId,
+    selectedEventId,
+    lang,
+    basemapId,
+    activeRegions,
+    activeTypes,
+  } = useFilters();
 
   useEffect(() => {
     const id = window.setTimeout(() => {
@@ -24,6 +31,7 @@ export default function UrlSync({ dataset }: { dataset: DatasetName }) {
           from: range.from,
           to: range.to,
           isFullRange: range.from === bounds.from && range.to === bounds.to,
+          collectionId: activeCollectionId,
           episodeId: activeEpisodeId,
           eventId: selectedEventId,
           lang,
@@ -40,6 +48,7 @@ export default function UrlSync({ dataset }: { dataset: DatasetName }) {
     range.to,
     bounds.from,
     bounds.to,
+    activeCollectionId,
     activeEpisodeId,
     selectedEventId,
     lang,

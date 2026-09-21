@@ -127,8 +127,15 @@ function groupEvents(
 export default function MapView() {
   const { placesById, data } = useData();
   const visible = useVisibleEvents();
-  const { lang, basemapId, activeEpisodeId, timelineSize, activeRegions, activeTypes } =
-    useFilters();
+  const {
+    lang,
+    basemapId,
+    activeCollectionId,
+    activeEpisodeId,
+    timelineSize,
+    activeRegions,
+    activeTypes,
+  } = useFilters();
   const basemap = getBasemap(basemapId);
 
   const positioned = useMemo(() => groupEvents(visible, placesById), [visible, placesById]);
@@ -154,7 +161,10 @@ export default function MapView() {
         <InvalidateOnResize resizeKey={timelineSize} />
         <FitToMarkers
           points={points}
-          fitKey={`${data.meta.generated}|${activeEpisodeId ?? 'all'}|${timelineSize}`}
+          // Collection belongs in here for the same reason episode does: both change *which
+          // events you are looking at*, so the view should reframe. Without it, choosing a
+          // collection left the map at whatever extent it already had.
+          fitKey={`${data.meta.generated}|${activeCollectionId ?? 'all'}|${activeEpisodeId ?? 'all'}|${timelineSize}`}
         />
         <PanToSelected points={pointsById} />
 

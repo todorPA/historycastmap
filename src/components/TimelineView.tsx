@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { DataSet, Timeline } from 'vis-timeline/standalone';
 import type { TimelineOptions } from 'vis-timeline/standalone';
 import 'vis-timeline/styles/vis-timeline-graph2d.css';
-import { useData } from '../state/DataContext';
+import { useCollectionEpisodes, useData } from '../state/DataContext';
 import { useTime } from '../state/TimeContext';
 import { useFilters } from '../state/FilterContext';
 import type { TimelineSize } from '../state/FilterContext';
@@ -73,8 +73,16 @@ interface Item {
 export default function TimelineView() {
   const { data } = useData();
   const { range, bounds, setRange } = useTime();
-  const { lang, activeEpisodeId, selectedEventId, setSelectedEventId, timelineSize, cycleTimelineSize } =
-    useFilters();
+  const {
+    lang,
+    activeCollectionId,
+    activeEpisodeId,
+    selectedEventId,
+    setSelectedEventId,
+    timelineSize,
+    cycleTimelineSize,
+  } = useFilters();
+  const collectionEpisodes = useCollectionEpisodes(activeCollectionId);
   // Panel height cycles small → medium → large: with many region groups the default strip
   // is too cramped to read, so the user can raise the timeline over the map.
   const size = timelineSize;
@@ -89,11 +97,18 @@ export default function TimelineView() {
   const applyingRef = useRef(false);
   const debounceRef = useRef<number | undefined>(undefined);
 
-  // The timeline shows everything in the current episode, regardless of the year range —
-  // otherwise scrubbing narrow would delete the items needed to scrub back out.
+  /**
+   * Scoped to the collection and episode, but deliberately not to the year range: scrubbing
+   * narrow would delete the very items you need in order to scrub back out.
+   *
+   * The collection has to be honoured here or the two halves disagree. Picking "Srpski
+   * srednji vek" left the map showing fifty medieval events while the axis still showed
+   * Marathon and Thermopylae, which makes the timeline look unrelated to the map it drives.
+   */
   const items = useMemo<Item[]>(
     () =>
       data.events
+        .filter((e) => collectionEpisodes == null || collectionEpisodes.has(e.episodeId))
         .filter((e) => activeEpisodeId == null || e.episodeId === activeEpisodeId)
         .map((e) => {
           // Same colour language as the map: region, not episode (config/regions.ts).
@@ -119,7 +134,7 @@ export default function TimelineView() {
             title: `${pick(e.title, lang)} — ${formatYearRange(e.year, e.yearEnd, lang)}`,
           };
         }),
-    [data.events, activeEpisodeId, lang],
+    [data.events, collectionEpisodes, activeEpisodeId, lang],
   );
 
   /**

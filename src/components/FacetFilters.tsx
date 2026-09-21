@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useData } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
 import { useTime } from '../state/TimeContext';
-import { isVisible } from '../state/DataContext';
+import { isVisible, useCollectionEpisodes } from '../state/DataContext';
 import { regionColor } from '../config/regions';
 import { t } from '../lib/i18n';
 import type { UiKey } from '../lib/i18n';
@@ -28,6 +28,7 @@ export default function FacetFilters() {
   const { range } = useTime();
   const {
     lang,
+    activeCollectionId,
     activeEpisodeId,
     activeRegions,
     toggleRegion,
@@ -35,6 +36,7 @@ export default function FacetFilters() {
     toggleType,
     clearFacets,
   } = useFilters();
+  const activeCollectionEpisodes = useCollectionEpisodes(activeCollectionId);
 
   /**
    * Counts ignore the facet being counted, so a chip shows what picking it would yield
@@ -45,17 +47,33 @@ export default function FacetFilters() {
     const regionCounts: Record<string, number> = {};
     const typeCounts: Record<string, number> = {};
     for (const event of data.events) {
-      if (isVisible(event, { activeEpisodeId, activeRegions: [], activeTypes, range })) {
+      if (
+        isVisible(event, {
+          activeCollectionEpisodes,
+          activeEpisodeId,
+          activeRegions: [],
+          activeTypes,
+          range,
+        })
+      ) {
         const key = event.region ?? '';
         if (key) regionCounts[key] = (regionCounts[key] ?? 0) + 1;
       }
-      if (isVisible(event, { activeEpisodeId, activeRegions, activeTypes: [], range })) {
+      if (
+        isVisible(event, {
+          activeCollectionEpisodes,
+          activeEpisodeId,
+          activeRegions,
+          activeTypes: [],
+          range,
+        })
+      ) {
         const key = event.type ?? '';
         if (key) typeCounts[key] = (typeCounts[key] ?? 0) + 1;
       }
     }
     return { regionCounts, typeCounts };
-  }, [data.events, activeEpisodeId, activeRegions, activeTypes, range]);
+  }, [data.events, activeCollectionEpisodes, activeEpisodeId, activeRegions, activeTypes, range]);
 
   /**
    * Anything active is always listed, even at a count of zero.
