@@ -531,3 +531,74 @@ no chip: invisible, and removable only via Clear.
 Active facets are now always listed, at zero if that is what they are, with a dashed edge.
 The empty-state message also blamed the period when a facet was responsible; there is now a
 separate string for the filter case.
+
+---
+
+## 12. Collections and timeline playback
+
+Two additions prompted by Milan sharing therestishistory.com, plus one bug they uncovered.
+
+### Collections (`fb8bdfd`)
+
+Borrowed from that site's tabbed collections, because it answers a problem we had and had
+not addressed: opening the explorer means choosing between 456 events and 102 episodes
+ordered by production number, which offers nothing to someone who does not already know
+what they want.
+
+Six hand-picked subjects covering 60 of 102 episodes and 233 of 456 events. Curation is
+editorial and lives in `config/collections.ts`, not in the dataset, which is produced
+upstream. A keyword pass over episode titles sized the idea but is too brittle to ship:
+"Drugi svetski rat (6): Rat u Aziji i na Pacifiku" and "Rat na Pacifiku" belong together
+and share no useful token.
+
+Mechanically a `col` URL parameter plus an episode-id set that narrows visibility exactly
+like the episode filter, so it composes with episode, region, type and range and stays
+shareable. Choosing one also frames it in time, on the click rather than in an effect, so
+`?col=x&from=..&to=..` keeps the range the link asked for.
+
+What was **not** taken from that site: its palette (cream, oxblood and forest green is its
+identity, and copying it would make HistoryCast look like a knock-off of the biggest show
+in the category), its hero (body text over a busy photograph, which would fail a contrast
+check), and its commerce structure.
+
+### Playback (`632e8a1`)
+
+Milan suggested four Leaflet timeline plugins. All four were declined and the value behind
+them built natively instead: Leaflet.timeline wants GeoJSON with start/end and we have a
+typed event model; TimeDimension is the heaviest and, by his own note, poorly maintained;
+leaflet-timeline-slider switches layers and we have none; TimelineJS is a second timeline
+and we already have vis. The thing actually wanted was playback, which our single time
+source made a small local change.
+
+The design premise: **the axis is already the transport.** It shows position and takes a
+drag, so playback adds no progress bar and no scrubber, only running state and speed. The
+year readout is the progress display.
+
+- Speed is years per second. A multiplier is meaningless when the quantity is centuries.
+- Labels are words, not glyphs, because the play triangle already means podcast audio here.
+- Running state is gold fill carrying ink, identical to the language and basemap toggles.
+- Any press on the axis stops it.
+- It skips centuries with nothing in them. The archive opens with Troy at 1200 BC then goes
+  quiet until roughly 500 BC while 224 of 456 events sit in the twentieth century, so a
+  constant rate spent its first six seconds on an empty map.
+
+### B8. The axis never repainted on a window change. FIXED in `632e8a1`
+
+A latent bug from the B1 fix, invisible until playback.
+
+vis only auto-repaints on a range change once `initialDrawDone` is set, and that flag lives
+in the same guarded block that `rtl: false` skips past. Because we pass `start`/`end`, it
+stays gated on an `initialRangeChangeDone` that never arrives. So `rtl: false` restored
+visibility, which is what B1 needed, but left repaint-on-range-change switched off.
+
+Every other caller that moves the window also changes `items`, and repopulating the DataSets
+forces a repaint by another route, so collections reframed the axis correctly and nothing
+looked wrong. Playback moves only the window. The sync effect now calls `redraw()` explicitly
+rather than relying on a flag we bypass.
+
+Two process notes. The first diagnosis was wrong twice because a stale Vite HMR module was
+being served: it produced both a phantom TDZ error and an axis that appeared frozen. After
+the second time, restarting the dev server became part of the measurement rather than an
+afterthought. And the bug was only found because a test assertion failed for the *right*
+reason: the map genuinely had no markers in 1101 BC, which is what led to the empty-centuries
+behaviour and then to the repaint problem underneath it.
