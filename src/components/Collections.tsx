@@ -1,7 +1,7 @@
 import { useData } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
 import { useTime } from '../state/TimeContext';
-import { COLLECTIONS, collectionBlurb, collectionTitle } from '../config/collections';
+import { COLLECTIONS, collectionBlurb, collectionSpan, collectionTitle } from '../config/collections';
 import { t } from '../lib/i18n';
 
 /**
@@ -27,6 +27,7 @@ export default function Collections() {
 
   const active = COLLECTIONS.find((c) => c.id === activeCollectionId);
 
+
   /**
    * Choosing a collection also frames it in time, because otherwise the axis keeps the
    * dataset's full 1200 BC to 2006 extent and a collection spanning three centuries arrives
@@ -35,7 +36,7 @@ export default function Collections() {
    * Done here, on the click, rather than in an effect watching the collection: an effect
    * would also fire for `?col=x&from=..&to=..`, overwriting a range the link asked for.
    */
-  function choose(id: string, episodeIds: string[]) {
+  function choose(id: string) {
     const wasActive = id === activeCollectionId;
     toggleCollection(id);
 
@@ -44,20 +45,9 @@ export default function Collections() {
       return;
     }
 
-    const set = new Set(episodeIds);
-    const years: number[] = [];
-    for (const e of data.events) {
-      if (!set.has(e.episodeId)) continue;
-      years.push(e.year, e.yearEnd ?? e.year);
-    }
-    if (years.length === 0) return;
-
-    // A little air either side, scaled to the span, so the outermost events are not
-    // pinned against the axis ends.
-    const from = Math.min(...years);
-    const to = Math.max(...years);
-    const pad = Math.max(5, Math.round((to - from) * 0.04));
-    setRange(from - pad, to + pad);
+    const collection = COLLECTIONS.find((c) => c.id === id);
+    const span = collection && collectionSpan(collection, data.events);
+    if (span) setRange(span.from, span.to);
   }
 
   return (
@@ -74,7 +64,7 @@ export default function Collections() {
                 type="button"
                 className={`collection${isActive ? ' is-active' : ''}`}
                 aria-pressed={isActive}
-                onClick={() => choose(collection.id, collection.episodeIds)}
+                onClick={() => choose(collection.id)}
               >
                 <span className="collection__title">{collectionTitle(collection, lang)}</span>
                 <span className="collection__count">{count}</span>

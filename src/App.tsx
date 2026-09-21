@@ -5,7 +5,7 @@ import { DataProvider } from './state/DataContext';
 import { TimeProvider } from './state/TimeContext';
 import { FilterProvider, useFilters } from './state/FilterContext';
 import { t } from './lib/i18n';
-import { validateCollections } from './config/collections';
+import { collectionSpan, getCollection, validateCollections } from './config/collections';
 import Sidebar from './components/Sidebar';
 import MapView from './components/MapView';
 import TimelineView from './components/TimelineView';
@@ -49,10 +49,18 @@ function Loader({ urlState }: { urlState: ReturnType<typeof parseUrlState> }) {
     console.warn(`collections reference ${missing.length} unknown episode id(s):`, missing);
   }
 
+  /**
+   * An explicit period in the link always wins. Failing that, a link that names a collection
+   * opens framed on it, so `?col=antika` behaves like clicking Antika rather than showing
+   * the whole 1200 BC to 2006 axis with the collection bunched against one edge.
+   */
+  const urlCollection = getCollection(urlState.collectionId);
   const initialRange =
     urlState.from != null && urlState.to != null
       ? { from: urlState.from, to: urlState.to }
-      : null;
+      : urlCollection
+        ? collectionSpan(urlCollection, loaded.data.events)
+        : null;
 
   return (
     <DataProvider value={loaded}>

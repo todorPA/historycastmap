@@ -100,6 +100,32 @@ export const COLLECTIONS: Collection[] = [
   },
 ];
 
+/**
+ * Year span of everything in a collection, with a little air either side.
+ *
+ * Lives here rather than in the component that draws the chips, because the initial range
+ * has to be decided before anything mounts: the timeline is constructed from whatever range
+ * exists on first render, and vis then echoes that window straight back through
+ * `rangechanged`. Framing from a mount effect loses that race every time.
+ */
+export function collectionSpan(
+  collection: Collection,
+  events: { episodeId: string; year: number; yearEnd?: number | null }[],
+): { from: number; to: number } | null {
+  const set = new Set(collection.episodeIds);
+  const years: number[] = [];
+  for (const e of events) {
+    if (!set.has(e.episodeId)) continue;
+    years.push(e.year, e.yearEnd ?? e.year);
+  }
+  if (years.length === 0) return null;
+
+  const from = Math.min(...years);
+  const to = Math.max(...years);
+  const pad = Math.max(5, Math.round((to - from) * 0.04));
+  return { from: from - pad, to: to + pad };
+}
+
 export function getCollection(id: string | null | undefined): Collection | undefined {
   return id ? COLLECTIONS.find((c) => c.id === id) : undefined;
 }
