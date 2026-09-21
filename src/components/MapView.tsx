@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { MapContainer, useMap } from 'react-leaflet';
 import type { LatLngBoundsExpression, LatLngTuple } from 'leaflet';
+import type { HistoryEvent, PlacesById } from '../types/events';
 import { getBasemap } from '../config/basemaps';
+import { regionColor } from '../config/regions';
 import { useData, useVisibleEvents } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
 import { t } from '../lib/i18n';
@@ -86,34 +88,54 @@ function PanToSelected({ points }: { points: Map<string, LatLngTuple> }) {
   return null;
 }
 
+/**
+ * One marker per place-and-year. Events that share both are the same dot on the map — either
+ * one fact covered by several episodes, or several things that happened there that year;
+ * the popup lists them either way. Distinct years at one place still get the small spiral
+ * offset so they stay separately clickable.
+ */
+function groupEvents(
+  visible: HistoryEvent[],
+  placesById: PlacesById,
+): PositionedEvent[] {
+  const groups = new Map<string, HistoryEvent[]>();
+  for (const event of visible) {
+    if (!placesById[event.placeId]) continue; // unknown placeId: skip rather than render at 0,0
+    const key = `${event.placeId}@${event.year}`;
+    const bucket = groups.get(key);
+    if (bucket) bucket.push(event);
+    else groups.set(key, [event]);
+  }
+
+  const seenAtPlace = new Map<string, number>();
+  const out: PositionedEvent[] = [];
+  for (const [key, events] of groups) {
+    const place = placesById[events[0].placeId];
+    const index = seenAtPlace.get(events[0].placeId) ?? 0;
+    seenAtPlace.set(events[0].placeId, index + 1);
+    const [dLat, dLng] = offsetFor(index);
+    out.push({
+      id: key,
+      events,
+      position: [place.lat + dLat, place.lng + dLng],
+      color: regionColor(events[0].region),
+    });
+  }
+  return out;
+}
+
 export default function MapView() {
-  const { placesById, episodesById, data } = useData();
+  const { placesById, data } = useData();
   const visible = useVisibleEvents();
   const { lang, basemapId, activeEpisodeId, timelineSize } = useFilters();
   const basemap = getBasemap(basemapId);
 
-  const positioned = useMemo<PositionedEvent[]>(() => {
-    const seenAtPlace = new Map<string, number>();
-    const out: PositionedEvent[] = [];
-    for (const event of visible) {
-      const place = placesById[event.placeId];
-      if (!place) continue; // unknown placeId: skip rather than render at 0,0
-      const index = seenAtPlace.get(event.placeId) ?? 0;
-      seenAtPlace.set(event.placeId, index + 1);
-      const [dLat, dLng] = offsetFor(index);
-      out.push({
-        id: event.id,
-        event,
-        position: [place.lat + dLat, place.lng + dLng],
-        color: episodesById[event.episodeId]?.color ?? '#7f8c8d',
-      });
-    }
-    return out;
-  }, [visible, placesById, episodesById]);
+  const positioned = useMemo(() => groupEvents(visible, placesById), [visible, placesById]);
 
   const points = useMemo(() => positioned.map((p) => p.position), [positioned]);
+  // Keyed by every event id, so a timeline selection can pan to the dot holding it.
   const pointsById = useMemo(
-    () => new Map(positioned.map((p) => [p.event.id, p.position])),
+    () => new Map(positioned.flatMap((p) => p.events.map((e) => [e.id, p.position] as const))),
     [positioned],
   );
 

@@ -1,0 +1,84 @@
+{
+  "places": [
+    { "id": "strasbourg", "name": { "sr": "Strazbur", "en": "Strasbourg" }, "aliases": ["Strasbourgu"], "lat": 48.5734, "lng": 7.7521, "kind": "city" },
+    { "id": "berlin", "name": { "sr": "Berlin", "en": "Berlin" }, "aliases": ["Berlinu"], "lat": 52.5200, "lng": 13.4050, "kind": "city" },
+    { "id": "munich", "name": { "sr": "Minhen", "en": "Munich" }, "aliases": ["München", "Minhjanski", "Minhenski"], "lat": 48.1351, "lng": 11.5820, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "nsdap-izbori-1928",
+      "title": { "sr": "NSDAP loše prolazi na izborima 1928. godine", "en": "NSDAP performs poorly in the 1928 elections" },
+      "year": 1928,
+      "yearEnd": null,
+      "placeId": "strasbourg",
+      "episodeId": "85",
+      "timestamp": "18:12",
+      "type": "other",
+      "actors": ["NSDAP", "Adolf Hitler"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Na izborima 1928. godine nacional-socijalisti prolaze loše, sa oko 2,5 procenata glasova i samo 12 poslanika u Rajhstagu, što navodi Hitlera da odluči da mora napraviti preokret u strategiji.", "en": "In the 1928 elections, the National Socialists performed poorly, winning about 2.5 percent of the vote and only 12 seats in the Reichstag, prompting Hitler to decide that a strategic turnaround was needed." },
+      "quote": "Na izborima 1928. godine nacionalno-socijalisti prolaze u Strasbourgu, fakultetno, loši je nego 1924.",
+      "confidence": "high"
+    },
+    {
+      "id": "nsdap-uspeh-izbori-1930",
+      "title": { "sr": "NSDAP ostvaruje veliki uspeh na izborima 1930. godine", "en": "NSDAP achieves major success in the 1930 elections" },
+      "year": 1930,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "85",
+      "timestamp": "28:59",
+      "type": "other",
+      "actors": ["NSDAP"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Nakon izbora 1930. godine, NSDAP osvaja blizu 40 procenata glasova i biva blizu formiranja vlade, uz stalan rast popularnosti u sukobu s komunistima za istu političku bazu.", "en": "After the 1930 elections, the NSDAP won close to 40 percent of the vote and came close to forming a government, with steadily rising popularity in competition with the communists for the same political base." },
+      "quote": "posle ovih velikog uspeha na izborima 1930. kada oni zapravo osvajaju blizu 40 procenata",
+      "confidence": "high"
+    },
+    {
+      "id": "nsdap-formira-vladu-1933",
+      "title": { "sr": "NSDAP formira vladu u januaru 1933. godine", "en": "NSDAP forms a government in January 1933" },
+      "year": 1933,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "85",
+      "timestamp": "28:48",
+      "type": "other",
+      "actors": ["NSDAP", "Adolf Hitler"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "U januaru 1933. godine, nakon uzastopnih izbornih uspeha od 1928. do 1932. godine i obećanja koja su privlačila društvo slomljeno porazom iz 1918, NSDAP formira vladu.", "en": "In January 1933, after successive electoral successes from 1928 to 1932 and promises that appealed to a society broken by the 1918 defeat, the NSDAP formed a government." },
+      "quote": "Ta pobjeda koja se dogodila i situacija u kojoj se oni nalaze da formiraju vladu u januaru 1933. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "noc-dugih-nozeva-1934-ep85",
+      "title": { "sr": "Noć dugih noževa u Minhenu", "en": "Night of the Long Knives in Munich" },
+      "year": 1934,
+      "yearEnd": null,
+      "placeId": "munich",
+      "episodeId": "85",
+      "timestamp": "64:25",
+      "type": "other",
+      "actors": ["Adolf Hitler", "Ernst Röhm", "August Schneidhuber"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "30. juna 1934. godine Hitler leti u München u četiri ujutru i lično nadgleda hapšenje i pogubljenje Ernsta Röhma i vođstva SA jedinica, u čistki poznatoj kao Noć dugih noževa; službena brojka žrtava kasnije potvrđena je na 85, mada neki istoričari navode i 600-800.", "en": "On June 30, 1934, Hitler flew to Munich at four in the morning and personally oversaw the arrest and execution of Ernst Röhm and the SA leadership, in the purge known as the Night of the Long Knives; the later officially confirmed death toll was 85, though some historians cite figures of 600-800." },
+      "quote": "30. juna, gde je njega dočekuo, je prvo, Rem je ... lično Hitler dolazi ... ubijenje sa tri metka u grudi, jednim metkom u glavu",
+      "confidence": "high"
+    },
+    {
+      "id": "hitler-firer-1934-ep85",
+      "title": { "sr": "Vojska se zaklinje lično Hitleru — on postaje Firer", "en": "The army swears personal allegiance to Hitler — he becomes Führer" },
+      "year": 1934,
+      "yearEnd": 1945,
+      "placeId": "berlin",
+      "episodeId": "85",
+      "timestamp": "94:08",
+      "type": "reign",
+      "actors": ["Adolf Hitler"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Nakon Noći dugih noževa, u leto 1934. godine, nemačka vojska se zaklinje na verost ne Nemačkoj nego lično Hitleru, koji tako postaje Firer — apsolutni vođa kakvim ga danas znamo, na toj poziciji do 1945. godine.", "en": "After the Night of the Long Knives, in the summer of 1934, the German army swore allegiance not to Germany but personally to Hitler, who thus became Führer — the absolute leader as he is known today, holding that position until 1945." },
+      "quote": "ne više Nemačkoj nego Hitleru ... on postaje firer ... kakvim ga mi danas znamo, nakon noći dugih nožava i leta 1934. godine",
+      "confidence": "high"
+    }
+  ]
+}

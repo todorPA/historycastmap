@@ -7,6 +7,7 @@ import { useTime } from '../state/TimeContext';
 import { useFilters } from '../state/FilterContext';
 import type { TimelineSize } from '../state/FilterContext';
 import { pick, t } from '../lib/i18n';
+import { regionColor } from '../config/regions';
 import { dateToYear, formatYear, formatYearRange, yearToDate } from '../lib/time';
 import type { Lang } from '../types/events';
 
@@ -70,7 +71,7 @@ interface Item {
 }
 
 export default function TimelineView() {
-  const { data, episodesById } = useData();
+  const { data } = useData();
   const { range, bounds, setRange } = useTime();
   const { lang, activeEpisodeId, selectedEventId, setSelectedEventId, timelineSize, cycleTimelineSize } =
     useFilters();
@@ -95,7 +96,8 @@ export default function TimelineView() {
       data.events
         .filter((e) => activeEpisodeId == null || e.episodeId === activeEpisodeId)
         .map((e) => {
-          const color = episodesById[e.episodeId]?.color ?? '#7f8c8d';
+          // Same colour language as the map: region, not episode (config/regions.ts).
+          const color = regionColor(e.region);
           const low = e.confidence === 'low';
           return {
             id: e.id,
@@ -108,7 +110,7 @@ export default function TimelineView() {
             title: `${pick(e.title, lang)} — ${formatYearRange(e.year, e.yearEnd, lang)}`,
           };
         }),
-    [data.events, episodesById, activeEpisodeId, lang],
+    [data.events, activeEpisodeId, lang],
   );
 
   const groups = useMemo(() => {

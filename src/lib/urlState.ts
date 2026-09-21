@@ -17,6 +17,8 @@ export interface UrlState {
   eventId: string | null;
   lang: Lang | null;
   basemapId: string | null;
+  regions: string[] | null;
+  types: string[] | null;
 }
 
 const PARAM = {
@@ -27,7 +29,16 @@ const PARAM = {
   event: 'e',
   lang: 'lang',
   basemap: 'bm',
+  regions: 'r',
+  types: 'ty',
 } as const;
+
+/** Comma-separated lists; empty or missing means "no restriction". */
+function parseList(raw: string | null): string[] | null {
+  if (!raw) return null;
+  const values = raw.split(',').map((v) => v.trim()).filter(Boolean);
+  return values.length > 0 ? values : null;
+}
 
 function parseYear(raw: string | null): number | null {
   if (raw == null || raw === '') return null;
@@ -57,6 +68,8 @@ export function parseUrlState(search: string): UrlState {
     lang: rawLang === 'sr' || rawLang === 'en' ? rawLang : null,
     // Validated against the registry, so an unknown id falls back to the default layer.
     basemapId: rawBasemap && BASEMAPS.some((b) => b.id === rawBasemap) ? rawBasemap : null,
+    regions: parseList(params.get(PARAM.regions)),
+    types: parseList(params.get(PARAM.types)),
   };
 }
 
@@ -70,6 +83,8 @@ export function buildSearch(state: {
   eventId: string | null;
   lang: Lang;
   basemapId: string;
+  regions: string[];
+  types: string[];
 }): string {
   const params = new URLSearchParams();
 
@@ -83,6 +98,8 @@ export function buildSearch(state: {
   if (state.eventId) params.set(PARAM.event, state.eventId);
   if (state.lang !== 'sr') params.set(PARAM.lang, state.lang);
   if (state.basemapId !== DEFAULT_BASEMAP_ID) params.set(PARAM.basemap, state.basemapId);
+  if (state.regions.length > 0) params.set(PARAM.regions, state.regions.join(','));
+  if (state.types.length > 0) params.set(PARAM.types, state.types.join(','));
 
   const qs = params.toString();
   return qs ? `?${qs}` : '';

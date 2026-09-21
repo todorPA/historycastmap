@@ -5,6 +5,7 @@ import { useFilters } from '../state/FilterContext';
 import { pick, t } from '../lib/i18n';
 import { formatYearRange } from '../lib/time';
 import { buildPodcastLink, timestampToSeconds } from '../lib/podcast';
+import { regionColor } from '../config/regions';
 
 export default function EventPopup({ event }: { event: HistoryEvent }) {
   const { placesById, episodesById } = useData();
@@ -70,7 +71,7 @@ export default function EventPopup({ event }: { event: HistoryEvent }) {
 
       {episode && (
         <div className="event-popup__episode">
-          <span className="event-popup__ep-dot" style={{ background: episode.color ?? '#7f8c8d' }} />
+          <span className="event-popup__ep-dot" style={{ background: regionColor(event.region) }} />
           <span>
             {t(lang, 'episode')} {episode.id} · {pick(episode.title, lang)}
           </span>

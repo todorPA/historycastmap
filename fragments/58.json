@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": [], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "grocka", "name": { "sr": "Grocka", "en": "Grocka" }, "aliases": ["Grotskoj"], "lat": 44.6667, "lng": 20.7167, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "garasanin-rodjenje-1812",
+      "title": { "sr": "Rođenje Ilije Garašanina", "en": "Birth of Ilija Garašanin" },
+      "year": 1812,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "58",
+      "timestamp": "02:06",
+      "type": "birth",
+      "actors": ["Ilija Garašanin"],
+      "region": "Balkan",
+      "description": { "sr": "Ilija Garašanin je rođen 1812. godine, u istoj godini kada je sklopljen Bukureški mir koji postaje osnova autonomne srpske države.", "en": "Ilija Garašanin was born in 1812, the same year the Treaty of Bucharest was concluded, which became the foundation of the autonomous Serbian state." },
+      "quote": "Rođen je 1812. godine, u godini kada je sklopćeni Bukureški mir",
+      "confidence": "high"
+    },
+    {
+      "id": "abdikacija-milosa-1839",
+      "title": { "sr": "Abdikacija kneza Miloša usled Jovanove bune", "en": "Abdication of Prince Miloš due to the Jovanova buna" },
+      "year": 1839,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "58",
+      "timestamp": "18:05",
+      "type": "other",
+      "actors": ["Knez Miloš Obrenović", "Knez Milan Obrenović"],
+      "region": "Balkan",
+      "description": { "sr": "Sredinom juna 1839. godine, kao posledica Jovanove bune, knez Miloš abdicira, a na vlast dolazi njegov sin Milan.", "en": "In mid-June 1839, as a consequence of the Jovanova buna, Prince Miloš abdicated, and his son Milan came to power." },
+      "quote": "Posledica te Jovanove bune je bila abdikacija kneza Miloša koju je sledila sredinom juna 1839. godine i sada u Srbiji na vlast dolazi Milošev sin Milan",
+      "confidence": "high"
+    },
+    {
+      "id": "osnivanje-crnog-fonda-1844",
+      "title": { "sr": "Osnivanje 'crnog fonda' za tajne operacije", "en": "Founding of the 'black fund' for secret operations" },
+      "year": 1844,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "58",
+      "timestamp": "60:30",
+      "type": "founding",
+      "actors": ["Ilija Garašanin"],
+      "region": "Balkan",
+      "description": { "sr": "1844. godine, u okviru Ministarstva unutrašnjih poslova, formiran je takozvani 'crni fond', tajni fond za finansiranje tajnih operacija — isto godine kada Garašanin piše svoje čuveno Načertanje.", "en": "In 1844, within the Ministry of Internal Affairs, the so-called 'black fund' was formed, a secret fund for financing covert operations — the same year Garašanin wrote his famous Načertanije." },
+      "quote": "1844. godine, konačno je formiran u okveru Ministarstva unutrašnjih poslova, fond, takozvani crni fond ... za finansiranje tajnih operacija",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-garasanina-1874",
+      "title": { "sr": "Smrt Ilije Garašanina", "en": "Death of Ilija Garašanin" },
+      "year": 1874,
+      "yearEnd": null,
+      "placeId": "grocka",
+      "episodeId": "58",
+      "timestamp": "110:21",
+      "type": "death",
+      "actors": ["Ilija Garašanin"],
+      "region": "Balkan",
+      "description": { "sr": "Ilija Garašanin je umro sa 62 godine života; sahranjen je prvo u porodičnoj grobnici u Grockoj, a telo mu je kasnije preneseno na Novo groblje u Beogradu.", "en": "Ilija Garašanin died at the age of 62; he was first buried in the family tomb in Grocka, and his remains were later transferred to the New Cemetery in Belgrade." },
+      "quote": "Tada je imao 62 godine života ... preminuo jedan od najvećih srpskih državnika. On je sahranjen prvo u Grockoj, u porodičnoj grobnici",
+      "confidence": "high"
+    }
+  ]
+}

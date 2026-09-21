@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "moskva", "name": { "sr": "Moskva", "en": "Moscow" }, "aliases": ["Moskvi", "Moskovljanima"], "lat": 55.7558, "lng": 37.6173, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "operacija-tajfun-1941",
+      "title": { "sr": "Početak operacije Tajfun (nemačka ofanziva na Moskvu)", "en": "Start of Operation Typhoon (German offensive on Moscow)" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "moskva",
+      "episodeId": "drugi-svetski-rat-1941-bitka-za-moskvu",
+      "timestamp": "11:53",
+      "type": "battle",
+      "actors": ["Nemačka vojska", "Heinz Guderian"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Operacija Tajfun, osmišljena krajem avgusta 1941. godine, prvobitno je trebalo da počne 30. septembra, ali najveći broj njenih delova kreće 2. oktobra 1941. godine, sa nekoliko nedelja kašnjenja koje je nagnjevilo generala Guderiana.", "en": "Operation Typhoon, conceived in late August 1941, was originally meant to begin on September 30, but the bulk of its components launched on October 2, 1941, with a delay of several weeks that angered General Guderian." },
+      "quote": "postojala je jedna ideja da se pođe 30. septembra, otplike neke operacije su počete 30. septembra 1941. godine. ... najveći broj operacija kreće 2. oktobera",
+      "confidence": "high"
+    },
+    {
+      "id": "moskovski-metro-izgradnja-1935",
+      "title": { "sr": "Izgradnja Moskovskog metroa (kasnija uloga u odbrani Moskve)", "en": "Construction of the Moscow Metro (later role in the defense of Moscow)" },
+      "year": 1935,
+      "yearEnd": null,
+      "placeId": "moskva",
+      "episodeId": "drugi-svetski-rat-1941-bitka-za-moskvu",
+      "timestamp": "24:31",
+      "type": "founding",
+      "actors": ["Sovjetski Savez"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Moskovski metro, čija je izgradnja počela 1935. godine, tokom Bitke za Moskvu 1941. godine dobija ključnu ulogu odbrane — u njemu se nalazilo porodilište i komanda protivvazdušne odbrane.", "en": "The Moscow Metro, whose construction began in 1935, took on a key defensive role during the Battle of Moscow in 1941 — it housed a maternity ward and part of the air defense command." },
+      "quote": "Moskovski metro, to je objekat koji je počeo se graditi 1935. godine i koji je imao veoma važnu ulogu uopšte u toj odbrani Moskve.",
+      "confidence": "high"
+    }
+  ]
+}

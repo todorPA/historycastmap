@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "hilandar", "name": { "sr": "Hilandar", "en": "Hilandar Monastery" }, "aliases": ["Hilandaru", "Atosu", "Natosu"], "lat": 40.2688, "lng": 23.9198, "kind": "landmark" },
+    { "id": "zica", "name": { "sr": "Žiča", "en": "Žiča Monastery" }, "aliases": ["Žiči"], "lat": 43.5406, "lng": 20.5486, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "rodjenje-stefana-prvovencanog-1166",
+      "title": { "sr": "Rođenje Stefana Prvovenčanog", "en": "Birth of Stefan the First-Crowned" },
+      "year": 1166,
+      "yearEnd": null,
+      "placeId": "zica",
+      "episodeId": "75",
+      "timestamp": "09:46",
+      "type": "birth",
+      "actors": ["Stefan Prvovenčani"],
+      "region": "Balkan",
+      "description": { "sr": "Stefan Prvovenčani je rođen 1166. godine, moguće 1167, u prvoj godini vlasti svog oca Stefana Nemanje.", "en": "Stefan the First-Crowned was born in 1166, possibly 1167, in the first year of his father Stefan Nemanja's rule." },
+      "quote": "rođen bukvalno u prvoj godini vlasti svoga otca, 1166. godine, možda i 1167.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-stefana-nemanje-hilandar-1199",
+      "title": { "sr": "Smrt Stefana Nemanje u Hilandaru", "en": "Death of Stefan Nemanja in Hilandar" },
+      "year": 1199,
+      "yearEnd": null,
+      "placeId": "hilandar",
+      "episodeId": "75",
+      "timestamp": "19:19",
+      "type": "death",
+      "actors": ["Stefan Nemanja (monah Simeon)"],
+      "region": "Balkan",
+      "description": { "sr": "Stefan Nemanja, koji je 1196. godine ostavio vlast sinu Stefanu i zamonašio se kao monah Simeon, umire 1199. godine u manastiru Hilandaru na Svetoj gori.", "en": "Stefan Nemanja, who in 1196 had left power to his son Stefan and become the monk Simeon, died in 1199 at the Hilandar monastery on Mount Athos." },
+      "quote": "Vrlo brzo posle toga Stefan Nemanja umire, 1199. godine, i umire u Hilandaru, dakle, u Grčkoj, odnosno u Natosu.",
+      "confidence": "high"
+    },
+    {
+      "id": "sukob-stefan-vukan-1202-1204",
+      "title": { "sr": "Sukob Stefana Prvovenčanog i brata Vukana za vlast", "en": "Conflict between Stefan the First-Crowned and his brother Vukan for power" },
+      "year": 1202,
+      "yearEnd": 1204,
+      "placeId": "zica",
+      "episodeId": "75",
+      "timestamp": "29:10",
+      "type": "other",
+      "actors": ["Stefan Prvovenčani", "Vukan Nemanjić", "Ugarski kralj"],
+      "region": "Balkan",
+      "description": { "sr": "1202. godine izbija ratni sukob između braće za vlast; sa ugarskom pomoći, Vukan je de facto vladar čitave Srbije do početka 1204. godine, kada situacija biva prelomljena u korist Stefana.", "en": "In 1202, a war broke out between the brothers over power; with Hungarian support, Vukan was the de facto ruler of all Serbia until early 1204, when the situation was resolved in Stefan's favor." },
+      "quote": "mi već 1202. godine imamo dakle jedan ratni sukob ... Vukan de facto bio vladar čitave Srbije od 1202. do ... početka 1204. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "krunisanje-stefana-prvovencanog-1217",
+      "title": { "sr": "Krunisanje Stefana za prvog srpskog kralja", "en": "Coronation of Stefan as first Serbian king" },
+      "year": 1217,
+      "yearEnd": null,
+      "placeId": "zica",
+      "episodeId": "75",
+      "timestamp": "67:16",
+      "type": "coronation",
+      "actors": ["Stefan Prvovenčani", "Papa"],
+      "region": "Balkan",
+      "description": { "sr": "Prema najvećoj saglasnosti istoričara, Stefan je krunisan za prvog srpskog kralja 1217. godine, mada postoje i teorije o ponovnom krunisanju 1219. i 1221. godine, poslednjem vezanom uz sabor u Žiči.", "en": "According to the widest scholarly consensus, Stefan was crowned first King of Serbia in 1217, though there are also theories about a re-coronation in 1219 and 1221, the latter linked to the council at Žiča." },
+      "quote": "najviše saglasnosti je se da je 1217. godine bilo krunisanje",
+      "confidence": "high"
+    }
+  ]
+}

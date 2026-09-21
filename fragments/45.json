@@ -1,0 +1,70 @@
+{
+  "places": [
+    { "id": "washington", "name": { "sr": "Vašington", "en": "Washington, D.C." }, "aliases": ["Vašingtonu"], "lat": 38.9072, "lng": -77.0369, "kind": "city" },
+    { "id": "buffalo", "name": { "sr": "Bafalo", "en": "Buffalo" }, "aliases": ["Buffalo"], "lat": 42.8864, "lng": -78.8784, "kind": "city" },
+    { "id": "los-angeles", "name": { "sr": "Los Anđeles", "en": "Los Angeles" }, "aliases": ["Los Angelesu"], "lat": 34.0522, "lng": -118.2437, "kind": "city" },
+    { "id": "dallas", "name": { "sr": "Dalas", "en": "Dallas" }, "aliases": ["Dallasu"], "lat": 32.7767, "lng": -96.7970, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "atentat-garfield-1881",
+      "title": { "sr": "Atentat na predsednika Garfielda", "en": "Assassination of President Garfield" },
+      "year": 1881,
+      "yearEnd": null,
+      "placeId": "washington",
+      "episodeId": "45",
+      "timestamp": "42:46",
+      "type": "death",
+      "actors": ["James Garfield", "Charles Guiteau"],
+      "region": "Severna Amerika",
+      "description": { "sr": "Septembra 1881. godine predsednik Garfield umire od komplikacija atentatorskog metka, u vreme kada još ne postoje antiseptici ni ideja o sterilizaciji, što je pogoršalo njegovo stanje.", "en": "In September 1881, President Garfield died from complications of the assassin's bullet, at a time when antiseptics and the idea of sterilization did not yet exist, worsening his condition." },
+      "quote": "u septembru 1881. godine ... dakle govorimo 1881. godini kada ne postoji antiseptici, kada ne postoji ideja o sterilizaciji",
+      "confidence": "high"
+    },
+    {
+      "id": "atentat-mckinley-secret-service-1901",
+      "title": { "sr": "Ubistvo McKinleya i osnivanje Secret Service kao lične zaštite predsednika", "en": "Assassination of McKinley and founding of the Secret Service presidential protection" },
+      "year": 1901,
+      "yearEnd": 1906,
+      "placeId": "buffalo",
+      "episodeId": "45",
+      "timestamp": "75:28",
+      "type": "founding",
+      "actors": ["William McKinley"],
+      "region": "Severna Amerika",
+      "description": { "sr": "Nakon ubistva predsednika McKinleya 1901. godine (treće po redu ubistvo predsednika SAD), suštinski počinje lična zaštita predsednika od strane Secret Service, koja je formalno osnovana aktom 1906. godine.", "en": "After the assassination of President McKinley in 1901 (the third assassination of a US president), personal protection of the president by the Secret Service effectively began, formally established by an act in 1906." },
+      "quote": "dakle tajna služba Sjedinog američke država je osnovana ne formalno već suštinski od 1901. godine ... formalno biti osnovana te 1906. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "atentat-robert-kennedy-los-angeles-1968",
+      "title": { "sr": "Atentat na Roberta Kenedija u Los Anđelesu", "en": "Assassination of Robert Kennedy in Los Angeles" },
+      "year": 1968,
+      "yearEnd": null,
+      "placeId": "los-angeles",
+      "episodeId": "45",
+      "timestamp": "108:08",
+      "type": "death",
+      "actors": ["Robert F. Kennedy", "Sirhan Sirhan"],
+      "region": "Severna Amerika",
+      "description": { "sr": "1968. godine, u hotelu Ambasador u Los Anđelesu, nakon govora povodom pobede na demokratskim primarnim izborima, Roberta Kenedija ubija Sirhan Sirhan, koji je motiv navodio kao Kenedijev odnos prema Izraelu. Napomena: govornici u podkastu dvaput pogrešno kažu da se to dogodilo 'u Čikagu' — istorijski nesporno mesto je Los Anđeles, gde se nalazio hotel Ambasador.", "en": "In 1968, at the Ambassador Hotel in Los Angeles, after a speech following a Democratic primary win, Robert Kennedy was assassinated by Sirhan Sirhan, who claimed his motive was Kennedy's stance toward Israel. Note: the podcast hosts twice mistakenly say this happened 'in Chicago' — the historically undisputed location is Los Angeles, where the Ambassador Hotel was located." },
+      "quote": "on je isto ubijen 1968. godine ... ubistvo je izračunalo u hotelu u Ambasador, gde je zapravo uspio da je ispali tri hita ... 'U Čikagu.' 'U Čikagu. Posle njegovog govora...'",
+      "confidence": "high"
+    },
+    {
+      "id": "atentat-jfk-dallas-1963",
+      "title": { "sr": "Ubistvo Johna F. Kennedyja u Dalasu", "en": "Assassination of John F. Kennedy in Dallas" },
+      "year": 1963,
+      "yearEnd": null,
+      "placeId": "dallas",
+      "episodeId": "45",
+      "timestamp": "94:42",
+      "type": "death",
+      "actors": ["John F. Kennedy", "Guverner Connally"],
+      "region": "Severna Amerika",
+      "description": { "sr": "1963. godine, tokom posete Teksasu i prolaska predsedničke kolone kroz Dalas, ubijen je predsednik John F. Kennedy, pogođen između ostalog i u glavu; guverner Connally je bio u istom vozilu.", "en": "In 1963, during a visit to Texas and the presidential motorcade's drive through Dallas, President John F. Kennedy was assassinated, hit including in the head; Governor Connally was riding in the same vehicle." },
+      "quote": "dolazimo sada i do 63. godine i da ubije se predsednika Kennedya, 63. oktober znači ... on dolazi u posetu u Teksasu, najvećoj američkoj državi, glavnom gradu Dallasu.",
+      "confidence": "high"
+    }
+  ]
+}

@@ -14,6 +14,13 @@ interface FilterContextValue {
   toggleEpisode: (id: string) => void;
   clearEpisode: () => void;
 
+  /** Empty = no restriction. Both are OR within a facet, AND across facets. */
+  activeRegions: string[];
+  toggleRegion: (region: string) => void;
+  activeTypes: string[];
+  toggleType: (type: string) => void;
+  clearFacets: () => void;
+
   lang: Lang;
   setLang: (lang: Lang) => void;
 
@@ -40,10 +47,14 @@ export function FilterProvider({
     episodeId?: string | null;
     eventId?: string | null;
     basemapId?: string | null;
+    regions?: string[] | null;
+    types?: string[] | null;
   };
   children: ReactNode;
 }) {
   const [activeEpisodeId, setActiveEpisodeId] = useState<string | null>(initial?.episodeId ?? null);
+  const [activeRegions, setActiveRegions] = useState<string[]>(initial?.regions ?? []);
+  const [activeTypes, setActiveTypes] = useState<string[]>(initial?.types ?? []);
   const [lang, setLang] = useState<Lang>(initial?.lang ?? 'sr');
   const [selectedEventId, setSelectedEventId] = useState<string | null>(initial?.eventId ?? null);
   const [basemapId, setBasemapId] = useState<string>(initial?.basemapId ?? DEFAULT_BASEMAP_ID);
@@ -65,11 +76,36 @@ export function FilterProvider({
     setSelectedEventId(null);
   }, []);
 
+  /** Toggling a facet clears the selection: the selected event may no longer be visible. */
+  const toggle = (value: string, list: string[]) =>
+    list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
+
+  const toggleRegion = useCallback((region: string) => {
+    setActiveRegions((prev) => toggle(region, prev));
+    setSelectedEventId(null);
+  }, []);
+
+  const toggleType = useCallback((type: string) => {
+    setActiveTypes((prev) => toggle(type, prev));
+    setSelectedEventId(null);
+  }, []);
+
+  const clearFacets = useCallback(() => {
+    setActiveRegions([]);
+    setActiveTypes([]);
+    setSelectedEventId(null);
+  }, []);
+
   const value = useMemo<FilterContextValue>(
     () => ({
       activeEpisodeId,
       toggleEpisode,
       clearEpisode,
+      activeRegions,
+      toggleRegion,
+      activeTypes,
+      toggleType,
+      clearFacets,
       lang,
       setLang,
       selectedEventId,
@@ -83,6 +119,11 @@ export function FilterProvider({
       activeEpisodeId,
       toggleEpisode,
       clearEpisode,
+      activeRegions,
+      toggleRegion,
+      activeTypes,
+      toggleType,
+      clearFacets,
       lang,
       selectedEventId,
       basemapId,

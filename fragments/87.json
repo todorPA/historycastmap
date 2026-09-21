@@ -1,0 +1,38 @@
+{
+  "places": [
+    { "id": "bojnik", "name": { "sr": "Bojnik", "en": "Bojnik" }, "aliases": ["Bojniku"], "lat": 42.9700, "lng": 21.7181, "kind": "city" },
+    { "id": "toplica", "name": { "sr": "Toplica (region)", "en": "Toplica region" }, "aliases": ["Topličke oblasti"], "lat": 43.2333, "lng": 21.4000, "kind": "region" }
+  ],
+  "events": [
+    {
+      "id": "sastanak-vojnovic-pecanac-1916",
+      "title": { "sr": "Sastanak Koste Vojinovića i Koste Pećanca", "en": "Meeting of Kosta Vojinović and Kosta Pećanac" },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "bojnik",
+      "episodeId": "87",
+      "timestamp": "71:44",
+      "type": "other",
+      "actors": ["Kosta Vojinović", "Kosta Pećanac"],
+      "region": "Balkan",
+      "description": { "sr": "Na Mitrovdan 1916. godine, tokom obilaska kraja koji je vodio i do Bojnika i Kopaonika, dolazi do sastanka Koste Vojinovića i Koste Pećanca, na kome Vojinović priznaje Pećancu ulogu glavnokomandujućeg.", "en": "On Mitrovdan 1916, during a tour of the region that also led through Bojnik and Kopaonik, a meeting took place between Kosta Vojinović and Kosta Pećanac, at which Vojinović recognized Pećanac's role as commander-in-chief." },
+      "quote": "će doći na Mitrovdan 1916. godine ... Kosta Vojnović vrlo rado ... priznao je pravo Koste Pećanca da bude glavno komandujući",
+      "confidence": "high"
+    },
+    {
+      "id": "gasenje-toplickog-ustanka-1917",
+      "title": { "sr": "Gušenje Topličkog ustanka i pogibija vojvoda", "en": "Suppression of the Toplica Uprising and death of voivodes" },
+      "year": 1917,
+      "yearEnd": null,
+      "placeId": "toplica",
+      "episodeId": "87",
+      "timestamp": "151:54",
+      "type": "uprising",
+      "actors": ["Toško Vlahović", "Vojin Marjanović", "Bugarska vojska"],
+      "region": "Balkan",
+      "description": { "sr": "2. novembra 1917. godine, u finalnoj fazi gušenja Topličkog ustanka, ginu vojvode Toško Vlahović i Vojin Marjanović, a ustaničke snage se sve više raspadaju usled izdaja i prelaska pojedinaca na bugarsku stranu.", "en": "On November 2, 1917, in the final phase of the suppression of the Toplica Uprising, voivodes Toško Vlahović and Vojin Marjanović were killed, while the insurgent forces increasingly disintegrated due to betrayals and individuals defecting to the Bulgarian side." },
+      "quote": "2. novembra 1917. godine gine Toško. ... Vojn Marjanović je takođe poginuo.",
+      "confidence": "high"
+    }
+  ]
+}

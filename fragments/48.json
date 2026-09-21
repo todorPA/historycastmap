@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "edo", "name": { "sr": "Edo (Tokio)", "en": "Edo (Tokyo)" }, "aliases": ["Edu", "Tokio"], "lat": 35.6762, "lng": 139.6503, "kind": "city" },
+    { "id": "kagosima", "name": { "sr": "Kagošima", "en": "Kagoshima" }, "aliases": ["Kagešimu", "Kagoshima"], "lat": 31.5602, "lng": 130.5581, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "perryjev-dolazak-japan-1853",
+      "title": { "sr": "Dolazak komodora Perryja u Edo zaliv", "en": "Arrival of Commodore Perry in Edo Bay" },
+      "year": 1853,
+      "yearEnd": null,
+      "placeId": "edo",
+      "episodeId": "48",
+      "timestamp": "25:58",
+      "type": "other",
+      "actors": ["Matthew Perry"],
+      "region": "Azija",
+      "description": { "sr": "8. jula 1853. godine komodor Metju Peri ulazi u zaliv sa četiri crna, oklopljena parobroda, prekidajući veko dugu izolaciju Japana i pokrećući lanac događaja koji vodi ka padu šogunata.", "en": "On July 8, 1853, Commodore Matthew Perry entered the bay with four black, armored steamships, ending Japan's centuries-long isolation and setting off the chain of events that led to the fall of the shogunate." },
+      "quote": "8. jul 1853. datum kada se sve promenilo. Na scenu stupa čovek koji se zove Matthew Perry",
+      "confidence": "high"
+    },
+    {
+      "id": "bombardovanje-kagosime-1863",
+      "title": { "sr": "Britansko bombardovanje Kagošime", "en": "British bombardment of Kagoshima" },
+      "year": 1863,
+      "yearEnd": null,
+      "placeId": "kagosima",
+      "episodeId": "48",
+      "timestamp": "40:16",
+      "type": "battle",
+      "actors": ["Velika Britanija", "Klan Satsuma"],
+      "region": "Azija",
+      "description": { "sr": "Avgusta 1863. godine izbija anglo-satsumski rat, kada Velika Britanija bombarduje Kagošimu nakon što je klan Satsuma odbio da plati kompenzaciju za ubistvo britanskog trgovca.", "en": "In August 1863, the Anglo-Satsuma War broke out, when Great Britain bombarded Kagoshima after the Satsuma clan refused to pay compensation for the killing of a British merchant." },
+      "quote": "to se završi tako što kreće takozvani anglosacuma rati avgusta 1863. ... Vlada Vršića bombardovala Kagešimu.",
+      "confidence": "high"
+    },
+    {
+      "id": "yoshinobu-ostavka-1868",
+      "title": { "sr": "Poslednji šogun Yoshinobu daje ostavku", "en": "Last shogun Yoshinobu resigns" },
+      "year": 1868,
+      "yearEnd": null,
+      "placeId": "edo",
+      "episodeId": "48",
+      "timestamp": "72:28",
+      "type": "other",
+      "actors": ["Tokugawa Yoshinobu"],
+      "region": "Azija",
+      "description": { "sr": "Aprila 1868. godine, nakon bekstva u Edo i gubljenja bitke za Ueno protiv alijanse klanova Satsuma-Choshu, poslednji šogun Yoshinobu daje trajnu ostavku, mada Tokugavini lojalisti odbijaju predaju i rat se nastavlja.", "en": "In April 1868, after fleeing to Edo and losing the Battle of Ueno against the Satsuma-Choshu alliance, the last shogun Yoshinobu permanently resigned, though Tokugawa loyalists refused to surrender and the war continued." },
+      "quote": "on vega za Edo. Vojska Satsuma-Choshu alijansige juri, kreće bitka za Ueno koja se gubi. To je april 1868. I Yoshinobu daje ostavku",
+      "confidence": "high"
+    }
+  ]
+}

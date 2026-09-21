@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch *)",
+      "Bash(node -e \"let s='';process.stdin.on\\('data',d=>s+=d\\).on\\('end',\\(\\)=>{const d=JSON.parse\\(s\\);console.log\\('on main: events',d.events.length,'episodes',d.episodes.length\\)}\\)\")",
+      "Bash(node -e \"console.log\\(Object.keys\\(require\\('./package.json'\\).scripts\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(npm run *)"
+    ]
+  }
+}

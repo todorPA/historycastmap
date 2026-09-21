@@ -17,16 +17,23 @@ export function useData(): LoadedData {
   return ctx;
 }
 
+export interface VisibilityFilters {
+  activeEpisodeId: string | null;
+  activeRegions: string[];
+  activeTypes: string[];
+  range: { from: number; to: number };
+}
+
 /**
- * An event is visible iff it passes the episode filter and overlaps the current
- * year range. Spans (yearEnd) count as overlapping, not just their start year.
+ * An event is visible iff it passes every facet and overlaps the current year range. Spans
+ * (yearEnd) count as overlapping, not just their start year. Within a facet values are OR'd
+ * (Balkan or Asia), across facets AND'd (Balkan *and* a battle).
  */
-export function isVisible(
-  event: HistoryEvent,
-  activeEpisodeId: string | null,
-  range: { from: number; to: number },
-): boolean {
+export function isVisible(event: HistoryEvent, filters: VisibilityFilters): boolean {
+  const { activeEpisodeId, activeRegions, activeTypes, range } = filters;
   if (activeEpisodeId != null && event.episodeId !== activeEpisodeId) return false;
+  if (activeRegions.length > 0 && !activeRegions.includes(event.region ?? '')) return false;
+  if (activeTypes.length > 0 && !activeTypes.includes(event.type ?? '')) return false;
   const start = event.year;
   const end = event.yearEnd ?? event.year;
   return end >= range.from && start <= range.to;
@@ -36,10 +43,13 @@ export function isVisible(
 export function useVisibleEvents(): HistoryEvent[] {
   const { data } = useData();
   const { range } = useTime();
-  const { activeEpisodeId } = useFilters();
+  const { activeEpisodeId, activeRegions, activeTypes } = useFilters();
 
   return useMemo(
-    () => data.events.filter((e) => isVisible(e, activeEpisodeId, range)),
-    [data.events, activeEpisodeId, range],
+    () =>
+      data.events.filter((e) =>
+        isVisible(e, { activeEpisodeId, activeRegions, activeTypes, range }),
+      ),
+    [data.events, activeEpisodeId, activeRegions, activeTypes, range],
   );
 }

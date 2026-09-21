@@ -6,14 +6,17 @@ import { useFilters } from '../state/FilterContext';
 import { clusterByPixel, clusterRadius } from '../lib/cluster';
 import type { Clusterable } from '../lib/cluster';
 import EventPopup from './EventPopup';
+import EventGroupPopup from './EventGroupPopup';
 
+/** One map dot: everything that happened at one place in one year (see MapView.groupEvents). */
 export interface PositionedEvent extends Clusterable {
-  event: HistoryEvent;
+  events: HistoryEvent[];
 }
 
 /**
- * Renders one marker per cluster. Single events keep the plain circle; groups get a badge
- * with the count, and clicking one zooms to its members instead of opening a popup.
+ * Renders one marker per cluster. A cluster of one dot shows that dot's popup — a single
+ * event, or the list of events sharing its place and year. Clusters of several dots show a
+ * count and zoom to their members on click, which is what breaks them apart.
  */
 export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
   const map = useMap();
@@ -31,7 +34,7 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
     [map, items, zoom],
   );
 
-  // A selected event may sit inside a cluster; only open the popup when it's on its own.
+  // Selection can come from the timeline; open the popup of whichever dot holds that event.
   useEffect(() => {
     if (!selectedEventId) return;
     markerRefs.current.get(selectedEventId)?.openPopup();
@@ -41,17 +44,23 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
     <>
       {clusters.map((cluster) => {
         if (cluster.items.length === 1) {
-          const { event, position, color } = cluster.items[0];
-          const low = event.confidence === 'low';
-          const selected = event.id === selectedEventId;
+          const dot = cluster.items[0];
+          const { events, position, color } = dot;
+          const low = events.every((e) => e.confidence === 'low');
+          const selected = events.some((e) => e.id === selectedEventId);
+          const count = events.length;
+
           return (
             <CircleMarker
               key={cluster.key}
               center={position}
-              radius={selected ? 11 : 8}
+              radius={selected ? 11 : count > 1 ? 10 : 8}
               ref={(instance) => {
-                if (instance) markerRefs.current.set(event.id, instance);
-                else markerRefs.current.delete(event.id);
+                // Registered under every member id, so a timeline selection finds this dot.
+                for (const e of events) {
+                  if (instance) markerRefs.current.set(e.id, instance);
+                  else markerRefs.current.delete(e.id);
+                }
               }}
               pathOptions={{
                 color: selected ? '#ffffff' : color,
@@ -61,16 +70,26 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
                 fillOpacity: low ? 0.6 : 0.95,
                 opacity: low ? 0.6 : 1,
               }}
-              eventHandlers={{ click: () => setSelectedEventId(event.id) }}
+              eventHandlers={{ click: () => setSelectedEventId(events[0].id) }}
             >
-              <Popup minWidth={280} maxWidth={340}>
-                <EventPopup event={event} />
+              <Popup minWidth={280} maxWidth={360}>
+                {count === 1 ? (
+                  <EventPopup event={events[0]} />
+                ) : (
+                  <EventGroupPopup events={events} />
+                )}
               </Popup>
+              {count > 1 && (
+                <Tooltip permanent direction="center" className="cluster__label">
+                  {count}
+                </Tooltip>
+              )}
             </CircleMarker>
           );
         }
 
-        const count = cluster.items.length;
+        // Several dots share a screen cell: collapse to a count of the events behind them.
+        const count = cluster.items.reduce((sum, dot) => sum + dot.events.length, 0);
 
         return (
           <CircleMarker
@@ -87,13 +106,10 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
             eventHandlers={{
               click: () => {
                 const bounds = cluster.items.map((i) => i.position) as LatLngBoundsExpression;
-                // Zooming to the members is what splits the cluster apart.
                 map.fitBounds(bounds, { padding: [60, 60], maxZoom: 12 });
               },
             }}
           >
-            {/* One tooltip per layer in Leaflet, so the count label doubles as the hover
-                target: keep it to the number and let the click do the explaining. */}
             <Tooltip permanent direction="center" className="cluster__label">
               {count}
             </Tooltip>

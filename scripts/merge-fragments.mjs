@@ -101,15 +101,40 @@ for (const file of fragFiles) {
 }
 
 // Ucitaj metapodatke epizoda (naslov/datum/audioUrl) iz historycast_episodes.json ako je dat
+// Pravilo parsiranja naslova: broj epizode je prvi niz cifara NA POČETKU naslova
+// (dozvoljena tačka odmah nakon cifara, npr. "75."), separator posle njega je
+// nebitan — može biti "-", "=", razmak, ili ništa. Ako naslov ne počinje cifrom
+// (specijali kao "Novogodišnja epizoda" ili "Drugi svetski rat, 1941 - Bitka za
+// Moskvu", gde bi prva cifra u nastavku pogrešno bila uzeta za broj epizode),
+// koristi se slug celog naslova. Ovo zamenjuje tri uzastopna regex-a koja su
+// redom pukla na "115 = Vuk Karadžić", "75. - Stefan Prvovenčani" i
+// "61 Srpska puška - od ustanika" — svi ovi oblici sada prolaze kroz isto pravilo.
+function slugify(str) {
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 let episodeMetaByNumber = new Map();
+let episodeMetaBySlug = new Map(); // za specijalne epizode bez broja na pocetku naslova
 if (EPISODES_SOURCE && fs.existsSync(EPISODES_SOURCE)) {
   const eps = JSON.parse(fs.readFileSync(EPISODES_SOURCE, "utf-8"));
   for (const ep of eps) {
-    const m = /^(\d+)\s*[-=]\s*(.+)$/.exec(ep.title || "");
-    if (m) {
+    const title = ep.title || "";
+    const m = /^\s*(\d+)\.?\s*[-=]?\s*(.*)$/.exec(title);
+    if (m && m[1]) {
       const num = String(parseInt(m[1], 10));
       episodeMetaByNumber.set(num, {
-        title: m[2].trim(),
+        title: m[2].trim() || title.trim(),
+        pubDate: ep.pubDate,
+        audioUrl: ep.audio_url,
+      });
+    } else if (title) {
+      episodeMetaBySlug.set(slugify(title), {
+        title: title.trim(),
         pubDate: ep.pubDate,
         audioUrl: ep.audio_url,
       });
@@ -123,9 +148,20 @@ const PALETTE = [
 ];
 
 const episodes = Array.from(episodeIdsUsed)
-  .sort((a, b) => Number(a) - Number(b))
+  .sort((a, b) => {
+    const na = Number(a);
+    const nb = Number(b);
+    const aIsNum = !Number.isNaN(na);
+    const bIsNum = !Number.isNaN(nb);
+    if (aIsNum && bIsNum) return na - nb;
+    if (aIsNum) return -1;
+    if (bIsNum) return 1;
+    return a.localeCompare(b);
+  })
   .map((id, idx) => {
-    const meta = episodeMetaByNumber.get(String(Number(id)));
+    const meta =
+      episodeMetaByNumber.get(String(Number(id))) ||
+      episodeMetaBySlug.get(id);
     return {
       id,
       title: { sr: meta?.title || `Epizoda ${id}` },

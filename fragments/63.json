@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "rim", "name": { "sr": "Rim", "en": "Rome" }, "aliases": ["Rimu", "Koloseum"], "lat": 41.9028, "lng": 12.4964, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "prve-borbe-gladijatora-264pne",
+      "title": { "sr": "Prve zabeležene borbe gladijatora u Rimu", "en": "First recorded gladiatorial combats in Rome" },
+      "year": -264,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "63",
+      "timestamp": "15:09",
+      "type": "other",
+      "actors": [],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "264. godine pre nove ere, na početku Prvog punskog rata, zabeležena je prva zvanična borba gladijatora u Rimu — zarobljenici puštani da se ubijaju međusobno na sahrani rimskog velikodostojnika, običaj preuzet od Etruraca.", "en": "In 264 BCE, at the start of the First Punic War, the first officially recorded gladiatorial combat in Rome took place — prisoners were allowed to kill each other at the funeral of a Roman dignitary, a custom borrowed from the Etruscans." },
+      "quote": "To je bio na početku punskih ratova, 264. godine. ... na samoj sahrani nekog velikodostojnika ... zarobljenici se puštaju da međusobno se ubijaju",
+      "confidence": "high"
+    },
+    {
+      "id": "otvaranje-koloseuma-80",
+      "title": { "sr": "Otvaranje Koloseuma u Rimu", "en": "Opening of the Colosseum in Rome" },
+      "year": 80,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "63",
+      "timestamp": "27:17",
+      "type": "founding",
+      "actors": ["Vespazijan", "Tit"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Koloseum, koji je počeo da gradi car Vespazijan, završen je za vreme njegovog sina Tita, krajem 70-ih ili početkom 80-ih godine; na inauguralnoj svečanosti ubijeno je oko 9.000 životinja.", "en": "The Colosseum, whose construction was begun by Emperor Vespasian, was completed during the reign of his son Titus, in the late 70s or early 80s; at the inaugural ceremony about 9,000 animals were killed." },
+      "quote": "kada je otvoren Koloseum, odnosno kada je završen tamo negde početkom devete decenije ... Koloseum je gradio Vespazijan, a završen je za vreme njegovog sina Tita.",
+      "confidence": "medium"
+    }
+  ]
+}

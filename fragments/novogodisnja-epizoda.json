@@ -1,0 +1,78 @@
+{
+  "places": [
+    {
+      "id": "zemun",
+      "name": {
+        "sr": "Zemun",
+        "en": "Zemun"
+      },
+      "aliases": [
+        "Zemunu",
+        "Zemunskih crkava"
+      ],
+      "lat": 44.8433,
+      "lng": 20.4011,
+      "kind": "city"
+    },
+    {
+      "id": "jasenica",
+      "name": {
+        "sr": "Jasenica (Karađorđev rodni kraj)",
+        "en": "Jasenica (Karađorđe's home region)"
+      },
+      "aliases": [
+        "Jasenička"
+      ],
+      "lat": 44.3833,
+      "lng": 20.7667,
+      "kind": "region"
+    }
+  ],
+  "events": [
+    {
+      "id": "prva-proslava-svetog-save-zemun-1812",
+      "title": {
+        "sr": "Prva školska proslava Svetog Save u Zemunu",
+        "en": "First school celebration of Saint Sava in Zemun"
+      },
+      "year": 1812,
+      "yearEnd": null,
+      "placeId": "zemun",
+      "episodeId": "novogodisnja-epizoda",
+      "timestamp": "31:42",
+      "type": "other",
+      "actors": [],
+      "region": "Balkan",
+      "description": {
+        "sr": "Prva proslava Svetog Save kao školske slave održana je u Zemunu 1812. godine (27. januara po gregorijanskom kalendaru), praksa koja se od tada održava do danas.",
+        "en": "The first celebration of Saint Sava as a school patron saint feast was held in Zemun in 1812 (January 27 by the Gregorian calendar), a practice continued to this day."
+      },
+      "quote": "prva proslava Svetog Save kao školske slave, kao školska proslava, održana je u Zemunu 1812. godine, naravno, po sada Gregorijevskom kladaru 27. januar",
+      "confidence": "high"
+    },
+    {
+      "id": "topovska-buna-jasenica",
+      "title": {
+        "sr": "Topovska buna iz Jaseničkog kraja",
+        "en": "The Cannon Rebellion from the Jasenica region"
+      },
+      "year": 1877,
+      "yearEnd": null,
+      "placeId": "jasenica",
+      "episodeId": "novogodisnja-epizoda",
+      "timestamp": "55:31",
+      "type": "uprising",
+      "actors": [
+        "Knez Milan Obrenović",
+        "Jasenička jedinica"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "U vreme srpsko-turskih ratova izbila je Topovska buna, kada su vojne jedinice, uključujući onu iz Jaseničkog kraja (rodnog kraja Karađorđa), odbile da odu u vojsku; transkript navodi godinu kao '1987', što je očigledna greška transkripcije za period rata 1876-1878.",
+        "en": "During the Serbo-Turkish wars, the Cannon Rebellion broke out, when military units, including one from the Jasenica region (Karađorđe's home region), refused to go to war; the transcript states the year as '1987', an evident transcription error for the 1876-1878 war period."
+      },
+      "quote": "Tu je zapravo sve počelo sa Topovskom bunom koja se odigrala 1987. godine. U vreme Srpsko-Turskih hratova.",
+      "confidence": "low"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "places": [
+    { "id": "mojkovac", "name": { "sr": "Mojkovac", "en": "Mojkovac" }, "aliases": ["Mojkovcu", "Mojkovca", "Mojkovačka vrata"], "lat": 42.9611, "lng": 19.5833, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "mojkovacka-bitka-1916",
+      "title": { "sr": "Mojkovačka bitka", "en": "Battle of Mojkovac" },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "mojkovac",
+      "episodeId": "70",
+      "timestamp": "51:50",
+      "type": "battle",
+      "actors": ["Janko Vukotić", "Crnogorska vojska", "Austro-Ugarska vojska", "General Rajnel"],
+      "region": "Balkan",
+      "description": { "sr": "Na badnji dan, 6. januara 1916. godine, Austro-Ugarska pokreće novu ofanzivu (uz 205. brdsku diviziju generala Rajnela) na Mojkovačka vrata; crnogorska vojska, pod komandom Janka Vukotića, uspeva da nadvlada nadmoćnijeg protivnika i pruži ključno vreme za povlačenje srpske vojske ka moru.", "en": "On the eve of Christmas Eve, January 6, 1916, Austria-Hungary launched a new offensive (with General Reinl's 205th Mountain Division) on the Mojkovac Gate; the Montenegrin army, under Janko Vukotić's command, managed to overcome the superior enemy and buy crucial time for the Serbian army's retreat toward the sea." },
+      "quote": "6. januar, na badnji dan, kreće opet nova ofanziva Austro-Ugarske vojske ... I 6. januara se vode zaista krvave borbe, gde dolazi lično i Sedar Janko Vukotić",
+      "confidence": "high"
+    }
+  ]
+}

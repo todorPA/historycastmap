@@ -1,0 +1,85 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["Beogradu", "Beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "uzice", "name": { "sr": "Užice", "en": "Užice" }, "aliases": ["Užicu", "Užica"], "lat": 43.8583, "lng": 19.8408, "kind": "city" },
+    { "id": "grocka", "name": { "sr": "Grocka", "en": "Grocka" }, "aliases": ["Grotska", "Grotske"], "lat": 44.6667, "lng": 20.7167, "kind": "battle-site" },
+    { "id": "pozarevac", "name": { "sr": "Požarevac", "en": "Požarevac" }, "aliases": ["Požarevačkog", "Požarevački"], "lat": 44.6167, "lng": 21.1833, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "veliki-bec-oslobadja-beograd-1690",
+      "title": { "sr": "Ustanak i pokolj Turaka u Užicu (Veliki bečki rat)", "en": "Uprising and slaughter of Turks in Užice (Great Turkish War)" },
+      "year": 1690,
+      "yearEnd": null,
+      "placeId": "uzice",
+      "episodeId": "109",
+      "timestamp": "107:22",
+      "type": "uprising",
+      "actors": ["Srpski ustanici"],
+      "region": "Balkan",
+      "description": { "sr": "1690. godine, u okviru ustanaka protiv Turaka tokom Velikog bečkog rata, u Užicu je, prema austrijskim izvorima, ubijeno oko 12.000 Turaka.", "en": "In 1690, as part of uprisings against the Ottomans during the Great Turkish War, around 12,000 Turks were killed in Užice, according to Austrian sources." },
+      "quote": "likvidacije Turaka, poput one u Užicu, kad je 12.000 Turaka ubijeno 1690. godine",
+      "confidence": "medium"
+    },
+    {
+      "id": "opsada-beograda-evgenije-savojski-1717",
+      "title": { "sr": "Opsada Beograda pod Evgenijem Savojskim", "en": "Siege of Belgrade under Eugene of Savoy" },
+      "year": 1717,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "109",
+      "timestamp": "43:06",
+      "type": "siege",
+      "actors": ["Evgenije Savojski", "Osmansko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "1717. godine princ Evgenije Savojski uspeva da nadmudri Turke u opsadi Beograda, nakon čega Turci ulaze u pregovore koji dovode do Požarevačkog mira.", "en": "In 1717, Prince Eugene of Savoy managed to outmaneuver the Turks in the siege of Belgrade, after which the Turks entered negotiations leading to the Peace of Požarevac." },
+      "quote": "kad ti spomenu obsadu Beograda i način na koji je Evgenije Savojski uspeo da nadbudri Turke, to je bilo 1717. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "pozarevacki-mir-1718",
+      "title": { "sr": "Požarevački mir", "en": "Treaty of Požarevac" },
+      "year": 1718,
+      "yearEnd": null,
+      "placeId": "pozarevac",
+      "episodeId": "109",
+      "timestamp": "43:13",
+      "type": "treaty",
+      "actors": ["Austrija", "Osmansko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "Avgusta 1718. godine zaključen je Požarevački mir, kojim Austrija dobija velike teritorije, uključujući celu tadašnju Kraljevinu Srbiju.", "en": "In August 1718, the Treaty of Požarevac was concluded, through which Austria gained large territories, including the whole of the then Kingdom of Serbia." },
+      "quote": "avgusta 1718. godine zaključen je Požarevački mir. Požarevačkim mirom, dakle, Austrija dobija velike teritorije",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-kod-grotske-1739",
+      "title": { "sr": "Bitka kod Grotske i pad Beograda pod austrijsku predaju", "en": "Battle of Grocka and the surrender of Belgrade" },
+      "year": 1739,
+      "yearEnd": null,
+      "placeId": "grocka",
+      "episodeId": "109",
+      "timestamp": "107:38",
+      "type": "battle",
+      "actors": ["Austrija", "Osmansko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "Nakon odlučujuće bitke kod Grotske 1739. godine, Austrijanci zadržavaju samo Beograd i okolinu, a potom potpisuju Beogradski mir, po kome se Beograd predaje Turcima i rušе se utvrde grada.", "en": "After the decisive Battle of Grocka in 1739, the Austrians held onto only Belgrade and its surroundings, and then signed the Treaty of Belgrade, under which Belgrade was surrendered to the Turks and the city's fortifications were demolished." },
+      "quote": "dakle, posle bitke kod Grotske, 1739. godine, definitivno, dakle, kada se pada i Beograd",
+      "confidence": "high"
+    },
+    {
+      "id": "beogradski-mir-1739",
+      "title": { "sr": "Beogradski mir", "en": "Treaty of Belgrade" },
+      "year": 1739,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "109",
+      "timestamp": "107:48",
+      "type": "treaty",
+      "actors": ["Austrija", "Osmansko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "1739. godine potpisan je Beogradski mir, kojim se okončava period austrijske vlasti nad Beogradom i Srbijom uspostavljene Požarevačkim mirom 21 godinu ranije.", "en": "In 1739, the Treaty of Belgrade was signed, ending the period of Austrian rule over Belgrade and Serbia established by the Treaty of Požarevac 21 years earlier." },
+      "quote": "dolazi do Beogradskog mira, 1739. godine",
+      "confidence": "high"
+    }
+  ]
+}

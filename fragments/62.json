@@ -1,0 +1,69 @@
+{
+  "places": [
+    { "id": "peking", "name": { "sr": "Peking", "en": "Beijing" }, "aliases": ["Pekingu"], "lat": 39.9042, "lng": 116.4074, "kind": "city" },
+    { "id": "pearl-harbor", "name": { "sr": "Pearl Harbor", "en": "Pearl Harbor" }, "aliases": ["Havaje"], "lat": 21.3469, "lng": -157.9799, "kind": "landmark" },
+    { "id": "singapur", "name": { "sr": "Singapur", "en": "Singapore" }, "aliases": ["Singapuru"], "lat": 1.3521, "lng": 103.8198, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "kineska-revolucija-1911",
+      "title": { "sr": "Kineska revolucija i kraj carstva", "en": "Chinese Revolution and end of the empire" },
+      "year": 1911,
+      "yearEnd": 1912,
+      "placeId": "peking",
+      "episodeId": "62",
+      "timestamp": "08:21",
+      "type": "uprising",
+      "actors": ["Car Pu Yi", "Kineski revolucionari"],
+      "region": "Azija",
+      "description": { "sr": "1911. i 1912. godine, revolucijom i svrgavanjem cara Pu Yija, definitivno se okončava kineska monarhija koja je trajala dva milenijuma.", "en": "In 1911 and 1912, through revolution and the overthrow of Emperor Puyi, the Chinese monarchy, which had lasted two millennia, definitively came to an end." },
+      "quote": "Svrgnut sa vlasti 1911. 1912. godine, revolucija 1911. 1912. definitivno kraj monarhije koja je trajala dva milenijuma",
+      "confidence": "high"
+    },
+    {
+      "id": "pocetak-kinesko-japanskog-rata-1937",
+      "title": { "sr": "Početak Drugog kinesko-japanskog rata", "en": "Start of the Second Sino-Japanese War" },
+      "year": 1937,
+      "yearEnd": null,
+      "placeId": "peking",
+      "episodeId": "62",
+      "timestamp": "26:19",
+      "type": "battle",
+      "actors": ["Japan", "Kina", "Chiang Kai-shek"],
+      "region": "Azija",
+      "description": { "sr": "1937. godine počinje Drugi kinesko-japanski rat, koji neki istoričari smatraju stvarnim početkom Drugog svetskog rata, jer se pacifičko ratište ne može razumeti bez njega.", "en": "In 1937, the Second Sino-Japanese War began, which some historians consider the real start of World War II, since the Pacific theater cannot be understood without it." },
+      "quote": "Početak nije 1939. ni 1941. početak, i zapravo i u 1937. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "napad-pearl-harbor-1941-ep62",
+      "title": { "sr": "Japanski napad na Pearl Harbor", "en": "Japanese attack on Pearl Harbor" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "pearl-harbor",
+      "episodeId": "62",
+      "timestamp": "55:02",
+      "type": "battle",
+      "actors": ["Japan", "Sjedinjene Američke Države"],
+      "region": "Severna Amerika",
+      "description": { "sr": "7. decembra 1941. godine Japan izvodi iznenadni napad na Pearl Harbor, bez prethodne objave rata, na isti način kao što je napao Rusiju 1904. godine u Rusko-japanskom ratu.", "en": "On December 7, 1941, Japan carried out a surprise attack on Pearl Harbor, without a prior declaration of war, in the same manner it had attacked Russia in 1904 during the Russo-Japanese War." },
+      "quote": "Pearl Harbor je 7. decembar ... 7. decembra 1941. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "invazija-singapur-1942",
+      "title": { "sr": "Japanska invazija na Singapur", "en": "Japanese invasion of Singapore" },
+      "year": 1942,
+      "yearEnd": null,
+      "placeId": "singapur",
+      "episodeId": "62",
+      "timestamp": "64:44",
+      "type": "battle",
+      "actors": ["Japan", "Britanska vojska"],
+      "region": "Azija",
+      "description": { "sr": "8. februara 1942. godine počinje japanska invazija na Singapur; Japanci se iskrcavaju sa zapadne strane ostrva, suprotno britanskim očekivanjima da će napad doći sa istoka.", "en": "On February 8, 1942, the Japanese invasion of Singapore began; the Japanese landed on the western side of the island, contrary to British expectations that the attack would come from the east." },
+      "quote": "8. februara 1942. godine kreće invazija na to ostrovo",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "filipi", "name": { "sr": "Filipi", "en": "Philippi" }, "aliases": ["Filipima"], "lat": 41.0122, "lng": 24.2867, "kind": "battle-site" },
+    { "id": "aleksandrija", "name": { "sr": "Aleksandrija", "en": "Alexandria" }, "aliases": ["Aleksandriji"], "lat": 31.2001, "lng": 29.9187, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "bitka-filipi-42pne-kleopatra",
+      "title": { "sr": "Bitka kod Filipa (poraz Bruta i Kasija)", "en": "Battle of Philippi (defeat of Brutus and Cassius)" },
+      "year": -42,
+      "yearEnd": null,
+      "placeId": "filipi",
+      "episodeId": "60",
+      "timestamp": "33:37",
+      "type": "battle",
+      "actors": ["Oktavijan", "Marko Antonije", "Marko Junije Brut", "Gaj Kasije"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "42. godine pre nove ere, u bici kod Filipa, Oktavijan i Marko Antonije odnose pobedu nad vojskom Cezarovih ubica, Brutom i Kasijem.", "en": "In 42 BCE, at the Battle of Philippi, Octavian and Mark Antony defeated the army of Caesar's assassins, Brutus and Cassius." },
+      "quote": "42. godinu tu je obračun sa cezarovim ubicama, sa Brutom i Kasijem. I tu se onda odigrava bitka kod Filipa",
+      "confidence": "high"
+    },
+    {
+      "id": "aleksandrijske-donacije-34pne",
+      "title": { "sr": "Aleksandrijske donacije", "en": "Donations of Alexandria" },
+      "year": -34,
+      "yearEnd": null,
+      "placeId": "aleksandrija",
+      "episodeId": "60",
+      "timestamp": "40:06",
+      "type": "other",
+      "actors": ["Marko Antonije", "Kleopatra", "Deca Kleopatre i Antonija"],
+      "region": "Bliski istok",
+      "description": { "sr": "34. godine pre nove ere, u Aleksandriji, nakon velikog trijumfa, Marko Antonije javno potvrđuje priznavanje svoje i Kleopatrine deце u događaju poznatom kao Aleksandrijske donacije.", "en": "In 34 BCE, in Alexandria, after a great triumph, Mark Antony publicly confirmed the recognition of his children with Cleopatra in the event known as the Donations of Alexandria." },
+      "quote": "34. godine prije nove ere on će u Aleksandriji proslaviti veliki triumf i tada će se desiti nešto što se zove Aleksandrijske donacije",
+      "confidence": "high"
+    },
+    {
+      "id": "egipat-rimska-provincija-29pne",
+      "title": { "sr": "Egipat postaje rimska provincija", "en": "Egypt becomes a Roman province" },
+      "year": -29,
+      "yearEnd": null,
+      "placeId": "aleksandrija",
+      "episodeId": "60",
+      "timestamp": "53:02",
+      "type": "conquest",
+      "actors": ["Oktavijan"],
+      "region": "Bliski istok",
+      "description": { "sr": "29. godine pre nove ere, nakon smrti Kleopatre i Marka Antonija, Oktavijan proglašava Egipat rimskom (carskom) provincijom, uz posebne restrikcije putovanja za senatorsku klasu.", "en": "In 29 BCE, after the deaths of Cleopatra and Mark Antony, Octavian proclaimed Egypt a Roman (imperial) province, with special travel restrictions for the senatorial class." },
+      "quote": "29. godine će Octavian ... Klopatre mrtva, Marko Antonije isto mrtav, Egipat je proglašan za rimsku provinciju",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-kleopatre-30pne",
+      "title": { "sr": "Smrt Kleopatre", "en": "Death of Cleopatra" },
+      "year": -30,
+      "yearEnd": null,
+      "placeId": "aleksandrija",
+      "episodeId": "60",
+      "timestamp": "63:50",
+      "type": "death",
+      "actors": ["Kleopatra"],
+      "region": "Bliski istok",
+      "description": { "sr": "Kleopatra je umrla u svojoj 39. godini, godinu ranije od zvaničnog proglašenja Egipta rimskom provincijom (29. p.n.e), verovatno tokom 30. godine pre nove ere.", "en": "Cleopatra died at the age of 39, a year before the official proclamation of Egypt as a Roman province (29 BCE), likely in 30 BCE." },
+      "quote": "umrla u 39. godini ... i to je onda ... doprinosi toj njenoj tragičnoj priči",
+      "confidence": "medium"
+    }
+  ]
+}

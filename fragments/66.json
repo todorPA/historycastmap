@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "varsava", "name": { "sr": "Varšava", "en": "Warsaw" }, "aliases": ["Poljskoj"], "lat": 52.2297, "lng": 21.0122, "kind": "city" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": [], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "poljaci-razbijanje-enigme-1933",
+      "title": { "sr": "Poljski matematičari kreću da razbijaju Enigmu", "en": "Polish mathematicians begin breaking the Enigma cipher" },
+      "year": 1933,
+      "yearEnd": null,
+      "placeId": "varsava",
+      "episodeId": "66",
+      "timestamp": "15:39",
+      "type": "other",
+      "actors": ["Poljski matematičari"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Od 1933. godine, kada Hitler dolazi na vlast, grupa poljskih matematičara kreće da razbija nemačku šifarsku mašinu Enigmu, prepoznavši Nemačku kao glavnog budućeg neprijatelja.", "en": "From 1933, when Hitler came to power, a group of Polish mathematicians began breaking the German Enigma cipher machine, having identified Germany as the main future enemy." },
+      "quote": "znali su ako bude došlo do sukoba, kojeg prvog treba da gledaju i od 1933. godine ... Grupa matematičara u Poljskoj kreće da razbija enigmu.",
+      "confidence": "high"
+    },
+    {
+      "id": "osnivanje-m-odeljenja-1937",
+      "title": { "sr": "Osnivanje M-odeljenja jugoslovenske vojno-obaveštajne službe", "en": "Founding of the M-Department of the Yugoslav military intelligence service" },
+      "year": 1937,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "66",
+      "timestamp": "79:56",
+      "type": "founding",
+      "actors": ["Vojno-obaveštajna služba Kraljevine Jugoslavije"],
+      "region": "Balkan",
+      "description": { "sr": "1937. godine jugoslovenska vojno-obaveštajna služba dobija takozvano M-odeljenje, tajnu jedinicu čiji članovi nisu bili poznati ni ostalim delovima obaveštajne službe.", "en": "In 1937, the Yugoslav military intelligence service established the so-called M-Department, a secret unit whose members were unknown even to other parts of the intelligence service." },
+      "quote": "mi smo 37. naša vojno-obaveštajna služba je dobila takozvano M-odeljenje",
+      "confidence": "high"
+    },
+    {
+      "id": "operacija-schiller-beograd-1940",
+      "title": { "sr": "Operacija Schiller — otkrivanje nemačke špijunske mreže u Beogradu", "en": "Operation Schiller — exposure of a German spy network in Belgrade" },
+      "year": 1940,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "66",
+      "timestamp": "80:34",
+      "type": "other",
+      "actors": ["M-odeljenje", "Nemačka obaveštajna služba"],
+      "region": "Balkan",
+      "description": { "sr": "1940. godine, u operaciji Schiller, jugoslovensko M-odeljenje sprečava Nemce da dođu do planova avio-industrije i uspeva da uhvati čitavu mrežu nemačkih špijuna, koji su potom proterani kao personae non gratae.", "en": "In 1940, in Operation Schiller, the Yugoslav M-Department prevented the Germans from obtaining aviation industry plans and managed to capture an entire network of German spies, who were then expelled as personae non gratae." },
+      "quote": "najpoznatija njihova akcija je operacija Schiller kada su oni sprečili Nemce da dođu do planova ... 1940. godine gdje su uspeli da uhvate čitavu jednu mrežu nemačkih špiona",
+      "confidence": "high"
+    }
+  ]
+}

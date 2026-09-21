@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "prag", "name": { "sr": "Prag", "en": "Prague" }, "aliases": ["Pragu", "Praga"], "lat": 50.0755, "lng": 14.4378, "kind": "city" },
+    { "id": "bela-gora", "name": { "sr": "Bela Gora", "en": "White Mountain" }, "aliases": ["Bele Gore"], "lat": 50.0670, "lng": 14.3372, "kind": "battle-site" },
+    { "id": "osnabruck-munster", "name": { "sr": "Osnabrik i Minster (Vestfalija)", "en": "Osnabrück and Münster (Westphalia)" }, "aliases": ["Vestfali", "Vestfaliji"], "lat": 52.2799, "lng": 8.0472, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "praska-defenestracija-1618",
+      "title": { "sr": "Praška defenestracija — početak Tridesetogodišnjeg rata", "en": "Defenestration of Prague — start of the Thirty Years' War" },
+      "year": 1618,
+      "yearEnd": null,
+      "placeId": "prag",
+      "episodeId": "86",
+      "timestamp": "01:13",
+      "type": "uprising",
+      "actors": ["Car Matija", "Češki protestantski feudalci"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "23. maja 1618. godine, izaslanici cara Matije donose u Prag carsko pismo koje ne zadovoljava zahteve protestantskih čeških feudalaca za jednaka prava, u incidentu koji pokreće Tridesetogodišnji rat.", "en": "On May 23, 1618, envoys of Emperor Matthias brought an imperial letter to Prague that failed to satisfy the demands of Protestant Bohemian nobles for equal rights, in an incident that set off the Thirty Years' War." },
+      "quote": "23. maja 1618. godine, izaslanici cara Matije su došli u Prag da uruče jedno carsko pismo",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-bela-gora-1620",
+      "title": { "sr": "Bitka kod Bele Gore", "en": "Battle of White Mountain" },
+      "year": 1620,
+      "yearEnd": null,
+      "placeId": "bela-gora",
+      "episodeId": "86",
+      "timestamp": "54:23",
+      "type": "battle",
+      "actors": ["Car Ferdinand II", "Češki protestantski feudalci"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "8. novembra 1620. godine, u bici kod Bele Gore, katoličke snage cara Ferdinanda odnose vojnu pobedu koja predstavlja katastrofu za inicijalni češki otpor.", "en": "On November 8, 1620, in the Battle of White Mountain, the Catholic forces of Emperor Ferdinand won a military victory that was a catastrophe for the initial Bohemian resistance." },
+      "quote": "bitka kod Bele Gore, koja se odigrala 8. novembra 1620. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "mir-u-vestfaliji-1648",
+      "title": { "sr": "Vestfalski mir", "en": "Peace of Westphalia" },
+      "year": 1648,
+      "yearEnd": null,
+      "placeId": "osnabruck-munster",
+      "episodeId": "86",
+      "timestamp": "94:22",
+      "type": "treaty",
+      "actors": ["Sveto rimsko carstvo", "Evropske velike sile"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "1648. godine, u Osnabriku i Minsteru, zaključen je Vestfalski mir koji okončava Tridesetogodišnji rat i uspostavlja novi poredak suverenih evropskih država.", "en": "In 1648, at Osnabrück and Münster, the Peace of Westphalia was concluded, ending the Thirty Years' War and establishing a new order of sovereign European states." },
+      "quote": "Mir u Vestfali je zaključen 1648. godine.",
+      "confidence": "high"
+    }
+  ]
+}

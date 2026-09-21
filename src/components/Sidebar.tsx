@@ -5,6 +5,7 @@ import { useTime } from '../state/TimeContext';
 import { pick, t } from '../lib/i18n';
 import { formatYearRange } from '../lib/time';
 import LangToggle from './LangToggle';
+import FacetFilters from './FacetFilters';
 
 /** Diacritic- and case-insensitive so "dusan" finds "Dušanova". */
 function normalize(value: string): string {
@@ -97,7 +98,7 @@ export default function Sidebar() {
                 className={`episode${activeEpisodeId == null ? ' is-active' : ''}`}
                 onClick={clearEpisode}
               >
-                <span className="episode__swatch episode__swatch--all" />
+                <span className="episode__num episode__num--all">∗</span>
                 <span className="episode__title">{t(lang, 'allEpisodes')}</span>
                 <span className="episode__count">{data.events.length}</span>
               </button>
@@ -110,7 +111,7 @@ export default function Sidebar() {
                 className={`episode${activeEpisodeId === ep.id ? ' is-active' : ''}`}
                 onClick={() => toggleEpisode(ep.id)}
               >
-                <span className="episode__swatch" style={{ background: ep.color ?? '#7f8c8d' }} />
+                <span className="episode__num">{ep.id}</span>
                 <span className="episode__title">{pick(ep.title, lang)}</span>
                 <span className="episode__count">{countByEpisode[ep.id] ?? 0}</span>
               </button>
@@ -119,6 +120,8 @@ export default function Sidebar() {
           {filtered.length === 0 && <li className="episodes__empty">{t(lang, 'noMatches')}</li>}
         </ul>
       </section>
+
+      <FacetFilters />
 
       <section className="sidebar__section sidebar__section--stats">
         <div className="stats">

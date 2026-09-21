@@ -1,0 +1,84 @@
+{
+  "places": [
+    { "id": "zeta", "name": { "sr": "Zeta", "en": "Zeta" }, "aliases": ["Zeti"], "lat": 42.2911, "lng": 19.0654, "kind": "region" },
+    { "id": "skadar", "name": { "sr": "Skadar", "en": "Shkodër" }, "aliases": ["Skadru"], "lat": 42.0683, "lng": 19.5126, "kind": "city" },
+    { "id": "velbuzd", "name": { "sr": "Velbužd", "en": "Velbazhd" }, "aliases": ["Velbužda"], "lat": 42.2033, "lng": 22.6408, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "dezevski-sporazum-1282",
+      "title": { "sr": "Deževski sporazum — podela kraljevstva između Dragutina i Milutina", "en": "Agreement of Deževo — division of the kingdom between Dragutin and Milutin" },
+      "year": 1282,
+      "yearEnd": null,
+      "placeId": "zeta",
+      "episodeId": "98",
+      "timestamp": "13:47",
+      "type": "treaty",
+      "actors": ["Kralj Dragutin", "Kralj Milutin"],
+      "region": "Balkan",
+      "description": { "sr": "1282. godine postignut je Deževski sporazum kojim se kraljevstvo deli između Dragutina i Milutina, obeležavajući kraj Dragutinove vladavine kao jedinog kralja.", "en": "In 1282, the Agreement of Deževo was reached, dividing the kingdom between Dragutin and Milutin, marking the end of Dragutin's rule as sole king." },
+      "quote": "to je zapravo Deževski sporazum postignutu u 1282. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "stefan-decanski-boravak-zeta-1306",
+      "title": { "sr": "Stefan Dečanski boravi u progonstvu u Zeti", "en": "Stefan Dečanski lives in exile in Zeta" },
+      "year": 1306,
+      "yearEnd": 1314,
+      "placeId": "zeta",
+      "episodeId": "98",
+      "timestamp": "22:12",
+      "type": "other",
+      "actors": ["Stefan Dečanski"],
+      "region": "Balkan",
+      "description": { "sr": "Od 1306. do 1314. godine Stefan Dečanski boravi u Zeti sa suprugom, u periodu udaljenom od centralne vlasti svog oca kralja Milutina.", "en": "From 1306 to 1314, Stefan Dečanski lived in Zeta with his wife, distanced from the central power of his father, King Milutin." },
+      "quote": "Koji će boraviti u Zeti sa suprugom ... od 1306. do 1314. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-milutina-1321",
+      "title": { "sr": "Smrt kralja Milutina", "en": "Death of King Milutin" },
+      "year": 1321,
+      "yearEnd": null,
+      "placeId": "zeta",
+      "episodeId": "98",
+      "timestamp": "46:49",
+      "type": "death",
+      "actors": ["Kralj Milutin"],
+      "region": "Balkan",
+      "description": { "sr": "Kralj Milutin umire poslednjeg dana oktobra 1321. godine, čime se okončava njegova gotovo 40 godina duga vladavina.", "en": "King Milutin died on the last day of October 1321, ending his nearly 40-year-long reign." },
+      "quote": "on umire 1321. godine i na taj način se okončava njegova gotovo 40 godina duga vladavina",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-velbuzd-1330",
+      "title": { "sr": "Bitka kod Velbužda", "en": "Battle of Velbazhd" },
+      "year": 1330,
+      "yearEnd": null,
+      "placeId": "velbuzd",
+      "episodeId": "98",
+      "timestamp": "106:57",
+      "type": "battle",
+      "actors": ["Stefan Dečanski", "Bugarska"],
+      "region": "Balkan",
+      "description": { "sr": "Nakon pobede kod Velbužda, unutar godine dolazi do krize između Stefana Dečanskog i njegovog sina Dušana, koji je vodio pohod za priznavanje veće vlasti.", "en": "After the victory at Velbazhd, a crisis broke out within the year between Stefan Dečanski and his son Dušan, who led a campaign to gain greater power." },
+      "quote": "praktično nakon velbužda dolazi do krize",
+      "confidence": "medium"
+    },
+    {
+      "id": "pomirenje-decanski-dusan-skadar-1331",
+      "title": { "sr": "Pomirenje Stefana Dečanskog i Dušana kod Skadra", "en": "Reconciliation of Stefan Dečanski and Dušan near Shkodër" },
+      "year": 1331,
+      "yearEnd": null,
+      "placeId": "skadar",
+      "episodeId": "98",
+      "timestamp": "107:57",
+      "type": "other",
+      "actors": ["Stefan Dečanski", "Stefan Dušan"],
+      "region": "Balkan",
+      "description": { "sr": "Aprila 1331. godine, nakon nekoliko meseci sukoba u kome se Dušan povukao u Skadar, dolazi do uslovnog pomirenja između oca i sina — Dušan priznaje Stefanu vlast, a Stefan sinu ostavlja Zetu na upravljanje.", "en": "In April 1331, after several months of conflict in which Dušan had withdrawn to Shkodër, a conditional reconciliation was reached between father and son — Dušan acknowledged Stefan's authority, while Stefan left Zeta for his son to govern." },
+      "quote": "da bi u aprilu 1331. godine došlo do nekakvog pomirenja uslovnog između oca i sina",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "galipolje", "name": { "sr": "Galipolje", "en": "Gallipoli" }, "aliases": ["Galipolja"], "lat": 40.4131, "lng": 26.6975, "kind": "battle-site" },
+    { "id": "nis", "name": { "sr": "Niš", "en": "Niš" }, "aliases": ["Niša"], "lat": 43.3209, "lng": 21.8958, "kind": "city" },
+    { "id": "kosovo-polje", "name": { "sr": "Kosovo polje", "en": "Kosovo Field" }, "aliases": ["Kosovu"], "lat": 42.7169, "lng": 21.0334, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "turci-prelaze-evropa-galipolje-1354",
+      "title": { "sr": "Turci prelaze na teritoriju Evrope osvajanjem Galipolja", "en": "The Turks cross into Europe by taking Gallipoli" },
+      "year": 1354,
+      "yearEnd": null,
+      "placeId": "galipolje",
+      "episodeId": "95",
+      "timestamp": "08:01",
+      "type": "conquest",
+      "actors": ["Osmansko carstvo"],
+      "region": "Osmansko carstvo",
+      "description": { "sr": "1354. godine Turci prvi put prelaze na teritoriju Evrope, osvajajući Galipolje, čime počinje osmanska ekspanzija na Balkan.", "en": "In 1354, the Turks crossed into European territory for the first time, capturing Gallipoli, marking the beginning of Ottoman expansion into the Balkans." },
+      "quote": "Turci prelaze na teritoriju Evrope 1354. godine, kada osvaju Galipolje.",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-nisa-1386",
+      "title": { "sr": "Pad Niša uoči Boja na Kosovu", "en": "Fall of Niš ahead of the Battle of Kosovo" },
+      "year": 1386,
+      "yearEnd": null,
+      "placeId": "nis",
+      "episodeId": "95",
+      "timestamp": "51:14",
+      "type": "conquest",
+      "actors": ["Sultan Murat", "Osmansko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "1386. godine, prema izvorima, Niš pada u turske ruke, iako nemamo potvrdu o klasičnoj bitci za grad, u periodu pre Boja na Kosovu.", "en": "In 1386, according to the sources, Niš fell into Turkish hands, although there is no confirmation of a classic battle for the city, in the period before the Battle of Kosovo." },
+      "quote": "dozi do pada Niša, 1386. godine",
+      "confidence": "medium"
+    },
+    {
+      "id": "boj-na-kosovu-1389-specijal",
+      "title": { "sr": "Boj na Kosovu (Vidovdan)", "en": "Battle of Kosovo (Vidovdan)" },
+      "year": 1389,
+      "yearEnd": null,
+      "placeId": "kosovo-polje",
+      "episodeId": "95",
+      "timestamp": "65:58",
+      "type": "battle",
+      "actors": ["Knez Lazar", "Sultan Murat", "Osmansko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "Bitka na Kosovu odigrala se 15. juna 1389. godine po julijanskom kalendaru, na Vidovdan, u jednoj od najznačajnijih i najmitologizovanijih bitaka srpske istorije.", "en": "The Battle of Kosovo took place on June 15, 1389, according to the Julian calendar, on Vidovdan (St. Vitus Day), one of the most significant and most mythologized battles in Serbian history." },
+      "quote": "15. juna 1389. godine, na Vidovdan.",
+      "confidence": "high"
+    }
+  ]
+}
