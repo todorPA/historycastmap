@@ -817,11 +817,10 @@ body {
   font: inherit;
   font-size: var(--step--1);
   line-height: 1;
-  padding: 4px 8px;
-  margin-left: 10px;
-  border: 1px solid var(--line);
+  padding: 5px 9px;
+  border: 1px solid var(--ink-500);
   border-radius: var(--r-sm);
-  background: var(--sidebar-2);
+  background: var(--ink-700);
   color: var(--muted);
   cursor: pointer;
 }
@@ -845,9 +844,10 @@ body {
   color: var(--muted);
 }
 
-/* Pushed right as a group with the playback controls, so cause sits next to effect. */
-.timeline__play {
-  margin-left: auto;
+.timeline__tools {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
 }
 
 .timeline__range {
@@ -855,10 +855,12 @@ body {
   color: var(--text);
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
-  /* Reserve the widest reading ("1200. p.n.e. – 2006") so the header does not reflow as
-     the digits climb during playback. */
-  min-width: 15ch;
+  /* Reserve the widest reading ("1200. p.n.e. - 2006") so the row does not reflow as the
+     digits climb during playback, and set it off from the controls: a readout is output,
+     not another thing to press. */
+  min-width: 19ch;
   text-align: right;
+  margin-left: var(--sp-2);
 }
 
 .timeline__canvas {
@@ -1030,9 +1032,12 @@ body {
 
 /* ---------- timeline playback ----------
    The axis is the transport: it already shows position and takes a drag, so nothing here
-   repeats it. Two small controls only, in the same vernacular as the rest of the chrome. */
-.timeline__play,
-.timeline__speed {
+   repeats it.
+
+   Only the action carries a border. Speed is a setting *for* that action, not a peer of it,
+   and giving both the same box made them read as two equal buttons sitting beside a third
+   numeric string that was not a button at all. */
+.timeline__play {
   font: inherit;
   font-size: var(--step--1);
   line-height: 1;
@@ -1052,8 +1057,7 @@ body {
   min-width: 6.5ch;
 }
 
-.timeline__play:hover,
-.timeline__speed:hover {
+.timeline__play:hover {
   background: var(--ink-600);
 }
 
@@ -1078,7 +1082,21 @@ body {
 }
 
 .timeline__speed {
+  font: inherit;
+  font-size: var(--step--2);
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
+  line-height: 1;
+  padding: 4px 2px;
+  border: 0;
+  background: none;
   color: var(--muted);
+  cursor: pointer;
+  /* Reserved so cycling 40 -> 120 -> 400 never nudges the readout beside it. */
+  min-width: 9ch;
+  text-align: left;
+}
+
+.timeline__speed:hover {
+  color: var(--text);
 }

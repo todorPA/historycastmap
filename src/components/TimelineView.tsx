@@ -380,35 +380,42 @@ export default function TimelineView() {
     <section className={`timeline timeline--${size}`}>
       <header className="timeline__head" onDoubleClick={cycleSize}>
         <h2>{t(lang, 'timeline')}</h2>
-        <button
-          type="button"
-          className={`timeline__play${playback.isPlaying ? ' is-playing' : ''}`}
-          onClick={playback.toggle}
-          title={t(lang, 'playHint')}
-          aria-pressed={playback.isPlaying}
-        >
-          {t(lang, playback.isPlaying ? 'pause' : 'play')}
-        </button>
-        <button
-          type="button"
-          className="timeline__speed"
-          onClick={playback.cycleSpeed}
-          title={t(lang, 'speedHint')}
-        >
-          {playback.speed} {t(lang, 'perSecond')}
-        </button>
-        {/* Mono and tabular, so the digits climb in place instead of jittering. While
-            playback runs this is the progress display; nothing else is needed. */}
-        <span className="timeline__range">{formatYearRange(range.from, range.to, lang)}</span>
-        <button
-          type="button"
-          className="timeline__resize"
-          onClick={cycleSize}
-          title={t(lang, 'resizeTimeline')}
-          aria-label={t(lang, 'resizeTimeline')}
-        >
-          {sizeLabel}
-        </button>
+        {/* Action, its setting, the readout it drives, and the panel control: four different
+            kinds of thing, spaced and weighted so they do not read as four peer buttons. */}
+        <div className="timeline__tools">
+          <button
+            type="button"
+            className={`timeline__play${playback.isPlaying ? ' is-playing' : ''}`}
+            onClick={playback.toggle}
+            title={t(lang, 'playHint')}
+            aria-pressed={playback.isPlaying}
+          >
+            {t(lang, playback.isPlaying ? 'pause' : 'play')}
+          </button>
+
+          <button
+            type="button"
+            className="timeline__speed"
+            onClick={playback.cycleSpeed}
+            title={t(lang, 'speedHint')}
+          >
+            {playback.speed} {t(lang, 'perSecond')}
+          </button>
+
+          {/* Mono and tabular in a reserved width, so the digits climb in place during
+              playback instead of shoving the controls around. */}
+          <span className="timeline__range">{formatYearRange(range.from, range.to, lang)}</span>
+
+          <button
+            type="button"
+            className="timeline__resize"
+            onClick={cycleSize}
+            title={t(lang, 'resizeTimeline')}
+            aria-label={t(lang, 'resizeTimeline')}
+          >
+            {sizeLabel}
+          </button>
+        </div>
       </header>
       <div className="timeline__canvas" ref={containerRef} />
     </section>
