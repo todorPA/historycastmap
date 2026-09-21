@@ -1,8 +1,8 @@
 # HistoryCast Map: redesign, September 2026
 
 Status of the visual redesign carried out on branch `feat/stress-ready-map`,
-commits `c4f69b1`..`dca11f9`, plus the B1 timeline fix in `7f4ff68`. Written in
-English to match the code comments; the older `DESIGN-BRIEF.md` (Serbian)
+commits `c4f69b1`..`dca11f9`, the B1 timeline fix in `7f4ff68`, and a second design pass
+in `250bdc0`..`3a2d751`. Written in English to match the code comments; the older `DESIGN-BRIEF.md` (Serbian)
 describes the pre-redesign state and is still the reference for *what the product
 is*.
 
@@ -21,7 +21,7 @@ The project is two products with one token layer.
 | Kind | dense cartographic product UI | editorial archive page |
 | Audience | listeners placing the podcast in space | first-time visitors |
 | Variance / motion / density | 3 / 3 / 7 | 7 / 5 / 3 |
-| Display face | none (sans only) | EB Garamond |
+| Display face | none (sans only) | Literata |
 
 The explorer is a cockpit, so it wants symmetry and density, not asymmetric
 drama. The landing page is a cover. Both are dark, so the theme holds across the
@@ -118,7 +118,7 @@ re-running the optimisation will quietly reintroduce a collision.
 ## 5. Type
 
 **IBM Plex Sans + IBM Plex Mono**, self-hosted, for the explorer and landing body.
-**EB Garamond** for landing display only.
+**Literata** for landing display only (was EB Garamond; see §10).
 
 Chosen on a constraint verified in the data rather than on taste: the dataset is
 Serbian Latin with the full `č ć š ž đ` set plus a few Cyrillic strings. That
@@ -128,9 +128,8 @@ Plex faces ship both subsets under OFL. The mono sibling supplies real tabular
 numerals for years, BC/AD and `MM:SS` timestamps instead of borrowing digits
 from a sans.
 
-Serif is wrong for the explorer chrome and is not used there. On the landing page
-the brief is genuinely publication/heritage, and EB Garamond carries both
-required subsets.
+Serif is wrong for the explorer chrome and is not used there. On the landing page the
+brief is genuinely publication/heritage, and Literata carries both required subsets.
 
 Fonts are **not a build dependency**. `npm run fonts` fetches nine woff2 files
 into `public/fonts/` (gitignored, split latin-ext / cyrillic so a reader who never
@@ -252,13 +251,21 @@ items inside the viewport, axis labelled. Reset-to-full-period, timeline item
 selection syncing to the map popup, the size cycle and the episode filter all still
 work, with no runtime exceptions.
 
-### B2. Sample dataset uses region names outside the canonical twelve
+### B2. Sample dataset uses region names outside the canonical twelve. MITIGATED in `250bdc0`
 `geo-events.sample.json` contains `Vizantija`, `Srpsko carstvo`, `Srbija`,
 `Skandinavski svet` and `Britanija`, none of which are keys in `REGION_COLORS`,
 so those markers fall back to `UNKNOWN_REGION_COLOR` grey. The full dataset is
-clean (validator reports exactly 12 regions). Cosmetic, but the sample is the
-default dataset, so a first-time visitor to `/app.html` sees more grey than they
-should.
+clean (validator reports exactly 12 regions).
+
+**I called this cosmetic. Seeing it at full width, that was wrong.** Five of the eight
+legend rows rendered grey, most markers on the map were grey, and two timeline groups
+looked disabled. The entire achromatic-chrome argument exists so that region colour can
+carry meaning, and on the one view most people see, that argument was invisible. It read
+as a broken feature rather than as missing data.
+
+Mitigated by making the full set the default (`DEFAULT_DATASET`), not by touching the
+data. The sample is still at `?data=sample` and still shows grey there. Regenerating it,
+or bringing its regions into the closed list, remains an upstream data job (CLAUDE.md).
 
 ### B3. Five places in the full dataset have no events
 Reported as a warning by `validate:full`: `rems-remis`, `herson-krim`,
@@ -274,10 +281,13 @@ four commits were made with `-c commit.gpgsign=false`. To sign before pushing:
 git rebase --exec 'git commit --amend --no-edit -S' HEAD~4
 ```
 
-### B5. Explorer JS bundle is 964 kB (287 kB gzipped)
-Pre-existing, flagged by Vite on every build. `vis-timeline` and `leaflet`
-dominate. Not touched here; would want `manualChunks` or a dynamic import of the
-timeline.
+### B5. Explorer JS bundle, 964 kB (287 kB gzipped). PARTLY IMPROVED in `3a2d751`
+Pre-existing, flagged by Vite on every build. `vis-timeline` and `leaflet` dominate.
+
+Dynamically importing Leaflet for the landing hero split it into its own chunk, which
+both pages now share, taking the explorer bundle to 812 kB (242 kB gzipped). Not a
+deliberate fix and still over the warning threshold; `vis-timeline` is the remaining
+bulk and would want the same treatment.
 
 ---
 
@@ -294,25 +304,25 @@ timeline.
   mark it historical and point at this document.
 
 ### Follow-up work, in rough priority order
-1. Reconcile **B2**: either extend the sample data to canonical region names or
-   regenerate the sample from the full dataset. Now the top item, because with B1
-   fixed the sample dataset is what a first-time visitor actually sees.
-2. **Screenshots will go stale.** `public/img/*.jpg` were captured by hand from a
-   running dev server. Worth a small script so they can be regenerated after any
-   future visual change.
-3. **Landing page i18n.** The explorer is bilingual; the landing page is Serbian
-   only. An EN variant needs either a second static page or a small amount of
-   shared vocabulary.
-4. **Empty and error states on the landing page** are not applicable, but the
-   explorer's loading and error screens were only retokened, not redesigned.
-   A skeleton matching the final layout would be better than the current
-   centred text.
-5. **`prefers-reduced-transparency`** fallback for the `backdrop-filter` panels
-   (legend, basemap switcher, nav).
-6. **Lighthouse pass.** Core Web Vitals were reasoned about (fonts preloaded via
-   `swap`, images carry intrinsic `width`/`height` so CLS is bounded, hero image
-   is `fetchpriority="high"`) but not measured.
-7. **B5** bundle splitting.
+1. **Regenerate the sample dataset** so its regions sit inside the closed twelve.
+   B2 is mitigated rather than fixed: `?data=sample` still renders grey. Upstream job.
+2. **Landing page i18n.** The explorer is bilingual; the landing page is Serbian only,
+   and the hero map's tooltips and popups hardcode `.sr`. An EN variant needs either a
+   second static page or a small amount of shared vocabulary.
+3. **`vis-timeline` is the remaining bundle bulk** now that Leaflet is split out. Same
+   dynamic-import treatment would finish B5.
+4. **The explorer's loading and error screens** were retokened, not redesigned. A skeleton
+   matching the final layout would beat the current centred text.
+5. **`prefers-reduced-transparency`** fallback for the `backdrop-filter` panels (legend,
+   basemap switcher, nav).
+6. **Lighthouse pass.** Core Web Vitals were reasoned about (self-hosted fonts with
+   `swap`, intrinsic `width`/`height` on images, the hero map deferred behind a dynamic
+   import) but never measured.
+7. **`public/img/timeline.jpg` will go stale.** It is the last hand-captured screenshot.
+   Worth a small script now that there is only one.
+8. **The hero map fetches the whole `geo-events.json`** to draw 70 markers. Fine at the
+   current size, wasteful once the dataset reaches 181 episodes; a small precomputed
+   subset would be better.
 
 ### Explicitly not done
 - Phase 2 OHM historical basemap. Untouched; the basemap switcher and its config
@@ -320,3 +330,68 @@ timeline.
 - Any change to the data model, `geo-events.schema.json`, URL parameter names,
   route slugs the explorer already answered to, or the information architecture
   of the sidebar.
+
+---
+
+## 10. Second design pass (`250bdc0`..`3a2d751`)
+
+A second critique, run against a stricter calibration list and against full-width
+screenshots of the built pages. It found five defaults in the delivered work and, more
+usefully, one problem larger than any of them.
+
+### What the screenshots showed that the code review could not
+
+The grey-legend problem (B2). At 1440px I had judged it cosmetic. At full width it was
+obvious that the default view undermined the single best idea in the redesign. Fixed
+first, and it is the change most worth keeping.
+
+Also only visible at size: the hero screenshot was illegible at its real column width,
+`.section`'s fixed padding left dead bands between short sections, the three steps were
+the feature-card grid flattened, the twelve region pills duplicated the screenshot beside
+them, the timeline strip was unreadable in a half column, and the closing CTA was the one
+centred block on a left-aligned page.
+
+### The five defaults
+
+1. **Single-word italic in the hero headline.** Replaced with a plainer line that needs no
+   emphasis. Worth recording why it shipped: the earlier pre-flight *passed* it, because
+   that rulebook explicitly endorses same-family italic as the correct way to emphasise a
+   word. The two rulebooks conflict, and the stricter one says the emphasis should not be
+   there at all. I reported a clean pass without noticing.
+2. **Twelve scroll reveals.** Replaced with one staged hero entrance. The previous
+   version's virtues were real but were about implementation (no scroll listener, a `.js`
+   guard, reduced-motion) rather than about whether the motion was any good. Those are
+   different claims and the earlier write-up conflated them.
+3. **A monospace, tracked-out, all-caps wordmark.** Template chrome rather than a mark.
+   Now the product's name in the display face. The explorer's six uppercase labels were
+   also flagged and then *withdrawn*: at real size they read as functional section headers
+   in a dense tool, not as decoration.
+4. **EB Garamond.** The glyph-coverage constraint was real, but "history, therefore
+   old-style serif" is the reflex and Garamond is its safest instance. Literata is a
+   screen-first cut with sturdier numerals and the same subset coverage.
+5. **A screenshot where the product would do.** The hero is now a live Leaflet map: real
+   events, real coordinates, region colour, each openable in the explorer. Leaflet is
+   dynamically imported, so the landing page ships about 3kB of its own JavaScript and the
+   map arrives after first paint.
+
+### Consequences worth knowing
+
+- Splitting Leaflet into a shared async chunk took the explorer bundle from 964kB to
+  812kB (287kB to 242kB gzipped). Unplanned, and only a partial answer to B5.
+- The landing page now has two source modules (`src/landing/`) where it previously had an
+  inline script.
+- `public/img/` is down to one image. `explorer.jpg` is replaced by the live map;
+  `regions.jpg` is replaced by real markup, because screenshotting a legend the page can
+  render was the wrong instinct.
+- Basemap tiles in the hero are desaturated, so the region hues they exist to carry stay
+  dominant.
+
+### A debugging note
+
+The live map appeared broken three times before it worked, and only the third diagnosis
+was right. The first two fixes (a dedicated sized child for Leaflet; a `ResizeObserver`
+calling `invalidateSize`) were symptom-chasing. The actual cause was that
+`leaflet/dist/leaflet.css` was never imported on the landing page, so `.leaflet-pane` was
+`position: static`, the tile grid laid out in normal flow, and markers were projected
+3500px below the map. The sized child is still a genuine improvement and was kept; the
+lesson is the same one B1 taught, which is to measure before patching.
