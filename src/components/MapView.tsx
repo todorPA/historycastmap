@@ -127,7 +127,8 @@ function groupEvents(
 export default function MapView() {
   const { placesById, data } = useData();
   const visible = useVisibleEvents();
-  const { lang, basemapId, activeEpisodeId, timelineSize } = useFilters();
+  const { lang, basemapId, activeEpisodeId, timelineSize, activeRegions, activeTypes } =
+    useFilters();
   const basemap = getBasemap(basemapId);
 
   const positioned = useMemo(() => groupEvents(visible, placesById), [visible, placesById]);
@@ -162,7 +163,13 @@ export default function MapView() {
 
       <Legend />
       <BasemapSwitcher />
-      {positioned.length === 0 && <div className="map-empty">{t(lang, 'noEvents')}</div>}
+      {/* Name the actual cause: blaming the period when a facet filter emptied the map sends
+          the reader to the wrong control. */}
+      {positioned.length === 0 && (
+        <div className="map-empty">
+          {t(lang, activeRegions.length > 0 || activeTypes.length > 0 ? 'noEventsFilters' : 'noEvents')}
+        </div>
+      )}
     </div>
   );
 }

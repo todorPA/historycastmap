@@ -944,3 +944,14 @@ body {
     bottom: 10px;
   }
 }
+
+/* A facet that is active but out of scope for the current episode or range. Shown rather
+   than hidden, so an empty map has a visible, removable cause (see FacetFilters). */
+.chip--btn.is-empty {
+  opacity: 0.55;
+}
+
+.chip--btn.is-active.is-empty {
+  opacity: 1;
+  border-style: dashed;
+}
