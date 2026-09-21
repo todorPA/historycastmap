@@ -149,7 +149,26 @@ export default function TimelineView() {
       maxHeight: maxHeightPx(size, window.innerHeight),
       verticalScroll: true,
       margin: { item: SIZE_MARGIN[size] },
-      orientation: { axis: 'top' },
+      /**
+       * Declared, not detected, and load-bearing. When `rtl` is absent the vis constructor
+       * hides its own root (`visibility: hidden`) to sniff text direction off the DOM, and
+       * only restores it from the `changed` handler, guarded by
+       * `initialRangeChangeDone || (!options.start && !options.end)`. We pass start/end as
+       * Dates, which are always truthy, so that second escape can never fire for us — and
+       * when the initial window already equals the start/end we asked for, nothing changes
+       * the range, no `rangechanged` is emitted, and the panel stays invisible for good with
+       * a fully correct layout underneath. Saying LTR outright skips that branch entirely.
+       * The app has no RTL support to detect, so this is honest rather than a workaround.
+       */
+      rtl: false,
+      /**
+       * Both keys, deliberately. Passing only `axis` leaves `orientation.item` undefined,
+       * and vis treats anything that isn't 'top' as bottom-anchored: on every increase in
+       * content height `_updateScrollTop` shifts scrollTop by the full delta, to hold the
+       * items still against a bottom axis. With groups taller than the panel that opened the
+       * timeline scrolled to the end of the stack, on its last regions instead of its first.
+       */
+      orientation: { axis: 'top', item: 'top' },
       selectable: true,
       multiselect: false,
       showCurrentTime: false,
