@@ -1,9 +1,10 @@
 # HistoryCast Map: redesign, September 2026
 
 Status of the visual redesign carried out on branch `feat/stress-ready-map`,
-commits `c4f69b1`..`dca11f9`. Written in English to match the code comments; the
-older `DESIGN-BRIEF.md` (Serbian) describes the pre-redesign state and is still
-the reference for *what the product is*.
+commits `c4f69b1`..`dca11f9`, plus the B1 timeline fix in `7f4ff68`. Written in
+English to match the code comments; the older `DESIGN-BRIEF.md` (Serbian)
+describes the pre-redesign state and is still the reference for *what the product
+is*.
 
 Two deliverables were requested: an overhaul of the explorer's visual language,
 and a landing page in front of it, with a new palette and type system proposed
@@ -204,15 +205,52 @@ Evidence, not assertions:
 
 ## 8. Bugs noticed
 
-### B1. Timeline renders empty when a year range arrives in the URL
+### B1. Timeline rendered invisible, not empty. FIXED in `7f4ff68`
 **Pre-existing; not introduced by this work.** Confirmed by stashing the entire
 redesign and reproducing on a clean `65f7738` checkout.
 
-Loading `?data=full&from=700&to=1500` leaves the timeline panel body blank. The
-map, the legend, the facet counts and the "86 of 456" stat all update correctly,
-so the shared time state is right and the fault is in `TimelineView`'s handling of
-an initial range supplied at mount. Left alone as out of scope for a visual
-redesign; it wants its own fix.
+**Reported as:** loading `?data=full&from=700&to=1500` leaves the timeline panel
+body blank while the map, legend, facet counts and the "86 of 456" stat all update
+correctly.
+
+**Two things about that description turned out to be wrong.** The panel was never
+empty: items, groups and axis were all in the DOM with correct geometry, and the
+entire vis root was sitting at `visibility: hidden`. And it was not specific to a
+URL range. The default sample dataset was invisible too. The full dataset was
+visible only by luck, which is what made it look dataset-dependent.
+
+**Root cause.** vis hides its own root in the constructor whenever `options.rtl` is
+absent, so it can sniff text direction off the DOM without a flash, and restores it
+from the `changed` handler behind this guard:
+
+```js
+!initialDrawDone && (initialRangeChangeDone || (!options.start && !options.end) || rollingMode)
+```
+
+We pass `start`/`end` as `Date` objects, which are always truthy, so the second
+escape can never fire. That leaves `initialRangeChangeDone`, set only when a
+`rangechanged` event actually fires. When the initial window already equals the
+start/end requested, nothing changes the range, no event is emitted, and the
+timeline stays invisible permanently. The full dataset happened to have its window
+adjusted on mount, emitted `rangechanged`, and became visible by accident.
+
+**Fix.** Declare `rtl: false` so the constructor never enters that branch. The app
+has no RTL support to detect, so stating the direction is honest rather than a
+workaround.
+
+**Second defect found while measuring the first.** `orientation` was passed as
+`{ axis: 'top' }`, leaving `orientation.item` undefined. vis treats anything that
+isn't `'top'` as bottom-anchored and, in `_updateScrollTop`, shifts scrollTop by the
+full delta on every increase in content height to hold items still against a bottom
+axis. With groups taller than the panel this opened the timeline scrolled to the end
+of the stack: measured 4253px down, showing its last regions instead of Balkan. Now
+passes both keys.
+
+**Verified** across five mount states (sample and full, each with and without a URL
+range, plus a narrow range): root visible, internal scroll at the top of the stack,
+items inside the viewport, axis labelled. Reset-to-full-period, timeline item
+selection syncing to the map popup, the size cycle and the episode filter all still
+work, with no runtime exceptions.
 
 ### B2. Sample dataset uses region names outside the canonical twelve
 `geo-events.sample.json` contains `Vizantija`, `Srpsko carstvo`, `Srbija`,
@@ -256,25 +294,25 @@ timeline.
   mark it historical and point at this document.
 
 ### Follow-up work, in rough priority order
-1. Fix **B1** (timeline empty on URL range). Highest user impact of anything here.
-2. Reconcile **B2**: either extend the sample data to canonical region names or
-   regenerate the sample from the full dataset.
-3. **Screenshots will go stale.** `public/img/*.jpg` were captured by hand from a
+1. Reconcile **B2**: either extend the sample data to canonical region names or
+   regenerate the sample from the full dataset. Now the top item, because with B1
+   fixed the sample dataset is what a first-time visitor actually sees.
+2. **Screenshots will go stale.** `public/img/*.jpg` were captured by hand from a
    running dev server. Worth a small script so they can be regenerated after any
    future visual change.
-4. **Landing page i18n.** The explorer is bilingual; the landing page is Serbian
+3. **Landing page i18n.** The explorer is bilingual; the landing page is Serbian
    only. An EN variant needs either a second static page or a small amount of
    shared vocabulary.
-5. **Empty and error states on the landing page** are not applicable, but the
+4. **Empty and error states on the landing page** are not applicable, but the
    explorer's loading and error screens were only retokened, not redesigned.
    A skeleton matching the final layout would be better than the current
    centred text.
-6. **`prefers-reduced-transparency`** fallback for the `backdrop-filter` panels
+5. **`prefers-reduced-transparency`** fallback for the `backdrop-filter` panels
    (legend, basemap switcher, nav).
-7. **Lighthouse pass.** Core Web Vitals were reasoned about (fonts preloaded via
+6. **Lighthouse pass.** Core Web Vitals were reasoned about (fonts preloaded via
    `swap`, images carry intrinsic `width`/`height` so CLS is bounded, hero image
    is `fetchpriority="high"`) but not measured.
-8. **B5** bundle splitting.
+7. **B5** bundle splitting.
 
 ### Explicitly not done
 - Phase 2 OHM historical basemap. Untouched; the basemap switcher and its config
