@@ -63,7 +63,11 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
                 }
               }}
               pathOptions={{
-                color: selected ? '#ffffff' : color,
+                // Every dot carries a dark ring, so the fill is free to be whatever the
+                // region palette needs it to be and still reads on light tiles
+                // (config/regions.ts). Selection takes the ring to paper-white: the chrome
+                // spends no hue, so a selected marker can't be read as a region.
+                color: selected ? '#f2f5f8' : 'rgba(18, 23, 29, 0.85)',
                 weight: selected ? 3 : low ? 2 : 1.5,
                 dashArray: low ? '3 3' : undefined,
                 fillColor: color,
@@ -98,7 +102,7 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
             radius={clusterRadius(count)}
             className="cluster"
             pathOptions={{
-              color: '#ffffff',
+              color: 'rgba(18, 23, 29, 0.85)',
               weight: 2,
               fillColor: cluster.color,
               fillOpacity: 0.85,

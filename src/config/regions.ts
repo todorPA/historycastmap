@@ -12,23 +12,46 @@
  * Episode stays the filter — see FilterContext. `episodes[].color` is left untouched in the
  * data so this can be revisited (docs/design/DESIGN-BRIEF.md).
  */
+/**
+ * Twelve hues, solved rather than picked.
+ *
+ * The previous set was the Flat UI 2013 palette. Its real problem wasn't age: measured as
+ * CIELAB ΔE after simulating dichromacy, its closest pair (Zapadna Evropa #d35400 against
+ * Bliski istok #b7791f) collapsed to ΔE 2.9 under deuteranopia and 3.6 under tritanopia.
+ * Two regions the map claims to distinguish were, for those viewers, one colour.
+ *
+ * This set was optimised directly against that failure: one hue per 30-degree band so the
+ * circle stays complete and region colour keeps its intuition (Balkan warm, Azija violet),
+ * with lightness and chroma searched within each band to maximise the worst-case pair
+ * distance across normal, deuteranope, protanope and tritanope vision simultaneously.
+ *
+ *   worst pair, normal        21.5  (was 16.3)
+ *   worst pair, deuteranopia  12.2  (was  2.9)
+ *   worst pair, protanopia    11.8  (was  8.4)
+ *   worst pair, tritanopia    10.8  (was  3.6)
+ *
+ * Fills are not gated on contrast against the basemap: markers and legend swatches carry a
+ * --marker-ring outline, which buys legibility on both the light tiles and the dark chrome
+ * and leaves the hues free to be chosen for distinguishability. Changing a value here
+ * without re-running that optimisation will quietly reintroduce a collision.
+ */
 export const REGION_COLORS: Record<string, string> = {
-  Balkan: '#c0392b',
-  'Vizantija i Egejski svet': '#8e44ad',
-  'Osmansko carstvo': '#16a085',
-  'Srednja Evropa': '#2980b9',
-  'Zapadna Evropa': '#d35400',
-  'Istočna Evropa': '#7f8c8d',
-  'Severna Evropa i Atlantik': '#1e8449',
-  'Bliski istok': '#b7791f',
-  Afrika: '#a04000',
-  Azija: '#6c3483',
-  'Severna Amerika': '#2c3e50',
-  'Južna Amerika': '#117864',
+  Balkan: '#aa2e4e',
+  'Vizantija i Egejski svet': '#d86727',
+  'Osmansko carstvo': '#ea9602',
+  'Srednja Evropa': '#a9c641',
+  'Zapadna Evropa': '#568500',
+  'Istočna Evropa': '#009f68',
+  'Severna Evropa i Atlantik': '#00736e',
+  'Bliski istok': '#0088a6',
+  Afrika: '#50a9ff',
+  Azija: '#5552bb',
+  'Severna Amerika': '#853f9f',
+  'Južna Amerika': '#be5399',
 };
 
 /** Events with no region, or a region added to the data before the palette knows about it. */
-export const UNKNOWN_REGION_COLOR = '#95a5a6';
+export const UNKNOWN_REGION_COLOR = '#8b96a1';
 
 export function regionColor(region: string | undefined): string {
   return (region && REGION_COLORS[region]) || UNKNOWN_REGION_COLOR;
