@@ -483,20 +483,51 @@ fill out until the label disappeared. It is the dashed border alone now.
 - **The hero map's deep links used `?event=`** where the explorer's parameter is `e`. Every
   one of those links opened the app with nothing selected.
 
-### B6. Deep-link popup does not auto-open (UNRESOLVED)
+### B6. Selection did not reach the map. FIXED in `4010705`
 
-`?ep=43&e=<id>` selects the event correctly: the episode filters, the map zooms, the
-timeline item takes its selection ring, and the marker renders with the thick selected
-ring. The popup does not open. Clicking the same marker opens it immediately, so only the
-automatic path is affected.
+Filed here as unresolved after three failed attempts, with a note that it might be an
+artefact of my headless harness. **That was wrong on both counts: it was real, and it was
+reproducible.** It was dev-only, which is why it looked like a harness problem, and Milan
+hit it in normal use before I understood it.
 
-I tried three fixes and none of them was the cause: a frame-retry for late marker
-registration, waiting on `getPopup()` as well as the marker, and the StrictMode ref
-identity fix above. Instrumentation showed the final attempt running with marker, popup and
-map all present, and `openPopup()` still producing nothing in the DOM.
+Reported by Milan as two separate things, which turned out to be one:
 
-Stopped there rather than attempt a fourth speculative fix. Two things to know: the ref
-identity fix is a genuine latent-bug fix and was kept regardless, and Milan's own
-screenshot shows the popup open on this exact URL in a real browser, so this may be
-specific to the headless harness rather than to the app. It needs reproducing in a real
-browser before anyone spends more on it.
+- "the timeline is not clickable on first load, it only works after I pick an episode"
+- "clicking a timeline event does not navigate to the map point"
+
+The click was never the problem. Selection fired, the timeline item took its ring, the URL
+updated. The map had nothing to show, for two reasons that both scale with how many events
+are on screen, which is exactly why picking an episode appeared to fix it:
+
+1. **The selected dot was swallowed by a cluster.** Only single-member clusters register a
+   marker ref, so a selection inside a count badge had no marker of its own: nothing to
+   style as selected and no popup to open. With all 456 events visible almost everything is
+   clustered; with one episode selected there are three dots. `clusterByPixel` now takes a
+   `keepSeparate` predicate and the selected dot never joins a cluster.
+
+2. **The popup opened and closed again after ~200ms.** Traced through Leaflet's
+   `popupclose` to `onRemove`: StrictMode remounts every marker once in development, which
+   removes the layer and takes the open popup with it. The open lived in an effect keyed on
+   `[selectedEventId, clusters]`, neither of which changes on a bare remount, so it never
+   reopened. The marker's ref callback now reopens on mount.
+
+The production build never had the second problem, which is the detail that misled me:
+`npm run preview` behaved correctly while `npm run dev` did not. Comparing the two builds
+was what finally separated the two causes, after three hypotheses (frame-retry for late
+registration, waiting on `getPopup()`, and the StrictMode ref-identity fix) had each failed.
+
+Two process notes worth keeping. Stopping after three failures was right, but filing it as
+"probably the harness" was not: it discouraged the one cheap experiment (dev versus
+production) that would have cracked it. And the ref-identity fix from that round was kept
+because it is a genuine latent-bug fix, independent of this.
+
+### B7. An active filter could be invisible. FIXED in `f53b3e2`
+
+From `?ep=47&r=Bliski+istok`: episode 47 is entirely Azija, so the Bliski istok filter
+matched nothing and the map emptied with no visible cause. Facet chips were built only from
+regions that still had a count under the current episode and range, so the active filter had
+no chip: invisible, and removable only via Clear.
+
+Active facets are now always listed, at zero if that is what they are, with a dashed edge.
+The empty-state message also blamed the period when a facet was responsible; there is now a
+separate string for the filter case.
