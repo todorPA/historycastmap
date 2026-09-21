@@ -73,8 +73,12 @@ body {
   overflow: hidden;
 }
 
+/* Takes the space it needs and no more. With `flex: 1` the list absorbed every spare
+   pixel, so a three-episode dataset left a ~400px hole between the episodes and the
+   filters, which reads as a rendering fault. Shrink is still allowed, so a 102-episode
+   list gives way to the filters below it and scrolls instead. */
 .sidebar__section--episodes {
-  flex: 1;
+  flex: 0 1 auto;
   min-height: 0;
   overflow-y: auto;
 }

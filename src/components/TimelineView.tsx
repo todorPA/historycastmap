@@ -113,9 +113,22 @@ export default function TimelineView() {
     [data.events, activeEpisodeId, lang],
   );
 
+  /**
+   * Busiest region first, rather than whatever order the data happened to arrive in.
+   *
+   * Group membership deliberately ignores the year range (see `items` above), so a region
+   * with nothing in the current window still holds a row. Ordering by weight means those
+   * empty rows collect below the fold instead of pushing the populated ones out of a panel
+   * that is only a few hundred pixels tall.
+   */
   const groups = useMemo(() => {
-    const regions = Array.from(new Set(items.map((i) => i.group).filter(Boolean))) as string[];
-    return regions.map((r) => ({ id: r, content: r }));
+    const counts = new Map<string, number>();
+    for (const i of items) {
+      if (i.group) counts.set(i.group, (counts.get(i.group) ?? 0) + 1);
+    }
+    return [...counts.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .map(([r]) => ({ id: r, content: r }));
   }, [items]);
 
   // Latest values readable from the create-once effect without re-creating the timeline.
