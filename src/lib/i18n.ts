@@ -42,7 +42,7 @@ const dict = {
     basemapModern: 'Moderna',
     basemapHistorical: 'Istorijska',
     bordersFor: 'Granice za',
-    ohmCoverage: 'OpenHistoricalMap — pokrivenost varira po epohi i regionu',
+    ohmCoverage: 'OpenHistoricalMap: pokrivenost varira po epohi i regionu',
     eventsHere: 'događaja na ovom mestu iste godine',
     filters: 'Filteri',
     clearFilters: 'Poništi',
@@ -59,7 +59,7 @@ const dict = {
     type_reform: 'reforma',
     type_other: 'ostalo',
     ohmStaticNote:
-      'OpenHistoricalMap — ne prati godinu sa ose (rasterske pločice nemaju vremensku dimenziju)',
+      'OpenHistoricalMap: ne prati godinu sa ose (rasterske pločice nemaju vremensku dimenziju)',
   },
   en: {
     appTitle: 'HistoryCast Map',
@@ -101,7 +101,7 @@ const dict = {
     basemapModern: 'Modern',
     basemapHistorical: 'Historical',
     bordersFor: 'Borders for',
-    ohmCoverage: 'OpenHistoricalMap — coverage varies by era and region',
+    ohmCoverage: 'OpenHistoricalMap: coverage varies by era and region',
     eventsHere: 'events here in the same year',
     filters: 'Filters',
     clearFilters: 'Clear',
@@ -118,7 +118,7 @@ const dict = {
     type_reform: 'reform',
     type_other: 'other',
     ohmStaticNote:
-      'OpenHistoricalMap — does not follow the timeline year (raster tiles carry no time dimension)',
+      'OpenHistoricalMap: does not follow the timeline year (raster tiles carry no time dimension)',
   },
 } as const;
 

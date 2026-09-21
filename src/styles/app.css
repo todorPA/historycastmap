@@ -1,15 +1,8 @@
-/* HistoryCast Map — map-first layout: dark sidebar, light map. */
+/* HistoryCast Map - map-first layout: dark chrome, light map.
+   Tokens live in tokens.css; colour here is achromatic on purpose (see regions.ts). */
 
-:root {
-  --bg: #101418;
-  --sidebar: #171d24;
-  --sidebar-2: #1f2731;
-  --text: #e8edf2;
-  --muted: #98a4b3;
-  --accent: #d9a13b;
-  --line: #2a3440;
-  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
+@import './fonts.css';
+@import './tokens.css';
 
 * {
   box-sizing: border-box;
@@ -23,7 +16,7 @@ body,
 }
 
 body {
-  font-family: var(--font);
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
@@ -64,7 +57,7 @@ body {
 }
 
 .status code {
-  font-size: 12px;
+  font-size: var(--step--1);
   color: #e57373;
 }
 
@@ -101,13 +94,13 @@ body {
 
 .sidebar__title {
   margin: 0;
-  font-size: 17px;
+  font-size: var(--step-2);
   letter-spacing: 0.2px;
 }
 
 .sidebar__subtitle {
   margin: 4px 0 0;
-  font-size: 12px;
+  font-size: var(--step--1);
   color: var(--muted);
   line-height: 1.35;
 }
@@ -119,7 +112,7 @@ body {
 
 .sidebar__h2 {
   margin: 0 0 10px;
-  font-size: 11px;
+  font-size: var(--step--2);
   text-transform: uppercase;
   letter-spacing: 0.9px;
   color: var(--muted);
@@ -128,7 +121,7 @@ body {
 .sidebar__foot {
   margin-top: auto;
   padding: 14px 16px;
-  font-size: 11px;
+  font-size: var(--step--2);
   color: var(--muted);
 }
 
@@ -140,7 +133,7 @@ body {
 .lang-toggle {
   display: inline-flex;
   border: 1px solid var(--line);
-  border-radius: 7px;
+  border-radius: var(--r-md);
   overflow: hidden;
   flex: none;
 }
@@ -148,7 +141,7 @@ body {
 .lang-toggle__btn {
   padding: 5px 9px;
   font: inherit;
-  font-size: 11px;
+  font-size: var(--step--2);
   font-weight: 600;
   background: transparent;
   color: var(--muted);
@@ -157,8 +150,8 @@ body {
 }
 
 .lang-toggle__btn.is-active {
-  background: var(--accent);
-  color: #16181c;
+  background: var(--paper);
+  color: var(--ink-900);
 }
 
 /* ---------- search ---------- */
@@ -170,25 +163,56 @@ body {
   width: 100%;
   padding: 7px 9px;
   font: inherit;
-  font-size: 12px;
+  font-size: var(--step--1);
   color: var(--text);
   background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 7px;
+  border-radius: var(--r-md);
 }
 
 .search__input::placeholder {
   color: var(--muted);
 }
 
-.search__input:focus {
+.search__input:focus-visible {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--paper);
+  box-shadow: 0 0 0 3px rgba(242, 245, 248, 0.16);
+}
+
+/* One focus treatment for every interactive control, keyboard only. */
+.btn:focus-visible,
+.episode:focus-visible,
+.chip--btn:focus-visible,
+.lang-toggle__btn:focus-visible,
+.basemap__btn:focus-visible,
+.legend__more:focus-visible,
+.facets__clear:focus-visible,
+.timeline__resize:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 2px;
+}
+
+/* Tactile press, §4.5. Cheap transform only, and reduced-motion neutralises it. */
+.btn,
+.episode,
+.chip--btn {
+  transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:active,
+.chip--btn:active {
+  transform: scale(0.98);
+}
+
+.btn:hover {
+  background: var(--ink-600);
 }
 
 .episodes__empty {
   padding: 8px 9px;
-  font-size: 12px;
+  font-size: var(--step--1);
   color: var(--muted);
 }
 
@@ -209,12 +233,12 @@ body {
   width: 100%;
   padding: 8px 9px;
   font: inherit;
-  font-size: 13px;
+  font-size: var(--step-0);
   text-align: left;
   color: var(--text);
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: var(--r-md);
   cursor: pointer;
 }
 
@@ -231,10 +255,11 @@ body {
   flex: none;
   min-width: 26px;
   padding: 1px 5px;
-  border-radius: 5px;
+  border-radius: var(--r-sm);
   background: var(--bg);
   color: var(--muted);
-  font-size: 10px;
+  font-size: var(--step--2);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   text-align: center;
 }
@@ -252,8 +277,9 @@ body {
 }
 
 .episode__count {
-  font-size: 11px;
+  font-size: var(--step--2);
   color: var(--muted);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
@@ -262,7 +288,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 12px;
+  font-size: var(--step--1);
   color: var(--muted);
 }
 
@@ -274,15 +300,16 @@ body {
 
 .stats__row strong {
   color: var(--text);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
 /* ---------- buttons ---------- */
 .btn {
   font: inherit;
-  font-size: 12px;
+  font-size: var(--step--1);
   padding: 7px 11px;
-  border-radius: 7px;
+  border-radius: var(--r-md);
   border: 1px solid var(--line);
   background: var(--sidebar-2);
   color: var(--text);
@@ -295,16 +322,16 @@ body {
 }
 
 .btn--play {
-  background: #1f6feb;
-  border-color: #1f6feb;
-  color: #fff;
+  background: var(--lit-text);
+  border-color: var(--lit-text);
+  color: var(--lit-bg);
   font-weight: 600;
 }
 
 .btn--link {
   background: transparent;
-  border-color: #cfd6dd;
-  color: #33414f;
+  border-color: var(--lit-line);
+  color: var(--lit-text);
   text-decoration: none;
 }
 
@@ -322,7 +349,7 @@ body {
 
 /* Markers stay above the basemap whichever layer is active (SPEC-ohm.md acceptance). */
 .leaflet-overlay-pane {
-  z-index: 450;
+  z-index: var(--z-map-overlay);
 }
 
 .map-empty {
@@ -330,12 +357,12 @@ body {
   top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 500;
+  z-index: var(--z-map-ui);
   padding: 7px 13px;
-  border-radius: 999px;
-  background: rgba(16, 20, 24, 0.85);
+  border-radius: var(--r-pill);
+  background: rgba(15, 19, 23, 0.88);
   color: var(--text);
-  font-size: 12px;
+  font-size: var(--step--1);
 }
 
 /* ---------- facet filters ---------- */
@@ -355,7 +382,7 @@ body {
 .facets__clear {
   padding: 0;
   font: inherit;
-  font-size: 11px;
+  font-size: var(--step--2);
   background: none;
   border: 0;
   color: var(--accent);
@@ -364,7 +391,7 @@ body {
 
 .facets__label {
   margin: 8px 0 6px;
-  font-size: 10px;
+  font-size: var(--step--2);
   text-transform: uppercase;
   letter-spacing: 0.7px;
   color: var(--muted);
@@ -380,12 +407,12 @@ body {
   align-items: center;
   gap: 5px;
   font: inherit;
-  font-size: 11px;
+  font-size: var(--step--2);
   padding: 3px 8px;
   background: var(--bg);
   color: var(--muted);
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   cursor: pointer;
 }
 
@@ -404,19 +431,21 @@ body {
   height: 8px;
   border-radius: 50%;
   flex: none;
+  box-shadow: 0 0 0 1px rgba(242, 245, 248, 0.4);
 }
 
 .chip__count {
   color: var(--muted);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
-  font-size: 10px;
+  font-size: var(--step--2);
 }
 
 /* ---------- grouped popup (one place, one year) ---------- */
 .group-popup__count {
   margin: 0 0 8px;
-  font-size: 11px;
-  color: #5b6673;
+  font-size: var(--step--2);
+  color: var(--lit-muted);
 }
 
 .group-popup__list {
@@ -435,7 +464,7 @@ body {
   align-items: flex-start;
   gap: 8px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #eef1f4;
+  border-bottom: 1px solid var(--lit-raised);
 }
 
 .group-popup__item:last-child {
@@ -449,6 +478,7 @@ body {
   margin-top: 4px;
   border-radius: 50%;
   flex: none;
+  box-shadow: 0 0 0 1px rgba(22, 32, 43, 0.35);
 }
 
 .group-popup__body {
@@ -457,20 +487,21 @@ body {
 }
 
 .group-popup__name {
-  font-size: 13px;
+  font-size: var(--step-0);
   line-height: 1.3;
 }
 
 .group-popup__meta {
   margin-top: 2px;
-  font-size: 10px;
-  color: #5b6673;
+  font-size: var(--step--2);
+  color: var(--lit-muted);
 }
 
 .btn--tiny {
   flex: none;
   padding: 4px 7px;
-  font-size: 10px;
+  font-size: var(--step--2);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
@@ -487,9 +518,9 @@ body {
   background: transparent;
   box-shadow: none;
   color: #fff;
-  font-family: var(--font);
-  font-size: 11px;
-  font-weight: 700;
+  font-size: var(--step--2);
+  font-weight: 600;
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   pointer-events: none;
@@ -505,13 +536,15 @@ body {
   position: absolute;
   top: 12px;
   right: 12px;
-  z-index: 500;
+  z-index: var(--z-map-ui);
   max-width: 210px;
   padding: 8px;
-  border-radius: 9px;
-  background: rgba(16, 20, 24, 0.86);
+  border-radius: var(--r-lg);
+  background: rgba(15, 19, 23, 0.88);
   color: var(--text);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-panel);
 }
 
 .basemap__row {
@@ -523,25 +556,25 @@ body {
   flex: 1;
   padding: 5px 9px;
   font: inherit;
-  font-size: 11px;
+  font-size: var(--step--2);
   font-weight: 600;
   white-space: nowrap;
   color: var(--muted);
   background: transparent;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: var(--r-sm);
   cursor: pointer;
 }
 
 .basemap__btn.is-active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #16181c;
+  background: var(--paper);
+  border-color: var(--paper);
+  color: var(--ink-900);
 }
 
 .basemap__note {
   margin: 7px 0 0;
-  font-size: 10px;
+  font-size: var(--step--2);
   line-height: 1.35;
   color: var(--muted);
 }
@@ -555,16 +588,16 @@ body {
   position: absolute;
   bottom: 18px;
   left: 12px;
-  z-index: 500;
+  z-index: var(--z-map-ui);
   max-width: 260px;
   /* Never let the key grow tall enough to cover the map it explains. */
   max-height: calc(100% - 60px);
   overflow-y: auto;
   padding: 10px 12px;
-  border-radius: 9px;
-  background: rgba(16, 20, 24, 0.86);
+  border-radius: var(--r-lg);
+  background: rgba(15, 19, 23, 0.88);
   color: var(--text);
-  font-size: 11px;
+  font-size: var(--step--2);
   backdrop-filter: blur(4px);
 }
 
@@ -572,7 +605,7 @@ body {
   margin-top: 7px;
   padding: 0;
   font: inherit;
-  font-size: 11px;
+  font-size: var(--step--2);
   background: none;
   border: 0;
   color: var(--accent);
@@ -601,11 +634,14 @@ body {
   gap: 7px;
 }
 
+/* The ring is what lets a region hue chosen for distinguishability sit on dark chrome
+   without a contrast failure. Same device as the map markers. */
 .legend__swatch {
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   flex: none;
+  box-shadow: 0 0 0 1px rgba(242, 245, 248, 0.45);
 }
 
 .legend__label {
@@ -618,6 +654,7 @@ body {
 
 .legend__count {
   color: var(--muted);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
@@ -649,13 +686,13 @@ body {
 
 .event-popup {
   min-width: 250px;
-  color: #1d2530;
-  font-size: 13px;
+  color: var(--lit-text);
+  font-size: var(--step-0);
 }
 
 .event-popup__title {
   margin: 0 0 7px;
-  font-size: 15px;
+  font-size: var(--step-1);
   line-height: 1.25;
 }
 
@@ -664,29 +701,29 @@ body {
   flex-wrap: wrap;
   gap: 6px;
   align-items: center;
-  font-size: 11px;
-  color: #5b6673;
+  font-size: var(--step--2);
+  color: var(--lit-muted);
   margin-bottom: 8px;
 }
 
 .event-popup__year {
   font-weight: 700;
-  color: #1d2530;
+  color: var(--lit-text);
 }
 
 .badge {
   padding: 1px 7px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   border: 1px solid currentColor;
-  font-size: 10px;
+  font-size: var(--step--2);
 }
 
 .badge--high {
-  color: #1e8449;
+  color: #1a7a4a;
 }
 
 .badge--medium {
-  color: #b7791f;
+  color: #8a6410;
 }
 
 .badge--low {
@@ -704,10 +741,10 @@ body {
 
 .chip {
   padding: 2px 8px;
-  border-radius: 999px;
-  background: #eef1f4;
-  font-size: 11px;
-  color: #414d5a;
+  border-radius: var(--r-pill);
+  background: var(--lit-raised);
+  font-size: var(--step--2);
+  color: var(--lit-muted);
 }
 
 .event-popup__desc {
@@ -718,18 +755,18 @@ body {
 .event-popup__quote {
   margin: 0 0 8px;
   padding-left: 9px;
-  border-left: 2px solid #d5dbe1;
+  border-left: 2px solid var(--lit-line);
   font-style: italic;
-  font-size: 12px;
-  color: #5b6673;
+  font-size: var(--step--1);
+  color: var(--lit-muted);
 }
 
 .event-popup__episode {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 11px;
-  color: #5b6673;
+  font-size: var(--step--2);
+  color: var(--lit-muted);
   margin-bottom: 9px;
 }
 
@@ -738,6 +775,7 @@ body {
   height: 9px;
   border-radius: 50%;
   flex: none;
+  box-shadow: 0 0 0 1px rgba(22, 32, 43, 0.35);
 }
 
 .event-popup__actions {
@@ -764,12 +802,12 @@ body {
 
 .timeline__resize {
   font: inherit;
-  font-size: 12px;
+  font-size: var(--step--1);
   line-height: 1;
   padding: 4px 8px;
   margin-left: 10px;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: var(--r-sm);
   background: var(--sidebar-2);
   color: var(--muted);
   cursor: pointer;
@@ -788,15 +826,16 @@ body {
 
 .timeline__head h2 {
   margin: 0;
-  font-size: 11px;
+  font-size: var(--step--2);
   text-transform: uppercase;
   letter-spacing: 0.9px;
   color: var(--muted);
 }
 
 .timeline__range {
-  font-size: 12px;
+  font-size: var(--step--1);
   color: var(--text);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   margin-left: auto;
 }
@@ -809,8 +848,8 @@ body {
 /* vis-timeline on a dark panel */
 .vis-timeline {
   border: 0;
-  font-family: var(--font);
-  font-size: 11px;
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
   color: var(--text);
 }
 
@@ -828,11 +867,11 @@ body {
 }
 
 .vis-time-axis .vis-grid.vis-minor {
-  border-color: #232c36;
+  border-color: var(--line);
 }
 
 .vis-time-axis .vis-grid.vis-major {
-  border-color: #2f3b48;
+  border-color: var(--ink-500);
 }
 
 .vis-labelset .vis-label,
@@ -844,7 +883,7 @@ body {
 .vis-item {
   color: #fff;
   border-width: 1px;
-  border-radius: 5px;
+  border-radius: var(--r-sm);
 }
 
 .vis-item.vis-selected {
@@ -857,8 +896,8 @@ body {
 }
 
 .vis-tooltip {
-  font-family: var(--font) !important;
-  font-size: 11px !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--step--2) !important;
 }
 
 /* ---------- responsive: sidebar becomes a top drawer ---------- */
