@@ -12,6 +12,13 @@ export default function EventPopup({ event }: { event: HistoryEvent }) {
   const { lang } = useFilters();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [showPlayer, setShowPlayer] = useState(false);
+  /**
+   * Episodes are hour-long mp3s on a third-party host, so the gap between pressing the
+   * button and hearing anything is real: fetch, then seek to a timestamp that can be an
+   * hour in. Without a state for that wait the button looked broken and people pressed it
+   * again.
+   */
+  const [audio, setAudio] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle');
 
   const place = placesById[event.placeId];
   const episode = episodesById[event.episodeId];
@@ -30,12 +37,18 @@ export default function EventPopup({ event }: { event: HistoryEvent }) {
   /** Inline fallback: some browsers ignore #t=, so seek explicitly once metadata is in. */
   function playInline() {
     setShowPlayer(true);
+    setAudio('loading');
     requestAnimationFrame(() => {
       const el = audioRef.current;
-      if (!el) return;
+      if (!el) {
+        setAudio('error');
+        return;
+      }
       const seek = () => {
         if (Number.isFinite(el.duration) && seconds < el.duration) el.currentTime = seconds;
-        void el.play();
+        // Rejects under autoplay policy, or if the file never arrives. Either way the
+        // button must stop claiming it is loading.
+        void el.play().catch(() => setAudio('error'));
       };
       if (el.readyState >= 1) seek();
       else el.addEventListener('loadedmetadata', seek, { once: true });
@@ -80,13 +93,33 @@ export default function EventPopup({ event }: { event: HistoryEvent }) {
 
       {deepLink && (
         <div className="event-popup__actions">
-          <button type="button" className="btn btn--play" onClick={playInline}>
-            {t(lang, 'playAt')} {event.timestamp}
+          <button
+            type="button"
+            className="btn btn--play"
+            onClick={playInline}
+            disabled={audio === 'loading'}
+            aria-busy={audio === 'loading'}
+          >
+            {audio === 'loading' ? (
+              <>
+                <span className="spinner" aria-hidden="true" />
+                {t(lang, 'audioLoading')}
+              </>
+            ) : (
+              `${t(lang, 'playAt')} ${event.timestamp}`
+            )}
           </button>
           <a className="btn btn--link" href={deepLink} target="_blank" rel="noreferrer">
             {t(lang, 'openInNewTab')}
           </a>
         </div>
+      )}
+
+      {/* Says what failed and leaves the other route open, rather than only going quiet. */}
+      {audio === 'error' && (
+        <p className="event-popup__audio-error" role="status">
+          {t(lang, 'audioError')}
+        </p>
       )}
 
       {showPlayer && episode && (
@@ -96,6 +129,11 @@ export default function EventPopup({ event }: { event: HistoryEvent }) {
           controls
           preload="metadata"
           src={deepLink ?? episode.audioUrl}
+          /* `playing` rather than `canplay`: what matters is that sound is actually coming
+             out, not that enough has buffered. `waiting` catches a stall mid-seek. */
+          onPlaying={() => setAudio('ready')}
+          onWaiting={() => setAudio((prev) => (prev === 'ready' ? 'ready' : 'loading'))}
+          onError={() => setAudio('error')}
         />
       )}
     </div>

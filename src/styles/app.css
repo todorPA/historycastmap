@@ -69,19 +69,56 @@ body {
   gap: 4px;
   background: var(--sidebar);
   border-right: 1px solid var(--ink-500);
-  /* The episode list scrolls on its own so stats and the range reset stay reachable
-     even with 181 episodes. */
-  overflow: hidden;
+  /* The episode list scrolls on its own so stats and the range reset stay reachable even
+     with 181 episodes. The sidebar itself scrolls only as a last resort: with collections,
+     episodes, filters and stats all competing, a short window can exceed the floors below
+     and `hidden` would silently clip whatever lost. */
+  overflow: hidden auto;
 }
 
-/* Takes the space it needs and no more. With `flex: 1` the list absorbed every spare
-   pixel, so a three-episode dataset left a ~400px hole between the episodes and the
-   filters, which reads as a rendering fault. Shrink is still allowed, so a 102-episode
-   list gives way to the filters below it and scrolls instead. */
+/* Takes the space it needs and no more. `flex: 1` made the list absorb every spare pixel,
+   so a three-episode dataset left a ~400px hole above the filters; `flex-grow: 0` fixes
+   that. The floor is the other half: as the only shrinkable section it then absorbed the
+   whole deficit instead, collapsing to 29px at an 800px viewport, which left the search
+   box sliced in half and no episodes visible at all.
+
+   `hidden auto` because `overflow-y: auto` alone promotes overflow-x to auto too, and an
+   8px overhang on the row counts was enough to raise a horizontal scrollbar. The sidebar
+   should never scroll sideways. */
+/* The section sizes to its content; the *list* inside it is what scrolls and what carries
+   the cap. That distinction is the whole fix.
+
+   Flex shrinks items in proportion to their base size, and with `flex-basis: auto` the base
+   is the content height: 103 episodes gave this section a base of ~4000px against the
+   filters' ~400. Capping the section with max-height does not change that base, so the
+   filters were still starved to their floor while the episodes kept 376px. Capping the list
+   instead makes the section's own base honest (~480px), and the two then give way together.
+
+   Sizing the section by flex-basis would have worked too, but it reintroduces the original
+   bug: a fixed basis leaves a hole under a three-episode dataset. */
 .sidebar__section--episodes {
   flex: 0 1 auto;
+  /* Label, search and a few rows. Below this the section is not worth showing, and the
+     sidebar scrolls instead. Safe to set now that the base size is honest: as a floor on a
+     4000px base it was what let this section win every shrink and starve the filters. */
+  min-height: 11rem;
+  /* A column, so the list below can be told to fit whatever height the section is given. */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Two bounds, and both are needed.
+   `max-height` caps the section's natural base size, which is what keeps the shrink maths
+   honest against the filters. `flex: 0 1 auto` with `min-height: 0` caps the *used* height
+   to whatever the section actually got: without it the list kept its 40vh while the section
+   shrank to 176px, and the overflow spilled straight over the filters below. */
+.episodes {
+  flex: 0 1 auto;
   min-height: 0;
-  overflow-y: auto;
+  max-height: 40vh;
+  /* `overflow-y: auto` alone promotes overflow-x to auto as well, which raised a stray
+     horizontal scrollbar off a sub-pixel overhang. The sidebar never scrolls sideways. */
+  overflow: hidden auto;
 }
 
 .sidebar__section--stats {
@@ -233,6 +270,10 @@ body {
   gap: 3px;
 }
 
+.episodes__empty {
+  flex: none;
+}
+
 .episode {
   display: flex;
   align-items: center;
@@ -286,6 +327,7 @@ body {
 }
 
 .episode__count {
+  flex: none;
   font-size: var(--step--2);
   color: var(--muted);
   font-family: var(--font-mono);
@@ -377,10 +419,13 @@ body {
 }
 
 /* ---------- facet filters ---------- */
+/* Shrinkable too, with its own floor. Leaving this at `flex: none` is what forced the
+   episode list to absorb every missing pixel on a short window. */
 .facets {
-  flex: none;
+  flex: 0 1 auto;
+  min-height: 6rem;
   max-height: 34vh;
-  overflow-y: auto;
+  overflow: hidden auto;
 }
 
 .facets__head {
@@ -516,9 +561,13 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* ---------- clusters ---------- */
+/* ---------- clusters ----------
+   `zoom-in` was literally accurate (clicking a cluster zooms to its members) but it read as
+   a different kind of target from the single markers beside it, which are identical circles
+   that open a popup. Zooming is already available on scroll and on the +/- control, so the
+   cursor is better spent saying the one thing that is not obvious: this circle is clickable. */
 .cluster {
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 /* The count sits inside the circle; a permanent tooltip is the label. */
@@ -969,6 +1018,11 @@ body {
 /* ---------- collections ----------
    The archive's front door, so it sits above the episode list and reads as a short menu
    rather than another facet: full-width rows, not wrapped chips. */
+/* Short and near the top: it should hold its height rather than compete for it. */
+.collections {
+  flex: none;
+}
+
 .collections__list {
   list-style: none;
   margin: 0;
@@ -1237,4 +1291,52 @@ body {
 .timeline__size__btn.is-active {
   background: var(--gold);
   color: var(--ink-100);
+}
+
+/* ---------- audio loading ----------
+   Episodes are hour-long mp3s on a third-party host, and the button seeks to a timestamp
+   that can be an hour in, so the wait is real. */
+.spinner {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 7px;
+  vertical-align: -1px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 620ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* The global reduced-motion reset neutralises durations, which would freeze this mid-turn
+   and read as a stuck control. A pulse carries "working" without rotating. */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: pulse 1.4s ease-in-out infinite !important;
+    border-top-color: currentColor;
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.btn--play[disabled] {
+  opacity: 0.75;
+  cursor: progress;
+}
+
+.event-popup__audio-error {
+  margin: 8px 0 0;
+  font-size: var(--step--1);
+  color: #a3211c;
 }
