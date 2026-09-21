@@ -65,11 +65,12 @@ a {
   padding: 0 var(--sp-5);
 }
 
+/* Was tracked-out caps in mono, which is template chrome rather than a wordmark.
+   Now it is just the product's name, set in the display face at text size. */
 .nav__brand {
-  font-family: var(--font-mono);
-  font-size: var(--step--1);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-family: 'Literata', Georgia, serif;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
   text-decoration: none;
   margin-right: auto;
 }
@@ -164,7 +165,7 @@ a {
 
 .hero__title {
   margin: 0;
-  font-family: 'EB Garamond', Georgia, serif;
+  font-family: 'Literata', Georgia, serif;
   font-weight: 400;
   font-size: clamp(2.25rem, 3.6vw, 2.875rem);
   line-height: 1.12;
@@ -256,7 +257,7 @@ a {
 
 .section__title {
   margin: 0;
-  font-family: 'EB Garamond', Georgia, serif;
+  font-family: 'Literata', Georgia, serif;
   font-weight: 400;
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   line-height: 1.15;
@@ -269,58 +270,82 @@ a {
   color: var(--ink-200);
 }
 
-/* ---------- how it works: vertical stack, verbs as labels ---------- */
+/* ---------- how it works ----------
+   Was three equal columns, which is the feature-card grid in flattened form. This content
+   is genuinely a sequence (filter, then read, then listen), so it is set as one: rows read
+   top to bottom, the verb held in a fixed left column so the three align on a common axis. */
 .steps {
   list-style: none;
   margin: var(--sp-5) 0 0;
   padding: 0;
-  display: grid;
-  gap: var(--sp-4);
-  counter-reset: step;
-}
-
-@media (min-width: 860px) {
-  .steps {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--sp-5);
-  }
+  border-top: 1px solid var(--ink-500);
 }
 
 .step {
-  padding-top: var(--sp-3);
-  border-top: 1px solid var(--ink-500);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-1) var(--sp-5);
+  padding: var(--sp-4) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 720px) {
+  .step {
+    grid-template-columns: 13rem 1fr;
+    align-items: baseline;
+    padding: var(--sp-4) 0;
+  }
 }
 
 .step__verb {
   margin: 0;
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-family: 'Literata', Georgia, serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .step__text {
-  margin: var(--sp-2) 0 0;
-  color: var(--ink-300);
+  margin: 0;
+  max-width: 58ch;
+  color: var(--ink-200);
   font-size: var(--step-0);
 }
 
-/* ---------- regions: the palette is the content ---------- */
+/* ---------- regions ----------
+   The twelve hues are the section's subject, so they are rendered rather than screenshotted:
+   a real key, on a column grid so the swatches line up on a shared axis. As wrapped pills
+   they read as filter chrome; as rows they read as a legend. */
 .regions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-2);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-2) var(--sp-5);
   margin: var(--sp-5) 0 0;
   padding: 0;
   list-style: none;
+  max-width: 62rem;
+}
+
+@media (min-width: 620px) {
+  .regions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .regions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .region {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 12px 1fr;
   align-items: center;
-  gap: var(--sp-2);
-  padding: 6px 12px 6px 10px;
-  border: 1px solid var(--ink-500);
-  border-radius: var(--r-pill);
-  font-size: var(--step--1);
+  gap: var(--sp-3);
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--step-0);
   color: var(--ink-200);
 }
 
@@ -329,6 +354,33 @@ a {
   height: 10px;
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgba(242, 245, 248, 0.45);
+}
+
+/* ---------- full-width band ----------
+   The timeline strip is a 5:1 image. In a half-width column it was unreadable, and the
+   split layout was also being used twice in a row; full width matches the shape of the
+   thing being shown. */
+.band {
+  margin: var(--sp-5) 0 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--ink-800);
+}
+
+.band img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* At phone widths a 5:1 strip of dated event bars is roughly 70px tall and reads as a
+   smear. The paragraph above already makes the point, so drop the illustration rather
+   than ship it unreadable. */
+@media (max-width: 719px) {
+  .band {
+    display: none;
+  }
 }
 
 /* ---------- split feature ---------- */
@@ -365,10 +417,11 @@ a {
 }
 
 /* ---------- closing ---------- */
+/* Left-aligned like everything else on the page: a centred CTA band was the one place the
+   layout changed axis, and it changed it to the most generic arrangement available. */
 .close-band {
   border-top: 1px solid var(--line);
-  padding: 4.5rem 0;
-  text-align: center;
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
 }
 
 .close-band .cta {
@@ -394,24 +447,116 @@ a {
   color: var(--ink-200);
 }
 
-/* ---------- motion: entrance only, reason is hierarchy ---------- *
-   IntersectionObserver adds .is-in; no scroll listener anywhere (§5.D). The
-   prefers-reduced-motion block in tokens.css collapses these to instant. */
-.js .reveal {
+/* ---------- motion ---------- */
+/* The page's only non-interactive motion: a single staged entrance on the hero, so the
+   eye is walked headline -> claim -> action -> map exactly once. Everything below the
+   fold is still, which is what makes this moment read as deliberate. Armed by .js-ready,
+   so without the module the content is simply visible. */
+.js-ready [data-enter] {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 620ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(10px);
 }
 
-.js .reveal.is-in {
+.js-ready.is-entered [data-enter] {
   opacity: 1;
   transform: none;
+  transition: opacity 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.js-ready.is-entered [data-enter='1'] { transition-delay: 0ms; }
+.js-ready.is-entered [data-enter='2'] { transition-delay: 70ms; }
+.js-ready.is-entered [data-enter='3'] { transition-delay: 140ms; }
+.js-ready.is-entered [data-enter='4'] { transition-delay: 60ms; }
+
+
+
 @media (prefers-reduced-motion: reduce) {
-  .js .reveal {
+  .js-ready [data-enter] {
     opacity: 1;
     transform: none;
+    transition: none;
   }
+}
+
+/* ---------- hero map (item 5) ----------
+   The figure holds a fixed aspect ratio so the live map lands in exactly the space the
+   static fallback occupied: no reflow when Leaflet arrives, and CLS stays at zero. */
+.hero__map {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  width: 100%;
+  background: var(--ink-800);
+}
+
+.hero__map img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Both the fallback image and the live map fill the ratio box, so the swap is invisible. */
+.hero__map > * {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__map-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.hero__caption {
+  margin-top: var(--sp-2);
+  font-size: var(--step--1);
+  color: var(--ink-300);
+}
+
+/* Leaflet chrome, toned to the page rather than left at library defaults. */
+.hero__map .leaflet-container {
+  background: #dfe4e8;
+  font-family: var(--font-sans);
+}
+
+/* The basemap exists to locate the markers, not to compete with them. Desaturating only
+   the tile pane pushes the green landmass and blue sea back, and leaves the region hues
+   (which live in the overlay pane) at full strength. */
+.hero__map .leaflet-tile-pane {
+  filter: saturate(0.42) brightness(1.04) contrast(0.96);
+}
+
+.hero__map .leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.78);
+  font-size: 10px;
+}
+
+.hero__map .leaflet-popup-content {
+  font-size: var(--step--1);
+  line-height: 1.5;
+}
+
+.hero__map .leaflet-popup-content a {
+  color: #16202b;
+}
+
+/* ---------- spacing: sections were a fixed 4.5rem regardless of content ----------
+   At wide viewports that left dead bands between short sections, which reads as
+   unfinished rather than airy. Vertical rhythm now comes from the content's own size. */
+.section {
+  padding: clamp(2.75rem, 6vw, 4.25rem) 0;
+}
+
+/* Consecutive prose-and-media sections share a boundary, so they should not each pay
+   full padding into the same gap. */
+.section + .section {
+  padding-top: 0;
+}
+
+/* No-JS message in place of the hero map. */
+.hero__map-fallback {
+  margin: 0;
+  padding: var(--sp-5);
+  color: var(--ink-200);
+  font-size: var(--step-0);
 }

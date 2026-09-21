@@ -25,8 +25,8 @@ const FILES = [
   ['ibm-plex-mono-400.woff2', `${CDN}/ibm-plex-mono@latest/latin-ext-400-normal.woff2`],
   ['ibm-plex-mono-600.woff2', `${CDN}/ibm-plex-mono@latest/latin-ext-600-normal.woff2`],
   ['ibm-plex-mono-cyrillic-400.woff2', `${CDN}/ibm-plex-mono@latest/cyrillic-400-normal.woff2`],
-  ['eb-garamond.woff2', `${CDN}/eb-garamond:vf@latest/latin-ext-wght-normal.woff2`],
-  ['eb-garamond-cyrillic.woff2', `${CDN}/eb-garamond:vf@latest/cyrillic-wght-normal.woff2`],
+  ['literata.woff2', `${CDN}/literata:vf@latest/latin-ext-wght-normal.woff2`],
+  ['literata-cyrillic.woff2', `${CDN}/literata:vf@latest/cyrillic-wght-normal.woff2`],
 ];
 
 const force = argv.includes('--force');
