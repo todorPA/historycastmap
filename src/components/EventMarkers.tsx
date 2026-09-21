@@ -34,10 +34,35 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
     [map, items, zoom],
   );
 
-  // Selection can come from the timeline; open the popup of whichever dot holds that event.
+  /**
+   * Selection can come from the timeline, the sidebar, or a shared URL; open the popup of
+   * whichever dot holds that event.
+   *
+   * Retried across frames, and it waits for the popup rather than just the marker. On a deep
+   * link (`?e=<id>`) the selection exists before the first render; react-leaflet registers
+   * the marker ref first and binds the <Popup> child after, so calling openPopup() on a
+   * marker that has no popup yet silently does nothing and there is no second attempt. The
+   * marker being present is therefore not a sufficient condition, which is why this checks
+   * getPopup() too.
+   */
   useEffect(() => {
     if (!selectedEventId) return;
-    markerRefs.current.get(selectedEventId)?.openPopup();
+
+    let frame = 0;
+    let tries = 0;
+    const tryOpen = () => {
+      const marker = markerRefs.current.get(selectedEventId);
+      if (marker?.getPopup()) {
+        marker.openPopup();
+        return;
+      }
+      // ~20 frames is a third of a second; enough for the map to settle, short enough that
+      // a genuinely absent event (filtered out) stops retrying quickly.
+      if (tries++ < 20) frame = requestAnimationFrame(tryOpen);
+    };
+    tryOpen();
+
+    return () => cancelAnimationFrame(frame);
   }, [selectedEventId, clusters]);
 
   return (
@@ -57,17 +82,32 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
               radius={selected ? 11 : count > 1 ? 10 : 8}
               ref={(instance) => {
                 // Registered under every member id, so a timeline selection finds this dot.
-                for (const e of events) {
-                  if (instance) markerRefs.current.set(e.id, instance);
-                  else markerRefs.current.delete(e.id);
-                }
+                if (!instance) return;
+                for (const e of events) markerRefs.current.set(e.id, instance);
+
+                /**
+                 * React 19 ref cleanup, and it has to compare identity rather than just
+                 * delete by id. StrictMode mounts, unmounts and remounts; the old code
+                 * deleted by id on teardown, so the first mount's cleanup ran *after* the
+                 * second mount had registered and removed the live marker. Selection then
+                 * either found nothing or held a marker belonging to the discarded map, and
+                 * `openPopup()` opened a popup on a detached instance: no error, no popup.
+                 */
+                return () => {
+                  for (const e of events) {
+                    if (markerRefs.current.get(e.id) === instance) {
+                      markerRefs.current.delete(e.id);
+                    }
+                  }
+                };
               }}
               pathOptions={{
                 // Every dot carries a dark ring, so the fill is free to be whatever the
                 // region palette needs it to be and still reads on light tiles
-                // (config/regions.ts). Selection takes the ring to paper-white: the chrome
-                // spends no hue, so a selected marker can't be read as a region.
-                color: selected ? '#f2f5f8' : 'rgba(18, 23, 29, 0.85)',
+                // (config/regions.ts). Selection thickens that ring to solid ink: the
+                // paper-white ring this replaced was tuned for the old dark chrome and was
+                // nearly invisible against light tiles.
+                color: selected ? '#1a1713' : 'rgba(26, 23, 19, 0.85)',
                 weight: selected ? 3 : low ? 2 : 1.5,
                 dashArray: low ? '3 3' : undefined,
                 fillColor: color,
@@ -102,7 +142,7 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
             radius={clusterRadius(count)}
             className="cluster"
             pathOptions={{
-              color: 'rgba(18, 23, 29, 0.85)',
+              color: 'rgba(26, 23, 19, 0.85)',
               weight: 2,
               fillColor: cluster.color,
               fillOpacity: 0.85,

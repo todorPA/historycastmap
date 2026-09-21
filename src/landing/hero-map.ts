@@ -127,7 +127,9 @@ export async function mountHeroMap(host: HTMLElement): Promise<void> {
       .bindPopup(
         `<strong>${title}</strong><br>${year} · ${escape(place.name.sr)}` +
           (episode ? `<br>${escape(episode.title.sr)}` : '') +
-          `<br><a href="${base}app.html?event=${encodeURIComponent(event.id)}">Otvori u mapi</a>`,
+          // `e` is the explorer's event parameter (lib/urlState.ts PARAM.event). Using the
+          // spelled-out `event` here silently did nothing: the app fell back to no selection.
+          `<br><a href="${base}app.html?e=${encodeURIComponent(event.id)}">Otvori u mapi</a>`,
       );
   }
 }

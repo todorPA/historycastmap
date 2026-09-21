@@ -7,7 +7,7 @@ import { useTime } from '../state/TimeContext';
 import { useFilters } from '../state/FilterContext';
 import type { TimelineSize } from '../state/FilterContext';
 import { pick, t } from '../lib/i18n';
-import { regionColor } from '../config/regions';
+import { onColor, regionColor } from '../config/regions';
 import { dateToYear, formatYear, formatYearRange, yearToDate } from '../lib/time';
 import type { Lang } from '../types/events';
 
@@ -105,7 +105,16 @@ export default function TimelineView() {
             start: yearToDate(e.year),
             end: e.yearEnd != null && e.yearEnd !== e.year ? yearToDate(e.yearEnd) : undefined,
             group: e.region || undefined,
-            style: `background-color:${color};border-color:${color};${low ? 'opacity:0.6;' : ''}`,
+            /**
+             * Label colour is chosen per fill, not fixed: the region hues span a wide
+             * lightness range, so white is unreadable on the light ones and ink is
+             * unreadable on the dark ones.
+             *
+             * Low confidence is marked by the dashed border alone (.vis-item--low). It used
+             * to also drop opacity to 0.6, which was survivable on the old dark panel but on
+             * the light one washed the fill out until the label disappeared.
+             */
+            style: `background-color:${color};border-color:${color};color:${onColor(color)};`,
             className: low ? 'vis-item--low' : '',
             title: `${pick(e.title, lang)} — ${formatYearRange(e.year, e.yearEnd, lang)}`,
           };
