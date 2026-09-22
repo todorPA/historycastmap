@@ -116,6 +116,34 @@ for (const file of fragFiles) {
 // nije to pravilo. Promašaj ne bi pao na validatoru — broj epizode se i dalje izvuče,
 // samo naslov zadrži vodeću crtu i tako se prikaže u aplikaciji.
 const TITLE_NUMBER = /^\s*(\d+)\.?\s*[-–—=]*\s*(.*)$/;
+
+// Serija se izvodi iz naslova u feedu, a ne iz fragmenta: feed je jedini izvor istine o tome
+// kom serijalu epizoda pripada, izvođenje ovde važi retroaktivno za svih 102 postojeća
+// fragmenta, i Enchanté ne mora ništa da zna o tome.
+//
+// Brendiranje pobeđuje numeraciju. U feedu to dvoje nije poravnato — "115 = Vuk Karadžić |
+// HistoryCast nedeljom" je i numerisana i brendirana — a ni datum ne rešava spor: od 27
+// brendiranih epizoda samo 15 je objavljeno nedeljom. Kad se signali ne slažu, odlučuje
+// brendiranje, pa 115 napušta glavnu seriju.
+//
+// Specijali i nebrendirane epizode ostaju "main": to su povremene epizode glavne serije, a
+// ne poseban serijal.
+const SIDE_SERIES = /nedeljom|[čc]etvrtkom/i;
+
+// Skida brendiranje iz naslova za prikaz, jer se serija sada prikazuje zasebno:
+// "HistoryCast četvrtkom - Žiča" -> "Žiča", "Vuk Karadžić | HistoryCast nedeljom" -> "Vuk
+// Karadžić". Radi na oba mesta jer feed koristi oba rasporeda — 4 naslova nose brend na
+// početku, ostali na kraju.
+const BRAND_SUFFIX = /\s*[|,\-–—]?\s*(?:\|\s*)?HistoryCast\s+(?:nedeljom|[čc]etvrtkom)\s*$/i;
+const BRAND_PREFIX = /^\s*HistoryCast\s+(?:nedeljom|[čc]etvrtkom)\s*[|,\-–—]\s*/i;
+
+function stripBranding(title) {
+  const stripped = title.replace(BRAND_PREFIX, '').replace(BRAND_SUFFIX, '').trim();
+  // Ako od naslova ne ostane ništa (naslov je bio samo brend), zadrži original — prazan
+  // naslov u aplikaciji je gori od suvišnog brenda.
+  return stripped || title.trim();
+}
+
 function slugify(str) {
   return str
     .toLowerCase()
@@ -131,17 +159,21 @@ if (EPISODES_SOURCE && fs.existsSync(EPISODES_SOURCE)) {
   const eps = JSON.parse(fs.readFileSync(EPISODES_SOURCE, "utf-8"));
   for (const ep of eps) {
     const title = ep.title || "";
+    // Serija se čita iz punog naslova, pre skidanja broja i brenda.
+    const series = SIDE_SERIES.test(title) ? "side" : "main";
     const m = TITLE_NUMBER.exec(title);
     if (m && m[1]) {
       const num = String(parseInt(m[1], 10));
       episodeMetaByNumber.set(num, {
-        title: m[2].trim() || title.trim(),
+        title: stripBranding(m[2].trim() || title.trim()),
+        series,
         pubDate: ep.pubDate,
         audioUrl: ep.audio_url,
       });
     } else if (title) {
       episodeMetaBySlug.set(slugify(title), {
-        title: title.trim(),
+        title: stripBranding(title),
+        series,
         pubDate: ep.pubDate,
         audioUrl: ep.audio_url,
       });
@@ -172,6 +204,7 @@ const episodes = Array.from(episodeIdsUsed)
     return {
       id,
       title: { sr: meta?.title || `Epizoda ${id}` },
+      series: meta?.series || "main",
       pubDate: meta?.pubDate || "",
       audioUrl: meta?.audioUrl || "",
       color: PALETTE[idx % PALETTE.length],
@@ -204,4 +237,9 @@ fs.writeFileSync(OUT, JSON.stringify(out, null, 2), "utf-8");
 
 console.log(`✓ Spojeno ${fragFiles.length} fragmenata`);
 console.log(`  mesta: ${places.length}, epizode: ${episodes.length}, dogadjaji: ${allEvents.length}`);
+const sideEpisodes = episodes.filter((e) => e.series === "side");
+const sideEvents = allEvents.filter((e) =>
+  sideEpisodes.some((s) => s.id === e.episodeId),
+).length;
+console.log(`  serijal: ${episodes.length - sideEpisodes.length} glavna / ${sideEpisodes.length} tematske (${sideEvents} dogadjaja)`);
 console.log(`  -> ${OUT}`);

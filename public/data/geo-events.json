@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "HistoryCast podcast (rss.com/rs-historycast)",
-    "generated": "2026-09-22T10:41:40.618Z",
+    "generated": "2026-09-22T10:55:57.805Z",
     "count": 456,
     "schemaVersion": "1.0"
   },
@@ -3234,6 +3234,7 @@
       "title": {
         "sr": "Dušanova Srbija: Uspon carstva"
       },
+      "series": "main",
       "pubDate": "Tue, 24 Oct 2023 15:39:40 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1184339/rs-historycast/2023_10_22_19_22_55_792cd8d7-8db8-4be7-b9d9-a97da5e27f0c.mp3",
       "color": "#c0392b"
@@ -3243,6 +3244,7 @@
       "title": {
         "sr": "Knez Lazar Hrebeljanović"
       },
+      "series": "main",
       "pubDate": "Tue, 02 Jul 2024 15:25:52 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1551684/rs-historycast/2024_07_01_18_15_31_8c9777f7-a416-4fe0-b777-a59a17f48a9b.mp3",
       "color": "#2980b9"
@@ -3252,6 +3254,7 @@
       "title": {
         "sr": "Neron"
       },
+      "series": "main",
       "pubDate": "Tue, 09 Jul 2024 14:13:59 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1560318/rs-historycast/2024_07_08_20_53_31_62831581-772e-490c-91ac-4a318c099e16.mp3",
       "color": "#27ae60"
@@ -3261,6 +3264,7 @@
       "title": {
         "sr": "Američki atentati"
       },
+      "series": "main",
       "pubDate": "Tue, 16 Jul 2024 15:52:01 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1569658/rs-historycast/2024_07_15_22_59_15_29549797-2252-4f41-b5f2-dfee3db0d859.mp3",
       "color": "#8e44ad"
@@ -3270,6 +3274,7 @@
       "title": {
         "sr": "Jovan Ristić"
       },
+      "series": "main",
       "pubDate": "Tue, 23 Jul 2024 14:39:36 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1578762/rs-historycast/2024_07_22_22_43_53_7ca74499-cfe2-45bc-a84b-4e0c27496b81.mp3",
       "color": "#d35400"
@@ -3279,6 +3284,7 @@
       "title": {
         "sr": "Japan: Doba šoguna"
       },
+      "series": "main",
       "pubDate": "Tue, 30 Jul 2024 13:16:43 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1587647/rs-historycast/2024_07_29_19_46_34_00e3d8e6-93d5-4718-b82a-25358348e9a4.mp3",
       "color": "#16a085"
@@ -3288,6 +3294,7 @@
       "title": {
         "sr": "Pad šogunata - uspon modernog Japana"
       },
+      "series": "main",
       "pubDate": "Tue, 06 Aug 2024 17:33:00 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1589820/rs-historycast/2024_07_30_18_45_44_a3a8039d-d994-43b9-bb77-cd1151b111c8.mp3",
       "color": "#c0392b"
@@ -3297,6 +3304,7 @@
       "title": {
         "sr": "Despot Stefan Lazarević"
       },
+      "series": "main",
       "pubDate": "Tue, 20 Aug 2024 17:46:22 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1619609/rs-historycast/2024_08_20_07_13_09_315893d4-a14f-4c70-8097-8fd44375ddac.mp3",
       "color": "#2c3e50"
@@ -3306,6 +3314,7 @@
       "title": {
         "sr": "Drugi svetski rat, početak"
       },
+      "series": "main",
       "pubDate": "Tue, 27 Aug 2024 15:56:59 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1625968/rs-historycast/2024_08_25_13_52_47_5c632380-76b1-4adc-8dd5-0f6727ac5a4b.mp3",
       "color": "#f39c12"
@@ -3315,6 +3324,7 @@
       "title": {
         "sr": "Srbija pre Nemanjića: Dinastija Vlastimirovića"
       },
+      "series": "main",
       "pubDate": "Tue, 03 Sep 2024 14:40:11 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1619593/rs-historycast/2024_08_20_06_39_14_6aa06c9a-ca0e-46f0-90ee-4bbd9a4e3aa4.mp3",
       "color": "#7f8c8d"
@@ -3324,6 +3334,7 @@
       "title": {
         "sr": "Drugi svetski rat, 1940. Pad Francuske, Hitlerovo proleće"
       },
+      "series": "main",
       "pubDate": "Tue, 10 Sep 2024 23:13:56 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1648831/rs-historycast/2024_09_11_07_50_13_9bed0618-0664-4ce6-9695-05e4de2663bf.mp3",
       "color": "#c0392b"
@@ -3333,6 +3344,7 @@
       "title": {
         "sr": "Grčko persijski rat"
       },
+      "series": "main",
       "pubDate": "Tue, 17 Sep 2024 15:20:13 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1657584/rs-historycast/2024_09_15_23_05_39_adad9eb2-e7b4-4a04-b328-ea7c380c8c58.mp3",
       "color": "#2980b9"
@@ -3342,6 +3354,7 @@
       "title": {
         "sr": "Drugi svetski rat 3 deo - Hitlerova Evropa"
       },
+      "series": "main",
       "pubDate": "Tue, 24 Sep 2024 16:00:45 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1669000/rs-historycast/2024_09_23_20_21_45_b5a4edbb-f477-4ad8-9b0a-f6db4e120e6c.mp3",
       "color": "#27ae60"
@@ -3351,6 +3364,7 @@
       "title": {
         "sr": "Kralj Milutin"
       },
+      "series": "main",
       "pubDate": "Tue, 01 Oct 2024 18:40:51 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1680717/rs-historycast/2024_10_01_17_01_48_71fbec2d-96e0-4b81-98e7-757607614ac4.mp3",
       "color": "#8e44ad"
@@ -3360,6 +3374,7 @@
       "title": {
         "sr": "Drugi svetski rat, 1941 - Operacija Barbarosa"
       },
+      "series": "main",
       "pubDate": "Tue, 08 Oct 2024 14:34:24 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1691734/rs-historycast/2024_10_08_07_45_22_e8a86fab-b83f-408a-a09b-ea1e8edbd127.mp3",
       "color": "#d35400"
@@ -3369,6 +3384,7 @@
       "title": {
         "sr": "Ilija Garašanin"
       },
+      "series": "main",
       "pubDate": "Tue, 15 Oct 2024 15:04:10 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1699648/rs-historycast/2024_10_11_21_49_15_4568d0d2-0cf9-47bb-9db0-36c2ecb79859.mp3",
       "color": "#16a085"
@@ -3378,6 +3394,7 @@
       "title": {
         "sr": "Kleopatra"
       },
+      "series": "main",
       "pubDate": "Tue, 29 Oct 2024 16:22:12 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1717115/rs-historycast/2024_10_23_17_38_04_6b85a4be-c1a8-4234-9511-90a1528f6114.mp3",
       "color": "#c0392b"
@@ -3387,6 +3404,7 @@
       "title": {
         "sr": "Srpska puška - od ustanika do moderne armije"
       },
+      "series": "main",
       "pubDate": "Tue, 05 Nov 2024 15:40:49 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1732957/rs-historycast/2024_11_02_15_55_54_2db2d94d-8633-4593-8d37-7efb615dcdd5.mp3",
       "color": "#2c3e50"
@@ -3396,6 +3414,7 @@
       "title": {
         "sr": "Drugi svetski rat (6): Rat u Aziji i na Pacifiku"
       },
+      "series": "main",
       "pubDate": "Wed, 13 Nov 2024 07:36:17 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1744327/rs-historycast/2024_11_09_15_48_24_10be62cf-8a74-4270-bc53-a55120cb7941.mp3",
       "color": "#f39c12"
@@ -3405,6 +3424,7 @@
       "title": {
         "sr": "Gladijatori"
       },
+      "series": "main",
       "pubDate": "Wed, 20 Nov 2024 09:11:41 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1758384/rs-historycast/2024_11_17_17_54_14_1717a546-f9d9-4d4c-a03e-62d4905c0028.mp3",
       "color": "#7f8c8d"
@@ -3414,6 +3434,7 @@
       "title": {
         "sr": "Rat u Africi, Drugi svetski rat, 7. deo"
       },
+      "series": "main",
       "pubDate": "Tue, 26 Nov 2024 17:01:56 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1770616/rs-historycast/2024_11_25_15_40_30_6631a552-dbbf-491c-8fd6-a32d82aac9a3.mp3",
       "color": "#c0392b"
@@ -3423,6 +3444,7 @@
       "title": {
         "sr": "Kolubarska bitka"
       },
+      "series": "main",
       "pubDate": "Tue, 03 Dec 2024 17:38:14 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1774406/rs-historycast/2024_11_27_17_23_12_b72868e3-aeec-48b9-8252-5222d739040d.mp3",
       "color": "#2980b9"
@@ -3432,6 +3454,7 @@
       "title": {
         "sr": "Špijuni, šifre i kodovi"
       },
+      "series": "main",
       "pubDate": "Tue, 10 Dec 2024 16:09:35 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1789055/rs-historycast/2024_12_06_16_27_34_cf539422-21fd-4397-9807-013bc8c2e409.mp3",
       "color": "#27ae60"
@@ -3441,6 +3464,7 @@
       "title": {
         "sr": "Stvaranje bosanske nacije"
       },
+      "series": "main",
       "pubDate": "Tue, 17 Dec 2024 17:33:07 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1799061/rs-historycast/2024_12_12_19_02_04_5578def9-197e-4659-ae70-2b4266d85b97.mp3",
       "color": "#8e44ad"
@@ -3450,6 +3474,7 @@
       "title": {
         "sr": "Dušanov zakonik"
       },
+      "series": "main",
       "pubDate": "Tue, 24 Dec 2024 12:34:57 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1810728/rs-historycast/2024_12_20_19_04_39_53090001-13cc-4aea-a408-63c193d84836.mp3",
       "color": "#d35400"
@@ -3459,6 +3484,7 @@
       "title": {
         "sr": "Mojkovačka bitka"
       },
+      "series": "main",
       "pubDate": "Thu, 09 Jan 2025 00:51:38 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1825290/rs-historycast/2025_01_02_22_40_23_f633b848-0d07-4a8b-9260-58ad9498969b.mp3",
       "color": "#16a085"
@@ -3468,6 +3494,7 @@
       "title": {
         "sr": "Bitka za Staljingrad"
       },
+      "series": "main",
       "pubDate": "Tue, 14 Jan 2025 17:57:50 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1841682/rs-historycast/2025_01_10_17_46_32_fa2dabc3-adf5-45c8-bb3f-9ce149f7d24b.mp3",
       "color": "#c0392b"
@@ -3477,6 +3504,7 @@
       "title": {
         "sr": "Lenjin"
       },
+      "series": "main",
       "pubDate": "Wed, 22 Jan 2025 10:59:49 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1850572/rs-historycast/2025_01_16_23_54_06_b8f60057-7a38-42c6-a41c-5b0376b3ba5f.mp3",
       "color": "#2c3e50"
@@ -3486,6 +3514,7 @@
       "title": {
         "sr": "Pad srbije 1915."
       },
+      "series": "main",
       "pubDate": "Tue, 28 Jan 2025 16:21:31 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1864194/rs-historycast/2025_01_24_23_50_43_b8d20803-31f8-4988-b64b-ca9a774216c2.mp3",
       "color": "#f39c12"
@@ -3495,6 +3524,7 @@
       "title": {
         "sr": "Studentski protest 1968"
       },
+      "series": "main",
       "pubDate": "Wed, 05 Feb 2025 12:44:07 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1875675/rs-historycast/2025_01_31_21_55_55_9dc849d0-ccbb-43db-be6c-7dcad77e70b5.mp3",
       "color": "#7f8c8d"
@@ -3504,6 +3534,7 @@
       "title": {
         "sr": "Stefan Prvovenčani"
       },
+      "series": "main",
       "pubDate": "Tue, 11 Feb 2025 17:41:03 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1884876/rs-historycast/2025_02_06_22_58_32_cf7b5762-1fb8-4e73-9a97-56f36e9ef845.mp3",
       "color": "#c0392b"
@@ -3513,6 +3544,7 @@
       "title": {
         "sr": "Sretenjski Ustav"
       },
+      "series": "main",
       "pubDate": "Wed, 19 Feb 2025 00:33:16 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1902706/rs-historycast/2025_02_17_23_15_36_291d1ee8-1339-4285-8dfe-a16999cc752a.mp3",
       "color": "#2980b9"
@@ -3522,6 +3554,7 @@
       "title": {
         "sr": "Bitka za Kursk"
       },
+      "series": "main",
       "pubDate": "Sun, 02 Mar 2025 12:12:31 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1896986/rs-historycast/2025_02_13_22_26_50_54c6c6de-faf0-49da-a709-a612a595573e.mp3",
       "color": "#27ae60"
@@ -3531,6 +3564,7 @@
       "title": {
         "sr": "Srbija na Krfu"
       },
+      "series": "main",
       "pubDate": "Tue, 04 Mar 2025 17:46:45 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1917748/rs-historycast/2025_02_27_23_17_01_27e50a4e-7988-45d3-a245-6816769d37cf.mp3",
       "color": "#8e44ad"
@@ -3540,6 +3574,7 @@
       "title": {
         "sr": "Punski ratovi"
       },
+      "series": "main",
       "pubDate": "Tue, 11 Mar 2025 17:19:15 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1929759/rs-historycast/2025_03_07_00_14_45_9589b120-8037-42bb-8be0-6ec3ac095933.mp3",
       "color": "#d35400"
@@ -3549,6 +3584,7 @@
       "title": {
         "sr": "Kralj Nikola I Petrović"
       },
+      "series": "main",
       "pubDate": "Tue, 18 Mar 2025 18:39:23 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1941042/rs-historycast/2025_03_15_01_12_49_5488bf64-7e6a-4686-91bc-a036b7724a8a.mp3",
       "color": "#16a085"
@@ -3558,6 +3594,7 @@
       "title": {
         "sr": "Pad Italije, serijal Drugi svetski rat"
       },
+      "series": "main",
       "pubDate": "Wed, 26 Mar 2025 12:39:57 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1950596/rs-historycast/2025_03_20_23_00_55_2cca7cf0-2988-4a80-8e07-a1475fa87c9b.mp3",
       "color": "#c0392b"
@@ -3567,6 +3604,7 @@
       "title": {
         "sr": "Istoričari odgovaraju na vaša pitanja, 2. deo"
       },
+      "series": "main",
       "pubDate": "Wed, 02 Apr 2025 16:18:14 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1961390/rs-historycast/2025_03_28_00_51_52_6c94625d-9475-4595-941f-f62f04fe06d1.mp3",
       "color": "#2c3e50"
@@ -3576,6 +3614,7 @@
       "title": {
         "sr": "Vijetnamski rat"
       },
+      "series": "main",
       "pubDate": "Tue, 08 Apr 2025 17:23:51 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1977429/rs-historycast/2025_04_07_23_49_37_14897231-ce56-43bc-98de-4c32e122c3a6.mp3",
       "color": "#f39c12"
@@ -3585,6 +3624,7 @@
       "title": {
         "sr": "Bitka za Atlantik"
       },
+      "series": "main",
       "pubDate": "Tue, 15 Apr 2025 15:44:43 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1981960/rs-historycast/2025_04_10_22_00_13_7cd03347-1533-49ae-a110-1273bac3888d.mp3",
       "color": "#7f8c8d"
@@ -3594,6 +3634,7 @@
       "title": {
         "sr": "Noć dugih noževa"
       },
+      "series": "main",
       "pubDate": "Tue, 22 Apr 2025 17:00:16 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1996977/rs-historycast/2025_04_22_11_26_43_e1fcd5d8-082c-4def-9d41-d9561cfbaa6b.mp3",
       "color": "#c0392b"
@@ -3603,6 +3644,7 @@
       "title": {
         "sr": "Tridesetogodisnji rat"
       },
+      "series": "main",
       "pubDate": "Wed, 30 Apr 2025 00:13:24 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2004232/rs-historycast/2025_04_27_22_48_15_aa1cb09a-7523-498a-ada9-614840a83f00.mp3",
       "color": "#2980b9"
@@ -3612,6 +3654,7 @@
       "title": {
         "sr": "Toplički ustanak | HistoryCast"
       },
+      "series": "main",
       "pubDate": "Tue, 06 May 2025 14:33:12 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2016652/rs-historycast/2025_05_06_08_09_37_b0ec75e8-3558-4514-ace0-054e4cc7c96c.mp3",
       "color": "#27ae60"
@@ -3621,6 +3664,7 @@
       "title": {
         "sr": "Musolini"
       },
+      "series": "main",
       "pubDate": "Tue, 13 May 2025 14:10:07 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2023961/rs-historycast/2025_05_11_23_16_53_07a7c1b9-44cd-4cce-bbb7-fa44e01a28cd.mp3",
       "color": "#8e44ad"
@@ -3630,6 +3674,7 @@
       "title": {
         "sr": "Julije Cezar - Poslednji dani"
       },
+      "series": "main",
       "pubDate": "Tue, 20 May 2025 16:59:51 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2035790/rs-historycast/2025_05_19_14_33_34_b1d9486b-6549-4eda-a97e-e0575a4a180e.mp3",
       "color": "#d35400"
@@ -3639,6 +3684,7 @@
       "title": {
         "sr": "Petar Veliki, 1. deo"
       },
+      "series": "main",
       "pubDate": "Tue, 27 May 2025 11:28:18 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2046006/rs-historycast/2025_05_26_23_30_39_34943a70-5a61-4026-9965-6966520cce95.mp3",
       "color": "#16a085"
@@ -3648,6 +3694,7 @@
       "title": {
         "sr": "Gvozdeni puk"
       },
+      "series": "main",
       "pubDate": "Tue, 03 Jun 2025 18:19:48 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2051360/rs-historycast/2025_05_30_13_43_47_2657acef-a5d5-4ee5-8ff5-b767dff1f567.mp3",
       "color": "#c0392b"
@@ -3657,6 +3704,7 @@
       "title": {
         "sr": "Invazija na Normandiju, zapadni front } HistoryCast"
       },
+      "series": "main",
       "pubDate": "Tue, 10 Jun 2025 17:23:01 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2060962/rs-historycast/2025_06_05_22_26_56_28b5c7b0-1767-4779-b0aa-25053499bfa1.mp3",
       "color": "#2c3e50"
@@ -3666,6 +3714,7 @@
       "title": {
         "sr": "Hercegovački ustanak"
       },
+      "series": "main",
       "pubDate": "Tue, 17 Jun 2025 11:31:26 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2071306/rs-historycast/2025_06_12_22_57_59_0dd63909-280b-4ae7-88aa-d4743da7a49b.mp3",
       "color": "#f39c12"
@@ -3675,6 +3724,7 @@
       "title": {
         "sr": "Gradjanski rat u Rusiji"
       },
+      "series": "main",
       "pubDate": "Tue, 24 Jun 2025 23:12:09 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2081556/rs-historycast/2025_06_19_23_15_09_21ee092f-bb2c-478c-b7da-45e36f068191.mp3",
       "color": "#7f8c8d"
@@ -3684,6 +3734,7 @@
       "title": {
         "sr": "Kosovska bitka, HistoryCast specijal"
       },
+      "series": "main",
       "pubDate": "Sun, 29 Jun 2025 20:33:02 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2089581/rs-historycast/2025_06_25_22_52_48_300c47eb-09b7-47b4-ba55-f46ee7aa8397.mp3",
       "color": "#c0392b"
@@ -3693,6 +3744,7 @@
       "title": {
         "sr": "Poslednji srpski despoti"
       },
+      "series": "main",
       "pubDate": "Wed, 02 Jul 2025 19:26:26 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2091009/rs-historycast/2025_06_26_22_49_00_8b7a8883-6a7e-4b86-9d29-683b5e26a107.mp3",
       "color": "#2980b9"
@@ -3702,6 +3754,7 @@
       "title": {
         "sr": "Petar Veliki 2.deo"
       },
+      "series": "main",
       "pubDate": "Sat, 12 Jul 2025 08:29:52 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2100635/rs-historycast/2025_07_03_22_38_34_698410f1-e87c-4a50-bd4a-4940a2696c93.mp3",
       "color": "#27ae60"
@@ -3711,6 +3764,7 @@
       "title": {
         "sr": "Stefan Dečanski"
       },
+      "series": "main",
       "pubDate": "Wed, 16 Jul 2025 22:39:40 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2109635/rs-historycast/2025_07_10_22_58_56_3a9062f6-3f7d-478f-91a6-bc3cef39c719.mp3",
       "color": "#8e44ad"
@@ -3720,6 +3774,7 @@
       "title": {
         "sr": "Opsada Lenjingrada"
       },
+      "series": "main",
       "pubDate": "Thu, 24 Jul 2025 05:36:57 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2132407/rs-historycast/2025_07_23_19_01_36_1ed9ac65-a5ff-4b6d-a307-73b820733cdb.mp3",
       "color": "#d35400"
@@ -3729,6 +3784,7 @@
       "title": {
         "sr": "Peloponeski rat"
       },
+      "series": "main",
       "pubDate": "Sun, 10 Aug 2025 13:30:09 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2149711/rs-historycast/2025_08_04_00_57_14_478b0e2b-a0e5-4dd0-9269-51cbcffa5cc3.mp3",
       "color": "#16a085"
@@ -3738,6 +3794,7 @@
       "title": {
         "sr": "Mustafa Golubić, agent sa dozvolom da ubije"
       },
+      "series": "main",
       "pubDate": "Fri, 22 Aug 2025 07:20:44 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2156452/rs-historycast/2025_08_07_22_35_41_d40df96b-3464-42bf-b3c1-6107680d0318.mp3",
       "color": "#c0392b"
@@ -3747,6 +3804,7 @@
       "title": {
         "sr": "Đurađ Branković"
       },
+      "series": "main",
       "pubDate": "Mon, 01 Sep 2025 16:57:43 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2167624/rs-historycast/2025_08_15_13_40_25_386ddf76-949b-4849-880c-2058d54f5a2a.mp3",
       "color": "#2c3e50"
@@ -3756,6 +3814,7 @@
       "title": {
         "sr": "Kralj Milan Obrenović"
       },
+      "series": "main",
       "pubDate": "Wed, 17 Sep 2025 08:15:40 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2201114/rs-historycast/2025_09_05_14_24_00_5575c6c2-23f3-41de-9398-87a869bd84da.mp3",
       "color": "#f39c12"
@@ -3765,6 +3824,7 @@
       "title": {
         "sr": "Proboj solunskog fronta"
       },
+      "series": "main",
       "pubDate": "Wed, 24 Sep 2025 20:08:47 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2211528/rs-historycast/2025_09_11_22_59_54_2ae078a6-bf20-4175-bb17-2c88b1cdd567.mp3",
       "color": "#7f8c8d"
@@ -3774,6 +3834,7 @@
       "title": {
         "sr": "Carstvo Asteka"
       },
+      "series": "main",
       "pubDate": "Sun, 28 Sep 2025 21:03:47 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2188773/rs-historycast/2025_08_28_18_52_48_8b5674a4-05e2-4cec-8b42-cc5df4309ff1.mp3",
       "color": "#c0392b"
@@ -3783,6 +3844,7 @@
       "title": {
         "sr": "Džingis kan, tajna istorija Mongola | HistoryCast"
       },
+      "series": "main",
       "pubDate": "Mon, 06 Oct 2025 17:49:10 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2227819/rs-historycast/2025_09_22_19_12_27_61861898-c2c4-49fd-88fd-dfc0c480c5db.mp3",
       "color": "#2980b9"
@@ -3792,6 +3854,7 @@
       "title": {
         "sr": "Hitlerove čistke - noć dugih noževa"
       },
+      "series": "main",
       "pubDate": "Thu, 23 Oct 2025 21:07:40 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1996971/rs-historycast/2025_04_22_11_20_55_517cdaa4-7cad-4f63-8d3e-d5348df455f9.mp3",
       "color": "#27ae60"
@@ -3801,6 +3864,7 @@
       "title": {
         "sr": "Operacija Bagration"
       },
+      "series": "main",
       "pubDate": "Tue, 28 Oct 2025 09:59:57 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2234204/rs-historycast/2025_09_25_22_25_19_60c52b32-cbe6-4f87-b605-d19c78dbbff5.mp3",
       "color": "#8e44ad"
@@ -3810,6 +3874,7 @@
       "title": {
         "sr": "Srbija pod Habzburzima"
       },
+      "series": "main",
       "pubDate": "Sat, 01 Nov 2025 23:15:12 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2267564/rs-historycast/2025_10_12_22_15_14_9174b6f9-c62d-4834-9fee-343167b70d5f.mp3",
       "color": "#d35400"
@@ -3819,6 +3884,7 @@
       "title": {
         "sr": "Vinston Čerčil"
       },
+      "series": "main",
       "pubDate": "Thu, 06 Nov 2025 21:39:08 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2288098/rs-historycast/2025_10_23_23_43_39_b61a570c-78bb-44e4-b796-273f4040a48b.mp3",
       "color": "#16a085"
@@ -3828,6 +3894,7 @@
       "title": {
         "sr": "Propaganda kao režim - Gebels i nacistička propaganda"
       },
+      "series": "main",
       "pubDate": "Wed, 12 Nov 2025 21:33:59 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2300173/rs-historycast/2025_10_30_20_37_55_c274d98d-51e5-4b9c-a1f8-0b9dd67c772a.mp3",
       "color": "#c0392b"
@@ -3837,6 +3904,7 @@
       "title": {
         "sr": "Mao Cedung"
       },
+      "series": "main",
       "pubDate": "Thu, 20 Nov 2025 09:42:51 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2300461/rs-historycast/2025_10_31_00_15_57_3a9e1330-5946-4260-afd2-64118c1cca0a.mp3",
       "color": "#2c3e50"
@@ -3846,6 +3914,7 @@
       "title": {
         "sr": "Nikola Pašić"
       },
+      "series": "main",
       "pubDate": "Mon, 01 Dec 2025 03:13:46 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2314211/rs-historycast/2025_11_07_01_01_26_2713b63d-51fe-45eb-b2b4-678e52ded730.mp3",
       "color": "#f39c12"
@@ -3855,6 +3924,7 @@
       "title": {
         "sr": "Leonardo da Vinči"
       },
+      "series": "main",
       "pubDate": "Fri, 05 Dec 2025 01:48:02 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2326863/rs-historycast/2025_11_13_19_54_26_9b8c51c1-7aba-4f9f-8bfc-4c74ce2522a6.mp3",
       "color": "#7f8c8d"
@@ -3862,8 +3932,9 @@
     {
       "id": "115",
       "title": {
-        "sr": "Vuk Karadžić | HistoryCast nedeljom"
+        "sr": "Vuk Karadžić"
       },
+      "series": "side",
       "pubDate": "Sun, 21 Dec 2025 22:47:25 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2350440/rs-historycast/2025_11_26_23_08_00_94057207-daea-4e0f-a396-d4e207eca8a2.mp3",
       "color": "#c0392b"
@@ -3873,6 +3944,7 @@
       "title": {
         "sr": "Šarl De Gol"
       },
+      "series": "main",
       "pubDate": "Tue, 23 Dec 2025 17:31:55 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2332545/rs-historycast/2025_11_17_19_19_32_b7221c5f-a149-4094-9c83-3fef53a66f94.mp3",
       "color": "#2980b9"
@@ -3882,6 +3954,7 @@
       "title": {
         "sr": "Miroslavljevo jevandjelje"
       },
+      "series": "main",
       "pubDate": "Thu, 25 Dec 2025 19:09:31 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2366951/rs-historycast/2025_12_03_18_19_09_21f7004e-fc43-4a55-b2c9-dafa282a4868.mp3",
       "color": "#27ae60"
@@ -3891,6 +3964,7 @@
       "title": {
         "sr": "Najveće istorijske laži"
       },
+      "series": "main",
       "pubDate": "Fri, 02 Jan 2026 14:37:00 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2419063/rs-historycast/2025_12_29_20_25_42_7f2c016d-773a-47c6-975c-3cd07de4a9d8.mp3",
       "color": "#8e44ad"
@@ -3900,6 +3974,7 @@
       "title": {
         "sr": "Kublaj-kan i mongolsko carstvo"
       },
+      "series": "main",
       "pubDate": "Thu, 08 Jan 2026 14:36:29 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2377083/rs-historycast/2025_12_08_22_35_43_cdce67be-c401-40ad-808a-33e5aaa59634.mp3",
       "color": "#d35400"
@@ -3909,6 +3984,7 @@
       "title": {
         "sr": "Kralj Petar II"
       },
+      "series": "main",
       "pubDate": "Fri, 16 Jan 2026 14:32:15 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2385189/rs-historycast/2025_12_12_01_54_45_a1557b1d-71e7-4495-a96f-12411fc2567c.mp3",
       "color": "#16a085"
@@ -3918,6 +3994,7 @@
       "title": {
         "sr": "Rat na Pacifiku, Drugi svetski rat"
       },
+      "series": "main",
       "pubDate": "Thu, 22 Jan 2026 20:42:39 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2397828/rs-historycast/2025_12_17_23_39_32_8948f8d6-ffe0-4cda-aa44-751c1176ef67.mp3",
       "color": "#c0392b"
@@ -3927,6 +4004,7 @@
       "title": {
         "sr": "Vizantijske carice"
       },
+      "series": "main",
       "pubDate": "Thu, 29 Jan 2026 15:34:28 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2399871/rs-historycast/2025_12_18_22_46_52_7b5c072f-8bc9-4846-90bc-4e9f986f614e.mp3",
       "color": "#2c3e50"
@@ -3936,6 +4014,7 @@
       "title": {
         "sr": "Demon bojnog polja, Voja Tankosić"
       },
+      "series": "main",
       "pubDate": "Fri, 06 Feb 2026 22:07:20 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2380051/rs-historycast/2025_12_09_22_54_00_8bfaf54f-c8ac-4a96-9157-11102fecc60b.mp3",
       "color": "#f39c12"
@@ -3945,6 +4024,7 @@
       "title": {
         "sr": "Krimski rat"
       },
+      "series": "main",
       "pubDate": "Sat, 14 Feb 2026 13:32:27 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2463023/rs-historycast/2026_01_15_23_15_52_f08be1cf-d2bd-4307-b1aa-8ea09b4b16e7.mp3",
       "color": "#7f8c8d"
@@ -3954,6 +4034,7 @@
       "title": {
         "sr": "Salvador Dali"
       },
+      "series": "main",
       "pubDate": "Fri, 27 Feb 2026 18:46:28 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2381991/rs-historycast/2025_12_10_22_10_23_4aef20a5-442d-4695-af6f-e92e1e1f8b2a.mp3",
       "color": "#c0392b"
@@ -3963,6 +4044,7 @@
       "title": {
         "sr": "Ataturk, od bolesnika sa Bosfora do moderne Turske"
       },
+      "series": "main",
       "pubDate": "Tue, 03 Mar 2026 15:54:19 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2525228/rs-historycast/2026_02_05_23_26_59_3699bd80-26dc-470f-99fa-feb61306b3e0.mp3",
       "color": "#2980b9"
@@ -3972,6 +4054,7 @@
       "title": {
         "sr": "Engleska Republika, Oliver Kromvel"
       },
+      "series": "main",
       "pubDate": "Wed, 11 Mar 2026 12:19:52 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2545315/rs-historycast/2026_02_12_23_55_27_c86f156e-7185-4e48-9624-63e3fcbc5390.mp3",
       "color": "#27ae60"
@@ -3981,6 +4064,7 @@
       "title": {
         "sr": "Mikelanđelo"
       },
+      "series": "main",
       "pubDate": "Thu, 19 Mar 2026 18:53:34 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2522492/rs-historycast/2026_02_04_23_04_06_51ac5aab-e271-4e49-97d9-08f29e08c23f.mp3",
       "color": "#8e44ad"
@@ -3990,6 +4074,7 @@
       "title": {
         "sr": "Irski rat za nezavisnost"
       },
+      "series": "main",
       "pubDate": "Sun, 29 Mar 2026 09:52:22 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2604777/rs-historycast/2026_03_05_23_02_09_9227c3d8-ffce-4280-8743-8df6ed016c6a.mp3",
       "color": "#d35400"
@@ -3999,6 +4084,7 @@
       "title": {
         "sr": "Korejski rat"
       },
+      "series": "main",
       "pubDate": "Wed, 08 Apr 2026 15:07:50 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2585706/rs-historycast/2026_02_26_22_35_07_ce565755-2152-431c-8a84-1a9d3a9e7b68.mp3",
       "color": "#16a085"
@@ -4008,6 +4094,7 @@
       "title": {
         "sr": "Pseudoarheologija"
       },
+      "series": "main",
       "pubDate": "Fri, 17 Apr 2026 10:44:24 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2661926/rs-historycast/2026_03_25_21_10_57_42195922-d553-46c9-90c2-f45887a81abf.mp3",
       "color": "#c0392b"
@@ -4017,6 +4104,7 @@
       "title": {
         "sr": "MOSAD"
       },
+      "series": "main",
       "pubDate": "Sat, 18 Apr 2026 16:16:19 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2595276/rs-historycast/2026_03_02_23_22_05_565d2e32-574b-428e-8a9d-3ec444260fa2.mp3",
       "color": "#2c3e50"
@@ -4026,6 +4114,7 @@
       "title": {
         "sr": "Nuklearna katastrofa u Černobilju"
       },
+      "series": "main",
       "pubDate": "Sat, 25 Apr 2026 15:24:10 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2742025/rs-historycast/2026_04_16_21_36_15_bbbb09ad-1274-4cf5-9bb4-d86213e2ac13.mp3",
       "color": "#f39c12"
@@ -4035,6 +4124,7 @@
       "title": {
         "sr": "Pad Berlina, drugi svetski rat"
       },
+      "series": "main",
       "pubDate": "Fri, 01 May 2026 12:55:49 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2692270/rs-historycast/2026_04_05_23_05_33_6715a936-b700-4909-9f1b-cca0336ecad7.mp3",
       "color": "#7f8c8d"
@@ -4044,6 +4134,7 @@
       "title": {
         "sr": "Mihajlo Pupin"
       },
+      "series": "main",
       "pubDate": "Thu, 07 May 2026 10:34:45 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2739404/rs-historycast/2026_04_15_23_01_48_f36d1789-54a6-4d53-b398-e6724bb834c0.mp3",
       "color": "#c0392b"
@@ -4053,6 +4144,7 @@
       "title": {
         "sr": "Otkriće Troje"
       },
+      "series": "main",
       "pubDate": "Thu, 14 May 2026 20:10:57 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2681407/rs-historycast/2026_04_01_21_44_52_302720bd-5026-4b06-9652-30c3f8acfd44.mp3",
       "color": "#2980b9"
@@ -4062,6 +4154,7 @@
       "title": {
         "sr": "Raspućin"
       },
+      "series": "main",
       "pubDate": "Sat, 23 May 2026 13:43:56 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2644269/rs-historycast/2026_03_19_23_27_49_dc427c18-bab4-4a4c-b049-2adefa982050.mp3",
       "color": "#27ae60"
@@ -4071,6 +4164,7 @@
       "title": {
         "sr": "Pokrštavanje Slovena"
       },
+      "series": "main",
       "pubDate": "Mon, 01 Jun 2026 07:33:57 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2565682/rs-historycast/2026_02_20_23_20_11_b004a1ca-ba87-43f7-aaf2-37781600ded3.mp3",
       "color": "#8e44ad"
@@ -4080,6 +4174,7 @@
       "title": {
         "sr": "Hemingvej"
       },
+      "series": "main",
       "pubDate": "Thu, 11 Jun 2026 00:54:06 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2844789/rs-historycast/2026_05_20_22_41_51_128a7d7f-423f-4046-b6b1-7c98778a1e73.mp3",
       "color": "#d35400"
@@ -4089,6 +4184,7 @@
       "title": {
         "sr": "Vikinzi"
       },
+      "series": "main",
       "pubDate": "Tue, 16 Jun 2026 22:33:47 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2762785/rs-historycast/2026_04_23_22_32_47_76d92797-f338-4a67-8a62-05cbf47abe66.mp3",
       "color": "#16a085"
@@ -4098,6 +4194,7 @@
       "title": {
         "sr": "Duško Popov, kodno ime \"Tricikl\""
       },
+      "series": "main",
       "pubDate": "Thu, 25 Jun 2026 16:49:19 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2576462/rs-historycast/2026_02_24_22_44_02_9a6e2613-6591-4d74-935f-1d32963231ee.mp3",
       "color": "#c0392b"
@@ -4107,6 +4204,7 @@
       "title": {
         "sr": "Američki rat za nezavisnost"
       },
+      "series": "main",
       "pubDate": "Fri, 03 Jul 2026 06:18:25 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2961400/rs-historycast/2026_07_03_06_03_32_f8fea540-c3eb-43f7-babb-c7b6206ed213.mp3",
       "color": "#2c3e50"
@@ -4116,6 +4214,7 @@
       "title": {
         "sr": "Bizmark"
       },
+      "series": "main",
       "pubDate": "Wed, 15 Jul 2026 20:39:38 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2790943/rs-historycast/2026_05_04_00_24_22_d00d3a80-13d9-478b-be69-a20febed8f61.mp3",
       "color": "#f39c12"
@@ -4125,6 +4224,7 @@
       "title": {
         "sr": "Vuk Branković"
       },
+      "series": "main",
       "pubDate": "Wed, 22 Jul 2026 06:11:12 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/2926240/rs-historycast/2026_06_18_22_16_54_8a9fc482-ec08-491d-83ce-c78ecf2d69b9.mp3",
       "color": "#7f8c8d"
@@ -4134,6 +4234,7 @@
       "title": {
         "sr": "Drugi svetski rat, 1941 - Bitka za Moskvu"
       },
+      "series": "main",
       "pubDate": "Tue, 22 Oct 2024 13:20:06 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1713556/rs-historycast/2024_10_21_18_51_54_3d8015a1-7bca-4d79-a6d8-ca91d5ba1166.mp3",
       "color": "#c0392b"
@@ -4143,6 +4244,7 @@
       "title": {
         "sr": "Novogodišnja epizoda"
       },
+      "series": "main",
       "pubDate": "Tue, 31 Dec 2024 11:53:48 GMT",
       "audioUrl": "https://content.rss.com/episodes/186457/1818026/rs-historycast/2024_12_27_20_00_17_8a727e34-cb6b-4312-b824-a4a261f9042d.mp3",
       "color": "#2980b9"
