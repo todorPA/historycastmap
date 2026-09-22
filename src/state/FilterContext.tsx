@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { Lang } from '../types/events';
+import type { Lang, SeriesId } from '../types/events';
 import { DEFAULT_BASEMAP_ID } from '../config/basemaps';
 
 /** Timeline panel height. Shared because the map must re-fit when its own height changes. */
@@ -23,6 +23,9 @@ interface FilterContextValue {
   toggleRegion: (region: string) => void;
   activeTypes: string[];
   toggleType: (type: string) => void;
+  /** Same semantics, but the value lives on the episode rather than the event. */
+  activeSeries: SeriesId[];
+  toggleSeries: (series: SeriesId) => void;
   clearFacets: () => void;
 
   lang: Lang;
@@ -56,6 +59,7 @@ export function FilterProvider({
     basemapId?: string | null;
     regions?: string[] | null;
     types?: string[] | null;
+    series?: SeriesId[] | null;
   };
   children: ReactNode;
 }) {
@@ -65,6 +69,7 @@ export function FilterProvider({
   const [activeEpisodeId, setActiveEpisodeId] = useState<string | null>(initial?.episodeId ?? null);
   const [activeRegions, setActiveRegions] = useState<string[]>(initial?.regions ?? []);
   const [activeTypes, setActiveTypes] = useState<string[]>(initial?.types ?? []);
+  const [activeSeries, setActiveSeries] = useState<SeriesId[]>(initial?.series ?? []);
   const [lang, setLang] = useState<Lang>(initial?.lang ?? 'sr');
   const [selectedEventId, setSelectedEventId] = useState<string | null>(initial?.eventId ?? null);
   const [basemapId, setBasemapId] = useState<string>(initial?.basemapId ?? DEFAULT_BASEMAP_ID);
@@ -112,9 +117,15 @@ export function FilterProvider({
     setSelectedEventId(null);
   }, []);
 
+  const toggleSeries = useCallback((series: SeriesId) => {
+    setActiveSeries((prev) => toggle(series, prev) as SeriesId[]);
+    setSelectedEventId(null);
+  }, []);
+
   const clearFacets = useCallback(() => {
     setActiveRegions([]);
     setActiveTypes([]);
+    setActiveSeries([]);
     setSelectedEventId(null);
   }, []);
 
@@ -129,6 +140,8 @@ export function FilterProvider({
       toggleRegion,
       activeTypes,
       toggleType,
+      activeSeries,
+      toggleSeries,
       clearFacets,
       lang,
       setLang,
@@ -150,6 +163,8 @@ export function FilterProvider({
       toggleRegion,
       activeTypes,
       toggleType,
+      activeSeries,
+      toggleSeries,
       clearFacets,
       lang,
       selectedEventId,

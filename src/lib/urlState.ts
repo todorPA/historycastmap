@@ -1,4 +1,4 @@
-import type { Lang } from '../types/events';
+import type { Lang, SeriesId } from '../types/events';
 import { DATASETS, DEFAULT_DATASET, type DatasetName } from './data';
 import { BASEMAPS, DEFAULT_BASEMAP_ID } from '../config/basemaps';
 import { COLLECTIONS } from '../config/collections';
@@ -21,6 +21,7 @@ export interface UrlState {
   basemapId: string | null;
   regions: string[] | null;
   types: string[] | null;
+  series: SeriesId[] | null;
 }
 
 const PARAM = {
@@ -34,6 +35,7 @@ const PARAM = {
   basemap: 'bm',
   regions: 'r',
   types: 'ty',
+  series: 'se',
 } as const;
 
 /** Comma-separated lists; empty or missing means "no restriction". */
@@ -41,6 +43,16 @@ function parseList(raw: string | null): string[] | null {
   if (!raw) return null;
   const values = raw.split(',').map((v) => v.trim()).filter(Boolean);
   return values.length > 0 ? values : null;
+}
+
+/**
+ * Same, narrowed to the known series. An unknown value is dropped rather than kept: a
+ * hand-edited `?se=podcast` would otherwise match no episode and empty the map with no
+ * visible cause.
+ */
+function parseSeries(raw: string | null): SeriesId[] | null {
+  const values = parseList(raw)?.filter((v): v is SeriesId => v === 'main' || v === 'side');
+  return values && values.length > 0 ? values : null;
 }
 
 function parseYear(raw: string | null): number | null {
@@ -77,6 +89,8 @@ export function parseUrlState(search: string): UrlState {
     basemapId: rawBasemap && BASEMAPS.some((b) => b.id === rawBasemap) ? rawBasemap : null,
     regions: parseList(params.get(PARAM.regions)),
     types: parseList(params.get(PARAM.types)),
+    // Validated against the two known values, so a hand-edited URL can't filter to nothing.
+    series: parseSeries(params.get(PARAM.series)),
   };
 }
 
@@ -93,6 +107,7 @@ export function buildSearch(state: {
   basemapId: string;
   regions: string[];
   types: string[];
+  series: SeriesId[];
 }): string {
   const params = new URLSearchParams();
 
@@ -109,6 +124,7 @@ export function buildSearch(state: {
   if (state.basemapId !== DEFAULT_BASEMAP_ID) params.set(PARAM.basemap, state.basemapId);
   if (state.regions.length > 0) params.set(PARAM.regions, state.regions.join(','));
   if (state.types.length > 0) params.set(PARAM.types, state.types.join(','));
+  if (state.series.length > 0) params.set(PARAM.series, state.series.join(','));
 
   const qs = params.toString();
   return qs ? `?${qs}` : '';

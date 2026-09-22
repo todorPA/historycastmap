@@ -86,6 +86,7 @@ export default function App() {
         basemapId: urlState.basemapId,
         regions: urlState.regions,
         types: urlState.types,
+        series: urlState.series,
       }}
     >
       <Loader urlState={urlState} />

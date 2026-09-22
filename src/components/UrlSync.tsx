@@ -21,6 +21,7 @@ export default function UrlSync({ dataset }: { dataset: DatasetName }) {
     basemapId,
     activeRegions,
     activeTypes,
+    activeSeries,
   } = useFilters();
 
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function UrlSync({ dataset }: { dataset: DatasetName }) {
           basemapId,
           regions: activeRegions,
           types: activeTypes,
+          series: activeSeries,
         }),
       );
     }, WRITE_DEBOUNCE_MS);
@@ -55,6 +57,7 @@ export default function UrlSync({ dataset }: { dataset: DatasetName }) {
     basemapId,
     activeRegions,
     activeTypes,
+    activeSeries,
   ]);
 
   return null;
