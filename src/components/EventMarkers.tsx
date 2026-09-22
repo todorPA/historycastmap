@@ -49,6 +49,11 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
    * marker that has no popup yet silently does nothing and there is no second attempt. The
    * marker being present is therefore not a sufficient condition, which is why this checks
    * getPopup() too.
+   *
+   * `clusters` is in the deps because a deep link's marker may not exist on the first pass,
+   * but clusters are also recomputed on every zoom. An already-open popup is therefore left
+   * alone: openPopup() auto-pans, and re-opening on zoomend would drag the viewport back to
+   * the selection every time the user zoomed somewhere else.
    */
   useEffect(() => {
     if (!selectedEventId) return;
@@ -57,6 +62,7 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
     let tries = 0;
     const tryOpen = () => {
       const marker = markerRefs.current.get(selectedEventId);
+      if (marker?.isPopupOpen()) return;
       if (marker?.getPopup()) {
         marker.openPopup();
         return;
@@ -171,6 +177,11 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
             }}
             eventHandlers={{
               click: () => {
+                // Breaking a cluster apart is navigating away from whatever was selected, so
+                // drop the selection with it. Leaving it set kept `?e=` in the URL and — since
+                // fitBounds changes the zoom, which recomputes `clusters` and re-runs the
+                // re-open effect above — pulled the map straight back to the old event.
+                setSelectedEventId(null);
                 const bounds = cluster.items.map((i) => i.position) as LatLngBoundsExpression;
                 map.fitBounds(bounds, { padding: [60, 60], maxZoom: 12 });
               },

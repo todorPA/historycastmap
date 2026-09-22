@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { MapContainer, useMap } from 'react-leaflet';
+import { MapContainer, useMap, useMapEvent } from 'react-leaflet';
 import type { LatLngBoundsExpression, LatLngTuple } from 'leaflet';
 import type { HistoryEvent, PlacesById } from '../types/events';
 import { getBasemap } from '../config/basemaps';
@@ -89,6 +89,18 @@ function PanToSelected({ points }: { points: Map<string, LatLngTuple> }) {
 }
 
 /**
+ * Clicking bare map deselects. Selection used to have no exit other than changing a filter,
+ * so `?e=` stayed in the URL for the rest of the session and kept re-framing the map on the
+ * event the reader had already moved on from. Leaflet fires this only for the background —
+ * marker and popup clicks don't reach the map.
+ */
+function DeselectOnMapClick() {
+  const { setSelectedEventId } = useFilters();
+  useMapEvent('click', () => setSelectedEventId(null));
+  return null;
+}
+
+/**
  * One marker per place-and-year. Events that share both are the same dot on the map — either
  * one fact covered by several episodes, or several things that happened there that year;
  * the popup lists them either way. Distinct years at one place still get the small spiral
@@ -167,6 +179,7 @@ export default function MapView() {
           fitKey={`${data.meta.generated}|${activeCollectionId ?? 'all'}|${activeEpisodeId ?? 'all'}|${timelineSize}`}
         />
         <PanToSelected points={pointsById} />
+        <DeselectOnMapClick />
 
         <EventMarkers items={positioned} />
       </MapContainer>

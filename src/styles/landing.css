@@ -20,14 +20,34 @@ html {
   scroll-behavior: smooth;
 }
 
+/**
+ * Body copy is set in the display serif, not the UI sans.
+ *
+ * Borrowed from "Searching for Birds", where the essay is set in a slab serif and only the
+ * headings are sans: it is what gives that page its printed quality. Zilla Slab itself is
+ * out, for the same reason Satoshi and Cabinet Grotesk were: it ships no Cyrillic subset,
+ * and this dataset contains Cyrillic. Literata is already here, already carries both
+ * subsets, and was cut for long-form reading in the first place.
+ *
+ * Serifs want a little more leading than a sans at the same size.
+ */
 body {
   margin: 0;
   background: var(--ink-900);
   color: var(--ink-100);
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+}
+
+/* The chrome stays on the UI sans: nav, buttons and the region key are interface, not prose. */
+.nav,
+.cta,
+.tally__label,
+.regions,
+.foot {
+  font-family: var(--font-sans);
 }
 
 .wrap {
@@ -146,9 +166,19 @@ a {
   outline-offset: 3px;
 }
 
-/* ---------- hero: asymmetric split, 4 text elements max ---------- */
+/* ---------- hero ----------
+   The text column holds the page's measure; the map runs past the container to the viewport
+   edge. A bordered, rounded, shadowed card would have framed the map as a product
+   screenshot — one tidy object among several. Cropped at the edge it reads as a view onto
+   something larger than the page, which is what the archive actually is. */
 .hero {
-  padding: var(--sp-6) 0 var(--sp-6);
+  padding: var(--sp-6) 0;
+}
+
+/* The container's own left edge, so the hero text starts on the same axis as every
+   section below it even though the hero itself is not inside .wrap. */
+:root {
+  --gutter: max(var(--sp-5), calc((100vw - 1240px) / 2 + var(--sp-5)));
 }
 
 .hero__grid {
@@ -156,17 +186,19 @@ a {
   grid-template-columns: 1fr;
   gap: var(--sp-5);
   align-items: center;
+  padding: 0 var(--sp-5);
 }
 
 @media (min-width: 900px) {
   .hero {
     padding-top: 5rem;
-    padding-bottom: 4rem;
+    padding-bottom: 4.5rem;
   }
 
   .hero__grid {
-    grid-template-columns: 5fr 7fr;
-    gap: var(--sp-6);
+    grid-template-columns: minmax(0, 27rem) minmax(0, 1fr);
+    column-gap: clamp(var(--sp-6), 5vw, 4.5rem);
+    padding: 0 0 0 var(--gutter);
   }
 }
 
@@ -174,9 +206,10 @@ a {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2.25rem, 3.6vw, 2.875rem);
-  line-height: 1.12;
-  letter-spacing: -0.015em;
+  font-size: clamp(2.25rem, 4.4vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .hero__title em {
@@ -188,7 +221,7 @@ a {
 
 .hero__sub {
   margin: var(--sp-4) 0 0;
-  max-width: 46ch;
+  max-width: 40ch;
   color: var(--ink-200);
   font-size: 1.0625rem;
 }
@@ -200,59 +233,42 @@ a {
   margin-top: var(--sp-5);
 }
 
+/* The frame now belongs to the map itself, so the caption can sit outside it on the page
+   ground instead of being boxed in with the tiles. */
 .hero__figure {
   margin: 0;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  border: 1px solid var(--ink-500);
-  box-shadow: var(--shadow-panel);
-  background: var(--ink-800);
 }
 
-.hero__figure img {
-  display: block;
-  width: 100%;
-  height: auto;
+/* ---------- tally ----------
+   Was a four-figure band of its own between the hero and the first section: the default
+   stat strip, and read as three trophies and a filler ("3206 godina", which the chart's own
+   axis states better). It now heads the chart, where the numbers are what the bars count.
+   column-reverse puts the figure above its noun while keeping the markup a valid <dl>, where
+   the term has to come first. */
+.tally {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-5) clamp(var(--sp-6), 5vw, 4rem);
+  margin: var(--sp-6) 0 0;
 }
 
-@media (min-width: 1240px) {
-  /* The screenshot is the argument, so let it run past the grid column. */
-  .hero__figure {
-    width: calc(100% + 4rem);
-  }
+.tally__item {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-/* ---------- counts: plain layout, no cards, mono numerals ---------- */
-.counts {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: var(--sp-5) 0;
-}
-
-.counts__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-5) var(--sp-4);
-}
-
-@media (min-width: 720px) {
-  .counts__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.count__n {
-  display: block;
+.tally__n {
+  margin: 0;
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.75rem, 3.4vw, 2.25rem);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
-.count__label {
-  display: block;
+.tally__label {
   margin-top: var(--sp-2);
+  font-family: var(--font-sans);
   font-size: var(--step--1);
   color: var(--ink-300);
 }
@@ -278,29 +294,32 @@ a {
 }
 
 /* ---------- how it works ----------
-   Was three equal columns, which is the feature-card grid in flattened form. This content
-   is genuinely a sequence (filter, then read, then listen), so it is set as one: rows read
-   top to bottom, the verb held in a fixed left column so the three align on a common axis. */
+   This content is genuinely a sequence (filter, then read, then listen), so it is set as
+   one: rows read top to bottom, the verb held in a fixed left column so the three align on
+   a common axis. Only the rules *between* steps are drawn — the outer two boxed the list in
+   without separating anything, and hairlines were already doing most of the structural work
+   on this page. */
 .steps {
   list-style: none;
-  margin: var(--sp-5) 0 0;
+  margin: var(--sp-6) 0 0;
   padding: 0;
-  border-top: 1px solid var(--ink-500);
 }
 
 .step {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--sp-1) var(--sp-5);
-  padding: var(--sp-4) 0;
-  border-bottom: 1px solid var(--line);
+  padding: var(--sp-5) 0;
+}
+
+.step + .step {
+  border-top: 1px solid var(--line);
 }
 
 @media (min-width: 720px) {
   .step {
     grid-template-columns: 13rem 1fr;
     align-items: baseline;
-    padding: var(--sp-4) 0;
   }
 }
 
@@ -320,17 +339,17 @@ a {
 }
 
 /* ---------- regions ----------
-   The twelve hues are the section's subject, so they are rendered rather than screenshotted:
-   a real key, on a column grid so the swatches line up on a shared axis. As wrapped pills
-   they read as filter chrome; as rows they read as a legend. */
+   The twelve hues are the section's subject, so they are rendered rather than screenshotted.
+   Twelve underlined rows in three columns read as a form; as two columns of six with no
+   rules and a swatch big enough to judge a colour by, it reads as the key it is. Colour is
+   the only thing holding the rows apart, which is the point the section is making. */
 .regions {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--sp-2) var(--sp-5);
-  margin: var(--sp-5) 0 0;
+  gap: var(--sp-3) var(--sp-5);
+  margin: var(--sp-6) 0 0;
   padding: 0;
   list-style: none;
-  max-width: 62rem;
 }
 
 @media (min-width: 620px) {
@@ -339,100 +358,48 @@ a {
   }
 }
 
-@media (min-width: 960px) {
-  .regions {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 .region {
   display: grid;
-  grid-template-columns: 12px 1fr;
+  grid-template-columns: 16px 1fr;
   align-items: center;
   gap: var(--sp-3);
-  padding: var(--sp-2) 0;
-  border-bottom: 1px solid var(--line);
   font-size: var(--step-0);
   color: var(--ink-200);
 }
 
 .region__dot {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   box-shadow: 0 0 0 1px var(--swatch-ring);
 }
 
-/* ---------- full-width band ----------
-   The timeline strip is a 5:1 image. In a half-width column it was unreadable, and the
-   split layout was also being used twice in a row; full width matches the shape of the
-   thing being shown. */
+/* ---------- full-width band ---------- */
 .band {
   margin: var(--sp-5) 0 0;
-  border: 1px solid var(--ink-500);
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  background: var(--ink-800);
 }
 
-.band img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* At phone widths a 5:1 strip of dated event bars is roughly 70px tall and reads as a
-   smear. The paragraph above already makes the point, so drop the illustration rather
-   than ship it unreadable. */
-@media (max-width: 719px) {
-  .band {
-    display: none;
-  }
-}
-
-/* ---------- split feature ---------- */
-.split {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-5);
-  align-items: center;
-}
-
-@media (min-width: 900px) {
-  .split {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--sp-6);
-  }
-
-  .split--flip .split__media {
-    order: -1;
-  }
-}
-
-.split__media {
-  margin: 0;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--ink-800);
-}
-
-.split__media img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* ---------- closing ---------- */
-/* Left-aligned like everything else on the page: a centred CTA band was the one place the
-   layout changed axis, and it changed it to the most generic arrangement available. */
+/* ---------- closing ----------
+   The one full-bleed surface change on the page. Everything above sits on the page ground,
+   so the scroll ends on a floor rather than trailing off; --gold-wash is the product's own
+   "active" surface, which makes the last thing on the page the same colour as a chosen row
+   inside the map. */
 .close-band {
-  border-top: 1px solid var(--line);
-  padding: clamp(3rem, 6vw, 4.5rem) 0;
+  background: var(--gold-wash);
+  border-top: 1px solid var(--gold-deep);
+  padding: clamp(3rem, 7vw, 5rem) 0;
 }
 
-.close-band .cta {
-  margin-top: var(--sp-5);
+.close-band__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--sp-5);
+}
+
+.close-band .section__body {
+  color: var(--ink-200);
 }
 
 /* ---------- footer ---------- */
@@ -486,14 +453,30 @@ a {
   }
 }
 
-/* ---------- hero map (item 5) ----------
+/* ---------- hero map ----------
    The figure holds a fixed aspect ratio so the live map lands in exactly the space the
-   static fallback occupied: no reflow when Leaflet arrives, and CLS stays at zero. */
+   static fallback occupied: no reflow when Leaflet arrives, and CLS stays at zero.
+
+   Rounded and bordered on the left only. The right side is a crop, not an edge, so giving
+   it a corner would undo the whole point of running the map off the page. */
 .hero__map {
   position: relative;
   aspect-ratio: 3 / 2;
   width: 100%;
   background: var(--ink-800);
+  border: 1px solid var(--ink-500);
+  border-right: 0;
+  border-radius: var(--r-lg) 0 0 var(--r-lg);
+  overflow: hidden;
+}
+
+@media (max-width: 899px) {
+  /* Stacked, the map is inside the page padding again, so it gets all four sides back. */
+  .hero__map {
+    aspect-ratio: 4 / 3;
+    border-right: 1px solid var(--ink-500);
+    border-radius: var(--r-lg);
+  }
 }
 
 .hero__map img {
@@ -566,4 +549,142 @@ a {
   padding: var(--sp-5);
   color: var(--ink-200);
   font-size: var(--step-0);
+}
+
+/* ---------- editorial rhythm ----------
+   Narrow prose against wide graphics. The measure was the full 1240px wrap, which is far
+   past a comfortable line length and left the charts no width to be wider *than*. */
+.prose {
+  max-width: 34rem;
+}
+
+.prose .section__body {
+  max-width: none;
+}
+
+/* Section links, so a paragraph of this page can be cited the way a view of the map can.
+   A "#" rather than a drawn icon: it is a character, not an illustration to maintain. */
+.anchor {
+  margin-left: 0.4ch;
+  color: var(--ink-400);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.section__title:hover .anchor,
+.anchor:focus-visible {
+  opacity: 1;
+}
+
+.anchor:focus-visible {
+  outline: 2px solid var(--ink-100);
+  outline-offset: 2px;
+}
+
+/* ---------- margin note ----------
+   For the sentence that supports a claim without being the claim. Beside the content on a
+   wide screen, beneath it on a narrow one. */
+.with-note {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  margin-top: var(--sp-5);
+}
+
+@media (min-width: 900px) {
+  .with-note {
+    grid-template-columns: minmax(0, 1fr) 17rem;
+    gap: var(--sp-6);
+    align-items: start;
+  }
+}
+
+.note {
+  font-size: var(--step-0);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--ink-200);
+  border-top: 1px solid var(--ink-500);
+  padding-top: var(--sp-3);
+}
+
+/* ---------- century chart ----------
+   The archive's own shape in time, replacing a screenshot of the timeline UI. Region colour
+   is deliberately absent: this chart is about *when*, and twelve hues here would compete
+   with the key directly above it. Gold marks the one bar the annotation points at, which is
+   the same job gold does everywhere else in the product. */
+.band--chart {
+  border: 0;
+  background: none;
+  border-radius: 0;
+  margin-top: var(--sp-6);
+}
+
+.cc {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.cc__bar {
+  fill: var(--ink-300);
+}
+
+.cc__bar.is-peak {
+  fill: var(--gold);
+  stroke: var(--gold-deep);
+  stroke-width: 1;
+}
+
+.cc__axis {
+  stroke: var(--ink-300);
+  stroke-width: 1;
+}
+
+/* The baseline under the centuries that hold nothing. Dotted rather than absent, so the
+   twelve silent centuries are something the chart says rather than somewhere it stops. */
+.cc__gap {
+  stroke: var(--ink-400);
+  stroke-width: 1;
+  stroke-dasharray: 2 4;
+}
+
+.cc__lead {
+  stroke: var(--gold-deep);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.cc__note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  fill: var(--ink-200);
+}
+
+.cc__tick {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  fill: var(--ink-300);
+}
+
+.band__caption {
+  margin-top: var(--sp-3);
+  max-width: 52rem;
+  font-size: var(--step-0);
+  color: var(--ink-300);
+}
+
+@media (max-width: 719px) {
+  /* The chart survives narrow widths where the screenshot could not, so unlike the old
+     band it is not hidden here; only the tick labels thin out. */
+  .cc__note {
+    font-size: 20px;
+  }
+
+  .cc__tick {
+    font-size: 17px;
+  }
 }

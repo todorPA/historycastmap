@@ -109,6 +109,13 @@ for (const file of fragFiles) {
 // koristi se slug celog naslova. Ovo zamenjuje tri uzastopna regex-a koja su
 // redom pukla na "115 = Vuk Karadžić", "75. - Stefan Prvovenčani" i
 // "61 Srpska puška - od ustanika" — svi ovi oblici sada prolaze kroz isto pravilo.
+//
+// Klasa separatora pokriva i crte koje nisu ASCII (– —). Feed ih trenutno ne koristi:
+// od 149 numerisanih naslova 145 ima "-", jedan "=", ostali razmak. Ali klasa je ono
+// što sprovodi pravilo iz pasusa iznad, a "nebitan separator" koji propušta samo ASCII
+// nije to pravilo. Promašaj ne bi pao na validatoru — broj epizode se i dalje izvuče,
+// samo naslov zadrži vodeću crtu i tako se prikaže u aplikaciji.
+const TITLE_NUMBER = /^\s*(\d+)\.?\s*[-–—=]*\s*(.*)$/;
 function slugify(str) {
   return str
     .toLowerCase()
@@ -124,7 +131,7 @@ if (EPISODES_SOURCE && fs.existsSync(EPISODES_SOURCE)) {
   const eps = JSON.parse(fs.readFileSync(EPISODES_SOURCE, "utf-8"));
   for (const ep of eps) {
     const title = ep.title || "";
-    const m = /^\s*(\d+)\.?\s*[-=]?\s*(.*)$/.exec(title);
+    const m = TITLE_NUMBER.exec(title);
     if (m && m[1]) {
       const num = String(parseInt(m[1], 10));
       episodeMetaByNumber.set(num, {

@@ -11,7 +11,9 @@
     "validate:full": "node scripts/validate-data.mjs public/data/geo-events.json --strict",
     "data:stress": "node scripts/make-stress-data.mjs > public/data/geo-events.stress.json && node scripts/validate-data.mjs public/data/geo-events.stress.json",
     "deploy": "npm run build && gh-pages -d dist",
-    "fonts": "node scripts/fetch-fonts.mjs"
+    "fonts": "node scripts/fetch-fonts.mjs",
+    "episodes": "node scripts/fetch-episodes.mjs",
+    "chart": "node scripts/build-century-chart.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
