@@ -222,7 +222,14 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
                 // re-open effect above — pulled the map straight back to the old event.
                 setSelectedEventId(null);
                 const bounds = cluster.items.map((i) => i.position) as LatLngBoundsExpression;
-                map.fitBounds(bounds, { padding: [60, 60], maxZoom: 12 });
+                /**
+                 * maxZoom 7, not 12. At z12 over somewhere the basemap has nothing to say —
+                 * Greenland's ice sheet, open ocean — breaking a cluster landed the reader on
+                 * a blank field with two dots and no way to tell it was still a map. z7 keeps
+                 * a coastline in frame, and a cluster that is still too dense to read can be
+                 * broken again from there.
+                 */
+                map.fitBounds(bounds, { padding: [60, 60], maxZoom: 7 });
               },
             }}
           >

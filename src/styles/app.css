@@ -411,7 +411,9 @@ body {
 .map {
   height: 100%;
   width: 100%;
-  background: #dfe4e8;
+  /* Sea, not a neutral: an unloaded or featureless tile then reads as water rather than
+     as a hole in the page. */
+  background: var(--map-sea);
 }
 
 /* Markers stay above the basemap whichever layer is active (SPEC-ohm.md acceptance). */
@@ -1285,9 +1287,14 @@ body {
    raw OSM tiles break it: they bring their own green landmass, blue sea and red motorways,
    competing with the twelve hues the palette works so hard to keep apart. Desaturating the
    tile pane alone pushes the basemap back without touching the markers, which live in the
-   overlay pane. Same device already used on the landing hero. */
+   overlay pane. Same device already used on the landing hero.
+
+   saturate() is near-zero rather than partial, and contrast is raised rather than lowered:
+   see the --map-sea / --map-land note in tokens.css for why "less of everything" was the
+   wrong kind of quiet. brightness stays just under 1 so the sheet does not glare under the
+   popups, which are pure --paper. */
 .map .leaflet-tile-pane {
-  filter: saturate(0.4) brightness(1.04) contrast(0.94);
+  filter: saturate(0.1) contrast(1.24) brightness(0.98);
 }
 
 /* ---------- timeline height ----------

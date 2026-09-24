@@ -8,6 +8,7 @@ import { useData, useSideEpisodes, useVisibleEvents } from '../state/DataContext
 import { useFilters } from '../state/FilterContext';
 import { t } from '../lib/i18n';
 import BasemapLayer from './BasemapLayer';
+import Graticule from './Graticule';
 import BasemapSwitcher from './BasemapSwitcher';
 import EventMarkers from './EventMarkers';
 import type { PositionedEvent } from './EventMarkers';
@@ -176,6 +177,8 @@ export default function MapView() {
         scrollWheelZoom
       >
         <BasemapLayer basemap={basemap} />
+        {/* After the tiles, before the markers: it sits on the basemap, never over the data. */}
+        <Graticule />
         <InvalidateOnResize resizeKey={timelineSize} />
         <FitToMarkers
           points={points}

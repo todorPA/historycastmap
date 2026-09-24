@@ -57,6 +57,20 @@
    */
   --control-edge: #938a81;
 
+  /* ---------- map surface ----------
+     The basemap used to be quieted by taking away everything at once — colour, contrast and
+     depth together. That erased the one thing it is there for: the land/sea edge. Over
+     Greenland or open water, where OSM carries almost no features, the result was a flat
+     field the same value as the container, and the map stopped reading as a map.
+
+     So the quiet is a different kind now. Colour goes to near-zero, because colour is the
+     data encoding and the twelve region hues must keep their monopoly on it. Contrast goes
+     UP, because structure is not meaning and the coastline should be the strongest line on
+     the surface. */
+  --map-sea: #ccd4d3; /* cool grey-green; also the container ground, so a missing tile reads as sea */
+  --map-land: #e7e1d9; /* warm paper, kin to --ink-900: land is the archive's own stock */
+  --map-grid: rgba(26, 23, 19, 0.07); /* graticule hairline */
+
   /* Legacy aliases, still referenced by existing rules. */
   --bg: var(--ink-900);
   --sidebar: var(--ink-800);
