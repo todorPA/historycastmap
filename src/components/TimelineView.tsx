@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { DataSet, Timeline } from 'vis-timeline/standalone';
 import type { TimelineOptions } from 'vis-timeline/standalone';
 import 'vis-timeline/styles/vis-timeline-graph2d.css';
-import { useCollectionEpisodes, useData } from '../state/DataContext';
+import { useCollectionEpisodes, useData, useSideEpisodes } from '../state/DataContext';
 import { useTime } from '../state/TimeContext';
 import { useFilters } from '../state/FilterContext';
 import { TIMELINE_SIZES } from '../state/FilterContext';
@@ -87,6 +87,7 @@ export default function TimelineView() {
     cycleTimelineSize,
   } = useFilters();
   const collectionEpisodes = useCollectionEpisodes(activeCollectionId);
+  const sideEpisodeIds = useSideEpisodes();
 
   // Panel height cycles small → medium → large: with many region groups the default strip
   // is too cramped to read, so the user can raise the timeline over the map.
@@ -118,6 +119,7 @@ export default function TimelineView() {
           // Same colour language as the map: region, not episode (config/regions.ts).
           const color = regionColor(e.region);
           const low = e.confidence === 'low';
+          const side = sideEpisodeIds.has(e.episodeId);
           return {
             id: e.id,
             content: pick(e.title, lang),
@@ -134,11 +136,18 @@ export default function TimelineView() {
              * the light one washed the fill out until the label disappeared.
              */
             style: `background-color:${color};border-color:${color};color:${onColor(color)};`,
-            className: low ? 'vis-item--low' : '',
+            /**
+             * Two independent marks, so they compose: dashed border for low confidence, a
+             * left-edge notch for the side series (.vis-item--side). Same meaning as the
+             * centre pip on the map.
+             */
+            className: [low ? 'vis-item--low' : '', side ? 'vis-item--side' : '']
+              .filter(Boolean)
+              .join(' '),
             title: `${pick(e.title, lang)} — ${formatYearRange(e.year, e.yearEnd, lang)}`,
           };
         }),
-    [data.events, collectionEpisodes, activeEpisodeId, lang],
+    [data.events, collectionEpisodes, activeEpisodeId, lang, sideEpisodeIds],
   );
 
   /**

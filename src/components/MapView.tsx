@@ -4,7 +4,7 @@ import type { LatLngBoundsExpression, LatLngTuple } from 'leaflet';
 import type { HistoryEvent, PlacesById } from '../types/events';
 import { getBasemap } from '../config/basemaps';
 import { regionColor } from '../config/regions';
-import { useData, useVisibleEvents } from '../state/DataContext';
+import { useData, useSideEpisodes, useVisibleEvents } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
 import { t } from '../lib/i18n';
 import BasemapLayer from './BasemapLayer';
@@ -109,6 +109,7 @@ function DeselectOnMapClick() {
 function groupEvents(
   visible: HistoryEvent[],
   placesById: PlacesById,
+  sideEpisodeIds: ReadonlySet<string>,
 ): PositionedEvent[] {
   const groups = new Map<string, HistoryEvent[]>();
   for (const event of visible) {
@@ -131,6 +132,7 @@ function groupEvents(
       events,
       position: [place.lat + dLat, place.lng + dLng],
       color: regionColor(events[0].region),
+      side: events.every((e) => sideEpisodeIds.has(e.episodeId)),
     });
   }
   return out;
@@ -150,7 +152,11 @@ export default function MapView() {
   } = useFilters();
   const basemap = getBasemap(basemapId);
 
-  const positioned = useMemo(() => groupEvents(visible, placesById), [visible, placesById]);
+  const sideEpisodeIds = useSideEpisodes();
+  const positioned = useMemo(
+    () => groupEvents(visible, placesById, sideEpisodeIds),
+    [visible, placesById, sideEpisodeIds],
+  );
 
   const points = useMemo(() => positioned.map((p) => p.position), [positioned]);
   // Keyed by every event id, so a timeline selection can pan to the dot holding it.

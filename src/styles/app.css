@@ -739,6 +739,20 @@ body {
   vertical-align: -1px;
 }
 
+/* Side series: an outlined dot with an ink centre, matching the map's centre pip. The
+   radial-gradient draws the pip rather than a nested element, so the swatch stays one box. */
+.legend__note--pip::before {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--muted);
+  background: radial-gradient(circle, var(--ink-100) 0 2px, transparent 2px);
+  vertical-align: -1px;
+}
+
 /* ---------- popup ---------- */
 /* Leaflet sizes .leaflet-popup-content itself from minWidth/maxWidth — don't fight it,
    just set the box's own minimum so the content never collapses to one word per line. */
@@ -978,6 +992,12 @@ body {
 .vis-item--low {
   border-style: dashed;
   border-color: var(--ink-100) !important;
+}
+
+/* Side series: an ink notch on the leading edge. Composes with .vis-item--low, which owns
+   the border — this uses an inset shadow so the two marks never fight over one property. */
+.vis-item--side {
+  box-shadow: inset 3px 0 0 var(--ink-100);
 }
 
 .vis-tooltip {

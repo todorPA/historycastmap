@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useVisibleEvents } from '../state/DataContext';
+import { useSideEpisodes, useVisibleEvents } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
 import { regionColor } from '../config/regions';
 import { t } from '../lib/i18n';
@@ -14,6 +14,7 @@ const MAX_ROWS = 8;
  */
 export default function Legend() {
   const visible = useVisibleEvents();
+  const sideEpisodeIds = useSideEpisodes();
   const { lang } = useFilters();
   const [expanded, setExpanded] = useState(false);
 
@@ -52,6 +53,11 @@ export default function Legend() {
       <div className="legend__note legend__note--dashed">
         {t(lang, 'confidence')}: {t(lang, 'confidenceLow')}
       </div>
+
+      {/* Only worth a row when the current view actually holds side-series events. */}
+      {visible.some((e) => sideEpisodeIds.has(e.episodeId)) && (
+        <div className="legend__note legend__note--pip">{t(lang, 'series_side')}</div>
+      )}
     </div>
   );
 }

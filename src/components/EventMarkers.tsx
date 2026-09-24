@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, Fragment } from 'react';
 import { CircleMarker, Popup, Tooltip, useMap, useMapEvents } from 'react-leaflet';
 import type { CircleMarker as CircleMarkerType, LatLngBoundsExpression } from 'leaflet';
 import type { HistoryEvent } from '../types/events';
@@ -11,7 +11,16 @@ import EventGroupPopup from './EventGroupPopup';
 /** One map dot: everything that happened at one place in one year (see MapView.groupEvents). */
 export interface PositionedEvent extends Clusterable {
   events: HistoryEvent[];
+  /**
+   * True only when *every* event on this dot comes from the side series. A dot can carry
+   * events from several episodes, and a mark that sometimes means "all of these" and
+   * sometimes "some of these" tells the reader nothing.
+   */
+  side: boolean;
 }
+
+/** Radius of the side-series centre pip. Small enough not to read as a second dot. */
+const PIP_RADIUS = 2.5;
 
 /**
  * Renders one marker per cluster. A cluster of one dot shows that dot's popup — a single
@@ -81,14 +90,14 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
       {clusters.map((cluster) => {
         if (cluster.items.length === 1) {
           const dot = cluster.items[0];
-          const { events, position, color } = dot;
+          const { events, position, color, side } = dot;
           const low = events.every((e) => e.confidence === 'low');
           const selected = events.some((e) => e.id === selectedEventId);
           const count = events.length;
 
           return (
+            <Fragment key={cluster.key}>
             <CircleMarker
-              key={cluster.key}
               center={position}
               radius={selected ? 11 : count > 1 ? 10 : 8}
               ref={(instance) => {
@@ -157,12 +166,42 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
                 </Tooltip>
               )}
             </CircleMarker>
+            {/*
+              Side-series marker: a centre pip, rendered as a sibling because a react-leaflet
+              Path takes only a popup or tooltip as children. It comes after the dot so SVG
+              paint order puts it on top, and it is non-interactive so clicks, hover and the
+              popup all still belong to the dot underneath.
+
+              Series needed a channel of its own: fill is already region, dashed ring and
+              reduced opacity are low confidence, ring weight is selection, and radius is
+              cluster count.
+            */}
+            {side && (
+              <CircleMarker
+                center={position}
+                radius={PIP_RADIUS}
+                interactive={false}
+                pathOptions={{
+                  stroke: false,
+                  fillColor: '#1a1713',
+                  fillOpacity: low ? 0.6 : 0.95,
+                }}
+              />
+            )}
+            </Fragment>
           );
         }
 
         // Several dots share a screen cell: collapse to a count of the events behind them.
         const count = cluster.items.reduce((sum, dot) => sum + dot.events.length, 0);
 
+        /**
+         * No side-series mark on clusters. The centre is taken by the count label, so the pip
+         * would sit under the number as a smudge, and giving clusters a *different* mark for
+         * the same meaning would make the legend say two things at once. Breaking the cluster
+         * apart reveals the pips, which is the same bargain clusters already make with region
+         * colour (they take the first dot's hue).
+         */
         return (
           <CircleMarker
             key={cluster.key}
