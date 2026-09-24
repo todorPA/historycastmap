@@ -98,7 +98,16 @@ export default function Sidebar() {
       <Collections />
 
       <section className="sidebar__section sidebar__section--episodes">
-        <h2 className="sidebar__h2">{t(lang, 'episodes')}</h2>
+        {/*
+          The count column is events, on every row including "all episodes" — so that row
+          reads 741 next to an archive of 178 episodes. Captioning the column is what makes
+          the unit explicit; putting an episode count on that one row instead would leave one
+          cell counting something different from every cell below it.
+        */}
+        <h2 className="sidebar__h2 sidebar__h2--counted">
+          {t(lang, 'episodes')}
+          <span className="sidebar__unit">{t(lang, 'countUnit')}</span>
+        </h2>
 
         <div className="search">
           <input

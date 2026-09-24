@@ -52,7 +52,10 @@ export default function Collections() {
 
   return (
     <section className="sidebar__section collections">
-      <h2 className="sidebar__h2">{t(lang, 'collections')}</h2>
+      <h2 className="sidebar__h2 sidebar__h2--counted">
+        {t(lang, 'collections')}
+        <span className="sidebar__unit">{t(lang, 'countUnit')}</span>
+      </h2>
 
       <ul className="collections__list">
         {COLLECTIONS.map((collection) => {

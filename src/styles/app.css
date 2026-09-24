@@ -162,6 +162,22 @@ body {
   color: var(--muted);
 }
 
+/* Section title on the left, the count column's unit right-aligned over that column. */
+.sidebar__h2--counted {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Lower-case and unspaced, so it reads as a caption rather than a second heading. */
+.sidebar__unit {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--step--2);
+  opacity: 0.7;
+}
+
 .sidebar__foot {
   margin-top: auto;
   padding: 14px 16px;
