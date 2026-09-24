@@ -59,7 +59,7 @@ export default function Sidebar() {
 
   /**
    * The episode list is scoped to the active collection, so choosing one narrows the list
-   * you then pick from rather than leaving 102 rows of which six are relevant. Search still
+   * you then pick from rather than leaving 178 rows of which six are relevant. Search still
    * runs inside that scope; matching the number too, so "95" jumps straight to episode 95.
    */
   const filtered = useMemo(() => {
