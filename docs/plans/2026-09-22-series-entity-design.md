@@ -122,6 +122,18 @@ and §3 can follow. That split is still open.
 
 ## What this ships with
 
+**Updated 2026-09-24:** the backlog has landed. 178 episodes, 741 events, 283 places —
+**27 side-series episodes carrying 80 events**, against 151 main-show episodes. The
+"nearly empty at launch" caveat below no longer applies, and §3 is now worth building: the
+series chip group has real content on both sides, and the centre pip marks 80 events rather
+than 5.
+
+One transcript is unconverted — episode 49, *Stefan Uroš I*, logged in `fragments/SKIPPED.md`.
+
+The numeral-collision episodes (05, 06) were disambiguated with slug ids as this document
+recommended, and the `đ` slug bug found during that work is fixed in `slugify()` — see
+`docs/enchante-fragment-brief.md` §1.
+
 Only one side-series episode currently has events: **115, with 5 events of 456**. The feature is
 nearly empty at launch and fills in as Enchanté works through the 27-episode side-series backlog
 (see `docs/enchante-fragment-brief.md`).

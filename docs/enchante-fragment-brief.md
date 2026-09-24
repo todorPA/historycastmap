@@ -24,8 +24,18 @@ the feed title:
 The rule the script applies: if the title **starts** with digits, the episode number is
 those digits (a trailing `.` and any separator — `-`, `=`, `–`, space — are ignored).
 Otherwise the id is the slug of the *entire* title: lowercase, diacritics stripped
-(`ž`→`z`, `ć`→`c`), every run of non-alphanumerics collapsed to a single `-`, no leading or
-trailing `-`.
+(`ž`→`z`, `ć`→`c`), **`đ`→`dj`**, every run of non-alphanumerics collapsed to a single `-`, no
+leading or trailing `-`.
+
+`đ` is spelled out because it is the one exception in the Serbian alphabet. `č ć š ž` are a
+base letter plus a *combining* diacritic, so stripping the combining marks handles them.
+`đ` (U+0111) is a letter with a **stroke** — one indivisible codepoint with no mark to strip —
+so it needs an explicit replacement. `Karađorđe` → `karadjordje`, not `kara-or-e`. If you are
+ever unsure of a slug, print it rather than guess:
+
+```sh
+node -e 'const s=process.argv[1].toLowerCase().replace(/đ/g,"dj").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");console.log(s)' "Karađorđe posle Karađorđa"
+```
 
 Getting this wrong does **not** fail validation. The episode merges with the title
 `Epizoda <id>`, no `pubDate`, and an empty `audioUrl` — which silently breaks "Play at
@@ -44,8 +54,8 @@ cannot collide.
 }
 ```
 
-A typical episode yields **4–6 events**. Current totals: 102 fragments, 456 events,
-204 places. Use `fragments/144.json` as the reference example.
+A typical episode yields **4–6 events**. Current totals: 178 fragments, 741 events,
+283 places, covering 180 of 181 transcripts. Use `fragments/144.json` as the reference example.
 
 ### Place
 
