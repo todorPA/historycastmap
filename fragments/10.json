@@ -1,0 +1,99 @@
+{
+  "places": [
+    { "id": "carigrad", "name": { "sr": "Carigrad", "en": "Constantinople" }, "aliases": ["carigrad", "constantinople", "carigradu", "carigrada", "konstantinopolju", "k.", "konstantinopolj", "hipodrom", "bosvora", "carigrado", "carigradom", "carigradske", "carigradskih", "carigradskog", "konstantinopol", "sarigradske"], "lat": 41.0082, "lng": 28.9784, "kind": "city" },
+    { "id": "ankara", "name": { "sr": "Angora (Ankara)", "en": "Angora (Ankara)" }, "aliases": ["angora (ankara)", "angori", "ankari", "ankara", "ankaru", "angore", "ankare"], "lat": 39.9334, "lng": 32.8597, "kind": "battle-site" },
+    { "id": "solun", "name": { "sr": "Solun", "en": "Thessaloniki" }, "aliases": ["solun", "thessaloniki", "solunu", "soluna", "solunom"], "lat": 40.6401, "lng": 22.9444, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "bitka-kod-angore-ankara-1402",
+      "title": { "sr": "Bitka kod Angore (Ankare)", "en": "Battle of Ankara (Angora)" },
+      "year": 1402,
+      "yearEnd": null,
+      "placeId": "ankara",
+      "episodeId": "10",
+      "timestamp": "10:50",
+      "type": "battle",
+      "actors": ["Tamerlan", "Bajazit I", "Stefan Lazarević", "Osmansko carstvo"],
+      "region": "Osmansko carstvo",
+      "description": { "sr": "Mongolski vladar Tamerlan pobeđuje osmanskog sultana Bajazita I u bici kod Angore (Ankare) 1402. godine, u kojoj na osmanskoj strani učestvuje i srpska vojska pod knezom Stefanom Lazarevićem.", "en": "The Mongol ruler Timur defeated the Ottoman sultan Bayezid I at the Battle of Ankara (Angora) in 1402, in which Serbian troops under Prince Stefan Lazarević fought on the Ottoman side." },
+      "quote": "Tamerlan dolazi 1402. godine u blizini Angore ili ti današnje Ankare i tu se sukobljava sa Bajazitom, to je jedno od najvećih bitaka srednjeg veka.",
+      "confidence": "high"
+    },
+    {
+      "id": "murat-opsada-carigrada-1422",
+      "title": { "sr": "Muratova opsada Carigrada", "en": "Murad II's siege of Constantinople" },
+      "year": 1422,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "10",
+      "timestamp": "26:36",
+      "type": "siege",
+      "actors": ["Murat II", "Osmansko carstvo"],
+      "region": "Osmansko carstvo",
+      "description": { "sr": "Murat II napada i opseda Carigrad 1422. godine, koristeći kao povod bizantijsku podršku pretendentima na osmanski presto, ali nema dovoljno snage i opsadnih sprava da ozbiljnije ugrozi grad.", "en": "Murad II attacked and besieged Constantinople in 1422, using Byzantine support for rival claimants to the Ottoman throne as a pretext, but lacked the strength and siege equipment to seriously threaten the city." },
+      "quote": "iskoristio kao povod da 1422. godine napadne da obsadne Carigrad međutim tad nije imao dovoljno jake snage i te obsadne sprave da bi mogao da bi mogao bitnije da ugrozi Carigrad",
+      "confidence": "high"
+    },
+    {
+      "id": "djuradj-brankovic-obnova-bedema-carigrad-1440",
+      "title": { "sr": "Đurađ Branković finansira obnovu bedema Carigrada", "en": "Đurađ Branković funds repair of Constantinople's walls" },
+      "year": 1440,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "10",
+      "timestamp": "39:28",
+      "type": "other",
+      "actors": ["Đurađ Branković", "Carigrad"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Srpski despot Đurađ Branković daje 1440. godine prilično veliku sumu novca za obnovu carigradskih bedema.", "en": "In 1440, the Serbian despot Đurađ Branković donated a fairly large sum of money for the repair of Constantinople's walls." },
+      "quote": "ali despo Đurađ to moramo da spomenemo on je 1440 dao prilično veliku sumu novca da se obnove Bedemi",
+      "confidence": "high"
+    },
+    {
+      "id": "pocetak-opsade-carigrada-1453",
+      "title": { "sr": "Osmanska vojska stiže pred zidine Carigrada", "en": "Ottoman army arrives before the walls of Constantinople" },
+      "year": 1453,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "10",
+      "timestamp": "54:30",
+      "type": "siege",
+      "actors": ["Mehmed II", "Osmansko carstvo", "Carigrad"],
+      "region": "Osmansko carstvo",
+      "description": { "sr": "Prve osmanske snage stižu pred zidine Carigrada 2. aprila 1453. godine, u ponedeljak, dan nakon poslednjeg mirnog dana koji je bio Uskrs.", "en": "The first Ottoman forces arrived before the walls of Constantinople on 2 April 1453, a Monday, the day after the last peaceful day, which had been Easter Sunday." },
+      "quote": "prva vojska već je stigla sledećeg dana, 2. aprila, u ponedeljak je stigla pred zidine Carigrada.",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-carigrada-1453",
+      "title": { "sr": "Pad Carigrada", "en": "Fall of Constantinople" },
+      "year": 1453,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "10",
+      "timestamp": "00:00",
+      "type": "conquest",
+      "actors": ["Mehmed II", "Konstantin XI Dragaš", "Osmansko carstvo", "Vizantija"],
+      "region": "Osmansko carstvo",
+      "description": { "sr": "Carigrad pada u osmanske ruke u utorak, 29. maja 1453. godine, čime je okončano hiljadugodišnje Bizantijsko (Romejsko) carstvo; car Konstantin XI gine u poslednjem okršaju.", "en": "Constantinople fell to the Ottomans on Tuesday, 29 May 1453, ending the thousand-year-old Byzantine (Roman) Empire; Emperor Constantine XI died in the final clash." },
+      "quote": "Danas ćemo pričati o utorku 29. maju 1453. godine, o danu o kome su Grci rekli, to je jedna grčka tužbalica koju nikada nije trebalo da svane.",
+      "confidence": "high"
+    },
+    {
+      "id": "jevreji-selidba-solun-1492",
+      "title": { "sr": "Jevreji se vraćaju u Solun nakon proterivanja iz Španije", "en": "Jews return to Thessaloniki after expulsion from Spain" },
+      "year": 1492,
+      "yearEnd": null,
+      "placeId": "solun",
+      "episodeId": "10",
+      "timestamp": "74:44",
+      "type": "other",
+      "actors": ["Jevreji", "Solun", "Španija"],
+      "region": "Balkan",
+      "description": { "sr": "Jevreji se 1492. godine ponovo naseljavaju u Solun nakon što su proterani iz Španije u sukobu između muslimana i rimokatolika, i postaju bitan faktor grada i celog Osmanskog carstva.", "en": "In 1492, Jews resettled in Thessaloniki after being expelled from Spain amid the conflict between Muslims and Roman Catholics, becoming an important factor in the city and the wider Ottoman Empire." },
+      "quote": "A oni onda ponovo stižu 1492. nakon što su proterani Španije u okviru borbe između muslimana i rimokatolika.",
+      "confidence": "high"
+    }
+  ]
+}

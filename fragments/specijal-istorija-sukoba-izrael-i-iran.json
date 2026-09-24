@@ -1,0 +1,69 @@
+{
+  "places": [
+    { "id": "izrael", "name": { "sr": "Izrael", "en": "Israel" }, "aliases": ["izrael", "israel"], "lat": 31.0461, "lng": 34.8516, "kind": "country" },
+    { "id": "teheran", "name": { "sr": "Teheran", "en": "Tehran" }, "aliases": ["teheran", "tehran", "teheranu"], "lat": 35.6892, "lng": 51.3890, "kind": "city" },
+    { "id": "liban", "name": { "sr": "Liban", "en": "Lebanon" }, "aliases": ["liban", "lebanon", "libanu"], "lat": 33.8547, "lng": 35.8623, "kind": "country" }
+  ],
+  "events": [
+    {
+      "id": "osnivanje-izraela-1948",
+      "title": { "sr": "Osnivanje Države Izrael", "en": "Founding of the State of Israel" },
+      "year": 1948,
+      "yearEnd": null,
+      "placeId": "izrael",
+      "episodeId": "specijal-istorija-sukoba-izrael-i-iran",
+      "timestamp": "19:52",
+      "type": "founding",
+      "actors": ["Izrael", "Iran"],
+      "region": "Bliski istok",
+      "description": { "sr": "Izrael je zvanično osnovan 1948. godine, odmah posle Drugog svetskog rata; Iran je bio jedna od prvih država koja je relativno brzo priznala Izrael.", "en": "Israel was officially founded in 1948, right after the Second World War; Iran was one of the first states to recognize Israel relatively quickly." },
+      "quote": "Izrael je zvanlično osnovan 1948. godine... imiran je država koja je priznala Izrael relativno brzo",
+      "confidence": "high"
+    },
+    {
+      "id": "mosadik-nacionalizacija-nafte-iran-1951",
+      "title": { "sr": "Mosadikova nacionalizacija naftne industrije Irana", "en": "Mosaddegh's nationalization of Iran's oil industry" },
+      "year": 1951,
+      "yearEnd": null,
+      "placeId": "teheran",
+      "episodeId": "specijal-istorija-sukoba-izrael-i-iran",
+      "timestamp": "23:35",
+      "type": "other",
+      "actors": ["Muhamed Mosadik", "Iran", "Velika Britanija"],
+      "region": "Bliski istok",
+      "description": { "sr": "1951. godine demokratski izabrani premijer Irana Muhamed Mosadik nacionalizuje naftnu industriju, pokušavajući da bogatstvo od nafte pripadne iranskoj državi, što je izazvalo aktivan otpor Velike Britanije pod Vinstonom Čerčilom; iste godine Mosadik je proglašen za ličnost godine.", "en": "In 1951, Iran's democratically elected Prime Minister Mohammad Mosaddegh nationalized the oil industry, attempting to secure oil wealth for the Iranian state, which triggered active opposition from Britain under Winston Churchill; that same year Mosaddegh was named Person of the Year." },
+      "quote": "1951. godine... demokratski izabrani premijer Irana, Muhamed Mosadi, koji je praktično nacionalizovao tu kompaniju... on je 1951. godine, na kraju godine, bio proglašen za ličnost godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "iranska-talac-kriza-teheran-1979",
+      "title": { "sr": "Zauzimanje američke ambasade u Teheranu", "en": "Seizure of the US Embassy in Tehran" },
+      "year": 1979,
+      "yearEnd": null,
+      "placeId": "teheran",
+      "episodeId": "specijal-istorija-sukoba-izrael-i-iran",
+      "timestamp": "39:54",
+      "type": "other",
+      "actors": ["Iranski revolucionari", "Sjedinjene Američke Države"],
+      "region": "Bliski istok",
+      "description": { "sr": "4. novembra 1979. godine iranski revolucionari provaljuju u američku ambasadu u Teheranu, u znak nezadovoljstva zbog gostoprimstva koje su SAD pružile svrgnutom šahu Muhamedu Rezi Pahlaviju.", "en": "On 4 November 1979, Iranian revolutionaries broke into the US embassy in Tehran, in protest of the hospitality the United States extended to the deposed Shah Mohammad Reza Pahlavi." },
+      "quote": "4. novembra 1979. godine, iranci provaljuju američku ambasadu u Teheranu, pogod je bio taj što su oni, nakon vekstva šaha, dozvolili njemu borav... u američkim državama",
+      "confidence": "high"
+    },
+    {
+      "id": "izraelska-invazija-liban-1982",
+      "title": { "sr": "Izraelska invazija na Liban", "en": "Israeli invasion of Lebanon" },
+      "year": 1982,
+      "yearEnd": null,
+      "placeId": "liban",
+      "episodeId": "specijal-istorija-sukoba-izrael-i-iran",
+      "timestamp": "45:15",
+      "type": "battle",
+      "actors": ["Izrael", "Liban"],
+      "region": "Bliski istok",
+      "description": { "sr": "1982. godine Izrael je izvršio invaziju na Liban, u kontekstu sukoba sa grupama koje je finansirao Iran.", "en": "In 1982, Israel carried out an invasion of Lebanon, in the context of conflict with groups financed by Iran." },
+      "quote": "Izrael 1982. godine izvršio invaziju na Liban",
+      "confidence": "high"
+    }
+  ]
+}

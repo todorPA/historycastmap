@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "firenca", "name": { "sr": "Firenca", "en": "Florence" }, "aliases": ["firenca", "florence"], "lat": 43.7696, "lng": 11.2558, "kind": "city" },
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": ["pariz", "paris", "Louvre", "Luvru"], "lat": 48.8566, "lng": 2.3522, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "leonardo-pocinje-monu-lizu-firenca-1503",
+      "title": { "sr": "Leonardo počinje da slika Mona Lizu", "en": "Leonardo begins painting the Mona Lisa" },
+      "year": 1503,
+      "yearEnd": 1519,
+      "placeId": "firenca",
+      "episodeId": "zasto-je-mona-liza-najpoznatija-slika-na-svetu-historycast-nedeljom",
+      "timestamp": "03:44",
+      "type": "other",
+      "actors": ["Leonardo da Vinči"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Leonardo da Vinči započinje sliku Mona Lizu oko 1503. godine; navodno je nije završio sve do svoje smrti 1519. godine.", "en": "Leonardo da Vinci began painting the Mona Lisa around 1503; he reportedly never finished it before his death in 1519." },
+      "quote": "Ta slika je započeta oko 1503. godine... I sve do njegove smrti 1519. ona navodno nije završena.",
+      "confidence": "high"
+    },
+    {
+      "id": "kradja-mona-lize-pariz-1911",
+      "title": { "sr": "Krađa Mona Lize iz Luvra", "en": "Theft of the Mona Lisa from the Louvre" },
+      "year": 1911,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "zasto-je-mona-liza-najpoznatija-slika-na-svetu-historycast-nedeljom",
+      "timestamp": "55:23",
+      "type": "other",
+      "actors": ["Vincenzo Perudja"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "22. avgusta 1911. godine, italijanski radnik Vincenzo Perudja krade Mona Lizu iz Luvra, sakrivši je pod kaputom; krađa se otkriva tek narednog dana, a slika ostaje nestala dve godine.", "en": "On 22 August 1911, Italian worker Vincenzo Peruggia stole the Mona Lisa from the Louvre, hiding it under his coat; the theft was not discovered until the next day, and the painting remained missing for two years." },
+      "quote": "22. avgust 1911. godine jedan italijanski radnik... uzeo Monalizu... i stavio lepo u svoj kaput, pod mišku i izašao.",
+      "confidence": "high"
+    },
+    {
+      "id": "mona-liza-vracena-luvr-pariz-1913",
+      "title": { "sr": "Mona Liza vraćena u Luvr", "en": "Mona Lisa returned to the Louvre" },
+      "year": 1913,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "zasto-je-mona-liza-najpoznatija-slika-na-svetu-historycast-nedeljom",
+      "timestamp": "58:59",
+      "type": "other",
+      "actors": ["Vincenzo Perudja"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Nakon što je Perudja pokušao da proda sliku italijanskom proceniocu umetnosti, koji je obavestio policiju, Mona Liza je izložena na turneji po Italiji, a zatim 1913. godine vraćena u Luvr u Parizu.", "en": "After Peruggia tried to sell the painting to an Italian art appraiser who alerted the police, the Mona Lisa was exhibited on a tour of Italy and then returned to the Louvre in Paris in 1913." },
+      "quote": "nakon toga, nakon što je 1913. vraćena nazad u Louvre",
+      "confidence": "high"
+    }
+  ]
+}

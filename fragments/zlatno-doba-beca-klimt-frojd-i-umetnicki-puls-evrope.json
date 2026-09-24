@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "vienna", "name": { "sr": "Beč (Anšlus)", "en": "Vienna (Anschluss)" }, "aliases": ["beč", "vienna", "beču", "bec", "beča"], "lat": 48.2082, "lng": 16.3738, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "franc-jozef-dekret-ringstrase-bec-1857",
+      "title": { "sr": "Franc Jozef izdaje dekret o obnovi centra Beča (Ringštrase)", "en": "Franz Joseph issues decree for the reconstruction of central Vienna (Ringstraße)" },
+      "year": 1857,
+      "yearEnd": null,
+      "placeId": "vienna",
+      "episodeId": "zlatno-doba-beca-klimt-frojd-i-umetnicki-puls-evrope",
+      "timestamp": "09:33",
+      "type": "founding",
+      "actors": ["Franc Jozef Prvi"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1857. godine car Franc Jozef izdaje dekret 'Ovo je moja volja', kojim, po uzoru na Napoleona III u Parizu, nalaže rušenje starih gradskih utvrda i izgradnju širokih bulevara (Ringštrase) i velelepnih neostilskih zdanja — parlamenta, nacionalne biblioteke, muzeja i univerziteta — kao centra carstva.", "en": "In 1857, Emperor Franz Joseph issued the decree 'It is my will', which, following the example of Napoleon III in Paris, ordered the demolition of the old city fortifications and the construction of wide boulevards (the Ringstraße) and grand neo-style buildings — the parliament, national library, museum, and university — as the center of the empire." },
+      "quote": "1857. on izdaje onaj dekret, ovo je moja volja... on tačno detaljiše koje su dimenzije, koje su to tačno građevine, koje je centar jednog carstva mora da ima",
+      "confidence": "high"
+    },
+    {
+      "id": "austrougarska-nagodba-1867",
+      "title": { "sr": "Austro-ugarska nagodba", "en": "Austro-Hungarian Compromise" },
+      "year": 1867,
+      "yearEnd": null,
+      "placeId": "vienna",
+      "episodeId": "zlatno-doba-beca-klimt-frojd-i-umetnicki-puls-evrope",
+      "timestamp": "17:36",
+      "type": "other",
+      "actors": ["Franc Jozef Prvi"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1867. godine sklopljena je čuvena austro-ugarska nagodba, kojom se carstvo deli na austrijski i ugarski deo, uz Franca Jozefa kao cara i ugarskog kralja; nastaje dvojna (dualna) monarhija sa dva centra, Bečom i Budimpeštom.", "en": "In 1867, the famous Austro-Hungarian Compromise was concluded, dividing the empire into Austrian and Hungarian parts, with Franz Joseph as emperor and King of Hungary; the resulting dual monarchy had two centers, Vienna and Budapest." },
+      "quote": "1867. imamo čuvenu austro-ugarsku nagodbu gde se zapravo deli, možemo reći, prostor, na ugarski deo i na austrijski deo",
+      "confidence": "high"
+    }
+  ]
+}

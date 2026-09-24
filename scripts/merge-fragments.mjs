@@ -144,9 +144,22 @@ function stripBranding(title) {
   return stripped || title.trim();
 }
 
+// \u0111 i \u0110 se moraju zameniti RU\u010cNO, pre NFD dekompozicije, i to je jedini izuzetak u srpskoj
+// latinici. \u010d, \u0107, \u0161, \u017e su osnovno slovo + kombinuju\u0107i znak, pa ih NFD razdvaja i strip
+// \u0300-\u036f uradi svoje. \u0111 (U+0111) je slovo s PRECRTOM \u2014 jedan nedeljiv codepoint, bez
+// kombinuju\u0107eg znaka koji bi se skinuo ("\u0111".normalize("NFD").length === 1, dok je za "\u010d" 2).
+// Bez ovoga \u0111 propada na [^a-z0-9]+ i postaje "-": "Kara\u0111or\u0111e" -> "kara-or-e".
+//
+// Proma\u0161aj ne pada na validatoru. Fragment nazvan po ta\u010dnom slugu i dalje na\u0111e metapodatke,
+// samo je id ru\u017ean u deljivim ?ep= linkovima; fragment nazvan po O\u010cEKIVANOM slugu ne na\u0111e
+// ni\u0161ta \u2014 naslov postane "Epizoda <id>", audioUrl ostane prazan, i "Pusti na MM:SS" tiho
+// umre. Zato je ovo ispravljeno u skripti, a ne obila\u017eenjem u imenima fajlova.
+const DJ = /\u0111/g;
+
 function slugify(str) {
   return str
     .toLowerCase()
+    .replace(DJ, "dj")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
@@ -154,7 +167,11 @@ function slugify(str) {
 }
 
 let episodeMetaByNumber = new Map();
-let episodeMetaBySlug = new Map(); // za specijalne epizode bez broja na pocetku naslova
+let episodeMetaBySlug = new Map(); // za specijalne epizode bez broja na pocetku naslova, i za
+// numerisane naslove čiji fragment ipak koristi slug id (npr. strana serija koja deli broj sa
+// glavnom serijom, vidi docs/enchante-fragment-brief.md — epizode 5 i 6). Zato se SVAKI naslov
+// registruje ovde, ne samo oni bez vodećeg broja: fragment po slug-u mora naći svoje metapodatke
+// bez obzira da li naslov i inače počinje ciframa.
 if (EPISODES_SOURCE && fs.existsSync(EPISODES_SOURCE)) {
   const eps = JSON.parse(fs.readFileSync(EPISODES_SOURCE, "utf-8"));
   for (const ep of eps) {
@@ -170,7 +187,8 @@ if (EPISODES_SOURCE && fs.existsSync(EPISODES_SOURCE)) {
         pubDate: ep.pubDate,
         audioUrl: ep.audio_url,
       });
-    } else if (title) {
+    }
+    if (title) {
       episodeMetaBySlug.set(slugify(title), {
         title: stripBranding(title),
         series,

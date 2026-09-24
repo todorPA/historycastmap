@@ -14,7 +14,6 @@ namerno konkretan i razlikuje dve vrste slučajeva:
 | epizoda | naslov | razlog |
 |---|---|---|
 | 68 | Dušanov zakonik | duplikat — već obrađena u prvoj seriji (fragment `68.json` postoji), fajl se ponovo javio pod drugim rednim brojem transkripta |
-| (specijal, bez broja) | Istoričari odgovaraju na vaša pitanja | nema datiranih događaja — Q&A format, sve pominjane teme su apstraktne diskusije o ideologiji/historiografiji bez kombinacije datum + mesto + citat |
 | 49 | Stefan Uroš I | pokvaren transkript — cela epizoda transkribovana kao repetitivno ponavljanje fraze "Uruša prvom" na svakih ~30 sekundi; nema upotrebljivog govornog sadržaja |
 
 ## Delimično oštećeni transkripti (fragment ipak napravljen)

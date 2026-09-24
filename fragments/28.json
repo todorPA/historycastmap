@@ -1,0 +1,70 @@
+{
+  "places": [
+    { "id": "orasac", "name": { "sr": "Orašac", "en": "Orašac" }, "aliases": ["Orašcu", "selo Marićevića Jaruzi", "Sretenjski zbor u Orašcu"], "lat": 44.2333, "lng": 20.6, "kind": "landmark" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda", "Stambol kapija"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "ivankovac", "name": { "sr": "Ivankovac", "en": "Ivankovac" }, "aliases": ["Bojna Ivankovca", "boj na Ivankovcu"], "lat": 43.85, "lng": 21.15, "kind": "battle-site" },
+    { "id": "radovanjski-lug", "name": { "sr": "Radovanjski lug", "en": "Radovanjski lug" }, "aliases": ["Radovanjskom lugu"], "lat": 44.35, "lng": 20.6, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "podizanje-prvog-srpskog-ustanka-orasac-1804",
+      "title": { "sr": "Podizanje Prvog srpskog ustanka u Orašcu", "en": "Uprising of the First Serbian Uprising in Orašac" },
+      "year": 1804,
+      "yearEnd": null,
+      "placeId": "orasac",
+      "episodeId": "28",
+      "timestamp": "63:04",
+      "type": "uprising",
+      "actors": ["Karađorđe Petrović"],
+      "region": "Balkan",
+      "description": { "sr": "15. februara 1804. godine, na Sretenje, u selu Orašac kod Topole podignut je Prvi srpski ustanak, prvobitno usmeren protiv dahija, a ne protiv turske vlasti uopšte.", "en": "On 15 February 1804, on the feast of Sretenje (Candlemas), the First Serbian Uprising was raised in the village of Orašac near Topola, initially directed against the Dahis (renegade Janissary commanders), not against Ottoman rule in general." },
+      "quote": "na sretenje, dakle, 15. februara 1804. godine... u Orašcu, dakle, selu Marićevića Jaruzi... Ustanak se podiže 1804. To je ustanak protiv Dahije, a ne protiv turske vlasti.",
+      "confidence": "high"
+    },
+    {
+      "id": "boj-ivankovac-1805",
+      "title": { "sr": "Boj na Ivankovcu", "en": "Battle of Ivankovac" },
+      "year": 1805,
+      "yearEnd": null,
+      "placeId": "ivankovac",
+      "episodeId": "28",
+      "timestamp": "96:23",
+      "type": "battle",
+      "actors": ["Karađorđe Petrović", "Milenko Stojković", "Hafiz-paša"],
+      "region": "Balkan",
+      "description": { "sr": "U avgustu 1805. godine, u boju na Ivankovcu, srpske snage pod komandom Karađorđa i vojvode Milenka Stojkovića porazile su tursku vojsku Hafiz-paše, koja je pokušavala da probije put ka opkoljenom Beogradu; pobeda je imala veliki odjek u Evropi, a sultan Selim je zatim proglasio džihad protiv Srbije.", "en": "In August 1805, at the Battle of Ivankovac, Serbian forces under Karađorđe and voivode Milenko Stojković defeated the Ottoman army of Hafiz Pasha, which had tried to break through to besieged Belgrade; the victory resonated widely in Europe, after which Sultan Selim declared jihad against Serbia." },
+      "quote": "prva velika srpska pobjeda koja je značila biledna vododjelnica Ustanku, to je Bojna Ivankovca u agustu 1805. godine... Sultan Selim nakon toga proglašava džihad ili sveti rad protiv Srbije.",
+      "confidence": "high"
+    },
+    {
+      "id": "propast-ustanka-1813",
+      "title": { "sr": "Propast Prvog srpskog ustanka", "en": "Collapse of the First Serbian Uprising" },
+      "year": 1813,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "28",
+      "timestamp": "131:17",
+      "type": "other",
+      "actors": ["Karađorđe Petrović"],
+      "region": "Balkan",
+      "description": { "sr": "1813. godine Prvi srpski ustanak propada pod turskim pritiskom, a Karađorđe prelazi u Zemun, u Austrijsko carstvo, okončavajući devetogodišnji period ustaničke srpske državnosti.", "en": "In 1813, the First Serbian Uprising collapsed under Ottoman pressure, and Karađorđe crossed into Zemun in the Austrian Empire, ending the nine-year period of insurgent Serbian statehood." },
+      "quote": "Ustanak propada 1813. godine, Karadžorđe prešao u Zemun,",
+      "confidence": "high"
+    },
+    {
+      "id": "ubistvo-karadjordja-radovanjski-lug-1817",
+      "title": { "sr": "Ubistvo Karađorđa u Radovanjskom lugu", "en": "Assassination of Karađorđe in Radovanjski lug" },
+      "year": 1817,
+      "yearEnd": null,
+      "placeId": "radovanjski-lug",
+      "episodeId": "28",
+      "timestamp": "145:52",
+      "type": "death",
+      "actors": ["Karađorđe Petrović", "Vujica Vulićević", "Miloš Obrenović"],
+      "region": "Balkan",
+      "description": { "sr": "1817. godine, na nagovor kneza Miloša Obrenovića, Karađorđe je na prevaru ubijen sekirom u Radovanjskom lugu od strane momka Vujice Vulićevića; njegova glava je zatim poslata u Beograd i istaknuta na Stambol kapiji.", "en": "In 1817, at the instigation of Prince Miloš Obrenović, Karađorđe was treacherously killed with an axe in Radovanjski lug by a servant of Vujica Vulićević; his head was then sent to Belgrade and displayed on the Stambol Gate." },
+      "quote": "Uglavnom, namig kneza Miloša Obrenovića i organizacije Vojice Vojicevića, Karađorđe na prevaru biva ubijen 1817. godine, od strane jednog... momka kneza Vojice, Nikola se zvao, Sekirom.",
+      "confidence": "high"
+    }
+  ]
+}

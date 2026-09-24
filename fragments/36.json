@@ -1,0 +1,260 @@
+{
+  "places": [
+    {
+      "id": "prilep",
+      "name": {
+        "sr": "Prilep",
+        "en": "Prilep"
+      },
+      "aliases": [
+        "prilepu",
+        "prilepa",
+        "prilep"
+      ],
+      "lat": 41.3466,
+      "lng": 21.5547,
+      "kind": "city"
+    },
+    {
+      "id": "skadar",
+      "name": {
+        "sr": "Skadar",
+        "en": "Shkodër"
+      },
+      "aliases": [
+        "skadar",
+        "shkodër",
+        "skadru",
+        "skadra",
+        "skadrom"
+      ],
+      "lat": 42.0683,
+      "lng": 19.5126,
+      "kind": "battle-site"
+    },
+    {
+      "id": "dubrovnik",
+      "name": {
+        "sr": "Dubrovnik",
+        "en": "Dubrovnik"
+      },
+      "aliases": [
+        "dubrovnik",
+        "dubrovniku",
+        "dubrovnikom",
+        "dubroniku",
+        "dubronik",
+        "dubrovacki",
+        "dubrovcani",
+        "dubrosani"
+      ],
+      "lat": 42.6507,
+      "lng": 18.0944,
+      "kind": "city"
+    },
+    {
+      "id": "skoplje",
+      "name": {
+        "sr": "Skoplje",
+        "en": "Skopje"
+      },
+      "aliases": [
+        "skoplje",
+        "skopje",
+        "skoplju",
+        "skoplja",
+        "skoplji",
+        "iskoplje"
+      ],
+      "lat": 41.9981,
+      "lng": 21.4254,
+      "kind": "city"
+    },
+    {
+      "id": "reka-marica",
+      "name": {
+        "sr": "Marica (Černomen)",
+        "en": "Maritsa (Chernomen)"
+      },
+      "aliases": [
+        "marica (černomen)",
+        "maritsa (chernomen)",
+        "marici",
+        "černomena",
+        "marička bitka",
+        "marica",
+        "maritsa",
+        "boj na marici",
+        "bitka na marici",
+        "boju na marici",
+        "maričke bitke",
+        "ormenio",
+        "černomen",
+        "maris"
+      ],
+      "lat": 41.6803,
+      "lng": 26.5559,
+      "kind": "water"
+    },
+    {
+      "id": "kostur",
+      "name": {
+        "sr": "Kostur",
+        "en": "Kastoria"
+      },
+      "aliases": [
+        "kostur",
+        "kosturu"
+      ],
+      "lat": 40.5183,
+      "lng": 21.2681,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "vukasin-postaje-zupan-prilep-1350",
+      "title": {
+        "sr": "Vukašin postaje župan Prilepa",
+        "en": "Vukašin becomes župan of Prilep"
+      },
+      "year": 1350,
+      "yearEnd": null,
+      "placeId": "prilep",
+      "episodeId": "36",
+      "timestamp": "09:57",
+      "type": "other",
+      "actors": [
+        "Vukašin Mrnjavčević",
+        "Car Dušan"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Car Dušan imenuje Vukašina Mrnjavčevića za župana u Prilepu 1350. godine, što je prvi zabeleženi pomen njegovog uzdizanja.",
+        "en": "Emperor Dušan appointed Vukašin Mrnjavčević as župan (local lord) of Prilep in 1350, the first recorded mention of his rise."
+      },
+      "quote": "А појава Вукашина се везује за 1350. годину, де је њега цар Душан именовао да буде Жупан у Прилепу.",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-kod-skadra-1358",
+      "title": {
+        "sr": "Bitka kod Skadra",
+        "en": "Battle of Skadar"
+      },
+      "year": 1358,
+      "yearEnd": null,
+      "placeId": "skadar",
+      "episodeId": "36",
+      "timestamp": "20:07",
+      "type": "battle",
+      "actors": [
+        "Simeon Siniša Nemanjić",
+        "Jovan Komin Asen",
+        "Car Uroš"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Vojske Simeona Siniše Nemanjića i Jovana Komina Asena, koji su pretendovali na presto, poražene su kod Skadra 1358. godine od snaga cara Uroša i njegovih velikaša.",
+        "en": "The armies of Simeon Siniša Nemanjić and Jovan Komin Asen, contesting the throne, were defeated near Skadar in 1358 by forces loyal to Emperor Uroš."
+      },
+      "quote": "Они се својом војском крећу на север и довезе до битки код Скадра 1358. године, где су, да кажем, снаги под царом Урошем, дакле, и другим господарима који су ту уз њега, успела да их савладају.",
+      "confidence": "high"
+    },
+    {
+      "id": "vojislav-vojnovic-opsada-dubrovnika-1361",
+      "title": {
+        "sr": "Vojislav Vojnović ratuje protiv Dubrovnika",
+        "en": "Vojislav Vojnović wages war on Dubrovnik"
+      },
+      "year": 1361,
+      "yearEnd": null,
+      "placeId": "dubrovnik",
+      "episodeId": "36",
+      "timestamp": "32:35",
+      "type": "siege",
+      "actors": [
+        "Vojislav Vojnović",
+        "Dubrovnik"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Humski knez Vojislav Vojnović samostalno je ratovao protiv Dubrovnika 1361. godine, napadajući grad sa kopna dok ga je Kotor opsedao sa mora.",
+        "en": "In 1361, the Hum prince Vojislav Vojnović independently waged war on Dubrovnik, attacking the city by land while Kotor blockaded it by sea."
+      },
+      "quote": "Независно од царство. Дакле, то је његова територија. И због тога, он, рату је самооставно са Дуброником 1361. године.",
+      "confidence": "high"
+    },
+    {
+      "id": "carica-jelena-napusta-ser-skoplje-1365",
+      "title": {
+        "sr": "Carica Jelena napušta Ser i vraća se u Skoplje",
+        "en": "Empress Jelena leaves Ser and returns to Skoplje"
+      },
+      "year": 1365,
+      "yearEnd": null,
+      "placeId": "skoplje",
+      "episodeId": "36",
+      "timestamp": "26:51",
+      "type": "other",
+      "actors": [
+        "Carica Jelena"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Carica Jelena napušta grad Ser 1365. godine i odlazi kod sina, cara Uroša, u Skoplje, umesto u rodnu Bugarsku.",
+        "en": "Empress Jelena left the city of Ser in 1365 and went to her son, Emperor Uroš, in Skoplje, instead of to her native Bulgaria."
+      },
+      "quote": "Она, напротив, покушава да помогне сину. Она када напушта Серу једном тренутку 1365. године, она не одлази и у Бугарску, где је родом, негу одлази и у Скопље.",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-na-marici-1371",
+      "title": {
+        "sr": "Bitka na Marici",
+        "en": "Battle of Maritsa"
+      },
+      "year": 1371,
+      "yearEnd": null,
+      "placeId": "reka-marica",
+      "episodeId": "36",
+      "timestamp": "58:52",
+      "type": "battle",
+      "actors": [
+        "Kralj Vukašin",
+        "Despot Uglješa",
+        "Osmanlije"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "U bici na Marici, 26. septembra 1371. godine, osmanska vojska pod Lala Šahin-pašom porazila je znatno brojniju srpsku vojsku kralja Vukašina i despota Uglješe; obojica su poginula.",
+        "en": "In the Battle of Maritsa on 26 September 1371, the Ottoman army under Lala Şahin Pasha defeated the far more numerous Serbian army of King Vukašin and Despot Uglješa; both were killed."
+      },
+      "quote": "Помиљају се, дакле, они су негде у крај јуна били су под Скадром, они стижу за некад, битка су одрила 26. септембра 1371.",
+      "confidence": "high"
+    },
+    {
+      "id": "sinisa-nemanjic-proglasenje-cara-kostur-1356",
+      "title": {
+        "sr": "Siniša Nemanjić se proglašava carem u Kosturu",
+        "en": "Siniša Nemanjić proclaims himself emperor in Kastoria"
+      },
+      "year": 1356,
+      "yearEnd": null,
+      "placeId": "kostur",
+      "episodeId": "36",
+      "timestamp": "18:08",
+      "type": "coronation",
+      "actors": [
+        "Simeon Siniša Nemanjić"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Simeon Siniša Nemanjić, koji je svoje sedište imao u gradu Kosturu, proglasio je sebe za cara 1356. godine, što istoričari smatraju prvim znakom krize Srpskog carstva nakon smrti cara Dušana. Mesto (Kostur) je izvedeno iz konteksta nekoliko rečenica ranije, a ne iz iste rečenice kao godina.",
+        "en": "Simeon Siniša Nemanjić, based in the city of Kastoria (Kostur), proclaimed himself emperor in 1356 — regarded by historians as the first sign of the crisis of the Serbian Empire after Emperor Dušan's death. The place (Kostur) is inferred from context a few sentences earlier, not from the same sentence as the year."
+      },
+      "quote": "И сад ту јемо, заправо, први догађај који нам указује да долази до кризе царства, то је да је он, заправо, 1356. године прогласио себе за цара.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "veliko-trnovo", "name": { "sr": "Veliko Trnovo", "en": "Veliko Tarnovo" }, "aliases": ["Velikom Trnovu", "Trnovo"], "lat": 43.0757, "lng": 25.6172, "kind": "city" },
+    { "id": "mileseva", "name": { "sr": "Mileševa", "en": "Mileševa Monastery" }, "aliases": ["Mileševu", "prenos moštiju u Mileševu"], "lat": 43.3833, "lng": 19.65, "kind": "landmark" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "sveti-sava-smrt-trnovo-1236",
+      "title": { "sr": "Smrt Svetog Save u Velikom Trnovu", "en": "Death of Saint Sava in Veliko Tarnovo" },
+      "year": 1236,
+      "yearEnd": null,
+      "placeId": "veliko-trnovo",
+      "episodeId": "grobnice-vladara-historycast-nedeljom",
+      "timestamp": "46:18",
+      "type": "death",
+      "actors": ["Sveti Sava"],
+      "region": "Balkan",
+      "description": { "sr": "Sveti Sava umire u Velikom Trnovu, tadašnjoj bugarskoj prestonici, na povratku sa putovanja po Svetoj zemlji; transkript navodi godinu kao '1936', što je greška transkripcije — istorijski se navodi 1236. godina. Njegove mošti su kasnije prenete u manastir Mileševu.", "en": "Saint Sava died in Veliko Tarnovo, then the Bulgarian capital, on his way back from a journey to the Holy Land; the transcript states the year as '1936', a transcription error — historically the year is 1236. His relics were later translated to the Mileševa monastery." },
+      "quote": "mi imamo Sveti Sava umire 1936. u Velikom Trnovu na povratku sa sputa, gde je obilazio svetu zemlju... i u Mileševu... prenet",
+      "confidence": "low"
+    },
+    {
+      "id": "smrt-milosa-obrenovica-beograd-1860",
+      "title": { "sr": "Smrt kneza Miloša Obrenovića", "en": "Death of Prince Miloš Obrenović" },
+      "year": 1860,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "grobnice-vladara-historycast-nedeljom",
+      "timestamp": "114:24",
+      "type": "death",
+      "actors": ["Miloš Obrenović"],
+      "region": "Balkan",
+      "description": { "sr": "Knez Miloš Obrenović umire 1860. godine; on i knez Mihailo, koji ga je nadživeo, kasnije dobijaju zajedničko grobno mesto sa vizuelno uobličenim sarkofazima.", "en": "Prince Miloš Obrenović died in 1860; he and Prince Mihailo, who outlived him, later received a shared burial site with visually crafted sarcophagi." },
+      "quote": "Miloš umire 1860. kniz Mihajlo 1868. u atentatu. I nakon smrti kneza Mihajla se tu... vizualno uobličava grobno mesto",
+      "confidence": "high"
+    },
+    {
+      "id": "atentat-knez-mihajlo-beograd-1868",
+      "title": { "sr": "Atentat na kneza Mihaila Obrenovića", "en": "Assassination of Prince Mihailo Obrenović" },
+      "year": 1868,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "grobnice-vladara-historycast-nedeljom",
+      "timestamp": "114:26",
+      "type": "death",
+      "actors": ["Knez Mihailo Obrenović"],
+      "region": "Balkan",
+      "description": { "sr": "Knez Mihailo Obrenović ubijen je u atentatu 1868. godine, nakon čega se oblikuje zajedničko porodično grobno mesto sa knezom Milošem.", "en": "Prince Mihailo Obrenović was assassinated in 1868, after which a shared family burial site with Prince Miloš was shaped." },
+      "quote": "kniz Mihajlo 1868. u atentatu.",
+      "confidence": "high"
+    }
+  ]
+}

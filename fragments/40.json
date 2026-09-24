@@ -1,0 +1,84 @@
+{
+  "places": [
+    { "id": "farsal", "name": { "sr": "Farsal", "en": "Pharsalus" }, "aliases": ["Farsala", "Farsale", "Farsali", "Varsale", "farsale"], "lat": 39.2994, "lng": 22.3903, "kind": "battle-site" },
+    { "id": "aleksandrija", "name": { "sr": "Aleksandrija", "en": "Alexandria" }, "aliases": ["aleksandrija", "alexandria", "aleksandriji", "aleksandriju", "aleksandrijska", "aleksandrijski"], "lat": 31.2001, "lng": 29.9187, "kind": "city" },
+    { "id": "rim", "name": { "sr": "Rim", "en": "Rome" }, "aliases": ["rim", "rome", "rimu", "koloseum", "rima", "senat", "papski rim"], "lat": 41.9028, "lng": 12.4964, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "cezar-bitka-farsal-48pne",
+      "title": { "sr": "Bitka kod Farsala", "en": "Battle of Pharsalus" },
+      "year": -48,
+      "yearEnd": null,
+      "placeId": "farsal",
+      "episodeId": "40",
+      "timestamp": "58:26",
+      "type": "battle",
+      "actors": ["Gaj Julije Cezar", "Gnej Pompej Veliki", "Marko Junije Brut", "Rimska republika"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Kod Farsala u Tesaliji, 48. godine pre nove ere, Cezar je odneo odlučujuću pobedu nad brojčano nadmoćnijom vojskom Pompeja i Republike, prvi put nakon niza Pompejevih uspeha u toj kampanji.", "en": "At Pharsalus in Thessaly, in 48 BCE, Caesar won a decisive victory over the numerically superior army of Pompey and the Republic, the turning point of that campaign." },
+      "quote": "vojska Pompeja i, da kažemo, Republike, se u odsudnoj bici, kada govorimo o toj evroskoj kampanji, sreće sa Cezarom kod Farsala. 48. valjina.",
+      "confidence": "medium"
+    },
+    {
+      "id": "cezar-kleopatra-predah-aleksandrija-46pne",
+      "title": { "sr": "Rođenje Cezariona i predah u Aleksandriji", "en": "Birth of Caesarion and a lull in Alexandria" },
+      "year": -46,
+      "yearEnd": null,
+      "placeId": "aleksandrija",
+      "episodeId": "40",
+      "timestamp": "99:22",
+      "type": "birth",
+      "actors": ["Gaj Julije Cezar", "Kleopatra VII", "Cezarion"],
+      "region": "Afrika",
+      "description": { "sr": "Početkom 46. godine pre nove ere, po okončanju aleksandrijskog rata, Kleopatra rađa Cezariona, jedinog Cezarovog biološkog (ali nikad zvanično priznatog) sina, dok Cezar pravi predah u ratovanju krstareći Nilom s njom. Napomena: istoričari obično navode 47. godinu pre nove ere kao godinu Cezarionovog rođenja, tako da postoji neslaganje sa transkriptom.", "en": "In early 46 BCE, after the Alexandrian War ended, Cleopatra gave birth to Caesarion, Caesar's only biological (though never officially acknowledged) son, while Caesar paused campaigning to cruise the Nile with her. Note: historians usually date Caesarion's birth to 47 BCE, so there is a discrepancy with the transcript." },
+      "quote": "Kleopatra rađa dete kome daje ime Cezarion koji bi zapravo bio jedini biološki Cezarov sin nikada zvanično priznat i tu ima jedan predah u tom gratovanju koji traje tada recimo neko početka 46. godine",
+      "confidence": "low"
+    },
+    {
+      "id": "cezar-ubistvo-rim-44pne",
+      "title": { "sr": "Senat premešten u Pompejevo pozorište pred Martovske ide", "en": "Senate moved to the Theatre of Pompey ahead of the Ides of March" },
+      "year": -44,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "40",
+      "timestamp": "131:36",
+      "type": "death",
+      "actors": ["Gaj Julije Cezar", "Marko Junije Brut", "Gaj Kasije Longin", "Senat"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Zbog rušenja starih rimskih kuća i zgrade senata radi izgradnje novog Cezarovog foruma, sednica senata 44. godine pre nove ere na Martovske ide održana je u velikoj zgradi Pompejevog pozorišta — mestu gde će Cezar tog dana biti ubijen.", "en": "Because old Roman houses and the Senate building were being demolished to build Caesar's new forum, the Senate session on the Ides of March 44 BCE was held in the great hall of the Theatre of Pompey — the place where Caesar would be assassinated that day." },
+      "quote": "i otkup divnih rimskih kuća i rušenje senata što je zaista i urađeno, dakle senat 44. na Martovski ide nije održavan tu nego u velikoj zgradi Pompejevog pozorišta napravio tako da, zbog radova sastanak pomerenu",
+      "confidence": "high"
+    },
+    {
+      "id": "cezar-diktator-perpetuum-rim-44pne",
+      "title": { "sr": "Cezar proglašen za doživotnog diktatora", "en": "Caesar proclaimed dictator for life" },
+      "year": -44,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "40",
+      "timestamp": "132:13",
+      "type": "reform",
+      "actors": ["Gaj Julije Cezar", "Senat"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Februara 44. godine pre nove ere Cezar je proglašen za diktatora perpetuuma, odnosno doživotnog diktatora, čime je formalizovana njegova apsolutna vlast.", "en": "In February 44 BCE, Caesar was proclaimed dictator perpetuo — dictator for life — formalizing his absolute power." },
+      "quote": "on za života počinje da kuje novost svojim likom, što niko nikada nije radio februara 44. njega ovog puta proglašavaju za diktatora per petum",
+      "confidence": "medium"
+    },
+    {
+      "id": "junije-brut-osnivanje-republike-rim-509pne",
+      "title": { "sr": "Junije Brut proteruje kralja i osniva Republiku", "en": "Junius Brutus expels the king and founds the Republic" },
+      "year": -509,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "40",
+      "timestamp": "133:46",
+      "type": "founding",
+      "actors": ["Lucije Junije Brut", "Tarkvinije Oholi", "Marko Junije Brut"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Predak Marka Junija Bruta, Junije Brut, je 509. godine pre nove ere lično proterao posljednjeg rimskog kralja Tarkvinija Oholog i uveo republiku, što je porodici Junija dalo trajni ugled branitelja republike protiv tiranije.", "en": "Marcus Junius Brutus's ancestor, Junius Brutus, personally expelled the last Roman king, Tarquin the Proud, in 509 BCE and established the Republic, giving the Junii family a lasting reputation as defenders of the Republic against tyranny." },
+      "quote": "zato što je Marko Junije Brut iz čuvane porodice Junija čiji je predak Junije takođe Brut dakle Junije Brut je 509. godine proterao lično posljednjeg rimskog kralja, tarkvinija ohlog i uveo u republiku",
+      "confidence": "medium"
+    }
+  ]
+}

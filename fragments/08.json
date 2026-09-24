@@ -1,0 +1,85 @@
+{
+  "places": [
+    { "id": "camp-david", "name": { "sr": "Camp David", "en": "Camp David" }, "aliases": ["Camp Davidu", "Camp Davidski", "Camp Davidskom", "Camp David", "Kem-Devicku", "Kem-Devickom", "Kem-Devicko"], "lat": 39.6482, "lng": -77.4694, "kind": "landmark" },
+    { "id": "golanska-visoravan", "name": { "sr": "Golanska visoravan", "en": "Golan Heights" }, "aliases": ["Golanska Visoravan", "Golanska visoravan", "Golanskoj visoravni", "Golanske visoravni", "Golanske visorene"], "lat": 32.9800, "lng": 35.7500, "kind": "region" },
+    { "id": "tel-aviv", "name": { "sr": "Tel Aviv", "en": "Tel Aviv" }, "aliases": ["tel aviv", "tel avivu", "Tel Avivu"], "lat": 32.0853, "lng": 34.7818, "kind": "city" },
+    { "id": "gaza", "name": { "sr": "Gaza", "en": "Gaza" }, "aliases": ["gaze", "Gazom", "Gazi", "Gara", "Gaza"], "lat": 31.4000, "lng": 34.3500, "kind": "region" }
+  ],
+  "events": [
+    {
+      "id": "camp-david-sporazum-izrael-egipat-1978",
+      "title": { "sr": "Sporazum u Camp Davidu (Izrael-Egipat)", "en": "Camp David Accords (Israel-Egypt)" },
+      "year": 1978,
+      "yearEnd": null,
+      "placeId": "camp-david",
+      "episodeId": "08",
+      "timestamp": "26:34",
+      "type": "treaty",
+      "actors": ["Jimmy Carter", "Anwar el Sadat", "Menahem Begin", "Cyrus Vance"],
+      "region": "Severna Amerika",
+      "description": { "sr": "Sagovornici pominju sporazum u Camp Davidu u vezi sa godinama 73, 78. i 79, uz posredovanje predsednika Kartera i učešće državnog sekretara Cyrusa Vancea; sporazum je doveo do egipatskog priznanja Izraela i povratka Sinaja Egiptu. Transkript navodi i 1978. i 1979. godinu za ovaj proces, pa postoji neslaganje u tačnoj godini.", "en": "The speakers reference the Camp David agreement in connection with the years '73, '78 and '79, mediated by President Carter with Secretary of State Cyrus Vance involved; the deal led to Egyptian recognition of Israel and the return of Sinai to Egypt. The transcript cites both 1978 and 1979 for this process, so there is a discrepancy in the exact year." },
+      "quote": "imamo taj sporazum u Kem-Devicku, kada je učinjen američki predsednik 1978. godine, Cyrus Vance je tu i kada je u pitanju balkanska kriza, odnosno bosanska kriza",
+      "confidence": "low"
+    },
+    {
+      "id": "izrael-aneksija-golanska-visoravan-1983",
+      "title": { "sr": "Izrael anektira Golansku visoravan", "en": "Israel annexes the Golan Heights" },
+      "year": 1983,
+      "yearEnd": null,
+      "placeId": "golanska-visoravan",
+      "episodeId": "08",
+      "timestamp": "32:34",
+      "type": "other",
+      "actors": ["Menahem Begin", "Izrael", "Kneset"],
+      "region": "Bliski istok",
+      "description": { "sr": "Prema transkriptu, vlada Menahema Begina je 1983. godine anektirala Golansku visoravan blizu Golanskog jezera i grada Tiberijade, a Kneset je potom ratifikovao primenu izraelskih zakona na tom prostoru. Napomena: prava aneksija (Zakon o Golanskoj visoravni) dogodila se 1981. godine, pa transkript sadrži neslaganje u datumu.", "en": "According to the transcript, Menahem Begin's government annexed the Golan Heights near the Sea of Galilee and the city of Tiberias in 1983, after which the Knesset ratified the application of Israeli law there. Note: the actual annexation (Golan Heights Law) took place in 1981, so the transcript contains a date discrepancy." },
+      "quote": "1983. godine to bilo, Begin je anektirao onaj prostor koji se nalazi kod jezera, kod Golanskog jezera, odnosno gde se nalazi grad Tribalijada, to je Golanska visoravan.",
+      "confidence": "low"
+    },
+    {
+      "id": "netanjahu-rodjenje-tel-aviv-1948",
+      "title": { "sr": "Rođenje Benjamina Netanjahua u Tel Avivu", "en": "Birth of Benjamin Netanyahu in Tel Aviv" },
+      "year": 1948,
+      "yearEnd": null,
+      "placeId": "tel-aviv",
+      "episodeId": "08",
+      "timestamp": "43:08",
+      "type": "birth",
+      "actors": ["Benjamin Netanyahu"],
+      "region": "Bliski istok",
+      "description": { "sr": "Prema transkriptu, Benjamin Netanjahu je rođen u Tel Avivu, u godini kada je nastala država Izrael (1948). Napomena: prema zvaničnim izvorima on je rođen 1949. godine, pa postoji neslaganje u datumu iz transkripta.", "en": "According to the transcript, Benjamin Netanyahu was born in Tel Aviv, in the year the State of Israel was founded (1948). Note: official sources give his birth year as 1949, so there is a discrepancy with the transcript's date." },
+      "quote": "Jeste, da on je rođen u Tel Avivu. On je neko 48-mu godište, sad da li je rođen pre ili posle ali u svakom slučaju je rođen u toj godini... Godini, godini kada je Izrael napravljen.",
+      "confidence": "low"
+    },
+    {
+      "id": "sharon-povlacenje-gaza-2004",
+      "title": { "sr": "Šaronovo povlačenje iz Gaze", "en": "Sharon's disengagement from Gaza" },
+      "year": 2004,
+      "yearEnd": 2005,
+      "placeId": "gaza",
+      "episodeId": "08",
+      "timestamp": "39:56",
+      "type": "other",
+      "actors": ["Ariel Sharon", "Likud", "Izrael"],
+      "region": "Bliski istok",
+      "description": { "sr": "Prema transkriptu, Ariel Šaron je 2004. i 2005. godine sproveo povlačenje iz Gaze, gde je pre toga postojalo preko 20 jevrejskih naselja koje je Izrael sam povukao; ovaj potez je doveo do rascepa u partiji Likud.", "en": "According to the transcript, Ariel Sharon carried out a disengagement from Gaza in 2004 and 2005, where more than 20 Jewish settlements had previously existed and were withdrawn by Israel itself; this move led to a split within the Likud party." },
+      "quote": "pa Ariel Sharon je bio iz Likuda, on je posle tog poteza koje je napravio u Gara, u razi 2004. i 2005. godine, došlo je do rascepa i predpostavlja se da je on bio na čelu nekakve blaže struje",
+      "confidence": "medium"
+    },
+    {
+      "id": "bennett-izjava-golanska-visoravan-2000s",
+      "title": { "sr": "Bennett: Izrael se neće povući sa Golana", "en": "Bennett: Israel will not withdraw from the Golan" },
+      "year": 2000,
+      "yearEnd": 2009,
+      "placeId": "golanska-visoravan",
+      "episodeId": "08",
+      "timestamp": "33:42",
+      "type": "other",
+      "actors": ["Naftali Bennett", "Izrael"],
+      "region": "Bliski istok",
+      "description": { "sr": "Prema transkriptu, početkom 2000-ih je tadašnji premijer Naftali Benet izjavio da se Izrael nikada neće povući sa Golanske visoravni. Napomena: Benet je zvanično bio premijer Izraela od 2021. do 2022. godine, pa postoji ozbiljno neslaganje u datumu iz transkripta.", "en": "According to the transcript, in the early 2000s then-Prime Minister Naftali Bennett stated that Israel would never withdraw from the Golan Heights. Note: Bennett was officially Israel's Prime Minister from 2021 to 2022, so there is a serious date discrepancy in the transcript." },
+      "quote": "Pre nekog vremena, početkom 2000-ih, tadašnji premier zvao se Naftali Bennett i rekao da Izrael nikad neće da se povuče sa tog prostora Golanske visoravni.",
+      "confidence": "low"
+    }
+  ]
+}
