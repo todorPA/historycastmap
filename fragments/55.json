@@ -1,0 +1,22 @@
+{
+  "places": [
+    { "id": "sofija", "name": { "sr": "Sofija (Bugarska)", "en": "Sofia (Bulgaria)" }, "aliases": ["Bugarima"], "lat": 42.6977, "lng": 23.3219, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "bugarska-pristupa-trojnom-paktu-1941",
+      "title": { "sr": "Bugarska pristupa Trojnom paktu", "en": "Bulgaria joins the Tripartite Pact" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "sofija",
+      "episodeId": "55",
+      "timestamp": "70:44",
+      "type": "treaty",
+      "actors": ["Bugarska", "Adolf Hitler"],
+      "region": "Balkan",
+      "description": { "sr": "1. marta 1941. godine Bugarska pristupa Trojnom paktu, nakon Mađarske (20. novembra 1940), Rumunije (23. novembra) i Slovačke (24. novembra); Hitler je Bugarima obećao teritorije od Jugoslavije, u nadi da će Jugoslavija odbiti da pristupi paktu.", "en": "On March 1, 1941, Bulgaria joined the Tripartite Pact, following Hungary (November 20, 1940), Romania (November 23) and Slovakia (November 24); Hitler had promised Bulgaria territory from Yugoslavia, hoping Yugoslavia would refuse to join the pact." },
+      "quote": "a 1. marta 1941. godine pristupaju Bugari ... Bugarima je bilo obećano da ovaj da će verovatno dobiti neke teritorije od Jugoslavije",
+      "confidence": "high"
+    }
+  ]
+}

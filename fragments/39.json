@@ -1,0 +1,214 @@
+{
+  "places": [
+    {
+      "id": "rim",
+      "name": {
+        "sr": "Rim",
+        "en": "Rome"
+      },
+      "aliases": [
+        "rim",
+        "rome",
+        "rimu",
+        "koloseum",
+        "rima",
+        "senat",
+        "papski rim"
+      ],
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "kind": "city"
+    },
+    {
+      "id": "numidija",
+      "name": {
+        "sr": "Numidija",
+        "en": "Numidia"
+      },
+      "aliases": [
+        "numidijskog",
+        "numidijski",
+        "Numidiju",
+        "Umidija"
+      ],
+      "lat": 36.365,
+      "lng": 6.6147,
+      "kind": "region"
+    },
+    {
+      "id": "atina",
+      "name": {
+        "sr": "Atina",
+        "en": "Athens"
+      },
+      "aliases": [
+        "atina",
+        "athens",
+        "atini",
+        "atinu"
+      ],
+      "lat": 37.9838,
+      "lng": 23.7275,
+      "kind": "city"
+    },
+    {
+      "id": "kampanija",
+      "name": {
+        "sr": "Kampanija",
+        "en": "Campania"
+      },
+      "aliases": [
+        "kampani",
+        "Kampani"
+      ],
+      "lat": 40.8518,
+      "lng": 14.2681,
+      "kind": "region"
+    }
+  ],
+  "events": [
+    {
+      "id": "metel-konzul-protiv-jugurte-numidija-109pne",
+      "title": {
+        "sr": "Metel imenovan za konzula protiv Jugurte",
+        "en": "Metellus appointed consul against Jugurtha"
+      },
+      "year": -109,
+      "yearEnd": null,
+      "placeId": "numidija",
+      "episodeId": "39",
+      "timestamp": "23:41",
+      "type": "other",
+      "actors": [
+        "Kvint Cecilije Metel",
+        "Jugurta"
+      ],
+      "region": "Afrika",
+      "description": {
+        "sr": "Senat 109. godine pre Hrista šalje nepodkupljivog konzula Kvinta Cecilija Metela da ratuje protiv numidijskog kralja Jugurte, nakon što su ranije poslati zapovednici bili podmićeni.",
+        "en": "In 109 BC the Senate sent the incorruptible consul Quintus Caecilius Metellus to fight the Numidian king Jugurtha, after earlier Roman commanders had been bribed."
+      },
+      "quote": "Jugurta je, možemo reći, već izgubio taj frontalni rat, zato što su, ako se ne varam, 109. godine su postavili namerno konzula Kvinta Cecilija Metela, koji je bio nepodkupljiv.",
+      "confidence": "medium"
+    },
+    {
+      "id": "marije-rat-protiv-jugurte-numidija-107pne",
+      "title": {
+        "sr": "Marije kreće u rat protiv Jugurte, Sula kvestor",
+        "en": "Marius launches war against Jugurtha, Sulla as quaestor"
+      },
+      "year": -107,
+      "yearEnd": null,
+      "placeId": "numidija",
+      "episodeId": "39",
+      "timestamp": "18:01",
+      "type": "other",
+      "actors": [
+        "Gaj Marije",
+        "Lucije Kornelije Sula",
+        "Jugurta"
+      ],
+      "region": "Afrika",
+      "description": {
+        "sr": "Lucije Kornelije Sula postaje kvestor i pratilac konzula Gaja Marija, koji kreće u rat protiv numidijskog kralja Jugurte; transkript navodi godinu nerazgovetno ('sto sedme'), što najverovatnije odgovara 107. godini pre Hrista.",
+        "en": "Lucius Cornelius Sulla becomes quaestor and aide to consul Gaius Marius, who launches the war against the Numidian king Jugurtha; the transcript's garbled 'sto sedme' most likely corresponds to 107 BC."
+      },
+      "quote": "On je, da kažemo, imao tu sreću da mu dodele za dužnost da bude pratilac konzula Gaja Marija, koji s to sedme godine kreće u rat protiv čuljenog numidijskog kralja Jugurte.",
+      "confidence": "low"
+    },
+    {
+      "id": "sula-konzul-mars-na-rim-rim-88pne",
+      "title": {
+        "sr": "Sula postaje konzul i kreće na Rim",
+        "en": "Sulla becomes consul and marches on Rome"
+      },
+      "year": -88,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "39",
+      "timestamp": "55:44",
+      "type": "other",
+      "actors": [
+        "Lucije Kornelije Sula"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Lucije Kornelije Sula biva izabran za konzula (transkript pominje '1988. godine', očigledna greška transkripcije za 88. godinu pre Hrista) i uskoro potom po prvi put u rimskoj istoriji ulazi u Rim sa vojskom.",
+        "en": "Lucius Cornelius Sulla is elected consul (the transcript's '1988' is clearly a transcription error for 88 BC) and soon after marches into Rome with an army for the first time in Roman history."
+      },
+      "quote": "Teo sam da kažem, da Sula postaje konzult u 1988. godini, dakle on je dogurao i do toga, već sada da se kandidovao i da mu je to uspešno prošlo.",
+      "confidence": "low"
+    },
+    {
+      "id": "smrt-gaja-marija-rim-86pne",
+      "title": {
+        "sr": "Smrt Gaja Marija u Rimu",
+        "en": "Death of Gaius Marius in Rome"
+      },
+      "year": -86,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "39",
+      "timestamp": "91:21",
+      "type": "death",
+      "actors": [
+        "Gaj Marije"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Gaj Marije umire prirodnom smrću u prvom mesecu svog sedmog konzulskog mandata; transkript navodi '1986. godine', što je greška transkripcije za 86. godinu pre Hrista.",
+        "en": "Gaius Marius dies of natural causes in the first month of his seventh consulship; the transcript's '1986' is a transcription error for 86 BC."
+      },
+      "quote": "Umeđu vremena, ono što kažemo da je Kornilije Sula feliks ili srećan, sa svim tim dešavanjima 1986. godine, par nedelja nakon što je potređen za konzula, umire Gaj Marije. Umire od starosti, prirodnim putem.",
+      "confidence": "low"
+    },
+    {
+      "id": "pad-atine-opsada-atina-84pne",
+      "title": {
+        "sr": "Pad Atine tokom Suline opsade",
+        "en": "Fall of Athens during Sulla's siege"
+      },
+      "year": -84,
+      "yearEnd": -83,
+      "placeId": "atina",
+      "episodeId": "39",
+      "timestamp": "78:35",
+      "type": "siege",
+      "actors": [
+        "Lucije Kornelije Sula",
+        "Arhelaj",
+        "Atinjani"
+      ],
+      "region": "Vizantija i Egejski svet",
+      "description": {
+        "sr": "Tokom gladi u opsednutoj Atini, sagovornici okvirno datiraju događaje na '84. do 83. godinu' pre Hrista; ovo se ne poklapa sa uobičajenim istorijskim datiranjem opsade Atine (87-86. p.n.e.), pa je obeleženo niskom pouzdanošću.",
+        "en": "During the famine in besieged Athens, the hosts roughly date events to '84 to 83 BC'; this does not match the usual historical dating of the siege of Athens (87-86 BC), hence flagged as low confidence."
+      },
+      "quote": "kaže se za tog Arhonta da je i dalje uživao u svojim hrani i pići, dok su ljudi počeli već da umiru od gladi. To već o to govorimo sada, ako se ne varam ti ćeš me ispraviti, neka 84. do 83. godina.",
+      "confidence": "low"
+    },
+    {
+      "id": "smrt-sule-kampanija-78pne",
+      "title": {
+        "sr": "Smrt Lucija Kornelija Sule u Kampaniji",
+        "en": "Death of Lucius Cornelius Sulla in Campania"
+      },
+      "year": -78,
+      "yearEnd": null,
+      "placeId": "kampanija",
+      "episodeId": "39",
+      "timestamp": "120:21",
+      "type": "death",
+      "actors": [
+        "Lucije Kornelije Sula"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Sula umire 78. godine pre Hrista u svojoj vili u Kampaniji, nekoliko dana nakon posljednjeg upisa u svoj dnevnik/memoare.",
+        "en": "Sulla dies in 78 BC at his villa in Campania, a few days after the last entry in his diary/memoirs."
+      },
+      "quote": "nisu umrli u krevetu kao Cornelije Sulla u svojoj vili u kampani. [...] Kornel je sula, umire 78. godine, kako je napisao u svom dnevniku, krenuši u put ka sinu i ženi i ka istoriji,",
+      "confidence": "high"
+    }
+  ]
+}

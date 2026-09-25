@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "london", "name": { "sr": "London", "en": "London" }, "aliases": ["london", "London", "Velika Britanija"], "lat": 51.5074, "lng": -0.1278, "kind": "city" },
+    { "id": "brioni", "name": { "sr": "Brioni", "en": "Brioni Islands" }, "aliases": ["Brionima", "Brionski golf teren"], "lat": 44.9349, "lng": 13.7484, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "tito-poseta-london-1953",
+      "title": { "sr": "Titova poseta Velikoj Britaniji", "en": "Tito's visit to Great Britain" },
+      "year": 1953,
+      "yearEnd": null,
+      "placeId": "london",
+      "episodeId": "22",
+      "timestamp": "16:03",
+      "type": "other",
+      "actors": ["Josip Broz Tito"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1953. godine Tito postaje prvi komunistički/socijalistički lider koji odlazi u zvaničnu posetu Zapadu, konkretno Velikoj Britaniji, otvarajući diplomatski protokol koji do tada nije postojao.", "en": "In 1953, Tito became the first communist/socialist leader to make an official visit to the West, specifically to Great Britain, opening a diplomatic protocol that had not previously existed." },
+      "quote": "On je bio prvi komunistički lider, odnosno socijalistički lider koji je otišao u zvaničnu posetu Zapadu, otišao u Veliku Britaniju u 1953. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "tito-intenzivna-diplomatska-putovanja-1954",
+      "title": { "sr": "Tito počinje intenzivna diplomatska putovanja", "en": "Tito begins intensive diplomatic travels" },
+      "year": 1954,
+      "yearEnd": 1961,
+      "placeId": "brioni",
+      "episodeId": "22",
+      "timestamp": "15:30",
+      "type": "other",
+      "actors": ["Josip Broz Tito"],
+      "region": "Balkan",
+      "description": { "sr": "Tito je od 1954. do 1961. godine intenzivno putovao svetom, često i po šest meseci u kontinuitetu na brodu Galeb, izgrađujući svoju ulogu globalnog posrednika između Istoka i Zapada te između globalnog severa i juga.", "en": "From 1954 to 1961, Tito traveled the world intensively, often for six continuous months aboard the ship Galeb, building his role as a global intermediary between East and West, and between the global North and South." },
+      "quote": "Tito je počeo energično da putuje još 1954. pa 1955. pa 1961. druge godine i tako provodio je u sedlu, tako reći, odnosno na Galebu, umoje po šest meseci",
+      "confidence": "high"
+    },
+    {
+      "id": "brioni-golf-teren-izgradnja-1908",
+      "title": { "sr": "Izgradnja golf terena na Brionima", "en": "Construction of the Brioni golf course" },
+      "year": 1908,
+      "yearEnd": 1909,
+      "placeId": "brioni",
+      "episodeId": "22",
+      "timestamp": "18:20",
+      "type": "founding",
+      "actors": ["Brioni"],
+      "region": "Balkan",
+      "description": { "sr": "Golf teren na Brionima, koje je Tito potom koristio kao svoju rezidenciju izgrađenu za visoku buržoaziju, sagrađen je još 1908. i 1909. godine.", "en": "The golf course on the Brioni Islands, which Tito later used as his residence — originally built for the upper bourgeoisie — was constructed back in 1908 and 1909." },
+      "quote": "Golf teren tamo je sagrađen 1908. i 1909. godine još. On je tu dodao i zebra i čuda.",
+      "confidence": "high"
+    }
+  ]
+}

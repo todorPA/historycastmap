@@ -1,0 +1,98 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "marseille", "name": { "sr": "Marsej", "en": "Marseille" }, "aliases": ["Marsej", "9. oktober 1934"], "lat": 43.2965, "lng": 5.3698, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "aleksandar-karadjordjevic-rodjenje-1888",
+      "title": { "sr": "Rođenje Aleksandra Karađorđevića", "en": "Birth of Alexander Karađorđević" },
+      "year": 1888,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "19",
+      "timestamp": "08:53",
+      "type": "birth",
+      "actors": ["Aleksandar I Karađorđević"],
+      "region": "Balkan",
+      "description": { "sr": "Aleksandar Karađorđević, drugi po starosti sin kralja Petra I i stoga rođen bez neposrednog nasledstva prestola, rodio se 1888. godine.", "en": "Alexander Karađorđević, King Peter I's second-born son and thus not originally destined for the throne, was born in 1888." },
+      "quote": "Bila je do 1888. godine. Najstarija, dakle, bilo je ukupno petero dece, troje samo preživelo",
+      "confidence": "medium"
+    },
+    {
+      "id": "aleksandar-postaje-prestolonaslednik-1909",
+      "title": { "sr": "Aleksandar postaje prestolonaslednik", "en": "Alexander becomes crown prince" },
+      "year": 1909,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "19",
+      "timestamp": "06:23",
+      "type": "other",
+      "actors": ["Aleksandar I Karađorđević", "Đorđe Karađorđević"],
+      "region": "Balkan",
+      "description": { "sr": "1909. godine Aleksandar Karađorđević postaje prestolonaslednik nakon što se njegov starији brat Đorđe odriče prava na presto usled skandala i incidenta sa svojim poslužiteljem.", "en": "In 1909, Alexander Karađorđević became crown prince after his older brother Đorđe renounced his right to the throne following a scandal and an incident with his manservant." },
+      "quote": "on dolazi do toga da ponese tu titulu prestolonaslednika 1909. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "stvaranje-jugoslavije-1-decembar-1918",
+      "title": { "sr": "Stvaranje Kraljevine Jugoslavije", "en": "Creation of the Kingdom of Yugoslavia" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "19",
+      "timestamp": "60:18",
+      "type": "founding",
+      "actors": ["Aleksandar I Karađorđević", "Kraljevina Srbija"],
+      "region": "Balkan",
+      "description": { "sr": "1. decembra 1918. godine, uz nenadoknadive demografske gubitke iz rata, stvorena je Jugoslovenska država; prestolonaslednik Aleksandar nastupa kao ključna figura ujedinjenja.", "en": "On 1 December 1918, following irreplaceable wartime demographic losses, the Yugoslav state was created; Crown Prince Alexander emerged as a central figure of the unification." },
+      "quote": "Stvorena je, dakle, Jugoslovenska država 1. decembra 1918. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "kraljica-marija-brak-beograd-1922",
+      "title": { "sr": "Venčanje Aleksandra sa rumunskom princezom Marijom", "en": "Alexander's marriage to Romanian princess Maria" },
+      "year": 1922,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "19",
+      "timestamp": "76:34",
+      "type": "other",
+      "actors": ["Aleksandar I Karađorđević", "Kraljica Marija"],
+      "region": "Balkan",
+      "description": { "sr": "U junu 1922. godine, rumunska princeza Marija dolazi u Beograd i postaje jugoslovenska kraljica, brzo stičući simpatije stanovništva.", "en": "In June 1922, Romanian princess Maria arrived in Belgrade and became Queen of Yugoslavia, quickly winning the sympathy of the population." },
+      "quote": "rumunska princeza je došla u Beograd i postala je, dakle, jugoslovenska kraljica. U junu 1922.",
+      "confidence": "high"
+    },
+    {
+      "id": "aleksandar-uvodi-diktaturu-1929",
+      "title": { "sr": "Kralj Aleksandar uvodi diktaturu", "en": "King Alexander introduces a dictatorship" },
+      "year": 1929,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "19",
+      "timestamp": "123:44",
+      "type": "reform",
+      "actors": ["Aleksandar I Karađorđević"],
+      "region": "Balkan",
+      "description": { "sr": "6. januara 1929. godine kralj Aleksandar uvodi diktaturu, ukidajući parlamentarne posrednike između sebe i naroda.", "en": "On 6 January 1929, King Alexander introduced a dictatorship, abolishing the parliamentary intermediaries between himself and the people." },
+      "quote": "pomenuo si uvođenje diktature, dakle 6. januara 1929. godine Aleksandar uvodi diktaturu",
+      "confidence": "high"
+    },
+    {
+      "id": "atentat-aleksandar-marsej-1934",
+      "title": { "sr": "Atentat na kralja Aleksandra u Marseju", "en": "Assassination of King Alexander in Marseille" },
+      "year": 1934,
+      "yearEnd": null,
+      "placeId": "marseille",
+      "episodeId": "19",
+      "timestamp": "91:04",
+      "type": "death",
+      "actors": ["Aleksandar I Karađorđević"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "9. oktobra 1934. godine kralj Aleksandar je ubijen u Marseju; pred smrt je, narušenog zdravlja, bio težak svega oko 50 kg.", "en": "On 9 October 1934, King Alexander was assassinated in Marseille; shortly before his death, in failing health, he weighed only about 50 kg." },
+      "quote": "Kažu da je, recimo, pred 3. oktober, 9. oktober 1934. da je bio težak svega nekih 50 kg samo.",
+      "confidence": "high"
+    }
+  ]
+}

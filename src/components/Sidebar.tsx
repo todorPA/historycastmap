@@ -5,6 +5,9 @@ import { useTime } from '../state/TimeContext';
 import { pick, t } from '../lib/i18n';
 import { formatYearRange } from '../lib/time';
 import LangToggle from './LangToggle';
+import FacetFilters from './FacetFilters';
+import Collections from './Collections';
+import { getCollection } from '../config/collections';
 
 /** Diacritic- and case-insensitive so "dusan" finds "Dušanova". */
 function normalize(value: string): string {
@@ -21,7 +24,8 @@ function normalize(value: string): string {
 export default function Sidebar() {
   const { data } = useData();
   const visible = useVisibleEvents();
-  const { lang, activeEpisodeId, toggleEpisode, clearEpisode, setSelectedEventId } = useFilters();
+  const { lang, activeCollectionId, activeEpisodeId, toggleEpisode, clearEpisode, setSelectedEventId } =
+    useFilters();
   const { range, bounds, resetRange } = useTime();
   const [query, setQuery] = useState('');
   const [copied, setCopied] = useState(false);
@@ -53,17 +57,33 @@ export default function Sidebar() {
     [data.events],
   );
 
-  // Matches the episode number too, so "95" jumps straight to episode 95.
+  /**
+   * The episode list is scoped to the active collection, so choosing one narrows the list
+   * you then pick from rather than leaving 178 rows of which six are relevant. Search still
+   * runs inside that scope; matching the number too, so "95" jumps straight to episode 95.
+   */
   const filtered = useMemo(() => {
+    const collection = getCollection(activeCollectionId);
+    const inScope = collection
+      ? data.episodes.filter((ep) => collection.episodeIds.includes(ep.id))
+      : data.episodes;
+
     const q = normalize(query.trim());
-    if (!q) return data.episodes;
-    return data.episodes.filter(
+    if (!q) return inScope;
+    return inScope.filter(
       (ep) =>
         normalize(ep.id).includes(q) ||
         normalize(ep.title.sr).includes(q) ||
         normalize(ep.title.en ?? '').includes(q),
     );
-  }, [data.episodes, query]);
+  }, [data.episodes, activeCollectionId, query]);
+
+  const scopeCount = useMemo(() => {
+    const collection = getCollection(activeCollectionId);
+    if (!collection) return data.events.length;
+    const set = new Set(collection.episodeIds);
+    return data.events.reduce((n, e) => (set.has(e.episodeId) ? n + 1 : n), 0);
+  }, [data.events, activeCollectionId]);
 
   return (
     <aside className="sidebar">
@@ -75,8 +95,19 @@ export default function Sidebar() {
         <LangToggle />
       </header>
 
+      <Collections />
+
       <section className="sidebar__section sidebar__section--episodes">
-        <h2 className="sidebar__h2">{t(lang, 'episodes')}</h2>
+        {/*
+          The count column is events, on every row including "all episodes" — so that row
+          reads 741 next to an archive of 178 episodes. Captioning the column is what makes
+          the unit explicit; putting an episode count on that one row instead would leave one
+          cell counting something different from every cell below it.
+        */}
+        <h2 className="sidebar__h2 sidebar__h2--counted">
+          {t(lang, 'episodes')}
+          <span className="sidebar__unit">{t(lang, 'countUnit')}</span>
+        </h2>
 
         <div className="search">
           <input
@@ -97,9 +128,9 @@ export default function Sidebar() {
                 className={`episode${activeEpisodeId == null ? ' is-active' : ''}`}
                 onClick={clearEpisode}
               >
-                <span className="episode__swatch episode__swatch--all" />
+                <span className="episode__num episode__num--all">∗</span>
                 <span className="episode__title">{t(lang, 'allEpisodes')}</span>
-                <span className="episode__count">{data.events.length}</span>
+                <span className="episode__count">{scopeCount}</span>
               </button>
             </li>
           )}
@@ -110,7 +141,7 @@ export default function Sidebar() {
                 className={`episode${activeEpisodeId === ep.id ? ' is-active' : ''}`}
                 onClick={() => toggleEpisode(ep.id)}
               >
-                <span className="episode__swatch" style={{ background: ep.color ?? '#7f8c8d' }} />
+                <span className="episode__num">{ep.id}</span>
                 <span className="episode__title">{pick(ep.title, lang)}</span>
                 <span className="episode__count">{countByEpisode[ep.id] ?? 0}</span>
               </button>
@@ -119,6 +150,8 @@ export default function Sidebar() {
           {filtered.length === 0 && <li className="episodes__empty">{t(lang, 'noMatches')}</li>}
         </ul>
       </section>
+
+      <FacetFilters />
 
       <section className="sidebar__section sidebar__section--stats">
         <div className="stats">

@@ -1,0 +1,69 @@
+{
+  "places": [
+    { "id": "normandija", "name": { "sr": "Normandija", "en": "Normandy" }, "aliases": ["Normandiju", "Normandiji"], "lat": 49.1829, "lng": -0.3707, "kind": "region" },
+    { "id": "kompjenj", "name": { "sr": "Kompjenj", "en": "Compiègne" }, "aliases": ["Kompjenju"], "lat": 49.4180, "lng": 2.8260, "kind": "landmark" },
+    { "id": "falez", "name": { "sr": "Falez (Džep kod Faleza)", "en": "Falaise Pocket" }, "aliases": ["Faleza"], "lat": 48.8946, "lng": -0.1975, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "francuska-kapitulacija-kompjenj-1940",
+      "title": { "sr": "Francuska kapitulacija u Kompjenju", "en": "French surrender at Compiègne" },
+      "year": 1940,
+      "yearEnd": null,
+      "placeId": "kompjenj",
+      "episodeId": "92",
+      "timestamp": "37:22",
+      "type": "treaty",
+      "actors": ["Francuska", "Nemačka"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1940. godine Francuska potpisuje kapitulaciju u Kompjenju, čime njena uloga u Drugom svetskom ratu postaje posebna, odvojena tema od ostalih zapadnih saveznika.", "en": "In 1940, France signed its surrender at Compiègne, making its role in World War II a distinct, separate topic from the other Western Allies." },
+      "quote": "oni su imali tu kapitulaciju u Kompjenju 1940. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "invazija-normandija-1944-bitka",
+      "title": { "sr": "Iskrcavanje u Normandiji (Dan D)", "en": "Normandy landings (D-Day)" },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "normandija",
+      "episodeId": "92",
+      "timestamp": "01:40",
+      "type": "battle",
+      "actors": ["Saveznici", "Nemačka vojska"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "6. juna 1944. godine izvršeno je savezničko iskrcavanje u Normandiji (Dan D), pred koje je general Ajzenhauerova poruka pročitana svim vojnicima, otvarajući zapadni front u Evropi.", "en": "On June 6, 1944, the Allied landings in Normandy (D-Day) took place, before which General Eisenhower's message was read to all soldiers, opening the Western Front in Europe." },
+      "quote": "pročitan svim vojnicima 6. juna 1944. pred invaziju na Evropu.",
+      "confidence": "high"
+    },
+    {
+      "id": "dzep-kod-faleza-1944",
+      "title": { "sr": "Bitka u Džepu kod Faleza", "en": "Battle of the Falaise Pocket" },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "falez",
+      "episodeId": "92",
+      "timestamp": "42:10",
+      "type": "battle",
+      "actors": ["Saveznici", "Nemačka vojska (Wehrmacht)"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Između 12. i 21. avgusta 1944. godine vodi se velika bitka u Džepu kod Faleza, u kojoj biva opkoljeno i zarobljeno oko 50.000 vojnika Vermahta.", "en": "Between August 12 and 21, 1944, a great battle was fought in the Falaise Pocket, in which around 50,000 Wehrmacht soldiers were encircled and captured." },
+      "quote": "Džep kod Faleza, to je jedna velika bitka koja se vodi između 12. i 21. avgusta 1944. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "samoubistvo-model-1945",
+      "title": { "sr": "Samoubistvo feldmaršala Modela", "en": "Suicide of Field Marshal Model" },
+      "year": 1945,
+      "yearEnd": null,
+      "placeId": "normandija",
+      "episodeId": "92",
+      "timestamp": "88:30",
+      "type": "death",
+      "actors": ["Walter Model"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "21. aprila 1945. godine, u Nemačkoj, feldmaršal Model, veran Hitleru do kraja, izvršava samoubistvo, izjavivši da je uradio sve što je general trebalo da uradi.", "en": "On April 21, 1945, in Germany, Field Marshal Model, loyal to Hitler to the end, took his own life, stating that he had done everything a general was supposed to do." },
+      "quote": "njegova sudbina će na kraju, praktično će 22. 3. aprila 1945. godine u Nemačkoj ... izvršiti i on samubistvo.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -3,14 +3,246 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HistoryCast Map</title>
+    <title>HistoryCast Map - mapa podkasta HistoryCast</title>
     <meta
       name="description"
-      content="Interaktivna mapa i vremenska osa istorijskih događaja iz podkasta HistoryCast."
+      content="741 istorijski događaj iz 178 epizoda podkasta HistoryCast, na mapi i vremenskoj osi. Svaki događaj vodi na tačan minut u epizodi."
     />
+    <meta property="og:title" content="HistoryCast Map" />
+    <meta
+      property="og:description"
+      content="741 istorijski događaj iz 178 epizoda podkasta HistoryCast, na mapi i vremenskoj osi."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/landing.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <nav class="nav">
+      <div class="nav__inner">
+        <a class="nav__brand" href="./">HistoryCast&nbsp;Map</a>
+        <a class="nav__link nav__link--secondary" href="#vreme">Arhiva</a>
+        <a class="nav__link nav__link--secondary" href="#kako">Kako radi</a>
+        <a class="nav__link nav__link--secondary" href="#regioni">Regioni</a>
+        <a class="nav__link" href="./app.html">Otvori mapu</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero__grid">
+        <div class="hero__text">
+          <h1 class="hero__title" data-enter="1">Gde se to zapravo dogodilo</h1>
+          <p class="hero__sub" data-enter="2">
+            Svaki događaj iz podkasta dobio je mesto i godinu. Otvorite ga i čujete tačan
+            minut u kojem se o njemu priča.
+          </p>
+          <div class="hero__actions" data-enter="3">
+            <a class="cta cta--primary" href="./app.html">Otvori mapu</a>
+            <a class="cta cta--ghost" href="#kako">Kako radi</a>
+          </div>
+        </div>
+
+        <!-- Runs off the right edge rather than sitting in a bordered card: the archive does
+             not fit on this page, and the crop is the honest way to say so. -->
+        <figure class="hero__figure" data-enter="4">
+          <!-- Upgraded in place to a live Leaflet map by src/landing/main.ts. The image is
+               the no-JS state, so the hero is never blank. -->
+          <div class="hero__map" id="hero-map">
+            <noscript>
+              <p class="hero__map-fallback">
+                Mapa zahteva JavaScript. Cela mapa i vremenska osa su na
+                <a href="./app.html">stranici mape</a>.
+              </p>
+            </noscript>
+          </div>
+          <figcaption class="hero__caption">
+            Događaji na Balkanu. Kliknite tačku da je otvorite u mapi.
+          </figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <!-- The chart comes second because it is the strongest evidence that the archive is real
+         and that its coverage is uneven; the counts above it say what the bars are counting. -->
+    <section class="section" id="vreme">
+      <div class="wrap">
+        <div class="prose">
+          <h2 class="section__title">
+            Vekovi nisu podjednako puni<a class="anchor" href="#vreme" aria-label="Veza na ovaj odeljak">#</a>
+          </h2>
+          <p class="section__body">
+            Postoji jedan izvor vremena za ceo prikaz. Pomerite opseg na osi i mapa prikazuje
+            samo ono što se u tom periodu dogodilo.
+          </p>
+        </div>
+
+        <!-- tally:start -->
+    <dl class="tally">
+      <div class="tally__item">
+        <dt class="tally__label">događaja</dt>
+        <dd class="tally__n">741</dd>
+      </div>
+      <div class="tally__item">
+        <dt class="tally__label">epizoda</dt>
+        <dd class="tally__n">178</dd>
+      </div>
+      <div class="tally__item">
+        <dt class="tally__label">mesta</dt>
+        <dd class="tally__n">283</dd>
+      </div>
+    </dl>
+    <!-- tally:end -->
+
+        <!-- century-chart:start -->
+    <figure class="band band--chart">
+      <svg class="cc" viewBox="0 0 1200 360" role="img"
+           aria-label="Broj događaja po veku. Najviše ih je u dvadesetom veku: 351 od 741.">
+        <line class="cc__gap" x1="16" y1="326" x2="1184" y2="326" />
+        <line class="cc__axis" x1="18.0" y1="326" x2="49.4" y2="326" />
+        <line class="cc__axis" x1="230.4" y1="326" x2="474.1" y2="326" />
+        <line class="cc__axis" x1="548.9" y1="326" x2="1182.0" y2="326" />
+      <rect class="cc__bar" x="18.0" y="324.0" width="31.4" height="2.0" rx="1"><title>1200. p.n.e.: 1</title></rect>
+      <rect class="cc__bar" x="230.4" y="324.0" width="31.4" height="2.0" rx="1"><title>600. p.n.e.: 1</title></rect>
+      <rect class="cc__bar" x="265.8" y="318.3" width="31.4" height="7.7" rx="1"><title>500. p.n.e.: 10</title></rect>
+      <rect class="cc__bar" x="301.2" y="321.4" width="31.4" height="4.6" rx="1"><title>400. p.n.e.: 6</title></rect>
+      <rect class="cc__bar" x="336.5" y="321.4" width="31.4" height="4.6" rx="1"><title>300. p.n.e.: 6</title></rect>
+      <rect class="cc__bar" x="371.9" y="324.0" width="31.4" height="2.0" rx="1"><title>200. p.n.e.: 2</title></rect>
+      <rect class="cc__bar" x="407.3" y="309.8" width="31.4" height="16.2" rx="1"><title>100. p.n.e.: 21</title></rect>
+      <rect class="cc__bar" x="442.7" y="322.9" width="31.4" height="3.1" rx="1"><title>1: 4</title></rect>
+      <rect class="cc__bar" x="548.9" y="323.7" width="31.4" height="2.3" rx="1"><title>300: 3</title></rect>
+      <rect class="cc__bar" x="584.3" y="323.7" width="31.4" height="2.3" rx="1"><title>400: 3</title></rect>
+      <rect class="cc__bar" x="619.7" y="323.7" width="31.4" height="2.3" rx="1"><title>500: 3</title></rect>
+      <rect class="cc__bar" x="655.1" y="324.0" width="31.4" height="2.0" rx="1"><title>600: 1</title></rect>
+      <rect class="cc__bar" x="690.5" y="322.2" width="31.4" height="3.8" rx="1"><title>700: 5</title></rect>
+      <rect class="cc__bar" x="725.9" y="318.3" width="31.4" height="7.7" rx="1"><title>800: 10</title></rect>
+      <rect class="cc__bar" x="761.3" y="321.4" width="31.4" height="4.6" rx="1"><title>900: 6</title></rect>
+      <rect class="cc__bar" x="796.7" y="319.8" width="31.4" height="6.2" rx="1"><title>1000: 8</title></rect>
+      <rect class="cc__bar" x="832.1" y="316.0" width="31.4" height="10.0" rx="1"><title>1100: 13</title></rect>
+      <rect class="cc__bar" x="867.5" y="306.8" width="31.4" height="19.2" rx="1"><title>1200: 25</title></rect>
+      <rect class="cc__bar" x="902.8" y="292.2" width="31.4" height="33.8" rx="1"><title>1300: 44</title></rect>
+      <rect class="cc__bar" x="938.2" y="302.2" width="31.4" height="23.8" rx="1"><title>1400: 31</title></rect>
+      <rect class="cc__bar" x="973.6" y="309.8" width="31.4" height="16.2" rx="1"><title>1500: 21</title></rect>
+      <rect class="cc__bar" x="1009.0" y="308.3" width="31.4" height="17.7" rx="1"><title>1600: 23</title></rect>
+      <rect class="cc__bar" x="1044.4" y="307.5" width="31.4" height="18.5" rx="1"><title>1700: 24</title></rect>
+      <rect class="cc__bar" x="1079.8" y="239.1" width="31.4" height="86.9" rx="1"><title>1800: 113</title></rect>
+      <rect class="cc__bar is-peak" x="1115.2" y="56.0" width="31.4" height="270.0" rx="1"><title>1900: 351</title></rect>
+      <rect class="cc__bar" x="1150.6" y="321.4" width="31.4" height="4.6" rx="1"><title>2000: 6</title></rect>
+        <line class="cc__lead" x1="1130.9" y1="50.0" x2="1130.9" y2="36" />
+        <text class="cc__note" x="1106.9" y="30" text-anchor="end">351 od 741 događaja pada u dvadeseti vek.</text>
+      <text class="cc__tick" x="33.7" y="348" text-anchor="middle">1200. p.n.e.</text>
+      <text class="cc__tick" x="175.3" y="348" text-anchor="middle">800. p.n.e.</text>
+      <text class="cc__tick" x="316.8" y="348" text-anchor="middle">400. p.n.e.</text>
+      <text class="cc__tick" x="458.4" y="348" text-anchor="middle">1</text>
+      <text class="cc__tick" x="600.0" y="348" text-anchor="middle">400</text>
+      <text class="cc__tick" x="741.6" y="348" text-anchor="middle">800</text>
+      <text class="cc__tick" x="883.2" y="348" text-anchor="middle">1200</text>
+      <text class="cc__tick" x="1024.7" y="348" text-anchor="middle">1600</text>
+      <text class="cc__tick" x="1166.3" y="348" text-anchor="middle">2000</text>
+      </svg>
+      <figcaption class="band__caption">
+        Broj događaja po veku, od 1200. p.n.e. do 2006. Skoro 47 odsto arhive staje u
+        jedan vek, a sedam vekova nema nijedan zabeležen događaj.
+      </figcaption>
+    </figure>
+    <!-- century-chart:end -->
+      </div>
+    </section>
+
+    <section class="section" id="kako">
+      <div class="wrap">
+        <div class="prose">
+          <h2 class="section__title">
+            Od transkripta do tačnog minuta<a class="anchor" href="#kako" aria-label="Veza na ovaj odeljak">#</a>
+          </h2>
+          <p class="section__body">
+            Epizode su transkribovane, događaji izvučeni i geokodirani, a svaki nosi godinu,
+            mesto i vremensku oznaku u snimku.
+          </p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <h3 class="step__verb">Pretražite</h3>
+            <p class="step__text">
+              Filtrirajte po epizodi, regionu ili tipu događaja. Vremenska osa sužava mapu na
+              period koji vas zanima.
+            </p>
+          </li>
+          <li class="step">
+            <h3 class="step__verb">Uporedite</h3>
+            <p class="step__text">
+              Kada se više događaja desi na istom mestu iste godine, mapa ih grupiše u jednu
+              tačku i izlistava zajedno.
+            </p>
+          </li>
+          <li class="step">
+            <h3 class="step__verb">Slušajte</h3>
+            <p class="step__text">
+              Svaki događaj ima dugme koje otvara epizodu na sekundi na kojoj priča o njemu
+              počinje.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="regioni">
+      <div class="wrap">
+        <div class="prose">
+          <h2 class="section__title">
+            Boja na mapi nešto znači<a class="anchor" href="#regioni" aria-label="Veza na ovaj odeljak">#</a>
+          </h2>
+          <p class="section__body">Dvanaest regiona, dvanaest boja.</p>
+        </div>
+
+        <div class="with-note">
+          <!-- Swatch first and large enough to be read as a colour rather than as a bullet:
+               this block is the palette itself, not a list that happens to have dots. -->
+          <ul class="regions">
+            <li class="region"><span class="region__dot" style="background:#aa2e4e"></span>Balkan</li>
+            <li class="region"><span class="region__dot" style="background:#d86727"></span>Vizantija i Egejski svet</li>
+            <li class="region"><span class="region__dot" style="background:#ea9602"></span>Osmansko carstvo</li>
+            <li class="region"><span class="region__dot" style="background:#a9c641"></span>Srednja Evropa</li>
+            <li class="region"><span class="region__dot" style="background:#548200"></span>Zapadna Evropa</li>
+            <li class="region"><span class="region__dot" style="background:#009f68"></span>Istočna Evropa</li>
+            <li class="region"><span class="region__dot" style="background:#00736e"></span>Severna Evropa i Atlantik</li>
+            <li class="region"><span class="region__dot" style="background:#007e9b"></span>Bliski istok</li>
+            <li class="region"><span class="region__dot" style="background:#50a9ff"></span>Afrika</li>
+            <li class="region"><span class="region__dot" style="background:#5552bb"></span>Azija</li>
+            <li class="region"><span class="region__dot" style="background:#853f9f"></span>Severna Amerika</li>
+            <li class="region"><span class="region__dot" style="background:#77065a"></span>Južna Amerika</li>
+          </ul>
+
+          <!-- An aside, so it stops competing with the claim it supports. -->
+          <aside class="note">
+            Nijanse nisu birane po oku nego izračunate: razmak između svake dve proveren je i
+            za normalan vid i za tri tipa daltonizma, pa grozd boje &bdquo;sedam događaja na
+            Balkanu&ldquo; ostaje čitljiv podatak.
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- The one full-bleed surface change on the page, so the scroll has a floor. -->
+    <section class="close-band">
+      <div class="wrap close-band__inner">
+        <div>
+          <h2 class="section__title">Počnite od bilo koje tačke</h2>
+          <p class="section__body">
+            Mapa se otvara na celoj arhivi. Odatle je svako sužavanje jedan klik.
+          </p>
+        </div>
+        <a class="cta cta--primary" href="./app.html">Otvori mapu</a>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="wrap foot__inner">
+        <span>HistoryCast Map</span>
+        <a href="https://github.com/todorPA/historycastmap">Izvorni kod</a>
+        <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap doprinosioci</a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/landing/main.ts"></script>
   </body>
 </html>

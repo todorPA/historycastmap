@@ -1,0 +1,154 @@
+/**
+ * Design tokens: HistoryCast Map.
+ *
+ * Light theme, derived from the HistoryCast brand rather than invented. Two brand facts
+ * drive everything below:
+ *
+ *  - The merch ground is a warm *grey* (sampled #ccc4c1 .. #d0c9c6), not a cream. The
+ *    surface ramp is built from that family, which reads as archival board rather than as
+ *    the beige-and-brass palette every history project reaches for first.
+ *  - The logo gold is #e9c980 (sampled from the flat gold in the wordmark, not its
+ *    antialiased edges). It is the one chromatic thing in the chrome.
+ *
+ * GOLD IS A FILL, NEVER TEXT OR A HAIRLINE. #e9c980 against the panel surface is 1.43:1,
+ * so it can only carry dark ink on top of it. Anywhere gold needs to be a glyph or a
+ * border, use --gold-deep (#6f5a2d), which clears AA on every surface here.
+ *
+ * The rule from the dark theme still holds: colour is the data encoding. Twelve regions
+ * carry twelve hues (config/regions.ts) and the chrome must not be mistakable for them.
+ * Gold's nearest region hue is Srednja Evropa at CIELAB dE 36.5 (Osmansko carstvo at 41.4),
+ * which is comfortably distinguishable. For comparison, the accent this replaced in the
+ * dark theme sat dE 2.9 from its neighbour. That headroom is why gold can be an active
+ * state at all, and it is worth re-measuring if either the gold or a region hue moves.
+ *
+ * Every text pair below is measured; see the table in docs/design/REDESIGN-2026-09.md.
+ */
+
+:root {
+  /* ---------- surfaces: warm grey, lightest at the top of the stack ----------
+     Names are inherited from the dark theme so existing rules keep working. The ordering
+     is unchanged in role (900 = furthest back, 100 = primary text), only in value. */
+  --ink-900: #e0dbd6; /* page ground */
+  --ink-800: #f3f1ef; /* sidebar, timeline panel */
+  --ink-700: #fbfaf9; /* inputs, buttons, popups */
+  --ink-600: #e8e4e0; /* hover */
+  --ink-500: #c8c0b9; /* borders on raised surfaces */
+  --ink-400: #a99f95; /* disabled, dashed hints */
+  --ink-300: #5d564d; /* muted text */
+  --ink-200: #3c372f; /* secondary text */
+  --ink-100: #1a1713; /* primary text, warm near-black from the logo field */
+  --paper: #ffffff; /* the brightest surface: popups over the map */
+
+  /* ---------- brand ---------- */
+  --gold: #e9c980; /* fills only */
+  --gold-deep: #6f5a2d; /* gold as text or hairline */
+  --gold-wash: #f6e9cd; /* selected rows, so "active" is a surface not a border */
+
+  /**
+   * The edge of a pressable control, solved for 3:1 against the panel surface (WCAG 1.4.11).
+   *
+   * It needs its own token because the button fill (--ink-700) is only 1.09 against the
+   * panel: the fill is not what tells you something is pressable, the edge is. The two
+   * greys previously used for this, --line and --ink-500, came in at 1.41 and 1.59, which
+   * is decoration rather than affordance.
+   *
+   * --line stays, but only for structure: section dividers and panel separators, which
+   * describe layout rather than invite a press.
+   */
+  --control-edge: #938a81;
+
+  /* ---------- map surface ----------
+     The basemap used to be quieted by taking away everything at once — colour, contrast and
+     depth together. That erased the one thing it is there for: the land/sea edge. Over
+     Greenland or open water, where OSM carries almost no features, the result was a flat
+     field the same value as the container, and the map stopped reading as a map.
+
+     So the quiet is a different kind now. Colour goes to near-zero, because colour is the
+     data encoding and the twelve region hues must keep their monopoly on it. Contrast goes
+     UP, because structure is not meaning and the coastline should be the strongest line on
+     the surface. */
+  --map-sea: #ccd4d3; /* cool grey-green; also the container ground, so a missing tile reads as sea */
+  --map-land: #e7e1d9; /* warm paper, kin to --ink-900: land is the archive's own stock */
+  --map-grid: rgba(26, 23, 19, 0.07); /* graticule hairline */
+
+  /* Legacy aliases, still referenced by existing rules. */
+  --bg: var(--ink-900);
+  --sidebar: var(--ink-800);
+  --sidebar-2: var(--ink-700);
+  --text: var(--ink-100);
+  --muted: var(--ink-300);
+  --line: #d3ccc5;
+  --accent: var(--gold-deep);
+
+  /* ---------- light surfaces ----------
+     Going light collapsed the old dark-chrome / light-popup split: map popups and the
+     chrome around them are now one theme, so these point at the same ramp. Kept as names
+     because the popup components still reference them. */
+  --lit-bg: var(--paper);
+  --lit-text: var(--ink-100);
+  --lit-muted: var(--ink-300);
+  --lit-line: var(--ink-500);
+  --lit-raised: var(--ink-600);
+
+  /* Markers keep a dark ring on the light basemap, which is what frees the region palette
+     to be chosen for mutual distinguishability rather than for contrast against tiles
+     (config/regions.ts). On light chrome, legend swatches need the same dark ring: nine of
+     the twelve fills fall under 3:1 against the panel on their own. */
+  --marker-ring: #1a1713;
+  --swatch-ring: rgba(26, 23, 19, 0.55);
+
+  /* ---------- type ---------- */
+  /* IBM Plex ships Latin Extended-A and Cyrillic under OFL, so Serbian diacritics
+     (č ć š ž đ) and the handful of Cyrillic strings in the data render in one family.
+     Falls back to the system stack until `npm run fonts` fetches the files. */
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: 'Literata', Georgia, serif;
+  --font: var(--font-sans);
+
+  --step--2: 0.6875rem; /* 11px - labels, counts */
+  --step--1: 0.75rem; /* 12px - secondary UI */
+  --step-0: 0.8125rem; /* 13px - body UI */
+  --step-1: 0.9375rem; /* 15px - popup titles */
+  --step-2: 1.0625rem; /* 17px - sidebar title */
+
+  /* ---------- shape: one radius scale ---------- */
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-pill: 999px;
+
+  /* ---------- space ---------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+
+  /* ---------- elevation ----------
+     Tinted to the surface hue, never neutral black: on a warm grey ground a grey shadow
+     reads as dirt. Light chrome over a light basemap also means panels need a real edge,
+     so shadows here carry a hairline as well. */
+  --shadow-panel: 0 1px 2px rgba(26, 23, 19, 0.06), 0 8px 24px rgba(26, 23, 19, 0.12);
+  --shadow-pop: 0 2px 4px rgba(26, 23, 19, 0.08), 0 12px 32px rgba(26, 23, 19, 0.16);
+
+  /* ---------- z-index scale ----------
+     Leaflet owns 0-499 internally; our map furniture sits above its overlay pane. */
+  --z-map-overlay: 450;
+  --z-map-ui: 500;
+  --z-drawer: 600;
+}
+
+/* Motion is opt-in and always escapable. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

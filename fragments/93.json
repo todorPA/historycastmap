@@ -1,0 +1,38 @@
+{
+  "places": [
+    { "id": "nevesinje", "name": { "sr": "Nevesinje", "en": "Nevesinje" }, "aliases": ["Nevesinski srez", "Nevesinjska puška"], "lat": 43.2589, "lng": 18.1067, "kind": "city" },
+    { "id": "kosjerevo", "name": { "sr": "Kosjerevo (manastir)", "en": "Kosjerevo Monastery" }, "aliases": ["Kosjerevu"], "lat": 43.3167, "lng": 18.3333, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "nevesinjska-puska-1875",
+      "title": { "sr": "Nevesinjska puška — početak Hercegovačkog ustanka", "en": "The Nevesinje Rifle — start of the Herzegovina Uprising" },
+      "year": 1875,
+      "yearEnd": null,
+      "placeId": "nevesinje",
+      "episodeId": "93",
+      "timestamp": "43:38",
+      "type": "uprising",
+      "actors": ["Hercegovački ustanici", "Osmansko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "1875. godine, u Nevesinjskom srezu, počinje Hercegovački ustanak (poznat i kao Nevesinjska puška), koji se odražava na okolne prostore i podiže interesovanje u Srbiji i drugim balkanskim zemljama.", "en": "In 1875, in the Nevesinje district, the Herzegovina Uprising began (also known as the Nevesinje Rifle), which reverberated across surrounding areas and drew interest in Serbia and other Balkan countries." },
+      "quote": "I tako počinje, dakle, ustanak 1875. godine ... od nevesinske puške 1875. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "skupstine-krajina-kosjerevo-1878",
+      "title": { "sr": "Skupštine u Krajini i manastiru Kosjerevo", "en": "Assemblies in Krajina and Kosjerevo Monastery" },
+      "year": 1878,
+      "yearEnd": null,
+      "placeId": "kosjerevo",
+      "episodeId": "93",
+      "timestamp": "113:17",
+      "type": "other",
+      "actors": ["Petar Pecija Petrović", "Hercegovački ustanici"],
+      "region": "Balkan",
+      "description": { "sr": "1878. godine održane su dve značajne skupštine — jedna u Krajini, druga u manastiru Kosjerevo u današnjoj Hercegovini — u kontekstu Berlinskog kongresa i austrougarske okupacije.", "en": "In 1878, two significant assemblies were held — one in Krajina, another at Kosjerevo Monastery in present-day Herzegovina — in the context of the Congress of Berlin and the Austro-Hungarian occupation." },
+      "quote": "te dve skupštine, koje su bile održene 1878. godine u Krajini i ova druga ... u Manastiru, u Kosjerevo",
+      "confidence": "medium"
+    }
+  ]
+}

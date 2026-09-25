@@ -1,0 +1,100 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda", "Beogradskoj konferenciji", "beogradskoj"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "kairo", "name": { "sr": "Kairo", "en": "Cairo" }, "aliases": ["kairo", "cairo", "kajru", "Egiptu", "Egipta"], "lat": 30.0444, "lng": 31.2357, "kind": "city" },
+    { "id": "havana", "name": { "sr": "Havana", "en": "Havana" }, "aliases": ["havana", "havani", "havanu", "kuba", "kubi"], "lat": 23.1136, "lng": -82.3666, "kind": "city" },
+    { "id": "suecki-kanal", "name": { "sr": "Suecki kanal", "en": "Suez Canal" }, "aliases": ["suedski kanal", "suedske krize", "sueckog kanala"], "lat": 30.5852, "lng": 32.2654, "kind": "water" }
+  ],
+  "events": [
+    {
+      "id": "jugoslavija-izbacena-kominform-1948",
+      "title": { "sr": "Jugoslavija izbačena iz Kominforma", "en": "Yugoslavia expelled from Cominform" },
+      "year": 1948,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "20",
+      "timestamp": "04:52",
+      "type": "other",
+      "actors": ["Josif Staljin", "Josip Broz Tito"],
+      "region": "Balkan",
+      "description": { "sr": "1948. godine Staljin izbacuje Jugoslaviju iz Kominforma; Tito prihvata izazov, a Jugoslavija se nalazi u geopolitičkom vakuumu između istočnog i zapadnog bloka, što pokreće put ka politici nesvrstavanja.", "en": "In 1948, Stalin expelled Yugoslavia from the Cominform; Tito accepted the challenge, leaving Yugoslavia in a geopolitical vacuum between the Eastern and Western blocs, setting it on the path toward the policy of non-alignment." },
+      "quote": "48. godine. Stalin faktički izbacuje Jugoslaviju iz kominforma. Tito prihvata izazov i kaže to je istorijsko.",
+      "confidence": "high"
+    },
+    {
+      "id": "naser-vlast-egipat-1953",
+      "title": { "sr": "Naser dolazi na vlast u Egiptu", "en": "Nasser rises to power in Egypt" },
+      "year": 1953,
+      "yearEnd": null,
+      "placeId": "kairo",
+      "episodeId": "20",
+      "timestamp": "05:55",
+      "type": "other",
+      "actors": ["Gamal Abdel Naser"],
+      "region": "Afrika",
+      "description": { "sr": "Oko 1953. godine Gamal Abdel Naser dolazi na vlast u Egiptu i, umesto Titove ideje 'aktivne miroljubive koegzistencije', zagovara koncept neutralnosti, sličan Nehruovom stavu.", "en": "Around 1953, Gamal Abdel Nasser rose to power in Egypt and, rather than Tito's idea of 'active peaceful coexistence,' advocated a concept of neutrality similar to Nehru's position." },
+      "quote": "Nasr kaže, koji je u to vreme, otprilike 1953. godine, uzod iz Gine u Egiptu. Kaže, pa ne, mi bi više voljeli neutralnost kao koncept.",
+      "confidence": "medium"
+    },
+    {
+      "id": "konferencija-bandung-kairo-1955",
+      "title": { "sr": "Konferencija afroazijskih zemalja u Bandungu", "en": "Bandung Conference of Afro-Asian nations" },
+      "year": 1955,
+      "yearEnd": null,
+      "placeId": "kairo",
+      "episodeId": "20",
+      "timestamp": "06:09",
+      "type": "treaty",
+      "actors": ["Jawaharlal Nehru", "Gamal Abdel Naser", "afroazijske zemlje"],
+      "region": "Azija",
+      "description": { "sr": "U aprilu 1955. godine održana je konferencija afroazijskih zemalja u Bandungu, koja je iznela koncepte saradnje; Jugoslavija je bila zabrinuta da bude isključena iz ovog okvira jer nije ni afrička ni azijska zemlja.", "en": "In April 1955, the Afro-Asian conference was held at Bandung, laying out principles of cooperation; Yugoslavia worried it would be excluded from this framework since it was neither an African nor an Asian country." },
+      "quote": "koji se najviše razvio u konferenciju u Bandungu u 1955. godinu u aprilu, koji je iznao neke koncepte, 5-6 koncepta saradnje",
+      "confidence": "high"
+    },
+    {
+      "id": "sastanak-brioni-titon-naser-nehru-1956",
+      "title": { "sr": "Sastanak Tita, Nasera i Nehrua na Brionima", "en": "Meeting of Tito, Nasser and Nehru at Brioni" },
+      "year": 1956,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "20",
+      "timestamp": "22:00",
+      "type": "treaty",
+      "actors": ["Josip Broz Tito", "Gamal Abdel Naser", "Jawaharlal Nehru"],
+      "region": "Balkan",
+      "description": { "sr": "Nehru se 1956. godine, tokom evropske turneje, obavezao da učestvuje u sastanku na Brionima sa Titom i Naserom; taj ikonični sastanak, praćen brionskom deklaracijom, smatra se protonastankom pokreta nesvrstanih.", "en": "In 1956, during a European tour, Nehru committed to attending the Brioni meeting with Tito and Nasser; this iconic meeting, accompanied by the Brioni declaration, is considered the proto-founding moment of the Non-Aligned Movement." },
+      "quote": "Ključan je bio ovaj trenutak kada se Nehruv obavezao, ali Nehruv se obavezao 56. godina, da se da uzive u tu kombinatoriku",
+      "confidence": "high"
+    },
+    {
+      "id": "sueska-kriza-nacionalizacija-kanala-1956",
+      "title": { "sr": "Sueska kriza — nacionalizacija Sueckog kanala", "en": "Suez Crisis — nationalization of the Suez Canal" },
+      "year": 1956,
+      "yearEnd": null,
+      "placeId": "suecki-kanal",
+      "episodeId": "20",
+      "timestamp": "34:36",
+      "type": "conquest",
+      "actors": ["Gamal Abdel Naser", "Velika Britanija", "Francuska", "Izrael"],
+      "region": "Bliski istok",
+      "description": { "sr": "Naser nacionalizuje Suecki kanal 1956. godine; Britanija i Francuska se dogovaraju sa Izraelom da napadnu Egipat, ali SAD i SSSR zajedno primoravaju Englesku i Francusku da se povuku, što dovodi do stvaranja prvih mirovnih snaga UN — 'plavih šlemova', u kojima učestvuju i jugoslovenski vojnici.", "en": "Nasser nationalized the Suez Canal in 1956; Britain and France coordinated with Israel to attack Egypt, but the US and USSR jointly forced England and France to withdraw, leading to the creation of the first UN peacekeeping force — the 'Blue Helmets' — in which Yugoslav soldiers also took part." },
+      "quote": "I zajedno sa SSSR-om praktično suzbiju Englesku i Francusku u 1956. godine i ponize ih i naprave... plave šlemove.",
+      "confidence": "high"
+    },
+    {
+      "id": "sesti-samit-nesvrstanih-havana-1979",
+      "title": { "sr": "Šesti samit nesvrstanih u Havani", "en": "Sixth Non-Aligned Summit in Havana" },
+      "year": 1979,
+      "yearEnd": null,
+      "placeId": "havana",
+      "episodeId": "20",
+      "timestamp": "28:45",
+      "type": "other",
+      "actors": ["Josip Broz Tito", "Fidel Castro"],
+      "region": "Južna Amerika",
+      "description": { "sr": "1979. godine, na šestom samitu nesvrstanih u Havani, ostareli Tito uspeva da spreči Kastrov pokušaj da pokret nesvrstanih preusmeri ka SSSR-u, čime njegova radikalna koncepcija 'svrstanog nesvrstavanja' propada.", "en": "In 1979, at the sixth Non-Aligned summit in Havana, an aging Tito managed to prevent Castro's attempt to steer the movement toward the USSR, causing Castro's radical concept of 'aligned non-alignment' to fail." },
+      "quote": "ajde da čisto zadnji veliki spojno-politički Titov angažman, gde je on bio stvarno na zadnjim nogama Maltene na jednoj vnozi već, 79. godine, to je šesti samit... U Havani.",
+      "confidence": "high"
+    }
+  ]
+}

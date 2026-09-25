@@ -1,15 +1,9 @@
-/* HistoryCast Map — map-first layout: dark sidebar, light map. */
+/* HistoryCast Map - map-first layout, light chrome over a light basemap.
+   Tokens live in tokens.css. The chrome carries one brand colour (gold, as a fill only);
+   everything else is warm grey, so region hue stays the only meaningful colour. */
 
-:root {
-  --bg: #101418;
-  --sidebar: #171d24;
-  --sidebar-2: #1f2731;
-  --text: #e8edf2;
-  --muted: #98a4b3;
-  --accent: #d9a13b;
-  --line: #2a3440;
-  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
+@import './fonts.css';
+@import './tokens.css';
 
 * {
   box-sizing: border-box;
@@ -23,7 +17,7 @@ body,
 }
 
 body {
-  font-family: var(--font);
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
@@ -64,8 +58,8 @@ body {
 }
 
 .status code {
-  font-size: 12px;
-  color: #e57373;
+  font-size: var(--step--1);
+  color: #a3211c;
 }
 
 /* ---------- sidebar ---------- */
@@ -74,16 +68,57 @@ body {
   flex-direction: column;
   gap: 4px;
   background: var(--sidebar);
-  border-right: 1px solid var(--line);
-  /* The episode list scrolls on its own so stats and the range reset stay reachable
-     even with 181 episodes. */
-  overflow: hidden;
+  border-right: 1px solid var(--ink-500);
+  /* The episode list scrolls on its own so stats and the range reset stay reachable even
+     with 181 episodes. The sidebar itself scrolls only as a last resort: with collections,
+     episodes, filters and stats all competing, a short window can exceed the floors below
+     and `hidden` would silently clip whatever lost. */
+  overflow: hidden auto;
 }
 
+/* Takes the space it needs and no more. `flex: 1` made the list absorb every spare pixel,
+   so a three-episode dataset left a ~400px hole above the filters; `flex-grow: 0` fixes
+   that. The floor is the other half: as the only shrinkable section it then absorbed the
+   whole deficit instead, collapsing to 29px at an 800px viewport, which left the search
+   box sliced in half and no episodes visible at all.
+
+   `hidden auto` because `overflow-y: auto` alone promotes overflow-x to auto too, and an
+   8px overhang on the row counts was enough to raise a horizontal scrollbar. The sidebar
+   should never scroll sideways. */
+/* The section sizes to its content; the *list* inside it is what scrolls and what carries
+   the cap. That distinction is the whole fix.
+
+   Flex shrinks items in proportion to their base size, and with `flex-basis: auto` the base
+   is the content height: 103 episodes gave this section a base of ~4000px against the
+   filters' ~400. Capping the section with max-height does not change that base, so the
+   filters were still starved to their floor while the episodes kept 376px. Capping the list
+   instead makes the section's own base honest (~480px), and the two then give way together.
+
+   Sizing the section by flex-basis would have worked too, but it reintroduces the original
+   bug: a fixed basis leaves a hole under a three-episode dataset. */
 .sidebar__section--episodes {
-  flex: 1;
+  flex: 0 1 auto;
+  /* Label, search and a few rows. Below this the section is not worth showing, and the
+     sidebar scrolls instead. Safe to set now that the base size is honest: as a floor on a
+     4000px base it was what let this section win every shrink and starve the filters. */
+  min-height: 11rem;
+  /* A column, so the list below can be told to fit whatever height the section is given. */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Two bounds, and both are needed.
+   `max-height` caps the section's natural base size, which is what keeps the shrink maths
+   honest against the filters. `flex: 0 1 auto` with `min-height: 0` caps the *used* height
+   to whatever the section actually got: without it the list kept its 40vh while the section
+   shrank to 176px, and the overflow spilled straight over the filters below. */
+.episodes {
+  flex: 0 1 auto;
   min-height: 0;
-  overflow-y: auto;
+  max-height: 40vh;
+  /* `overflow-y: auto` alone promotes overflow-x to auto as well, which raised a stray
+     horizontal scrollbar off a sub-pixel overhang. The sidebar never scrolls sideways. */
+  overflow: hidden auto;
 }
 
 .sidebar__section--stats {
@@ -101,13 +136,15 @@ body {
 
 .sidebar__title {
   margin: 0;
-  font-size: 17px;
-  letter-spacing: 0.2px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
 }
 
 .sidebar__subtitle {
   margin: 4px 0 0;
-  font-size: 12px;
+  font-size: var(--step--1);
   color: var(--muted);
   line-height: 1.35;
 }
@@ -119,16 +156,32 @@ body {
 
 .sidebar__h2 {
   margin: 0 0 10px;
-  font-size: 11px;
+  font-size: var(--step--2);
   text-transform: uppercase;
   letter-spacing: 0.9px;
   color: var(--muted);
 }
 
+/* Section title on the left, the count column's unit right-aligned over that column. */
+.sidebar__h2--counted {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Lower-case and unspaced, so it reads as a caption rather than a second heading. */
+.sidebar__unit {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--step--2);
+  opacity: 0.7;
+}
+
 .sidebar__foot {
   margin-top: auto;
   padding: 14px 16px;
-  font-size: 11px;
+  font-size: var(--step--2);
   color: var(--muted);
 }
 
@@ -139,8 +192,8 @@ body {
 /* ---------- language toggle ---------- */
 .lang-toggle {
   display: inline-flex;
-  border: 1px solid var(--line);
-  border-radius: 7px;
+  border: 1px solid var(--control-edge);
+  border-radius: var(--r-md);
   overflow: hidden;
   flex: none;
 }
@@ -148,7 +201,7 @@ body {
 .lang-toggle__btn {
   padding: 5px 9px;
   font: inherit;
-  font-size: 11px;
+  font-size: var(--step--2);
   font-weight: 600;
   background: transparent;
   color: var(--muted);
@@ -157,8 +210,8 @@ body {
 }
 
 .lang-toggle__btn.is-active {
-  background: var(--accent);
-  color: #16181c;
+  background: var(--gold);
+  color: var(--ink-100);
 }
 
 /* ---------- search ---------- */
@@ -170,25 +223,56 @@ body {
   width: 100%;
   padding: 7px 9px;
   font: inherit;
-  font-size: 12px;
+  font-size: var(--step--1);
   color: var(--text);
   background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 7px;
+  border: 1px solid var(--control-edge);
+  border-radius: var(--r-md);
 }
 
 .search__input::placeholder {
   color: var(--muted);
 }
 
-.search__input:focus {
+.search__input:focus-visible {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--ink-100);
+  box-shadow: 0 0 0 3px rgba(26, 23, 19, 0.14);
+}
+
+/* One focus treatment for every interactive control, keyboard only. */
+.btn:focus-visible,
+.episode:focus-visible,
+.chip--btn:focus-visible,
+.lang-toggle__btn:focus-visible,
+.basemap__btn:focus-visible,
+.legend__more:focus-visible,
+.facets__clear:focus-visible,
+.timeline__resize:focus-visible {
+  outline: 2px solid var(--ink-100);
+  outline-offset: 2px;
+}
+
+/* Tactile press, §4.5. Cheap transform only, and reduced-motion neutralises it. */
+.btn,
+.episode,
+.chip--btn {
+  transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:active,
+.chip--btn:active {
+  transform: scale(0.98);
+}
+
+.btn:hover {
+  background: var(--ink-600);
 }
 
 .episodes__empty {
   padding: 8px 9px;
-  font-size: 12px;
+  font-size: var(--step--1);
   color: var(--muted);
 }
 
@@ -202,6 +286,10 @@ body {
   gap: 3px;
 }
 
+.episodes__empty {
+  flex: none;
+}
+
 .episode {
   display: flex;
   align-items: center;
@@ -209,12 +297,12 @@ body {
   width: 100%;
   padding: 8px 9px;
   font: inherit;
-  font-size: 13px;
+  font-size: var(--step-0);
   text-align: left;
   color: var(--text);
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: var(--r-md);
   cursor: pointer;
 }
 
@@ -222,20 +310,28 @@ body {
   background: var(--sidebar-2);
 }
 
+/* Gold at 1.43:1 against the panel is far too weak to mark selection on its own, so the
+   active row is a surface: a gold wash with a deep-gold edge. */
 .episode.is-active {
-  background: var(--sidebar-2);
-  border-color: var(--accent);
+  background: var(--gold-wash);
+  border-color: var(--gold-deep);
 }
 
-.episode__swatch {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
+.episode__num {
   flex: none;
+  min-width: 26px;
+  padding: 1px 5px;
+  border-radius: var(--r-sm);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: var(--step--2);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
 }
 
-.episode__swatch--all {
-  background: linear-gradient(135deg, #c0392b 0%, #2c3e50 50%, #1e8449 100%);
+.episode__num--all {
+  color: var(--gold-deep);
 }
 
 .episode__title {
@@ -247,8 +343,10 @@ body {
 }
 
 .episode__count {
-  font-size: 11px;
+  flex: none;
+  font-size: var(--step--2);
   color: var(--muted);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
@@ -257,7 +355,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 12px;
+  font-size: var(--step--1);
   color: var(--muted);
 }
 
@@ -269,16 +367,17 @@ body {
 
 .stats__row strong {
   color: var(--text);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
 /* ---------- buttons ---------- */
 .btn {
   font: inherit;
-  font-size: 12px;
+  font-size: var(--step--1);
   padding: 7px 11px;
-  border-radius: 7px;
-  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  border: 1px solid var(--control-edge);
   background: var(--sidebar-2);
   color: var(--text);
   cursor: pointer;
@@ -290,16 +389,16 @@ body {
 }
 
 .btn--play {
-  background: #1f6feb;
-  border-color: #1f6feb;
-  color: #fff;
+  background: var(--lit-text);
+  border-color: var(--lit-text);
+  color: var(--lit-bg);
   font-weight: 600;
 }
 
 .btn--link {
   background: transparent;
-  border-color: #cfd6dd;
-  color: #33414f;
+  border-color: var(--lit-line);
+  color: var(--lit-text);
   text-decoration: none;
 }
 
@@ -312,12 +411,14 @@ body {
 .map {
   height: 100%;
   width: 100%;
-  background: #dfe4e8;
+  /* Sea, not a neutral: an unloaded or featureless tile then reads as water rather than
+     as a hole in the page. */
+  background: var(--map-sea);
 }
 
 /* Markers stay above the basemap whichever layer is active (SPEC-ohm.md acceptance). */
 .leaflet-overlay-pane {
-  z-index: 450;
+  z-index: var(--z-map-overlay);
 }
 
 .map-empty {
@@ -325,17 +426,166 @@ body {
   top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 500;
+  z-index: var(--z-map-ui);
   padding: 7px 13px;
-  border-radius: 999px;
-  background: rgba(16, 20, 24, 0.85);
+  border-radius: var(--r-pill);
+  background: rgba(251, 250, 249, 0.93);
   color: var(--text);
-  font-size: 12px;
+  border: 1px solid var(--ink-500);
+  box-shadow: var(--shadow-panel);
+  font-size: var(--step--1);
 }
 
-/* ---------- clusters ---------- */
+/* ---------- facet filters ---------- */
+/* Shrinkable too, with its own floor. Leaving this at `flex: none` is what forced the
+   episode list to absorb every missing pixel on a short window. */
+.facets {
+  flex: 0 1 auto;
+  min-height: 6rem;
+  max-height: 34vh;
+  overflow: hidden auto;
+}
+
+.facets__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.facets__clear {
+  padding: 0;
+  font: inherit;
+  font-size: var(--step--2);
+  background: none;
+  border: 0;
+  color: var(--gold-deep);
+  cursor: pointer;
+}
+
+.facets__label {
+  margin: 8px 0 6px;
+  font-size: var(--step--2);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.chips--facet {
+  margin-bottom: 2px;
+}
+
+.chip--btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: inherit;
+  font-size: var(--step--2);
+  padding: 3px 8px;
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--control-edge);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+}
+
+.chip--btn:hover {
+  color: var(--text);
+}
+
+.chip--btn.is-active {
+  background: var(--gold-wash);
+  border-color: var(--gold-deep);
+  color: var(--ink-100);
+}
+
+.chip__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+  box-shadow: 0 0 0 1px var(--swatch-ring);
+}
+
+.chip__count {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--step--2);
+}
+
+/* ---------- grouped popup (one place, one year) ---------- */
+.group-popup__count {
+  margin: 0 0 8px;
+  font-size: var(--step--2);
+  color: var(--lit-muted);
+}
+
+.group-popup__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.group-popup__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--lit-raised);
+}
+
+.group-popup__item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.group-popup__dot {
+  width: 9px;
+  height: 9px;
+  margin-top: 4px;
+  border-radius: 50%;
+  flex: none;
+  box-shadow: 0 0 0 1px var(--swatch-ring);
+}
+
+.group-popup__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.group-popup__name {
+  font-size: var(--step-0);
+  line-height: 1.3;
+}
+
+.group-popup__meta {
+  margin-top: 2px;
+  font-size: var(--step--2);
+  color: var(--lit-muted);
+}
+
+.btn--tiny {
+  flex: none;
+  padding: 4px 7px;
+  font-size: var(--step--2);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- clusters ----------
+   `zoom-in` was literally accurate (clicking a cluster zooms to its members) but it read as
+   a different kind of target from the single markers beside it, which are identical circles
+   that open a popup. Zooming is already available on scroll and on the +/- control, so the
+   cursor is better spent saying the one thing that is not obvious: this circle is clickable. */
 .cluster {
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 /* The count sits inside the circle; a permanent tooltip is the label. */
@@ -346,11 +596,11 @@ body {
   background: transparent;
   box-shadow: none;
   color: #fff;
-  font-family: var(--font);
-  font-size: 11px;
-  font-weight: 700;
+  font-size: var(--step--2);
+  font-weight: 600;
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 2px rgba(26, 23, 19, 0.75);
   pointer-events: none;
   white-space: nowrap;
 }
@@ -364,13 +614,15 @@ body {
   position: absolute;
   top: 12px;
   right: 12px;
-  z-index: 500;
+  z-index: var(--z-map-ui);
   max-width: 210px;
   padding: 8px;
-  border-radius: 9px;
-  background: rgba(16, 20, 24, 0.86);
+  border-radius: var(--r-lg);
+  background: rgba(251, 250, 249, 0.93);
   color: var(--text);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--ink-500);
+  box-shadow: var(--shadow-panel);
 }
 
 .basemap__row {
@@ -382,25 +634,25 @@ body {
   flex: 1;
   padding: 5px 9px;
   font: inherit;
-  font-size: 11px;
+  font-size: var(--step--2);
   font-weight: 600;
   white-space: nowrap;
   color: var(--muted);
   background: transparent;
-  border: 1px solid var(--line);
-  border-radius: 6px;
+  border: 1px solid var(--control-edge);
+  border-radius: var(--r-sm);
   cursor: pointer;
 }
 
 .basemap__btn.is-active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #16181c;
+  background: var(--gold);
+  border-color: var(--gold-deep);
+  color: var(--ink-100);
 }
 
 .basemap__note {
   margin: 7px 0 0;
-  font-size: 10px;
+  font-size: var(--step--2);
   line-height: 1.35;
   color: var(--muted);
 }
@@ -414,27 +666,29 @@ body {
   position: absolute;
   bottom: 18px;
   left: 12px;
-  z-index: 500;
+  z-index: var(--z-map-ui);
   max-width: 260px;
   /* Never let the key grow tall enough to cover the map it explains. */
   max-height: calc(100% - 60px);
   overflow-y: auto;
   padding: 10px 12px;
-  border-radius: 9px;
-  background: rgba(16, 20, 24, 0.86);
+  border-radius: var(--r-lg);
+  background: rgba(251, 250, 249, 0.93);
   color: var(--text);
-  font-size: 11px;
-  backdrop-filter: blur(4px);
+  font-size: var(--step--2);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--ink-500);
+  box-shadow: var(--shadow-panel);
 }
 
 .legend__more {
   margin-top: 7px;
   padding: 0;
   font: inherit;
-  font-size: 11px;
+  font-size: var(--step--2);
   background: none;
   border: 0;
-  color: var(--accent);
+  color: var(--gold-deep);
   cursor: pointer;
 }
 
@@ -460,11 +714,14 @@ body {
   gap: 7px;
 }
 
+/* The ring is what lets a region hue chosen for distinguishability sit on dark chrome
+   without a contrast failure. Same device as the map markers. */
 .legend__swatch {
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   flex: none;
+  box-shadow: 0 0 0 1px var(--swatch-ring);
 }
 
 .legend__label {
@@ -477,6 +734,7 @@ body {
 
 .legend__count {
   color: var(--muted);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
@@ -499,6 +757,20 @@ body {
   vertical-align: -1px;
 }
 
+/* Side series: an outlined dot with an ink centre, matching the map's centre pip. The
+   radial-gradient draws the pip rather than a nested element, so the swatch stays one box. */
+.legend__note--pip::before {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--muted);
+  background: radial-gradient(circle, var(--ink-100) 0 2px, transparent 2px);
+  vertical-align: -1px;
+}
+
 /* ---------- popup ---------- */
 /* Leaflet sizes .leaflet-popup-content itself from minWidth/maxWidth — don't fight it,
    just set the box's own minimum so the content never collapses to one word per line. */
@@ -508,13 +780,13 @@ body {
 
 .event-popup {
   min-width: 250px;
-  color: #1d2530;
-  font-size: 13px;
+  color: var(--lit-text);
+  font-size: var(--step-0);
 }
 
 .event-popup__title {
   margin: 0 0 7px;
-  font-size: 15px;
+  font-size: var(--step-1);
   line-height: 1.25;
 }
 
@@ -523,29 +795,29 @@ body {
   flex-wrap: wrap;
   gap: 6px;
   align-items: center;
-  font-size: 11px;
-  color: #5b6673;
+  font-size: var(--step--2);
+  color: var(--lit-muted);
   margin-bottom: 8px;
 }
 
 .event-popup__year {
   font-weight: 700;
-  color: #1d2530;
+  color: var(--lit-text);
 }
 
 .badge {
   padding: 1px 7px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   border: 1px solid currentColor;
-  font-size: 10px;
+  font-size: var(--step--2);
 }
 
 .badge--high {
-  color: #1e8449;
+  color: #1a7a4a;
 }
 
 .badge--medium {
-  color: #b7791f;
+  color: #8a6410;
 }
 
 .badge--low {
@@ -563,10 +835,10 @@ body {
 
 .chip {
   padding: 2px 8px;
-  border-radius: 999px;
-  background: #eef1f4;
-  font-size: 11px;
-  color: #414d5a;
+  border-radius: var(--r-pill);
+  background: var(--lit-raised);
+  font-size: var(--step--2);
+  color: var(--lit-muted);
 }
 
 .event-popup__desc {
@@ -577,18 +849,18 @@ body {
 .event-popup__quote {
   margin: 0 0 8px;
   padding-left: 9px;
-  border-left: 2px solid #d5dbe1;
+  border-left: 2px solid var(--lit-line);
   font-style: italic;
-  font-size: 12px;
-  color: #5b6673;
+  font-size: var(--step--1);
+  color: var(--lit-muted);
 }
 
 .event-popup__episode {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 11px;
-  color: #5b6673;
+  font-size: var(--step--2);
+  color: var(--lit-muted);
   margin-bottom: 9px;
 }
 
@@ -597,6 +869,7 @@ body {
   height: 9px;
   border-radius: 50%;
   flex: none;
+  box-shadow: 0 0 0 1px var(--swatch-ring);
 }
 
 .event-popup__actions {
@@ -615,7 +888,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--ink-500);
   background: var(--sidebar);
   /* No fixed height: the panel is as tall as vis's content, which vis itself caps in pixels
      (see maxHeightPx). Whatever the timeline doesn't need goes to the map. */
@@ -623,13 +896,12 @@ body {
 
 .timeline__resize {
   font: inherit;
-  font-size: 12px;
+  font-size: var(--step--1);
   line-height: 1;
-  padding: 4px 8px;
-  margin-left: 10px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--sidebar-2);
+  padding: 5px 9px;
+  border: 1px solid var(--control-edge);
+  border-radius: var(--r-sm);
+  background: var(--ink-700);
   color: var(--muted);
   cursor: pointer;
 }
@@ -647,17 +919,29 @@ body {
 
 .timeline__head h2 {
   margin: 0;
-  font-size: 11px;
+  font-size: var(--step--2);
   text-transform: uppercase;
   letter-spacing: 0.9px;
   color: var(--muted);
 }
 
+.timeline__tools {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
 .timeline__range {
-  font-size: 12px;
+  font-size: var(--step--1);
   color: var(--text);
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
-  margin-left: auto;
+  /* Reserve the widest reading ("1200. p.n.e. - 2006") so the row does not reflow as the
+     digits climb during playback, and set it off from the controls: a readout is output,
+     not another thing to press. */
+  min-width: 19ch;
+  text-align: right;
+  margin-left: var(--sp-2);
 }
 
 .timeline__canvas {
@@ -668,8 +952,8 @@ body {
 /* vis-timeline on a dark panel */
 .vis-timeline {
   border: 0;
-  font-family: var(--font);
-  font-size: 11px;
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
   color: var(--text);
 }
 
@@ -687,11 +971,20 @@ body {
 }
 
 .vis-time-axis .vis-grid.vis-minor {
-  border-color: #232c36;
+  border-color: #e2dcd5;
 }
 
 .vis-time-axis .vis-grid.vis-major {
-  border-color: #2f3b48;
+  border-color: var(--ink-500);
+}
+
+/* vis paints its own group/label backgrounds; keep them on the panel surface. */
+.vis-labelset .vis-label,
+.vis-foreground .vis-group,
+.vis-panel.vis-left,
+.vis-panel.vis-center,
+.vis-panel.vis-top {
+  background: var(--sidebar);
 }
 
 .vis-labelset .vis-label,
@@ -700,24 +993,34 @@ body {
   color: var(--muted);
 }
 
+/* Label colour arrives per item from TimelineView (see onColor in config/regions.ts),
+   because no single value is readable on all twelve region fills. */
 .vis-item {
-  color: #fff;
   border-width: 1px;
-  border-radius: 5px;
+  border-radius: var(--r-sm);
 }
 
 .vis-item.vis-selected {
-  box-shadow: 0 0 0 2px var(--accent);
-  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px var(--ink-100);
+  border-color: var(--ink-100) !important;
 }
 
+/* Low confidence reads as a dashed edge. It must not be an opacity change: on a light
+   panel that washes the fill out and takes the label with it. */
 .vis-item--low {
   border-style: dashed;
+  border-color: var(--ink-100) !important;
+}
+
+/* Side series: an ink notch on the leading edge. Composes with .vis-item--low, which owns
+   the border — this uses an inset shadow so the two marks never fight over one property. */
+.vis-item--side {
+  box-shadow: inset 3px 0 0 var(--ink-100);
 }
 
 .vis-tooltip {
-  font-family: var(--font) !important;
-  font-size: 11px !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--step--2) !important;
 }
 
 /* ---------- responsive: sidebar becomes a top drawer ---------- */
@@ -737,4 +1040,346 @@ body {
     max-width: 190px;
     bottom: 10px;
   }
+}
+
+/* A facet that is active but out of scope for the current episode or range. Shown rather
+   than hidden, so an empty map has a visible, removable cause (see FacetFilters). */
+.chip--btn.is-empty {
+  opacity: 0.55;
+}
+
+.chip--btn.is-active.is-empty {
+  opacity: 1;
+  border-style: dashed;
+}
+
+/* ---------- collections ----------
+   The archive's front door, so it sits above the episode list and reads as a short menu
+   rather than another facet: full-width rows, not wrapped chips. */
+/* Short and near the top: it should hold its height rather than compete for it. */
+.collections {
+  flex: none;
+}
+
+.collections__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.collection {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 7px 9px;
+  font: inherit;
+  font-size: var(--step-0);
+  text-align: left;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.collection:hover {
+  background: var(--ink-600);
+}
+
+.collection:focus-visible {
+  outline: 2px solid var(--ink-100);
+  outline-offset: 2px;
+}
+
+/* Same surface-not-border treatment as a selected episode: gold cannot carry a border on
+   this ground (see tokens.css). */
+.collection.is-active {
+  background: var(--gold-wash);
+  border-color: var(--gold-deep);
+}
+
+.collection__title {
+  flex: 1;
+  min-width: 0;
+}
+
+.collection__count {
+  font-size: var(--step--2);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.collections__blurb {
+  margin: 9px 0 0;
+  font-size: var(--step--1);
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* ---------- timeline playback ----------
+   The axis is the transport: it already shows position and takes a drag, so nothing here
+   repeats it.
+
+   Only the action carries a border. Speed is a setting *for* that action, not a peer of it,
+   and giving both the same box made them read as two equal buttons sitting beside a third
+   numeric string that was not a button at all. */
+.timeline__play {
+  font: inherit;
+  font-size: var(--step--1);
+  line-height: 1;
+  padding: 5px 10px;
+  border: 1px solid var(--control-edge);
+  border-radius: var(--r-sm);
+  background: var(--ink-700);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline__play {
+  /* One label swaps for the other, so hold the wider of the two and let neither shift the
+     row when it changes. */
+  min-width: 6.5ch;
+}
+
+.timeline__play:hover {
+  background: var(--ink-600);
+}
+
+.timeline__play:active,
+.timeline__speed:active {
+  transform: scale(0.98);
+}
+
+.timeline__play:focus-visible,
+.timeline__speed:focus-visible {
+  outline: 2px solid var(--ink-100);
+  outline-offset: 2px;
+}
+
+/* Running state borrows the language and basemap toggles' treatment exactly: gold is a
+   fill carrying ink, never a glyph or a line (tokens.css). No new visual language. */
+.timeline__play.is-playing {
+  background: var(--gold);
+  border-color: var(--gold-deep);
+  color: var(--ink-100);
+  font-weight: 600;
+}
+
+.timeline__speed {
+  font: inherit;
+  font-size: var(--step--2);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  padding: 4px 2px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  /* Reserved so cycling 40 -> 120 -> 400 never nudges the readout beside it. */
+  min-width: 9ch;
+  text-align: left;
+}
+
+.timeline__speed:hover {
+  color: var(--text);
+}
+
+/* ---------- one control system ----------
+   Measured drift before this: two border tokens for the same job, press feedback on four
+   of nine controls, hover missing on two. The rule now:
+
+     --control-edge   every pressable edge
+     --line           structure only (section dividers, panel separators)
+     --r-pill         filter chips
+     --r-sm           compact controls sitting in a toolbar or header
+     --r-md           full-size controls, inputs and list rows
+     --r-lg           floating panels
+
+   Radius follows the control's size, not its component. */
+.btn:active,
+.chip--btn:active,
+.episode:active,
+.collection:active,
+.lang-toggle__btn:active,
+.basemap__btn:active,
+.timeline__play:active,
+.timeline__resize:active,
+.timeline__size__btn:active {
+  transform: scale(0.98);
+}
+
+.lang-toggle__btn:hover:not(.is-active),
+.basemap__btn:hover:not(.is-active),
+.timeline__resize:hover {
+  background: var(--ink-600);
+  color: var(--text);
+}
+
+/* Nothing here is ever disabled today, but a control system without the state grows one
+   by accident later. Declared once so it looks deliberate when it arrives. */
+.btn[disabled],
+.chip--btn[disabled],
+.timeline__play[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- leaflet's own controls ----------
+   These were raw defaults: white squares with a light grey border, the one part of the
+   map furniture that had never been brought into the system. */
+.leaflet-touch .leaflet-bar,
+.leaflet-bar {
+  border: 1px solid var(--control-edge);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-panel);
+}
+
+.leaflet-bar a,
+.leaflet-bar a:hover {
+  background: var(--ink-700);
+  color: var(--ink-100);
+  border-bottom-color: var(--control-edge);
+  font-family: var(--font-sans);
+}
+
+.leaflet-bar a:hover {
+  background: var(--ink-600);
+}
+
+.leaflet-bar a:first-child {
+  border-top-left-radius: var(--r-sm);
+  border-top-right-radius: var(--r-sm);
+}
+
+.leaflet-bar a:last-child {
+  border-bottom-left-radius: var(--r-sm);
+  border-bottom-right-radius: var(--r-sm);
+}
+
+.leaflet-bar a:focus-visible {
+  outline: 2px solid var(--ink-100);
+  outline-offset: 2px;
+}
+
+.leaflet-control-attribution {
+  background: rgba(251, 250, 249, 0.86);
+  color: var(--ink-300);
+  font-family: var(--font-sans);
+  font-size: 10px;
+}
+
+.leaflet-control-attribution a {
+  color: var(--gold-deep);
+}
+
+/* ---------- basemap ----------
+   The governing rule of this design is that colour is the data encoding (regions.ts), and
+   raw OSM tiles break it: they bring their own green landmass, blue sea and red motorways,
+   competing with the twelve hues the palette works so hard to keep apart. Desaturating the
+   tile pane alone pushes the basemap back without touching the markers, which live in the
+   overlay pane. Same device already used on the landing hero.
+
+   saturate() is near-zero rather than partial, and contrast is raised rather than lowered:
+   see the --map-sea / --map-land note in tokens.css for why "less of everything" was the
+   wrong kind of quiet. brightness stays just under 1 so the sheet does not glare under the
+   popups, which are pure --paper. */
+.map .leaflet-tile-pane {
+  filter: saturate(0.1) contrast(1.24) brightness(0.98);
+}
+
+/* ---------- timeline height ----------
+   Was a single cycling caret. One glyph cannot say "three steps, you are on the second",
+   so it became a segmented control in the same idiom as the language toggle: the state is
+   visible instead of inferred. */
+.timeline__size {
+  display: inline-flex;
+  border: 1px solid var(--control-edge);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  flex: none;
+}
+
+.timeline__size__btn {
+  padding: 4px 8px;
+  font: inherit;
+  font-size: var(--step--2);
+  font-weight: 600;
+  line-height: 1.2;
+  background: transparent;
+  color: var(--muted);
+  border: 0;
+  cursor: pointer;
+}
+
+.timeline__size__btn:hover:not(.is-active) {
+  background: var(--ink-600);
+  color: var(--text);
+}
+
+.timeline__size__btn:focus-visible {
+  outline: 2px solid var(--ink-100);
+  outline-offset: -2px;
+}
+
+.timeline__size__btn.is-active {
+  background: var(--gold);
+  color: var(--ink-100);
+}
+
+/* ---------- audio loading ----------
+   Episodes are hour-long mp3s on a third-party host, and the button seeks to a timestamp
+   that can be an hour in, so the wait is real. */
+.spinner {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 7px;
+  vertical-align: -1px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 620ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* The global reduced-motion reset neutralises durations, which would freeze this mid-turn
+   and read as a stuck control. A pulse carries "working" without rotating. */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: pulse 1.4s ease-in-out infinite !important;
+    border-top-color: currentColor;
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.btn--play[disabled] {
+  opacity: 0.75;
+  cursor: progress;
+}
+
+.event-popup__audio-error {
+  margin: 8px 0 0;
+  font-size: var(--step--1);
+  color: #a3211c;
 }

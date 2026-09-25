@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { MapContainer, useMap } from 'react-leaflet';
+import { MapContainer, useMap, useMapEvent } from 'react-leaflet';
 import type { LatLngBoundsExpression, LatLngTuple } from 'leaflet';
+import type { HistoryEvent, PlacesById } from '../types/events';
 import { getBasemap } from '../config/basemaps';
-import { useData, useVisibleEvents } from '../state/DataContext';
+import { regionColor } from '../config/regions';
+import { useData, useSideEpisodes, useVisibleEvents } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
 import { t } from '../lib/i18n';
 import BasemapLayer from './BasemapLayer';
+import Graticule from './Graticule';
 import BasemapSwitcher from './BasemapSwitcher';
 import EventMarkers from './EventMarkers';
 import type { PositionedEvent } from './EventMarkers';
@@ -86,34 +89,80 @@ function PanToSelected({ points }: { points: Map<string, LatLngTuple> }) {
   return null;
 }
 
+/**
+ * Clicking bare map deselects. Selection used to have no exit other than changing a filter,
+ * so `?e=` stayed in the URL for the rest of the session and kept re-framing the map on the
+ * event the reader had already moved on from. Leaflet fires this only for the background —
+ * marker and popup clicks don't reach the map.
+ */
+function DeselectOnMapClick() {
+  const { setSelectedEventId } = useFilters();
+  useMapEvent('click', () => setSelectedEventId(null));
+  return null;
+}
+
+/**
+ * One marker per place-and-year. Events that share both are the same dot on the map — either
+ * one fact covered by several episodes, or several things that happened there that year;
+ * the popup lists them either way. Distinct years at one place still get the small spiral
+ * offset so they stay separately clickable.
+ */
+function groupEvents(
+  visible: HistoryEvent[],
+  placesById: PlacesById,
+  sideEpisodeIds: ReadonlySet<string>,
+): PositionedEvent[] {
+  const groups = new Map<string, HistoryEvent[]>();
+  for (const event of visible) {
+    if (!placesById[event.placeId]) continue; // unknown placeId: skip rather than render at 0,0
+    const key = `${event.placeId}@${event.year}`;
+    const bucket = groups.get(key);
+    if (bucket) bucket.push(event);
+    else groups.set(key, [event]);
+  }
+
+  const seenAtPlace = new Map<string, number>();
+  const out: PositionedEvent[] = [];
+  for (const [key, events] of groups) {
+    const place = placesById[events[0].placeId];
+    const index = seenAtPlace.get(events[0].placeId) ?? 0;
+    seenAtPlace.set(events[0].placeId, index + 1);
+    const [dLat, dLng] = offsetFor(index);
+    out.push({
+      id: key,
+      events,
+      position: [place.lat + dLat, place.lng + dLng],
+      color: regionColor(events[0].region),
+      side: events.every((e) => sideEpisodeIds.has(e.episodeId)),
+    });
+  }
+  return out;
+}
+
 export default function MapView() {
-  const { placesById, episodesById, data } = useData();
+  const { placesById, data } = useData();
   const visible = useVisibleEvents();
-  const { lang, basemapId, activeEpisodeId, timelineSize } = useFilters();
+  const {
+    lang,
+    basemapId,
+    activeCollectionId,
+    activeEpisodeId,
+    timelineSize,
+    activeRegions,
+    activeTypes,
+  } = useFilters();
   const basemap = getBasemap(basemapId);
 
-  const positioned = useMemo<PositionedEvent[]>(() => {
-    const seenAtPlace = new Map<string, number>();
-    const out: PositionedEvent[] = [];
-    for (const event of visible) {
-      const place = placesById[event.placeId];
-      if (!place) continue; // unknown placeId: skip rather than render at 0,0
-      const index = seenAtPlace.get(event.placeId) ?? 0;
-      seenAtPlace.set(event.placeId, index + 1);
-      const [dLat, dLng] = offsetFor(index);
-      out.push({
-        id: event.id,
-        event,
-        position: [place.lat + dLat, place.lng + dLng],
-        color: episodesById[event.episodeId]?.color ?? '#7f8c8d',
-      });
-    }
-    return out;
-  }, [visible, placesById, episodesById]);
+  const sideEpisodeIds = useSideEpisodes();
+  const positioned = useMemo(
+    () => groupEvents(visible, placesById, sideEpisodeIds),
+    [visible, placesById, sideEpisodeIds],
+  );
 
   const points = useMemo(() => positioned.map((p) => p.position), [positioned]);
+  // Keyed by every event id, so a timeline selection can pan to the dot holding it.
   const pointsById = useMemo(
-    () => new Map(positioned.map((p) => [p.event.id, p.position])),
+    () => new Map(positioned.flatMap((p) => p.events.map((e) => [e.id, p.position] as const))),
     [positioned],
   );
 
@@ -128,19 +177,31 @@ export default function MapView() {
         scrollWheelZoom
       >
         <BasemapLayer basemap={basemap} />
+        {/* After the tiles, before the markers: it sits on the basemap, never over the data. */}
+        <Graticule />
         <InvalidateOnResize resizeKey={timelineSize} />
         <FitToMarkers
           points={points}
-          fitKey={`${data.meta.generated}|${activeEpisodeId ?? 'all'}|${timelineSize}`}
+          // Collection belongs in here for the same reason episode does: both change *which
+          // events you are looking at*, so the view should reframe. Without it, choosing a
+          // collection left the map at whatever extent it already had.
+          fitKey={`${data.meta.generated}|${activeCollectionId ?? 'all'}|${activeEpisodeId ?? 'all'}|${timelineSize}`}
         />
         <PanToSelected points={pointsById} />
+        <DeselectOnMapClick />
 
         <EventMarkers items={positioned} />
       </MapContainer>
 
       <Legend />
       <BasemapSwitcher />
-      {positioned.length === 0 && <div className="map-empty">{t(lang, 'noEvents')}</div>}
+      {/* Name the actual cause: blaming the period when a facet filter emptied the map sends
+          the reader to the wrong control. */}
+      {positioned.length === 0 && (
+        <div className="map-empty">
+          {t(lang, activeRegions.length > 0 || activeTypes.length > 0 ? 'noEventsFilters' : 'noEvents')}
+        </div>
+      )}
     </div>
   );
 }

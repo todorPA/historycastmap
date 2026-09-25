@@ -1,0 +1,38 @@
+{
+  "places": [
+    { "id": "srbija-rana", "name": { "sr": "Srbija (rana kneževina)", "en": "Serbia (early principality)" }, "aliases": [], "lat": 43.5000, "lng": 20.5000, "kind": "region" },
+    { "id": "pagana", "name": { "sr": "Pagania", "en": "Pagania" }, "aliases": ["Pagani"], "lat": 43.0500, "lng": 17.7000, "kind": "region" }
+  ],
+  "events": [
+    {
+      "id": "visevlav-vladavina-780",
+      "title": { "sr": "Vladavina knjeza Višeslava", "en": "Reign of Prince Višeslav" },
+      "year": 780,
+      "yearEnd": null,
+      "placeId": "srbija-rana",
+      "episodeId": "52",
+      "timestamp": "25:19",
+      "type": "other",
+      "actors": ["Knez Višeslav"],
+      "region": "Balkan",
+      "description": { "sr": "Predpostavlja se da je Višeslav, prvi srpski knez poznatog imena, vladao negde oko 780. godine, u drugoj polovini osmog veka.", "en": "It is presumed that Višeslav, the first Serbian prince known by name, ruled around 780, in the latter half of the eighth century." },
+      "quote": "da se prvi naš knez poznatog ime nazvao Višeslav, za njega se predposlije da je vladao negde oko 780. godine, dakle druga polovina osmog veka",
+      "confidence": "medium"
+    },
+    {
+      "id": "zavera-protiv-simeona-916",
+      "title": { "sr": "Zavera Petra Gojnikovića protiv bugarskog cara Simeona", "en": "Petar Gojniković's conspiracy against Bulgarian Tsar Simeon" },
+      "year": 916,
+      "yearEnd": 917,
+      "placeId": "pagana",
+      "episodeId": "52",
+      "timestamp": "70:38",
+      "type": "other",
+      "actors": ["Petar Gojniković", "Vizantija", "Mađari", "Car Simeon", "Mihajlo Višević"],
+      "region": "Balkan",
+      "description": { "sr": "916-917. godine srpski knez Petar Gojniković kuje zaveru sa Vizantijom i Mađarima protiv bugarskog cara Simeona; pregovori se odvijaju u oblasti Paganije sa vizantijskim izaslanikom Lavom Rabduhom, a Mihajlo Višević na kraju odaje zaveru Simeonu.", "en": "In 916-917, the Serbian prince Petar Gojniković conspired with Byzantium and the Hungarians against Bulgarian Tsar Simeon; negotiations took place in the Pagania region with the Byzantine envoy Leo Rhabdouchos, and Mihajlo Višević ultimately betrayed the conspiracy to Simeon." },
+      "quote": "govorimo sad o 916. i 917. godini ... upornik dračke teme Lav Rabduh ... pregovara u Pagani i sa Petrom",
+      "confidence": "high"
+    }
+  ]
+}

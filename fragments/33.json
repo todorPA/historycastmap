@@ -1,0 +1,102 @@
+{
+  "places": [
+    { "id": "perast", "name": { "sr": "Perast", "en": "Perast" }, "aliases": ["Perastu", "Perasta", "Perast", "perast", "perasta", "perastu", "peraste", "perasti", "perastom", "peraz", "peraša", "perašt", "Peraz"], "lat": 42.4877, "lng": 18.6981, "kind": "city" },
+    { "id": "kotor", "name": { "sr": "Kotor", "en": "Kotor" }, "aliases": ["Kotoru", "Kotora", "Kotorska", "Kotorske", "Kotorski", "Kotorskog", "Kotorskoj", "Kotorskom", "Kotorsku", "Kotoran", "Kotorani", "Kotoranin", "Kotorom", "Kotorus", "kotor", "kotora", "kotorske", "kotorskom", "kotorsku"], "lat": 42.4247, "lng": 18.7712, "kind": "city" },
+    { "id": "herceg-novi", "name": { "sr": "Herceg-Novi", "en": "Herceg Novi" }, "aliases": ["Herceg-Novog", "Herceg-Novom", "Herceg Novi", "herceg-novi", "kerceg novog", "novljane"], "lat": 42.4531, "lng": 18.5375, "kind": "city" },
+    { "id": "preveza", "name": { "sr": "Preveza", "en": "Preveza" }, "aliases": ["Preveze", "bitka pod Prevezom"], "lat": 38.9573, "lng": 20.7529, "kind": "battle-site" },
+    { "id": "ulcinj", "name": { "sr": "Ulcinj", "en": "Ulcinj" }, "aliases": ["Ulcinja", "Ulcinju", "ulcinj", "ulcinje", "ulcinjani", "ulcinjene", "ulci"], "lat": 41.9297, "lng": 19.2044, "kind": "city" },
+    { "id": "carigrad", "name": { "sr": "Carigrad", "en": "Constantinople" }, "aliases": ["carigrad", "constantinople", "carigradu", "carigrada", "konstantinopolju", "k.", "konstantinopolj", "hipodrom", "bosvora", "Carigrado", "Sarigrada"], "lat": 41.0082, "lng": 28.9784, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "africki-gusari-pohara-perast-1624",
+      "title": { "sr": "Velika pohara Perasta", "en": "The great raid on Perast" },
+      "year": 1624,
+      "yearEnd": null,
+      "placeId": "perast",
+      "episodeId": "33",
+      "timestamp": "01:30",
+      "type": "other",
+      "actors": ["Afrički gusari", "Peraštani"],
+      "region": "Balkan",
+      "description": { "sr": "22. juna 1624. godine trinaest afričkih (tuniških i alžirskih) galija ulazi u Boku Kotorsku i vrši poharu nezaštićenog Perasta, odvodeći 400-450 stanovnika u zarobljeništvo u Alžir i Tunis.", "en": "On 22 June 1624, thirteen African (Tunisian and Algerian) galleys entered the Bay of Kotor and raided the unprotected town of Perast, taking 400-450 inhabitants captive to Algiers and Tunis." },
+      "quote": "I to je neki 22. jun ili 624. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "kozaci-pohara-carigrad-1624",
+      "title": { "sr": "Pohara obale kod Carigrada od kozaka", "en": "Cossack raid on the coast near Constantinople" },
+      "year": 1624,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "33",
+      "timestamp": "25:55",
+      "type": "other",
+      "actors": ["Kozaci zaporoški", "Osmansko carstvo"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "U julu 1624. godine, nedelju dana nakon pohare Perasta, kozaci zaporoški sa desetak manjih brodova u dva navrata haraju obalu ispred Carigrada, kako bi naterali osmansku flotu da se povuče iz Krima.", "en": "In July 1624, a week after the raid on Perast, Zaporozhian Cossacks with about ten smaller ships raided the coast near Constantinople twice, trying to force the Ottoman fleet to withdraw from Crimea." },
+      "quote": "znači, to je jul 1624. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "kotor-pristupanje-mletackoj-1420",
+      "title": { "sr": "Kotor pristupa Mletačkoj republici", "en": "Kotor joins the Republic of Venice" },
+      "year": 1420,
+      "yearEnd": null,
+      "placeId": "kotor",
+      "episodeId": "33",
+      "timestamp": "09:20",
+      "type": "treaty",
+      "actors": ["Kotorani", "Mletačka republika"],
+      "region": "Balkan",
+      "description": { "sr": "Godine 1420, nakon deset uzastopnih molbi, Kotor i okolna naselja u Boki Kotorskoj pristupaju Mletačkoj republici sporazumom koji im daje pravo da sami odu kad god hoće, a Mletačka garantuje da ih neće predati nikome drugom.", "en": "In 1420, after ten successive requests, Kotor and the surrounding towns of the Bay of Kotor joined the Republic of Venice under an agreement granting them the right to leave whenever they wished, with Venice guaranteeing it would never hand them over to anyone else." },
+      "quote": "1420. znači nekih 200 godina pre ovog događaja, pristupaju nakon deset molbi.",
+      "confidence": "high"
+    },
+    {
+      "id": "osmanlije-bitka-preveza-1538",
+      "title": { "sr": "Bitka pod Prevezom", "en": "Battle of Preveza" },
+      "year": 1538,
+      "yearEnd": null,
+      "placeId": "preveza",
+      "episodeId": "33",
+      "timestamp": "43:32",
+      "type": "battle",
+      "actors": ["Hajrudin Barbarosa", "Osmansko carstvo", "hrišćanska koalicija"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "U bici pod Prevezom 1538. godine hrišćanska flota gubi od osmanske mornarice pod komandom Hajrudina Barbarose; deo pobeđenih hrišćana zatim odlazi i osvaja Herceg-Novi u Boki Kotorskoj.", "en": "At the Battle of Preveza in 1538, the Christian fleet was defeated by the Ottoman navy under Hayreddin Barbarossa; part of the defeated Christian force then went on to capture Herceg Novi in the Bay of Kotor." },
+      "quote": "jedno njih je bitka pod Preveze 1538.",
+      "confidence": "high"
+    },
+    {
+      "id": "barbarosa-osvajanje-herceg-novi-1539",
+      "title": { "sr": "Hajrudin Barbarosa osvaja Herceg-Novi", "en": "Hayreddin Barbarossa recaptures Herceg Novi" },
+      "year": 1539,
+      "yearEnd": null,
+      "placeId": "herceg-novi",
+      "episodeId": "33",
+      "timestamp": "44:04",
+      "type": "conquest",
+      "actors": ["Hajrudin Barbarosa", "Španci"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Godinu dana nakon što su hrišćani (Španci) osvojili Herceg-Novi, Hajrudin Barbarosa 1539. dolazi sa 200 brodova, uzima nazad Herceg-Novi i pobija sve Špance koji su ga branili, a zatim se sa svojom flotom upućuje i pred Kotor.", "en": "A year after Christians (Spaniards) had captured Herceg Novi, Hayreddin Barbarossa arrived in 1539 with 200 ships, retook Herceg Novi and killed all the Spanish defenders, then moved his fleet on toward Kotor." },
+      "quote": "i onda 39. Hajrudin Barbarosa kaže vi ćete meni Herceg-Novi i dođe sa 200 brodova pred Herceg-Novi",
+      "confidence": "high"
+    },
+    {
+      "id": "karadzoz-pohara-perast-1571",
+      "title": { "sr": "Prva pohara Perasta i osvajanje Ulcinja", "en": "First raid on Perast and capture of Ulcinj" },
+      "year": 1571,
+      "yearEnd": null,
+      "placeId": "ulcinj",
+      "episodeId": "33",
+      "timestamp": "58:16",
+      "type": "conquest",
+      "actors": ["Karadžoz", "Osmansko carstvo"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Pred Lepantsku bitku, osmanski kapetan-rajs Karadžoz ulazi sa velikom flotom u Jadran, po prvi put pohara Perast 1571. godine (u manjem obimu nego 1624) i osvaja Ulcinj, koji od tada ostaje pod osmanskom vlašću.", "en": "Before the Battle of Lepanto, the Ottoman corsair captain Karadžoz entered the Adriatic with a large fleet, raided Perast for the first time in 1571 (on a smaller scale than in 1624), and captured Ulcinj, which remained under Ottoman rule from then on." },
+      "quote": "i perašt je tad poharan 1571.",
+      "confidence": "high"
+    }
+  ]
+}

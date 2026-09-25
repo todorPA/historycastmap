@@ -1,0 +1,69 @@
+{
+  "places": [
+    { "id": "karakorum", "name": { "sr": "Karakorum (Mongolija)", "en": "Karakorum (Mongolia)" }, "aliases": ["Karakorumu"], "lat": 47.1983, "lng": 102.8437, "kind": "city" },
+    { "id": "peking", "name": { "sr": "Peking", "en": "Beijing" }, "aliases": ["Pekingu"], "lat": 39.9042, "lng": 116.4074, "kind": "city" },
+    { "id": "horezm", "name": { "sr": "Horezmska imperija (Persija)", "en": "Khwarazmian Empire (Persia)" }, "aliases": ["Horemskom imperijom", "Persijskim carstvom"], "lat": 41.3775, "lng": 60.3450, "kind": "region" }
+  ],
+  "events": [
+    {
+      "id": "temudzin-dzingis-kan-1206",
+      "title": { "sr": "Temudžin postaje Džingis-kan", "en": "Temüjin becomes Genghis Khan" },
+      "year": 1206,
+      "yearEnd": null,
+      "placeId": "karakorum",
+      "episodeId": "106",
+      "timestamp": "93:49",
+      "type": "coronation",
+      "actors": ["Temuđin (Džingis-kan)"],
+      "region": "Azija",
+      "description": { "sr": "1206. godine Temuđin biva proglašen vrhovnim kanom mongolskih plemena i od tada nosi ime Džingis-kan.", "en": "In 1206, Temüjin was proclaimed supreme khan of the Mongol tribes and from then on bore the name Genghis Khan." },
+      "quote": "1206. godine Temuđin postaje Đingis Kan",
+      "confidence": "high"
+    },
+    {
+      "id": "opsada-kineskog-grada-zuta-reka-1209",
+      "title": { "sr": "Mongoli koriste vodu Žute reke za opsadu grada", "en": "Mongols use the Yellow River's water for a siege" },
+      "year": 1209,
+      "yearEnd": null,
+      "placeId": "peking",
+      "episodeId": "106",
+      "timestamp": "107:44",
+      "type": "siege",
+      "actors": ["Džingis-kan"],
+      "region": "Azija",
+      "description": { "sr": "1209. godine, ne poznajući opsadnu tehnologiju za osvajanje zidina, Mongoli su usmerili vodu reke koja je protecala kroz grad kako bi podkopali zidine i napravili poplavu.", "en": "In 1209, lacking siege technology to breach walls, the Mongols diverted the water of a river flowing through the city in order to undermine the walls and cause a flood." },
+      "quote": "to je sada 1209. godina, su tad usmerili reku.",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-pekinga-1215",
+      "title": { "sr": "Mongoli osvajaju Peking", "en": "Mongols conquer Beijing" },
+      "year": 1215,
+      "yearEnd": null,
+      "placeId": "peking",
+      "episodeId": "106",
+      "timestamp": "116:16",
+      "type": "conquest",
+      "actors": ["Džingis-kan"],
+      "region": "Azija",
+      "description": { "sr": "Mongoli osvajaju ogromne kineske gradove s utvrđenjima, uključujući današnji Peking, koji pada 1215. godine.", "en": "The Mongols conquered enormous fortified Chinese cities, including present-day Beijing, which fell in 1215." },
+      "quote": "uključujući i peking današnji ... koji pada u 1215. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "invazija-horezm-1219",
+      "title": { "sr": "Mongolska invazija na Horezmsku imperiju", "en": "Mongol invasion of the Khwarazmian Empire" },
+      "year": 1219,
+      "yearEnd": null,
+      "placeId": "horezm",
+      "episodeId": "106",
+      "timestamp": "122:36",
+      "type": "conquest",
+      "actors": ["Džingis-kan", "Horezmska imperija"],
+      "region": "Azija",
+      "description": { "sr": "1219. godine Džingis-kan pokreće invaziju na Horezmsku (Persijsku) imperiju, dotad tradicionalnog trgovinskog saveznika, uglavnom muslimansku zemlju, u odsudnom pohodu koji definiše sledeću fazu mongolskih osvajanja.", "en": "In 1219, Genghis Khan launched an invasion of the Khwarazmian (Persian) Empire, until then a traditional trading partner and a largely Muslim land, in a decisive campaign that defined the next phase of Mongol conquests." },
+      "quote": "Sad smo stigli do 1219. godine kada on sa svojim do tada tradicionalnim saveznicima sa Persijskim carstvom",
+      "confidence": "high"
+    }
+  ]
+}

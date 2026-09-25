@@ -1,0 +1,85 @@
+{
+  "places": [
+    { "id": "sicilija", "name": { "sr": "Sicilija", "en": "Sicily" }, "aliases": ["Sicilije"], "lat": 37.5999, "lng": 14.0154, "kind": "region" },
+    { "id": "kartagina", "name": { "sr": "Kartagina", "en": "Carthage" }, "aliases": ["Kartagine", "Kartaginu"], "lat": 36.8531, "lng": 10.3233, "kind": "city" },
+    { "id": "kana", "name": { "sr": "Kana (Kanne)", "en": "Cannae" }, "aliases": ["Kane"], "lat": 41.3050, "lng": 16.1447, "kind": "battle-site" },
+    { "id": "trazimensko-jezero", "name": { "sr": "Trazimensko jezero", "en": "Lake Trasimene" }, "aliases": ["Trazimensko"], "lat": 43.1333, "lng": 12.1000, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "pocetak-prvog-punskog-rata-264pne",
+      "title": { "sr": "Početak Prvog punskog rata", "en": "Start of the First Punic War" },
+      "year": -264,
+      "yearEnd": null,
+      "placeId": "sicilija",
+      "episodeId": "79",
+      "timestamp": "07:31",
+      "type": "battle",
+      "actors": ["Rim", "Kartagina"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "264. godine pre nove ere počinje Prvi punski rat, sukob Rima i Kartagine oko kontrole Sicilije koji će trajati 23 godine.", "en": "In 264 BCE, the First Punic War began, a conflict between Rome and Carthage over control of Sicily that would last 23 years." },
+      "quote": "Kada govorimo sada o samom početku rata, to je 264. godina pre Hrista",
+      "confidence": "high"
+    },
+    {
+      "id": "kraj-prvog-punskog-rata-241pne",
+      "title": { "sr": "Kraj Prvog punskog rata", "en": "End of the First Punic War" },
+      "year": -241,
+      "yearEnd": null,
+      "placeId": "sicilija",
+      "episodeId": "79",
+      "timestamp": "69:53",
+      "type": "treaty",
+      "actors": ["Rim", "Kartagina"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Prvi punski rat, koji je počeo 264. godine pre nove ere, okončava se nakon 23 godine, čime Rim stiče Siciliju kao svoju prvu prekomorsku provinciju.", "en": "The First Punic War, which began in 264 BCE, ended after 23 years, giving Rome Sicily as its first overseas province." },
+      "quote": "koje su usledile, zaključuje se 238 godina.",
+      "confidence": "medium"
+    },
+    {
+      "id": "hanibal-prelazak-alpi-218pne",
+      "title": { "sr": "Hanibalov prelaz Alpa", "en": "Hannibal's crossing of the Alps" },
+      "year": -218,
+      "yearEnd": null,
+      "placeId": "trazimensko-jezero",
+      "episodeId": "79",
+      "timestamp": "93:34",
+      "type": "battle",
+      "actors": ["Hanibal"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "218. godine pre nove ere Hanibal prelazi Alpe i spušta se na sever Italije, sa nizom bitaka (Ticinum, Trebija, Trazimensko jezero) koje se sve odigravaju u razmaku od svega dve godine.", "en": "In 218 BCE, Hannibal crossed the Alps and descended into northern Italy, with a series of battles (Ticinus, Trebia, Lake Trasimene) all occurring within just two years." },
+      "quote": "Mi govorimo sada o 218. godini, da nema zabune ... prelazak Alpa, Ticija, Trebija, Trazimensko jezero",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-kod-kane-216pne",
+      "title": { "sr": "Bitka kod Kane", "en": "Battle of Cannae" },
+      "year": -216,
+      "yearEnd": null,
+      "placeId": "kana",
+      "episodeId": "79",
+      "timestamp": "116:00",
+      "type": "battle",
+      "actors": ["Hanibal", "Rim"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "216. godine pre nove ere odigrala se bitka kod Kane, jedan od najvećih poraza koje je Rim ikada pretrpeo, u kojoj su ginule velike količine rimskih konzula i vojnika.", "en": "In 216 BCE, the Battle of Cannae took place, one of the greatest defeats Rome ever suffered, in which enormous numbers of Roman consuls and soldiers were killed." },
+      "quote": "čuvene bitke kod Kane. Bitka kod Kane odigrala se 216. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "kraj-drugog-punskog-rata-202pne",
+      "title": { "sr": "Kraj Drugog punskog rata", "en": "End of the Second Punic War" },
+      "year": -202,
+      "yearEnd": null,
+      "placeId": "kartagina",
+      "episodeId": "79",
+      "timestamp": "142:44",
+      "type": "treaty",
+      "actors": ["Rim", "Kartagina", "Hanibal"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Drugi punski rat, između 218. i 202. godine pre nove ere, odneo je između Rimljana i Kartaginjana nekoliko stotina hiljada, možda i milion žrtava.", "en": "The Second Punic War, between 218 and 202 BCE, cost between the Romans and Carthaginians several hundred thousand, possibly a million, casualties." },
+      "quote": "poginulih Rimljana između 218. i 202. godine",
+      "confidence": "high"
+    }
+  ]
+}

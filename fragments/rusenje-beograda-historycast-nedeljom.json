@@ -1,0 +1,52 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda", "Staro sajmište", "Beogradski sajam"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "beogradski-sajam-otvoren-1937",
+      "title": { "sr": "Otvaranje Beogradskog sajma (Staro sajmište)", "en": "Opening of the Belgrade Fair (Staro Sajmište)" },
+      "year": 1937,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "rusenje-beograda-historycast-nedeljom",
+      "timestamp": "65:52",
+      "type": "founding",
+      "actors": ["Beogradska opština"],
+      "region": "Balkan",
+      "description": { "sr": "Beogradski sajam, danas poznat kao Staro sajmište, otvoren je 1937. godine kao projekat Beogradske opštine u okviru modernizacije prestonice Kraljevine Jugoslavije.", "en": "The Belgrade Fair, today known as Staro Sajmište, opened in 1937 as a project of the Belgrade municipality within the modernization of the capital of the Kingdom of Yugoslavia." },
+      "quote": "Beogradski sajam koji je otvoren 1937... To je bio projekat Beogradske opštine",
+      "confidence": "high"
+    },
+    {
+      "id": "beogradska-posta-zavrsena-1929",
+      "title": { "sr": "Završetak zgrade Glavne pošte u Beogradu", "en": "Completion of the Main Post Office building in Belgrade" },
+      "year": 1927,
+      "yearEnd": 1929,
+      "placeId": "beograd",
+      "episodeId": "rusenje-beograda-historycast-nedeljom",
+      "timestamp": "91:21",
+      "type": "founding",
+      "actors": ["Beograd"],
+      "region": "Balkan",
+      "description": { "sr": "Projekat zgrade Glavne pošte u Beogradu izrađen je 1927. godine, a sama zgrada završena je 1929; smeštena je pored železničke stanice.", "en": "The design for the Main Post Office building in Belgrade was made in 1927, and the building itself was completed in 1929; it was located next to the railway station." },
+      "quote": "poštu koja je završena 1929... Dakle, projekat je izređen 1927. i onda tokom 28. do 29. je završena ta pošta",
+      "confidence": "high"
+    },
+    {
+      "id": "beogradska-posta-bombardovana-1944",
+      "title": { "sr": "Bombardovanje zgrade Glavne pošte u Beogradu", "en": "Bombing of the Main Post Office building in Belgrade" },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "rusenje-beograda-historycast-nedeljom",
+      "timestamp": "97:29",
+      "type": "other",
+      "actors": ["Beograd"],
+      "region": "Balkan",
+      "description": { "sr": "1944. godine zgrada Glavne pošte u Beogradu je bombardovana, pri čemu je urušeno čitavo stepenište i oštećen ugaoni deo zgrade.", "en": "In 1944, the Main Post Office building in Belgrade was bombed, collapsing an entire stairwell and damaging the corner section of the building." },
+      "quote": "zgrada je bombardovana 1944. i tad je u stvari urušen ceo jedan stepenišni trak",
+      "confidence": "high"
+    }
+  ]
+}

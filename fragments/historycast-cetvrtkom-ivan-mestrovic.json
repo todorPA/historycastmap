@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "vienna", "name": { "sr": "Beč (Anšlus)", "en": "Vienna (Anschluss)" }, "aliases": ["Beču", "Beč"], "lat": 48.2082, "lng": 16.3738, "kind": "city" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda", "Kalemegdan"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "mestrovic-docekuje-kralja-petra-vienna-1903",
+      "title": { "sr": "Meštrović dočekuje budućeg kralja Petra u Beču", "en": "Meštrović welcomes future King Peter in Vienna" },
+      "year": 1903,
+      "yearEnd": null,
+      "placeId": "vienna",
+      "episodeId": "historycast-cetvrtkom-ivan-mestrovic",
+      "timestamp": "14:32",
+      "type": "other",
+      "actors": ["Ivan Meštrović", "Petar I Karađorđević"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "1903. godine Ivan Meštrović na železničkoj stanici u Beču dočekuje budućeg kralja Petra Karađorđevića, na njegovom putu iz Ženeve za Beograd nakon Majskog prevrata.", "en": "In 1903, Ivan Meštrović welcomed the future King Peter Karađorđević at the Vienna railway station, on his journey from Geneva to Belgrade after the May Coup." },
+      "quote": "On već 1903. na železničkoj stanici u Beču dočekuje budućeg kralja Petra, prvo Karadjordjiću, u tom trenutku knjeza",
+      "confidence": "high"
+    },
+    {
+      "id": "prva-jugoslovenska-izlozba-beograd-1904",
+      "title": { "sr": "Prva jugoslovenska umetnička izložba u Beogradu", "en": "First Yugoslav art exhibition in Belgrade" },
+      "year": 1904,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "historycast-cetvrtkom-ivan-mestrovic",
+      "timestamp": "14:50",
+      "type": "other",
+      "actors": ["Ivan Meštrović", "Nadežda Petrović", "Petar I Karađorđević"],
+      "region": "Balkan",
+      "description": { "sr": "1904. godine, povodom krunisanja kralja Petra, organizovana je prva jugoslovenska umetnička izložba u Beogradu, na kojoj su izlagali Ivan Meštrović i Nadežda Petrović.", "en": "In 1904, on the occasion of King Peter's coronation, the first Yugoslav art exhibition was organized in Belgrade, where Ivan Meštrović and Nadežda Petrović exhibited their work." },
+      "quote": "Već 1904. godine, povodom, krunisanja kralja Petra... je organizovana i prva jugoslovenska umetnička izložba na kojoj je izlagao i Ivan Meštrović.",
+      "confidence": "high"
+    },
+    {
+      "id": "otkrivanje-pobednika-beograd-1928",
+      "title": { "sr": "Otkrivanje spomenika Pobednik na Kalemegdanu", "en": "Unveiling of the Victor monument at Kalemegdan" },
+      "year": 1928,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "historycast-cetvrtkom-ivan-mestrovic",
+      "timestamp": "63:56",
+      "type": "other",
+      "actors": ["Ivan Meštrović"],
+      "region": "Balkan",
+      "description": { "sr": "Meštrovićev spomenik Pobednik, planiran za Terazije, izazvao je polemiku zbog nagosti figure i konzervativnog protivljenja Beograda; na kraju je postavljen na Kalemegdanu i otkriven 1928. godine, gde je postao ključni simbol grada.", "en": "Meštrović's Victor monument, originally planned for Terazije, sparked controversy over the figure's nudity and conservative opposition in Belgrade; it was ultimately placed at Kalemegdan and unveiled in 1928, where it became a key symbol of the city." },
+      "quote": "pobednik je završio na Kalemigdanu i 1928. je konačno otkriven.",
+      "confidence": "high"
+    }
+  ]
+}

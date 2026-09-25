@@ -1,0 +1,70 @@
+{
+  "places": [
+    { "id": "petrograd", "name": { "sr": "Petrograd", "en": "Petrograd" }, "aliases": [], "lat": 59.9311, "lng": 30.3609, "kind": "city" },
+    { "id": "kuban", "name": { "sr": "Kuban (Kubanska oblast)", "en": "Kuban region" }, "aliases": ["Kubana", "Krasnodara"], "lat": 45.0355, "lng": 38.9753, "kind": "region" },
+    { "id": "tambov", "name": { "sr": "Tambov", "en": "Tambov" }, "aliases": ["Tambovski"], "lat": 52.7213, "lng": 41.4523, "kind": "region" },
+    { "id": "volga", "name": { "sr": "Reka Volga (Samara)", "en": "Volga River (Samara)" }, "aliases": ["Volge", "Samara"], "lat": 53.1959, "lng": 50.1002, "kind": "water" }
+  ],
+  "events": [
+    {
+      "id": "boljsevicki-prevrat-1917",
+      "title": { "sr": "Oktobarska revolucija (boljševički prevrat)", "en": "October Revolution (Bolshevik coup)" },
+      "year": 1917,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "94",
+      "timestamp": "13:09",
+      "type": "uprising",
+      "actors": ["Boljševici", "Lenjin"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1917. godine dolazi do boljševičkog prevrata, čime počinje period koji direktno vodi ka Građanskom ratu u Rusiji.", "en": "In 1917, the Bolshevik coup occurred, beginning a period that led directly into the Russian Civil War." },
+      "quote": "To je 1917. godina i bolševički prevrat.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-kornilova-prvi-kubanski-pohod-1918",
+      "title": { "sr": "Smrt generala Kornilova i Prvi kubanski pohod (Ledeni marš)", "en": "Death of General Kornilov and the First Kuban Campaign (Ice March)" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "kuban",
+      "episodeId": "94",
+      "timestamp": "68:25",
+      "type": "battle",
+      "actors": ["Lav Kornilov", "Bela armija"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Aprila 1918. godine general Lav Kornilov gine tokom Prvog kubanskog pohoda (poznatog i kao Ledeni marš), koji je vodila Bela armija u neuspešnom pokušaju da osvoji teritoriju Kubana.", "en": "In April 1918, General Lavr Kornilov was killed during the First Kuban Campaign (also known as the Ice March), led by the White Army in an unsuccessful attempt to seize the Kuban territory." },
+      "quote": "Lav Kornilov, čuveni general, on gine aprila 1918. godine. Imamo tada prvi kubanski pohlad.",
+      "confidence": "high"
+    },
+    {
+      "id": "kolcakova-ofanziva-volga-1919",
+      "title": { "sr": "Kolčakova ofanziva prema Volgi", "en": "Kolchak's offensive toward the Volga" },
+      "year": 1919,
+      "yearEnd": null,
+      "placeId": "volga",
+      "episodeId": "94",
+      "timestamp": "93:06",
+      "type": "battle",
+      "actors": ["Aleksandar Kolčak", "Bela armija", "Crvena armija"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Marta 1919. godine Kolčakove trupe kreću u novu ofanzivu, približavajući se opasno oblasti Volge i gradu Samari, nakon neuspele januarske kontraofanzive Crvene armije.", "en": "In March 1919, Kolchak's troops launched a new offensive, dangerously approaching the Volga region and the city of Samara, after the Red Army's unsuccessful January counteroffensive." },
+      "quote": "Kolčak i njegove trupe kreću u novu ofanzivu već marta 1919. godine, približava se opasno oblasti Volge, tu je Samara",
+      "confidence": "high"
+    },
+    {
+      "id": "tambovski-ustanak-1920",
+      "title": { "sr": "Tambovski ustanak protiv sovjetske vlasti", "en": "Tambov Rebellion against Soviet rule" },
+      "year": 1920,
+      "yearEnd": null,
+      "placeId": "tambov",
+      "episodeId": "94",
+      "timestamp": "91:57",
+      "type": "uprising",
+      "actors": ["Seljaci Tambovske oblasti", "Sovjetska vlast"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1920. godine, u selima Tambovske oblasti, diže se ustanak protiv sovjetske vlasti, motivisan politikom ratnog komunizma koja nije bila ukinuta ni kada je ratno stanje bilo blizu kraja.", "en": "In 1920, in the villages of the Tambov region, an uprising against Soviet rule broke out, driven by the policy of war communism, which had not been lifted even as the war neared its end." },
+      "quote": "u tom kraju se diže ustanak protiv sovjetske vlasti, to je već sada 1920. godina",
+      "confidence": "high"
+    }
+  ]
+}

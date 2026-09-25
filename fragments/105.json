@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "tenoctitlan", "name": { "sr": "Tenočtitlan", "en": "Tenochtitlan" }, "aliases": ["Tenoštitlanu", "Tenoštitlan"], "lat": 19.4340, "lng": -99.1332, "kind": "city" },
+    { "id": "sevilja", "name": { "sr": "Sevilja", "en": "Seville" }, "aliases": ["Sevilju"], "lat": 37.3891, "lng": -5.9845, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "pocetak-astečkog-carstva-1427",
+      "title": { "sr": "Početak razvoja Astečkog carstva", "en": "Beginning of the development of the Aztec Empire" },
+      "year": 1427,
+      "yearEnd": null,
+      "placeId": "tenoctitlan",
+      "episodeId": "105",
+      "timestamp": "62:20",
+      "type": "founding",
+      "actors": ["Asteci (Mešike)"],
+      "region": "Severna Amerika",
+      "description": { "sr": "1427. godina označava početak razvoja Astečkog carstva, kada Asteci u Tenočtitlanu postaju zapovednici svih gradova na obali jezera.", "en": "The year 1427 marks the beginning of the development of the Aztec Empire, when the Aztecs of Tenochtitlan became overlords of all the cities on the lake shore." },
+      "quote": "ta 1427. godina je zapravo označava početak razvoja Astečkog carstva.",
+      "confidence": "high"
+    },
+    {
+      "id": "otvaranje-velikog-hrama-tenoctitlan-1487",
+      "title": { "sr": "Otvaranje velikog Templo Majora u Tenočtitlanu", "en": "Opening of the Great Templo Mayor in Tenochtitlan" },
+      "year": 1487,
+      "yearEnd": null,
+      "placeId": "tenoctitlan",
+      "episodeId": "105",
+      "timestamp": "45:38",
+      "type": "other",
+      "actors": ["Asteci"],
+      "region": "Severna Amerika",
+      "description": { "sr": "1487. godine održano je otvaranje do tada najvećeg izrađenog astečkog hrama (Templo Mayor) u Tenočtitlanu.", "en": "In 1487, the opening of the largest Aztec temple built to that point (the Templo Mayor) in Tenochtitlan took place." },
+      "quote": "1487. godine, kada je bilo otvaranje do tada najvećeg izrađenog hrama Steka u Tenoštitlanu",
+      "confidence": "high"
+    },
+    {
+      "id": "prva-neuspesna-ekspedicija-1517",
+      "title": { "sr": "Prva neuspešna španska ekspedicija na Jukatan", "en": "First failed Spanish expedition to Yucatán" },
+      "year": 1517,
+      "yearEnd": null,
+      "placeId": "tenoctitlan",
+      "episodeId": "105",
+      "timestamp": "102:14",
+      "type": "battle",
+      "actors": ["Španska ekspedicija", "Maje"],
+      "region": "Severna Amerika",
+      "description": { "sr": "1517. godine, pre Kortesa, Španci šalju prvu ekspediciju koja slavno propada nakon žestokog otpora Maja, dok Asteci u ranijoj fazi ne pružaju istovetan otpor.", "en": "In 1517, before Cortés, the Spanish sent a first expedition that famously failed after fierce resistance from the Maya, while the Aztecs did not offer the same level of resistance in the earlier phase." },
+      "quote": "oni su čak protirale 1517. godine prvu ekspediciju",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-kortesa-sevilja-1541",
+      "title": { "sr": "Smrt Hernana Kortesa u Sevilji", "en": "Death of Hernán Cortés in Seville" },
+      "year": 1541,
+      "yearEnd": null,
+      "placeId": "sevilja",
+      "episodeId": "105",
+      "timestamp": "159:38",
+      "type": "death",
+      "actors": ["Hernán Cortés"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Hernan Kortes umire 1541. godine u Sevilji, u finansijskim problemima i razočaran, nakon što kralj nije odgovarao na njegova pisma.", "en": "Hernán Cortés died in 1541 in Seville, in financial difficulty and disillusioned, after the king had not responded to his letters." },
+      "quote": "Tako da Cortes na kraju umire u Sevilju ... 1541. godine.",
+      "confidence": "high"
+    }
+  ]
+}

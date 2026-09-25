@@ -1,0 +1,84 @@
+{
+  "places": [
+    { "id": "smederevo", "name": { "sr": "Smederevo", "en": "Smederevo" }, "aliases": ["Smederevu", "Smedereva"], "lat": 44.6636, "lng": 20.9297, "kind": "city" },
+    { "id": "novo-brdo", "name": { "sr": "Novo Brdo", "en": "Novo Brdo" }, "aliases": ["Novom Brdu"], "lat": 42.6122, "lng": 21.4392, "kind": "landmark" },
+    { "id": "hilandar", "name": { "sr": "Hilandar", "en": "Hilandar Monastery" }, "aliases": ["Hilandaru"], "lat": 40.2688, "lng": 23.9198, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "vuk-brankovic-nestaje-1397",
+      "title": { "sr": "Vuk Branković nestaje sa istorijske scene", "en": "Vuk Branković disappears from the historical scene" },
+      "year": 1397,
+      "yearEnd": null,
+      "placeId": "novo-brdo",
+      "episodeId": "102",
+      "timestamp": "31:18",
+      "type": "death",
+      "actors": ["Vuk Branković"],
+      "region": "Balkan",
+      "description": { "sr": "Vuk Branković, otac despota Đurđa, nestaje sa istorijske scene 1397. godine, ne zna se sasvim pouzdano da li od glasi, umoren ili pogubljen.", "en": "Vuk Branković, father of Despot Đurađ, disappeared from the historical scene in 1397, with uncertainty over whether he died of illness, was killed, or executed." },
+      "quote": "Vuk Branković nestavi sa istorijske scene 1397. godine.",
+      "confidence": "medium"
+    },
+    {
+      "id": "smrt-stefana-lazarevica-1427",
+      "title": { "sr": "Smrt Stefana Lazarevića i preuzimanje vlasti Đurđa", "en": "Death of Stefan Lazarević and Đurađ's assumption of power" },
+      "year": 1427,
+      "yearEnd": null,
+      "placeId": "smederevo",
+      "episodeId": "102",
+      "timestamp": "102:37",
+      "type": "coronation",
+      "actors": ["Đurađ Branković", "Stefan Lazarević"],
+      "region": "Balkan",
+      "description": { "sr": "Nakon smrti Stefana Lazarevića, Đurađ Branković preuzima presto Srpske despotovine, a nekoliko godina kasnije kreće u pregovore koji dovode do udaje njegove kćerke Mare.", "en": "After the death of Stefan Lazarević, Đurađ Branković took over the throne of the Serbian Despotate, and a few years later entered negotiations that led to the marriage of his daughter Mara." },
+      "quote": "jedno 5-6 godina nakon preuzimanja, da se već kreće u pregovore, a 1435. godine je Mara otišla",
+      "confidence": "medium"
+    },
+    {
+      "id": "gradnja-smedereva-nova-prestonica",
+      "title": { "sr": "Đurađ gradi Smederevo kao novu prestonicu", "en": "Đurađ builds Smederevo as the new capital" },
+      "year": 1430,
+      "yearEnd": null,
+      "placeId": "smederevo",
+      "episodeId": "102",
+      "timestamp": "106:14",
+      "type": "founding",
+      "actors": ["Đurađ Branković"],
+      "region": "Balkan",
+      "description": { "sr": "Đurađ Branković podiže Smederevo kao pravu novu prestonicu Srpske despotovine, ogroman fortifikacijski projekat na Dunavu.", "en": "Đurađ Branković built Smederevo as a genuine new capital of the Serbian Despotate, an enormous fortification project on the Danube." },
+      "quote": "Pravio je prosto jednu pravu prestonicu. ... moramo doći u Smederevo, nekako ne možemo preskočiti do zidanje nove te prestonice",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-smedereva-1439",
+      "title": { "sr": "Pad Smedereva pod Turke", "en": "Fall of Smederevo to the Ottomans" },
+      "year": 1439,
+      "yearEnd": null,
+      "placeId": "smederevo",
+      "episodeId": "102",
+      "timestamp": "193:49",
+      "type": "conquest",
+      "actors": ["Osmansko carstvo", "Đurađ Branković"],
+      "region": "Balkan",
+      "description": { "sr": "1439. godine, posle samo tri meseca opsade, Smederevo pada pod Turke; godinu dana nakon pada Carigrada (1453) Turci opsedaju Smederevo ponovo, ali tada ga ne uspevaju osvojiti.", "en": "In 1439, after only three months of siege, Smederevo fell to the Ottomans; a year after the fall of Constantinople (1453), the Ottomans besieged Smederevo again, but that time they failed to capture it." },
+      "quote": "Smederevo je palo posle 3 meseca, Turci ne osvaju Smederevo ... godinu dana nakon pada Carigrada, obsada Smedereva, Turci nisu uspeli da osvoje Smederevo.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-djurdja-brankovica-1456",
+      "title": { "sr": "Smrt despota Đurđa Brankovića", "en": "Death of Despot Đurađ Branković" },
+      "year": 1456,
+      "yearEnd": null,
+      "placeId": "smederevo",
+      "episodeId": "102",
+      "timestamp": "205:20",
+      "type": "death",
+      "actors": ["Đurađ Branković"],
+      "region": "Balkan",
+      "description": { "sr": "24. decembra 1456. godine, u svojoj 80. ili nešto starijoj godini, despot Đurađ Branković umire, ostavljajući iza sebe naslednike.", "en": "On December 24, 1456, at around 80 years of age or slightly older, Despot Đurađ Branković died, leaving heirs behind him." },
+      "quote": "nakon toga, 24. decembra 1456. godine, u 80. godini ... despot Đurać Branković umire",
+      "confidence": "high"
+    }
+  ]
+}

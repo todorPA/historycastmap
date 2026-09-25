@@ -1,0 +1,38 @@
+{
+  "places": [
+    { "id": "vienna", "name": { "sr": "Beč (Anšlus)", "en": "Vienna (Anschluss)" }, "aliases": ["beč", "vienna", "beču", "bec"], "lat": 48.2082, "lng": 16.3738, "kind": "city" },
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": ["pariz", "paris", "parizu"], "lat": 48.8566, "lng": 2.3522, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "predic-napusta-bec-1885",
+      "title": { "sr": "Uroš Predić napušta Beč", "en": "Uroš Predić leaves Vienna" },
+      "year": 1885,
+      "yearEnd": null,
+      "placeId": "vienna",
+      "episodeId": "06-uros-predic",
+      "timestamp": "29:51",
+      "type": "other",
+      "actors": ["Uroš Predić"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Uroš Predić napušta Beč 1885. godine, u vreme kada se u bečkoj umetničkoj sredini već nazire skora pojava modernizma i secesije (Gustav Klimt), nakon perioda školovanja pod uticajem neobaroknog slikara Hansa Makarta.", "en": "Uroš Predić left Vienna in 1885, at a time when the imminent emergence of modernism and Secession (Gustav Klimt) was already becoming apparent in the Viennese art scene, after a period of training under the influence of neo-Baroque painter Hans Makart." },
+      "quote": "Predić napušta Bečki od 1885. godine, kada se već negde nazire ili anticipira uskora pojava genija moderniteta, poput Gustava Klimta",
+      "confidence": "high"
+    },
+    {
+      "id": "predic-kosovka-devojka-izlozba-pariz-1889",
+      "title": { "sr": "Izlaganje slike 'Kosovka devojka' na svetskoj izložbi u Parizu", "en": "Exhibition of 'The Kosovo Maiden' at the Paris World's Fair" },
+      "year": 1889,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "06-uros-predic",
+      "timestamp": "57:05",
+      "type": "other",
+      "actors": ["Uroš Predić"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Slika 'Kosovka devojka' Uroša Predića bila je izložena na velikoj svetskoj izložbi u Parizu 1889. godine, iste godine kada je podignut Ajfelov toranj i kada je Francuska obeležavala sto godina od revolucije.", "en": "Uroš Predić's painting 'The Kosovo Maiden' was exhibited at the great World's Fair in Paris in 1889, the same year the Eiffel Tower was erected and France marked the centenary of the Revolution." },
+      "quote": "bila je izložena... na veliku izložbu u Parizu, koja se izbila 1889. godine, kada je nastao i Eiffelov toranj i kada je Frančko obiležavala sto godina od revolucije",
+      "confidence": "high"
+    }
+  ]
+}

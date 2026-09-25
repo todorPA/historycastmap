@@ -1,0 +1,38 @@
+{
+  "places": [
+    { "id": "teba", "name": { "sr": "Teba", "en": "Thebes" }, "aliases": ["teba", "thebes", "tebe", "tebanske"], "lat": 38.3222, "lng": 23.3167, "kind": "city" },
+    { "id": "aleksandrija", "name": { "sr": "Aleksandrija", "en": "Alexandria" }, "aliases": ["aleksandrija", "alexandria", "aleksandriju"], "lat": 31.2001, "lng": 29.9187, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "unistenje-tebe-aleksandar-336",
+      "title": { "sr": "Aleksandar Makedonski uništava Tebu", "en": "Alexander the Great destroys Thebes" },
+      "year": -336,
+      "yearEnd": null,
+      "placeId": "teba",
+      "episodeId": "06-aleksandar-makedonski",
+      "timestamp": "11:45",
+      "type": "battle",
+      "actors": ["Aleksandar Makedonski", "Teba"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Ubrzo nakon dolaska na presto, dok je Aleksandar Makedonski imao 19-20 godina, Teba se pobunila protiv njegove vlasti; on je brzo reagovao, uništio tebansku vojsku i sam grad, prodavši polovinu stanovništva u roblje, čime je pokazao dominaciju Makedonije nad grčkim svetom.", "en": "Soon after taking the throne, while Alexander the Great was 19-20 years old, Thebes rebelled against his rule; he reacted swiftly, destroying the Theban army and the city itself, selling half the population into slavery, thereby demonstrating Macedonia's dominance over the Greek world." },
+      "quote": "Aleksandrova brza reakcija i upad na područje Tebe u Beoti i uništenje tebanske vojske... Aleksandar je praktično uništio Tebu. Pola stanovništa je rasprodao u Roblje",
+      "confidence": "medium"
+    },
+    {
+      "id": "osnivanje-aleksandrije-egipat",
+      "title": { "sr": "Osnivanje Aleksandrije u Egiptu", "en": "Founding of Alexandria in Egypt" },
+      "year": -331,
+      "yearEnd": null,
+      "placeId": "aleksandrija",
+      "episodeId": "06-aleksandar-makedonski",
+      "timestamp": "32:05",
+      "type": "founding",
+      "actors": ["Aleksandar Makedonski"],
+      "region": "Bliski istok",
+      "description": { "sr": "Aleksandar Makedonski osniva grad Aleksandriju u Egiptu, nazvan po sebi, sa ulicama zidanim pod pravim uglom; grad kasnije postaje prestonica Ptolomejskog kraljevstva, koje traje sve do 30. godine pre naše ere.", "en": "Alexander the Great founded the city of Alexandria in Egypt, named after himself, with streets built at right angles; the city later became the capital of the Ptolemaic Kingdom, which lasted until 30 BC." },
+      "quote": "Aleksandrija je bila zidana tako zapravo građana, tako da su sve ulice bile pod pravim uglom... postaje posle... predstavnica Ptolomejskog kraljestva... koje će postati sve do 30. godine pre naše ere.",
+      "confidence": "medium"
+    }
+  ]
+}

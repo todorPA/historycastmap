@@ -1,0 +1,52 @@
+{
+  "places": [
+    { "id": "rim", "name": { "sr": "Rim", "en": "Rome" }, "aliases": [], "lat": 41.9028, "lng": 12.4964, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "smrt-britanika-55",
+      "title": { "sr": "Smrt Britanika (mogući otrov Nerona)", "en": "Death of Britannicus (possible poisoning by Nero)" },
+      "year": 55,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "44",
+      "timestamp": "32:28",
+      "type": "death",
+      "actors": ["Britanik", "Neron", "Klaudije"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "55. godine umire Britanik, sin cara Klaudija i Neronov konkurent za presto; iako se pričalo da je Neron kriv za njegovu smrt, sam Neron je izgubio popularnost više zbog majke Agripine nego zbog ove smrti.", "en": "In 55 CE, Britannicus, son of Emperor Claudius and Nero's rival for the throne, died; although it was rumored that Nero was responsible for his death, Nero himself lost popularity more because of his mother Agrippina than because of this death." },
+      "quote": "pričalo se, 55. godine umire Britanik, kao Klaudije Visin",
+      "confidence": "high"
+    },
+    {
+      "id": "veliki-pozar-rim-64",
+      "title": { "sr": "Veliki požar u Rimu", "en": "Great Fire of Rome" },
+      "year": 64,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "44",
+      "timestamp": "46:16",
+      "type": "other",
+      "actors": ["Neron"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "18. i 19. jula 64. godine izbija veliki požar u Rimu, počevši na Aventinskom brdu, jednom od sedam brežuljaka na kojima je grad osnovan.", "en": "On July 18-19, 64 CE, the Great Fire of Rome broke out, starting on the Aventine Hill, one of the seven hills on which the city was founded." },
+      "quote": "18. na 19. jul 64. godine, kada izbija požar, dakle, na jednom od onih Aventin",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-nerona-68",
+      "title": { "sr": "Samoubistvo Nerona", "en": "Suicide of Nero" },
+      "year": 68,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "44",
+      "timestamp": "72:38",
+      "type": "death",
+      "actors": ["Neron", "Pretorijanska garda", "Senat"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Sredinom 68. godine, kada se probudio i zatekao da su ga svi napustili, uključujući vernu pretorijansku gardu, Neron se, saznavši za zaveru senata i vojske protiv njega, ubija.", "en": "In mid-68 CE, waking to find that everyone had abandoned him, including the loyal Praetorian Guard, Nero, learning of the conspiracy against him by the Senate and army, took his own life." },
+      "quote": "sredinom 68. godine, to je bio neki jun ... se Neron budi jedne noći u palati i vidi da bukvalno nema nikoga oko njega",
+      "confidence": "high"
+    }
+  ]
+}

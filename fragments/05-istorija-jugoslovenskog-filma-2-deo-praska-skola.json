@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "mars-na-drinu-snimanje-1964",
+      "title": { "sr": "Snimanje filma 'Marš na Drinu'", "en": "Filming of 'March on the Drina'" },
+      "year": 1964,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "05-istorija-jugoslovenskog-filma-2-deo-praska-skola",
+      "timestamp": "24:25",
+      "type": "other",
+      "actors": ["Žika Mitrović"],
+      "region": "Balkan",
+      "description": { "sr": "Film 'Marš na Drinu' režisera Žike Mitrovića snimljen je 1964. godine, tačno 50 godina od izbijanja Prvog svetskog rata; partija je imala prilično povoljan stav prema snimanju ovog ratnog filma.", "en": "The film 'March on the Drina', directed by Žika Mitrović, was filmed in 1964, exactly 50 years after the outbreak of the First World War; the Communist Party had a fairly favorable attitude toward the making of this war film." },
+      "quote": "film je inače sniman 1964. godine, tačno 50 godina od izbijanja Prvog svjetskog rata, i partija, recimo, imala jedan prilično povoljan stav u odnosu na snimanje tog filma",
+      "confidence": "high"
+    },
+    {
+      "id": "maratonci-trce-pocasni-krug-1982",
+      "title": { "sr": "Snimanje filma 'Maratonci trče počasni krug'", "en": "Filming of 'The Marathon Family'" },
+      "year": 1982,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "05-istorija-jugoslovenskog-filma-2-deo-praska-skola",
+      "timestamp": "38:35",
+      "type": "other",
+      "actors": ["Slobodan Šijan"],
+      "region": "Balkan",
+      "description": { "sr": "Film 'Maratonci trče počasni krug' režisera Slobodana Šijana snimljen je 1982. godine; film sadrži i dokumentarni segment sa snimkom ubistva kralja Aleksandra u Marseju, neobičan izbor s obzirom da je kralj Aleksandar u komunističkom sistemu bio smatran arhineprijateljem.", "en": "The film 'The Marathon Family', directed by Slobodan Šijan, was filmed in 1982; the film includes a documentary segment featuring footage of the assassination of King Alexander in Marseille, an unusual choice given that King Alexander was considered an arch-enemy within the communist system." },
+      "quote": "u pitanju su maratonci, oni su snimljeni takođe 1982. godine, dakle film Maratonci trče počasni krug... jedan prvi segment na početku je dokumentaristički i to je dokumentarni snimak Ubistva kralja Aleksandra u Marcelju.",
+      "confidence": "high"
+    }
+  ]
+}

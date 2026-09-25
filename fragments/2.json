@@ -1,0 +1,191 @@
+{
+  "places": [
+    {
+      "id": "nemacka",
+      "name": {
+        "sr": "Nemačka",
+        "en": "Germany"
+      },
+      "aliases": [
+        "nemačka",
+        "nemačkoj"
+      ],
+      "lat": 51.1657,
+      "lng": 10.4515,
+      "kind": "country"
+    },
+    {
+      "id": "berlin",
+      "name": {
+        "sr": "Berlin",
+        "en": "Berlin"
+      },
+      "aliases": [
+        "berlin",
+        "berlinu",
+        "berlina",
+        "berliju",
+        "rajskancelarije",
+        "berlinskog"
+      ],
+      "lat": 52.52,
+      "lng": 13.405,
+      "kind": "city"
+    },
+    {
+      "id": "marseille",
+      "name": {
+        "sr": "Marsej",
+        "en": "Marseille"
+      },
+      "aliases": [
+        "marsej",
+        "marseille",
+        "marsejom",
+        "marseju"
+      ],
+      "lat": 43.2965,
+      "lng": 5.3698,
+      "kind": "city"
+    },
+    {
+      "id": "soma",
+      "name": {
+        "sr": "Soma",
+        "en": "Somme"
+      },
+      "aliases": [
+        "somi",
+        "bicine somi"
+      ],
+      "lat": 50.0059,
+      "lng": 2.6524,
+      "kind": "battle-site"
+    }
+  ],
+  "events": [
+    {
+      "id": "hitler-dolazak-na-vlast-nemacka-1933",
+      "title": {
+        "sr": "Hitler dolazi na vlast u Nemačkoj",
+        "en": "Hitler comes to power in Germany"
+      },
+      "year": 1933,
+      "yearEnd": null,
+      "placeId": "nemacka",
+      "episodeId": "2",
+      "timestamp": "50:25",
+      "type": "other",
+      "actors": [
+        "Adolf Hitler",
+        "Nemačka",
+        "NSDAP"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "Nemačka od trenutka kada Hitler dolazi na vlast 1933. godine počinje da menja svoju unutrašnju i spoljnu politiku, uspostavljajući totalitarni sistem.",
+        "en": "From the moment Hitler came to power in Germany in 1933, the country began to change its domestic and foreign policy, establishing a totalitarian system."
+      },
+      "quote": "Nemačka je od trenutka kada Hitler dolazi na vlast 1933. godine počela da menja svoju i unutrašnju i spoljnu politiku.",
+      "confidence": "high"
+    },
+    {
+      "id": "berlinska-olimpijada-1936",
+      "title": {
+        "sr": "Olimpijske igre u Berlinu 1936. godine",
+        "en": "1936 Berlin Olympics"
+      },
+      "year": 1936,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "2",
+      "timestamp": "78:12",
+      "type": "other",
+      "actors": [
+        "Adolf Hitler",
+        "Jesse Owens",
+        "Nemačka"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "1936. godine u Berlinu su održane Olimpijske igre koje je nacistički režim iskoristio kao propagandnu reklamu za Hitlera i novi sistem, dok se on lično pojavljivao na sportskim borilištima.",
+        "en": "In 1936, the Olympic Games were held in Berlin, which the Nazi regime used as propaganda for Hitler and the new system, with him personally appearing at the venues."
+      },
+      "quote": "kultura, kultura življenja 1936. godine se u Berlinu odvijaju olimpijske igre i to je bio jedan moment kada... to je bila jedna reklama za Hitlera",
+      "confidence": "high"
+    },
+    {
+      "id": "prekid-preventivnog-rata-marseille-1934",
+      "title": {
+        "sr": "Atentat na kralja Aleksandra u Marseju",
+        "en": "Assassination of King Alexander in Marseille"
+      },
+      "year": 1934,
+      "yearEnd": null,
+      "placeId": "marseille",
+      "episodeId": "2",
+      "timestamp": "56:01",
+      "type": "death",
+      "actors": [
+        "Kralj Aleksandar I",
+        "Louis Barthou",
+        "Nemačka"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Ideja o preventivnom ratu protiv Nemaca je 1934. godine naglo prekinuta ubistvom kralja Aleksandra i Luja Bartua u Marseju.",
+        "en": "The idea of a preventive war against the Germans was abruptly cut short in 1934 by the assassination of King Alexander and Louis Barthou in Marseille."
+      },
+      "quote": "Postojala je ideja preventivnog rata protiv Nemaca koja je 1934. godine naglo prekinuta. Ubislom kralja Aleksandra i Luebartua u Marseju.",
+      "confidence": "high"
+    },
+    {
+      "id": "hitler-ranjavanje-soma-1916",
+      "title": {
+        "sr": "Hitler ranjen u boju na Somi",
+        "en": "Hitler wounded at the Battle of the Somme"
+      },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "soma",
+      "episodeId": "2",
+      "timestamp": "23:34",
+      "type": "battle",
+      "actors": [
+        "Adolf Hitler",
+        "Nemačka vojska"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Prema sećanjima njegovih ratnih drugova, Hitler je tokom Prvog svetskog rata ranjen u boju na Somi; transkript (Whisper) navodi dve moguće godine, 916. i 918. (tj. 1916. i 1918.), a bici na Somi istorijski odgovara 1916. godina.",
+        "en": "According to his wartime comrades, Hitler was wounded during World War I at the Battle of the Somme; the transcript (via Whisper) gives two garbled candidate years, 916 and 918 (i.e. 1916 and 1918), of which 1916 matches the historically known Battle of the Somme."
+      },
+      "quote": "on je baš opisan od strane tih svojih drugara koji su mu bili drugari u ratu, u toku prvog svetskog rata u Bicine Somi ili 916. 918. kada je on bio ranjavan",
+      "confidence": "low"
+    },
+    {
+      "id": "konferencija-konacno-resenje-nemacka-1942",
+      "title": {
+        "sr": "Konferencija o konačnom rešenju, januar 1942.",
+        "en": "Conference on the 'Final Solution', January 1942"
+      },
+      "year": 1942,
+      "yearEnd": null,
+      "placeId": "nemacka",
+      "episodeId": "2",
+      "timestamp": "53:15",
+      "type": "other",
+      "actors": [
+        "Nacistička Nemačka",
+        "Adolf Hitler"
+      ],
+      "region": "Srednja Evropa",
+      "description": {
+        "sr": "U januaru 1942. godine je u Nemačkoj održana konferencija na kojoj je zvanično kodifikovana politika 'konačnog rešenja' - istrebljenja jevrejskog naroda u Evropi.",
+        "en": "In January 1942, a conference was held in Germany at which the policy of the 'Final Solution' — the extermination of the Jewish people in Europe — was officially codified."
+      },
+      "quote": "Postojala je jedna konferencija 1942. godine, u januaru mesecu održana, govorimo o Nemačkoj, gde su oni konačno, dakle, kodifikovali tu politiku konačnog rešenja.",
+      "confidence": "high"
+    }
+  ]
+}

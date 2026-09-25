@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "damask", "name": { "sr": "Damask", "en": "Damascus" }, "aliases": ["Damasku"], "lat": 33.5138, "lng": 36.2765, "kind": "city" },
+    { "id": "akra", "name": { "sr": "Akra", "en": "Acre" }, "aliases": ["Akru", "pod Akru", "opsada Akre"], "lat": 32.9281, "lng": 35.0818, "kind": "battle-site" },
+    { "id": "bouvines", "name": { "sr": "Buvin", "en": "Bouvines" }, "aliases": ["Buvina", "bitka kod Buvina"], "lat": 50.5667, "lng": 3.1667, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "opsada-akre-krstasi-1191",
+      "title": { "sr": "Krstaši osvajaju Akru", "en": "Crusaders capture Acre" },
+      "year": 1191,
+      "yearEnd": null,
+      "placeId": "akra",
+      "episodeId": "25",
+      "timestamp": "48:21",
+      "type": "siege",
+      "actors": ["Ričard Lavlje Srce", "Saladin", "krstaši"],
+      "region": "Bliski istok",
+      "description": { "sr": "Nakon što je Akra Saladinu pala za nepuna dva dana, krstaši su je opsedali skoro dve godine dok Ričardov dolazak nije doneo grad u njihove ruke; Ričard je zatim naredio pogubljenje muslimanskih zarobljenika, čime je narušio tradicionalna viteška pravila ratovanja.", "en": "After Acre fell to Saladin within two days, the Crusaders besieged it for nearly two years until Richard's arrival brought the city into their hands; Richard then ordered the execution of Muslim prisoners, breaching traditional rules of chivalric warfare." },
+      "quote": "Akra je Saladinu pala za nepuna dva dana. Krstaši su Akru zatim ponovo hteli da vrate i obsedili su je skoro dve godine. Tek Richardov dolazak pod Akru pomogao je krstašima da uđu u grad",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-saladina-damask-1193",
+      "title": { "sr": "Smrt Saladina u Damasku", "en": "Death of Saladin in Damascus" },
+      "year": 1193,
+      "yearEnd": null,
+      "placeId": "damask",
+      "episodeId": "25",
+      "timestamp": "67:29",
+      "type": "death",
+      "actors": ["Saladin"],
+      "region": "Bliski istok",
+      "description": { "sr": "Saladin umire u Damasku, gradu u kome je odrastao i u kome je sahranjen; transkript navodi godinu kao '1993', što je greška transkripcije za 1193. godinu, narednu godinu nakon dogovora sa Ričardom.", "en": "Saladin died in Damascus, the city where he grew up and where he was buried; the transcript states the year as '1993', a transcription error for 1193, the year following his agreement with Richard." },
+      "quote": "A Saladin je naredne godine, 1993. godine, umra u Damasku, u gradu u kojem je odrastao. Tu je i umro, tu je i sahranjen.",
+      "confidence": "low"
+    },
+    {
+      "id": "bitka-buvin-1214",
+      "title": { "sr": "Bitka kod Buvina", "en": "Battle of Bouvines" },
+      "year": 1214,
+      "yearEnd": null,
+      "placeId": "bouvines",
+      "episodeId": "25",
+      "timestamp": "71:27",
+      "type": "battle",
+      "actors": ["Engleska", "Francuska", "Kralj Jovan"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Bitkom kod Buvina 1214. godine zaokružen je period u kome je engleski kralj Jovan izgubio posede u Francuskoj — Normandiju, Mensku i Anžu — za dugo vremena.", "en": "The Battle of Bouvines in 1214 sealed the period in which English King John lost his French possessions — Normandy, Maine and Anjou — for a long time." },
+      "quote": "Jovan je izgubio zemlje za neko duže vreme, Normandiju, Ménan, Joux. To je zaokruženo bitkom kod Buvina 1214. godine, kojom su Englezi za neko vreme izgubili te posede na teritoriji Francuske.",
+      "confidence": "high"
+    }
+  ]
+}

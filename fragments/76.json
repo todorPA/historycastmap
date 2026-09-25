@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "kragujevac", "name": { "sr": "Kragujevac", "en": "Kragujevac" }, "aliases": ["Kragujevcu"], "lat": 44.0142, "lng": 20.9394, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "hatiserif-autonomija-1830",
+      "title": { "sr": "Čitanje hatišerifa o autonomiji Srbije", "en": "Reading of the hatt-i sharif granting Serbian autonomy" },
+      "year": 1830,
+      "yearEnd": null,
+      "placeId": "kragujevac",
+      "episodeId": "76",
+      "timestamp": "58:50",
+      "type": "reform",
+      "actors": ["Knez Miloš Obrenović", "Dimitrije Davidović"],
+      "region": "Balkan",
+      "description": { "sr": "14. decembra 1830. godine pročitan je hatišerif kojim se Srbiji dodeljuje autonomija — prvi pravni akt kao uvod u srpsku autonomiju, koji knez Miloš čita okupljenim Srbima, sa govorom koji je napisao Dimitrije Davidović.", "en": "On December 14, 1830, the hatt-i sharif granting Serbia autonomy was read — the first legal act as an introduction to Serbian autonomy, read by Prince Miloš to the assembled Serbs, with a speech written by Dimitrije Davidović." },
+      "quote": "mislim da je 14. decembra 1830. godine, čita se okupljenim Srbima, knez Miloš ga čita",
+      "confidence": "high"
+    },
+    {
+      "id": "sretenjski-ustav-1835",
+      "title": { "sr": "Donošenje Sretenjskog ustava", "en": "Adoption of the Sretenje Constitution" },
+      "year": 1835,
+      "yearEnd": null,
+      "placeId": "kragujevac",
+      "episodeId": "76",
+      "timestamp": "66:30",
+      "type": "reform",
+      "actors": ["Knez Miloš Obrenović", "Dimitrije Davidović", "Avram Petronijević", "Mile Radojković"],
+      "region": "Balkan",
+      "description": { "sr": "Početkom februara 1835. godine donesen je Sretenjski ustav, dogovaranjem bez upotrebe oružja, uz doprinos Avrama Petronijevića, Mileta Radojkovića i kneževe braće — jedan od prvih liberalnih ustava u Evropi.", "en": "In early February 1835, the Sretenje Constitution was adopted, reached through negotiation without the use of arms, with contributions from Avram Petronijević, Mile Radojković and the prince's brothers — one of the first liberal constitutions in Europe." },
+      "quote": "to je početak februara 1835. godine, dakle, tu imamo jedan čitav niz ljudi, poput recimo Avrama Petronijevića, Mileta Radojkovića",
+      "confidence": "high"
+    }
+  ]
+}

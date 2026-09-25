@@ -3,3 +3,6 @@ dist/
 *.tsbuildinfo
 .DS_Store
 *.log
+
+# Self-hosted webfonts, fetched by `npm run fonts`.
+public/fonts/

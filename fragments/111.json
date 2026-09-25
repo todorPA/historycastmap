@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "rheydt", "name": { "sr": "Rajdt (Nemačka)", "en": "Rheydt (Germany)" }, "aliases": ["Menhen Glebden", "Rheydtu"], "lat": 51.1667, "lng": 6.4333, "kind": "city" },
+    { "id": "berlin", "name": { "sr": "Berlin", "en": "Berlin" }, "aliases": ["Berlinu", "Berlina"], "lat": 52.5200, "lng": 13.4050, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "gebels-rodjenje-1897",
+      "title": { "sr": "Rođenje Jozefa Gebelsa", "en": "Birth of Joseph Goebbels" },
+      "year": 1897,
+      "yearEnd": null,
+      "placeId": "rheydt",
+      "episodeId": "111",
+      "timestamp": "02:28",
+      "type": "birth",
+      "actors": ["Jozef Gebels"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Jozef Gebels je rođen 1897. godine u malom gradiću u zapadnoj Nemačkoj, po odrastanju ni na koji način ne ukazujući na svoju kasniju ulogu.", "en": "Joseph Goebbels was born in 1897 in a small town in western Germany, his upbringing giving no indication of his later role." },
+      "quote": "Jebes je rođen 1897. godine u Nemačkoj, u jednom malom gradiću u zapadnoj Nemačkoj.",
+      "confidence": "high"
+    },
+    {
+      "id": "nsdap-jacanje-berlin-1926",
+      "title": { "sr": "Gebels podiže vidljivost NSDAP u Berlinu", "en": "Goebbels raises the NSDAP's visibility in Berlin" },
+      "year": 1926,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "111",
+      "timestamp": "76:04",
+      "type": "other",
+      "actors": ["Jozef Gebels", "NSDAP"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Gebels je podigao vidljivost Nacionalsocijalističke partije u Berlinu, gradu koji je tada bio prilično socijaldemokratski i levo orijentisan, u periodu kada je partija još bila u opoziciji.", "en": "Goebbels raised the visibility of the National Socialist Party in Berlin, a city that at the time leaned strongly social-democratic and left-wing, during the period when the party was still in opposition." },
+      "quote": "što je podigao vidljivost Nacijalno-Socilističke partije u samom Berlinu.",
+      "confidence": "medium"
+    },
+    {
+      "id": "nsdap-dolazak-na-vlast-1933",
+      "title": { "sr": "Hitler i NSDAP dolaze na vlast", "en": "Hitler and the NSDAP come to power" },
+      "year": 1933,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "111",
+      "timestamp": "76:26",
+      "type": "other",
+      "actors": ["Adolf Hitler", "Jozef Gebels", "Hindenburg"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "1933. godine Hitler dolazi na vlast i postaje kancelar, dok je Hindenburg predsednik države; Gebels tada ima ambiciju da postane ministar kulture, kada sve dobija ubrzan tok.", "en": "In 1933, Hitler came to power and became chancellor, while Hindenburg was head of state; at that point Goebbels had ambitions to become minister of culture, as events began unfolding rapidly." },
+      "quote": "oni su došli na vlast 1933. godine, Hitler je postao kancelar",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "places": [
+    { "id": "predappio", "name": { "sr": "Predapio (Italija)", "en": "Predappio (Italy)" }, "aliases": ["Predapiju"], "lat": 44.1167, "lng": 12.0833, "kind": "city" },
+    { "id": "rim", "name": { "sr": "Rim", "en": "Rome" }, "aliases": ["Rimu", "Rima"], "lat": 41.9028, "lng": 12.4964, "kind": "city" },
+    { "id": "milano", "name": { "sr": "Milano", "en": "Milan" }, "aliases": ["Milanu"], "lat": 45.4642, "lng": 9.1900, "kind": "city" },
+    { "id": "vatikan", "name": { "sr": "Vatikan", "en": "Vatican City" }, "aliases": ["Lateranski"], "lat": 41.9029, "lng": 12.4534, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "musolini-rodjenje-1883",
+      "title": { "sr": "Rođenje Benita Musolinija", "en": "Birth of Benito Mussolini" },
+      "year": 1883,
+      "yearEnd": null,
+      "placeId": "predappio",
+      "episodeId": "88",
+      "timestamp": "04:26",
+      "type": "birth",
+      "actors": ["Benito Mussolini"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Benito Amilkare Andrea Musolini je rođen 29. jula 1883. godine.", "en": "Benito Amilcare Andrea Mussolini was born on July 29, 1883." },
+      "quote": "Benito Hamilcar Andrea Mussolini je rođen 29. jula 1883. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "osnivanje-fasa-1919",
+      "title": { "sr": "Musolini osniva Fasce di combattimento", "en": "Mussolini founds the Fasci di combattimento" },
+      "year": 1919,
+      "yearEnd": null,
+      "placeId": "milano",
+      "episodeId": "88",
+      "timestamp": "39:31",
+      "type": "founding",
+      "actors": ["Benito Mussolini"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1919. godine Musolini osniva Fasci italiani di combattimento, prvu inkarnaciju svog političkog pokreta.", "en": "In 1919, Mussolini founded the Fasci italiani di combattimento, the first incarnation of his political movement." },
+      "quote": "On je 1919. godin osnovao Faši italiani di combattimento",
+      "confidence": "high"
+    },
+    {
+      "id": "osnivanje-nacionalno-fasisticke-partije-1921",
+      "title": { "sr": "Osnivanje Nacionalno-fašističke partije", "en": "Founding of the National Fascist Party" },
+      "year": 1921,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "88",
+      "timestamp": "45:31",
+      "type": "founding",
+      "actors": ["Benito Mussolini"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "9. novembra 1921. godine Musolini osniva Nacionalno-fašističku partiju, koja će upravljati Italijom narednih 20 i više godina, sve do njenog sloma.", "en": "On November 9, 1921, Mussolini founded the National Fascist Party, which would rule Italy for more than 20 years, until its collapse." },
+      "quote": "9. novembra 1921. godine, on osniva partiju koja će upriljati Italijom naradnih 20 i više godina",
+      "confidence": "high"
+    },
+    {
+      "id": "mars-na-rim-1922",
+      "title": { "sr": "Marš na Rim i preuzimanje vlasti", "en": "March on Rome and seizure of power" },
+      "year": 1922,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "88",
+      "timestamp": "56:05",
+      "type": "other",
+      "actors": ["Benito Mussolini"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "30. oktobra 1922. godine, organizovan iz Milana odakle je sve i krenulo, Musolini sprovodi Marš na Rim i preuzima vlast u Italiji.", "en": "On October 30, 1922, organized from Milan, where it all began, Mussolini carried out the March on Rome and seized power in Italy." },
+      "quote": "to je 30. oktobra 1922. godine ... odakle je 22. organizovao, sprovodio marš na Rim",
+      "confidence": "high"
+    },
+    {
+      "id": "lateranski-sporazumi-1929",
+      "title": { "sr": "Lateranski sporazumi sa Vatikanom", "en": "Lateran Accords with the Vatican" },
+      "year": 1929,
+      "yearEnd": null,
+      "placeId": "vatikan",
+      "episodeId": "88",
+      "timestamp": "78:22",
+      "type": "treaty",
+      "actors": ["Benito Mussolini", "Vatikan"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1929. godine, Lateranskim sporazumima, Vatikan postaje zvanično nezavisna državna teritorija, u dogovoru sa Musolinijevom vlašću.", "en": "In 1929, through the Lateran Accords, Vatican City officially became an independent state territory, under an agreement with Mussolini's government." },
+      "quote": "iz 1929. godine Vatikan postaje",
+      "confidence": "high"
+    },
+    {
+      "id": "musolini-strelan-milano-1945",
+      "title": { "sr": "Streljanje Musolinija u Milanu", "en": "Execution of Mussolini in Milan" },
+      "year": 1945,
+      "yearEnd": null,
+      "placeId": "milano",
+      "episodeId": "88",
+      "timestamp": "109:37",
+      "type": "death",
+      "actors": ["Benito Mussolini", "Klara Petači", "Italijanski partizani"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Uhvaćen u pokušaju bekstva ka Nemačkoj, Musolini je, zajedno sa Klarom Petači i nekoliko najbližih saradnika, streljan i obešen naopako u Milanu, gradu iz kojeg je 1922. organizovao Marš na Rim.", "en": "Captured while trying to flee to Germany, Mussolini, together with Clara Petacci and several close associates, was shot and hanged upside down in Milan, the city from which he had organized the March on Rome in 1922." },
+      "quote": "njegova sudbina je na kraju bila takva da je u Milanu ... streljani i obešeni na opačke",
+      "confidence": "high"
+    }
+  ]
+}

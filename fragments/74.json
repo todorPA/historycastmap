@@ -1,0 +1,22 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": [], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "studentski-protest-beograd-1968",
+      "title": { "sr": "Studentski protest u Beogradu 1968. godine", "en": "The 1968 student protest in Belgrade" },
+      "year": 1968,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "74",
+      "timestamp": "00:04",
+      "type": "uprising",
+      "actors": ["Studenti Beogradskog univerziteta", "Stevo Žigon", "Josip Broz Tito"],
+      "region": "Balkan",
+      "description": { "sr": "U leto 1968. godine, nakon zanosnog govora glumca Steve Žigona u dvorištu rektorata Beogradskog univerziteta, studenti su bili blizu pokušaja da preuzmu vlast; predsednik Josip Broz Tito lično se obratio studentima i priznao da su u pravu, čime su se demonstracije brzo okončale.", "en": "In the summer of 1968, after an impassioned speech by actor Stevo Žigon in the courtyard of the Rectorate of Belgrade University, students came close to attempting to seize power; President Josip Broz Tito personally addressed the students and acknowledged they were right, quickly ending the demonstrations." },
+      "quote": "Kada je u varljivo leto 1968. godine glumac Stevo Žigon održao govor u dvorištu rektorata Beogradskog univerziteta ... predsednik ... Josip Brozde ... obratio se studentima, rekao je da su studenti u pravu",
+      "confidence": "high"
+    }
+  ]
+}

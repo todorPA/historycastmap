@@ -1,0 +1,52 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "bombardovanje-beograda-1941",
+      "title": { "sr": "Nemačko bombardovanje Beograda", "en": "German bombing of Belgrade" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "bombardovanje-beograda-1941-historycast-nedeljom",
+      "timestamp": "31:53",
+      "type": "battle",
+      "actors": ["Nemačka"],
+      "region": "Balkan",
+      "description": { "sr": "6. aprila 1941. godine Nemačka započinje bombardovanje Beograda, u više naleta tokom dana i kasnim satima istog dana; procenjuje se da je stradalo oko 1.900-2.000 ljudi.", "en": "On 6 April 1941, Germany began bombing Belgrade in multiple waves throughout the day and into the late hours; an estimated 1,900-2,000 people were killed." },
+      "quote": "Da, znači imamo 6. aprila... tog 6. aprila prvo građane... kasnim satima tog 6. aprila",
+      "confidence": "high"
+    },
+    {
+      "id": "beograd-iseljavanje-stanovnistva-1941",
+      "title": { "sr": "Masovno iseljavanje stanovništva Beograda nakon bombardovanja", "en": "Mass exodus of Belgrade's population after the bombing" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "bombardovanje-beograda-1941-historycast-nedeljom",
+      "timestamp": "44:56",
+      "type": "other",
+      "actors": ["Beograd"],
+      "region": "Balkan",
+      "description": { "sr": "Krajem aprila 1941. godine, nekoliko nedelja nakon bombardovanja, šef statističkog odseka izjavljuje da u Beogradu ne živi više od 200.000 stanovnika, usled masovnog iseljavanja prouzrokovanog razaranjem.", "en": "By late April 1941, a few weeks after the bombing, the head of the statistical department stated that Belgrade's population had fallen to no more than 200,000 residents, due to mass displacement caused by the destruction." },
+      "quote": "isti šef statističkog odseka kaže krajem aprila 1941... da u Beogradu u tom trenutku ne živi više od 200.000 stanovnika.",
+      "confidence": "high"
+    },
+    {
+      "id": "beograd-vojna-uprava-turner-1941",
+      "title": { "sr": "Uspostavljanje nemačke vojne uprave u Beogradu", "en": "Establishment of German military administration in Belgrade" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "bombardovanje-beograda-1941-historycast-nedeljom",
+      "timestamp": "112:57",
+      "type": "other",
+      "actors": ["Harald Turner"],
+      "region": "Balkan",
+      "description": { "sr": "Dokument iz 29. aprila 1941. godine, koji potpisuje Harald Turner, šef upravnog dela vojne uprave u Srbiji, svedoči da Beograd u tom trenutku još uvek nema efektivnu kanalizaciju ni vodovod.", "en": "A document from 29 April 1941, signed by Harald Turner, head of the administrative section of the military government in Serbia, records that Belgrade at that point still lacked effective sewage and water systems." },
+      "quote": "imam dokument iz 29. aprila 1941... u Beogradu još nema efektivne ni kanalizacije ni vodovoda... Harald Turner, šef upravnog dela vojne uprave u Srbiji",
+      "confidence": "high"
+    }
+  ]
+}

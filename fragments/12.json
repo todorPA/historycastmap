@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "kompjen", "name": { "sr": "Kompjen (šuma, Pikardija)", "en": "Compiègne (forest, Picardy)" }, "aliases": ["Pikardiji", "kompjenska šuma", "vagon u Kompjenu"], "lat": 49.4331, "lng": 2.8264, "kind": "landmark" },
+    { "id": "versaj", "name": { "sr": "Versaj (Pariska mirovna konferencija)", "en": "Versailles (Paris Peace Conference)" }, "aliases": ["versaj (pariska mirovna konferencija)", "versailles (paris peace conference)", "versaillesu", "versaj", "versailles", "versajska mirovna konferencija", "versajski sporazum", "versajski mir"], "lat": 48.8049, "lng": 2.1204, "kind": "landmark" },
+    { "id": "varsava", "name": { "sr": "Varšava", "en": "Warsaw" }, "aliases": ["varšava", "warsaw", "poljskoj", "poljska drzava", "obnova poljske drzave"], "lat": 52.2297, "lng": 21.0122, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "primirje-kompjen-1918",
+      "title": { "sr": "Potpisivanje primirja u Kompjenu", "en": "Signing of the Armistice at Compiègne" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "kompjen",
+      "episodeId": "12",
+      "timestamp": "01:07",
+      "type": "treaty",
+      "actors": ["Nemačka", "Francuska", "Velika Britanija"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "11. novembra 1918. godine u 11 sati potpisano je primirje u šumovitom prostoru severno od Pariza, u vagonu koji će 1940. godine ponovo posvedočiti francusku kapitulaciju pred Nemcima; time se okončavaju vojne operacije Prvog svetskog rata.", "en": "On 11 November 1918, at 11 a.m., the armistice was signed in a wooded area north of Paris, in the same railway carriage that would witness France's 1940 capitulation to Germany; this ended the military operations of the First World War." },
+      "quote": "Dakle, 11. novembra 1918. godine je popisano primirje u Pikardiji... njihovi nadređeni su potpisali primirje 11.11.1918. godine u 11 sati.",
+      "confidence": "high"
+    },
+    {
+      "id": "versajski-mir-potpisan-versaj-1920",
+      "title": { "sr": "Stupanje na snagu Versajskog mira", "en": "Treaty of Versailles comes into force" },
+      "year": 1919,
+      "yearEnd": 1920,
+      "placeId": "versaj",
+      "episodeId": "12",
+      "timestamp": "06:32",
+      "type": "treaty",
+      "actors": ["Antanta", "Nemačka", "Vudro Vilson"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Primirje iz 1918. produžavano je u četiri navrata sve dok Versajska mirovna konferencija, koja je trajala od početka 1919. do početka 1920. godine, nije definisala nov poredak u Evropi kroz Versajski mirovni ugovor.", "en": "The 1918 armistice was extended four times until the Paris Peace Conference, which ran from early 1919 to early 1920, defined a new European order through the Treaty of Versailles." },
+      "quote": "to primjerje je trajalo od 1918. pa sve do 1920. godine kada je potpisan Versajski mir... od početka 1919. do početka 1920. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "obnova-poljske-drzave-varsava-1918",
+      "title": { "sr": "Obnova poljske države", "en": "Restoration of the Polish state" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "varsava",
+      "episodeId": "12",
+      "timestamp": "13:59",
+      "type": "founding",
+      "actors": ["Poljska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1918. godine dolazi do obnove poljske države nakon dugog razdoblja nepostojanja; Poljaci danas slave 11. novembar kao svoj nacionalni praznik, posvećen upravo toj obnovi države koja je proistekla iz pobede u Prvom svetskom ratu.", "en": "In 1918, the Polish state was restored after a long period of non-existence; Poles today celebrate 11 November as their national holiday, dedicated to this restoration of statehood that emerged from victory in the First World War." },
+      "quote": "ta 1918. godina je nekakva obnova Poljske države... Poljaci ovaj dan, 11. novembar 1918. ili 11. novembar svake godine, oni to slave kao svoj nacionalni praznik.",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "places": [
+    { "id": "jerusalim", "name": { "sr": "Jerusalim", "en": "Jerusalem" }, "aliases": ["jerusalim", "jerusalem", "u Jerusalim"], "lat": 31.7683, "lng": 35.2137, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "iraklije-vraca-casni-krst-jerusalim-629",
+      "title": { "sr": "Car Iraklije vraća časni krst u Jerusalim", "en": "Emperor Heraclius returns the True Cross to Jerusalem" },
+      "year": 629,
+      "yearEnd": null,
+      "placeId": "jerusalim",
+      "episodeId": "stradanje-isusovo-kroz-istoriju-i-simbole-historycast-nedeljom",
+      "timestamp": "93:22",
+      "type": "other",
+      "actors": ["Car Iraklije"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "629. godine vizantijski car Iraklije vraća časni krst u Jerusalim iz persijskog zarobljeništva, unoseći ga u svečanoj procesiji u pokajničkoj odeći; ovaj događaj se obeležava praznikom Vozdviženja časnog krsta.", "en": "In 629, Byzantine Emperor Heraclius returned the True Cross to Jerusalem from Persian captivity, carrying it in a solemn procession while wearing penitential garb; this event is commemorated by the feast of the Exaltation of the Holy Cross." },
+      "quote": "izbavljenje iz persijanskog robstva 629. godine, car Iraklije povratio... u Jerusalim ga je vratio... i uneo ga je u svečanoj procesi, onako, u pokajničkoj odjeći",
+      "confidence": "high"
+    }
+  ]
+}

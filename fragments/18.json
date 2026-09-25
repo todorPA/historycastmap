@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "kumanovo", "name": { "sr": "Kumanovo", "en": "Kumanovo" }, "aliases": ["Kumanovska bitka", "kod Kumanova"], "lat": 42.1322, "lng": 21.7144, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "anastas-jovanovic-rodjenje-beograd-1817",
+      "title": { "sr": "Rođenje Anastasa Jovanovića, prvog srpskog fotografa", "en": "Birth of Anastas Jovanović, Serbia's first photographer" },
+      "year": 1817,
+      "yearEnd": 1899,
+      "placeId": "beograd",
+      "episodeId": "18",
+      "timestamp": "04:39",
+      "type": "birth",
+      "actors": ["Anastas Jovanović"],
+      "region": "Balkan",
+      "description": { "sr": "Anastas Jovanović, prvi značajni fotograf na srpskim prostorima i dvorski upravnik knjaza Mihaila, rođen je 1817. godine, a umro 1899. godine u Beogradu, nekoliko godina pre pada dinastije Obrenović.", "en": "Anastas Jovanović, the first significant photographer in the Serbian lands and court administrator of Prince Mihailo, was born in 1817 and died in 1899 in Belgrade, a few years before the fall of the Obrenović dynasty." },
+      "quote": "On je rođen 1817. a umro je 1899. godine u Beogradu.",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-kumanovo-1912",
+      "title": { "sr": "Bitka kod Kumanova", "en": "Battle of Kumanovo" },
+      "year": 1912,
+      "yearEnd": null,
+      "placeId": "kumanovo",
+      "episodeId": "18",
+      "timestamp": "16:53",
+      "type": "battle",
+      "actors": ["Srbija", "Osmansko carstvo", "Zeki Paša"],
+      "region": "Balkan",
+      "description": { "sr": "Bitka kod Kumanova počela je 23. oktobra 1912. godine i trajala dva dana i jednu noć; srpska vojska je pobedila, uz doprinos trubača koji se prerušio u tursku uniformu i odsvirao signal za povlačenje u neprijateljskim redovima.", "en": "The Battle of Kumanovo began on 23 October 1912 and lasted two days and one night; the Serbian army won, aided by a bugler who disguised himself in a Turkish uniform and sounded the retreat signal within enemy ranks." },
+      "quote": "Bitka je počela 23. oktober 1912. godine. Trajala je dva dana i jednu noć.",
+      "confidence": "high"
+    },
+    {
+      "id": "krunisanje-kralja-petra-snimljeno-beograd-1904",
+      "title": { "sr": "Snimanje krunisanja kralja Petra I — prvi dokumentarni film u Srbiji", "en": "Filming of King Peter I's coronation — first documentary film in Serbia" },
+      "year": 1904,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "18",
+      "timestamp": "48:46",
+      "type": "coronation",
+      "actors": ["Kralj Petar I Karađorđević", "Frank Storm"],
+      "region": "Balkan",
+      "description": { "sr": "U septembru 1904. godine, nakon Majskog prevrata iz 1903, izvršeno je krunisanje kralja Petra I Karađorđevića u Beogradu; snimatelj Frank Storm je taj događaj zabeležio u 55-minutnom filmu koji se smatra prvim dokumentarnim snimkom u srpskoj kinematografiji.", "en": "In September 1904, following the 1903 May Coup, King Peter I Karađorđević was crowned in Belgrade; cameraman Frank Storm recorded the event in a 55-minute film considered the first documentary footage in Serbian cinematography." },
+      "quote": "Radi se o krunisanju kralja Petra Karadjordjevića. Dakle, posle majskog prevrata 1903. godine izvršeno je krunisanje u septembru mesecu. Sledeće, 904.",
+      "confidence": "high"
+    }
+  ]
+}

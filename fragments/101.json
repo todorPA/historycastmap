@@ -1,0 +1,69 @@
+{
+  "places": [
+    { "id": "stolac", "name": { "sr": "Stolac", "en": "Stolac" }, "aliases": ["Stocu"], "lat": 43.0833, "lng": 17.9583, "kind": "city" },
+    { "id": "pristina", "name": { "sr": "Priština", "en": "Pristina" }, "aliases": ["Prištinu"], "lat": 42.6629, "lng": 21.1655, "kind": "city" },
+    { "id": "smederevo", "name": { "sr": "Smederevo", "en": "Smederevo" }, "aliases": ["Smederevu"], "lat": 44.6636, "lng": 20.9297, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "golubic-rodjenje-1891",
+      "title": { "sr": "Rođenje Mustafe Golubića", "en": "Birth of Mustafa Golubić" },
+      "year": 1891,
+      "yearEnd": null,
+      "placeId": "stolac",
+      "episodeId": "101",
+      "timestamp": "04:15",
+      "type": "birth",
+      "actors": ["Mustafa Golubić"],
+      "region": "Balkan",
+      "description": { "sr": "Mustafa Golubić je rođen 24. januara 1891. godine u Stocu.", "en": "Mustafa Golubić was born on January 24, 1891, in Stolac." },
+      "quote": "rođen sam u Stocu, 24. januara 1891. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "golubic-oslobodjenje-pristine-1912",
+      "title": { "sr": "Golubić učestvuje u oslobođenju Prištine", "en": "Golubić takes part in the liberation of Pristina" },
+      "year": 1912,
+      "yearEnd": null,
+      "placeId": "pristina",
+      "episodeId": "101",
+      "timestamp": "18:37",
+      "type": "conquest",
+      "actors": ["Mustafa Golubić", "Vojislav Tankosić"],
+      "region": "Balkan",
+      "description": { "sr": "1912. godine, kao pripadnik čete Vojislava Tankosića, Mustafa Golubić učestvuje u oslobođenju Prištine tokom Prvog balkanskog rata.", "en": "In 1912, as a member of Vojislav Tankosić's company, Mustafa Golubić took part in the liberation of Pristina during the First Balkan War." },
+      "quote": "Prve ulozbe u slobođenu Prištinu 1912. godine. Tako da on prvi Balkanski rad provodi kao vojnik",
+      "confidence": "high"
+    },
+    {
+      "id": "ubistvo-trockog-1940",
+      "title": { "sr": "Ubistvo Lava Trockog", "en": "Assassination of Leon Trotsky" },
+      "year": 1940,
+      "yearEnd": null,
+      "placeId": "stolac",
+      "episodeId": "101",
+      "timestamp": "106:29",
+      "type": "death",
+      "actors": ["Lav Trocki", "Ramón Mercader"],
+      "region": "Južna Amerika",
+      "description": { "sr": "1940. godine Lava Trockog likvidira španski revolucionar Ramón Mercader, koji je uspeo da preživi i pobegne u Sovjetski Savez, gde je umro u dubokoj starosti.", "en": "In 1940, Leon Trotsky was killed by the Spanish revolutionary Ramón Mercader, who managed to survive and flee to the Soviet Union, where he lived to old age." },
+      "quote": "lava Trotskog je 1940. godine likvidirao jedan španski revolucionar, Ramón Morcadero",
+      "confidence": "high"
+    },
+    {
+      "id": "eksplozija-smederevo-1941",
+      "title": { "sr": "Eksplozija u Smederevu", "en": "Explosion in Smederevo" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "smederevo",
+      "episodeId": "101",
+      "timestamp": "129:30",
+      "type": "other",
+      "actors": [],
+      "region": "Balkan",
+      "description": { "sr": "5. juna 1941. godine dogodila se čuvena velika eksplozija u Smederevu, koja se hronološki povezuje sa poslednjim godinama Golubićevog života, mada okolnosti nisu potpuno razjašnjene.", "en": "On June 5, 1941, the famous major explosion in Smederevo occurred, chronologically linked to the last years of Golubić's life, though the circumstances remain unclear." },
+      "quote": "To je čuvena eksplozija u Smederevu 5. juna 1941. godine.",
+      "confidence": "high"
+    }
+  ]
+}

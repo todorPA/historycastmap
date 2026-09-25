@@ -1,0 +1,100 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda", "stari dvor", "beograd (kneževina srbija)", "belgrade (principality of serbia)", "kneževini srbiji", "beograd (narodna banka / narodni muzej)", "belgrade (national bank / national museum)", "narodnoj banci", "narodnom muzeju", "novom beogradu"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "kozarska-dubica", "name": { "sr": "Kozarska Dubica", "en": "Kozarska Dubica" }, "aliases": ["kozarske dubice", "bosanske krajine"], "lat": 45.1739, "lng": 16.8104, "kind": "region" },
+    { "id": "topola", "name": { "sr": "Topola", "en": "Topola" }, "aliases": ["u topoli", "topoli"], "lat": 44.2531, "lng": 20.6772, "kind": "city" },
+    { "id": "saborna-crkva", "name": { "sr": "Saborna crkva u Beogradu", "en": "Cathedral Church of St. Michael, Belgrade" }, "aliases": ["sabonoj crki", "sabojne crkve"], "lat": 44.8189, "lng": 20.4551, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "petar-karadjordjevic-rodjenje-beograd-1844",
+      "title": { "sr": "Rođenje Petra Karađorđevića u Beogradu", "en": "Birth of Peter Karađorđević in Belgrade" },
+      "year": 1844,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "41",
+      "timestamp": "01:11",
+      "type": "birth",
+      "actors": ["Petar I Karađorđević", "Aleksandar Karađorđević", "Persida Karađorđević"],
+      "region": "Balkan",
+      "description": { "sr": "Petar Karađorđević je rođen 1844. godine u Beogradu, kao peto od desetoro dece kneza Aleksandra Karađorđevića i kneginje Perside.", "en": "Peter Karađorđević was born in 1844 in Belgrade, the fifth of ten children of Prince Aleksandar Karađorđević and Princess Persida." },
+      "quote": "Nikola sve je počelo 1844. godine u Beogradu on je tada rođen, dakle žive od 1844.",
+      "confidence": "high"
+    },
+    {
+      "id": "aleksandar-karadjordjevic-detronizacija-beograd-1858",
+      "title": { "sr": "Svrgavanje kneza Aleksandra Karađorđevića", "en": "Deposition of Prince Aleksandar Karađorđević" },
+      "year": 1858,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "41",
+      "timestamp": "13:05",
+      "type": "other",
+      "actors": ["Aleksandar Karađorđević", "Svetoandrejska skupština", "Miloš Obrenović"],
+      "region": "Balkan",
+      "description": { "sr": "Kada je Petar imao 14 godina, njegov otac knez Aleksandar Karađorđević je odlukom Svetoandrejske skupštine 1858. godine u Beogradu zbačen sa prestola, a porodica napušta Srbiju.", "en": "When Peter was 14, his father Prince Aleksandar Karađorđević was deposed by decision of the Svetoandrejska Assembly in Belgrade in 1858, and the family left Serbia." },
+      "quote": "to su 40. i 50. godine on je sa svojih recimo nekih 14 ili 15 godina napustio Beograd dakle njegov otac je 1858. godine opet odlukama skupštine dakle svetoandrejske skupštine zbačen sa prestola",
+      "confidence": "high"
+    },
+    {
+      "id": "petar-mrkonjic-ulazak-kozarska-dubica-1875",
+      "title": { "sr": "Petar Mrkonjić stiže u ustanak kod Kozarske Dubice", "en": "Petar Mrkonjić arrives at the uprising near Kozarska Dubica" },
+      "year": 1875,
+      "yearEnd": null,
+      "placeId": "kozarska-dubica",
+      "episodeId": "41",
+      "timestamp": "44:01",
+      "type": "uprising",
+      "actors": ["Petar Karađorđević (Petar Mrkonjić)", "Austro-Ugarska", "Osmansko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "U drugoj polovini 1875. godine, Petar Karađorđević (pod imenom Petar Mrkonjić) prelazi sa teritorije Austro-Ugarske u prostor Kozarske Dubice, odnosno bosanske krajine, da bi se priključio ustanku protiv Turaka.", "en": "In the second half of 1875, Peter Karađorđević (using the name Petar Mrkonjić) crossed from Austro-Hungarian territory into the area of Kozarska Dubica, in the Bosnian frontier region, to join the uprising against the Ottomans." },
+      "quote": "dakle on je stigao stiže u prostor kozarske dubice dakle bosanske krajine ne istočne Bosne gde je naravno uvijek takođe i krenuo ustanak on prelazi sa teritorije Austro-Ugrske koje u početku tih prvih par meseci govorimo o drugoj polovini 1875. godine prilično blagonaklono gledala na ta dešavanja",
+      "confidence": "high"
+    },
+    {
+      "id": "petar-topola-kula-motiv-1878",
+      "title": { "sr": "Rušenje Karađorđeve kule u Topoli podstiče Petra", "en": "Demolition of Karađorđe's tower in Topola spurs Petar" },
+      "year": 1878,
+      "yearEnd": null,
+      "placeId": "topola",
+      "episodeId": "41",
+      "timestamp": "65:05",
+      "type": "other",
+      "actors": ["Petar Karađorđević", "Karađorđevići", "Knez Milan Obrenović"],
+      "region": "Balkan",
+      "description": { "sr": "Prema pripovedanju, motiv Petra Karađorđevića da 1878. godine uđe u Srbiju i podigne ustanak bilo je rušenje Karađorđeve kule u Topoli, što je on smatrao udarom na čast Karađorđevića.", "en": "According to the account, Peter Karađorđević's motive to enter Serbia and raise an uprising in 1878 was the demolition of the Karađorđe tower in Topola, which he considered an insult to the Karađorđević family's honor." },
+      "quote": "Dakle, taj njegov motiv da 78. godine uđe u Srbiju je bilo to rušenje Karadžorđeve kule u Topoli, to Karadžorđevo grada, tog jednog dela, i on je to smatrao nekom vrstom udara na čast Karadžorđevića",
+      "confidence": "high"
+    },
+    {
+      "id": "petar-krunisanje-saborna-crkva-1904",
+      "title": { "sr": "Krunisanje kralja Petra I u Sabornoj crkvi", "en": "Coronation of King Peter I at the Cathedral Church" },
+      "year": 1904,
+      "yearEnd": null,
+      "placeId": "saborna-crkva",
+      "episodeId": "41",
+      "timestamp": "122:53",
+      "type": "coronation",
+      "actors": ["Petar I Karađorđević"],
+      "region": "Balkan",
+      "description": { "sr": "Kralj Petar I je 1904. godine krunisan u Sabornoj crkvi u Beogradu, krunom napravljenom od drške Karađorđevog topa.", "en": "King Peter I was crowned in 1904 at the Cathedral Church in Belgrade, with a crown made from the shaft of Karađorđe's cannon." },
+      "quote": "i opet krunisanje u sabonoj crki 1904. godine sa krunom koja je napravljena od držke Karadjordjevog topa",
+      "confidence": "high"
+    },
+    {
+      "id": "petar-vladavina-beograd-1903",
+      "title": { "sr": "Vladavina kralja Petra I Karađorđevića", "en": "Reign of King Peter I Karađorđević" },
+      "year": 1903,
+      "yearEnd": 1921,
+      "placeId": "beograd",
+      "episodeId": "41",
+      "timestamp": "15:45",
+      "type": "reign",
+      "actors": ["Petar I Karađorđević", "Narodna skupština", "Nikola Pašić"],
+      "region": "Balkan",
+      "description": { "sr": "Period izgnanstva Petra Karađorđevića traje sve do 1903. godine, kada se vraća u Srbiju i dolazi na presto; vladao je iz Beograda sve do svoje smrti 1921. godine.", "en": "Peter Karađorđević's period of exile lasted until 1903, when he returned to Serbia and ascended the throne; he ruled from Belgrade until his death in 1921." },
+      "quote": "tad počinje taj životni put Petra Karadjordjevića koji je koji je zapravo period njegovog izgnanstva i koji traje sve do 1903. godine",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "places": [
+    { "id": "krim", "name": { "sr": "Krim", "en": "Crimea" }, "aliases": ["Krima"], "lat": 45.3453, "lng": 34.4998, "kind": "region" },
+    { "id": "minsk", "name": { "sr": "Minsk", "en": "Minsk" }, "aliases": ["Minsku", "Minska"], "lat": 53.9006, "lng": 27.5590, "kind": "city" },
+    { "id": "varsava", "name": { "sr": "Varšava", "en": "Warsaw" }, "aliases": ["Varšavu", "Varšave"], "lat": 52.2297, "lng": 21.0122, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "oslobodjenje-krima-1944",
+      "title": { "sr": "Sovjetsko oslobođenje Krima", "en": "Soviet liberation of Crimea" },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "krim",
+      "episodeId": "108",
+      "timestamp": "10:40",
+      "type": "conquest",
+      "actors": ["Sovjetska vojska", "Nemačka vojska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Krim je oslobođen 8. aprila 1944. godine, kao strateško oslobođenje pred veliku letnju sovjetsku operaciju Bagration.", "en": "Crimea was liberated on April 8, 1944, as a strategic step before the great Soviet summer offensive, Operation Bagration." },
+      "quote": "Krim je oslobođen 8. aprila 1944. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "pocetak-operacije-bagration-1944",
+      "title": { "sr": "Početak operacije Bagration", "en": "Start of Operation Bagration" },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "minsk",
+      "episodeId": "108",
+      "timestamp": "29:12",
+      "type": "battle",
+      "actors": ["Sovjetska vojska", "Nemačka vojska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "22. juna 1944. godine, na treću godišnjicu nemačke invazije na SSSR, kreće velika sovjetska operacija Bagration, sa strateškim ciljem oslobađanja Minska.", "en": "On June 22, 1944, on the third anniversary of the German invasion of the USSR, the great Soviet Operation Bagration began, with the strategic goal of liberating Minsk." },
+      "quote": "22. juna kreće, dakle, sveopšta ofanziva i napad na ovom području",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-minska-1944",
+      "title": { "sr": "Pad Minska", "en": "Fall of Minsk" },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "minsk",
+      "episodeId": "108",
+      "timestamp": "66:41",
+      "type": "conquest",
+      "actors": ["Sovjetska vojska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "4. jula 1944. godine, dvanaest dana nakon početka operacije Bagration, sovjetske trupe ulaze u Minsk, čime se okončava inicijalni uspeh ofanzive; Hitler je naredio evakuaciju grada, ali su ipak zarobljene ogromne nemačke snage.", "en": "On July 4, 1944, twelve days after the start of Operation Bagration, Soviet troops entered Minsk, marking the completion of the offensive's initial success; Hitler had ordered the city's evacuation, but enormous German forces were nonetheless captured." },
+      "quote": "kome četvrtog jula pada Minsk, znači ti kada pogledaš, znači za 12 dana trupe uloze u Minsk.",
+      "confidence": "high"
+    },
+    {
+      "id": "varsavski-ustanak-1944",
+      "title": { "sr": "Varšavski ustanak", "en": "Warsaw Uprising" },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "varsava",
+      "episodeId": "108",
+      "timestamp": "89:04",
+      "type": "uprising",
+      "actors": ["Poljski pokret otpora", "Nemačka vojska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1944. godine izbija Varšavski ustanak, najveća bitka Drugog svetskog rata kada je reč o pokretima otpora u jednom gradu, sa ogromnim brojem žrtava; grad se predaje u septembru, a Varšava biva oslobođena tek 1945. godine.", "en": "In 1944, the Warsaw Uprising broke out, the largest single-city resistance battle of World War II, with an enormous number of casualties; the city surrendered in September, and Warsaw was not liberated until 1945." },
+      "quote": "To je zapravo najveća bitka drugog sredskog rata kada govorimo o pokretima otpora u jednom gradu",
+      "confidence": "high"
+    },
+    {
+      "id": "oslobodjenje-varsave-1945",
+      "title": { "sr": "Oslobođenje Varšave", "en": "Liberation of Warsaw" },
+      "year": 1945,
+      "yearEnd": null,
+      "placeId": "varsava",
+      "episodeId": "108",
+      "timestamp": "87:32",
+      "type": "conquest",
+      "actors": ["Sovjetska vojska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Varšava je oslobođena tek 1945. godine, nekoliko meseci nakon predaje pokreta otpora, jer su sovjetske trupe u jednom trenutku bile odbačene daleko od grada.", "en": "Warsaw was not liberated until 1945, several months after the resistance surrendered, since Soviet troops had at one point been pushed far back from the city." },
+      "quote": "oni će Poljsku i Varšavu oslobojiti tek 1945. godine.",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "smederevo", "name": { "sr": "Smederevo", "en": "Smederevo" }, "aliases": ["Smedreva"], "lat": 44.6636, "lng": 20.9297, "kind": "city" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": [], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "pad-smedereva-1459",
+      "title": { "sr": "Konačan pad Smedereva i despotovine", "en": "Final fall of Smederevo and the Despotate" },
+      "year": 1459,
+      "yearEnd": null,
+      "placeId": "smederevo",
+      "episodeId": "96",
+      "timestamp": "13:01",
+      "type": "conquest",
+      "actors": ["Osmansko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "1459. godine Smederevo konačno pada pod Turke, čime se okončava samostalna Srpska despotovina, mada se titula poslednjeg despota, van Srbije, dodeljuje još narednih 78 godina.", "en": "In 1459, Smederevo finally fell to the Ottomans, ending the independent Serbian Despotate, although the title of despot, outside of Serbia, continued to be granted for another 78 years." },
+      "quote": "od pada Smedreva, 1459. godine, do kada je poslednji despot dobio titulu",
+      "confidence": "high"
+    },
+    {
+      "id": "oduzimanje-zemlje-djordju-brankovicu-1502",
+      "title": { "sr": "Ugarski kralj oduzima zemlju despotu Đorđu i Angelini", "en": "The Hungarian king seizes land from Despot Đorđe and Angelina" },
+      "year": 1502,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "96",
+      "timestamp": "100:00",
+      "type": "other",
+      "actors": ["Đorđe Branković", "Angelina Branković", "Ugarski kralj"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "1502. godine, nakon smrti Jovana Brankovića, ugarski kralj oduzima zemlju despotu Đorđu i despotici Angelini, ostavljajući ih potpuno bez teritorije.", "en": "In 1502, after the death of Jovan Branković, the Hungarian king seized the land of Despot Đorđe and Despotess Angelina, leaving them entirely without territory." },
+      "quote": "kada je Ugrski kralj oduzima Đorđu ... To je 1502. godina.",
+      "confidence": "high"
+    },
+    {
+      "id": "beogradska-nadbiskupija-do-1521",
+      "title": { "sr": "Beogradska nadbiskupija funkcioniše do 1521. godine", "en": "The Belgrade Archdiocese functions until 1521" },
+      "year": 1521,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "96",
+      "timestamp": "90:06",
+      "type": "other",
+      "actors": [],
+      "region": "Balkan",
+      "description": { "sr": "Beogradska nadbiskupija funkcioniše za prostor cele Ugarske sve do 1521. godine.", "en": "The Belgrade Archdiocese served the whole territory of Hungary until 1521." },
+      "quote": "da funkcioniše za prostor cele Ugraske od tog momenta. ... Sve do 1521. godine.",
+      "confidence": "medium"
+    },
+    {
+      "id": "pavle-bakic-poslednji-despot-1537",
+      "title": { "sr": "Pavle Bakić dobija titulu poslednjeg despota", "en": "Pavle Bakić receives the title of last despot" },
+      "year": 1537,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "96",
+      "timestamp": "13:07",
+      "type": "coronation",
+      "actors": ["Pavle Bakić"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "1537. godine Pavle Bakić dobija titulu poslednjeg srpskog despota, čime se zaokružuje period od 78 godina od pada Smedereva 1459. godine tokom kojeg je titula despota dodeljivana van Srbije.", "en": "In 1537, Pavle Bakić received the title of the last Serbian despot, rounding off the 78-year period since the fall of Smederevo in 1459 during which the despot's title had continued to be granted outside Serbia." },
+      "quote": "do kada je poslednji despot dobio titulu ... to je bio Pavle Bakić ... nekde 1537. godine",
+      "confidence": "high"
+    }
+  ]
+}

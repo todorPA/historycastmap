@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "carigrad", "name": { "sr": "Carigrad", "en": "Constantinople" }, "aliases": ["carigrad", "constantinople", "Istanbulu", "Kostinopolj"], "lat": 41.0082, "lng": 28.9784, "kind": "city" },
+    { "id": "amsterdam", "name": { "sr": "Amsterdam", "en": "Amsterdam" }, "aliases": ["Alkmaru", "holandske aukcije lala"], "lat": 52.5296, "lng": 4.5981, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "busbeck-ambasador-carigrad-1555",
+      "title": { "sr": "Busbeck stupa u službu ambasadora u Carigradu", "en": "Busbecq takes up post as ambassador in Constantinople" },
+      "year": 1555,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "05-istorija-lala-historycast-cetvrtkom",
+      "timestamp": "11:32",
+      "type": "other",
+      "actors": ["Ožije Žizelin de Busbeck", "Sulejman Veličanstveni"],
+      "region": "Osmansko carstvo",
+      "description": { "sr": "Flamanski diplomata Ožije Žizelin de Busbeck stupa 1555. godine u službu ambasadora Svetog rimskog cara Ferdinanda I na dvoru Sulejmana Veličanstvenog u Carigradu, gde boravi sedam godina i prenosi lale u Evropu.", "en": "Flemish diplomat Ogier Ghiselin de Busbecq took up his post in 1555 as ambassador of Holy Roman Emperor Ferdinand I at the court of Suleiman the Magnificent in Constantinople, where he stayed for seven years and brought tulips to Europe." },
+      "quote": "On je bio ambasador svetog nipskog cara Ferdinanda I. na dvoru Salimana veličanstvenog. Znači dolazi, stupa u službu 1555. godine. U Istanbulu.",
+      "confidence": "high"
+    },
+    {
+      "id": "osmanlije-osvajaju-carigrad-lale-1453",
+      "title": { "sr": "Osmanlije osvajaju Carigrad i donose lale", "en": "Ottomans conquer Constantinople and bring tulips" },
+      "year": 1453,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "05-istorija-lala-historycast-cetvrtkom",
+      "timestamp": "19:52",
+      "type": "conquest",
+      "actors": ["Osmansko carstvo"],
+      "region": "Osmansko carstvo",
+      "description": { "sr": "Kada Osmanlije 1453. godine osvajaju Carigrad, oni sa sobom donose lale, koje počinju da se pominju u osmanskim izvorima od tog trenutka.", "en": "When the Ottomans conquered Constantinople in 1453, they brought tulips with them, which began to be mentioned in Ottoman sources from that point on." },
+      "quote": "u trenutku kada Turci Osmanlije preuzimaju Kostinopolj od 1453. godine, da oni sa sobom donose lale... zapravo počinju upravo da se pominju od 1453.",
+      "confidence": "high"
+    },
+    {
+      "id": "krah-tulipomanije-holandija-1637",
+      "title": { "sr": "Krah holandske 'tulipomanije'", "en": "Crash of the Dutch 'tulip mania'" },
+      "year": 1637,
+      "yearEnd": null,
+      "placeId": "amsterdam",
+      "episodeId": "05-istorija-lala-historycast-cetvrtkom",
+      "timestamp": "00:23",
+      "type": "other",
+      "actors": ["Holandija"],
+      "region": "Severna Evropa i Atlantik",
+      "description": { "sr": "1637. godine cena lukovica lala u Holandiji dostiže vrhunac spekulativne pomame — dve lukovice su vredele 30.000 florina — pre nego što je došlo do naglog kraha tržišta.", "en": "In 1637, the price of tulip bulbs in the Netherlands reached the peak of speculative frenzy — two bulbs were worth 30,000 florins — before the market suddenly crashed." },
+      "quote": "Teh 1637. godine za samo dve lukovice lala... dve lukovice su bile 30.000 florina... I to je taj krah te 1637. godine.",
+      "confidence": "high"
+    }
+  ]
+}

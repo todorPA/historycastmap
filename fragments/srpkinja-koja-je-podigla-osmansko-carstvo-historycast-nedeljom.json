@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "jedrene", "name": { "sr": "Jedrene", "en": "Edirne" }, "aliases": ["Jedrenu", "Edirne"], "lat": 41.6771, "lng": 26.5557, "kind": "city" },
+    { "id": "jezevo", "name": { "sr": "Ježevo (Dafni)", "en": "Ježevo (Dafni)" }, "aliases": ["Ježevu", "Ježeva", "Dafni"], "lat": 40.9167, "lng": 23.9833, "kind": "person-seat" }
+  ],
+  "events": [
+    {
+      "id": "mara-brankovic-udaje-murat-jedrene-1436",
+      "title": { "sr": "Venčanje Mare Branković sa sultanom Muratom II", "en": "Marriage of Mara Branković to Sultan Murad II" },
+      "year": 1436,
+      "yearEnd": null,
+      "placeId": "jedrene",
+      "episodeId": "srpkinja-koja-je-podigla-osmansko-carstvo-historycast-nedeljom",
+      "timestamp": "42:04",
+      "type": "other",
+      "actors": ["Mara Branković", "Sultan Murat II", "Đurađ Branković"],
+      "region": "Osmansko carstvo",
+      "description": { "sr": "Mara Branković, ćerka despota Đurđa Brankovića, venčava se 1436. godine sa sultanom Muratom II, najverovatnije u Jedrenu, čime se učvršćuje savez srpske despotovine i Osmanskog carstva.", "en": "Mara Branković, daughter of Despot Đurađ Branković, married Sultan Murad II in 1436, most likely in Edirne, cementing the alliance between the Serbian despotate and the Ottoman Empire." },
+      "quote": "prisustvo o toj ceremoniji venčanja Mare i Murata 1436. u Jedrenu. To je najveće, verovatnije se desilo u Jedrenu.",
+      "confidence": "medium"
+    },
+    {
+      "id": "mara-brankovic-dobija-jezevo-1459",
+      "title": { "sr": "Mara Branković dobija posed Ježevo od Mehmeda II", "en": "Mara Branković receives the Ježevo estate from Mehmed II" },
+      "year": 1459,
+      "yearEnd": null,
+      "placeId": "jezevo",
+      "episodeId": "srpkinja-koja-je-podigla-osmansko-carstvo-historycast-nedeljom",
+      "timestamp": "100:00",
+      "type": "other",
+      "actors": ["Mara Branković", "Sultan Mehmed II"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "1459. godine Mara Branković dobija od sultana Mehmeda II posed Ježevo (danas mesto Dafni u Severnoj Grčkoj) i okolne oblasti na tromeđi Grčke, Bugarske i Severne Makedonije, gde potom stoluje.", "en": "In 1459, Mara Branković received from Sultan Mehmed II the estate of Ježevo (today the village of Dafni in Northern Greece) and surrounding areas at the tripoint of Greece, Bulgaria, and North Macedonia, where she subsequently resided." },
+      "quote": "U tom periodu 59. ona sigurno već dolazi u Ježevu i nije slučajno što je dobila baš tu teritoriju... Ježevu, to je danas mesto Dafni u Severnoj Grčkoj.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-mare-brankovic-jezevo-1487",
+      "title": { "sr": "Smrt Mare Branković", "en": "Death of Mara Branković" },
+      "year": 1487,
+      "yearEnd": null,
+      "placeId": "jezevo",
+      "episodeId": "srpkinja-koja-je-podigla-osmansko-carstvo-historycast-nedeljom",
+      "timestamp": "123:51",
+      "type": "death",
+      "actors": ["Mara Branković"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Mara Branković umire 1487. godine, nadživevši sultana Mehmeda II (umro 1481) i doživevši prve godine vladavine njegovog naslednika Bajazita II, koji je u dva sačuvana fermana iz 1485. godine pominje kao 'moja majka, gospođa carica'.", "en": "Mara Branković died in 1487, outliving Sultan Mehmed II (who died in 1481) and living to see the first years of his successor Bayezid II's reign, who referred to her as 'my mother, the lady empress' in two surviving 1485 decrees." },
+      "quote": "ona umire 1487... Zanimljivo je da Mara zapravo je doživela i smrt Mehmeda II. i prve godine vladavine njegovog naslednika, Bajazita.",
+      "confidence": "high"
+    }
+  ]
+}

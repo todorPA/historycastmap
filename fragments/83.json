@@ -1,0 +1,101 @@
+{
+  "places": [
+    { "id": "hanoj", "name": { "sr": "Hanoj", "en": "Hanoi" }, "aliases": ["Hanoju"], "lat": 21.0278, "lng": 105.8342, "kind": "city" },
+    { "id": "dien-bien-phu", "name": { "sr": "Dijen Bijen Fu", "en": "Điện Biên Phủ" }, "aliases": ["Dien Bien Phu"], "lat": 21.3860, "lng": 103.0169, "kind": "battle-site" },
+    { "id": "geneva", "name": { "sr": "Ženeva", "en": "Geneva" }, "aliases": ["Ženevski"], "lat": 46.2044, "lng": 6.1432, "kind": "city" },
+    { "id": "tonkinski-zaliv", "name": { "sr": "Tonkinski zaliv", "en": "Gulf of Tonkin" }, "aliases": ["Tonkičkom zalivu"], "lat": 20.0000, "lng": 108.0000, "kind": "water" },
+    { "id": "saigon", "name": { "sr": "Sajgon", "en": "Saigon" }, "aliases": ["Sajgonu"], "lat": 10.8231, "lng": 106.6297, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "osnivanje-vietminha-1941",
+      "title": { "sr": "Osnivanje Vietminha", "en": "Founding of the Viet Minh" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "hanoj",
+      "episodeId": "83",
+      "timestamp": "26:38",
+      "type": "founding",
+      "actors": ["Ho Ši Min", "Vietminh"],
+      "region": "Azija",
+      "description": { "sr": "1941. godine osnovan je Vietminh, vijetnamski nacionalni front koji vodi Ho Ši Min, formiran u kontekstu japanske okupacije za vreme Drugog svetskog rata.", "en": "In 1941, the Viet Minh was founded, the Vietnamese national front led by Ho Chi Minh, formed in the context of the Japanese occupation during World War II." },
+      "quote": "bila tu pomoć Kineza posle, nakon 1949. godine. I francuska strategija je bila da pokuša ... Vietmin nismo pomenuli, dakle, on je osnovan 1941. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "vijetnamski-ustanak-1946",
+      "title": { "sr": "Izbijanje ustanka protiv Francuza u Vijetnamu", "en": "Outbreak of the uprising against the French in Vietnam" },
+      "year": 1946,
+      "yearEnd": null,
+      "placeId": "hanoj",
+      "episodeId": "83",
+      "timestamp": "25:43",
+      "type": "uprising",
+      "actors": ["Vietminh", "Francuska"],
+      "region": "Azija",
+      "description": { "sr": "Decembra 1946. godine počinje aktivan rat između Francuza i Vijetnamaca, nakon što su Francuzi zbacili prelaznu vlast u Hanoju.", "en": "In December 1946, active war began between the French and the Vietnamese, after the French had overthrown the transitional government in Hanoi." },
+      "quote": "Rad počinje praktično decembra 1946. godine ... i praktično već tada kreće aktivno ratovanje sa vjetnancima",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-dien-bien-phu-1954",
+      "title": { "sr": "Bitka kod Dijen Bijen Fua", "en": "Battle of Điện Biên Phủ" },
+      "year": 1954,
+      "yearEnd": null,
+      "placeId": "dien-bien-phu",
+      "episodeId": "83",
+      "timestamp": "38:54",
+      "type": "battle",
+      "actors": ["Vietminh", "Francuska"],
+      "region": "Azija",
+      "description": { "sr": "Zaključno sa majem 1954. godine, francuska tvrđava Dijen Bijen Fu pada nakon katastrofalnog opsednutog perioda, u sukobu koji poredi sa Staljingradom, čime se okončava francuska kolonijalna vlast u Vijetnamu.", "en": "By May 1954, the French fortress at Điện Biên Phủ fell after a catastrophic siege, in a battle compared to Stalingrad, ending French colonial rule in Vietnam." },
+      "quote": "zaključno sa majem 1954. godine naravno Dien Bien Phu pao",
+      "confidence": "high"
+    },
+    {
+      "id": "zenevski-sporazum-1954",
+      "title": { "sr": "Ženevski sporazum i podela Vijetnama", "en": "Geneva Accords and the division of Vietnam" },
+      "year": 1954,
+      "yearEnd": null,
+      "placeId": "geneva",
+      "episodeId": "83",
+      "timestamp": "39:55",
+      "type": "treaty",
+      "actors": ["Vietminh", "Francuska"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Jula 1954. godine potpisan je Ženevski sporazum kojim se Vijetnam privremeno deli na severni i južni deo, nakon pada Dijen Bijen Fua.", "en": "In July 1954, the Geneva Accords were signed, temporarily dividing Vietnam into a northern and southern part, following the fall of Điện Biên Phủ." },
+      "quote": "jula 1954. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "incident-tonkinski-zaliv-1964",
+      "title": { "sr": "Incident u Tonkinskom zalivu", "en": "Gulf of Tonkin incident" },
+      "year": 1964,
+      "yearEnd": null,
+      "placeId": "tonkinski-zaliv",
+      "episodeId": "83",
+      "timestamp": "68:10",
+      "type": "other",
+      "actors": ["Sjedinjene Američke Države", "Severni Vijetnam"],
+      "region": "Azija",
+      "description": { "sr": "1964. godine dolazi do incidenta u Tonkinskom zalivu, koji predstavlja krupnu promenu i povod za direktnije uključivanje Sjedinjenih Američkih Država u Vijetnamski rat.", "en": "In 1964, the Gulf of Tonkin incident occurred, marking a major shift and providing the pretext for more direct US involvement in the Vietnam War." },
+      "quote": "negde 1964. godine dolazi do krupnih promena. Ta godina je bitna zato što tada imamo onaj incident u Tonkičkom zalivu.",
+      "confidence": "high"
+    },
+    {
+      "id": "tet-ofanziva-1968",
+      "title": { "sr": "Novogodišnja (Tet) ofanziva", "en": "Tet Offensive" },
+      "year": 1968,
+      "yearEnd": null,
+      "placeId": "saigon",
+      "episodeId": "83",
+      "timestamp": "104:18",
+      "type": "battle",
+      "actors": ["Vietkong", "Severni Vijetnam", "Sjedinjene Američke Države"],
+      "region": "Azija",
+      "description": { "sr": "1968. godine odigrava se Novogodišnja (Tet) ofanziva, tokom koje je, između ostalih, ranjen budući režiser Oliver Stone, i koja postaje ključni prelomni trenutak u javnom mnjenju o ratu.", "en": "In 1968, the Tet Offensive took place, during which, among others, future director Oliver Stone was wounded, and which became a key turning point in public opinion about the war." },
+      "quote": "film Platoon, njegov vod, je zapravo ta Novogodišnja bitka 1968. godine.",
+      "confidence": "high"
+    }
+  ]
+}

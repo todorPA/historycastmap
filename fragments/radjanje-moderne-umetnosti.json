@@ -1,0 +1,67 @@
+{
+  "places": [
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": ["pariz", "paris", "parizu"], "lat": 48.8566, "lng": 2.3522, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "chevreul-nacela-harmonije-boja-1839",
+      "title": { "sr": "Objavljivanje 'Načela harmonije i kontrasta boja'", "en": "Publication of 'The Principles of Harmony and Contrast of Colours'" },
+      "year": 1839,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "radjanje-moderne-umetnosti",
+      "timestamp": "68:05",
+      "type": "other",
+      "actors": ["Mišel Ežen Ševrel (Michel Eugène Chevreul)"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1839. godine izlazi spis 'Načela harmonije i kontrasta boja' Mišela Ežena Ševrela, hemičara zaposlenog u radionici za izradu goblena, koji je otkrio da boje postavljene jedna do druge nemaju isti efekat kao pojedinačno posmatrane — otkriće koje će kasnije uticati na impresioniste.", "en": "In 1839, 'The Principles of Harmony and Contrast of Colours' by Michel Eugène Chevreul was published; a chemist employed at a tapestry workshop, he discovered that colors placed side by side do not produce the same effect as when viewed individually — a discovery that would later influence the Impressionists." },
+      "quote": "1839. godine izlazi spis koji se zove Načela harmonije i kontrasta boja... kada se od boje stavljaju jedno do druge, nemaju isti efekata",
+      "confidence": "high"
+    },
+    {
+      "id": "olimpija-manet-slikana-pariz-1863",
+      "title": { "sr": "Mane slika 'Olimpiju'", "en": "Manet paints 'Olympia'" },
+      "year": 1863,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "radjanje-moderne-umetnosti",
+      "timestamp": "32:53",
+      "type": "other",
+      "actors": ["Eduar Mane (Édouard Manet)"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Eduar Mane slika 'Olimpiju' 1863. godine (izloženu tek 1865); model za sliku bila je Viktorin Moran, a naziv slike referiše na tadašnji pariski nadimak za prostitutku, čime je Mane provocirao klasičnu temu ženske nagosti.", "en": "Édouard Manet painted 'Olympia' in 1863 (exhibited only in 1865); the model was Victorine Meurent, and the painting's title referenced a contemporary Parisian nickname for a prostitute, provocatively subverting the classical theme of female nudity." },
+      "quote": "Olimpija je jedna maneova slika koju slika je 1963. godine. Dve godine kasnije, 1865. je ona izložena.",
+      "confidence": "high"
+    },
+    {
+      "id": "salon-des-refuses-pariz-1863",
+      "title": { "sr": "Skandal masovnog odbijanja slika na Salonu", "en": "Scandal of mass painting rejections at the Salon" },
+      "year": 1863,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "radjanje-moderne-umetnosti",
+      "timestamp": "57:41",
+      "type": "other",
+      "actors": ["Eduar Mane", "Pariski Salon"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1863. godine više od trećine slika prispelih na konkurs za pariski Salon je odbijeno, što je izazvalo skandal kao najveći broj odjednom odbijenih slika za jedan salon; među odbijenim umetnicima bio je i Mane.", "en": "In 1863, more than a third of the paintings submitted to the Paris Salon competition were rejected, causing a scandal as the largest number of paintings ever rejected at once for a single Salon; among the rejected artists was Manet." },
+      "quote": "Ključna nam je godina tu 1863... više od, čini mi se, trećine slika koje su prispele na konkurs za salon te godine, odbijene.",
+      "confidence": "high"
+    },
+    {
+      "id": "monet-impresija-izlozena-pariz-1874",
+      "title": { "sr": "Mone izlaže 'Impresiju, rađanje sunca'", "en": "Monet exhibits 'Impression, Sunrise'" },
+      "year": 1874,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "radjanje-moderne-umetnosti",
+      "timestamp": "59:05",
+      "type": "other",
+      "actors": ["Klod Mone (Claude Monet)"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1874. godine Klod Mone izlaže sliku 'Impresija, rađanje sunca' (nastalu dve godine ranije) u fotografskom ateljeu Nadara u Parizu; po ovoj slici je nazvan pravac impresionizam.", "en": "In 1874, Claude Monet exhibited his painting 'Impression, Sunrise' (created two years earlier) at Nadar's photography studio in Paris; the Impressionist movement was named after this painting." },
+      "quote": "sledića ključna godina nam je 1874. kada Monet, Claude Monet izlaže svoju čuvane sliku impresija rađenje sunca... izložena u fotografskom atelje u Nadar",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "proglasenje-kraljevine-shs-beograd-1918",
+      "title": { "sr": "Proglašenje Kraljevine Srba, Hrvata i Slovenaca", "en": "Proclamation of the Kingdom of Serbs, Croats and Slovenes" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "kako-se-secamo-jugoslavije-historycast-nedeljom",
+      "timestamp": "01:53",
+      "type": "founding",
+      "actors": ["Kraljevina Srba, Hrvata i Slovenaca"],
+      "region": "Balkan",
+      "description": { "sr": "1. decembra 1918. godine proglašena je Kraljevina Srba, Hrvata i Slovenaca u Beogradu, na Terazijama, u kući Alekse Krsmanovića; kasnije, 1929. godine, ime države je promenjeno u Kraljevinu Jugoslaviju, koja je pod tim nazivom postojala do 1991. godine.", "en": "On 1 December 1918, the Kingdom of Serbs, Croats and Slovenes was proclaimed in Belgrade, on Terazije, in the house of Aleksa Krsmanović; later, in 1929, the state's name was changed to the Kingdom of Yugoslavia, which existed under that name until 1991." },
+      "quote": "На данашњи дан, 1918. је проглашена Краљевина Срба, Хрвата и Словенака у Београду на Теразијама у кући Алексе Крсмановића.",
+      "confidence": "high"
+    },
+    {
+      "id": "kraljevski-dvor-beograd-osvecen-1929",
+      "title": { "sr": "Osvećenje Kraljevskog dvora u Beogradu, dana proglašenja Kraljevine Jugoslavije", "en": "Consecration of the Royal Palace in Belgrade on the day of the Kingdom of Yugoslavia's proclamation" },
+      "year": 1924,
+      "yearEnd": 1929,
+      "placeId": "beograd",
+      "episodeId": "kako-se-secamo-jugoslavije-historycast-nedeljom",
+      "timestamp": "17:38",
+      "type": "founding",
+      "actors": ["Kraljevina Jugoslavija", "Dinastija Karađorđević"],
+      "region": "Balkan",
+      "description": { "sr": "Gradnja Kraljevskog dvora u Beogradu počela je oko 1924. godine i graditeljski je završena do 1929; upravo 1. decembra 1929. godine, na dan proglašenja Kraljevine Jugoslavije, dvor je osveštan, iako u tom trenutku enterijer još nije bio potpuno opremljen — kraljevska porodica Karađorđević uselila se tek 1932. godine.", "en": "Construction of the Royal Palace in Belgrade began around 1924 and was structurally completed by 1929; on 1 December 1929, the very day the Kingdom of Yugoslavia was proclaimed, the palace was consecrated, though its interior was not yet fully furnished — the Karađorđević royal family moved in only in 1932." },
+      "quote": "924. otprilike kreće grafika, i graditeljski je on završen do 1929... 1. decembar 1929... to je i dan proglašenja Kraljevine Jugoslavije i na taj dan je čak i osveštan dvor",
+      "confidence": "high"
+    }
+  ]
+}

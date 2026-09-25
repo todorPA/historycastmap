@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "carigrad", "name": { "sr": "Carigrad", "en": "Constantinople" }, "aliases": ["carigrad", "constantinople", "carigradu", "carigrada"], "lat": 41.0082, "lng": 28.9784, "kind": "city" },
+    { "id": "zica", "name": { "sr": "Žiča", "en": "Žiča Monastery" }, "aliases": ["žiča", "žiča monastery", "žiči", "gradnje žiče"], "lat": 43.5406, "lng": 20.5486, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "pad-carigrada-cetvrti-krstaski-pohod-1204",
+      "title": { "sr": "Pad Carigrada u Četvrtom krstaškom pohodu", "en": "Fall of Constantinople in the Fourth Crusade" },
+      "year": 1204,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "historycast-cetvrtkom-zica",
+      "timestamp": "05:11",
+      "type": "conquest",
+      "actors": ["Enriko Dandolo", "Vizantija", "Venecija"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "1204. godine, u Četvrtom krstaškom pohodu predvođenom venecijanskim duždom Enrikom Dandolom, po prvi put u istoriji pada Carigrad; na njegovom mestu se osniva Latinsko carstvo, dok Vizantija opstaje u obliku Nikejskog carstva, Epirske despotovine i despotovine Moreje.", "en": "In 1204, in the Fourth Crusade led by Venetian Doge Enrico Dandolo, Constantinople fell for the first time in history; a Latin Empire was established in its place, while Byzantium survived in the form of the Empire of Nicaea, the Despotate of Epirus, and the Despotate of Morea." },
+      "quote": "radi se, znači, četvrti krstački pohod 1204. godine, kada pada Carigrad... Stvarno, u istoriji po prvi put pada.",
+      "confidence": "high"
+    },
+    {
+      "id": "sava-arhijepiskop-nikeja-zica-1219",
+      "title": { "sr": "Sveti Sava dobija titulu arhiepiskopa i vraća se u Žiču", "en": "Saint Sava receives the title of archbishop and returns to Žiča" },
+      "year": 1219,
+      "yearEnd": null,
+      "placeId": "zica",
+      "episodeId": "historycast-cetvrtkom-zica",
+      "timestamp": "38:06",
+      "type": "other",
+      "actors": ["Sveti Sava"],
+      "region": "Balkan",
+      "description": { "sr": "1219. godine Sveti Sava dobija titulu arhiepiskopa u Nikeji, potvrđujući autokefalnost srpske crkve, i vraća se u Srbiju da završi dogradnju manastira Žiča.", "en": "In 1219, Saint Sava received the title of archbishop in Nicaea, confirming the autocephaly of the Serbian church, and returned to Serbia to complete the construction of the Žiča monastery." },
+      "quote": "da je Sava te 1219. godine dobio zapravo titul... arhijepiskopa u Nikeji, i tada se vraća u Srbiju, završava Žiču",
+      "confidence": "high"
+    },
+    {
+      "id": "stefan-prvovencani-krunisanje-zapad-1217",
+      "title": { "sr": "Stefan Prvovenčani dobija krunu od pape", "en": "Stefan the First-Crowned receives crown from the Pope" },
+      "year": 1217,
+      "yearEnd": null,
+      "placeId": "zica",
+      "episodeId": "historycast-cetvrtkom-zica",
+      "timestamp": "35:57",
+      "type": "coronation",
+      "actors": ["Stefan Prvovenčani"],
+      "region": "Balkan",
+      "description": { "sr": "1217. godine papa šalje krunu Stefanu Prvovenčanom, po zapadnim izvorima; mesto ovog prvog krunisanja nije poznato sa sigurnošću.", "en": "In 1217, according to Western sources, the Pope sent a crown to Stefan the First-Crowned; the location of this first coronation is not known with certainty." },
+      "quote": "on piše negde, znači, papi za dobijanje Krune i Kruna biva poslata 1217. godine po zapadnim izvorima... I ne znamo mesto gde je on bio krunisan",
+      "confidence": "medium"
+    },
+    {
+      "id": "stefan-prvovencani-drugo-krunisanje-zica-1221",
+      "title": { "sr": "Drugo krunisanje Stefana Prvovenčanog u Žiči", "en": "Second coronation of Stefan the First-Crowned in Žiča" },
+      "year": 1221,
+      "yearEnd": null,
+      "placeId": "zica",
+      "episodeId": "historycast-cetvrtkom-zica",
+      "timestamp": "17:46",
+      "type": "coronation",
+      "actors": ["Stefan Prvovenčani", "Sveti Sava"],
+      "region": "Balkan",
+      "description": { "sr": "1221. godine Sveti Sava potvrđuje drugo krunisanje Stefana Prvovenčanog, koje se ovaj put nesporno dešava u manastiru Žiči.", "en": "In 1221, Saint Sava confirmed the second coronation of Stefan the First-Crowned, which this time indisputably took place at the Žiča monastery." },
+      "quote": "to drugo krunisanje koje se desilo, koje je potvrdio Sveti Sava, 1221. godine, se jeste dešalo u Žiči.",
+      "confidence": "high"
+    }
+  ]
+}

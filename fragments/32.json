@@ -1,0 +1,136 @@
+{
+  "places": [
+    {
+      "id": "sevilja",
+      "name": { "sr": "Sevilja", "en": "Seville" },
+      "aliases": ["sevilja", "seville", "sevilju", "Sevilje", "Sevilji", "Seviljidemu"],
+      "lat": 37.3891,
+      "lng": -5.9845,
+      "kind": "city"
+    },
+    {
+      "id": "madrid",
+      "name": { "sr": "Madrid", "en": "Madrid" },
+      "aliases": ["Madrida", "Madride", "Madridu", "madridsko"],
+      "lat": 40.4168,
+      "lng": -3.7038,
+      "kind": "city"
+    },
+    {
+      "id": "maroko",
+      "name": { "sr": "Maroko", "en": "Morocco" },
+      "aliases": ["Maroka", "Marokko", "Maroku", "maroku"],
+      "lat": 35.5711,
+      "lng": -5.3724,
+      "kind": "region"
+    },
+    {
+      "id": "badajoz",
+      "name": { "sr": "Badahos", "en": "Badajoz" },
+      "aliases": ["Badajoz", "Badajoza", "Badahos"],
+      "lat": 38.8794,
+      "lng": -6.9707,
+      "kind": "city"
+    },
+    {
+      "id": "bilbao",
+      "name": { "sr": "Bilbao", "en": "Bilbao" },
+      "aliases": [],
+      "lat": 43.2630,
+      "lng": -2.9350,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "sanjurjo-vojni-udar-sevilja-1932",
+      "title": { "sr": "Neuspeli vojni udar generala Sanhurja", "en": "General Sanjurjo's failed military coup" },
+      "year": 1932,
+      "yearEnd": null,
+      "placeId": "sevilja",
+      "episodeId": "32",
+      "timestamp": "14:08",
+      "type": "uprising",
+      "actors": ["General Sanjurjo"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "General Sanhurjo (u transkriptu pogrešno nazvan 'San Jorge') pokušava vojni udar 1932. godine; u Sevilji delimično uspeva, ali u Madridu udar propada, nakon čega general odlazi u egzil.", "en": "General Sanjurjo (mistranscribed as 'San Jorge') attempts a military coup in 1932; it partially succeeds in Seville but fails in Madrid, after which he goes into exile." },
+      "quote": "San Jorge, pardon, da. 1932. godine, koji nije uspeo.",
+      "confidence": "medium"
+    },
+    {
+      "id": "kalvo-sotero-atentat-madrid-1936",
+      "title": { "sr": "Ubistvo Kalva Sotera u Madridu", "en": "Assassination of Calvo Sotelo in Madrid" },
+      "year": 1936,
+      "yearEnd": null,
+      "placeId": "madrid",
+      "episodeId": "32",
+      "timestamp": "38:09",
+      "type": "death",
+      "actors": ["Kalvo Sotero", "Republikanska policija"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Vođa opozicije i monarhista Kalvo Sotero biva otet i ubijen od pripadnika republikanske policije u Madridu, u noći između 15. i 16. jula 1936. godine, što postaje neposredan povod za vojni udar 18. jula.", "en": "Opposition leader and monarchist Calvo Sotelo is abducted and killed by republican police officers in Madrid, on the night of 15–16 July 1936, becoming the immediate trigger for the 18 July military coup." },
+      "quote": "Ubijeni su predstavnici levice, ubijeni je Kalvo Sotero.",
+      "confidence": "high"
+    },
+    {
+      "id": "spanske-trupe-pobuna-maroko-1936",
+      "title": { "sr": "Pobuna španskih trupa u Maroku", "en": "Uprising of Spanish troops in Morocco" },
+      "year": 1936,
+      "yearEnd": null,
+      "placeId": "maroko",
+      "episodeId": "32",
+      "timestamp": "42:34",
+      "type": "uprising",
+      "actors": ["Elitne španske trupe", "General Franco"],
+      "region": "Afrika",
+      "description": { "sr": "Elitne španske trupe u Maroku dižu pobunu 17. jula 1936, dan pre planiranog datuma; Franco zatim avionom sa Kanarskih ostrva sleće u Maroko da preuzme komandu.", "en": "Elite Spanish troops in Morocco rise up on 17 July 1936, a day before the planned date; Franco then flies in from the Canary Islands to take command." },
+      "quote": "oni dižu pobunu u Maroku 17.",
+      "confidence": "medium"
+    },
+    {
+      "id": "nacionalisti-masakr-badajoz-1936",
+      "title": { "sr": "Masakr u Badahosu", "en": "Badajoz massacre" },
+      "year": 1936,
+      "yearEnd": null,
+      "placeId": "badajoz",
+      "episodeId": "32",
+      "timestamp": "58:19",
+      "type": "other",
+      "actors": ["General Jagüe", "Nacionalističke trupe", "Marokanske trupe"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Početkom avgusta 1936. godine nacionalističke trupe generala Jaguea osvajaju Badahos na granici sa Portugalom i sprovode masovna streljanja civila i zarobljenika, sa procenama žrtava od dve do četiri hiljade ljudi.", "en": "In early August 1936, Nationalist troops under General Yagüe capture Badajoz on the Portuguese border and carry out mass executions of civilians and prisoners, with death toll estimates ranging from two to four thousand." },
+      "quote": "to su prvi dani Agusta, imamo zabeleženi veliki masakar u gradu Badajoza, ako se ne varam,",
+      "confidence": "medium"
+    },
+    {
+      "id": "nacionalisti-osvajanje-bilbaa-1937",
+      "title": { "sr": "Osvajanje Bilbaa i pad Baskije", "en": "Fall of Bilbao and conquest of the Basque Country" },
+      "year": 1937,
+      "yearEnd": null,
+      "placeId": "bilbao",
+      "episodeId": "32",
+      "timestamp": "96:32",
+      "type": "conquest",
+      "actors": ["Frankove nacionalističke trupe", "Baskijska republikanska vojska"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Zahvaljujući vazdušnoj prevlasti u letu 1937. godine, nacionalističke trupe osvajaju Baskiju i grad Bilbao.", "en": "Thanks to their air superiority in the summer of 1937, Nationalist troops conquer the Basque Country and the city of Bilbao." },
+      "quote": "A samim tim zbog tog vazdušnog prevlasti i naravno u tom trenutku, već govorimo letu 37. i prevlasti vojske nacionalista, dolazi i do osvajanje Baskije i do pada grade Bilbao.",
+      "confidence": "high"
+    },
+    {
+      "id": "frankisti-osvajanje-madrida-1939",
+      "title": { "sr": "Pad Madrida", "en": "Fall of Madrid" },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "madrid",
+      "episodeId": "32",
+      "timestamp": "115:00",
+      "type": "conquest",
+      "actors": ["Frankove nacionalističke trupe", "General Franco"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Madrid pada u ruke Frankovih trupa 28. marta 1939. godine, praktično bez velike borbe, čime se okončava španski građanski rat.", "en": "Madrid falls to Franco's troops on 28 March 1939, with little resistance, effectively ending the Spanish Civil War." },
+      "quote": "Tako da Madrid, pa da ako se ne vrne 28. marta 1939.",
+      "confidence": "high"
+    }
+  ]
+}
