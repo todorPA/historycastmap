@@ -320,6 +320,11 @@ body {
 .episode__num {
   flex: none;
   min-width: 26px;
+  /* Belt to episodeBadge()'s braces: whatever ends up here can never push the title out. */
+  max-width: 4.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   padding: 1px 5px;
   border-radius: var(--r-sm);
   background: var(--bg);

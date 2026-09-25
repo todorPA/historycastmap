@@ -9,7 +9,7 @@ import { TIMELINE_SIZES } from '../state/FilterContext';
 import type { TimelineSize } from '../state/FilterContext';
 import { pick, t } from '../lib/i18n';
 import type { UiKey } from '../lib/i18n';
-import { onColor, regionColor } from '../config/regions';
+import { onColor, regionColor, regionLabel } from '../config/regions';
 import { dateToYear, formatYear, formatYearRange, yearToDate } from '../lib/time';
 import { useTimelinePlayback } from './useTimelinePlayback';
 import type { Lang } from '../types/events';
@@ -82,6 +82,9 @@ export default function TimelineView() {
     activeEpisodeId,
     selectedEventId,
     setSelectedEventId,
+    activeRegions,
+    activeTypes,
+    activeSeries,
     timelineSize,
     setTimelineSize,
     cycleTimelineSize,
@@ -115,6 +118,22 @@ export default function TimelineView() {
       data.events
         .filter((e) => collectionEpisodes == null || collectionEpisodes.has(e.episodeId))
         .filter((e) => activeEpisodeId == null || e.episodeId === activeEpisodeId)
+        /**
+         * Facets apply here too. They did not, and the two halves then disagreed: picking a
+         * region emptied the map but left every event on the axis, so clicking one selected an
+         * event with no marker — PanToSelected found no position and the popup never opened.
+         *
+         * The year range is still deliberately excluded (see above): scrubbing narrow would
+         * delete the very items you need in order to scrub back out. A facet has no such
+         * problem, because its own chip is how you undo it.
+         */
+        .filter((e) => activeRegions.length === 0 || activeRegions.includes(e.region ?? ''))
+        .filter((e) => activeTypes.length === 0 || activeTypes.includes(e.type ?? ''))
+        .filter(
+          (e) =>
+            activeSeries.length === 0 ||
+            activeSeries.includes(sideEpisodeIds.has(e.episodeId) ? 'side' : 'main'),
+        )
         .map((e) => {
           // Same colour language as the map: region, not episode (config/regions.ts).
           const color = regionColor(e.region);
@@ -147,7 +166,16 @@ export default function TimelineView() {
             title: `${pick(e.title, lang)} — ${formatYearRange(e.year, e.yearEnd, lang)}`,
           };
         }),
-    [data.events, collectionEpisodes, activeEpisodeId, lang, sideEpisodeIds],
+    [
+      data.events,
+      collectionEpisodes,
+      activeEpisodeId,
+      activeRegions,
+      activeTypes,
+      activeSeries,
+      lang,
+      sideEpisodeIds,
+    ],
   );
 
   /**
@@ -175,8 +203,10 @@ export default function TimelineView() {
     }
     return [...counts.entries()]
       .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-      .map(([r]) => ({ id: r, content: r }));
-  }, [items]);
+      // id stays the data's Serbian string — it is what item.group joins on. Only the
+      // rendered label is translated.
+      .map(([r]) => ({ id: r, content: regionLabel(r, lang) }));
+  }, [items, lang]);
 
   // Latest values readable from the create-once effect without re-creating the timeline.
   const latestItems = useRef(items);

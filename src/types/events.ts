@@ -48,19 +48,27 @@ export interface Episode {
   color?: string;          // hex color for this episode's markers
 }
 
-export type EventType =
-  | 'battle'
-  | 'siege'
-  | 'conquest'
-  | 'coronation'
-  | 'treaty'
-  | 'founding'
-  | 'death'
-  | 'birth'
-  | 'reign'
-  | 'uprising'
-  | 'reform'
-  | 'other';
+/**
+ * The schema's event types, in the schema's order. A runtime array rather than a bare union,
+ * because three places need to *check* a value against it — the facet chips, the URL parser,
+ * and the validator — and a type alone disappears at compile time.
+ */
+export const EVENT_TYPES = [
+  'battle',
+  'siege',
+  'conquest',
+  'coronation',
+  'treaty',
+  'founding',
+  'death',
+  'birth',
+  'reign',
+  'uprising',
+  'reform',
+  'other',
+] as const;
+
+export type EventType = (typeof EVENT_TYPES)[number];
 
 export type Confidence = 'high' | 'medium' | 'low';
 

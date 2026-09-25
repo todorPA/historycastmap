@@ -1,3 +1,5 @@
+import type { Lang } from '../types/events';
+
 /**
  * Marker colour comes from the event's region, not its episode.
  *
@@ -57,6 +59,43 @@ export const REGION_COLORS: Record<string, string> = {
 
 /** Events with no region, or a region added to the data before the palette knows about it. */
 export const UNKNOWN_REGION_COLOR = '#8b96a1';
+
+/**
+ * English names for the closed region set.
+ *
+ * The region string in the data is Serbian and is also the key everything else joins on — the
+ * palette, the timeline groups, the validator's closed list — so it stays Serbian in the data
+ * and is translated only for display.
+ *
+ * Nothing in the type system ties this to REGION_COLORS (both are Record<string, string>,
+ * because regionColor has to index them with an arbitrary data string). A region added to the
+ * palette but not here therefore falls back to its Serbian name in English rather than failing
+ * to compile — visible, not silent, but it is on you to add both.
+ */
+export const REGION_EN: Record<string, string> = {
+  Balkan: 'Balkans',
+  'Vizantija i Egejski svet': 'Byzantium & the Aegean',
+  'Osmansko carstvo': 'Ottoman Empire',
+  'Srednja Evropa': 'Central Europe',
+  'Zapadna Evropa': 'Western Europe',
+  'Istočna Evropa': 'Eastern Europe',
+  'Severna Evropa i Atlantik': 'Northern Europe & the Atlantic',
+  'Bliski istok': 'Near East',
+  Afrika: 'Africa',
+  Azija: 'Asia',
+  'Severna Amerika': 'North America',
+  'Južna Amerika': 'South America',
+};
+
+/**
+ * The region as the reader should see it. Falls back to the data's own string, so a region
+ * the palette has not caught up with still displays rather than vanishing.
+ */
+export function regionLabel(region: string | undefined, lang: Lang): string {
+  if (!region) return '';
+  if (lang === 'sr') return region;
+  return REGION_EN[region] ?? region;
+}
 
 export function regionColor(region: string | undefined): string {
   return (region && REGION_COLORS[region]) || UNKNOWN_REGION_COLOR;

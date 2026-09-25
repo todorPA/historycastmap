@@ -1,7 +1,12 @@
 import type { Lang, SeriesId } from '../types/events';
+import { EVENT_TYPES } from '../types/events';
+import { REGION_COLORS } from '../config/regions';
 import { DATASETS, DEFAULT_DATASET, type DatasetName } from './data';
 import { BASEMAPS, DEFAULT_BASEMAP_ID } from '../config/basemaps';
 import { COLLECTIONS } from '../config/collections';
+
+/** The closed region set, taken from the palette so the two can never drift apart. */
+const REGION_NAMES = Object.keys(REGION_COLORS);
 
 /**
  * The shareable view lives in the query string, so a link reproduces exactly what the
@@ -55,6 +60,21 @@ function parseSeries(raw: string | null): SeriesId[] | null {
   return values && values.length > 0 ? values : null;
 }
 
+/**
+ * Region and type are validated against their closed sets for the same reason, and it is the
+ * same failure: both are AND'ed into visibility, so one unrecognised value in a shared link
+ * silently yields an empty map and a filter chip the reader cannot account for. Unknown
+ * entries are dropped and the recognised ones still apply; if nothing survives, the facet
+ * degrades to "no restriction" rather than to "match nothing".
+ *
+ * `region` is checked against the palette keys because that is the same closed set the
+ * timeline groups by and the validator enforces (scripts/validate-data.mjs).
+ */
+function parseAllowed(raw: string | null, allowed: readonly string[]): string[] | null {
+  const values = parseList(raw)?.filter((v) => allowed.includes(v));
+  return values && values.length > 0 ? values : null;
+}
+
 function parseYear(raw: string | null): number | null {
   if (raw == null || raw === '') return null;
   const n = Number(raw);
@@ -87,8 +107,8 @@ export function parseUrlState(search: string): UrlState {
     lang: rawLang === 'sr' || rawLang === 'en' ? rawLang : null,
     // Validated against the registry, so an unknown id falls back to the default layer.
     basemapId: rawBasemap && BASEMAPS.some((b) => b.id === rawBasemap) ? rawBasemap : null,
-    regions: parseList(params.get(PARAM.regions)),
-    types: parseList(params.get(PARAM.types)),
+    regions: parseAllowed(params.get(PARAM.regions), REGION_NAMES),
+    types: parseAllowed(params.get(PARAM.types), EVENT_TYPES),
     // Validated against the two known values, so a hand-edited URL can't filter to nothing.
     series: parseSeries(params.get(PARAM.series)),
   };

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSideEpisodes, useVisibleEvents } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
-import { regionColor } from '../config/regions';
+import { regionColor, regionLabel } from '../config/regions';
 import { t } from '../lib/i18n';
 
 /** Above this many entries the legend would cover the map, so the rest collapses. */
@@ -38,7 +38,7 @@ export default function Legend() {
         {shown.map(([region, count]) => (
           <li key={region} className="legend__item">
             <span className="legend__swatch" style={{ background: regionColor(region) }} />
-            <span className="legend__label">{region}</span>
+            <span className="legend__label">{regionLabel(region, lang)}</span>
             <span className="legend__count">{count}</span>
           </li>
         ))}

@@ -3,25 +3,11 @@ import { useData } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
 import { useTime } from '../state/TimeContext';
 import { isVisible, useCollectionEpisodes, useSideEpisodes } from '../state/DataContext';
-import { regionColor } from '../config/regions';
+import { regionColor, regionLabel } from '../config/regions';
+import { EVENT_TYPES as TYPES } from '../types/events';
 import { t } from '../lib/i18n';
 import type { UiKey } from '../lib/i18n';
 
-/** Event types, in the schema's order; labels live in i18n under `type_<value>`. */
-const TYPES = [
-  'battle',
-  'siege',
-  'conquest',
-  'coronation',
-  'treaty',
-  'founding',
-  'death',
-  'birth',
-  'reign',
-  'uprising',
-  'reform',
-  'other',
-] as const;
 
 /** Two shows, in the order they read: the main run first, the thematic slot second. */
 const SERIES = ['main', 'side'] as const;
@@ -185,7 +171,7 @@ export default function FacetFilters() {
                 onClick={() => toggleRegion(region)}
               >
                 <span className="chip__dot" style={{ background: regionColor(region) }} />
-                {region}
+                {regionLabel(region, lang)}
                 <span className="chip__count">{regionCounts[region] ?? 0}</span>
               </button>
             </li>

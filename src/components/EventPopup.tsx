@@ -5,7 +5,7 @@ import { useFilters } from '../state/FilterContext';
 import { pick, t } from '../lib/i18n';
 import { formatYearRange } from '../lib/time';
 import { buildPodcastLink, timestampToSeconds } from '../lib/podcast';
-import { regionColor } from '../config/regions';
+import { regionColor, regionLabel } from '../config/regions';
 
 export default function EventPopup({ event }: { event: HistoryEvent }) {
   const { placesById, episodesById } = useData();
@@ -62,7 +62,9 @@ export default function EventPopup({ event }: { event: HistoryEvent }) {
       <div className="event-popup__meta">
         <span className="event-popup__year">{formatYearRange(event.year, event.yearEnd, lang)}</span>
         {place && <span className="event-popup__place">{pick(place.name, lang)}</span>}
-        {event.region && <span className="event-popup__region">{event.region}</span>}
+        {event.region && (
+          <span className="event-popup__region">{regionLabel(event.region, lang)}</span>
+        )}
         <span className={`badge badge--${event.confidence}`}>
           {t(lang, 'confidence')}: {confidenceLabel}
         </span>
