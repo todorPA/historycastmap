@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "HistoryCast podcast (rss.com/rs-historycast)",
-    "generated": "2026-09-24T08:21:45.471Z",
+    "generated": "2026-09-25T17:57:03.951Z",
     "count": 741,
     "schemaVersion": "1.0"
   },
@@ -3058,6 +3058,23 @@
       ],
       "lat": 43.0833,
       "lng": 17.9583,
+      "kind": "city"
+    },
+    {
+      "id": "meksiko-siti",
+      "name": {
+        "sr": "Meksiko Siti",
+        "en": "Mexico City"
+      },
+      "aliases": [
+        "meksiko siti",
+        "mexico city",
+        "meksiko",
+        "meksiku",
+        "koajoakan"
+      ],
+      "lat": 19.3467,
+      "lng": -99.1617,
       "kind": "city"
     },
     {
@@ -8765,7 +8782,7 @@
         "Josip Broz Tito",
         "Fidel Castro"
       ],
-      "region": "Južna Amerika",
+      "region": "Severna Amerika",
       "description": {
         "sr": "1979. godine, na šestom samitu nesvrstanih u Havani, ostareli Tito uspeva da spreči Kastrov pokušaj da pokret nesvrstanih preusmeri ka SSSR-u, čime njegova radikalna koncepcija 'svrstanog nesvrstavanja' propada.",
         "en": "In 1979, at the sixth Non-Aligned summit in Havana, an aging Tito managed to prevent Castro's attempt to steer the movement toward the USSR, causing Castro's radical concept of 'aligned non-alignment' to fail."
@@ -14877,7 +14894,7 @@
       },
       "year": 1945,
       "yearEnd": null,
-      "placeId": "normandija",
+      "placeId": "nemacka",
       "episodeId": "92",
       "timestamp": "88:30",
       "type": "death",
@@ -15636,7 +15653,7 @@
       },
       "year": 1940,
       "yearEnd": null,
-      "placeId": "stolac",
+      "placeId": "meksiko-siti",
       "episodeId": "101",
       "timestamp": "106:29",
       "type": "death",
@@ -15644,13 +15661,13 @@
         "Lav Trocki",
         "Ramón Mercader"
       ],
-      "region": "Južna Amerika",
+      "region": "Severna Amerika",
       "description": {
         "sr": "1940. godine Lava Trockog likvidira španski revolucionar Ramón Mercader, koji je uspeo da preživi i pobegne u Sovjetski Savez, gde je umro u dubokoj starosti.",
         "en": "In 1940, Leon Trotsky was killed by the Spanish revolutionary Ramón Mercader, who managed to survive and flee to the Soviet Union, where he lived to old age."
       },
       "quote": "lava Trotskog je 1940. godine likvidirao jedan španski revolucionar, Ramón Morcadero",
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "id": "eksplozija-smederevo-1941",

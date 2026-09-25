@@ -150,6 +150,7 @@ export default function MapView() {
     timelineSize,
     activeRegions,
     activeTypes,
+    activeSeries,
   } = useFilters();
   const basemap = getBasemap(basemapId);
 
@@ -182,10 +183,16 @@ export default function MapView() {
         <InvalidateOnResize resizeKey={timelineSize} />
         <FitToMarkers
           points={points}
-          // Collection belongs in here for the same reason episode does: both change *which
-          // events you are looking at*, so the view should reframe. Without it, choosing a
-          // collection left the map at whatever extent it already had.
-          fitKey={`${data.meta.generated}|${activeCollectionId ?? 'all'}|${activeEpisodeId ?? 'all'}|${timelineSize}`}
+          /**
+           * Collection, episode and the facets all belong in here, for one reason: each
+           * changes *which events you are looking at*, so the view should reframe. Without
+           * the facets, filtering to Azija while parked over the Balkans left every marker
+           * off-screen and the map looked empty with no cause the reader could see.
+           *
+           * The year range is still deliberately absent — re-fitting mid-scrub yanks the map
+           * around under the cursor, which makes the timeline feel broken.
+           */
+          fitKey={`${data.meta.generated}|${activeCollectionId ?? 'all'}|${activeEpisodeId ?? 'all'}|${activeRegions.join(',')}|${activeTypes.join(',')}|${activeSeries.join(',')}|${timelineSize}`}
         />
         <PanToSelected points={pointsById} />
         <DeselectOnMapClick />
