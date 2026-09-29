@@ -31,6 +31,7 @@
  * rather than widening the patterns.
  */
 import { writeFileSync } from 'node:fs';
+import { parseEpisodeNumber } from './lib/episode-titles.mjs';
 
 const DEFAULT_FEED = 'https://media.rss.com/rs-historycast/feed.xml';
 const DEFAULT_OUT = 'episodes.json';
@@ -116,8 +117,8 @@ if (episodes.length === 0) {
 // ---- checks the merge step depends on ------------------------------------
 // merge-fragments.mjs joins a fragment to its episode on the number leading the title, so
 // an episode without one can only be matched by slug. Worth knowing before the merge, not
-// after: this is the same rule as TITLE_NUMBER there, and the two must not drift.
-const numbered = episodes.filter((e) => /^\s*(\d+)\.?\s*[-–—=]*\s*/.test(e.title)).length;
+// after. Same function the merge uses, so the count here is the count the merge will see.
+const numbered = episodes.filter((e) => parseEpisodeNumber(e.title) !== null).length;
 
 const seen = new Set();
 const duplicates = episodes

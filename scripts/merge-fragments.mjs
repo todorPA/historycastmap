@@ -10,6 +10,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { parseEpisodeNumber, seriesOfTitle, slugify, stripBranding } from "./lib/episode-titles.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -100,72 +101,8 @@ for (const file of fragFiles) {
   }
 }
 
-// Ucitaj metapodatke epizoda (naslov/datum/audioUrl) iz historycast_episodes.json ako je dat
-// Pravilo parsiranja naslova: broj epizode je prvi niz cifara NA POČETKU naslova
-// (dozvoljena tačka odmah nakon cifara, npr. "75."), separator posle njega je
-// nebitan — može biti "-", "=", razmak, ili ništa. Ako naslov ne počinje cifrom
-// (specijali kao "Novogodišnja epizoda" ili "Drugi svetski rat, 1941 - Bitka za
-// Moskvu", gde bi prva cifra u nastavku pogrešno bila uzeta za broj epizode),
-// koristi se slug celog naslova. Ovo zamenjuje tri uzastopna regex-a koja su
-// redom pukla na "115 = Vuk Karadžić", "75. - Stefan Prvovenčani" i
-// "61 Srpska puška - od ustanika" — svi ovi oblici sada prolaze kroz isto pravilo.
-//
-// Klasa separatora pokriva i crte koje nisu ASCII (– —). Feed ih trenutno ne koristi:
-// od 149 numerisanih naslova 145 ima "-", jedan "=", ostali razmak. Ali klasa je ono
-// što sprovodi pravilo iz pasusa iznad, a "nebitan separator" koji propušta samo ASCII
-// nije to pravilo. Promašaj ne bi pao na validatoru — broj epizode se i dalje izvuče,
-// samo naslov zadrži vodeću crtu i tako se prikaže u aplikaciji.
-const TITLE_NUMBER = /^\s*(\d+)\.?\s*[-–—=]*\s*(.*)$/;
-
-// Serija se izvodi iz naslova u feedu, a ne iz fragmenta: feed je jedini izvor istine o tome
-// kom serijalu epizoda pripada, izvođenje ovde važi retroaktivno za svih 102 postojeća
-// fragmenta, i Enchanté ne mora ništa da zna o tome.
-//
-// Brendiranje pobeđuje numeraciju. U feedu to dvoje nije poravnato — "115 = Vuk Karadžić |
-// HistoryCast nedeljom" je i numerisana i brendirana — a ni datum ne rešava spor: od 27
-// brendiranih epizoda samo 15 je objavljeno nedeljom. Kad se signali ne slažu, odlučuje
-// brendiranje, pa 115 napušta glavnu seriju.
-//
-// Specijali i nebrendirane epizode ostaju "main": to su povremene epizode glavne serije, a
-// ne poseban serijal.
-const SIDE_SERIES = /nedeljom|[čc]etvrtkom/i;
-
-// Skida brendiranje iz naslova za prikaz, jer se serija sada prikazuje zasebno:
-// "HistoryCast četvrtkom - Žiča" -> "Žiča", "Vuk Karadžić | HistoryCast nedeljom" -> "Vuk
-// Karadžić". Radi na oba mesta jer feed koristi oba rasporeda — 4 naslova nose brend na
-// početku, ostali na kraju.
-const BRAND_SUFFIX = /\s*[|,\-–—]?\s*(?:\|\s*)?HistoryCast\s+(?:nedeljom|[čc]etvrtkom)\s*$/i;
-const BRAND_PREFIX = /^\s*HistoryCast\s+(?:nedeljom|[čc]etvrtkom)\s*[|,\-–—]\s*/i;
-
-function stripBranding(title) {
-  const stripped = title.replace(BRAND_PREFIX, '').replace(BRAND_SUFFIX, '').trim();
-  // Ako od naslova ne ostane ništa (naslov je bio samo brend), zadrži original — prazan
-  // naslov u aplikaciji je gori od suvišnog brenda.
-  return stripped || title.trim();
-}
-
-// \u0111 i \u0110 se moraju zameniti RU\u010cNO, pre NFD dekompozicije, i to je jedini izuzetak u srpskoj
-// latinici. \u010d, \u0107, \u0161, \u017e su osnovno slovo + kombinuju\u0107i znak, pa ih NFD razdvaja i strip
-// \u0300-\u036f uradi svoje. \u0111 (U+0111) je slovo s PRECRTOM \u2014 jedan nedeljiv codepoint, bez
-// kombinuju\u0107eg znaka koji bi se skinuo ("\u0111".normalize("NFD").length === 1, dok je za "\u010d" 2).
-// Bez ovoga \u0111 propada na [^a-z0-9]+ i postaje "-": "Kara\u0111or\u0111e" -> "kara-or-e".
-//
-// Proma\u0161aj ne pada na validatoru. Fragment nazvan po ta\u010dnom slugu i dalje na\u0111e metapodatke,
-// samo je id ru\u017ean u deljivim ?ep= linkovima; fragment nazvan po O\u010cEKIVANOM slugu ne na\u0111e
-// ni\u0161ta \u2014 naslov postane "Epizoda <id>", audioUrl ostane prazan, i "Pusti na MM:SS" tiho
-// umre. Zato je ovo ispravljeno u skripti, a ne obila\u017eenjem u imenima fajlova.
-const DJ = /\u0111/g;
-
-function slugify(str) {
-  return str
-    .toLowerCase()
-    .replace(DJ, "dj")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
+// Ucitaj metapodatke epizoda (naslov/datum/audioUrl/serijal) iz feeda ako je dat.
+// Pravila parsiranja naslova su u lib/episode-titles.mjs, zajedno sa testovima.
 let episodeMetaByNumber = new Map();
 let episodeMetaBySlug = new Map(); // za specijalne epizode bez broja na pocetku naslova, i za
 // numerisane naslove čiji fragment ipak koristi slug id (npr. strana serija koja deli broj sa
@@ -177,12 +114,11 @@ if (EPISODES_SOURCE && fs.existsSync(EPISODES_SOURCE)) {
   for (const ep of eps) {
     const title = ep.title || "";
     // Serija se čita iz punog naslova, pre skidanja broja i brenda.
-    const series = SIDE_SERIES.test(title) ? "side" : "main";
-    const m = TITLE_NUMBER.exec(title);
-    if (m && m[1]) {
-      const num = String(parseInt(m[1], 10));
-      episodeMetaByNumber.set(num, {
-        title: stripBranding(m[2].trim() || title.trim()),
+    const series = seriesOfTitle(title);
+    const parsed = parseEpisodeNumber(title);
+    if (parsed) {
+      episodeMetaByNumber.set(parsed.number, {
+        title: stripBranding(parsed.rest || title.trim()),
         series,
         pubDate: ep.pubDate,
         audioUrl: ep.audio_url,
