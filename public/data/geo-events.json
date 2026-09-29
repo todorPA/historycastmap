@@ -1,8 +1,8 @@
 {
   "meta": {
     "source": "HistoryCast podcast (rss.com/rs-historycast)",
-    "generated": "2026-09-25T17:57:03.951Z",
-    "count": 741,
+    "generated": "2026-09-29T15:49:10.686Z",
+    "count": 742,
     "schemaVersion": "1.0"
   },
   "places": [
@@ -286,13 +286,14 @@
       "kind": "city"
     },
     {
-      "id": "amsterdam",
+      "id": "alkmaar",
       "name": {
-        "sr": "Amsterdam",
-        "en": "Amsterdam"
+        "sr": "Alkmar",
+        "en": "Alkmaar"
       },
       "aliases": [
-        "amsterdam",
+        "alkmar",
+        "alkmaar",
         "alkmaru",
         "holandske aukcije lala"
       ],
@@ -978,6 +979,20 @@
       "lat": 42.1322,
       "lng": 21.7144,
       "kind": "battle-site"
+    },
+    {
+      "id": "vraca",
+      "name": {
+        "sr": "Vraca",
+        "en": "Vratsa"
+      },
+      "aliases": [
+        "vraca",
+        "vratsa"
+      ],
+      "lat": 43.2108,
+      "lng": 23.5578,
+      "kind": "city"
     },
     {
       "id": "havana",
@@ -7007,7 +7022,7 @@
       },
       "year": 1637,
       "yearEnd": null,
-      "placeId": "amsterdam",
+      "placeId": "alkmaar",
       "episodeId": "05-istorija-lala-historycast-cetvrtkom",
       "timestamp": "00:23",
       "type": "other",
@@ -7084,7 +7099,7 @@
       "actors": [
         "Uroš Predić"
       ],
-      "region": "Zapadna Evropa",
+      "region": "Srednja Evropa",
       "description": {
         "sr": "Uroš Predić napušta Beč 1885. godine, u vreme kada se u bečkoj umetničkoj sredini već nazire skora pojava modernizma i secesije (Gustav Klimt), nakon perioda školovanja pod uticajem neobaroknog slikara Hansa Makarta.",
         "en": "Uroš Predić left Vienna in 1885, at a time when the imminent emergence of modernism and Secession (Gustav Klimt) was already becoming apparent in the Viennese art scene, after a period of training under the influence of neo-Baroque painter Hans Makart."
@@ -8431,14 +8446,14 @@
       "confidence": "high"
     },
     {
-      "id": "anastas-jovanovic-rodjenje-beograd-1817",
+      "id": "anastas-jovanovic-rodjenje-vraca-1817",
       "title": {
         "sr": "Rođenje Anastasa Jovanovića, prvog srpskog fotografa",
         "en": "Birth of Anastas Jovanović, Serbia's first photographer"
       },
       "year": 1817,
-      "yearEnd": 1899,
-      "placeId": "beograd",
+      "yearEnd": null,
+      "placeId": "vraca",
       "episodeId": "18",
       "timestamp": "04:39",
       "type": "birth",
@@ -8447,8 +8462,31 @@
       ],
       "region": "Balkan",
       "description": {
-        "sr": "Anastas Jovanović, prvi značajni fotograf na srpskim prostorima i dvorski upravnik knjaza Mihaila, rođen je 1817. godine, a umro 1899. godine u Beogradu, nekoliko godina pre pada dinastije Obrenović.",
-        "en": "Anastas Jovanović, the first significant photographer in the Serbian lands and court administrator of Prince Mihailo, was born in 1817 and died in 1899 in Belgrade, a few years before the fall of the Obrenović dynasty."
+        "sr": "Anastas Jovanović, budući prvi značajni fotograf na srpskim prostorima, rođen je 1817. godine u Vraci, tada pod osmanskom upravom.",
+        "en": "Anastas Jovanović, the future first significant photographer in the Serbian lands, was born in 1817 in Vratsa, then under Ottoman rule."
+      },
+      "quote": "On je rođen 1817. a umro je 1899. godine u Beogradu.",
+      "confidence": "high"
+    },
+    {
+      "id": "anastas-jovanovic-smrt-beograd-1899",
+      "title": {
+        "sr": "Smrt Anastasa Jovanovića u Beogradu",
+        "en": "Death of Anastas Jovanović in Belgrade"
+      },
+      "year": 1899,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "18",
+      "timestamp": "04:39",
+      "type": "death",
+      "actors": [
+        "Anastas Jovanović"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Anastas Jovanović, prvi značajni fotograf na srpskim prostorima i dvorski upravnik knjaza Mihaila, umro je 1899. godine u Beogradu, nekoliko godina pre pada dinastije Obrenović.",
+        "en": "Anastas Jovanović, the first significant photographer in the Serbian lands and court administrator of Prince Mihailo, died in 1899 in Belgrade, a few years before the fall of the Obrenović dynasty."
       },
       "quote": "On je rođen 1817. a umro je 1899. godine u Beogradu.",
       "confidence": "high"
@@ -15166,7 +15204,7 @@
         "Angelina Branković",
         "Ugarski kralj"
       ],
-      "region": "Srednja Evropa",
+      "region": "Balkan",
       "description": {
         "sr": "1502. godine, nakon smrti Jovana Brankovića, ugarski kralj oduzima zemlju despotu Đorđu i despotici Angelini, ostavljajući ih potpuno bez teritorije.",
         "en": "In 1502, after the death of Jovan Branković, the Hungarian king seized the land of Despot Đorđe and Despotess Angelina, leaving them entirely without territory."
@@ -15210,7 +15248,7 @@
       "actors": [
         "Pavle Bakić"
       ],
-      "region": "Srednja Evropa",
+      "region": "Balkan",
       "description": {
         "sr": "1537. godine Pavle Bakić dobija titulu poslednjeg srpskog despota, čime se zaokružuje period od 78 godina od pada Smedereva 1459. godine tokom kojeg je titula despota dodeljivana van Srbije.",
         "en": "In 1537, Pavle Bakić received the title of the last Serbian despot, rounding off the 78-year period since the fall of Smederevo in 1459 during which the despot's title had continued to be granted outside Serbia."
@@ -17277,7 +17315,7 @@
       "actors": [
         "Vuk Stefanović Karadžić"
       ],
-      "region": "Zapadna Evropa",
+      "region": "Srednja Evropa",
       "description": {
         "sr": "1818. godine Vuk izdaje u Beču Srpski rječnik, ključno delo svoje jezičke reforme, u vreme kada srpski jezik još nema ni gramatiku, ni pravopis, ni rečnik u modernom smislu.",
         "en": "In 1818, Vuk published the Serbian Dictionary in Vienna, a key work of his language reform, at a time when the Serbian language still had no modern grammar, spelling, or dictionary."
@@ -17323,7 +17361,7 @@
       "actors": [
         "Vuk Stefanović Karadžić"
       ],
-      "region": "Zapadna Evropa",
+      "region": "Srednja Evropa",
       "description": {
         "sr": "Vuk Karadžić je umro 1864. godine u Beču, gde je bio prvobitno i sahranjen.",
         "en": "Vuk Karadžić died in 1864 in Vienna, where he was initially buried as well."
@@ -21427,7 +21465,7 @@
       "actors": [
         "Evropske velike sile"
       ],
-      "region": "Zapadna Evropa",
+      "region": "Srednja Evropa",
       "description": {
         "sr": "Bečki kongres 1815. godine kroji kartu Evrope nakon Napoleonovih ratova, u vreme kada je Bizmark rođen.",
         "en": "The Congress of Vienna in 1815 redrew the map of Europe following the Napoleonic wars, the same year Bismarck was born."
@@ -24063,7 +24101,7 @@
       "actors": [
         "Franc Jozef Prvi"
       ],
-      "region": "Zapadna Evropa",
+      "region": "Srednja Evropa",
       "description": {
         "sr": "1857. godine car Franc Jozef izdaje dekret 'Ovo je moja volja', kojim, po uzoru na Napoleona III u Parizu, nalaže rušenje starih gradskih utvrda i izgradnju širokih bulevara (Ringštrase) i velelepnih neostilskih zdanja — parlamenta, nacionalne biblioteke, muzeja i univerziteta — kao centra carstva.",
         "en": "In 1857, Emperor Franz Joseph issued the decree 'It is my will', which, following the example of Napoleon III in Paris, ordered the demolition of the old city fortifications and the construction of wide boulevards (the Ringstraße) and grand neo-style buildings — the parliament, national library, museum, and university — as the center of the empire."
@@ -24086,7 +24124,7 @@
       "actors": [
         "Franc Jozef Prvi"
       ],
-      "region": "Zapadna Evropa",
+      "region": "Srednja Evropa",
       "description": {
         "sr": "1867. godine sklopljena je čuvena austro-ugarska nagodba, kojom se carstvo deli na austrijski i ugarski deo, uz Franca Jozefa kao cara i ugarskog kralja; nastaje dvojna (dualna) monarhija sa dva centra, Bečom i Budimpeštom.",
         "en": "In 1867, the famous Austro-Hungarian Compromise was concluded, dividing the empire into Austrian and Hungarian parts, with Franz Joseph as emperor and King of Hungary; the resulting dual monarchy had two centers, Vienna and Budapest."

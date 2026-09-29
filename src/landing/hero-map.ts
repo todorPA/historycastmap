@@ -12,6 +12,7 @@
  */
 import type { GeoData } from '../types/events';
 import { regionColor } from '../config/regions';
+import { DEFAULT_BASEMAP_ID, getBasemap } from '../config/basemaps';
 
 /**
  * Leaflet's own stylesheet, which is not optional: it is what makes `.leaflet-pane` and
@@ -91,10 +92,15 @@ export async function mountHeroMap(host: HTMLElement): Promise<void> {
     maxZoom: ZOOM + 3,
   });
 
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    maxZoom: 19,
-  }).addTo(map);
+  // Same registry as the explorer (config/basemaps.ts), so the hero can never drift from it.
+  const basemap = getBasemap(DEFAULT_BASEMAP_ID);
+  if (basemap.kind === 'modern') {
+    L.tileLayer(basemap.url, {
+      attribution: basemap.attribution,
+      maxZoom: basemap.maxZoom ?? 19,
+      maxNativeZoom: basemap.maxNativeZoom,
+    }).addTo(map);
+  }
 
   /**
    * The canvas is absolutely positioned inside an aspect-ratio box, so its size is only

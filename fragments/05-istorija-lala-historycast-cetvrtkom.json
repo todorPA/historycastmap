@@ -1,7 +1,7 @@
 {
   "places": [
     { "id": "carigrad", "name": { "sr": "Carigrad", "en": "Constantinople" }, "aliases": ["carigrad", "constantinople", "Istanbulu", "Kostinopolj"], "lat": 41.0082, "lng": 28.9784, "kind": "city" },
-    { "id": "amsterdam", "name": { "sr": "Amsterdam", "en": "Amsterdam" }, "aliases": ["Alkmaru", "holandske aukcije lala"], "lat": 52.5296, "lng": 4.5981, "kind": "city" }
+    { "id": "alkmaar", "name": { "sr": "Alkmar", "en": "Alkmaar" }, "aliases": ["Alkmaru", "holandske aukcije lala"], "lat": 52.5296, "lng": 4.5981, "kind": "city" }
   ],
   "events": [
     {
@@ -39,7 +39,7 @@
       "title": { "sr": "Krah holandske 'tulipomanije'", "en": "Crash of the Dutch 'tulip mania'" },
       "year": 1637,
       "yearEnd": null,
-      "placeId": "amsterdam",
+      "placeId": "alkmaar",
       "episodeId": "05-istorija-lala-historycast-cetvrtkom",
       "timestamp": "00:23",
       "type": "other",

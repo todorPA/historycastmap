@@ -206,7 +206,12 @@ export default function MapView() {
           the reader to the wrong control. */}
       {positioned.length === 0 && (
         <div className="map-empty">
-          {t(lang, activeRegions.length > 0 || activeTypes.length > 0 ? 'noEventsFilters' : 'noEvents')}
+          {t(
+            lang,
+            activeRegions.length > 0 || activeTypes.length > 0 || activeSeries.length > 0
+              ? 'noEventsFilters'
+              : 'noEvents',
+          )}
         </div>
       )}
     </div>

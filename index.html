@@ -6,12 +6,12 @@
     <title>HistoryCast Map - mapa podkasta HistoryCast</title>
     <meta
       name="description"
-      content="741 istorijski događaj iz 178 epizoda podkasta HistoryCast, na mapi i vremenskoj osi. Svaki događaj vodi na tačan minut u epizodi."
+      content="742 istorijska događaja iz 178 epizoda podkasta HistoryCast, na mapi i vremenskoj osi. Svaki događaj vodi na tačan minut u epizodi."
     />
     <meta property="og:title" content="HistoryCast Map" />
     <meta
       property="og:description"
-      content="741 istorijski događaj iz 178 epizoda podkasta HistoryCast, na mapi i vremenskoj osi."
+      content="742 istorijska događaja iz 178 epizoda podkasta HistoryCast, na mapi i vremenskoj osi."
     />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -45,15 +45,14 @@
         <!-- Runs off the right edge rather than sitting in a bordered card: the archive does
              not fit on this page, and the crop is the honest way to say so. -->
         <figure class="hero__figure" data-enter="4">
-          <!-- Upgraded in place to a live Leaflet map by src/landing/main.ts. The image is
-               the no-JS state, so the hero is never blank. -->
+          <!-- Upgraded in place to a live Leaflet map by src/landing/main.ts. This text is
+               the resting state — with no JS, or if the upgrade bails (reduced-data, a
+               failed fetch, an empty dataset) or rejects, it just stays; mountHeroMap only
+               clears it once it is about to replace it with the live map. -->
           <div class="hero__map" id="hero-map">
-            <noscript>
-              <p class="hero__map-fallback">
-                Mapa zahteva JavaScript. Cela mapa i vremenska osa su na
-                <a href="./app.html">stranici mape</a>.
-              </p>
-            </noscript>
+            <p class="hero__map-fallback">
+              Cela mapa i vremenska osa su na <a href="./app.html">stranici mape</a>.
+            </p>
           </div>
           <figcaption class="hero__caption">
             Događaji na Balkanu. Kliknite tačku da je otvorite u mapi.
@@ -80,7 +79,7 @@
     <dl class="tally">
       <div class="tally__item">
         <dt class="tally__label">događaja</dt>
-        <dd class="tally__n">741</dd>
+        <dd class="tally__n">742</dd>
       </div>
       <div class="tally__item">
         <dt class="tally__label">epizoda</dt>
@@ -88,7 +87,7 @@
       </div>
       <div class="tally__item">
         <dt class="tally__label">mesta</dt>
-        <dd class="tally__n">284</dd>
+        <dd class="tally__n">285</dd>
       </div>
     </dl>
     <!-- tally:end -->
@@ -96,7 +95,7 @@
         <!-- century-chart:start -->
     <figure class="band band--chart">
       <svg class="cc" viewBox="0 0 1200 360" role="img"
-           aria-label="Broj događaja po veku. Najviše ih je u dvadesetom veku: 351 od 741.">
+           aria-label="Broj događaja po veku. Najviše ih je u dvadesetom veku: 351 od 742.">
         <line class="cc__gap" x1="16" y1="326" x2="1184" y2="326" />
         <line class="cc__axis" x1="18.0" y1="326" x2="49.4" y2="326" />
         <line class="cc__axis" x1="230.4" y1="326" x2="474.1" y2="326" />
@@ -124,11 +123,11 @@
       <rect class="cc__bar" x="973.6" y="309.8" width="31.4" height="16.2" rx="1"><title>1500: 21</title></rect>
       <rect class="cc__bar" x="1009.0" y="308.3" width="31.4" height="17.7" rx="1"><title>1600: 23</title></rect>
       <rect class="cc__bar" x="1044.4" y="307.5" width="31.4" height="18.5" rx="1"><title>1700: 24</title></rect>
-      <rect class="cc__bar" x="1079.8" y="239.1" width="31.4" height="86.9" rx="1"><title>1800: 113</title></rect>
+      <rect class="cc__bar" x="1079.8" y="238.3" width="31.4" height="87.7" rx="1"><title>1800: 114</title></rect>
       <rect class="cc__bar is-peak" x="1115.2" y="56.0" width="31.4" height="270.0" rx="1"><title>1900: 351</title></rect>
       <rect class="cc__bar" x="1150.6" y="321.4" width="31.4" height="4.6" rx="1"><title>2000: 6</title></rect>
         <line class="cc__lead" x1="1130.9" y1="50.0" x2="1130.9" y2="36" />
-        <text class="cc__note" x="1106.9" y="30" text-anchor="end">351 od 741 događaja pada u dvadeseti vek.</text>
+        <text class="cc__note" x="1106.9" y="30" text-anchor="end">351 od 742 događaja pada u dvadeseti vek.</text>
       <text class="cc__tick" x="33.7" y="348" text-anchor="middle">1200. p.n.e.</text>
       <text class="cc__tick" x="175.3" y="348" text-anchor="middle">800. p.n.e.</text>
       <text class="cc__tick" x="316.8" y="348" text-anchor="middle">400. p.n.e.</text>

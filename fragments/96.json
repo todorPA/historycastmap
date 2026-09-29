@@ -29,7 +29,7 @@
       "timestamp": "100:00",
       "type": "other",
       "actors": ["Đorđe Branković", "Angelina Branković", "Ugarski kralj"],
-      "region": "Srednja Evropa",
+      "region": "Balkan",
       "description": { "sr": "1502. godine, nakon smrti Jovana Brankovića, ugarski kralj oduzima zemlju despotu Đorđu i despotici Angelini, ostavljajući ih potpuno bez teritorije.", "en": "In 1502, after the death of Jovan Branković, the Hungarian king seized the land of Despot Đorđe and Despotess Angelina, leaving them entirely without territory." },
       "quote": "kada je Ugrski kralj oduzima Đorđu ... To je 1502. godina.",
       "confidence": "high"
@@ -59,7 +59,7 @@
       "timestamp": "13:07",
       "type": "coronation",
       "actors": ["Pavle Bakić"],
-      "region": "Srednja Evropa",
+      "region": "Balkan",
       "description": { "sr": "1537. godine Pavle Bakić dobija titulu poslednjeg srpskog despota, čime se zaokružuje period od 78 godina od pada Smedereva 1459. godine tokom kojeg je titula despota dodeljivana van Srbije.", "en": "In 1537, Pavle Bakić received the title of the last Serbian despot, rounding off the 78-year period since the fall of Smederevo in 1459 during which the despot's title had continued to be granted outside Serbia." },
       "quote": "do kada je poslednji despot dobio titulu ... to je bio Pavle Bakić ... nekde 1537. godine",
       "confidence": "high"
