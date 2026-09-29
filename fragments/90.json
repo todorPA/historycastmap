@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "moskva", "name": { "sr": "Moskva", "en": "Moscow" }, "aliases": ["Moskvi"], "lat": 55.7558, "lng": 37.6173, "kind": "city" },
+    { "id": "azov", "name": { "sr": "Azov", "en": "Azov" }, "aliases": ["Azova"], "lat": 47.1092, "lng": 39.4181, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "rodjenje-petra-velikog-1672",
+      "title": { "sr": "Rođenje Petra Velikog", "en": "Birth of Peter the Great" },
+      "year": 1672,
+      "yearEnd": null,
+      "placeId": "moskva",
+      "episodeId": "90",
+      "timestamp": "22:18",
+      "type": "birth",
+      "actors": ["Petar Veliki"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Petar se rodio 30. maja 1672. godine u jedan ujutru, kao fenomenalna, ogromna beba koja je za ondašnje pojmove bila veoma zdrava.", "en": "Peter was born on May 30, 1672, at one in the morning, as a phenomenally large baby who was, by the standards of the time, quite healthy." },
+      "quote": "Petar se rađa 30. maja 1672. godine u jedan ujutru",
+      "confidence": "high"
+    },
+    {
+      "id": "fjodor-ukida-namjestenja-1682",
+      "title": { "sr": "Car Fjodor ukida instituciju 'namještenja'", "en": "Tsar Feodor abolishes the 'mestnichestvo' institution" },
+      "year": 1682,
+      "yearEnd": null,
+      "placeId": "moskva",
+      "episodeId": "90",
+      "timestamp": "36:23",
+      "type": "reform",
+      "actors": ["Car Fjodor III"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1682. godine, neposredno pred svoju smrt, car Fjodor ukida vekovima staru instituciju namještenja (mjestnišestva) u vojsci, aristokratiji i državnoj upravi.", "en": "In 1682, shortly before his death, Tsar Feodor abolished the centuries-old institution of mestnichestvo (seniority based on birth) in the military, aristocracy, and state administration." },
+      "quote": "On 1682. godine, neposredno pred svoju smrt, ukida instituciju koja postoji decenijama",
+      "confidence": "high"
+    },
+    {
+      "id": "azovski-pohodi-1695-1697",
+      "title": { "sr": "Azovski pohodi Petra Velikog", "en": "Peter the Great's Azov campaigns" },
+      "year": 1695,
+      "yearEnd": 1697,
+      "placeId": "azov",
+      "episodeId": "90",
+      "timestamp": "108:27",
+      "type": "battle",
+      "actors": ["Petar Veliki", "Franz Lefort", "Patrick Gordon", "Osmansko carstvo"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Između 1695. i 1697. godine Petar Veliki vodi ukupno tri pohoda na Azov, tvrđavu na ušću reke koja izlazi u more, u pokušaju da Rusija stekne izlaz na topla mora.", "en": "Between 1695 and 1697, Peter the Great led a total of three campaigns against Azov, a fortress at the mouth of a river flowing into the sea, in an attempt for Russia to gain access to warm-water seas." },
+      "quote": "bilo su tri ukupno pohoda, između 1695. i 1697. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "osnivanje-ruske-carske-flote-1696",
+      "title": { "sr": "Osnivanje Ruske carske flote", "en": "Founding of the Russian Imperial Navy" },
+      "year": 1696,
+      "yearEnd": null,
+      "placeId": "moskva",
+      "episodeId": "90",
+      "timestamp": "112:33",
+      "type": "founding",
+      "actors": ["Petar Veliki", "Boljarska duma"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "20. oktobra 1696. godine Boljarska duma zvanično usvaja akt o osnivanju Ruske carske flote, datum koji se uzima kao početak ruske mornarice.", "en": "On October 20, 1696, the Boyar Duma officially adopted the act founding the Russian Imperial Navy, a date taken as the beginning of the Russian navy." },
+      "quote": "Boljarska duma zvanično usvaja akt o osnivanju Ruske carske flote. Dakle, Ruska carska flota osnovana je 20. oktobra 1696. godine",
+      "confidence": "high"
+    }
+  ]
+}

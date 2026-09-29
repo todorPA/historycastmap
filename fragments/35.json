@@ -1,0 +1,131 @@
+{
+  "places": [
+    {
+      "id": "beograd",
+      "name": { "sr": "Beograd", "en": "Belgrade" },
+      "aliases": [
+        "beograd", "belgrade", "beogradu", "beograda", "stari dvor",
+        "beograd (kneževina srbija)", "belgrade (principality of serbia)",
+        "kneževini srbiji", "beograd (narodna banka / narodni muzej)",
+        "belgrade (national bank / national museum)", "narodnoj banci",
+        "narodnom muzeju", "novom beogradu",
+        "beograde", "beogradi", "beogradom", "beogradska", "beogradske",
+        "beogradski", "beogradskog", "beogradskoj", "beogradsku", "beograduši",
+        "nandor fehervar", "nandor alb", "fehervar"
+      ],
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "solomon-osvaja-beograd-1071",
+      "title": { "sr": "Ugarski kralj Salomon osvaja i ruši Beograd", "en": "Hungarian King Solomon captures and demolishes Belgrade" },
+      "year": 1071,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "35",
+      "timestamp": "29:36",
+      "type": "siege",
+      "actors": ["Kralj Salomon (Solomon)", "Ugarska"],
+      "region": "Balkan",
+      "description": {
+        "sr": "Ugarski kralj Salomon (Solomon) napao je i osvojio Beograd, a zatim porušio beogradsku tvrđavu, verovatno ne želeći da je trajno drži, dok je granica prema Vizantiji tada bila na Savi i Dunavu.",
+        "en": "The Hungarian king Solomon (Salomon) attacked and captured Belgrade before demolishing its fortress, apparently without intending to hold it permanently, while the border with Byzantium then ran along the Sava and Danube."
+      },
+      "quote": "1971. i 72. zna se da Ugradski kralj Solomon osvaja odnosu odnosno Salomon kako god ćeš naći u kojim izvorima osvaja Beograd.",
+      "confidence": "low"
+    },
+    {
+      "id": "manojlo-komnin-vlast-beograd-1143",
+      "title": { "sr": "Vizantija (Manojlo Komnin) ponovo vlada Beogradom", "en": "Byzantium (Manuel Komnenos) regains control of Belgrade" },
+      "year": 1143,
+      "yearEnd": 1180,
+      "placeId": "beograd",
+      "episodeId": "35",
+      "timestamp": "31:53",
+      "type": "reign",
+      "actors": ["Manojlo (Manuel) Komnin", "Vizantija"],
+      "region": "Balkan",
+      "description": {
+        "sr": "U vreme vizantijskog cara Manojla Komnina (1143–1180), Beograd se ponovo vraća pod vizantijsku vlast; car je, prema izvorima, i lično nekoliko puta ratovao kod Beograda, a grad je tada ponovo utvrđen, iako u manjem obimu od antičkog.",
+        "en": "During the reign of the Byzantine emperor Manuel I Komnenos (1143–1180), Belgrade returned to Byzantine control; sources say the emperor personally fought near Belgrade several times, and the city's fortress was rebuilt, though on a smaller scale than the ancient one."
+      },
+      "quote": "najviše se vraća u vreme Manuela Komnina. To su već, znači to je neki 12. vek Manuela Komnina vrada od 1143. do 1180. godine i on je čak se govorio neki 4-5 puta borevi u Beogradu sam Manjula",
+      "confidence": "high"
+    },
+    {
+      "id": "dragutin-dobija-beograd-1284",
+      "title": { "sr": "Dragutin dobija Beograd na upravu", "en": "Dragutin receives Belgrade to govern" },
+      "year": 1284,
+      "yearEnd": 1319,
+      "placeId": "beograd",
+      "episodeId": "35",
+      "timestamp": "40:06",
+      "type": "reign",
+      "actors": ["Kralj Dragutin", "Ugarska", "Kralj Milutin"],
+      "region": "Balkan",
+      "description": {
+        "sr": "Kralj (potom bivši kralj) Stefan Dragutin Nemanjić je 1284. godine od ugarskog kralja, svog tasta, dobio na upravu Mačvu, ostrani Srem i grad Beograd; nakon Dragutinove smrti, Milutin je zauzeo Mačvu i Beograd i drži ih do oko 1319. godine.",
+        "en": "In 1284, King (later ex-king) Stefan Dragutin Nemanjić received Mačva, the far side of Srem, and the city of Belgrade to administer from his father-in-law, the Hungarian king; after Dragutin's death, Milutin seized Mačva and Belgrade and held them until around 1319."
+      },
+      "quote": "I tada dobio on od njega Mačvu na upravu odnosno on ostranji srem i grad Beograd i Beograd to je bilo 1284. godine kad on dolazio",
+      "confidence": "high"
+    },
+    {
+      "id": "despot-stefan-beograd-prestonica-1403",
+      "title": { "sr": "Despot Stefan čini Beograd srpskom prestonicom", "en": "Despot Stefan makes Belgrade the Serbian capital" },
+      "year": 1403,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "35",
+      "timestamp": "67:58",
+      "type": "founding",
+      "actors": ["Despot Stefan Lazarević"],
+      "region": "Balkan",
+      "description": {
+        "sr": "Despot Stefan Lazarević je od ugarskog kralja Žigmunda Luksemburškog dobio Beograd 1403. ili 1404. godine i po prvi put u srpskoj istoriji jedan grad zvanično uredio kao prestonicu države.",
+        "en": "Despot Stefan Lazarević received Belgrade from the Hungarian king Sigismund of Luxembourg in 1403 or 1404 and, for the first time in Serbian history, officially established a city as the state's capital."
+      },
+      "quote": "E, i u svakom slučaju to kada je Beograd dobije tada despot, vratno je 1403. ili 1404. godine tu se ne možemo baš biti potpuno sigurni",
+      "confidence": "medium"
+    },
+    {
+      "id": "opsada-beograda-mehmed-1456",
+      "title": { "sr": "Opsada Beograda Mehmeda II Osvajača", "en": "Siege of Belgrade by Mehmed II the Conqueror" },
+      "year": 1456,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "35",
+      "timestamp": "99:10",
+      "type": "siege",
+      "actors": ["Mehmed II Osvajač", "Janko Hunjadi", "Ivan Kapistran", "Đurađ Branković"],
+      "region": "Balkan",
+      "description": {
+        "sr": "Sultan Mehmed II Osvajač, samo tri godine nakon osvajanja Carigrada, opsedao je Beograd 1456. godine; grad su odbranili Janko Hunjadi, franjevac Ivan Kapistran i sami građani, uz pomoć srpskih šajkaša Đurđa Brankovića, a opsada je završena porazom Turaka.",
+        "en": "Sultan Mehmed II the Conqueror, just three years after taking Constantinople, besieged Belgrade in 1456; the city was defended by János Hunyadi, the Franciscan friar John of Capistrano and the townspeople themselves, aided by Đurađ Branković's Serbian river boatmen, and the siege ended in an Ottoman defeat."
+      },
+      "quote": "1456. čuvena opsada koju je to je kada je grad obsedao Mehmed II sultanosom Mehmedosvačevoj",
+      "confidence": "high"
+    },
+    {
+      "id": "sulejman-osvaja-beograd-1521",
+      "title": { "sr": "Sulejman Veličanstveni osvaja Beograd", "en": "Suleiman the Magnificent captures Belgrade" },
+      "year": 1521,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "35",
+      "timestamp": "118:59",
+      "type": "conquest",
+      "actors": ["Sulejman Veličanstveni", "Ugarska"],
+      "region": "Balkan",
+      "description": {
+        "sr": "Sultan Sulejman Veličanstveni je 1521. godine konačno osvojio Beograd, čime je i cela Ugarska ostala otvorena prema turskom nadiranju; u epizodi se ovaj pad opisuje kao svojevrsno 'Kosovo' za Ugarsku, koja je definitivno propala pet godina kasnije u Mohačkoj bitci.",
+        "en": "In 1521 Sultan Suleiman the Magnificent finally captured Belgrade, leaving all of Hungary exposed to the Ottoman advance; the episode describes this fall as a kind of 'Kosovo' for Hungary, which definitively collapsed five years later at the Battle of Mohács."
+      },
+      "quote": "Da privedimo kraju, da stiže Sulejman veličanstveni. Stiže. To je ta poslednja bitka kada je Beograd konačno pao i kada je pala u suštini cijela Ugrska i taj najotoj bilo 1521. godine.",
+      "confidence": "high"
+    }
+  ]
+}

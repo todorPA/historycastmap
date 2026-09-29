@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "kolubara", "name": { "sr": "Kolubara", "en": "Kolubara" }, "aliases": ["Kolubarskoj bici", "Kolubarskoj"], "lat": 44.4667, "lng": 20.0167, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "ranjavanje-bojovica-kolubara-1914",
+      "title": { "sr": "Ranjavanje generala Petra Bojovića u Kolubarskoj bici", "en": "Wounding of General Petar Bojović at the Battle of Kolubara" },
+      "year": 1914,
+      "yearEnd": null,
+      "placeId": "kolubara",
+      "episodeId": "65",
+      "timestamp": "27:45",
+      "type": "battle",
+      "actors": ["Petar Bojović", "Živojin Mišić"],
+      "region": "Balkan",
+      "description": { "sr": "14. novembra 1914. godine ranjen je general Petar Bojović, komandant Prve armije; kao posledica te promene na čelo Prve armije dolazi general Živojin Mišić.", "en": "On November 14, 1914, General Petar Bojović, commander of the First Army, was wounded; as a result, command of the First Army passed to General Živojin Mišić." },
+      "quote": "posle ranjavanja generala Bojovića Petra Bojovića koji je ranjen 14. novembra 1914. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "kolubarska-bitka-manevar-1914",
+      "title": { "sr": "Manevar srpske i austrougarske vojske u Kolubarskoj bici", "en": "Maneuvers of the Serbian and Austro-Hungarian armies at the Battle of Kolubara" },
+      "year": 1914,
+      "yearEnd": null,
+      "placeId": "kolubara",
+      "episodeId": "65",
+      "timestamp": "47:16",
+      "type": "battle",
+      "actors": ["Srpska vojska", "Austro-Ugarska vojska"],
+      "region": "Balkan",
+      "description": { "sr": "U novembru i decembru 1914. godine, obe vojske, srpska i austrougarska, sprovode delikatne manevre koji su odigrali ključnu ulogu u ishodu Kolubarske bitke.", "en": "In November and December 1914, both the Serbian and Austro-Hungarian armies carried out delicate maneuvers that played a key role in the outcome of the Battle of Kolubara." },
+      "quote": "govori da su jedna i druga vojska shvatile važnost tog manevra i tog delovanja u novembru i decembru 1914. godine",
+      "confidence": "high"
+    }
+  ]
+}

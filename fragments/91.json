@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "kolubara", "name": { "sr": "Kolubara (Kremenica)", "en": "Kolubara (Kremenica)" }, "aliases": ["Kolubarskoj bici", "Kremenici"], "lat": 44.4667, "lng": 20.0167, "kind": "battle-site" },
+    { "id": "krf", "name": { "sr": "Krf", "en": "Corfu" }, "aliases": ["Krfa"], "lat": 39.6243, "lng": 19.9217, "kind": "landmark" },
+    { "id": "solun", "name": { "sr": "Solun", "en": "Thessaloniki" }, "aliases": ["Solun"], "lat": 40.6401, "lng": 22.9444, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "kolubarska-bitka-gvozdeni-puk-1914",
+      "title": { "sr": "Gvozdeni puk gubi komandanta u Kolubarskoj bici", "en": "The Iron Regiment loses its commander at the Battle of Kolubara" },
+      "year": 1914,
+      "yearEnd": null,
+      "placeId": "kolubara",
+      "episodeId": "91",
+      "timestamp": "58:06",
+      "type": "battle",
+      "actors": ["Milivoje Stojanović Brka", "Gvozdeni puk"],
+      "region": "Balkan",
+      "description": { "sr": "U Kolubarskoj bici na Kremenici, bolesni komandant Milivoje Stojanović Brka ustaje da vodi Gvozdeni puk i gine u prvim redovima, kao jedan od nekoliko komandanata puka koji su tako izginuli.", "en": "At the Battle of Kolubara at Kremenica, the ailing commander Milivoje Stojanović Brka rose to lead the Iron Regiment and was killed in the front lines, one of several regimental commanders killed this way." },
+      "quote": "koji bolestan ustaje da vodi puk u Kolubarskoj bici na Kremenici i gine u prvim redovima.",
+      "confidence": "high"
+    },
+    {
+      "id": "internacija-svestenika-1915-1916",
+      "title": { "sr": "Bugari interniraju i ubijaju srpske sveštenike", "en": "Bulgarians intern and kill Serbian priests" },
+      "year": 1915,
+      "yearEnd": 1916,
+      "placeId": "kolubara",
+      "episodeId": "91",
+      "timestamp": "115:10",
+      "type": "other",
+      "actors": ["Bugarska vojska", "Srpski sveštenici"],
+      "region": "Balkan",
+      "description": { "sr": "1915. i 1916. godine bugarska vojska internira i ubija veliki broj srpskih sveštenika, uključujući pukovskog sveštenika Luku Marjanovića, jedinog sveštenika sa Karađorđevom zvezdom.", "en": "In 1915 and 1916, the Bulgarian army interned and killed a large number of Serbian priests, including the regimental priest Luka Marjanović, the only priest awarded the Karađorđe Star." },
+      "quote": "ne znam tačan broj ubijenih sveštenika 1915. i 1916. kada su ih kao internirali",
+      "confidence": "medium"
+    },
+    {
+      "id": "gvozdeni-puk-krf-solun-1916",
+      "title": { "sr": "Gvozdeni puk kreće sa Krfa u Solun", "en": "The Iron Regiment departs from Corfu to Thessaloniki" },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "krf",
+      "episodeId": "91",
+      "timestamp": "135:31",
+      "type": "other",
+      "actors": ["Gvozdeni puk"],
+      "region": "Balkan",
+      "description": { "sr": "Gvozdeni puk kreće sa 2400 ljudi sa Krfa u Solun, gde odmah učestvuje u prvim bitkama na Solunskom frontu, koji se nakon toga stabilizuje na dve godine bez veće aktivnosti do proboja 1918. godine.", "en": "The Iron Regiment set out with 2,400 men from Corfu to Thessaloniki, where it immediately took part in the first battles on the Thessaloniki front, which then stabilized for two years without major activity until the breakthrough in 1918." },
+      "quote": "Gvozdeni puk je krenuo sa 2400 ljudi sa krfa u Solun. Učestvovao odmah u prvim bitkama",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "beogradski-grand-prix-1939",
+      "title": { "sr": "Beogradski Grand Prix — poslednja trka Auto Uniona pre rata", "en": "Belgrade Grand Prix — Auto Union's last pre-war race" },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "beogradski-grand-prix-1939-historycast-nedeljom",
+      "timestamp": "74:05",
+      "type": "other",
+      "actors": ["Auto Union", "Kraljevina Jugoslavija"],
+      "region": "Balkan",
+      "description": { "sr": "Beogradski Grand Prix 1939. godine, održan uoči izbijanja Drugog svetskog rata, bio je poslednja zvanična trka tima Auto Union (prethodnika Audija) pre nego što se taj proizvođač povukao iz trkanja na decenije.", "en": "The 1939 Belgrade Grand Prix, held on the eve of the outbreak of World War II, was the last official race for the Auto Union team (Audi's predecessor) before the manufacturer withdrew from racing for decades." },
+      "quote": "posljednja trka Audi-a prošle godine, prošlog veka, 1939... Audi se od Beograda nije trkao zvanično u Formula 1.",
+      "confidence": "high"
+    },
+    {
+      "id": "richard-seaman-smrt-1939",
+      "title": { "sr": "Smrt vozača Ričarda Simona", "en": "Death of driver Richard Seaman" },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "beogradski-grand-prix-1939-historycast-nedeljom",
+      "timestamp": "48:14",
+      "type": "death",
+      "actors": ["Ričard Simon (Richard Seaman)", "Mercedes-Benz"],
+      "region": "Balkan",
+      "description": { "sr": "Britanski vozač Ričard Simon, tada predsednik Mercedes-Benza, poginuo je 1939. godine; bio je poznat kao Britanac koji je doneo pobedu Nemačkoj u nacističkom trkačkom programu.", "en": "British driver Richard Seaman, then president of Mercedes-Benz, died in 1939; he was known as the Briton who brought victory to Germany's Nazi-era racing program." },
+      "quote": "Simon, inače, je poginuo u 1939. godine... bio je predsednik Mercedes-Benz.",
+      "confidence": "medium"
+    }
+  ]
+}

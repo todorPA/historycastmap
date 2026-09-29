@@ -1,0 +1,38 @@
+{
+  "places": [
+    { "id": "moskva", "name": { "sr": "Moskva", "en": "Moscow" }, "aliases": [], "lat": 55.7558, "lng": 37.6173, "kind": "city" },
+    { "id": "london", "name": { "sr": "London", "en": "London" }, "aliases": [], "lat": 51.5074, "lng": -0.1278, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "pocetak-operacije-barbarosa-1941",
+      "title": { "sr": "Početak operacije Barbarosa", "en": "Start of Operation Barbarossa" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "moskva",
+      "episodeId": "57",
+      "timestamp": "24:25",
+      "type": "battle",
+      "actors": ["Nemačka vojska", "Sovjetski Savez"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "22. juna 1941. godine počinje operacija Barbarosa, nemački napad na Sovjetski Savez u tri glavna pravca, od kojih je jedan usmeren prema Moskvi (centralna grupa armija); ovaj datum podiže Drugi svetski rat na potpuno novi nivo.", "en": "On June 22, 1941, Operation Barbarossa began, the German attack on the Soviet Union along three main axes, one of which was aimed at Moscow (Army Group Center); this date raised World War II to an entirely new level." },
+      "quote": "oni počinju 22. juna 1941. godine ... imamo dakle ta tri glavna pravca, jedan je prema Moskvi",
+      "confidence": "high"
+    },
+    {
+      "id": "predlog-drugog-fronta-1941",
+      "title": { "sr": "Staljinov predlog Čerčilu za otvaranje drugog fronta", "en": "Stalin's proposal to Churchill to open a second front" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "london",
+      "episodeId": "57",
+      "timestamp": "44:53",
+      "type": "other",
+      "actors": ["Josif Stalin", "Winston Churchill"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Jula 1941. godine, svega mesec dana nakon početka operacije Barbarosa, Staljin predlaže Čerčilu da se otvori novi front u Francuskoj (Normandiji); Čerčil odgovara da je ideja dobra, ali da nije još vreme za to.", "en": "In July 1941, just a month after the start of Operation Barbarossa, Stalin proposed to Churchill that a new front be opened in France (Normandy); Churchill replied that the idea was good, but the time was not yet right." },
+      "quote": "Churchillu predlaže da se otvori novi front i to baš u Francuskoj, dakle u Normandiji ... u julu 1941. godine",
+      "confidence": "high"
+    }
+  ]
+}

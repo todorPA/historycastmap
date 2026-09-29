@@ -1,0 +1,100 @@
+{
+  "places": [
+    { "id": "obljaj", "name": { "sr": "Obljaj", "en": "Obljaj" }, "aliases": ["Obljevi", "Obljaju", "Bosko Grahovo", "Boskog Rahova", "Bosansko Grahovo", "Bosanskog Grahova"], "lat": 44.2090, "lng": 16.3540, "kind": "unknown" },
+    { "id": "bosna-i-hercegovina", "name": { "sr": "Bosna i Hercegovina", "en": "Bosnia and Herzegovina" }, "aliases": ["Bosna", "Bosne i Hercegovine", "Bosni i Hercegovini", "Bosnom i Hercegovinom", "Bosne", "Bosni", "Bosnu"], "lat": 44.1500, "lng": 17.7500, "kind": "region" },
+    { "id": "sarajevo", "name": { "sr": "Sarajevo", "en": "Sarajevo" }, "aliases": ["Sarajevu", "Sarajeva"], "lat": 43.8563, "lng": 18.4131, "kind": "city" },
+    { "id": "terezin", "name": { "sr": "Terezin", "en": "Terezín" }, "aliases": ["Terezinu", "Terezina"], "lat": 50.5167, "lng": 14.1500, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "princip-rodjenje-obljaj-1894",
+      "title": { "sr": "Rođenje Gavrila Principa u Obljaju", "en": "Birth of Gavrilo Princip in Obljaj" },
+      "year": 1894,
+      "yearEnd": null,
+      "placeId": "obljaj",
+      "episodeId": "34",
+      "timestamp": "05:38",
+      "type": "birth",
+      "actors": ["Gavrilo Princip"],
+      "region": "Balkan",
+      "description": { "sr": "Gavrilo Princip je rođen 1894. godine u selu Obljaj kod Bosanskog Grahova, u siromašnoj kmetskoj porodici koja je obrađivala zemlju za veleposednika.", "en": "Gavrilo Princip was born in 1894 in the village of Obljaj near Bosansko Grahovo, into a poor serf family that farmed land for a landowner." },
+      "quote": "Dakle, roditelji Gavrila Princip koji se rodio od 1894. godine u Obljevi, kod Boskog Rahova, su bili kmetovi.",
+      "confidence": "high"
+    },
+    {
+      "id": "austrougarska-okupacija-bosna-1878",
+      "title": { "sr": "Austrijska okupacija Bosne i Hercegovine", "en": "Austrian occupation of Bosnia and Herzegovina" },
+      "year": 1878,
+      "yearEnd": 1908,
+      "placeId": "bosna-i-hercegovina",
+      "episodeId": "34",
+      "timestamp": "02:55",
+      "type": "conquest",
+      "actors": ["Austro-Ugarska"],
+      "region": "Balkan",
+      "description": { "sr": "Bosna i Hercegovina, i dalje formalno deo Turskog carstva, dolazi 1878. godine pod austrijsku okupaciju, a od 1908. godine postaje integralni deo Austro-Ugarske monarhije.", "en": "Bosnia and Herzegovina, while still formally part of the Ottoman Empire, came under Austrian occupation in 1878, becoming an integral part of the Austro-Hungarian monarchy from 1908." },
+      "quote": "U jednom trenutku bila i dalje deo Turskog carstva, međutim, ona je od 1878. pod austrijskom okupacijom, a od 1908. i, ajde da kažem, integralni deo, iako nije to baš bilo tako kao što su drugi neki delovi austro-ugarske monarhije.",
+      "confidence": "high"
+    },
+    {
+      "id": "austrougarska-aneksija-bosna-1908",
+      "title": { "sr": "Aneksija Bosne i Hercegovine", "en": "Annexation of Bosnia and Herzegovina" },
+      "year": 1908,
+      "yearEnd": null,
+      "placeId": "bosna-i-hercegovina",
+      "episodeId": "34",
+      "timestamp": "50:39",
+      "type": "conquest",
+      "actors": ["Austro-Ugarska"],
+      "region": "Balkan",
+      "description": { "sr": "1908. godine Austro-Ugarska sprovodi aneksiju Bosne i Hercegovine, čime stanovnicima šalje jasnu poruku da neće doći do jugoslovenskog ujedinjenja tog prostora.", "en": "In 1908, Austria-Hungary carried out the annexation of Bosnia and Herzegovina, sending residents a clear message that no Yugoslav unification of the region would follow." },
+      "quote": "posle 1908. godine kada dolazi do aneksije Bosne i Hercegovine",
+      "confidence": "high"
+    },
+    {
+      "id": "princip-dolazak-sarajevo-1911",
+      "title": { "sr": "Gavrilo Princip dolazi u Sarajevo", "en": "Gavrilo Princip arrives in Sarajevo" },
+      "year": 1911,
+      "yearEnd": null,
+      "placeId": "sarajevo",
+      "episodeId": "34",
+      "timestamp": "11:02",
+      "type": "other",
+      "actors": ["Gavrilo Princip"],
+      "region": "Balkan",
+      "description": { "sr": "Gavrilo Princip 1911. godine dolazi u Sarajevo, gde nastavlja školovanje, prvo u trgovačkoj školi, a zatim u gimnaziji.", "en": "In 1911, Gavrilo Princip came to Sarajevo, where he continued his education, first at a trade school and then at the gymnasium." },
+      "quote": "Gavrilo, ako se ne varam, 1911. godine dolazi u Sarajevo,",
+      "confidence": "medium"
+    },
+    {
+      "id": "princip-atentat-sarajevo-1914",
+      "title": { "sr": "Atentat na Franca Ferdinanda u Sarajevu", "en": "Assassination of Franz Ferdinand in Sarajevo" },
+      "year": 1914,
+      "yearEnd": null,
+      "placeId": "sarajevo",
+      "episodeId": "34",
+      "timestamp": "65:15",
+      "type": "death",
+      "actors": ["Gavrilo Princip", "Franc Ferdinand", "Nedeljko Čabrinović", "Trifko Grabež"],
+      "region": "Balkan",
+      "description": { "sr": "Gavrilo Princip, Nedeljko Čabrinović i Trifko Grabež planiraju iskoristiti posetu nadvojvode Franca Ferdinanda Sarajevu na Vidovdan 1914. godine da izvrše atentat.", "en": "Gavrilo Princip, Nedeljko Čabrinović and Trifko Grabež planned to use Archduke Franz Ferdinand's visit to Sarajevo on Vidovdan 1914 to carry out the assassination." },
+      "quote": "imali naum da iskoriste posetu Franza Ferdinanda i da organizuju atentat na njega u Sarajevu na video dan 1914. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "princip-smrt-terezin-1918",
+      "title": { "sr": "Smrt Gavrila Principa u Terezinu", "en": "Death of Gavrilo Princip in Terezín" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "terezin",
+      "episodeId": "34",
+      "timestamp": "103:53",
+      "type": "death",
+      "actors": ["Gavrilo Princip"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Gavrilo Princip umire 28. aprila 1918. godine u tvrđavi Terezin u Severnoj Češkoj, iscrpljen mučenjima i bolešću, težak samo 40 kilograma.", "en": "Gavrilo Princip died on 28 April 1918 in the Terezín fortress in northern Bohemia, exhausted by torture and illness, weighing only 40 kilograms." },
+      "quote": "Gavrilo Princip će ostati u Terezinu, to je tvrdjava u Severnoj Češkoj, gde će preminuti nakon silnih, da kažemo, mučenja i bolovanja, 28. aprila 1918. godine, težine od svega 40 kg, ali",
+      "confidence": "high"
+    }
+  ]
+}

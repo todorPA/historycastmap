@@ -1,0 +1,84 @@
+{
+  "places": [
+    { "id": "rusija", "name": { "sr": "Rusija", "en": "Russia" }, "aliases": ["Sovjetski savez", "Sovjetski savjet", "carska Rusija", "Rusiji", "Sovjetskom savezu", "Rusije"], "lat": 61.524, "lng": 105.3188, "kind": "country" },
+    { "id": "ukrajina", "name": { "sr": "Ukrajina", "en": "Ukraine" }, "aliases": ["Ukrajini"], "lat": 48.3794, "lng": 31.1656, "kind": "region" },
+    { "id": "versaj", "name": { "sr": "Versaj (Pariska mirovna konferencija)", "en": "Versailles (Paris Peace Conference)" }, "aliases": ["versaj (pariska mirovna konferencija)", "versailles (paris peace conference)", "versaillesu", "versaj", "versailles", "dvorana ogledala", "verasajskog poredka", "verasajski poredak", "versajski poredak"], "lat": 48.8049, "lng": 2.1204, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "kraj-carizma-rusija-1917",
+      "title": { "sr": "Kraj carizma u Rusiji", "en": "End of Tsarist rule in Russia" },
+      "year": 1917,
+      "yearEnd": null,
+      "placeId": "rusija",
+      "episodeId": "01",
+      "timestamp": "13:55",
+      "type": "uprising",
+      "actors": ["Carska Rusija", "Sovjetski savez"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Sagovornici navode da su carska Rusija i kasniji Sovjetski savez prostori u kojima se totalitarni režimi lako uspostavljaju, a period carizma je trajao do 1917. godine.", "en": "The speakers note that Tsarist Russia and the later Soviet Union were spaces where totalitarian regimes easily took root, and that the period of Tsarism lasted until 1917." },
+      "quote": "Ne samo Sovjetski savez, nego i carska Rusija, to su nekako prostori u kojima ti totalitarni režimi i uopšte diktature veoma dobro se na neki način primaju. Mi smo do 1917. godine imali taj period carizma.",
+      "confidence": "medium"
+    },
+    {
+      "id": "borba-za-vlast-rusija-1922-1924",
+      "title": { "sr": "Borba za vlast u Rusiji/SSSR", "en": "Power struggle in Russia/USSR" },
+      "year": 1922,
+      "yearEnd": 1924,
+      "placeId": "rusija",
+      "episodeId": "01",
+      "timestamp": "65:48",
+      "type": "other",
+      "actors": ["Josif Staljin", "Lev Trocki"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Sagovornici navode da su se za vlast u Rusiji, odnosno Sovjetskom savezu, 1922. i 1924. godine borila dvojica pretendenta koje opisuju kao Gruzina ili Osetina (Staljin) i Jevrejina (verovatno Trocki), bez izričitog navođenja imena.", "en": "The speakers note that in 1922 and 1924, power in Russia/the Soviet Union was contested by two figures they describe as a Georgian or Ossetian (Stalin) and a Jew (likely Trotsky), without stating the names explicitly." },
+      "quote": "U 1922. i 1924. se za vlast u de facto Rusiji i Sovjetskom savezu bore jedan Gruzin ili Oset i jedan Jevrein.",
+      "confidence": "low"
+    },
+    {
+      "id": "staljin-promocija-komunizma-rusija-1924",
+      "title": { "sr": "Staljin od 1924. promoviše komunizam u svetu", "en": "Stalin promotes communism abroad from 1924" },
+      "year": 1924,
+      "yearEnd": null,
+      "placeId": "rusija",
+      "episodeId": "01",
+      "timestamp": "25:42",
+      "type": "reform",
+      "actors": ["Josif Staljin", "Sovjetski savez"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Sagovornici ističu da Staljin od 1924. godine, kada dolazi na vlast, prilježno radi na promociji komunizma u drugim zemljama.", "en": "The speakers point out that from 1924, when he comes to power, Stalin diligently works on promoting communism in other countries." },
+      "quote": "ali, recimo, Sovjetski savjet, Stalin, od 1924. godine, dakle, kada dolazi vlast pa nadalje, on vrlo prilježno radi na promociji komunizma u drugim zemljama.",
+      "confidence": "medium"
+    },
+    {
+      "id": "glad-ukrajina-1932-1933",
+      "title": { "sr": "Glad u Ukrajini (Holodomor)", "en": "Famine in Ukraine (Holodomor)" },
+      "year": 1932,
+      "yearEnd": 1933,
+      "placeId": "ukrajina",
+      "episodeId": "01",
+      "timestamp": "36:28",
+      "type": "other",
+      "actors": ["Sovjetski savez", "Josif Staljin", "Stanovništvo Ukrajine"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Tokom 1932. i 1933. godine ogroman broj ljudi u Ukrajini umire od gladi usled sprovođenja petoletki i prekomernog oduzimanja žita; danas se ovaj događaj naziva gladomor ili holodomor.", "en": "During 1932 and 1933, a huge number of people in Ukraine died of starvation due to the implementation of the five-year plans and excessive grain requisitioning; today this event is called the Holodomor." },
+      "quote": "Jer nemojmo zaboraviti da te 32-33. godine ogroman broj ljudi u Ukrajini umro od gladi.",
+      "confidence": "high"
+    },
+    {
+      "id": "versajski-poredak-1918",
+      "title": { "sr": "Stvaranje versajskog poretka", "en": "Creation of the Versailles order" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "versaj",
+      "episodeId": "01",
+      "timestamp": "24:56",
+      "type": "treaty",
+      "actors": ["Sovjetski savez", "Zapadne sile"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Sagovornik navodi da je versajski poredak, iz kojeg je novostvoreni Sovjetski savez bio potpuno izopšten, stvoren 1918. godine; napomena: Versajski ugovor je zvanično potpisan 1919. godine, pa postoji mala neusklađenost u datumu iz transkripta.", "en": "The speaker states that the Versailles order, from which the newly created Soviet Union was completely excluded, was created in 1918; note: the Treaty of Versailles was officially signed in 1919, so there is a minor discrepancy with the date given in the transcript." },
+      "quote": "ona je bila potpuno izopštena iz tog jednog verasajskog poredka. Dakle, taj poredak koji je stvoren 1918. godine, Sovjetski savjet kao nešto što postoji po pravilima tog Sovjetskog poredka, Evropskog, odnosno verasajskog poredka.",
+      "confidence": "low"
+    }
+  ]
+}

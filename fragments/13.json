@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "ukrajina", "name": { "sr": "Ukrajina", "en": "Ukraine" }, "aliases": ["ukrajina", "ukraine", "istočna Ukrajina", "zapadna Ukrajina"], "lat": 48.3794, "lng": 31.1656, "kind": "region" },
+    { "id": "krim", "name": { "sr": "Krim", "en": "Crimea" }, "aliases": ["krim", "crimea", "Krima", "Krimu"], "lat": 45.3453, "lng": 34.4998, "kind": "region" }
+  ],
+  "events": [
+    {
+      "id": "perejaslavski-ugovor-podela-ukrajine-1654",
+      "title": { "sr": "Perejaslavski ugovor deli Ukrajinu na istočnu i zapadnu", "en": "Treaty of Pereyaslav divides Ukraine into east and west" },
+      "year": 1654,
+      "yearEnd": null,
+      "placeId": "ukrajina",
+      "episodeId": "13",
+      "timestamp": "32:08",
+      "type": "treaty",
+      "actors": ["Rusko carstvo", "Poljsko-litvanska zajednica"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Perejaslavskim ugovorom 1654. godine Ukrajina biva podeljena granicom reke Dnjepar: istočna Ukrajina prelazi u Rusko carstvo, a zapadna ostaje pod Poljsko-litvanskom zajednicom (Komonveltom); ova podela ostaje relevantna i tri veka kasnije.", "en": "The 1654 Treaty of Pereyaslav divided Ukraine along the Dnieper River: eastern Ukraine came under Russian rule, while western Ukraine remained under the Polish-Lithuanian Commonwealth; this division remains relevant three centuries later." },
+      "quote": "To je čuveni Perejaslavski ugovor, 1654. godina, gde je cela istočna Ukrajina u Ruskom carstvu, a zapadna, rekli smo, Poljsko-Litovsku, Komonvjelt",
+      "confidence": "high"
+    },
+    {
+      "id": "osnivanje-ukrajinske-drzave-1917",
+      "title": { "sr": "Osnivanje prve moderne ukrajinske države", "en": "Founding of the first modern Ukrainian state" },
+      "year": 1917,
+      "yearEnd": null,
+      "placeId": "ukrajina",
+      "episodeId": "13",
+      "timestamp": "43:14",
+      "type": "founding",
+      "actors": ["Ukrajina"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1917. godine dolazi do osnivanja prve moderne ukrajinske države; pre toga, izuzev kratkotrajne državnosti Kijevske Rusije, ne postoji ukrajinska država u smislu u kome je danas poznajemo.", "en": "In 1917, the first modern Ukrainian state was founded; before that, apart from the short-lived statehood of Kievan Rus', no Ukrainian state existed in the sense we know it today." },
+      "quote": "kada si govorio o istoričarima, 1917. godine, da dolazi do osnivanja njihove države. E, to je ključno. Znači, pre 1918. Nema ukrajinske države u tom smislu kako je mi danas vidimo",
+      "confidence": "high"
+    },
+    {
+      "id": "krim-predat-ukrajini-1954",
+      "title": { "sr": "Hruščov predaje Krim Ukrajinskoj SSR", "en": "Khrushchev transfers Crimea to the Ukrainian SSR" },
+      "year": 1954,
+      "yearEnd": null,
+      "placeId": "krim",
+      "episodeId": "13",
+      "timestamp": "64:48",
+      "type": "other",
+      "actors": ["Nikita Hruščov", "Ukrajinska Sovjetska Socijalistička Republika"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1954. godine, povodom 300 godina od Perejaslavskog ugovora, Nikita Hruščov administrativno predaje Krim Ukrajinskoj Sovjetskoj Socijalističkoj Republici, iako Krim ranije nikada nije bio deo Ukrajine.", "en": "In 1954, marking the 300th anniversary of the Treaty of Pereyaslav, Nikita Khrushchev administratively transferred Crimea to the Ukrainian Soviet Socialist Republic, even though Crimea had never previously been part of Ukraine." },
+      "quote": "Hoćemo da pomenemo davanje krima Ukrajini, znači 1954. za vreme vladavine Hruščova, povodom 300 godina ovog Perejaslovskog ugovora, dogovara se prelaz krima koji nije bio deo Ukrajine",
+      "confidence": "high"
+    }
+  ]
+}

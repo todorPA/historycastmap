@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "vienna", "name": { "sr": "Beč (Anšlus)", "en": "Vienna (Anschluss)" }, "aliases": ["Beču", "Dvorac Belveder", "Dvorsu Belveder"], "lat": 48.2082, "lng": 16.3738, "kind": "city" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda", "Dedinje"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "bugarska-pakt-nemacka-italija-1941",
+      "title": { "sr": "Bugarska pristupa paktu s Nemačkom i Italijom", "en": "Bulgaria joins pact with Germany and Italy" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "30",
+      "timestamp": "59:06",
+      "type": "treaty",
+      "actors": ["Bugarska", "Nemačka", "Italija"],
+      "region": "Balkan",
+      "description": { "sr": "1. marta 1941. godine Bugarska zaključuje pakt s Nemačkom i Italijom, a nemačke trupe ulaze u Bugarsku, čime je Jugoslavija u potpunosti okružena nemačkim snagama; transkript navodi godinu kao '1940', što je greška transkripcije za 1941.", "en": "On 1 March 1941, Bulgaria concluded a pact with Germany and Italy, and German troops entered Bulgaria, completely surrounding Yugoslavia with German forces; the transcript states the year as '1940', a transcription error for 1941." },
+      "quote": "Bugarska, 1. marta 1940. godine, zaključuje pakt sa Nemačkom i Italijom, i nemačke trupe sada ulazi u Bugarsku... Dakle, Jugoslavia je u potpunosti okružena Nemačkim trupama",
+      "confidence": "low"
+    },
+    {
+      "id": "pristupanje-trojnom-paktu-vienna-1941",
+      "title": { "sr": "Pristupanje Jugoslavije Trojnom paktu u Beču", "en": "Yugoslavia's accession to the Tripartite Pact in Vienna" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "vienna",
+      "episodeId": "30",
+      "timestamp": "67:32",
+      "type": "treaty",
+      "actors": ["Knez Pavle", "Dragiša Cvetković", "Aleksandar Cincar-Marković", "Ivo Andrić"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "25. marta 1941. godine, u Dvorcu Belveder u Beču, predsednik vlade Dragiša Cvetković i ministar inostranih poslova Aleksandar Cincar-Marković potpisuju pristupanje Jugoslavije Trojnom paktu; na fotografijama sa potpisivanja nalazi se i tadašnji poslanik u Berlinu, budući nobelovac Ivo Andrić.", "en": "On 25 March 1941, at Belvedere Palace in Vienna, Prime Minister Dragiša Cvetković and Foreign Minister Aleksandar Cincar-Marković signed Yugoslavia's accession to the Tripartite Pact; the signing photographs also show the then-envoy to Berlin, future Nobel laureate Ivo Andrić." },
+      "quote": "dolazimo i do samog čina pristupanja Trojnom paktu, to se desilo 25. marta, u Bežu, u Dvorsu Belveder, gde je knez Pavle poslao predsednika vlada Dragišu Cvetkovića",
+      "confidence": "high"
+    },
+    {
+      "id": "puc-27-mart-beograd-1941",
+      "title": { "sr": "Vojni puč 27. marta 1941. u Beogradu", "en": "27 March 1941 military coup in Belgrade" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "30",
+      "timestamp": "81:14",
+      "type": "uprising",
+      "actors": ["jugoslovenska vojska", "Knez Pavle"],
+      "region": "Balkan",
+      "description": { "sr": "Noću između 26. i 27. marta 1941. godine vojne jedinice kreću iz pravca Dedinja i Zemuna i zauzimaju ključne pozicije u centru Beograda; puč je izveden u 4 sata ujutru 27. marta, kada je situacija bila već rešena, kao odgovor na pristupanje Trojnom paktu.", "en": "During the night of 26–27 March 1941, military units advanced from Dedinje and Zemun and seized key positions in central Belgrade; the coup was carried out by 4 a.m. on 27 March, by which point the situation was already decided, in response to the accession to the Tripartite Pact." },
+      "quote": "noć od 26. na 27. marta gde su vojne jedinice pre svega krenule sa pravca Dedinja iz pravca Zemuna i zauzele ključne pozicije koje su bile u centru",
+      "confidence": "high"
+    }
+  ]
+}

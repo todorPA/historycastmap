@@ -1,0 +1,100 @@
+{
+  "places": [
+    { "id": "munda", "name": { "sr": "Munda", "en": "Munda" }, "aliases": [], "lat": 37.8882, "lng": -4.7794, "kind": "battle-site" },
+    { "id": "rim", "name": { "sr": "Rim", "en": "Rome" }, "aliases": ["rim", "rome", "rimu", "koloseum", "rima", "senat", "papski rim", "Sebori", "Sabure", "Saburi"], "lat": 41.9028, "lng": 12.4964, "kind": "city" },
+    { "id": "alesija", "name": { "sr": "Alesija", "en": "Alesia" }, "aliases": ["Alesije", "Alisiji"], "lat": 47.5322, "lng": 4.5001, "kind": "battle-site" },
+    { "id": "reka-rubikon", "name": { "sr": "Rubikon", "en": "Rubicon" }, "aliases": ["Rubicon", "Rubicona", "Rubikona"], "lat": 44.0968, "lng": 12.4058, "kind": "water" }
+  ],
+  "events": [
+    {
+      "id": "cezar-bitka-munda-45pne",
+      "title": { "sr": "Bitka kod Munde", "en": "Battle of Munda" },
+      "year": -45,
+      "yearEnd": null,
+      "placeId": "munda",
+      "episodeId": "37",
+      "timestamp": "01:29",
+      "type": "battle",
+      "actors": ["Gaj Julije Cezar", "Gnej Pompej Veliki (sin)", "Rimska republika"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Poslednja velika bitka rimskog građanskog rata odigrala se 17. marta 45. godine pre nove ere na brdu Munda kod Kordove u Andaluziji, gde su se sukobile Cezarove legije i legije koje je predvodio stariji sin Pompeja Velikog.", "en": "The final major battle of the Roman civil war took place on 17 March 45 BCE on the hill of Munda near Corduba (Córdoba) in Andalusia, where Caesar's legions clashed with the Pompeian forces led by Pompey's elder son." },
+      "quote": "Bitka građanskog rata koja se vodila u današnjoj Andaluziji, u Španiji, blizu mesta Kordova, na brdu koja se tada, ja mislim i sada zvala Munda, gde su se praktično sukobile Cezarove i Pompejeve legije.",
+      "confidence": "low"
+    },
+    {
+      "id": "cezar-rodjenje-rim-100pne",
+      "title": { "sr": "Rođenje Gaja Julija Cezara u Rimu", "en": "Birth of Gaius Julius Caesar in Rome" },
+      "year": -100,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "37",
+      "timestamp": "10:01",
+      "type": "birth",
+      "actors": ["Gaj Julije Cezar"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Gaj Julije Cezar je rođen 100. godine pre nove ere u rimskoj porodici Julija, u siromašnijoj gradskoj četvrti Suburi u Rimu.", "en": "Gaius Julius Caesar was born in 100 BCE into the Julian family, in the poorer Roman quarter of Subura in Rome." },
+      "quote": "Gajulije Cezar je rođen stote godine, to je lako ovako onda posle da računamo koliko ima godine kada budemo slušali događaj koji će se dešavati u prvom veku pre Krista, u porodici Julija.",
+      "confidence": "high"
+    },
+    {
+      "id": "cezar-edil-igre-rim-65pne",
+      "title": { "sr": "Cezar postaje edil i organizuje igre u Rimu", "en": "Caesar becomes aedile and stages games in Rome" },
+      "year": -65,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "37",
+      "timestamp": "43:56",
+      "type": "other",
+      "actors": ["Gaj Julije Cezar"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Cezar je oko 65. godine pre nove ere postao edil, magistrat zadužen za organizovanje javnih igara u Rimu, i koristio je tu funkciju da ulaganjem velikih sredstava stekne popularnost među narodom.", "en": "Around 65 BCE, Caesar became aedile, the magistrate responsible for organizing public games in Rome, and used the position to win popularity among the people by spending lavishly on spectacles." },
+      "quote": "On je, ako se ne varam, od 65. godine, šta da ima od 35. godina, postao edil. Edil je još jedna funkcija koja je zanimljiva, zato što je to čovek koji je zadužio za organizovanje igara u Rimu.",
+      "confidence": "high"
+    },
+    {
+      "id": "cezar-pontifex-maximus-rim-63pne",
+      "title": { "sr": "Cezar izabran za pontifeksa maksimusa", "en": "Caesar elected Pontifex Maximus" },
+      "year": -63,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "37",
+      "timestamp": "54:40",
+      "type": "other",
+      "actors": ["Gaj Julije Cezar"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Godine 63. pre nove ere Gaj Julije Cezar je izabran za vrhovnog rimskog sveštenika, pontifeksa maksimusa, doživotnu i uticajnu funkciju koja mu je, između ostalog, donela i kuću na Forumu u Rimu.", "en": "In 63 BCE, Gaius Julius Caesar was elected Pontifex Maximus, Rome's chief priest — a lifelong and influential office that also granted him a house on the Forum in Rome." },
+      "quote": "Ali da se vratimo na ovo 1963. godine, dakle, u svojoj 1937. godini, Gajulij Cezar je izebran za pontifexa Maximusa.",
+      "confidence": "low"
+    },
+    {
+      "id": "cezar-poraz-vercingetoriksa-alesija-52pne",
+      "title": { "sr": "Predaja Vercingetoriksa kod Alesije", "en": "Surrender of Vercingetorix at Alesia" },
+      "year": -52,
+      "yearEnd": null,
+      "placeId": "alesija",
+      "episodeId": "37",
+      "timestamp": "153:00",
+      "type": "battle",
+      "actors": ["Gaj Julije Cezar", "Vercingetoriks"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "52. godine pre nove ere kod Alesije se odigrava kulminacija Cezarovih ratova u Galiji: dvostrukim utvrđenjem i opsadom Cezar prisiljava galskog vođu Vercingetoriksa na predaju.", "en": "In 52 BCE at Alesia came the climax of Caesar's Gallic Wars: through a siege and double fortification, Caesar forced the Gallic leader Vercingetorix to surrender." },
+      "quote": "Dakle, tu praktično dolazimo do neke kulminacije te borbe sa Galima. To je 1952. godina.",
+      "confidence": "low"
+    },
+    {
+      "id": "cezar-prelazak-rubikona-49pne",
+      "title": { "sr": "Cezar prelazi Rubikon", "en": "Caesar crosses the Rubicon" },
+      "year": -49,
+      "yearEnd": null,
+      "placeId": "reka-rubikon",
+      "episodeId": "37",
+      "timestamp": "185:45",
+      "type": "other",
+      "actors": ["Gaj Julije Cezar", "Gnej Pompej Veliki", "Senat"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Januara 49. godine pre nove ere Cezar sa Trinaestom legijom prelazi reku Rubikon, granicu Italije, čime praktično počinje rimski građanski rat.", "en": "In January 49 BCE, Caesar crossed the Rubicon river — the boundary of Italy — with the Thirteenth Legion, an act that effectively started the Roman civil war." },
+      "quote": "Januara 1940. godine, on sa jednom jedinom legijom, koja je, dakle, to je par hiljada ljudi, sa kojima ne može sigurno osvojiti Italiju, 13. čuvena, gemini legenda, legija, donosi odluku i prelazi reku Rubicon, koja je inače jedna mala reka, izvira o peninima, uliva se u Jadransko more.",
+      "confidence": "low"
+    }
+  ]
+}

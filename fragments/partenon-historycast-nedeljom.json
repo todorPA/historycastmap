@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "atina", "name": { "sr": "Atina", "en": "Athens" }, "aliases": ["atina", "athens", "Atine", "Akropolj"], "lat": 37.9838, "lng": 23.7275, "kind": "city" },
+    { "id": "london", "name": { "sr": "London", "en": "London" }, "aliases": ["london", "Britanski muzej"], "lat": 51.5074, "lng": -0.1278, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "partenon-metope-atina-440pne",
+      "title": { "sr": "Izrada metopa Partenona", "en": "Creation of the Parthenon metopes" },
+      "year": -446,
+      "yearEnd": -440,
+      "placeId": "atina",
+      "episodeId": "partenon-historycast-nedeljom",
+      "timestamp": "27:00",
+      "type": "founding",
+      "actors": ["Atina"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Metope Partenona, sa prikazima gigantomahije, amazonomahije, kentauromahije i pljačke Troje, nastale su između 446. i 440. godine p.n.e.", "en": "The Parthenon metopes, depicting the Gigantomachy, Amazonomachy, Centauromachy, and the sack of Troy, were created between 446 and 440 BC." },
+      "quote": "446. 400. da to kažemo samo onak u formu, 440. godine nastali. Imih oko 92 metope",
+      "confidence": "medium"
+    },
+    {
+      "id": "atina-pada-latini-1204",
+      "title": { "sr": "Atina pada pod latinsku vlast", "en": "Athens falls under Latin rule" },
+      "year": 1204,
+      "yearEnd": null,
+      "placeId": "atina",
+      "episodeId": "partenon-historycast-nedeljom",
+      "timestamp": "49:21",
+      "type": "conquest",
+      "actors": ["Atina", "Latinsko carstvo"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Nakon Četvrtog krstaškog pohoda 1204. godine, Atina pada pod vlast Latina; Partenon, dotad pravoslavna crkva, postaje katolička katedrala poznata kao 'Notr Dam atinska', sa dodatim gotičkim zvonikom.", "en": "After the Fourth Crusade in 1204, Athens fell under Latin rule; the Parthenon, until then an Orthodox church, became a Catholic cathedral known as 'Notre Dame of Athens', with an added Gothic bell tower." },
+      "quote": "posle sredstva kristovarskog pohoda 1204. godine, je Atina pala u podvlast... Latina... ona je sada postala Notre Dame, atinska.",
+      "confidence": "high"
+    },
+    {
+      "id": "partenon-dzamija-atina-1456",
+      "title": { "sr": "Partenon postaje džamija", "en": "Parthenon becomes a mosque" },
+      "year": 1456,
+      "yearEnd": null,
+      "placeId": "atina",
+      "episodeId": "partenon-historycast-nedeljom",
+      "timestamp": "51:11",
+      "type": "other",
+      "actors": ["Osmansko carstvo"],
+      "region": "Osmansko carstvo",
+      "description": { "sr": "Katolička faza Partenona trajala je manje od 200 godina, do 1456. godine, kada Atina prelazi pod osmansku vlast i Partenon se pretvara u džamiju.", "en": "The Parthenon's Catholic phase lasted less than 200 years, until 1456, when Athens came under Ottoman rule and the Parthenon was converted into a mosque." },
+      "quote": "manje od 200 godina. Da, do 1456, u stvari, kad je tako negatina.",
+      "confidence": "medium"
+    },
+    {
+      "id": "karijatida-predata-britanski-muzej-london-1860",
+      "title": { "sr": "Karijatida sa Partenona predata Britanskom muzeju", "en": "Parthenon caryatid given to the British Museum" },
+      "year": 1860,
+      "yearEnd": null,
+      "placeId": "london",
+      "episodeId": "partenon-historycast-nedeljom",
+      "timestamp": "80:13",
+      "type": "other",
+      "actors": ["Britanski muzej"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1860. godine jedna od karijatida sa Erehtejona na Akropolju predata je Britanskom muzeju u Londonu, gde se i danas nalazi.", "en": "In 1860, one of the caryatids from the Erechtheion on the Acropolis was given to the British Museum in London, where it remains today." },
+      "quote": "U 1860. godine ih je predo Britanskom muzeju, gde se on i danas nalazi.",
+      "confidence": "medium"
+    }
+  ]
+}

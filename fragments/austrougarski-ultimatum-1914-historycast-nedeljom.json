@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "bosna-i-hercegovina", "name": { "sr": "Bosna i Hercegovina", "en": "Bosnia and Herzegovina" }, "aliases": ["bosna i hercegovina", "aneksija bosne"], "lat": 44.15, "lng": 17.75, "kind": "region" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "berlin", "name": { "sr": "Berlin", "en": "Berlin" }, "aliases": ["berlin", "nemačka podrška"], "lat": 52.52, "lng": 13.405, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "aneksija-bosne-hercegovine-1908",
+      "title": { "sr": "Austrougarska aneksija Bosne i Hercegovine", "en": "Austro-Hungarian annexation of Bosnia and Herzegovina" },
+      "year": 1908,
+      "yearEnd": null,
+      "placeId": "bosna-i-hercegovina",
+      "episodeId": "austrougarski-ultimatum-1914-historycast-nedeljom",
+      "timestamp": "10:49",
+      "type": "conquest",
+      "actors": ["Alojz Erental", "Austro-Ugarska"],
+      "region": "Balkan",
+      "description": { "sr": "5. oktobra 1908. godine, ministar spoljnih poslova Erental proglašava aneksiju Bosne i Hercegovine bez konsultacije sa saveznicima, kako bi pokazao da Austro-Ugarska može samostalno voditi politiku velike sile.", "en": "On 5 October 1908, Foreign Minister Aehrenthal proclaimed the annexation of Bosnia and Herzegovina without consulting allies, to demonstrate that Austria-Hungary could conduct great-power politics independently." },
+      "quote": "kada je 1908. godine, tada je ministar spolnih poslao bio Erental, odlučio da proglasi aneksiju Bosne i Hercegovine, 5. oktober 1908.",
+      "confidence": "high"
+    },
+    {
+      "id": "austrougarski-ultimatum-albanija-1913",
+      "title": { "sr": "Austrougarski ultimatum Srbiji zbog Albanije", "en": "Austro-Hungarian ultimatum to Serbia over Albania" },
+      "year": 1913,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "austrougarski-ultimatum-1914-historycast-nedeljom",
+      "timestamp": "12:41",
+      "type": "other",
+      "actors": ["Austro-Ugarska", "Srbija"],
+      "region": "Balkan",
+      "description": { "sr": "U oktobru 1913. godine Austro-Ugarska upućuje ultimatum Srbiji da povuče vojsku iz Albanije, nakon upada albanskih snaga na srpsku teritoriju i srpskog protivudara; ovaj presedan najavljuje obrazac koji će se ponoviti 1914. godine.", "en": "In October 1913, Austria-Hungary issued an ultimatum demanding Serbia withdraw its army from Albania, following an Albanian incursion into Serbian territory and a Serbian counter-move; this precedent foreshadowed the pattern that would repeat in 1914." },
+      "quote": "Kao i u oktobru 1913. kada je Austro-Ugrska uputila takođe ultimatum Srbiji da se povuče iz Albanije.",
+      "confidence": "high"
+    },
+    {
+      "id": "nemacki-blanko-ček-berlin-1914",
+      "title": { "sr": "Nemačka daje 'blanko ček' podrške Austro-Ugarskoj", "en": "Germany gives Austria-Hungary a 'blank check'" },
+      "year": 1914,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "austrougarski-ultimatum-1914-historycast-nedeljom",
+      "timestamp": "31:40",
+      "type": "other",
+      "actors": ["Nemačka", "Leopold Bertold", "Austro-Ugarska"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "5. jula 1914. godine Nemačka daje bezuslovnu podršku Austro-Ugarskoj za akciju protiv Srbije, o čemu je odmah obavešten ministar Bertold; ova podrška postaje ključan podsticaj za slanje ultimatuma.", "en": "On 5 July 1914, Germany gave unconditional support to Austria-Hungary for action against Serbia, of which Minister Berchtold was immediately informed; this support became a key catalyst for sending the ultimatum." },
+      "quote": "sad se vraćamo opet na 5. jula 1914... E, taj, sada kad je stigla ta nemačka podrška, koja se otišla odmah da izvesti Bertolda",
+      "confidence": "high"
+    }
+  ]
+}

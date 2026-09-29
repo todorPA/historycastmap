@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "vienna", "name": { "sr": "Beč (Anšlus)", "en": "Vienna (Anschluss)" }, "aliases": ["Beču", "Bečkoj akademiji"], "lat": 48.2082, "lng": 16.3738, "kind": "city" },
+    { "id": "sremski-karlovci", "name": { "sr": "Sremski Karlovci", "en": "Sremski Karlovci" }, "aliases": ["Sremskim Karlovcima"], "lat": 45.2072, "lng": 19.9339, "kind": "city" },
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": ["pariz", "paris", "parizu", "svetska izložba u Parizu"], "lat": 48.8566, "lng": 2.3522, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "paja-jovanovic-upis-becka-akademija-1877",
+      "title": { "sr": "Paja Jovanović upisuje Bečku akademiju", "en": "Paja Jovanović enrolls at the Vienna Academy" },
+      "year": 1877,
+      "yearEnd": null,
+      "placeId": "vienna",
+      "episodeId": "historycast-cetvrtkom-paja-jovanovic",
+      "timestamp": "10:48",
+      "type": "other",
+      "actors": ["Paja Jovanović", "Christian Gripenkerl"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Paja Jovanović se 1877. godine upisuje na Bečku akademiju, gde mu prvi profesor postaje Christian Gripenkerl, veliki zaljubljenik u antičku grčku umetnost.", "en": "In 1877, Paja Jovanović enrolled at the Vienna Academy, where his first professor was Christian Gripenkerl, a devoted admirer of ancient Greek art." },
+      "quote": "On se upisuje, dakle, 1877. ja mislim, na akademiju. Njegov prvi profesor bio je Christian Gripenkerl",
+      "confidence": "high"
+    },
+    {
+      "id": "seoba-srba-izlozena-karlovci-1896",
+      "title": { "sr": "Izlaganje slike 'Seoba Srba' u Sremskim Karlovcima", "en": "Exhibition of the painting 'Migration of the Serbs' in Sremski Karlovci" },
+      "year": 1896,
+      "yearEnd": null,
+      "placeId": "sremski-karlovci",
+      "episodeId": "historycast-cetvrtkom-paja-jovanovic",
+      "timestamp": "49:14",
+      "type": "other",
+      "actors": ["Paja Jovanović"],
+      "region": "Balkan",
+      "description": { "sr": "U avgustu 1896. godine, veliko istorijsko platno Paje Jovanovića 'Seoba Srba' bilo je izloženo u Sremskim Karlovcima; prvobitna verzija slike danas se čuva u Patrijaršiji.", "en": "In August 1896, Paja Jovanović's large historical canvas 'Migration of the Serbs' was exhibited in Sremski Karlovci; the original version of the painting is preserved today in the Patriarchate." },
+      "quote": "Zna se da je u avgustu 1896. slika bila izložena u Sremskim Karlovcima.",
+      "confidence": "high"
+    },
+    {
+      "id": "krunisanje-dusana-porudzbina-pariz-1900",
+      "title": { "sr": "Poručivanje slike 'Krunisanje cara Dušana' za izložbu u Parizu", "en": "Commission of 'Coronation of Tsar Dušan' for the Paris exhibition" },
+      "year": 1900,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "historycast-cetvrtkom-paja-jovanovic",
+      "timestamp": "62:18",
+      "type": "other",
+      "actors": ["Paja Jovanović", "Kraljevina Srbija", "Stojan Novaković"],
+      "region": "Balkan",
+      "description": { "sr": "Slika 'Krunisanje cara Dušana' predstavljala je zvaničnu porudžbinu Kraljevine Srbije za potrebe svetske izložbe u Parizu 1900. godine; Paja Jovanović se pripremao oko dve godine, uz pomoć istoričara Stojana Novakovića.", "en": "The painting 'Coronation of Tsar Dušan' was an official commission by the Kingdom of Serbia for the 1900 World's Fair in Paris; Paja Jovanović prepared for about two years, with help from historian Stojan Novaković." },
+      "quote": "Krunisanje je predstavilo zapravo zvaničnu poručbinu Kraljevine Srbije za potrebe svetske izložbe u Parizu u 1900.",
+      "confidence": "high"
+    }
+  ]
+}

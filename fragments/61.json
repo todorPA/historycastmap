@@ -1,0 +1,52 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": [], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "kralj-milan-vrhovni-komandant-1897",
+      "title": { "sr": "Kralj Milan se vraća u Srbiju kao vrhovni komandant vojske", "en": "King Milan returns to Serbia as army commander-in-chief" },
+      "year": 1897,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "61",
+      "timestamp": "77:04",
+      "type": "other",
+      "actors": ["Kralj Milan Obrenović", "Kralj Aleksandar Obrenović"],
+      "region": "Balkan",
+      "description": { "sr": "Kralj Milan se, na poziv sina kralja Aleksandra, vraća u Srbiju i postaje vrhovni komandant vojske, period poleta srpske vojske koji dovodi do nabavke Mauzerovih pušaka. Transkript navodi godinu kao '1827', što je Whisperova greška — Milan Obrenović je rođen 1854. godine, pa ta godina istorijski nije moguća; kontekst (period vladavine sina Aleksandra, kupovina Mauzerovih pušaka) upućuje na 1897/1898. godinu.", "en": "King Milan, at the invitation of his son King Alexander, returned to Serbia and became commander-in-chief of the army, a period of the Serbian army's rise that led to the purchase of Mauser rifles. The transcript states the year as '1827', a Whisper transcription error — Milan Obrenović was born in 1854, making that year historically impossible; the context (during his son Alexander's reign, purchase of Mauser rifles) points to 1897/1898." },
+      "quote": "ali 1827. godine kralj Milan se vraća u Srbiju na poziv sina, nakon što su rešili svoje ... nesuglasice, gde on postaje zapravo general",
+      "confidence": "low"
+    },
+    {
+      "id": "milovanoviceva-puska-1906",
+      "title": { "sr": "Prepravka jednometne puške u brzometnu (Milovanovićeva puška)", "en": "Conversion of a single-shot rifle into a repeating rifle (Milovanović rifle)" },
+      "year": 1906,
+      "yearEnd": 1907,
+      "placeId": "beograd",
+      "episodeId": "61",
+      "timestamp": "92:18",
+      "type": "other",
+      "actors": ["Koka Milovanović"],
+      "region": "Balkan",
+      "description": { "sr": "1906-1907. godine, nekoliko godina nakon smrti Koke Milovanovića (1905), sprovodi se prepravka jednometne puške u brzometnu i objavljuju konkursi inostranim fabrikama, ali se na kraju bira domaća konstrukcija, verovatno zbog cene.", "en": "In 1906-1907, a few years after Koka Milovanović's death (1905), a single-shot rifle was converted into a repeating one, and tenders were issued to foreign factories, but a domestic design was ultimately chosen, likely due to cost." },
+      "quote": "Koka Milovanović je već umro, kao što smo rekli, 1905. Ovo se dešava tu nekdoko 1906. – 1907. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "nabavka-ruskih-puska-1914",
+      "title": { "sr": "Nabavka ruskih pušaka pred Cersku bitku", "en": "Procurement of Russian rifles before the Battle of Cer" },
+      "year": 1914,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "61",
+      "timestamp": "101:22",
+      "type": "other",
+      "actors": ["Srpska vojska"],
+      "region": "Balkan",
+      "description": { "sr": "1914. godine, pred Cersku bitku, srpska vojska nabavlja rusko oružje da bi popunila nedostatak pušaka.", "en": "In 1914, ahead of the Battle of Cer, the Serbian army procured Russian weapons to make up for a shortage of rifles." },
+      "quote": "sa koliko, možemo reći, 1914. godine i nabavkom ruskih pušaka pred samu Crsku bitku",
+      "confidence": "high"
+    }
+  ]
+}

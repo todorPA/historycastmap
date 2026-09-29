@@ -1,0 +1,84 @@
+{
+  "places": [
+    { "id": "sicilija", "name": { "sr": "Sicilija", "en": "Sicily" }, "aliases": ["Siciliji", "Siciliju"], "lat": 37.5999, "lng": 14.0154, "kind": "region" },
+    { "id": "rim", "name": { "sr": "Rim", "en": "Rome" }, "aliases": ["Rimu"], "lat": 41.9028, "lng": 12.4964, "kind": "city" },
+    { "id": "salerno", "name": { "sr": "Salerno", "en": "Salerno" }, "aliases": ["Salernu"], "lat": 40.6824, "lng": 14.7681, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "invazija-sicilija-1943",
+      "title": { "sr": "Savezničko iskrcavanje na Siciliji", "en": "Allied landing in Sicily" },
+      "year": 1943,
+      "yearEnd": null,
+      "placeId": "sicilija",
+      "episodeId": "81",
+      "timestamp": "20:46",
+      "type": "battle",
+      "actors": ["Montgomery", "Patton", "Saveznici", "Italija"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "9. na 10. jula 1943. godine počinje invazija na Siciliju; osma britanska armija pod Montgomerijem udara na Sirakuzu, a sedma američka armija pod Patonom na Gelu, sa ostrvom osvojenim za mesec dana.", "en": "On the night of July 9-10, 1943, the invasion of Sicily began; the British Eighth Army under Montgomery attacked Syracuse, and the American Seventh Army under Patton attacked Gela, with the island captured within a month." },
+      "quote": "9. jul. 1943. godine ... Invazija Sicilije, tačno, traje jedan mesec, jednu nedelju i jedan dan.",
+      "confidence": "high"
+    },
+    {
+      "id": "smena-musolinija-1943",
+      "title": { "sr": "Smena Musolinija i preuzimanje vlasti Badoljom", "en": "Removal of Mussolini and Badoglio's takeover" },
+      "year": 1943,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "81",
+      "timestamp": "45:47",
+      "type": "other",
+      "actors": ["Benito Mussolini", "Pietro Badoglio"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Usred bitke za Siciliju, u julu 1943. godine, Musolini je smenjen, a novu italijansku vladu preuzima Pietro Badoljo, koji tvrdi Nemcima da je to interna stvar i da Italija nastavlja rat na njihovoj strani, mada mu ne veruju ni saveznici ni Nemci.", "en": "In the midst of the Battle of Sicily, in July 1943, Mussolini was removed, and the new Italian government was taken over by Pietro Badoglio, who claimed to the Germans that it was an internal matter and that Italy would continue fighting on their side, though neither the Allies nor the Germans believed him." },
+      "quote": "Nezvanično već dolazi do kontakata sad ove nove italijanske vlade na čelu sa Badoljom i saveznika ... kada su smenili Mussolinija",
+      "confidence": "high"
+    },
+    {
+      "id": "invazija-apeninsko-poluostrvo-1943",
+      "title": { "sr": "Savezničko iskrcavanje na Apeninsko poluostrvo", "en": "Allied landing on the Italian mainland" },
+      "year": 1943,
+      "yearEnd": null,
+      "placeId": "salerno",
+      "episodeId": "81",
+      "timestamp": "46:13",
+      "type": "battle",
+      "actors": ["Britanska osma armija", "Sjedinjene Američke Države"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Početkom septembra 1943. godine saveznici prelaze na Apeninsko poluostrvo; Britanci sa osmom armijom pod Montgomerijem prelaze na 'štiklu' čizme i Taranto, dok Amerikanci izvršavaju invaziju na Salerno.", "en": "In early September 1943, the Allies crossed onto the Italian mainland; the British Eighth Army under Montgomery crossed to the 'heel' of the boot and Taranto, while the Americans carried out the invasion at Salerno." },
+      "quote": "početak septembra 1943. godine, saveznici prelaze na Apeninsko polovostrvo ... Amerikanci izvršavaju invaziju na Salerno.",
+      "confidence": "high"
+    },
+    {
+      "id": "musolini-marionetska-republika-1944",
+      "title": { "sr": "Musolini se osvećuje pripadnicima veća nakon oslobođenja od Nemaca", "en": "Mussolini takes revenge on council members after being freed by the Germans" },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "81",
+      "timestamp": "70:10",
+      "type": "death",
+      "actors": ["Benito Mussolini"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Januara 1944. godine, svega tri meseca nakon što su ga Nemci osvobodili, Musolini se osvećuje pripadnicima fašističkog veća koje ga je smenilo — u Veroniji je organizovano suđenje i pet je osuđeno na smrt, uz brzu egzekuciju.", "en": "In January 1944, only three months after being freed by the Germans, Mussolini took revenge on the members of the fascist council that had removed him — a trial was organized in Verona and five were sentenced to death, followed by a swift execution." },
+      "quote": "januar 1944. godine, svega tri meseca ... nakon što su ga Nemci oslobodili, Mussolini se obračuno sa onim",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-rima-1944",
+      "title": { "sr": "Savezničko oslobođenje Rima", "en": "Allied liberation of Rome" },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "81",
+      "timestamp": "79:41",
+      "type": "conquest",
+      "actors": ["General Mark Clark", "Saveznici", "Nemačka vojska"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Maja 1944. godine, novim napadom, general Clark konačno ulazi u Rim, mada dogovor sa Britancima nije bio da udari direktno na grad, već da zarobi Kesselringove trupe na Gustav liniji.", "en": "In May 1944, with a new offensive, General Clark finally entered Rome, although the agreement with the British had not been to strike directly at the city, but to capture Kesselring's troops on the Gustav Line." },
+      "quote": "novi opet, novi napad, to je maj 1944. godine ... i konačno on ulazi u Rim",
+      "confidence": "high"
+    }
+  ]
+}

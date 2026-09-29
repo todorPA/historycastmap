@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "edesa", "name": { "sr": "Edesa", "en": "Edessa" }, "aliases": ["Edesu", "Edese", "grofovija Edesa"], "lat": 37.1591, "lng": 38.7969, "kind": "city" },
+    { "id": "hatin", "name": { "sr": "Hatin", "en": "Hattin" }, "aliases": ["Hatina", "bitka kod Hatina", "Tiberijade"], "lat": 32.8103, "lng": 35.4497, "kind": "battle-site" },
+    { "id": "kairo", "name": { "sr": "Kairo", "en": "Cairo" }, "aliases": ["kairo", "cairo", "Egipat", "pohod na Egipat"], "lat": 30.0444, "lng": 31.2357, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "pad-edese-muslimanska-vlast-1144",
+      "title": { "sr": "Pad Edese pod muslimansku vlast", "en": "Fall of Edessa to Muslim rule" },
+      "year": 1144,
+      "yearEnd": null,
+      "placeId": "edesa",
+      "episodeId": "21",
+      "timestamp": "41:58",
+      "type": "conquest",
+      "actors": ["Zengi (Krvavi Zengi)", "Grofovija Edesa"],
+      "region": "Bliski istok",
+      "description": { "sr": "1144. godine Edesa, prva krstaška država osnovana na Levantu, pada pod muslimansku vlast pod vođstvom sultana Zengija; ovaj gubitak je jedan od direktnih povoda za Drugi krstaški rat.", "en": "In 1144, Edessa, the first Crusader state established in the Levant, fell to Muslim rule under Sultan Zengi; this loss was one of the direct triggers for the Second Crusade." },
+      "quote": "vratit ću se na Edesu recimo to 1144. godine i taj pad Edese pod muslimansku vlast.",
+      "confidence": "high"
+    },
+    {
+      "id": "amalrik-pohod-egipat-1168",
+      "title": { "sr": "Neuspešan pohod kralja Amalrika na Egipat", "en": "King Amalric's failed campaign against Egypt" },
+      "year": 1168,
+      "yearEnd": null,
+      "placeId": "kairo",
+      "episodeId": "21",
+      "timestamp": "20:39",
+      "type": "conquest",
+      "actors": ["Amalrik I Jerusalimski", "Templari"],
+      "region": "Bliski istok",
+      "description": { "sr": "1168. godine, pod pritiskom viteškog templarskog reda, kralj Amalrik pokreće pohod na Egipat; strateški zamišljen, ali resursno neopravdan potez, koji se pokazao kao velika greška za Jerusalimsku kraljevinu.", "en": "In 1168, under pressure from the Templar order, King Amalric launched a campaign against Egypt; a strategically conceived but resource-unjustified move that proved to be a major mistake for the Kingdom of Jerusalem." },
+      "quote": "bila je onaj pohod na Egipat, sad malo smo otišli predaleko na 1168. godinu, ali su oni izvršili taj pritisak na Amorija da pokrene novi pohod na Egipat.",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-hatin-1187",
+      "title": { "sr": "Bitka kod Hatina", "en": "Battle of Hattin" },
+      "year": 1187,
+      "yearEnd": null,
+      "placeId": "hatin",
+      "episodeId": "21",
+      "timestamp": "27:30",
+      "type": "battle",
+      "actors": ["Saladin", "Kraljevina Jerusalim", "templarski red"],
+      "region": "Bliski istok",
+      "description": { "sr": "U bici kod Hatina jerusalimski kralj, po savetu velikog majstora templarskog reda, kreće Saladinu u susret kod Tiberijade; Saladin je unapred zatrpao bunare, pa je iscrpljena krstaška vojska potpuno uništena, što je koštalo hrišćanske države njihove nezavisnosti.", "en": "At the Battle of Hattin, the King of Jerusalem, on the advice of the Templar Grand Master, marched to meet Saladin near Tiberias; Saladin had pre-emptively blocked the wells, and the exhausted Crusader army was utterly destroyed, costing the Christian states their independence." },
+      "quote": "odlučit će se da krene Saladinu u susret kod Tiberijade i kod mesta Hatina... njegova istrpljena vojska, jer je Saladin zatrpao sve bunare... biti uništena pred njegovim očima",
+      "confidence": "high"
+    }
+  ]
+}

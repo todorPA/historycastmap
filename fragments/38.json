@@ -1,0 +1,84 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["Beograda", "Beogradu"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "kajmakcalan", "name": { "sr": "Kajmakčalan", "en": "Kaymakchalan" }, "aliases": ["Kajmak Čelanu", "Kajmakčalanu"], "lat": 40.9500, "lng": 21.7333, "kind": "battle-site" },
+    { "id": "solun", "name": { "sr": "Solun", "en": "Thessaloniki" }, "aliases": ["Solunu", "Solonskom", "Solonski"], "lat": 40.6401, "lng": 22.9444, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "crna-ruka-prvi-sastanak-zaverenika-beograd-1901",
+      "title": { "sr": "Prvi sastanak zaverenika u Beogradu", "en": "First conspirators' meeting in Belgrade" },
+      "year": 1901,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "38",
+      "timestamp": "11:41",
+      "type": "founding",
+      "actors": ["Antonije Antić", "Dragutin Dimitrijević Apis", "Đorđe Genčić"],
+      "region": "Balkan",
+      "description": { "sr": "Mladi oficiri okupljaju se septembra 1901. godine po prvi put u stanu Antonija Antića u Beogradu, gde razmatraju uklanjanje kralja Aleksandra Obrenovića – to je početak grupe koja će kasnije postati Crna ruka.", "en": "In September 1901 young officers first gathered at Antonije Antić's apartment in Belgrade to discuss removing King Alexander Obrenović – the origin of the group that would later become the Black Hand." },
+      "quote": "1901. godinu, septembar, kada se mladi oficiri prvi put okupljaju u stanu Antonija Antića",
+      "confidence": "medium"
+    },
+    {
+      "id": "majski-prevrat-ubistvo-aleksandra-obrenovica-beograd-1903",
+      "title": { "sr": "Majski prevrat – ubistvo kralja Aleksandra", "en": "May Coup – assassination of King Alexander" },
+      "year": 1903,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "38",
+      "timestamp": "76:04",
+      "type": "death",
+      "actors": ["Aleksandar Obrenović", "Draga Mašin", "Dragutin Dimitrijević Apis", "Aleksandar Mašin"],
+      "region": "Balkan",
+      "description": { "sr": "U noći 28. na 29. maj 1903. godine (po starom kalendaru) zaverenici upadaju u dvor u Beogradu i ubijaju kralja Aleksandra Obrenovića i kraljicu Dragu; kasnije su govorili da su se pokajali zbog onoga što su uradili u maju 1903.", "en": "On the night of 28–29 May 1903 (old calendar) the conspirators stormed the palace in Belgrade and killed King Alexander Obrenović and Queen Draga; they later said they regretted what they had done in May 1903." },
+      "quote": "da su se pokajali zbog onoga što su uradili u maju 1903. godine",
+      "confidence": "medium"
+    },
+    {
+      "id": "krunisanje-petra-karadjordjevica-beograd-1904",
+      "title": { "sr": "Krunisanje kralja Petra I Karađorđevića", "en": "Coronation of King Peter I Karađorđević" },
+      "year": 1904,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "38",
+      "timestamp": "64:06",
+      "type": "coronation",
+      "actors": ["Petar Karađorđević"],
+      "region": "Balkan",
+      "description": { "sr": "Petar Karađorđević dolazi na presto Srbije i biva krunisan 1904. godine (u transkriptu izgovoreno kao '904.', verovatno greška transkripcije za 1904); godinu dana kasnije otvara se pitanje statusa zaverenika.", "en": "Peter Karađorđević took the Serbian throne and was crowned in 1904 (spoken in the transcript as '904', likely a transcription slip for 1904); a year later the question of the conspirators' status opened up." },
+      "quote": "da on dolazi dakle u tu jednu novu situaciju da vlada Srbijom kronisan je 904. godine",
+      "confidence": "low"
+    },
+    {
+      "id": "vojvoda-vuk-pogiba-kajmakcalan-1916",
+      "title": { "sr": "Pogibija vojvode Vuka na Kajmakčalanu", "en": "Death of Vojvoda Vuk at Kajmakčalan" },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "kajmakcalan",
+      "episodeId": "38",
+      "timestamp": "98:42",
+      "type": "death",
+      "actors": ["Vojvoda Vuk (Vojin Popović)"],
+      "region": "Balkan",
+      "description": { "sr": "Vojvoda Vuk, jedan od vodećih ljudi bliskih Apisu, gine 1916. godine u borbi na Kajmakčalanu, ostavljajući Apisa bez mnogih njegovih ključnih saradnika.", "en": "Vojvoda Vuk, one of the leading men close to Apis, was killed in 1916 in the fighting at Kajmakčalan, leaving Apis without many of his key associates." },
+      "quote": "Vojvoj Davuk će poginuti na Kajmak Čelanu 1916. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "solunski-proces-streljanje-apisa-solun-1917",
+      "title": { "sr": "Streljanje Apisa u Solunskom procesu", "en": "Execution of Apis in the Salonika Trial" },
+      "year": 1917,
+      "yearEnd": null,
+      "placeId": "solun",
+      "episodeId": "38",
+      "timestamp": "115:42",
+      "type": "death",
+      "actors": ["Dragutin Dimitrijević Apis", "Ljubomir Vulović", "Rade Malobabić"],
+      "region": "Balkan",
+      "description": { "sr": "Presuda Solunskog procesa izvršena je juna 1917. godine streljanjem Dragutina Dimitrijevića Apisa, Ljube Vulovića i Radeta Malobabića, čime se obeležava formalni kraj Crne ruke.", "en": "The verdict of the Salonika Trial was carried out in June 1917 with the execution of Dragutin Dimitrijević Apis, Ljubomir Vulović, and Rade Malobabić, marking the formal end of the Black Hand." },
+      "quote": "presuda je doneta i izvršena je juna 1917. godine kada su streljani Dragutin Dimitrijević Ljubo Vulović, Rade Malobabić",
+      "confidence": "high"
+    }
+  ]
+}

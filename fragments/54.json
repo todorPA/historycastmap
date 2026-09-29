@@ -1,0 +1,86 @@
+{
+  "places": [
+    { "id": "milet", "name": { "sr": "Milet", "en": "Miletus" }, "aliases": ["Mileta"], "lat": 37.5294, "lng": 27.2761, "kind": "city" },
+    { "id": "maraton", "name": { "sr": "Maraton", "en": "Marathon" }, "aliases": ["Maratonu"], "lat": 38.1500, "lng": 23.9667, "kind": "battle-site" },
+    { "id": "termopilski-klanac", "name": { "sr": "Termopilski klanac", "en": "Thermopylae" }, "aliases": ["Termopilama"], "lat": 38.7959, "lng": 22.5367, "kind": "battle-site" },
+    { "id": "salamina", "name": { "sr": "Salamina", "en": "Salamis" }, "aliases": ["Salamini"], "lat": 37.9755, "lng": 23.4989, "kind": "battle-site" },
+    { "id": "plateja", "name": { "sr": "Plateja", "en": "Plataea" }, "aliases": ["Plateji"], "lat": 38.2333, "lng": 23.2667, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "jonski-ustanak-pad-mileta-499pne",
+      "title": { "sr": "Jonski ustanak i pad Mileta", "en": "Ionian Revolt and the fall of Miletus" },
+      "year": -499,
+      "yearEnd": null,
+      "placeId": "milet",
+      "episodeId": "54",
+      "timestamp": "09:19",
+      "type": "uprising",
+      "actors": ["Jonjani", "Persijsko carstvo"],
+      "region": "Bliski istok",
+      "description": { "sr": "499. godine pre nove ere izbija Jonski ustanak u Maloj Aziji, u kome se Jonjani suprotstavljaju persijskoj premoći; ovaj sukob, uz pad Mileta, obeležava predistoriju Grčko-persijskog rata koji će trajati decenijama, do 449. godine pre nove ere.", "en": "In 499 BCE, the Ionian Revolt broke out in Asia Minor, in which the Ionians resisted Persian dominance; this conflict, along with the fall of Miletus, marked the prelude to the Greco-Persian War, which would last for decades, until 449 BCE." },
+      "quote": "to je rat koji je decenijski, traja od 499. godine do 449. godine ... 499. godine, pa onda imamo pad Mileta",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-kod-maratona-490pne",
+      "title": { "sr": "Bitka kod Maratona", "en": "Battle of Marathon" },
+      "year": -490,
+      "yearEnd": null,
+      "placeId": "maraton",
+      "episodeId": "54",
+      "timestamp": "40:41",
+      "type": "battle",
+      "actors": ["Atina", "Persijsko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "13. septembra 490. godine pre nove ere odigrala se bitka kod Maratona, gde su se sukobile atinska i persijska vojska, u ishodu koji sami Grci nisu unapred bili sigurni kome ide u korist.", "en": "On September 13, 490 BCE, the Battle of Marathon took place, in which the Athenian and Persian armies clashed, with an outcome the Greeks themselves were unsure would favor them." },
+      "quote": "13. september 490. godine, gde su se sukobile dve vojske",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-termopilski-klanac-480pne",
+      "title": { "sr": "Bitka kod Termopilskog klanca", "en": "Battle of Thermopylae" },
+      "year": -480,
+      "yearEnd": null,
+      "placeId": "termopilski-klanac",
+      "episodeId": "54",
+      "timestamp": "88:19",
+      "type": "battle",
+      "actors": ["Leonida", "Sparta", "Persijsko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "480. godine pre nove ere odigrala se čuvena bitka kod Termopilskog klanca, u kojoj je Leonida predvodio spartansku odbranu.", "en": "In 480 BCE, the famous Battle of Thermopylae took place, in which Leonidas led the Spartan defense." },
+      "quote": "znači 480. godine iste godine kada se desila bitka kod Termopilskog klanca",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-salamina-480pne",
+      "title": { "sr": "Bitka kod Salamine", "en": "Battle of Salamis" },
+      "year": -480,
+      "yearEnd": null,
+      "placeId": "salamina",
+      "episodeId": "54",
+      "timestamp": "88:33",
+      "type": "battle",
+      "actors": ["Aristid", "Atina", "Persijsko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "Krajem septembra 480. godine pre nove ere, svega nekoliko nedelja nakon Termopila, odigrala se pomorska bitka kod Salamine, u kojoj je Aristid bio glavni strateg pobede.", "en": "In late September 480 BCE, just a few weeks after Thermopylae, the naval Battle of Salamis took place, in which Aristides was the chief strategist of the victory." },
+      "quote": "dogodila se nova bitka, to je bitka kod Salamine koja je bila pomorska bitka, ona se dešava u septembru, krajem septembra 480. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-plateja-479pne",
+      "title": { "sr": "Bitka kod Plateje", "en": "Battle of Plataea" },
+      "year": -479,
+      "yearEnd": null,
+      "placeId": "plateja",
+      "episodeId": "54",
+      "timestamp": "92:01",
+      "type": "battle",
+      "actors": ["Grčki gradovi-države", "Persijsko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "479. godine pre nove ere, nekoliko meseci nakon Salamine, odigrala se bitka kod Plateje, poslednja od velikih bitaka u tom letnjem periodu grčko-persijskih ratova.", "en": "In 479 BCE, a few months after Salamis, the Battle of Plataea took place, the last of the great battles in that summer period of the Greco-Persian Wars." },
+      "quote": "opet nekoliko meseci kasnije desila se 479. godine bitka kod Plateje",
+      "confidence": "high"
+    }
+  ]
+}

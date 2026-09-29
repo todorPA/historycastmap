@@ -1,0 +1,44 @@
+{
+  "places": [
+    {
+      "id": "dallas",
+      "name": {
+        "sr": "Dalas",
+        "en": "Dallas"
+      },
+      "aliases": [
+        "dalas",
+        "dallas",
+        "dalasu"
+      ],
+      "lat": 32.7767,
+      "lng": -96.797,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "ubistvo-kenedija-dalas-1963",
+      "title": {
+        "sr": "Ubistvo Džona Ficdžeralda Kenedija",
+        "en": "Assassination of John Fitzgerald Kennedy"
+      },
+      "year": 1963,
+      "yearEnd": null,
+      "placeId": "dallas",
+      "episodeId": "specijal-ubistvo-kenedija-izmedju-stvarnosti-i-teorije-zavere",
+      "timestamp": "03:00",
+      "type": "death",
+      "actors": [
+        "John Fitzgerald Kennedy"
+      ],
+      "region": "Severna Amerika",
+      "description": {
+        "sr": "Predsednik SAD Džon Ficdžerald Kenedi ubijen je 1963. godine u Dalasu; ovaj događaj je od tada predmet brojnih teorija zavere, uključujući i popularni film Olivera Stouna 'JFK' (1991).",
+        "en": "US President John Fitzgerald Kennedy was assassinated in Dallas in 1963; the event has since been the subject of numerous conspiracy theories, including Oliver Stone's popular 1991 film 'JFK'."
+      },
+      "quote": "Radi se o ubistvu Johna Fitzgeralda Kennedy-a koji je 1963. godine ubijen u Dalasu.",
+      "confidence": "high"
+    }
+  ]
+}

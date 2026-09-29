@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "japan", "name": { "sr": "Japan", "en": "Japan" }, "aliases": ["Japana", "Japanu"], "lat": 36.2048, "lng": 138.2529, "kind": "region" },
+    { "id": "sekigahara", "name": { "sr": "Sekigahara", "en": "Sekigahara" }, "aliases": ["Sekigahari"], "lat": 35.3667, "lng": 136.4667, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "portugalci-dolazak-japan-1543",
+      "title": { "sr": "Prvi Evropljani (Portugalci) stižu u Japan", "en": "First Europeans (Portuguese) arrive in Japan" },
+      "year": 1543,
+      "yearEnd": null,
+      "placeId": "japan",
+      "episodeId": "47",
+      "timestamp": "37:58",
+      "type": "other",
+      "actors": ["Portugalci"],
+      "region": "Azija",
+      "description": { "sr": "1543. godine Portugalci se prvi put iskrcavaju u Japanu, donoseći katoličanstvo, trgovinske ugovore i vatreno oružje.", "en": "In 1543, the Portuguese first landed in Japan, bringing Catholicism, trade agreements, and firearms." },
+      "quote": "1543. su se prvi put iskreceli Nobel Japana",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-sekigahara-1600",
+      "title": { "sr": "Bitka kod Sekigahare", "en": "Battle of Sekigahara" },
+      "year": 1600,
+      "yearEnd": null,
+      "placeId": "sekigahara",
+      "episodeId": "47",
+      "timestamp": "100:57",
+      "type": "battle",
+      "actors": ["Tokugawa Ieyasu", "Ishida Mitsunari"],
+      "region": "Azija",
+      "description": { "sr": "21. oktobra 1600. godine, u bici kod Sekigahare, Tokugawa Ijeasu pobeđuje Išidu Micunarija, čime postaje treći veliki ujedinitelj Japana i okončava se Sengoku period sukoba klanova.", "en": "On October 21, 1600, at the Battle of Sekigahara, Tokugawa Ieyasu defeated Ishida Mitsunari, becoming the third great unifier of Japan and ending the Sengoku period of clan warfare." },
+      "quote": "21. oktober 1600. bitka na Sekigahari koja će oblikovati savremeni Japan ... i dolazi kao treći veliki ujedinitelj Japana",
+      "confidence": "high"
+    },
+    {
+      "id": "proglasenje-tokugava-sogunata-1603",
+      "title": { "sr": "Proglašenje Tokugava šogunata", "en": "Proclamation of the Tokugawa shogunate" },
+      "year": 1603,
+      "yearEnd": null,
+      "placeId": "japan",
+      "episodeId": "47",
+      "timestamp": "102:36",
+      "type": "founding",
+      "actors": ["Tokugawa Ieyasu"],
+      "region": "Azija",
+      "description": { "sr": "1603. godine Tokugawa Ijeasu proglašava šogunat, preuzimajući titulu koja mu po njegovim precima Minamoto pripada.", "en": "In 1603, Tokugawa Ieyasu proclaimed the shogunate, assuming the title that belonged to him through his Minamoto ancestry." },
+      "quote": "Šagunat je proglašen 1603. To je moment kada je Ijasu rekao da je ponovo mogao da ponosno stavi ... titula ... na njegove Minamoto predke.",
+      "confidence": "high"
+    }
+  ]
+}

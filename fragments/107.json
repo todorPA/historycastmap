@@ -1,0 +1,52 @@
+{
+  "places": [
+    { "id": "berlin", "name": { "sr": "Berlin", "en": "Berlin" }, "aliases": ["Berlinu", "Berlina"], "lat": 52.5200, "lng": 13.4050, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "hitler-kancelar-1933",
+      "title": { "sr": "Hitler postaje nemački kancelar", "en": "Hitler becomes German chancellor" },
+      "year": 1933,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "107",
+      "timestamp": "00:52",
+      "type": "other",
+      "actors": ["Adolf Hitler"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Nakon više pokušaja tokom 1932. i 1933. godine, Adolf Hitler konačno postaje nemački kancelar 30. januara 1933. godine.", "en": "After several attempts during 1932 and 1933, Adolf Hitler finally became German chancellor on January 30, 1933." },
+      "quote": "Adolf Hitler konačno postaje nemački kancelar u januaru 1933. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "noc-dugih-nozeva-1934",
+      "title": { "sr": "Noć dugih noževa", "en": "Night of the Long Knives" },
+      "year": 1934,
+      "yearEnd": null,
+      "placeId": "berlin",
+      "episodeId": "107",
+      "timestamp": "01:19",
+      "type": "other",
+      "actors": ["Adolf Hitler", "Ernst Röhm", "Herman Gering", "SA"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "U leto 1934. godine, tokom Noći dugih noževa, Hitler eliminiše vođstvo SA jedinica, uključujući svog bliskog saradnika Ernsta Röhma, čime u potpunosti preuzima kontrolu nad nemačkom vojskom i strankom.", "en": "In the summer of 1934, during the Night of the Long Knives, Hitler eliminated the leadership of the SA, including his close associate Ernst Röhm, thereby taking full control of the German military and party." },
+      "quote": "Noći Dugih nožava i leta 1934. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "hitler-vrhovni-vodja-1934",
+      "title": { "sr": "Hitler postaje nesporni vrhovni vođa (Firer)", "en": "Hitler becomes the undisputed supreme leader (Führer)" },
+      "year": 1934,
+      "yearEnd": 1945,
+      "placeId": "berlin",
+      "episodeId": "107",
+      "timestamp": "95:22",
+      "type": "reign",
+      "actors": ["Adolf Hitler"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Nakon Noći dugih noževa 1934. godine, vojska se lično zaklinje na verost Hitleru umesto Nemačkoj, čime on postaje Firer i nesporni vođa, položaj koji drži do svoje smrti 30. aprila 1945. godine.", "en": "After the Night of the Long Knives in 1934, the army swore personal allegiance to Hitler rather than to Germany, making him Führer and undisputed leader, a position he held until his death on April 30, 1945." },
+      "quote": "Hitler je nesporno predo naravno 30. aprila 1945. godine vrhovni vođa",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "places": [
+    { "id": "rim", "name": { "sr": "Rim", "en": "Rome" }, "aliases": ["rim", "rome"], "lat": 41.9028, "lng": 12.4964, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "vazari-imenuje-gotiku-1550",
+      "title": { "sr": "Vazari imenuje 'gotički' stil kao varvarski", "en": "Vasari names the 'Gothic' style as barbaric" },
+      "year": 1550,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "gotika-vreme-katedrala-historycast-nedeljom",
+      "timestamp": "04:24",
+      "type": "other",
+      "actors": ["Đorđo Vazari"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Oko 1550. godine, u svojoj knjizi o životima slavnih umetnika, Đorđo Vazari okarakterisao je srednjovekovni arhitektonski stil, dotad zvan Opus Francigenum, kao 'gotički', po Gotima koji su opustošili Rim, izražavajući renesansni prezir prema tom stilu.", "en": "Around 1550, in his book on the lives of famous artists, Giorgio Vasari characterized the medieval architectural style, previously called Opus Francigenum, as 'Gothic', after the Goths who sacked Rome, expressing Renaissance disdain for the style." },
+      "quote": "Znači negde u 1550. godini, kada je okarakterisao gotički stil kao varvarski, a goti su bili varvari broj jedan zato što su oni... upustošili Rim",
+      "confidence": "medium"
+    }
+  ]
+}

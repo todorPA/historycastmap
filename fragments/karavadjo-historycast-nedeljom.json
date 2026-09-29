@@ -1,0 +1,104 @@
+{
+  "places": [
+    {
+      "id": "rim",
+      "name": {
+        "sr": "Rim",
+        "en": "Rome"
+      },
+      "aliases": [
+        "rim",
+        "rome",
+        "Rimu"
+      ],
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "kind": "city"
+    },
+    {
+      "id": "napulj",
+      "name": {
+        "sr": "Napulj",
+        "en": "Naples"
+      },
+      "aliases": [
+        "Napolj",
+        "Napolju"
+      ],
+      "lat": 40.8359,
+      "lng": 14.2488,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "karavadjo-rodjenje-1573",
+      "title": {
+        "sr": "Rođenje Karavađa",
+        "en": "Birth of Caravaggio"
+      },
+      "year": 1573,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "karavadjo-historycast-nedeljom",
+      "timestamp": "02:34",
+      "type": "birth",
+      "actors": [
+        "Mikelanđelo Merizi da Karavađo"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Mikelanđelo Merizi da Karavađo rođen je 1573. godine.",
+        "en": "Michelangelo Merisi da Caravaggio was born in 1573."
+      },
+      "quote": "I to se rodio 1573.",
+      "confidence": "medium"
+    },
+    {
+      "id": "karavadjo-bekstvo-iz-rima-1606",
+      "title": {
+        "sr": "Karavađo beži iz Rima nakon ubistva",
+        "en": "Caravaggio flees Rome after a killing"
+      },
+      "year": 1606,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "karavadjo-historycast-nedeljom",
+      "timestamp": "89:00",
+      "type": "other",
+      "actors": [
+        "Mikelanđelo Merizi da Karavađo"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Karavađo je aktivno stvarao u Rimu od 1600. do 1606. godine, svoj najznačajniji period; 1606. godine, nakon ubistva, beži iz Rima u Napulj, započinjući poslednju fazu izgnanstva.",
+        "en": "Caravaggio actively worked in Rome from 1600 to 1606, his most significant period; in 1606, after a killing, he fled Rome for Naples, beginning the final phase of his exile."
+      },
+      "quote": "on u principu stvara aktivno u Rimu nekih samo šest godina, od 1600. do 1606... On 1606. se dešava... to ubistvo... On prvo beži iz Rima u Napolj.",
+      "confidence": "high"
+    },
+    {
+      "id": "karavadjo-smrt-egzil-1610",
+      "title": {
+        "sr": "Smrt Karavađa u egzilu",
+        "en": "Death of Caravaggio in exile"
+      },
+      "year": 1610,
+      "yearEnd": null,
+      "placeId": "napulj",
+      "episodeId": "karavadjo-historycast-nedeljom",
+      "timestamp": "89:29",
+      "type": "death",
+      "actors": [
+        "Mikelanđelo Merizi da Karavađo"
+      ],
+      "region": "Zapadna Evropa",
+      "description": {
+        "sr": "Nakon četiri godine u egzilu, tokom kojih je putovao od Napulja preko Sirakuze do Malte, Karavađo umire 1610. godine na putu nazad, u trenutku kada je možda već bio pomilovan.",
+        "en": "After four years in exile, during which he traveled from Naples through Syracuse to Malta, Caravaggio died in 1610 on his way back, possibly around the time he had been pardoned."
+      },
+      "quote": "1610. gde je... dakle, samo četiri... oni četiri godine bi u egzilu i umire na... putu povratu",
+      "confidence": "high"
+    }
+  ]
+}

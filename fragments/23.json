@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "fort-sumter", "name": { "sr": "Fort Sumter", "en": "Fort Sumter" }, "aliases": ["Fort Sumteru", "garnizon Fort Sumter"], "lat": 32.7524, "lng": -79.8748, "kind": "battle-site" },
+    { "id": "washington", "name": { "sr": "Vašington", "en": "Washington, D.C." }, "aliases": ["vašington", "washington, d.c.", "vašingtonu"], "lat": 38.9072, "lng": -77.0369, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "zakon-zabrana-uvoza-robova-1803",
+      "title": { "sr": "Zakon o zabrani uvoza robova iz Afrike", "en": "Law banning the importation of slaves from Africa" },
+      "year": 1803,
+      "yearEnd": null,
+      "placeId": "washington",
+      "episodeId": "23",
+      "timestamp": "10:28",
+      "type": "reform",
+      "actors": ["Sjedinjene Američke Države"],
+      "region": "Severna Amerika",
+      "description": { "sr": "1803. godine u SAD je usvojen zakon kojim se zabranjuje uvoz robova iz Afrike; od tog trenutka robovi se rađaju i trguju isključivo u okviru samih Sjedinjenih Država.", "en": "In 1803, the US passed a law banning the importation of slaves from Africa; from that point on, slaves were born and traded exclusively within the United States itself." },
+      "quote": "s tim da oni moramo priznati jesu 1803. mislim uveli zakon koji se zabranjuje uvoz robova iz Afrike. Znači 1803. robovi se rađaju i traduju samo u okviru Sjedinovičkih država",
+      "confidence": "high"
+    },
+    {
+      "id": "bombardovanje-fort-sumter-1861",
+      "title": { "sr": "Bombardovanje Fort Sumtera — početak Građanskog rata", "en": "Bombardment of Fort Sumter — start of the Civil War" },
+      "year": 1861,
+      "yearEnd": null,
+      "placeId": "fort-sumter",
+      "episodeId": "23",
+      "timestamp": "36:23",
+      "type": "battle",
+      "actors": ["Konfederacija", "Unija"],
+      "region": "Severna Amerika",
+      "description": { "sr": "Bombardovanjem Fort Sumtera od strane snaga Konfederacije počinje Američki građanski rat; garnizon se predaje, a jedine žrtve nastaju usled nesreće — eksplozije baruta prilikom oproštajnog salvа zastavi.", "en": "The bombardment of Fort Sumter by Confederate forces marked the start of the American Civil War; the garrison surrendered, and the only casualties resulted from an accident — a gunpowder explosion during a farewell salute to the flag." },
+      "quote": "kad je krenulo bombardovanje mi su rešili da se predaju... poginulo je dvoje, dvojica su poginuli i jedan je bio ranjen. I to su jedine žrtve u Fort Sumter, ono praktično friendly fire.",
+      "confidence": "high"
+    },
+    {
+      "id": "emancipation-proclamation-stupa-na-snagu-1863",
+      "title": { "sr": "Proglas o emancipaciji stupa na snagu", "en": "Emancipation Proclamation takes effect" },
+      "year": 1863,
+      "yearEnd": null,
+      "placeId": "washington",
+      "episodeId": "23",
+      "timestamp": "84:33",
+      "type": "reform",
+      "actors": ["Abraham Linkoln"],
+      "region": "Severna Amerika",
+      "description": { "sr": "Prvog januara 1863. godine stupa na snagu Linkolnov Proglas o emancipaciji, koji se odnosi na robovlasničke države u pobuni; sadržaj dokumenta će kasnije biti ugrađen u Ustav kroz 13. amandman.", "en": "On 1 January 1863, Lincoln's Emancipation Proclamation took effect, applying to slaveholding states in rebellion; the content of the document was later written into the Constitution through the 13th Amendment." },
+      "quote": "tek prvog januara 1863. stupa na snagu... Emancipation Proclamation je njegov lični dokument kao predsednika... A 13. amandban je ono što je praktično sadržaj emancipat tog dokumenta uvelo u Ustav.",
+      "confidence": "high"
+    },
+    {
+      "id": "predsednicki-izbori-lincoln-mcclellan-1864",
+      "title": { "sr": "Predsednički izbori 1864. — Linkoln protiv Meklelana", "en": "1864 Presidential election — Lincoln vs. McClellan" },
+      "year": 1864,
+      "yearEnd": null,
+      "placeId": "washington",
+      "episodeId": "23",
+      "timestamp": "120:05",
+      "type": "other",
+      "actors": ["Abraham Linkoln", "Džordž Meklelan"],
+      "region": "Severna Amerika",
+      "description": { "sr": "1864. godine održani su predsednički izbori u kojima je Abraham Linkoln pobedio generala Džordža Meklelana, čija je politička poruka bila obećanje da će zaustaviti rat; transkript navodi godinu kao '1844', što je greška transkripcije za 1864.", "en": "In 1864, presidential elections were held in which Abraham Lincoln defeated General George McClellan, whose political message promised to end the war; the transcript states the year as '1844', a transcription error for 1864." },
+      "quote": "Te godine 1844... Predsednički i tu je Lincoln a proti kandidat je baš ovaj McClellan general.",
+      "confidence": "low"
+    }
+  ]
+}

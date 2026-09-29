@@ -1,0 +1,38 @@
+{
+  "places": [
+    { "id": "rim", "name": { "sr": "Rim", "en": "Rome" }, "aliases": ["rim", "rome", "rimu", "rima"], "lat": 41.9028, "lng": 12.4964, "kind": "city" },
+    { "id": "poatije", "name": { "sr": "Poatije", "en": "Poitiers" }, "aliases": ["poatije", "poitiers", "poatijeja", "tur"], "lat": 46.5802, "lng": 0.3404, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "bitka-kod-poatijea-732",
+      "title": { "sr": "Bitka kod Poatijea (zaustavljanje arapskog osvajanja)", "en": "Battle of Poitiers (halting the Arab conquest)" },
+      "year": 732,
+      "yearEnd": null,
+      "placeId": "poatije",
+      "episodeId": "istoricari-odgovaraju-na-vasa-pitanja",
+      "timestamp": "24:32",
+      "type": "battle",
+      "actors": ["Mavri", "Franci"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "U istoriografiji se smatra da je islamski, pre svega arapski (mavarski) talas osvajanja zaustavljen 732. godine kod Poatijea.", "en": "Historiography holds that the Islamic, primarily Arab (Moorish) wave of conquest was halted in 732 at Poitiers." },
+      "quote": "smatra se da je taj islamski, pre svega arapski, talas, da je on zaustavljen 732. Meni je zanimljivo ovo šta bi bilo da Mavri nisu bili zaustavi kod Poatijeja",
+      "confidence": "medium"
+    },
+    {
+      "id": "pad-zapadnog-rimskog-carstva-rim-476",
+      "title": { "sr": "Simbolički kraj Zapadnog rimskog carstva", "en": "Symbolic end of the Western Roman Empire" },
+      "year": 476,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "istoricari-odgovaraju-na-vasa-pitanja",
+      "timestamp": "33:54",
+      "type": "other",
+      "actors": ["Rim"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "476. godina se u zapadnoj istoriografiji naglašava kao prelomni datum kraja Antike i početka srednjeg veka, iako sagovornici ističu da je to zapadnocentrična konstrukcija — Rimsko (Romejsko) carstvo formalno traje do 1453. godine u Carigradu, a decentralizacija Rima kao centra vlasti počela je već krajem 4. veka smrću Teodosija I.", "en": "The year 476 is emphasized in Western historiography as the pivotal date marking the end of Antiquity and the beginning of the Middle Ages, though the discussants note this is a Western-centric construction — the Roman (Romaic) Empire formally continued until 1453 in Constantinople, and the decentralization of Rome as the seat of power had already begun at the end of the 4th century with the death of Theodosius I." },
+      "quote": "taj datum 476. godine se naglašava... kao neki preloman datum... ali... Rimskog carstva traje do 1453. godine",
+      "confidence": "medium"
+    }
+  ]
+}

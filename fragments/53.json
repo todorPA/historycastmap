@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "helsinki", "name": { "sr": "Helsinki (Finska)", "en": "Helsinki (Finland)" }, "aliases": ["Finskoj", "Fincki"], "lat": 60.1699, "lng": 24.9384, "kind": "city" },
+    { "id": "kopenhagen", "name": { "sr": "Kopenhagen", "en": "Copenhagen" }, "aliases": ["Kopenhagenu"], "lat": 55.6761, "lng": 12.5683, "kind": "city" },
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": [], "lat": 48.8566, "lng": 2.3522, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "zimski-rat-1939",
+      "title": { "sr": "Početak Zimskog rata (Sovjetski Savez protiv Finske)", "en": "Start of the Winter War (Soviet Union against Finland)" },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "helsinki",
+      "episodeId": "53",
+      "timestamp": "16:52",
+      "type": "battle",
+      "actors": ["Sovjetski Savez", "Finska"],
+      "region": "Severna Evropa i Atlantik",
+      "description": { "sr": "Novembra 1939. godine, nakon što je Finska odbila sovjetske zahteve za razmenu teritorije oko Petrograda, počinje Zimski rat, koji je trajao oko tri i po meseca, sa velikom disproporcijom snaga (oko 435.000 sovjetskih vojnika naspram znatno manje finske vojske).", "en": "In November 1939, after Finland refused Soviet demands for a territorial exchange around Leningrad, the Winter War began, lasting about three and a half months, with a great disparity in forces (around 435,000 Soviet soldiers against a much smaller Finnish army)." },
+      "quote": "Finjci to odbijaju i novembra 1939. godine počinje rat koji se danas u istoriji ... naziva Zimski rat",
+      "confidence": "high"
+    },
+    {
+      "id": "nemacka-invazija-danska-1940",
+      "title": { "sr": "Nemačka invazija na Dansku", "en": "German invasion of Denmark" },
+      "year": 1940,
+      "yearEnd": null,
+      "placeId": "kopenhagen",
+      "episodeId": "53",
+      "timestamp": "35:39",
+      "type": "conquest",
+      "actors": ["Nemačka vojska", "Danska"],
+      "region": "Severna Evropa i Atlantik",
+      "description": { "sr": "U rano jutro 9. aprila 1940. godine Nemci ulaze u Dansku, koja ne pruža veći otpor; nemački ambasador u Kopenhagenu uručuje ultimatum danskom ministru spoljnih poslova.", "en": "In the early morning of April 9, 1940, the Germans entered Denmark, which offered little resistance; the German ambassador in Copenhagen delivered an ultimatum to the Danish foreign minister." },
+      "quote": "Nemci u rano jutro 9. aprila 1940. godine ušli u Dansku, koja nije pruđila neki veći otpor.",
+      "confidence": "high"
+    },
+    {
+      "id": "napad-francusku-cercil-premijer-1940",
+      "title": { "sr": "Nemački napad na Francusku i Čerčilovo preuzimanje vlasti", "en": "German attack on France and Churchill's assumption of power" },
+      "year": 1940,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "53",
+      "timestamp": "71:14",
+      "type": "other",
+      "actors": ["Winston Churchill", "Neville Chamberlain", "Nemačka vojska", "Paul Reynaud"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "10. maja 1940. godine, istog dana kada Nemci pokreću napad na Francusku, Neville Chamberlain napušta vlast i Winston Churchill postaje premijer Velike Britanije; transkript navodi godinu kao '1941', što je greška transkripcije — kontekst (pad Francuske, dolazak Čerčila) jasno pripada 1940. godini.", "en": "On May 10, 1940, the same day the Germans launched their attack on France, Neville Chamberlain left power and Winston Churchill became Prime Minister of Great Britain; the transcript states the year as '1941', a transcription error — the context (the fall of France, Churchill's arrival) clearly belongs to 1940." },
+      "quote": "Chamberlain odlazi, dolazi Churchill, Churchill postaje predsednik vlade, odnosno premijer, tašno 10. maja 1941. godine kada Nemci...",
+      "confidence": "low"
+    }
+  ]
+}

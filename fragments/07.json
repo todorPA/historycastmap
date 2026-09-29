@@ -1,0 +1,102 @@
+{
+  "places": [
+    { "id": "palestina", "name": { "sr": "Palestina", "en": "Palestine" }, "aliases": ["Palestini", "Palestine"], "lat": 31.9522, "lng": 35.2332, "kind": "region" },
+    { "id": "izrael", "name": { "sr": "Izrael", "en": "Israel" }, "aliases": ["Izraelu", "izraelska", "državu Izrael"], "lat": 31.0461, "lng": 34.8516, "kind": "country" },
+    { "id": "gaza", "name": { "sr": "Gaza", "en": "Gaza Strip" }, "aliases": ["Gazi", "Gazu", "Gaze", "Gazom", "pojaz Gaz"], "lat": 31.3547, "lng": 34.3088, "kind": "region" },
+    { "id": "golanska-visoravan", "name": { "sr": "Golanska visoravan", "en": "Golan Heights" }, "aliases": ["golansku visoravanu", "golansku"], "lat": 32.9800, "lng": 35.7500, "kind": "region" },
+    { "id": "jerusalim", "name": { "sr": "Jerusalim", "en": "Jerusalem" }, "aliases": ["Jerusalima", "Jerusalimu", "istočni Jerusalim", "zapadni Jerusalim", "istočni stari Jerusalim"], "lat": 31.7683, "lng": 35.2137, "kind": "city" },
+    { "id": "sinaj", "name": { "sr": "Sinajsko poluostrvo", "en": "Sinai Peninsula" }, "aliases": ["Sinajsko poloostrovo", "Sinaju", "Sinaja", "Sina"], "lat": 29.5000, "lng": 33.9000, "kind": "region" }
+  ],
+  "events": [
+    {
+      "id": "balfur-deklaracija-palestina-1917",
+      "title": { "sr": "Balfurova deklaracija o domovini u Palestini", "en": "Balfour Declaration on a homeland in Palestine" },
+      "year": 1917,
+      "yearEnd": null,
+      "placeId": "palestina",
+      "episodeId": "07",
+      "timestamp": "21:20",
+      "type": "other",
+      "actors": ["Lord Balfour", "Lord Rothschild", "Velika Britanija", "Jevreji"],
+      "region": "Bliski istok",
+      "description": { "sr": "Balfurova deklaracija iz 1917. godine (u transkriptu izgovoreno kao '917', verovatno greška transkripcije) je pismo lorda Balfura upućeno grofu Rothschildu, u kome britanska vlada podržava stvaranje jevrejske domovine u Palestini.", "en": "The 1917 Balfour Declaration (rendered as '917' in the transcript, likely a transcription slip) was a letter from Lord Balfour to Lord Rothschild in which the British government backed the creation of a Jewish homeland in Palestine." },
+      "quote": "To je ono sve što je prehodilo toj 917. Ja sam dobro razumeo. Tako je. Tako je. I u nekom trenutku je sazrelo da se ta izraelska ponuda zvanično objavi i tu dolazi ta Balfurova deklaracija pazite to nije to nije ugovor to nije to nije triti to nije nešto što kaže da je pečat. To je jednostavno jedna formulacija jedan papir koji je poslat grofu Rothschildu od strane Balfura. Gde on kaže da će se britanska vlada zalagati da se u Palestini stvori jevrejska domovina, država, homeland ili kako god da je nazovemo.",
+      "confidence": "low"
+    },
+    {
+      "id": "ben-gurion-proglasava-drzavu-izrael-1948",
+      "title": { "sr": "Ben Gurion proglašava državu Izrael", "en": "Ben Gurion proclaims the State of Israel" },
+      "year": 1948,
+      "yearEnd": null,
+      "placeId": "izrael",
+      "episodeId": "07",
+      "timestamp": "32:06",
+      "type": "founding",
+      "actors": ["David Ben Gurion", "Jevreji", "Ujedinjene nacije"],
+      "region": "Bliski istok",
+      "description": { "sr": "David Ben Gurion proglašava nezavisnu državu Izrael u maju 1948. godine, prvu jevrejsku državu u modernoj istoriji, čime odmah počinje prvi arapsko-izraelski rat.", "en": "David Ben Gurion proclaimed the independent State of Israel in May 1948, the first Jewish state in modern history, immediately triggering the first Arab-Israeli war." },
+      "quote": "Članica se 48. povlače. U istom trenutku jevreji David Ben Gurion proglašava u maju 48. ako se ne verujem. Tako je. Proglašava nezavisnu državu, državu Izrael.",
+      "confidence": "high"
+    },
+    {
+      "id": "egipat-osvaja-gaza-1948",
+      "title": { "sr": "Egipat osvaja i okupira Gazu", "en": "Egypt conquers and occupies Gaza" },
+      "year": 1948,
+      "yearEnd": null,
+      "placeId": "gaza",
+      "episodeId": "07",
+      "timestamp": "39:14",
+      "type": "conquest",
+      "actors": ["Egipat", "Jordan", "Izrael"],
+      "region": "Bliski istok",
+      "description": { "sr": "U ratu iz 1948. godine (transkript kaže '48. Devete', što možda ukazuje na 1948. ili 1949. godinu) Egipat osvaja i administrira pojas Gaze, dok Jordan zauzima zapadnu obalu i istočni Jerusalim, a zapadni Jerusalim ostaje deo Izraela.", "en": "In the 1948 war (the transcript's '48. Devete' possibly points to 1948 or 1949) Egypt conquered and administered the Gaza Strip, while Jordan took the West Bank and East Jerusalem, and West Jerusalem remained part of Israel." },
+      "quote": "znači, 48. Devete Gazu osvaja Egipat. On je administrira, ali u pravom smislu reči. Znači, oni je osvaju. A Jordan uzima zapadnu obalu i istočni stari Jerusalim. Znači, zapadni Jerusalim je deo u tom trenutku Izraela.",
+      "confidence": "low"
+    },
+    {
+      "id": "izrael-osvaja-golan-1967",
+      "title": { "sr": "Izrael osvaja Golansku visoravan od Sirije", "en": "Israel captures the Golan Heights from Syria" },
+      "year": 1967,
+      "yearEnd": null,
+      "placeId": "golanska-visoravan",
+      "episodeId": "07",
+      "timestamp": "48:24",
+      "type": "conquest",
+      "actors": ["Izrael", "Sirija"],
+      "region": "Bliski istok",
+      "description": { "sr": "U Šestodnevnom ratu 1967. godine Izrael osvaja stratešku Golansku visoravan od Sirije.", "en": "In the 1967 Six-Day War, Israel captured the strategic Golan Heights from Syria." },
+      "quote": "Sledeći veliki sukob je 1967. godine. Šestodnevni rat. ... Izrael osvaja golansku visoravanu od Sirije.",
+      "confidence": "high"
+    },
+    {
+      "id": "izrael-osvaja-jerusalim-1967",
+      "title": { "sr": "Izrael osvaja istočni Jerusalim od Jordana", "en": "Israel captures East Jerusalem from Jordan" },
+      "year": 1967,
+      "yearEnd": null,
+      "placeId": "jerusalim",
+      "episodeId": "07",
+      "timestamp": "48:28",
+      "type": "conquest",
+      "actors": ["Izrael", "Jordan"],
+      "region": "Bliski istok",
+      "description": { "sr": "U istom Šestodnevnom ratu 1967. godine Izrael osvaja od Jordana zapadnu obalu i istočni Jerusalim.", "en": "In the same 1967 Six-Day War, Israel captured the West Bank and East Jerusalem from Jordan." },
+      "quote": "Sledeći veliki sukob je 1967. godine. Šestodnevni rat. ... Izrael osvaja od Jordana zapadnu obalu i istočni Jerusalim.",
+      "confidence": "high"
+    },
+    {
+      "id": "sinaj-povratak-egiptu-1979",
+      "title": { "sr": "Sinaj vraćen Egiptu sporazumom iz Camp Davida", "en": "Sinai returned to Egypt under the Camp David accord" },
+      "year": 1979,
+      "yearEnd": null,
+      "placeId": "sinaj",
+      "episodeId": "07",
+      "timestamp": "51:56",
+      "type": "treaty",
+      "actors": ["Izrael", "Egipat", "Jimmy Carter", "Anwar el Sadat"],
+      "region": "Bliski istok",
+      "description": { "sr": "Mirovnim ugovorom iz Camp Davida 1979. godine, potpisanim pod pokroviteljstvom predsednika Jimmyja Cartera, Izrael vraća Sinajsko poluostrvo Egiptu.", "en": "Under the 1979 Camp David peace treaty, brokered by President Jimmy Carter, Israel returned the Sinai Peninsula to Egypt." },
+      "quote": "Sinaj je vraćen Egiptu mirovnim ugovorom koji će doći nekoliko godina kasnije. To ćemo pomenuti. 79. Camp David. To je sledeće.",
+      "confidence": "high"
+    }
+  ]
+}

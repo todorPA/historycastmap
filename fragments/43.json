@@ -1,0 +1,52 @@
+{
+  "places": [
+    { "id": "prilepac", "name": { "sr": "Prilepac (kod Novog Brda)", "en": "Prilepac (near Novo Brdo)" }, "aliases": ["Prilepcu"], "lat": 42.6000, "lng": 21.4500, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "lazar-rodjenje-1329",
+      "title": { "sr": "Rođenje knjeza Lazara Hrebeljanovića", "en": "Birth of Prince Lazar Hrebeljanović" },
+      "year": 1329,
+      "yearEnd": null,
+      "placeId": "prilepac",
+      "episodeId": "43",
+      "timestamp": "10:01",
+      "type": "birth",
+      "actors": ["Knez Lazar Hrebeljanović"],
+      "region": "Balkan",
+      "description": { "sr": "Godina rođenja knjeza Lazara izvedena je posredno, iz jednog izvora koji navodi da je poginuo u 60. godini života — što daje 1329. godinu, mada je moguće da je rođen i kasnije.", "en": "Prince Lazar's birth year is derived indirectly, from a single source stating he died at age 60 — which gives 1329, though it is possible he was born somewhat later." },
+      "quote": "u tom izvoru stoje jedno slovo Andonija Rafaela o Svetom knezu Lazaru, da je on poginuo kad imao 60 godina, i tako mi dolazimo do te 1329. godine",
+      "confidence": "medium"
+    },
+    {
+      "id": "smrt-cara-urosa-1371",
+      "title": { "sr": "Smrt cara Uroša otvara prostor za uzdizanje knjeza Lazara", "en": "Death of Emperor Uroš opens space for Prince Lazar's rise" },
+      "year": 1371,
+      "yearEnd": null,
+      "placeId": "prilepac",
+      "episodeId": "43",
+      "timestamp": "31:31",
+      "type": "death",
+      "actors": ["Car Uroš", "Knez Lazar Hrebeljanović"],
+      "region": "Balkan",
+      "description": { "sr": "Početkom decembra 1371. godine umire car Uroš, svega nekoliko meseci nakon Maričke bitke i pogibije Mrnjavčevića, čime se otvara prostor koji Lazar postepeno preuzima kao najmoćniji vlastelin.", "en": "In early December 1371, Emperor Uroš died, just a few months after the Battle of Maritsa and the deaths of the Mrnjavčević brothers, opening up space that Lazar gradually took over as the most powerful nobleman." },
+      "quote": "je zaista i umro dva meseca praktično kasnije, početkom decembra 1371. godine. ... u ta dva, tri meseca krajem 1371. dolazi to tektonskih poremećaja, znači prvo Marička bitka i pogibija Mrnjavčevića",
+      "confidence": "high"
+    },
+    {
+      "id": "lazar-prva-sacuvana-povelja-1375",
+      "title": { "sr": "Prva sačuvana povelja knjeza Lazara", "en": "Prince Lazar's first preserved charter" },
+      "year": 1375,
+      "yearEnd": null,
+      "placeId": "prilepac",
+      "episodeId": "43",
+      "timestamp": "36:16",
+      "type": "other",
+      "actors": ["Knez Lazar Hrebeljanović", "Lavra Svetog Atanasija"],
+      "region": "Balkan",
+      "description": { "sr": "Prva sačuvana povelja knjeza Lazara, upućena Lavri Svetog Atanasija, potiče iz 1375. godine i jedina je poznata pre onih iz 1379-1380. godine, kada je već neosporno najmoćniji vlastelin.", "en": "Prince Lazar's first preserved charter, addressed to the Lavra of St. Athanasius, dates from 1375 and is the only one known before those from 1379-1380, by which time he was unquestionably the most powerful nobleman." },
+      "quote": "Neka prva njegova povelja Lavru Svetog Atanasija, prva uopšte njegova sačuvana, je iz 1375. godine. I to je jedina.",
+      "confidence": "high"
+    }
+  ]
+}

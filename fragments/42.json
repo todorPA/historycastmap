@@ -1,0 +1,70 @@
+{
+  "places": [
+    { "id": "podgorica", "name": { "sr": "Podgorica", "en": "Podgorica" }, "aliases": ["Podgorici", "Rivnici", "Ribnica", "Ribnici"], "lat": 42.4304, "lng": 19.2594, "kind": "city" },
+    { "id": "carigrad", "name": { "sr": "Carigrad", "en": "Constantinople" }, "aliases": ["Carigradu", "Carigrada"], "lat": 41.0082, "lng": 28.9784, "kind": "city" },
+    { "id": "petrova-crkva", "name": { "sr": "Petrova crkva", "en": "Church of St. Peter (Petrova Crkva)" }, "aliases": ["Petrovoj crkvi", "Petrova crkva kod Novog Pazara"], "lat": 43.1401, "lng": 20.5940, "kind": "landmark" },
+    { "id": "hilandar", "name": { "sr": "Hilandar", "en": "Hilandar Monastery" }, "aliases": ["Hilandaru", "Hilandara", "Svetu Goru", "Atosu"], "lat": 40.2688, "lng": 23.9198, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "nemanja-rodjenje-podgorica-1113",
+      "title": { "sr": "Rođenje Stefana Nemanje u Ribnici", "en": "Birth of Stefan Nemanja in Ribnica" },
+      "year": 1113,
+      "yearEnd": null,
+      "placeId": "podgorica",
+      "episodeId": "42",
+      "timestamp": "51:16",
+      "type": "birth",
+      "actors": ["Stefan Nemanja"],
+      "region": "Balkan",
+      "description": { "sr": "Tačna godina rođenja Stefana Nemanje nije pouzdano utvrđena; izvori i savremena istoriografija pominju 1113. ili 1109. godinu. Rodio se u Ribnici, na prostoru današnje Podgorice, tada u okviru Duklje.", "en": "The exact birth year of Stefan Nemanja is not firmly established; sources and modern historiography cite either 1113 or 1109. He was born in Ribnica, on the site of present-day Podgorica, then part of Duklja." },
+      "quote": "Pominje se 1113. kao, 1109.",
+      "confidence": "low"
+    },
+    {
+      "id": "smrt-manojla-komnina-carigrad-1180",
+      "title": { "sr": "Smrt vizantijskog cara Manojla I Komnina", "en": "Death of Byzantine Emperor Manuel I Komnenos" },
+      "year": 1180,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "42",
+      "timestamp": "36:14",
+      "type": "death",
+      "actors": ["Manojlo I Komnin", "Stefan Nemanja"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Vizantijski car Manojlo I Komnin, kome je Nemanja ostao veran nakon svog pokajničkog pohoda u Carigradu, umire; transkript navodi godinu kao '1980', što je očigledna greška transkripcije za 1180. godinu. Vizantija nakon njegove smrti nepovratno gubi Hrvatsku i Dalmaciju u korist Ugarske.", "en": "Byzantine Emperor Manuel I Komnenos, to whom Nemanja remained loyal after his penitential procession through Constantinople, dies; the transcript gives the year as '1980', an evident transcription error for 1180. After his death Byzantium irreversibly lost Croatia and Dalmatia to Hungary." },
+      "quote": "E, Nemanja u tom momentu zapravo... veran Manoj Lukovni, do njegove smrti 1980.",
+      "confidence": "low"
+    },
+    {
+      "id": "nemanja-abdicira-petrova-crkva-1196",
+      "title": { "sr": "Nemanja se odriče vlasti na saboru u Petrovoj crkvi", "en": "Nemanja abdicates at the council of Petrova Crkva" },
+      "year": 1196,
+      "yearEnd": null,
+      "placeId": "petrova-crkva",
+      "episodeId": "42",
+      "timestamp": "53:06",
+      "type": "other",
+      "actors": ["Stefan Nemanja", "Stefan Nemanjić (Prvovenčani)", "Vukan Nemanjić"],
+      "region": "Balkan",
+      "description": { "sr": "Stefan Nemanja se 1196. godine, na saboru u Petrovoj crkvi kod Novog Pazara, odriče vlasti u korist srednjeg sina Stefana (kasnije Stefana Prvovenčanog) i zamonašuje se, uzevši ime Simeon.", "en": "In 1196, at the council held at Petrova Crkva near Novi Pazar, Stefan Nemanja renounces power in favor of his middle son Stefan (later Stefan the First-Crowned) and becomes a monk, taking the name Simeon." },
+      "quote": "Nemanja silazi sa vlasti, to je 1196, al tako, godina.",
+      "confidence": "high"
+    },
+    {
+      "id": "nemanja-smrt-hilandar-1199",
+      "title": { "sr": "Smrt monaha Simeona (Stefana Nemanje) u Hilandaru", "en": "Death of the monk Simeon (Stefan Nemanja) at Hilandar" },
+      "year": 1199,
+      "yearEnd": null,
+      "placeId": "hilandar",
+      "episodeId": "42",
+      "timestamp": "58:36",
+      "type": "death",
+      "actors": ["Stefan Nemanja (monah Simeon)"],
+      "region": "Balkan",
+      "description": { "sr": "Stefan Nemanja, kao monah Simeon, umire 1199. godine u manastiru Hilandaru na Svetoj gori, nad ikonom Bogorodice Vergetide. Njegove mošti, prenesene u Studenicu, postaju osnova kulta oko koga se izgrađuje program svetorodne dinastije Nemanjić.", "en": "Stefan Nemanja, as the monk Simeon, dies in 1199 at the Hilandar monastery on Mount Athos, before the icon of the Virgin Vergetides. His relics, translated to Studenica, become the foundation of the cult around which the Nemanjić dynasty's 'holy lineage' program is built." },
+      "quote": "Da. Ovo je, da samo pojasnimo, pričamo o 1199.",
+      "confidence": "high"
+    }
+  ]
+}

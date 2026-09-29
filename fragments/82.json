@@ -1,0 +1,22 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": [], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "migracija-belih-rusa-beograd-1918",
+      "title": { "sr": "Migracija belih Rusa u Beograd", "en": "Migration of White Russians to Belgrade" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "82",
+      "timestamp": "81:17",
+      "type": "other",
+      "actors": ["Beli Rusi", "Georgije Ostrogorski", "Nikolaj Krasnov", "Đorđe Lobačev"],
+      "region": "Balkan",
+      "description": { "sr": "Posle 1918. godine, oko dva miliona Rusa napušta Rusiju nakon poraza u Građanskom ratu i nikada se ne vraćaju; značajan broj njih dolazi u Beograd, gde postaju četvrtina profesora Beogradskog univerziteta i osnivaju beogradski krug stripa.", "en": "After 1918, around two million Russians left Russia following their defeat in the Civil War and never returned; a significant number came to Belgrade, where they made up a quarter of the professors at Belgrade University and founded the Belgrade circle of comic strip artists." },
+      "quote": "Da je izgledana uticaja ruske migracije belih ruse u Beogradu posle 1918. godine ... otolika nekih dva miliona rusa ... napušta, naravno, Rusiju posle poraze u građanskom ratu",
+      "confidence": "high"
+    }
+  ]
+}

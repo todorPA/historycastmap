@@ -1,0 +1,22 @@
+{
+  "places": [
+    { "id": "pristina", "name": { "sr": "Priština", "en": "Pristina" }, "aliases": ["Prištini"], "lat": 42.6629, "lng": 21.1655, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "vrhovna-komanda-pristina-1915",
+      "title": { "sr": "Vrhovna komanda i vlada okupljaju se u Prištini", "en": "The Supreme Command and government gather in Pristina" },
+      "year": 1915,
+      "yearEnd": null,
+      "placeId": "pristina",
+      "episodeId": "73",
+      "timestamp": "87:19",
+      "type": "other",
+      "actors": ["Vrhovna komanda srpske vojske", "Vlada Kraljevine Srbije"],
+      "region": "Balkan",
+      "description": { "sr": "U hladnom oktobru 1915. godine, uz prve slučajeve dezerterstva, srpska vrhovna komanda, vlada i narod okupljaju se u Prištini pokušavajući da odluče šta dalje činiti, pred neizbežno povlačenje.", "en": "In the cold October of 1915, amid the first cases of desertion, the Serbian Supreme Command, government and people gathered in Pristina, trying to decide what to do next, ahead of the inevitable retreat." },
+      "quote": "i oktobar 1915. je prilično hladan mesec ... oni su se obrali u Prištini, gde pokušavaju sada da dogovore šta treba činiti.",
+      "confidence": "high"
+    }
+  ]
+}

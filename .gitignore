@@ -3,3 +3,12 @@ dist/
 *.tsbuildinfo
 .DS_Store
 *.log
+
+# Self-hosted webfonts, fetched by `npm run fonts`.
+public/fonts/
+
+# Per-machine tool permissions. Deliberately untracked: committing it grants every clone
+# whatever it allows, and a wildcard like `Bash(npm run *)` then covers `npm run deploy`,
+# which publishes to GitHub Pages. Permissions are a property of a machine and its operator,
+# not of the repository.
+.claude/settings.local.json

@@ -1,0 +1,100 @@
+{
+  "places": [
+    { "id": "vinca", "name": { "sr": "Vinča", "en": "Vinča" }, "aliases": ["Vinči", "Vinču", "Institut za nuklearne nauke Vinča"], "lat": 44.7333, "lng": 20.6167, "kind": "landmark" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda", "stanu u Beogradu"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": ["pariz", "paris", "parizu", "pariza"], "lat": 48.8566, "lng": 2.3522, "kind": "city" },
+    { "id": "cernobil", "name": { "sr": "Černobilj", "en": "Chernobyl" }, "aliases": ["černobilj", "chernobyl", "černobilju", "černobilja"], "lat": 51.389, "lng": 30.0992, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "osnivanje-instituta-vinca-1947",
+      "title": { "sr": "Osnivanje Instituta za nuklearne nauke Vinča", "en": "Founding of the Vinča Institute of Nuclear Sciences" },
+      "year": 1947,
+      "yearEnd": null,
+      "placeId": "vinca",
+      "episodeId": "11",
+      "timestamp": "22:05",
+      "type": "founding",
+      "actors": ["Josip Broz Tito", "Pavle Savić"],
+      "region": "Balkan",
+      "description": { "sr": "Institut za nuklearne nauke Vinča osnovan je 1947. godine, u trenutku kada se zahuktava spor između Jugoslavije i Sovjetskog saveza; dekret o osnivanju potpisao je sam Tito.", "en": "The Vinča Institute of Nuclear Sciences was founded in 1947, just as the rift between Yugoslavia and the Soviet Union was intensifying; the founding decree was signed by Tito himself." },
+      "quote": "Vinča, ona je osnovana 1947. godine, upravo u vreme kada se zahuktava taj spor između Jugoslavije i Sovjetskog saveza.",
+      "confidence": "high"
+    },
+    {
+      "id": "pavle-savic-napusta-pariz-1939",
+      "title": { "sr": "Pavle Savić napušta Pariz nakon izbijanja rata", "en": "Pavle Savić leaves Paris after the outbreak of war" },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "11",
+      "timestamp": "41:03",
+      "type": "other",
+      "actors": ["Pavle Savić"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Izbijanjem Drugog svetskog rata 1939. godine prekidaju se nuklearna istraživanja u Parizu; fizičar Pavle Savić se vozom vraća u Jugoslaviju, gde nastavlja svoj rad i uskoro se vezuje za komunistički pokret otpora.", "en": "With the outbreak of World War II in 1939, nuclear research in Paris was interrupted; physicist Pavle Savić returned to Yugoslavia by train, where he continued his work and soon became tied to the communist resistance movement." },
+      "quote": "1939. godine izbija drugi svjetski rat i prekidaju se istraživanja, odnosno, starani studenti odlaze van Pariza... i Pavle Savić se vozom vraća nazad u Jugoslaviju.",
+      "confidence": "high"
+    },
+    {
+      "id": "tito-stan-savica-beograd-1941",
+      "title": { "sr": "Josip Broz Tito boravi u stanu Pavla Savića u Beogradu", "en": "Josip Broz Tito stays at Pavle Savić's apartment in Belgrade" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "11",
+      "timestamp": "42:03",
+      "type": "other",
+      "actors": ["Josip Broz Tito", "Pavle Savić"],
+      "region": "Balkan",
+      "description": { "sr": "Josip Broz Tito je u jednom trenutku boravio u stanu Pavla Savića i njegove supruge u Beogradu, neposredno pre nego što u leto 1941. godine, u vreme operacije Barbarosa, počinje ustanak i Tito napušta Beograd.", "en": "Josip Broz Tito once stayed at the Belgrade apartment of Pavle Savić and his wife, shortly before the uprising began in the summer of 1941, during Operation Barbarossa, when Tito left Belgrade." },
+      "quote": "Josip Broz, čak u jednom trenutku Josip Broz boraju u njihovom stanu u Beogradu i onda počinje ustanak u letu 1941. u vreme Barbarose i Tito odlazi van Beograda.",
+      "confidence": "high"
+    },
+    {
+      "id": "vinca-prva-domaca-lancna-reakcija-1958",
+      "title": { "sr": "Prva domaća lančana reakcija na reaktoru RB u Vinči", "en": "First domestic chain reaction at the RB reactor in Vinča" },
+      "year": 1958,
+      "yearEnd": null,
+      "placeId": "vinca",
+      "episodeId": "11",
+      "timestamp": "88:47",
+      "type": "other",
+      "actors": ["jugoslovenski fizičari"],
+      "region": "Balkan",
+      "description": { "sr": "1958. godine domaći fizičari u Vinči, bez sovjetskih eksperata, samostalno postižu prvu lančanu nuklearnu reakciju u Jugoslaviji na probnom reaktoru RB, korišćenjem dela goriva namenjenog većem reaktoru RA.", "en": "In 1958, domestic physicists at Vinča, without Soviet experts, independently achieved Yugoslavia's first nuclear chain reaction at the experimental RB reactor, using part of the fuel intended for the larger RA reactor." },
+      "quote": "lančnu reakciju i 1958. godine... se izvode i također se postiže prva lančana reakcija koja je napravljena u Jugoslaviji... ona je pokrenuta znanjem domaćih fizičara u potpunosti.",
+      "confidence": "high"
+    },
+    {
+      "id": "vinca-nuklearni-incident-1958",
+      "title": { "sr": "Nuklearni incident na reaktoru RB u Vinči", "en": "Nuclear accident at the RB reactor in Vinča" },
+      "year": 1958,
+      "yearEnd": null,
+      "placeId": "vinca",
+      "episodeId": "11",
+      "timestamp": "89:09",
+      "type": "other",
+      "actors": ["Pavle Savić", "jugoslovenski fizičari"],
+      "region": "Balkan",
+      "description": { "sr": "U jesen 1958. godine dogodio se nuklearni incident na probnom reaktoru RB u Vinči, uglavnom posledica ljudske greške; povređeni istraživači su, zahvaljujući intervenciji Pavla Savića, upućeni na lečenje presađivanjem koštane srži u Pariz.", "en": "In the autumn of 1958, a nuclear accident occurred at the experimental RB reactor in Vinča, largely due to human error; the injured researchers were sent for bone marrow transplant treatment in Paris, thanks to Pavle Savić's intervention." },
+      "quote": "to je reaktor na kom će se kasnije te godine u jesen desiti ovaj incident koji opisuje film slučaje Vinča... poznato je da je on dobrim delom poslica ljudske greške.",
+      "confidence": "high"
+    },
+    {
+      "id": "cernobilj-uticaj-na-srpski-nuklearni-program-1986",
+      "title": { "sr": "Černobiljska katastrofa obustavlja srpski nuklearni program", "en": "Chernobyl disaster halts the Serbian nuclear program" },
+      "year": 1986,
+      "yearEnd": null,
+      "placeId": "cernobil",
+      "episodeId": "11",
+      "timestamp": "118:37",
+      "type": "other",
+      "actors": ["Srbija", "Sovjetski savez"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "U proleće 1986. godine raspisan je tender za izgradnju nuklearne elektrane u Srbiji; nakon nesreće u Černobilju 26. aprila te godine tender je zatvoren, a 1989. godine preovladao je globalni moratorijum na izgradnju nuklearnih objekata.", "en": "In the spring of 1986, a tender was announced for building a nuclear power plant in Serbia; after the Chernobyl accident on 26 April that year the tender was closed, and by 1989 a global moratorium on nuclear plant construction prevailed." },
+      "quote": "raspisan je tender u proleće... 1986. godine, a onda se 26. apriljano događa Černobilj kad je tender u Srbiji već otvoren, i tender se zatvora.",
+      "confidence": "high"
+    }
+  ]
+}

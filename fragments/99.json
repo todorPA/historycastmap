@@ -1,0 +1,52 @@
+{
+  "places": [
+    { "id": "petrograd", "name": { "sr": "Lenjingrad (Sankt Peterburg)", "en": "Leningrad (Saint Petersburg)" }, "aliases": ["Leningradu", "Leningrada"], "lat": 59.9311, "lng": 30.3609, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "pocetak-opsade-lenjingrada-1941",
+      "title": { "sr": "Početak opsade Lenjingrada", "en": "Start of the Siege of Leningrad" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "99",
+      "timestamp": "03:57",
+      "type": "siege",
+      "actors": ["Nemačka vojska", "Sovjetska vojska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Opsada Lenjingrada počinje 8. septembra 1941. godine, kada grad ulazi u stanje kakvo nikada dotad nije doživeo u svojoj istoriji.", "en": "The Siege of Leningrad began on September 8, 1941, when the city entered a state unlike anything it had experienced in its history before." },
+      "quote": "obsada Leningrada od 27. od 8. septembra 1941.",
+      "confidence": "high"
+    },
+    {
+      "id": "evakuacija-industrije-lenjingrad-1941",
+      "title": { "sr": "Evakuacija sovjetske industrije iz Lenjingrada", "en": "Evacuation of Soviet industry from Leningrad" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "99",
+      "timestamp": "32:25",
+      "type": "other",
+      "actors": ["Sovjetski Savez"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "U leto 1941. godine, do poslednjeg trenutka kada je to bilo železnicom moguće, Sovjeti pakuju i evakuišu ogroman deo industrije iz Lenjingrada dublje u teritoriju, kako grad ne bi ostao bez industrijskog kapaciteta ako padne.", "en": "In the summer of 1941, up to the last possible moment while rail transport was available, the Soviets packed up and evacuated a huge share of Leningrad's industry deeper into the country, so the city would not lose its industrial capacity if it fell." },
+      "quote": "u tim nedeljama i mesecima u leto 1941. godine ... sovjeti dakle da su pakali svoju industriju",
+      "confidence": "high"
+    },
+    {
+      "id": "kraj-opsade-lenjingrada-1944",
+      "title": { "sr": "Kraj opsade Lenjingrada", "en": "End of the Siege of Leningrad" },
+      "year": 1944,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "99",
+      "timestamp": "87:53",
+      "type": "conquest",
+      "actors": ["Sovjetska vojska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "27. januara 1944. godine zvanično je saopšteno da Lenjingrad više nije pod opsadom, čime se okončava opsada koja je trajala 872 dana, od septembra 1941. godine.", "en": "On January 27, 1944, it was officially announced that Leningrad was no longer under siege, ending a siege that had lasted 872 days, since September 1941." },
+      "quote": "27. januara 1944. godine ... je bilo saopšteno da je Leningrad više nije pod obsadom",
+      "confidence": "high"
+    }
+  ]
+}

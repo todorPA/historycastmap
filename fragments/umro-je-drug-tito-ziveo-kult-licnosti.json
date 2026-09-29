@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "jajce", "name": { "sr": "Jajce", "en": "Jajce" }, "aliases": ["jajce", "jajcu"], "lat": 44.3411, "lng": 17.2708, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "avnoj-drugo-zasedanje-jajce-1943",
+      "title": { "sr": "Drugo zasedanje AVNOJ-a u Jajcu", "en": "Second session of AVNOJ in Jajce" },
+      "year": 1943,
+      "yearEnd": null,
+      "placeId": "jajce",
+      "episodeId": "umro-je-drug-tito-ziveo-kult-licnosti",
+      "timestamp": "14:48",
+      "type": "founding",
+      "actors": ["Josip Broz Tito", "AVNOJ"],
+      "region": "Balkan",
+      "description": { "sr": "29. novembra 1943. godine, na drugom zasedanju AVNOJ-a u Jajcu, stvorena je nova Jugoslavija; doneta je odluka da se kralju zabrani povratak u zemlju i da Jugoslavija od monarhije postane republika, a Tito se institucionalizuje kao predsednik države i dobija čin maršala.", "en": "On 29 November 1943, at the second session of AVNOJ in Jajce, the new Yugoslavia was created; it was decided that the king would be barred from returning to the country and that Yugoslavia would become a republic instead of a monarchy, with Tito institutionalized as head of state and given the rank of Marshal." },
+      "quote": "29. novembar 1943... na drugom zasedanju Avnoja u jajcu kada je istvorena Nova Jugoslavia, doneta je odluka da se kralju zabrani povratak u zemlju",
+      "confidence": "high"
+    },
+    {
+      "id": "tito-smrt-beograd-1980",
+      "title": { "sr": "Smrt Josipa Broza Tita", "en": "Death of Josip Broz Tito" },
+      "year": 1980,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "umro-je-drug-tito-ziveo-kult-licnosti",
+      "timestamp": "02:18",
+      "type": "death",
+      "actors": ["Josip Broz Tito"],
+      "region": "Balkan",
+      "description": { "sr": "Josip Broz Tito umro je 4. maja 1980. godine; vest o njegovoj smrti, objavljena na televiziji, obeležila je živote mnogih ljudi u tadašnjoj Jugoslaviji.", "en": "Josip Broz Tito died on 4 May 1980; the news of his death, announced on television, marked the lives of many people in Yugoslavia at the time." },
+      "quote": "umro je drug Tito 4. maja 1980. I to je nekako ta rečenica i taj snimak kako je to objavljeno na televiziji su... obeležili živote mnogih ljudi.",
+      "confidence": "high"
+    },
+    {
+      "id": "muzej-jugoslovenske-istorije-otvoren-1982",
+      "title": { "sr": "Otvaranje memorijalnog kompleksa Kuća cveća", "en": "Opening of the House of Flowers memorial complex" },
+      "year": 1982,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "umro-je-drug-tito-ziveo-kult-licnosti",
+      "timestamp": "69:50",
+      "type": "founding",
+      "actors": ["Josip Broz Tito"],
+      "region": "Balkan",
+      "description": { "sr": "1982. godine otvoren je memorijalni muzej posvećen Josipu Brozu Titu (Kuća cveća), sa njegovom grobnicom u Beogradu; posete su bile uglavnom organizovane — školske i fabričke ekskurzije, vojska.", "en": "In 1982, the memorial museum dedicated to Josip Broz Tito (House of Flowers) opened, containing his tomb in Belgrade; visits were mostly organized — school and factory excursions, army units." },
+      "quote": "Da, od 1982. je otvoren, on je umro 80... dolazili su te školske ekskurzije, fabrike",
+      "confidence": "high"
+    }
+  ]
+}

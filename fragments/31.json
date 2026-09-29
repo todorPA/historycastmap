@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "morava-dolina", "name": { "sr": "Dolina Morave", "en": "Morava Valley" }, "aliases": ["Velika Morava", "prelaz Velike Morave"], "lat": 43.7833, "lng": 21.3833, "kind": "region" }
+  ],
+  "events": [
+    {
+      "id": "pocetak-aprilskog-rata-1941",
+      "title": { "sr": "Početak Aprilskog rata", "en": "Start of the April War" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "31",
+      "timestamp": "00:00",
+      "type": "battle",
+      "actors": ["Kraljevina Jugoslavija", "Nemačka"],
+      "region": "Balkan",
+      "description": { "sr": "Aprilski rat počeo je 6. aprila 1941. godine, neposredno nakon martovskog puča i smene kneza Pavla, i završio se kapitulacijom Kraljevine Jugoslavije.", "en": "The April War began on 6 April 1941, shortly after the March coup and the removal of Prince Paul, and ended with the capitulation of the Kingdom of Yugoslavia." },
+      "quote": "aprilski rat koji je počeo 6. aprila se je završio slovom Kraljevine Jugoslavije.",
+      "confidence": "high"
+    },
+    {
+      "id": "probojtimocke-divizije-morava-1941",
+      "title": { "sr": "Neuspešan proboj Timočke divizije preko Velike Morave", "en": "Failed breakthrough attempt of the Timok Division across the Great Morava" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "morava-dolina",
+      "episodeId": "31",
+      "timestamp": "67:17",
+      "type": "battle",
+      "actors": ["Timočka divizija", "Cerska divizija", "Nemačka"],
+      "region": "Balkan",
+      "description": { "sr": "13. aprila 1941. godine Timočka divizija pokušala je proboj preko Velike Morave da bi se spojila sa Cerskom divizijom, ali je pokušaj bio neuspešan pošto su Nemci imali informacije o prikupljanju jugoslovenskih snaga i doveli pojačanja.", "en": "On 13 April 1941, the Timok Division attempted a breakthrough across the Great Morava to link up with the Cer Division, but the attempt failed because the Germans had intelligence on the gathering Yugoslav forces and brought in reinforcements." },
+      "quote": "Napad, proboj timočke divizije je pokušan je 13. aprila 1941. ali je bio neuspešan usled nemačkih... Oni praktično pokušavaju da pređu Veliku Moravu, ne bi li se spojili sa... Cerskom divizijom",
+      "confidence": "high"
+    },
+    {
+      "id": "vlada-napusta-jugoslaviju-1941",
+      "title": { "sr": "Vlada i kralj Petar II napuštaju Jugoslaviju", "en": "The government and King Peter II leave Yugoslavia" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "31",
+      "timestamp": "83:40",
+      "type": "other",
+      "actors": ["Kralj Petar II", "Dušan Simović", "General Danilo Kalafatović"],
+      "region": "Balkan",
+      "description": { "sr": "15. aprila 1941. godine, nakon što je general Simović preneo dužnost načelnika štaba generalu Kalafatoviću, vlada je napustila zemlju sa Pala preko Nikšića za Grčku, a odatle na Bliski istok, dok je Kalafatović sa saradnicima odlučio da traži primirje od Nemaca.", "en": "On 15 April 1941, after General Simović handed over the chief-of-staff duties to General Kalafatović, the government left the country from Pale via Nikšić to Greece, and from there to the Middle East, while Kalafatović and his associates decided to seek an armistice from the Germans." },
+      "quote": "Po preuzimanju, posle toga je naravno napustio, to je bilo na palama i 5.15. aprila je vlada napustila... iz Nikšića su odleteli u Grčku, posle na Bliski istok.",
+      "confidence": "high"
+    }
+  ]
+}

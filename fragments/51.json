@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "vienna", "name": { "sr": "Beč (Anšlus)", "en": "Vienna (Anschluss)" }, "aliases": ["Bec"], "lat": 48.2082, "lng": 16.3738, "kind": "city" },
+    { "id": "varsava", "name": { "sr": "Varšava", "en": "Warsaw" }, "aliases": [], "lat": 52.2297, "lng": 21.0122, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "anaksija-austrije-1938",
+      "title": { "sr": "Nemačka aneksija Austrije (Anšlus)", "en": "German annexation of Austria (Anschluss)" },
+      "year": 1938,
+      "yearEnd": null,
+      "placeId": "vienna",
+      "episodeId": "51",
+      "timestamp": "43:30",
+      "type": "conquest",
+      "actors": ["Nemačka", "Austrija"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "13. marta 1938. godine Nemačka anektira Austriju, čime dolazi do prvog ukidanja jedne evropske države nakon 1918. godine i praktičnog kraja versajskog poretka.", "en": "On March 13, 1938, Germany annexed Austria, marking the first abolition of a European state since 1918 and, in practice, the end of the Versailles order." },
+      "quote": "Nemačka je anektirala Austriju, to se desilo 13. marta 1938. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "pocetak-drugog-svetskog-rata-1939-ep51",
+      "title": { "sr": "Napad na Poljsku — početak Drugog svetskog rata", "en": "Invasion of Poland — start of World War II" },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "varsava",
+      "episodeId": "51",
+      "timestamp": "01:25",
+      "type": "battle",
+      "actors": ["Nemačka", "Poljska", "Francuska", "Britanija"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "1. septembra 1939. godine počinje Drugi svetski rat napadom na Poljsku, koji Francuzi, Britanci i Poljaci uzimaju kao zvanični početak rata.", "en": "On September 1, 1939, World War II began with the invasion of Poland, taken by the French, British and Poles as the official start of the war." },
+      "quote": "Događaj se svode na to da 1. septembra 1939. godine počinje Drugi svetski rat",
+      "confidence": "high"
+    },
+    {
+      "id": "podela-poljske-1939",
+      "title": { "sr": "Sovjetsko-nemačka podela Poljske", "en": "Soviet-German partition of Poland" },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "varsava",
+      "episodeId": "51",
+      "timestamp": "88:07",
+      "type": "treaty",
+      "actors": ["Nemačka", "Sovjetski Savez"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "6. oktobra 1939. godine Poljska pada pod podeljenu nemačku i sovjetsku vlast, deceniju i po nakon toga menjajući svoje granice pomeranjem na zapad.", "en": "On October 6, 1939, Poland fell under a divided German and Soviet rule, its borders shifting westward more than a decade later." },
+      "quote": "pala pod Nemačku i Sovjetsku vlast 6. oktober 1939. godine, kada je zapravo došlo",
+      "confidence": "high"
+    }
+  ]
+}

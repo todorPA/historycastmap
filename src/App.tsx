@@ -5,6 +5,7 @@ import { DataProvider } from './state/DataContext';
 import { TimeProvider } from './state/TimeContext';
 import { FilterProvider, useFilters } from './state/FilterContext';
 import { t } from './lib/i18n';
+import { collectionSpan, getCollection, validateCollections } from './config/collections';
 import Sidebar from './components/Sidebar';
 import MapView from './components/MapView';
 import TimelineView from './components/TimelineView';
@@ -41,10 +42,25 @@ function Loader({ urlState }: { urlState: ReturnType<typeof parseUrlState> }) {
 
   if (!loaded) return <div className="status">{t(lang, 'loading')}</div>;
 
+  // Collections are hand-authored against a dataset produced upstream, so this is the one
+  // seam where the two can silently drift. A stale id must not shrink a collection quietly.
+  const missing = validateCollections(new Set(loaded.data.episodes.map((e) => e.id)));
+  if (missing.length > 0) {
+    console.warn(`collections reference ${missing.length} unknown episode id(s):`, missing);
+  }
+
+  /**
+   * An explicit period in the link always wins. Failing that, a link that names a collection
+   * opens framed on it, so `?col=antika` behaves like clicking Antika rather than showing
+   * the whole 1200 BC to 2006 axis with the collection bunched against one edge.
+   */
+  const urlCollection = getCollection(urlState.collectionId);
   const initialRange =
     urlState.from != null && urlState.to != null
       ? { from: urlState.from, to: urlState.to }
-      : null;
+      : urlCollection
+        ? collectionSpan(urlCollection, loaded.data.events)
+        : null;
 
   return (
     <DataProvider value={loaded}>
@@ -64,9 +80,13 @@ export default function App() {
     <FilterProvider
       initial={{
         lang: urlState.lang,
+        collectionId: urlState.collectionId,
         episodeId: urlState.episodeId,
         eventId: urlState.eventId,
         basemapId: urlState.basemapId,
+        regions: urlState.regions,
+        types: urlState.types,
+        series: urlState.series,
       }}
     >
       <Loader urlState={urlState} />

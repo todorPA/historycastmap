@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "rim", "name": { "sr": "Rim", "en": "Rome" }, "aliases": ["rim", "rome", "rimu", "rima"], "lat": 41.9028, "lng": 12.4964, "kind": "city" },
+    { "id": "avinjon", "name": { "sr": "Avinjon", "en": "Avignon" }, "aliases": ["avinjon", "avignon", "avinjonu", "avinjonsko ropstvo"], "lat": 43.9493, "lng": 4.8055, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "papska-drzava-osnovana-756",
+      "title": { "sr": "Osnivanje Papske države", "en": "Founding of the Papal States" },
+      "year": 756,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "specijal-istorija-papske-moci-historycast",
+      "timestamp": "23:06",
+      "type": "founding",
+      "actors": ["Papa"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "756. godine osnovana je Papska država, u vreme kada je Italijansko poluostrvo bilo razdrobljeno na mnoštvo malih kneževina i vojvodstava.", "en": "In 756, the Papal States were founded, at a time when the Italian peninsula was fragmented into numerous small principalities and duchies." },
+      "quote": "to je vezano za osmi vek... za samo osnivanje da kažemo papske države... 756. godina",
+      "confidence": "high"
+    },
+    {
+      "id": "veliki-raskol-1054",
+      "title": { "sr": "Veliki raskol crkve", "en": "The Great Schism" },
+      "year": 1054,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "specijal-istorija-papske-moci-historycast",
+      "timestamp": "28:12",
+      "type": "other",
+      "actors": ["Rimokatolička crkva", "Pravoslavna crkva"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1054. godine dogodio se Veliki raskol između Rimokatoličke i Pravoslavne crkve; od tada osoba koja stoluje u Rimu nosi titulu pape i Pontifex Maximusa, dok patrijarsi stoluju na istoku.", "en": "In 1054, the Great Schism occurred between the Roman Catholic and Orthodox churches; since then, the person who resides in Rome holds the title of Pope and Pontifex Maximus, while patriarchs reside in the East." },
+      "quote": "od 1054. godine, dakle, osoba koja je stoluje u Rimu ima titulu pape i ima tu titulu Pontifex Maximus... rastep koji se dogodio 1054. godine do danas",
+      "confidence": "high"
+    },
+    {
+      "id": "avinjonsko-ropstvo-papa-1348-1417",
+      "title": { "sr": "Avinjonsko ropstvo papa", "en": "The Avignon Papacy (Babylonian Captivity)" },
+      "year": 1348,
+      "yearEnd": 1417,
+      "placeId": "avinjon",
+      "episodeId": "specijal-istorija-papske-moci-historycast",
+      "timestamp": "40:15",
+      "type": "other",
+      "actors": ["Avinjonske pape"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Od 1348. do 1417. godine trajalo je takozvano avinjonsko ropstvo papa, period u kome su pape stolovale u Avinjonu, gradiću u Francuskoj, a u jednom trenutku je čak troje ljudi istovremeno tvrdilo da je legitimni papa.", "en": "From 1348 to 1417, the so-called Avignon Papacy (Babylonian Captivity of the Papacy) lasted, a period during which the popes resided in Avignon, a town in France, and at one point as many as three people simultaneously claimed to be the legitimate pope." },
+      "quote": "avinjonsko ropstvo papa... to je od 1348. godine do 1417... ne dvoje papa nego čak i troje papa u istom trenutku",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "places": [
+    { "id": "el-alamein", "name": { "sr": "El Alamein", "en": "El Alamein" }, "aliases": ["Alameina"], "lat": 30.8329, "lng": 28.9530, "kind": "battle-site" },
+    { "id": "tunis", "name": { "sr": "Tunis", "en": "Tunis" }, "aliases": ["Bizerta"], "lat": 36.8065, "lng": 10.1815, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "britanske-trupe-grcka-1941",
+      "title": { "sr": "Britanske trupe se šalju u Grčku iz Afrike", "en": "British troops sent to Greece from Africa" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "el-alamein",
+      "episodeId": "64",
+      "timestamp": "25:02",
+      "type": "other",
+      "actors": ["Britanska vojska"],
+      "region": "Afrika",
+      "description": { "sr": "Februara 1941. godine, sa strateškom greškom po ocenama istoričara, dobar deo britanskih trupa iz severne Afrike se šalje u Grčku pred nemačku pretnju Balkanu, umesto da nastave da guraju Italijane.", "en": "In February 1941, in what historians consider a key strategic mistake, a large portion of British troops in North Africa were sent to Greece ahead of the German threat to the Balkans, instead of continuing to push the Italians back." },
+      "quote": "februar 1941. godine, takođe dobar deo trupa se šalje u Grčku, jer se već priča o okupaciji",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-el-alamein-1942",
+      "title": { "sr": "Bitka kod El Alameina", "en": "Battle of El Alamein" },
+      "year": 1942,
+      "yearEnd": null,
+      "placeId": "el-alamein",
+      "episodeId": "64",
+      "timestamp": "69:21",
+      "type": "battle",
+      "actors": ["Britanska vojska", "Erwin Rommel"],
+      "region": "Afrika",
+      "description": { "sr": "U proleće 1942. godine odigrava se bitka kod El Alameina, koja se u Britaniji smatra moralnom prekretnicom rata, paralelno sa operacijom Torč koja se odigrava u istom periodu u Severnoj Africi.", "en": "In spring 1942, the Battle of El Alamein took place, considered a moral turning point of the war in Britain, occurring in parallel with Operation Torch in the same period in North Africa." },
+      "quote": "kažu da je El Alamein prekretnica rata ... to je proleće 1942. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "osvajanje-tunisa-1943",
+      "title": { "sr": "Savezničko osvajanje Bizerte i Tunisa", "en": "Allied capture of Bizerte and Tunis" },
+      "year": 1943,
+      "yearEnd": null,
+      "placeId": "tunis",
+      "episodeId": "64",
+      "timestamp": "93:08",
+      "type": "conquest",
+      "actors": ["Britanska vojska", "Sjedinjene Američke Države"],
+      "region": "Afrika",
+      "description": { "sr": "Maja 1943. godine Britanci i Amerikanci zajedno osvajaju prvo Bizertu, pa onda Tunis, čime zaokružuju kontrolu nad čitavom teritorijom Severne Afrike; tom prilikom zarobljeno je oko 250.000 italijanskih i nemačkih vojnika.", "en": "In May 1943, the British and Americans together captured first Bizerte, then Tunis, thereby completing control over the entire North African territory; on that occasion, about 250,000 Italian and German soldiers were captured." },
+      "quote": "Britanci i Amerikanci zajedno osvajaju prvo Bizertu, pa onda Tunis, maja 1943. godine",
+      "confidence": "high"
+    }
+  ]
+}

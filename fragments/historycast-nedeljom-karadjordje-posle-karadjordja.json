@@ -1,0 +1,124 @@
+{
+  "places": [
+    {
+      "id": "orasac",
+      "name": {
+        "sr": "Orašac",
+        "en": "Orašac"
+      },
+      "aliases": [
+        "orasac",
+        "orašcu"
+      ],
+      "lat": 44.2333,
+      "lng": 20.6,
+      "kind": "landmark"
+    },
+    {
+      "id": "radovanjski-lug",
+      "name": {
+        "sr": "Radovanjski lug",
+        "en": "Radovanjski lug"
+      },
+      "aliases": [
+        "radovanjski lug",
+        "radovenskom lugu"
+      ],
+      "lat": 44.35,
+      "lng": 20.6,
+      "kind": "landmark"
+    },
+    {
+      "id": "beograd",
+      "name": {
+        "sr": "Beograd",
+        "en": "Belgrade"
+      },
+      "aliases": [
+        "beograd",
+        "belgrade",
+        "beogradu",
+        "beograda",
+        "kalemegdan"
+      ],
+      "lat": 44.7866,
+      "lng": 20.4489,
+      "kind": "city"
+    }
+  ],
+  "events": [
+    {
+      "id": "prvi-srpski-ustanak-orasac-1804",
+      "title": {
+        "sr": "Podizanje Prvog srpskog ustanka u Orašcu",
+        "en": "Raising of the First Serbian Uprising in Orašac"
+      },
+      "year": 1804,
+      "yearEnd": null,
+      "placeId": "orasac",
+      "episodeId": "historycast-nedeljom-karadjordje-posle-karadjordja",
+      "timestamp": "72:38",
+      "type": "battle",
+      "actors": [
+        "Karađorđe Petrović"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "Prema ustaljenoj narativu, Prvi srpski ustanak podignut je 15. februara 1804. godine u Orašcu, iako precizan datum nije bio jasno poznat iz izvora — istoriografski konstrukt koji je kasnije preciznije oblikovao istoričar Stojan Novaković.",
+        "en": "According to established tradition, the First Serbian Uprising was raised on 15 February 1804 in Orašac, though the precise date was not clearly established in the sources — a historiographic construct later shaped more precisely by historian Stojan Novaković."
+      },
+      "quote": "verujem da nedvojbeno stoji da je prvi Srpski Ustanak podignut 15. februara 1924. u Orašcu",
+      "confidence": "medium"
+    },
+    {
+      "id": "karadjordje-ubistvo-radovanjski-lug-1817",
+      "title": {
+        "sr": "Ubistvo Karađorđa u Radovanjskom lugu",
+        "en": "Assassination of Karađorđe in Radovanjski lug"
+      },
+      "year": 1817,
+      "yearEnd": null,
+      "placeId": "radovanjski-lug",
+      "episodeId": "historycast-nedeljom-karadjordje-posle-karadjordja",
+      "timestamp": "41:41",
+      "type": "death",
+      "actors": [
+        "Karađorđe Petrović",
+        "Knez Miloš Obrenović",
+        "Vujica Vulićević"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "1817. godine Karađorđe je ubijen u Radovanjskom lugu, po nalogu kneza Miloša Obrenovića, od strane njegovog kuma Vujice Vulićevića; ubistvo je odražavalo sukob dve politike — Karađorđeve borbe protiv Turaka i Miloševe diplomatije malih koraka.",
+        "en": "In 1817, Karađorđe was assassinated in Radovanjski lug, on the orders of Prince Miloš Obrenović, by his own godfather Vujica Vulićević; the assassination reflected the clash between two political approaches — Karađorđe's armed struggle against the Turks and Miloš's diplomacy of small steps."
+      },
+      "quote": "1817. godine u pitanju Radovanjski lug, mesto gde je Karađorđe ubijen, te je ubijen od stranestva kuma, Vujice Vulićevića.",
+      "confidence": "high"
+    },
+    {
+      "id": "spomenik-karadjordju-otkriven-beograd-1913",
+      "title": {
+        "sr": "Otkrivanje spomenika Karađorđu na Kalemegdanu",
+        "en": "Unveiling of the Karađorđe monument at Kalemegdan"
+      },
+      "year": 1913,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "historycast-nedeljom-karadjordje-posle-karadjordja",
+      "timestamp": "100:45",
+      "type": "other",
+      "actors": [
+        "Kralj Petar",
+        "Regent Aleksandar",
+        "Paško Vučetić"
+      ],
+      "region": "Balkan",
+      "description": {
+        "sr": "U avgustu 1913. godine, nakon Drugog balkanskog rata, srpska vojska je svečano otkrila spomenik Karađorđu na Kalemegdanu, na mestu gde se danas nalazi Spomenik zahvalnosti Francuskoj, u prisustvu kralja Petra i regenta Aleksandra; spomenik je izradio Paško Vučetić.",
+        "en": "In August 1913, after the Second Balkan War, the Serbian army ceremonially unveiled the monument to Karađorđe at Kalemegdan, on the spot where the Monument of Gratitude to France stands today, in the presence of King Peter and Regent Alexander; the monument was created by Paško Vučetić."
+      },
+      "quote": "otkrivanja tog spomenika... nakon drugog Balkanskog reta, dakle u avgusta 1913. godine... oni su, da ga kažem, strgli zastor sa spomenika i u svečanom činu to otkrili",
+      "confidence": "high"
+    }
+  ]
+}

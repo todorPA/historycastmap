@@ -1,0 +1,70 @@
+{
+  "places": [
+    { "id": "ajacio", "name": { "sr": "Ajačo (Korzika)", "en": "Ajaccio (Corsica)" }, "aliases": ["Ajacijo", "Korzika", "Korzike", "Korziku"], "lat": 41.9192, "lng": 8.7386, "kind": "city" },
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": ["pariz", "paris", "parizu", "pariza"], "lat": 48.8566, "lng": 2.3522, "kind": "city" },
+    { "id": "kairo", "name": { "sr": "Kairo", "en": "Cairo" }, "aliases": ["kairo", "cairo", "Egipat", "Egiptu", "bitka kod piramida"], "lat": 30.0444, "lng": 31.2357, "kind": "city" },
+    { "id": "waterloo", "name": { "sr": "Vaterlo", "en": "Waterloo" }, "aliases": ["Waterloo", "Waterlooa", "Waterlooja", "Vaterloa"], "lat": 50.7167, "lng": 4.4, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "korzika-francuska-1768",
+      "title": { "sr": "Korzika postaje formalno deo Francuske", "en": "Corsica formally becomes part of France" },
+      "year": 1768,
+      "yearEnd": null,
+      "placeId": "ajacio",
+      "episodeId": "14",
+      "timestamp": "03:43",
+      "type": "other",
+      "actors": ["Francuska", "Korzika"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Korzika, rodno ostrvo Napoleona Bonaparte, formalno postaje deo Francuske 1768. godine, godinu dana pre njegovog rođenja u Ajaču.", "en": "Corsica, Napoleon Bonaparte's native island, formally became part of France in 1768, a year before his birth in Ajaccio." },
+      "quote": "On je sa Korzike, koja je formalno bila deo francuske od 1768. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "napoleon-krunisanje-car-pariz-1804",
+      "title": { "sr": "Krunisanje Napoleona za cara Francuza", "en": "Coronation of Napoleon as Emperor of the French" },
+      "year": 1804,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "14",
+      "timestamp": "31:14",
+      "type": "coronation",
+      "actors": ["Napoleon Bonaparta", "Josefina", "Papa Pio VII"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Napoleon se kruniše za cara Francuza, pozivajući se na uzor Karla Velikog; narod se izjasnio ogromnom većinom u prilog proglašenju carstva, a slikar Žak-Luj David ovekovečio je trenutak kada Napoleon stavlja krunu Jozefini.", "en": "Napoleon was crowned Emperor of the French, invoking Charlemagne as his model; the public voted overwhelmingly in favor of proclaiming the empire, and the painter Jacques-Louis David immortalized the moment Napoleon crowned Josephine." },
+      "quote": "kada želi da dobije carsku krunu, poziva se na Karla... kada je već odlučeno da će Napoleon da se kruniše za cara, inače javno mnjenje je pitano, negde oko tri miliona se izjasnilo da, recimo tri hiljade za ne.",
+      "confidence": "medium"
+    },
+    {
+      "id": "napoleon-egipatski-pohod-kairo-1798",
+      "title": { "sr": "Napoleonov egipatski pohod", "en": "Napoleon's Egyptian campaign" },
+      "year": 1798,
+      "yearEnd": null,
+      "placeId": "kairo",
+      "episodeId": "14",
+      "timestamp": "24:32",
+      "type": "conquest",
+      "actors": ["Napoleon Bonaparta", "Egipat", "Velika Britanija"],
+      "region": "Afrika",
+      "description": { "sr": "Napoleon vodi pohod na Egipat sa ciljem da ugrozi britanske posede u Indiji; iako francuska vojska biva vojno pobeđena, pohod donosi značajna naučna otkrića — kamen iz Rozete, dešifrovanje egipatskih hijeroglifa i bitku kod piramida.", "en": "Napoleon led a campaign into Egypt aiming to threaten British holdings in India; although the French army was militarily defeated, the campaign yielded major scientific discoveries — the Rosetta Stone, the decipherment of Egyptian hieroglyphs, and the Battle of the Pyramids." },
+      "quote": "odlučeno da on bude poslad u Egipat... smatrali su da osvajanjem Egipta i čitavog Levanta može da se Britancima stane na put... na kraju krajeva, francusi su u Egiptu vojno poraženi.",
+      "confidence": "medium"
+    },
+    {
+      "id": "bitka-waterloo-1815",
+      "title": { "sr": "Bitka kod Vaterloa i konačan pad Napoleona", "en": "Battle of Waterloo and Napoleon's final downfall" },
+      "year": 1815,
+      "yearEnd": null,
+      "placeId": "waterloo",
+      "episodeId": "14",
+      "timestamp": "65:19",
+      "type": "battle",
+      "actors": ["Napoleon Bonaparta", "Vojvoda od Velingtona", "Pruska vojska"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "U bici kod Vaterloa, tokom Napoleonovih 'sto dana', kiša i blato odložili su francuski napad za nekoliko sati, čime je stigla pruska pomoć i doprinela odlučujućem porazu Napoleona; naziv bitke od tada postaje sinonim za konačan, lični poraz.", "en": "At the Battle of Waterloo, during Napoleon's Hundred Days, rain and mud delayed the French attack by several hours, allowing Prussian reinforcements to arrive and contribute to Napoleon's decisive defeat; the battle's name has since become synonymous with a final, personal downfall." },
+      "quote": "Umesto da napadnu šest ujutro, oni je napadu tek oko poodne. I tih nekoliko sati će činiti razliku između te blistave pobede... i poraza koja je zapravo pretrpeo.",
+      "confidence": "high"
+    }
+  ]
+}

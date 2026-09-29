@@ -1,0 +1,69 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "budimpesta", "name": { "sr": "Budimpešta", "en": "Budapest" }, "aliases": ["budimpesta", "budapest", "pešta", "bezpeću"], "lat": 47.4979, "lng": 19.0402, "kind": "city" },
+    { "id": "njujork", "name": { "sr": "Njujork", "en": "New York" }, "aliases": ["njujork", "new york", "njujorku"], "lat": 40.7128, "lng": -74.0060, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "katarina-ivanovic-osvajanje-beograda-1806",
+      "title": { "sr": "Katarina Ivanović slika 'Osvajanje Beograda'", "en": "Katarina Ivanović paints 'The Conquest of Belgrade'" },
+      "year": 1806,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "najznacajnije-srpske-slikarke-historycast-nedeljom",
+      "timestamp": "14:35",
+      "type": "other",
+      "actors": ["Katarina Ivanović"],
+      "region": "Balkan",
+      "description": { "sr": "Katarina Ivanović, jedna od prvih srpskih slikarki, radi istorijsku kompoziciju 'Osvajanje Beograda 1806', prikazujući ulazak Srba u Beogradsku tvrđavu sa Uzun Mirkom Apostolovićem u središtu — delo kojim je uspela da bude prepoznata u visokim umetničkim krugovima uprkos tome što nije prošla akademsku obuku za istorijsko slikarstvo.", "en": "Katarina Ivanović, one of the first Serbian female painters, created the historical composition 'The Conquest of Belgrade 1806', depicting the entry of Serbs into the Belgrade fortress with Uzun Mirko Apostolović at the center — a work through which she gained recognition in high artistic circles despite lacking academic training in history painting." },
+      "quote": "imamo i sliku osvajanje Beograda 1806. gde ona radi istorijsku kompoziciju... to je sad čuvena slika sa Uzun Mirkom Apostolovićem",
+      "confidence": "high"
+    },
+    {
+      "id": "katarina-ivanovic-izlozba-budimpesta-1882",
+      "title": { "sr": "Memorijalna izložba Katarine Ivanović u Budimpešti", "en": "Memorial exhibition of Katarina Ivanović in Budapest" },
+      "year": 1882,
+      "yearEnd": null,
+      "placeId": "budimpesta",
+      "episodeId": "najznacajnije-srpske-slikarke-historycast-nedeljom",
+      "timestamp": "13:16",
+      "type": "other",
+      "actors": ["Katarina Ivanović"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1882. godine, u čast preminule Katarine Ivanović, priređena je izložba njenih slika u Narodnom muzeju u Budimpešti — čime je postala prva umetnica kojoj je posvećena posthumna izložba.", "en": "In 1882, in honor of the late Katarina Ivanović, an exhibition of her paintings was held at the National Museum in Budapest — making her the first female artist to be honored with a posthumous exhibition." },
+      "quote": "u njenu čast 1882. godine priređena izložba u Narodnom muzeju u Bezpeću njenih slika",
+      "confidence": "high"
+    },
+    {
+      "id": "milena-pavlovic-barili-odlazak-njujork-1939",
+      "title": { "sr": "Milena Pavlović-Barili odlazi u Njujork", "en": "Milena Pavlović-Barili moves to New York" },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "njujork",
+      "episodeId": "najznacajnije-srpske-slikarke-historycast-nedeljom",
+      "timestamp": "92:51",
+      "type": "other",
+      "actors": ["Milena Pavlović-Barili"],
+      "region": "Severna Amerika",
+      "description": { "sr": "1939. godine Milena Pavlović-Barili odlazi u Ameriku, gde doživljava vrhunac karijere; 1940. godine njena ilustracija se nalazi na naslovnoj strani časopisa Vogue.", "en": "In 1939, Milena Pavlović-Barili moved to America, where she reached the peak of her career; in 1940, her illustration appeared on the cover of Vogue magazine." },
+      "quote": "Ona 1939. odlazi, dakle šest godina pred svoju smrt 1945... vrhuncem te njene modne ilustracije smatra broj Voga iz 1940.",
+      "confidence": "high"
+    },
+    {
+      "id": "milena-pavlovic-barili-smrt-njujork-1945",
+      "title": { "sr": "Smrt Milene Pavlović-Barili", "en": "Death of Milena Pavlović-Barili" },
+      "year": 1945,
+      "yearEnd": null,
+      "placeId": "njujork",
+      "episodeId": "najznacajnije-srpske-slikarke-historycast-nedeljom",
+      "timestamp": "98:08",
+      "type": "death",
+      "actors": ["Milena Pavlović-Barili"],
+      "region": "Severna Amerika",
+      "description": { "sr": "1945. godine Milena Pavlović-Barili umire u 36. godini, oslabljenog srca nakon pada s konja godinu dana ranije; njeno telo je vraćeno u Jugoslaviju.", "en": "In 1945, Milena Pavlović-Barili died at the age of 36, her heart weakened after a fall from a horse a year earlier; her body was returned to Yugoslavia." },
+      "quote": "je ona padom sa konja zapravo se jako povredila... što je oslabilo njeno srce... I onda je 1945. nažalost preminula preranu u svojoj 36. godini.",
+      "confidence": "high"
+    }
+  ]
+}

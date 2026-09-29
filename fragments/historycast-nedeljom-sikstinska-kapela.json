@@ -1,0 +1,84 @@
+{
+  "places": [
+    { "id": "rim", "name": { "sr": "Rim", "en": "Rome" }, "aliases": ["rim", "rome", "rimu", "rima"], "lat": 41.9028, "lng": 12.4964, "kind": "city" },
+    { "id": "firenca", "name": { "sr": "Firenca", "en": "Florence" }, "aliases": ["firenca", "florence", "firencu"], "lat": 43.7696, "lng": 11.2558, "kind": "city" },
+    { "id": "trento", "name": { "sr": "Trento", "en": "Trento" }, "aliases": ["trento", "trentu", "tridentski sabor", "tridenski sabor"], "lat": 46.0748, "lng": 11.1217, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "sikstinska-kapela-izgradnja-rim-1473-1481",
+      "title": { "sr": "Izgradnja Sikstinske kapele", "en": "Construction of the Sistine Chapel" },
+      "year": 1473,
+      "yearEnd": 1481,
+      "placeId": "rim",
+      "episodeId": "historycast-nedeljom-sikstinska-kapela",
+      "timestamp": "05:39",
+      "type": "founding",
+      "actors": ["Papa"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Sadašnja Sikstinska kapela (Cappella Sistina) zidana je od 1473. do 1481. godine.", "en": "The current Sistine Chapel (Cappella Sistina) was built from 1473 to 1481." },
+      "quote": "ova sadašnja Sikstinska kapele Zidena od 1473. do 1481. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "mikelandjelo-pocinje-plafon-rim-1508",
+      "title": { "sr": "Mikelanđelo počinje slikanje plafona Sikstinske kapele", "en": "Michelangelo begins painting the Sistine Chapel ceiling" },
+      "year": 1508,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "historycast-nedeljom-sikstinska-kapela",
+      "timestamp": "46:56",
+      "type": "other",
+      "actors": ["Mikelanđelo"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1508. godine Mikelanđelo, rođen 1475, počinje da radi na plafonu Sikstinske kapele, u 33. godini života.", "en": "In 1508, Michelangelo, born in 1475, began working on the Sistine Chapel ceiling, at the age of 33." },
+      "quote": "on je 1508. godine do počeo da radite svatihisinske pelaze. Znači on je 1475. godište.",
+      "confidence": "high"
+    },
+    {
+      "id": "mikelandjelo-zavrsava-plafon-rim-1512",
+      "title": { "sr": "Mikelanđelo završava plafon Sikstinske kapele", "en": "Michelangelo completes the Sistine Chapel ceiling" },
+      "year": 1512,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "historycast-nedeljom-sikstinska-kapela",
+      "timestamp": "74:41",
+      "type": "other",
+      "actors": ["Mikelanđelo"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1512. godine, nakon samo četiri godine rada, Mikelanđelo je završio celu površinu plafona Sikstinske kapele.", "en": "In 1512, after only four years of work, Michelangelo completed the entire surface of the Sistine Chapel ceiling." },
+      "quote": "samo za četiri godine... U 1512. je cijela ta površina bila gotova.",
+      "confidence": "high"
+    },
+    {
+      "id": "mikelandjelo-strasni-sud-rim-1535",
+      "title": { "sr": "Mikelanđelo počinje 'Strašni sud'", "en": "Michelangelo begins 'The Last Judgment'" },
+      "year": 1535,
+      "yearEnd": null,
+      "placeId": "rim",
+      "episodeId": "historycast-nedeljom-sikstinska-kapela",
+      "timestamp": "87:45",
+      "type": "other",
+      "actors": ["Mikelanđelo"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1535. godine Mikelanđelo, ponovo pozvan u Rim, počinje da slika 'Strašni sud' na zapadnom oltarskom zidu Sikstinske kapele, u periodu koji prethodi Tridentskom saboru i katoličkoj kontrareformaciji.", "en": "In 1535, Michelangelo, once again summoned to Rome, began painting 'The Last Judgment' on the western altar wall of the Sistine Chapel, in the period preceding the Council of Trent and the Catholic Counter-Reformation." },
+      "quote": "biva pozvan tada, ponovo, da se vrati u Rim, da bi... radio... tu sliku Strašnog suda... To je bilo 1535. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "tridentski-sabor-trento-1545",
+      "title": { "sr": "Tridentski sabor", "en": "Council of Trent" },
+      "year": 1545,
+      "yearEnd": null,
+      "placeId": "trento",
+      "episodeId": "historycast-nedeljom-sikstinska-kapela",
+      "timestamp": "112:24",
+      "type": "other",
+      "actors": ["Katolička crkva"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1545. godine u Trentu počinje Tridentski sabor, serija zasedanja Katoličke crkve koja je trajala oko 15 godina kao odgovor na protestantsku reformaciju.", "en": "In 1545, the Council of Trent began in Trento, a series of sessions of the Catholic Church that lasted around 15 years as a response to the Protestant Reformation." },
+      "quote": "Trigdenski sabor... nije bio 1545. u Trentu. To je, kad kažu, 15 godina trajao sabor",
+      "confidence": "medium"
+    }
+  ]
+}

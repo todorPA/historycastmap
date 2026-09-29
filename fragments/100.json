@@ -1,0 +1,70 @@
+{
+  "places": [
+    { "id": "atina", "name": { "sr": "Atina", "en": "Athens" }, "aliases": ["Atini", "Atinu"], "lat": 37.9838, "lng": 23.7275, "kind": "city" },
+    { "id": "melos", "name": { "sr": "Mel (Melos)", "en": "Melos" }, "aliases": ["Mela"], "lat": 36.6944, "lng": 24.4444, "kind": "landmark" },
+    { "id": "sicilija", "name": { "sr": "Sicilija", "en": "Sicily" }, "aliases": ["Siciliju"], "lat": 37.5999, "lng": 14.0154, "kind": "region" },
+    { "id": "pirej", "name": { "sr": "Pirej", "en": "Piraeus" }, "aliases": ["Pireju"], "lat": 37.9475, "lng": 23.6367, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "pocetak-peloponeskog-rata-431pne",
+      "title": { "sr": "Početak Peloponeskog rata", "en": "Start of the Peloponnesian War" },
+      "year": -431,
+      "yearEnd": null,
+      "placeId": "atina",
+      "episodeId": "100",
+      "timestamp": "103:37",
+      "type": "battle",
+      "actors": ["Atina", "Sparta"],
+      "region": "Balkan",
+      "description": { "sr": "431. godine pre nove ere, nakon incidenata kod Sibote i Potideje, zvanično počinje Peloponeski rat između Atine i Sparte.", "en": "In 431 BCE, following the incidents at Sybota and Potidaea, the Peloponnesian War officially began between Athens and Sparta." },
+      "quote": "onda se 431. godine ... zapravo taj rat počinje",
+      "confidence": "high"
+    },
+    {
+      "id": "osvajanje-melosa-416pne",
+      "title": { "sr": "Atina osvaja ostrvo Mel (Melski dijalog)", "en": "Athens conquers the island of Melos (Melian dialogue)" },
+      "year": -416,
+      "yearEnd": null,
+      "placeId": "melos",
+      "episodeId": "100",
+      "timestamp": "136:51",
+      "type": "conquest",
+      "actors": ["Atina"],
+      "region": "Balkan",
+      "description": { "sr": "Atina osvaja ostrvo Mel, čuveno po Tukididovom Melskom dijalogu, pre nego što Alkibijad predlaže znatno veći poduhvat — pohod na Siciliju.", "en": "Athens conquered the island of Melos, famous for Thucydides' Melian dialogue, before Alcibiades proposed a far greater undertaking — the expedition to Sicily." },
+      "quote": "nakon što su osvojili Mel, jedno ostravo koje je mnogo veće",
+      "confidence": "medium"
+    },
+    {
+      "id": "sicilijanska-ekspedicija-415pne",
+      "title": { "sr": "Atinska ekspedicija na Siciliju", "en": "Athenian expedition to Sicily" },
+      "year": -415,
+      "yearEnd": null,
+      "placeId": "sicilija",
+      "episodeId": "100",
+      "timestamp": "137:06",
+      "type": "battle",
+      "actors": ["Alkibijad", "Atina", "Sirakuza"],
+      "region": "Balkan",
+      "description": { "sr": "415. godine pre nove ere, na predlog Alkibijada, Atina pokreće ambicioznu i katastrofalnu ekspediciju na Siciliju, ostrvo veće od Peloponeza i Atike zajedno.", "en": "In 415 BCE, on Alcibiades' proposal, Athens launched an ambitious and ultimately catastrophic expedition to Sicily, an island larger than the Peloponnese and Attica combined." },
+      "quote": "Njemu sada pada na pamet, 415. godine, da treba otići u Siciliju.",
+      "confidence": "high"
+    },
+    {
+      "id": "kapitulacija-atine-404pne",
+      "title": { "sr": "Kapitulacija Atine i kraj Peloponeskog rata", "en": "Surrender of Athens and end of the Peloponnesian War" },
+      "year": -404,
+      "yearEnd": null,
+      "placeId": "pirej",
+      "episodeId": "100",
+      "timestamp": "182:07",
+      "type": "treaty",
+      "actors": ["Atina", "Lisandar", "Sparta"],
+      "region": "Balkan",
+      "description": { "sr": "404. godine pre nove ere, gladna i žedna, Atina kapitulira i prihvata uslove mira; Lisandar se iskrcava u Pireju i pred očima Atinjana ruši zidine koje su zidali 20 godina.", "en": "In 404 BCE, starving and thirsty, Athens surrendered and accepted the terms of peace; Lysander landed at Piraeus and, before the eyes of the Athenians, tore down the walls they had built over 20 years." },
+      "quote": "I 404. godine gladna i žedna Atina prihvata i ovaj uslov. ... Lisandar se iskrceva u Pireju",
+      "confidence": "high"
+    }
+  ]
+}

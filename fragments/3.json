@@ -1,0 +1,67 @@
+{
+  "places": [
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": ["pariz", "paris", "parizu", "parijski kongres", "parizom", "parize", "reka sena", "dolina sene", "Pariza", "Bastilju", "Bastilji"], "lat": 48.8566, "lng": 2.3522, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "napad-na-bastilju-pariz-1789",
+      "title": { "sr": "Napad na Bastilju", "en": "Storming of the Bastille" },
+      "year": 1789,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "3",
+      "timestamp": "15:01",
+      "type": "siege",
+      "actors": ["Pariski narod", "Luj XVI"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Revolucionarni narod napao je tvrđavu Bastilju u Parizu 14. jula 1789. godine u potrazi za oružjem i municijom, što se smatra danom kada je sve počelo.", "en": "Revolutionary crowds stormed the Bastille fortress in Paris on 14 July 1789 in search of weapons and ammunition, marking the day the revolution is said to have begun." },
+      "quote": "revolucijalno napad na Bastilju koji je 14. juli, jel da, 789. koji uglavnom vezujemo kao dan Frančkih revolucija, kako tada je sve počelo, kada je taj narod jednostavno želeo da dođe do oružja i do municije i ono, gde to ima pa evo u ovoj tvrđavi ovde, jel da, u Bastilji.",
+      "confidence": "high"
+    },
+    {
+      "id": "pocetak-rata-sa-evropskim-monarhijama-pariz-1792",
+      "title": { "sr": "Početak rata sa evropskim monarhijama", "en": "Start of war with European monarchies" },
+      "year": 1792,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "3",
+      "timestamp": "06:00",
+      "type": "other",
+      "actors": ["Francuska Republika", "Austrija", "Pruska", "Luj XVI"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Prema pripovedanju, revolucionarni događaji kulminiraju 1792. godine kada je pogubljen kralj i počinje rat sa evropskim državama koje su se plašile širenja revolucije; napomena: pogubljenje Luja XVI istorijski se desilo januara 1793, dok je rat sa Austrijom zvanično počeo aprila 1792, pa transkript spaja ta dva događaja pod istu godinu.", "en": "According to the narration, revolutionary events culminate in 1792 when the king is executed and war begins with European states fearful of the revolution spreading; note: Louis XVI's execution historically took place in January 1793, while the war with Austria officially began in April 1792, so the transcript merges the two events under one year." },
+      "quote": "uzbudljivi ali komplikovani koji se negde kulminiraju 1792. kada ubijaju kralja i kada počinje rat sa drugim evropskim državama koje zdižu i kažu Stani ako ubiju ovog kralja moće da ubiju i nas sutra.",
+      "confidence": "low"
+    },
+    {
+      "id": "uspostavljanje-vladavine-terora-pariz-1793",
+      "title": { "sr": "Uspostavljanje vladavine terora", "en": "Establishment of the Reign of Terror" },
+      "year": 1793,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "3",
+      "timestamp": "06:23",
+      "type": "reform",
+      "actors": ["Maksimilijan Robespjer", "Komitet javne bezbednosti", "Sankiloti"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Godine 1793, usled očajne ekonomske situacije, rata sa spolja i unutrašnjih pobuna rojalista, uspostavlja se vladavina terora kao odgovor na opšti haos u revolucionarnoj Francuskoj.", "en": "In 1793, amid a desperate economic situation, war abroad and internal royalist uprisings, the Reign of Terror is established in response to the general chaos in revolutionary France." },
+      "quote": "I dolazimo do 1793. kada je očajna ekonomska situacija, rat sa spolja, iznutra pobune royalista, ekonomski problemi i jedan onako opšti haos kada se uspostavlja vladavina terora",
+      "confidence": "high"
+    },
+    {
+      "id": "pad-robespjera-9-termidor-pariz-1794",
+      "title": { "sr": "Pad Robespjera, 9. termidor", "en": "Fall of Robespierre, 9 Thermidor" },
+      "year": 1794,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "3",
+      "timestamp": "61:54",
+      "type": "uprising",
+      "actors": ["Maksimilijan Robespjer", "Nacionalni konvent", "Sen-Žist", "Pariska komuna"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Na dan 9. termidora Nacionalni konvent se okreće protiv Robespjera, što pokreće lanac događaja koji dovodi do njegovog hapšenja i pada; transkript navodi datum kao '9. jul 1799', što je verovatno greška transkripcije, jer je istorijski ovaj dan 27. jul 1794. godine.", "en": "On 9 Thermidor the National Convention turns against Robespierre, triggering a chain of events leading to his arrest and downfall; the transcript states the date as '9 July 1799', likely a transcription error, since historically this day is 27 July 1794." },
+      "quote": "ono, malo tu uspeva da, da ustalase sve tu priču i ti imaš sad, pre podne tog dana, 9. jul 1799, ... I onda, 12.4. ili ti 9. Termidor?",
+      "confidence": "low"
+    }
+  ]
+}

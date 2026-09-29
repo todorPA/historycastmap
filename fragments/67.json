@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "sarajevo", "name": { "sr": "Sarajevo", "en": "Sarajevo" }, "aliases": ["Sarajevu"], "lat": 43.8563, "lng": 18.4131, "kind": "city" },
+    { "id": "trstenik", "name": { "sr": "Trstenik", "en": "Trstenik" }, "aliases": ["Trsteniku"], "lat": 43.6142, "lng": 21.0072, "kind": "city" },
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": ["Parizu"], "lat": 48.8566, "lng": 2.3522, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "sarajevo-pada-austro-ugarska-1878",
+      "title": { "sr": "Sarajevo pada pod austro-ugarsku okupaciju", "en": "Sarajevo falls under Austro-Hungarian occupation" },
+      "year": 1878,
+      "yearEnd": null,
+      "placeId": "sarajevo",
+      "episodeId": "67",
+      "timestamp": "18:38",
+      "type": "conquest",
+      "actors": ["Austro-Ugarska", "Bosanski otpor"],
+      "region": "Balkan",
+      "description": { "sr": "Sarajevo konačno pada u oktobru 1878. godine pod austro-ugarsku okupaciju, zajedno sa istočnom Hercegovinom, uz otpor koji je do tada bio uveliko slomljen.", "en": "Sarajevo finally fell in October 1878 under Austro-Hungarian occupation, together with eastern Herzegovina, with resistance largely broken by that point." },
+      "quote": "Uglavnom Sarajevo pada konečno 1988. [1878.] godine u oktobru.",
+      "confidence": "medium"
+    },
+    {
+      "id": "muha-pariska-izlozba-1900",
+      "title": { "sr": "Alfons Muha radi paviljon BiH za Pariski salon", "en": "Alphonse Mucha designs the BiH pavilion for the Paris exhibition" },
+      "year": 1900,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "67",
+      "timestamp": "32:07",
+      "type": "other",
+      "actors": ["Alfons Muha"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1900. godine, za svetsku izložbu u Parizu, čuveni umetnik Alfons Muha radi paviljon Bosne i Hercegovine, koristeći stilizovane elemente lokalne kulture kao deo austro-ugarske prezentacije provincije.", "en": "In 1900, for the World's Fair in Paris, the famous artist Alphonse Mucha designed the Bosnia and Herzegovina pavilion, using stylized elements of local culture as part of the Austro-Hungarian presentation of the province." },
+      "quote": "Muha, na primjer, koga ćemo pred kraj razgovora spomenuti kad radi pabiljom Bosni i Hercegovine za izložbu u Parizu 1900. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-pere-tunguza-trstenik-1919",
+      "title": { "sr": "Smrt Pere Tunguza u Trsteniku", "en": "Death of Pero Tunguz in Trstenik" },
+      "year": 1919,
+      "yearEnd": null,
+      "placeId": "trstenik",
+      "episodeId": "67",
+      "timestamp": "12:43",
+      "type": "death",
+      "actors": ["Pero Tunguz"],
+      "region": "Balkan",
+      "description": { "sr": "Pero Tunguz, hajduk koji se sa 70-ak godina javio kao dobrovoljac u Prvom svetskom ratu, prešao Albaniju i učestvovao u proboju Solunskog fronta, umire u poznoj starosti u Trsteniku 1919. godine, u svojim 78-79 godina.", "en": "Pero Tunguz, an outlaw who at around 70 volunteered in World War I, crossed Albania, and took part in the breakthrough of the Thessaloniki front, died in old age in Trstenik in 1919, at 78-79 years old." },
+      "quote": "da umre u Trsteniku 1919. godine, tako da sa svojih 78-79 godina",
+      "confidence": "high"
+    }
+  ]
+}

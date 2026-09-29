@@ -1,0 +1,86 @@
+{
+  "places": [
+    { "id": "brioni", "name": { "sr": "Brioni", "en": "Brioni Islands" }, "aliases": ["Briljanskim plenumom", "Brionima"], "lat": 44.9349, "lng": 13.7484, "kind": "landmark" },
+    { "id": "pariz", "name": { "sr": "Pariz", "en": "Paris" }, "aliases": ["pariz", "paris", "parizu", "parijski kongres", "parizom", "parize", "reka sena", "dolina sene"], "lat": 48.8566, "lng": 2.3522, "kind": "city" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda", "stari dvor", "beograd (kneževina srbija)", "belgrade (principality of serbia)", "kneževini srbiji", "beograd (narodna banka / narodni muzej)", "belgrade (national bank / national museum)", "narodnoj banci", "narodnom muzeju", "novom beogradu"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "francuska", "name": { "sr": "Francuska", "en": "France" }, "aliases": ["francuskoj"], "lat": 46.6034, "lng": 1.8883, "kind": "country" },
+    { "id": "pula", "name": { "sr": "Pula", "en": "Pula" }, "aliases": ["pula", "pulski festival"], "lat": 44.8666, "lng": 13.8496, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "brionski-plenum-smena-rankovica-brioni-1966",
+      "title": { "sr": "Brionski plenum i smena Aleksandra Rankovića", "en": "Brioni Plenum and the removal of Ranković" },
+      "year": 1966,
+      "yearEnd": null,
+      "placeId": "brioni",
+      "episodeId": "04",
+      "timestamp": "09:46",
+      "type": "reform",
+      "actors": ["Aleksandar Ranković", "Savez komunista Jugoslavije", "Josip Broz Tito"],
+      "region": "Balkan",
+      "description": { "sr": "1966. godine na Brionskom plenumu (u transkriptu izgovorenom kao 'Briljanski plenum') Aleksandar Ranković je smenjen sa svih partijskih i državnih funkcija, što se u razgovoru navodi kao početak ubrzanog procesa demokratizacije koji je uticao i na jugoslovenski film.", "en": "In 1966, at the Brioni plenum (referred to in the transcript as the 'Briljanski plenum'), Aleksandar Ranković was removed from all party and state functions, cited in the conversation as the start of an accelerated process of democratization that also affected Yugoslav film." },
+      "quote": "od 66. godine posebno, i to ima veze sa Briljanskim plenumom, sa odstupanjem Rankovića i smenom Rankovića sa svih partijskih i državnih funkcija,",
+      "confidence": "low"
+    },
+    {
+      "id": "studentske-demonstracije-pariz-1968",
+      "title": { "sr": "Studentske pobune u Parizu 1968.", "en": "Student uprisings in Paris in 1968" },
+      "year": 1968,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "04",
+      "timestamp": "47:15",
+      "type": "uprising",
+      "actors": ["Studenti"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Prema transkriptu, 1968. godina je godina studentskih pobuna u Parizu, deo istog generacijskog talasa koji je obeležio i jugoslovenski crnotalasni film.", "en": "According to the transcript, 1968 was the year of student uprisings in Paris, part of the same generational wave that also marked the Yugoslav Black Wave in film." },
+      "quote": "Mi pričamo zapravo o 60-im godinama 68. godina je godina studijenskih pobuna u Parizu, u Beogradu.",
+      "confidence": "high"
+    },
+    {
+      "id": "studentske-demonstracije-beograd-1968",
+      "title": { "sr": "Studentske pobune u Beogradu 1968.", "en": "Student uprisings in Belgrade in 1968" },
+      "year": 1968,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "04",
+      "timestamp": "47:19",
+      "type": "uprising",
+      "actors": ["Studenti"],
+      "region": "Balkan",
+      "description": { "sr": "Prema transkriptu, 1968. godine dolazi i do studentskih pobuna u Beogradu, paralelno sa protestima u Parizu, u okviru generacijskog jaza koji je obeležio jugoslovenski crnotalasni film.", "en": "According to the transcript, 1968 also saw student uprisings in Belgrade, parallel to the protests in Paris, part of the generational gap that marked the Yugoslav Black Wave in film." },
+      "quote": "Mi pričamo zapravo o 60-im godinama 68. godina je godina studijenskih pobuna u Parizu, u Beogradu.",
+      "confidence": "high"
+    },
+    {
+      "id": "aleksandar-petrovic-smrt-francuska-1994",
+      "title": { "sr": "Smrt Aleksandra Petrovića u Francuskoj (1994)", "en": "Death of Aleksandar Petrović in France (1994)" },
+      "year": 1994,
+      "yearEnd": null,
+      "placeId": "francuska",
+      "episodeId": "04",
+      "timestamp": "57:55",
+      "type": "death",
+      "actors": ["Aleksandar Petrović"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Prema transkriptu, reditelj Aleksandar Petrović, autor filma Skupljači perja, rođen je i umro je u Francuskoj, 1994. godine; sagovornik ovu tvrdnju iznosi sa vidljivom nesigurnošću ('ako se ne varam').", "en": "According to the transcript, director Aleksandar Petrović, creator of I Even Met Happy Gypsies, was born and died in France, in 1994; the speaker states this with visible uncertainty ('if I'm not mistaken')." },
+      "quote": "Inače reditelj filma je rođen u Francuskoj i umro je u Francuskoj u 1994. godine, ako se ne varam, Aleksandar Petrović",
+      "confidence": "low"
+    },
+    {
+      "id": "pulski-filmski-festival-osnivanje-pula-1950",
+      "title": { "sr": "Osnivanje Pulskog filmskog festivala (rane 50-e)", "en": "Founding of the Pula Film Festival (early 1950s)" },
+      "year": 1950,
+      "yearEnd": null,
+      "placeId": "pula",
+      "episodeId": "04",
+      "timestamp": "117:08",
+      "type": "founding",
+      "actors": ["Jugoslovenska kinematografija"],
+      "region": "Balkan",
+      "description": { "sr": "Prema transkriptu, Pulski festival je osmišljen kao smotra jugoslovenskog filma još početkom 50-ih godina i postao je jedan od centara okupljanja jugoslovenske kinematografije.", "en": "According to the transcript, the Pula Festival was conceived as a showcase of Yugoslav film as early as the beginning of the 1950s and became one of the gathering centers of Yugoslav cinema." },
+      "quote": "Ono što je bitno jeste da je Pulski festival bio osmišljen kao jedna smotra jugoslovenskog filma još početkom 50. godina i tu se prosto brusila ta ideja o jugoslovenskom filmu kao nečemu što je zaista,",
+      "confidence": "medium"
+    }
+  ]
+}

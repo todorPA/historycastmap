@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "viminacijum", "name": { "sr": "Viminacijum", "en": "Viminacium" }, "aliases": ["Viminacijum"], "lat": 44.7333, "lng": 21.2264, "kind": "landmark" },
+    { "id": "jerusalim", "name": { "sr": "Jerusalim", "en": "Jerusalem" }, "aliases": ["jerusalim", "jerusalem", "hodočušće u Jerusalim"], "lat": 31.7683, "lng": 35.2137, "kind": "city" },
+    { "id": "nikeja", "name": { "sr": "Nikeja", "en": "Nicaea" }, "aliases": ["Nikijski sabor"], "lat": 40.4267, "lng": 29.7211, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "viminacijum-otvoren-posete-2006",
+      "title": { "sr": "Viminacijum otvoren za posete", "en": "Viminacium opened to visitors" },
+      "year": 2006,
+      "yearEnd": null,
+      "placeId": "viminacijum",
+      "episodeId": "zene-antickog-balkana-historycast-nedeljom",
+      "timestamp": "02:58",
+      "type": "other",
+      "actors": ["Viminacijum"],
+      "region": "Balkan",
+      "description": { "sr": "Arheološko nalazište Viminacijum, glavni grad rimske provincije Gornje Mezije, otvoreno je za posete 2006. godine; poznato je između ostalog po fresci ženskog portreta koju posetioci porede sa Mona Lizom.", "en": "The Viminacium archaeological site, capital of the Roman province of Moesia Superior, opened to visitors in 2006; it is known, among other things, for a fresco portrait of a woman that visitors compare to the Mona Lisa." },
+      "quote": "kad je Viminacijum otvoren za posete 2006. godine, kad smo krenuli da imamo posetijace svakodnevno",
+      "confidence": "high"
+    },
+    {
+      "id": "jelena-hodociste-jerusalim-324",
+      "title": { "sr": "Hodočašće carice Jelene u Jerusalim", "en": "Empress Helena's pilgrimage to Jerusalem" },
+      "year": 324,
+      "yearEnd": null,
+      "placeId": "jerusalim",
+      "episodeId": "zene-antickog-balkana-historycast-nedeljom",
+      "timestamp": "116:49",
+      "type": "other",
+      "actors": ["Carica Jelena", "Konstantin Veliki"],
+      "region": "Bliski istok",
+      "description": { "sr": "Od 324. godine, u poznim godinama svog života, carica Jelena, majka Konstantina Velikog, hodočasti u Jerusalim, gde po legendi pronalazi česticu časnog krsta.", "en": "From 324 onward, in the late years of her life, Empress Helena, mother of Constantine the Great, made a pilgrimage to Jerusalem, where according to legend she found a fragment of the True Cross." },
+      "quote": "od 324. godine se postavlja legenda o njenom hodočušću u Jerusalim gde je ona pronašla částiče částnog krsta",
+      "confidence": "high"
+    },
+    {
+      "id": "nikejski-sabor-325",
+      "title": { "sr": "Nikejski sabor", "en": "Council of Nicaea" },
+      "year": 325,
+      "yearEnd": null,
+      "placeId": "nikeja",
+      "episodeId": "zene-antickog-balkana-historycast-nedeljom",
+      "timestamp": "117:21",
+      "type": "other",
+      "actors": ["Konstantin Veliki"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "325. godine Konstantin Veliki inicira Nikejski sabor, na kome se ustanovljava hrišćanska dogma.", "en": "In 325, Constantine the Great initiated the Council of Nicaea, at which Christian doctrine was established." },
+      "quote": "Konstantin inicira Nikijski sabor 325. godine gde je ustanovljena hrišćanska dogma",
+      "confidence": "high"
+    }
+  ]
+}

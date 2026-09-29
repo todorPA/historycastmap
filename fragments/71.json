@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "staljingrad", "name": { "sr": "Staljingrad (Volgograd)", "en": "Stalingrad (Volgograd)" }, "aliases": ["Staljingradu", "Volgogradu"], "lat": 48.7080, "lng": 44.5133, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "sovjetska-kontraofanziva-uran-1942",
+      "title": { "sr": "Sovjetska kontraofanziva (operacija Uran) kod Staljingrada", "en": "Soviet counteroffensive (Operation Uranus) at Stalingrad" },
+      "year": 1942,
+      "yearEnd": null,
+      "placeId": "staljingrad",
+      "episodeId": "71",
+      "timestamp": "64:40",
+      "type": "battle",
+      "actors": ["Nikolaj Vatutin", "Konstantin Rokosovski", "Andrej Jeremenko", "Šesta armija (Nemačka)"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Sredinom novembra, 19. novembra 1942. godine, sovjetske snage pod generalima Vatutinom, Rokosovskim i Jeremenkom pokreću operaciju Uran, veliku kontraofanzivu koja zatvara klin i opkoljava nemačku Šestu armiju kod Staljingrada.", "en": "In mid-November, on November 19, 1942, Soviet forces under Generals Vatutin, Rokossovsky and Yeremenko launched Operation Uranus, a major counteroffensive that closed the pincer and encircled the German Sixth Army at Stalingrad." },
+      "quote": "tu čuvenu sovjetsku kontraofanzivu, zatvaranje klina, sredina novembra, 19. novembar",
+      "confidence": "high"
+    },
+    {
+      "id": "staljingrad-prekretnica-rata-1943",
+      "title": { "sr": "Staljingrad kao prekretnica rata", "en": "Stalingrad as the turning point of the war" },
+      "year": 1943,
+      "yearEnd": null,
+      "placeId": "staljingrad",
+      "episodeId": "71",
+      "timestamp": "97:22",
+      "type": "other",
+      "actors": ["Nemačka vojska", "Sovjetska vojska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Nakon poraza kod Staljingrada, nemački vojnici, sve verniji nacional-socijalizmu do samog kraja, počinju da razmišljaju o porazu; bitka postaje simbol koji je utkan u modernu Rusiju, posleratnu Evropu i Sjedinjene Države.", "en": "After the defeat at Stalingrad, German soldiers, loyal to National Socialism until the very end, began to consider the possibility of defeat; the battle became a symbol woven into modern Russia, postwar Europe, and the United States." },
+      "quote": "prekretnica svakako, veliki događaj, velika bitka",
+      "confidence": "high"
+    }
+  ]
+}

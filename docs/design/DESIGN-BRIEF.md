@@ -2,6 +2,11 @@
 
 Kratak pregled trenutnog stanja (Faza 1, prototip) kao osnova za mockup-e i vizualni identitet.
 
+> **Napomena (septembar 2026):** ovaj dokument opisuje stanje *pre* redizajna i
+> dalje je referenca za *šta proizvod jeste*. Za novi vizualni jezik (tokeni,
+> paleta regiona, tipografija, landing stranica) vidi
+> [`REDESIGN-2026-09.md`](REDESIGN-2026-09.md).
+
 ---
 
 ## 1. Šta je proizvod

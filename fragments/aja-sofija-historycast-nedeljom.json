@@ -1,0 +1,67 @@
+{
+  "places": [
+    { "id": "carigrad", "name": { "sr": "Carigrad", "en": "Constantinople" }, "aliases": ["carigrad", "constantinople", "carigradu", "carigrada"], "lat": 41.0082, "lng": 28.9784, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "prva-crkva-svete-sofije-zavrsena-360",
+      "title": { "sr": "Završetak prve crkve Svete Sofije", "en": "Completion of the first church of Hagia Sophia" },
+      "year": 360,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "aja-sofija-historycast-nedeljom",
+      "timestamp": "13:37",
+      "type": "founding",
+      "actors": ["Car Konstancije"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Prva crkvena građevina na mestu Svete Sofije, trobrodna bazilika sa atrijumom, počela je da se gradi u vreme cara Konstantina, a završena je oko 360. godine u vreme njegovog sina Konstancija.", "en": "The first church building on the site of Hagia Sophia, a three-nave basilica with an atrium, was begun under Emperor Constantine and completed around 360 under his son Constantius." },
+      "quote": "prva da kažemo najstarija crkvena građivina počeće iz vremena Konstantina... 360. godine je negde završena recimo ta prva crkva",
+      "confidence": "medium"
+    },
+    {
+      "id": "aja-sofija-osvecena-537",
+      "title": { "sr": "Osvećenje Svete Sofije (Justinijanova crkva)", "en": "Consecration of Hagia Sophia (Justinian's church)" },
+      "year": 537,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "aja-sofija-historycast-nedeljom",
+      "timestamp": "01:03",
+      "type": "founding",
+      "actors": ["Car Justinijan"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "27. decembra 537. godine, po predanju, car Justinijan je ušao u novoosveštenu crkvu Svete Sofije u Carigradu i uzviknuo 'Solomone, nadmašio sam te.'", "en": "On 27 December 537, according to tradition, Emperor Justinian entered the newly consecrated church of Hagia Sophia in Constantinople and exclaimed, 'Solomon, I have surpassed thee.'" },
+      "quote": "Bile su reči koje po predanju zviknuo car Justinian 27. decembra 537. godine, kada je ušao na osvećenje svoje crkve, Svete Sofije u Carigradu.",
+      "confidence": "high"
+    },
+    {
+      "id": "aja-sofija-vraca-pravoslavlju-1261",
+      "title": { "sr": "Sveta Sofija ponovo postaje pravoslavna katedrala", "en": "Hagia Sophia becomes an Orthodox cathedral again" },
+      "year": 1261,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "aja-sofija-historycast-nedeljom",
+      "timestamp": "99:13",
+      "type": "other",
+      "actors": ["Vizantinci iz Nikeje"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "1261. godine, nakon ponovnog osvajanja Carigrada od strane Vizantinaca iz Nikeje, Sveta Sofija ponovo postaje pravoslavna katedrala i sedište patrijarha.", "en": "In 1261, after the Byzantines from Nicaea reconquered Constantinople, Hagia Sophia once again became an Orthodox cathedral and seat of the Patriarch." },
+      "quote": "oslobađanje ili ponovno osvajanje Carigrada od strane... vizantinaca iz Nikeje je 1261. godine ponovno ona postaje pravoslavna crkva",
+      "confidence": "high"
+    },
+    {
+      "id": "aja-sofija-osmansko-osvajanje-1453",
+      "title": { "sr": "Osvajanje Carigrada i pretvaranje Svete Sofije u džamiju", "en": "Conquest of Constantinople and Hagia Sophia's conversion into a mosque" },
+      "year": 1453,
+      "yearEnd": null,
+      "placeId": "carigrad",
+      "episodeId": "aja-sofija-historycast-nedeljom",
+      "timestamp": "99:25",
+      "type": "conquest",
+      "actors": ["Mehmed Drugi Osvajač"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "1453. godine Carigrad definitivno osvajaju Turci pod vođstvom Mehmeda Drugog Osvajača, čime se okončava period Svete Sofije kao pravoslavne katedrale koji je trajao od 1261. godine.", "en": "In 1453, Constantinople was definitively conquered by the Turks led by Mehmed II the Conqueror, ending the period in which Hagia Sophia had served as an Orthodox cathedral since 1261." },
+      "quote": "ostati do 1453. godine kada su je osvojili definitivno Turci, odnosno Osmanlija, odnosno Mehmed... osvajač",
+      "confidence": "high"
+    }
+  ]
+}

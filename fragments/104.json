@@ -1,0 +1,70 @@
+{
+  "places": [
+    { "id": "solun", "name": { "sr": "Solun", "en": "Thessaloniki" }, "aliases": ["Solunu", "Soluna"], "lat": 40.6401, "lng": 22.9444, "kind": "city" },
+    { "id": "bitolj", "name": { "sr": "Bitolj", "en": "Bitola" }, "aliases": ["Bitolja"], "lat": 41.0297, "lng": 21.3347, "kind": "city" },
+    { "id": "dobro-polje", "name": { "sr": "Dobro Polje", "en": "Dobro Pole" }, "aliases": ["Dobrog Polja"], "lat": 41.2833, "lng": 21.8333, "kind": "battle-site" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["Beogradu"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "iskrcavanje-solun-1915",
+      "title": { "sr": "Savezničko iskrcavanje u Solunu", "en": "Allied landing at Thessaloniki" },
+      "year": 1915,
+      "yearEnd": null,
+      "placeId": "solun",
+      "episodeId": "104",
+      "timestamp": "14:46",
+      "type": "other",
+      "actors": ["Francuska", "Britanija"],
+      "region": "Balkan",
+      "description": { "sr": "1915. godine saveznička vojska se obreo u Solunu, uspostavljajući front koji je narednih godina tavorio bez odlučujuće akcije, sve do 1918. godine.", "en": "In 1915, Allied forces landed at Thessaloniki, establishing a front that stagnated for years without decisive action, until 1918." },
+      "quote": "front na Solunu, odnosno, saveznička vojska u Solunu se obrala tako što je 1915. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "oslobodjenje-bitolja-1916",
+      "title": { "sr": "Oslobođenje Bitolja", "en": "Liberation of Bitola" },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "bitolj",
+      "episodeId": "104",
+      "timestamp": "23:34",
+      "type": "conquest",
+      "actors": ["Srpska vojska"],
+      "region": "Balkan",
+      "description": { "sr": "Novembra 1916. godine, nakon bitke kod Kajmakčalana i bitke za Gorničevo, srpska vojska ulazi u Bitolj, pomerivši se oko 40 km na tada zaposednutu teritoriju.", "en": "In November 1916, after the battles of Kaymakchalan and Gorničevo, the Serbian army entered Bitola, advancing about 40 km into occupied territory." },
+      "quote": "vojska ulazi u Bitolj novembra 1916. godine, kada su se naše trupe praktično pomerili nekih 40 km",
+      "confidence": "high"
+    },
+    {
+      "id": "proboj-solunskog-fronta-1918",
+      "title": { "sr": "Proboj Solunskog fronta na Dobrom Polju", "en": "Breakthrough of the Thessaloniki front at Dobro Pole" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "dobro-polje",
+      "episodeId": "104",
+      "timestamp": "74:37",
+      "type": "battle",
+      "actors": ["Srpska vojska", "Francuska vojska"],
+      "region": "Balkan",
+      "description": { "sr": "15. septembra 1918. godine, na liniji Dobro Polje, dolazi do proboja Solunskog fronta koji direktno vodi ka kraju Prvog svetskog rata — u naredne 14 dana kapitulira Bugarska, a ubrzo i Turska i Austro-Ugarska.", "en": "On September 15, 1918, at Dobro Pole, the breakthrough of the Thessaloniki front occurred, directly leading to the end of World War I — within the next 14 days Bulgaria capitulated, and soon after Turkey and Austria-Hungary as well." },
+      "quote": "taj proboj Solonskog fronta 15. septembra ... Na liniji Dobro polje",
+      "confidence": "high"
+    },
+    {
+      "id": "oslobodjenje-beograda-1918",
+      "title": { "sr": "Oslobođenje Beograda nakon proboja fronta", "en": "Liberation of Belgrade after the front's breakthrough" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "104",
+      "timestamp": "111:34",
+      "type": "conquest",
+      "actors": ["Srpska vojska"],
+      "region": "Balkan",
+      "description": { "sr": "5. novembra 1918. godine, kao direktna posledica proboja Solunskog fronta, srpska vojska oslobađa Beograd.", "en": "On November 5, 1918, as a direct consequence of the breakthrough of the Thessaloniki front, the Serbian army liberated Belgrade." },
+      "quote": "5. novembar, podom 5. novembra 1918. godine",
+      "confidence": "high"
+    }
+  ]
+}

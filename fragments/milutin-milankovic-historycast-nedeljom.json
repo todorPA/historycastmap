@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "dalj", "name": { "sr": "Dalj", "en": "Dalj" }, "aliases": ["Dalju"], "lat": 45.4867, "lng": 18.9678, "kind": "city" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" },
+    { "id": "budimpesta", "name": { "sr": "Budimpešta", "en": "Budapest" }, "aliases": ["budimpešta", "budapest", "blizini Budimpešte"], "lat": 47.4979, "lng": 19.0402, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "milankovic-rodjenje-dalj-1879",
+      "title": { "sr": "Rođenje Milutina Milankovića", "en": "Birth of Milutin Milanković" },
+      "year": 1879,
+      "yearEnd": null,
+      "placeId": "dalj",
+      "episodeId": "milutin-milankovic-historycast-nedeljom",
+      "timestamp": "08:23",
+      "type": "birth",
+      "actors": ["Milutin Milanković"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "Milutin Milanković, budući srpski naučnik, rođen je 1879. godine u Dalju, tada u sastavu Austrougarske monarhije.", "en": "Milutin Milanković, the future Serbian scientist, was born in 1879 in Dalj, then part of the Austro-Hungarian monarchy." },
+      "quote": "On je rođen u Dalju u to vreme, dakle 1879. godine, to je bila austro-ugarska monarhija.",
+      "confidence": "high"
+    },
+    {
+      "id": "milankovic-katedra-beograd-1909",
+      "title": { "sr": "Milanković postaje profesor u Beogradu", "en": "Milanković becomes professor in Belgrade" },
+      "year": 1909,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "milutin-milankovic-historycast-nedeljom",
+      "timestamp": "11:19",
+      "type": "other",
+      "actors": ["Milutin Milanković", "Petar I Karađorđević"],
+      "region": "Balkan",
+      "description": { "sr": "1909. godine Milanković preuzima katedru za mehaniku nebeskih tela u Beogradu i postaje podanik Kraljevine Srbije, uz državljanstvo koje mu potpisuje kralj Petar.", "en": "In 1909, Milanković took up the chair of celestial mechanics in Belgrade and became a subject of the Kingdom of Serbia, with citizenship signed by King Peter." },
+      "quote": "on se otprilike obreo na toj katedri za mehaniku nebeskih tela 1909. godine i čak sam negde i pročito da mu je kralj Petar potpisao državljanstvo",
+      "confidence": "high"
+    },
+    {
+      "id": "milankovic-zarobljen-budimpesta-1914",
+      "title": { "sr": "Milanković zarobljen kod Budimpešte na početku rata", "en": "Milanković captured near Budapest at the start of the war" },
+      "year": 1914,
+      "yearEnd": null,
+      "placeId": "budimpesta",
+      "episodeId": "milutin-milankovic-historycast-nedeljom",
+      "timestamp": "13:37",
+      "type": "other",
+      "actors": ["Milutin Milanković"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "1914. godine Milanković je, kao podanik srpskog kralja zatečen na austrougarskoj teritoriji nekoliko dana posle venčanja, zarobljen u blizini Budimpešte; uz pomoć profesora oslobođen je iz zatvora i ratne godine provodi radeći u biblioteci u Budimpešti.", "en": "In 1914, Milanković, as a subject of the Serbian king caught on Austro-Hungarian territory just days after his wedding, was captured near Budapest; with a professor's help he was released from prison and spent the war years working in a library in Budapest." },
+      "quote": "On je 1914. godine bio zarobljen kao podanik Srpskog kralja, našao se u blizini Budimpešta u jednom zatvoru gde je uz pomoć jednog svog profesora... uspeo da izdajstvuje, da ga puste iz zatvora",
+      "confidence": "high"
+    }
+  ]
+}

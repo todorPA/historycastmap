@@ -1,0 +1,38 @@
+{
+  "places": [
+    { "id": "ankara", "name": { "sr": "Angora (Ankara)", "en": "Angora (Ankara)" }, "aliases": ["Angori", "Ankari"], "lat": 39.9334, "lng": 32.8597, "kind": "battle-site" },
+    { "id": "krusevac", "name": { "sr": "Kruševac", "en": "Kruševac" }, "aliases": ["Kruševcu"], "lat": 43.5804, "lng": 21.3311, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "bitka-kod-angore-1402",
+      "title": { "sr": "Bitka kod Angore", "en": "Battle of Ankara" },
+      "year": 1402,
+      "yearEnd": null,
+      "placeId": "ankara",
+      "episodeId": "50",
+      "timestamp": "23:04",
+      "type": "battle",
+      "actors": ["Stefan Lazarević", "Sultan Bajazit", "Timur (Tamerlan)"],
+      "region": "Bliski istok",
+      "description": { "sr": "1402. godine, u bici kod Angore, Timur razbija osmansku vojsku i zarobljava sultana Bajazita, čime se okončava osmogodišnja opsada Carigrada; Stefan Lazarević se u toj bici borio na osmanskoj strani.", "en": "In 1402, at the Battle of Ankara, Timur crushed the Ottoman army and captured Sultan Bayezid, ending the eight-year siege of Constantinople; Stefan Lazarević fought on the Ottoman side in that battle." },
+      "quote": "Punih osam godina Bajazit opuse da Carigrada. ... kod Angore, Stefan, Vuk",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-stefana-lazarevica-krusevac-1427",
+      "title": { "sr": "Smrt despota Stefana Lazarevića", "en": "Death of Despot Stefan Lazarević" },
+      "year": 1427,
+      "yearEnd": null,
+      "placeId": "krusevac",
+      "episodeId": "50",
+      "timestamp": "104:39",
+      "type": "death",
+      "actors": ["Stefan Lazarević", "Sultan Murat II"],
+      "region": "Balkan",
+      "description": { "sr": "19. jula 1427. godine, u vreme kada je novi osmanski upad sultana Murata II već zauzeo Kruševac i Niš i opsedao Novo Brdo, despot Stefan Lazarević umire u mestu Uglava — jedini srpski vladar za kog se znaju tačno mesto, datum i vreme smrti.", "en": "On July 19, 1427, while a new Ottoman incursion by Sultan Murad II had already taken Kruševac and Niš and was besieging Novo Brdo, Despot Stefan Lazarević died at the village of Uglava — the only Serbian ruler for whom the exact place, date and time of death are known." },
+      "quote": "opse da se novo brdo, nešto ranije već pao i Kruševac, niš pod osnovsku vlast ... u mesto uglava ... 19. jula, 1427. godine",
+      "confidence": "high"
+    }
+  ]
+}

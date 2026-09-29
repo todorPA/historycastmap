@@ -1,0 +1,100 @@
+{
+  "places": [
+    { "id": "bosna-i-hercegovina", "name": { "sr": "Bosna i Hercegovina", "en": "Bosnia and Herzegovina" }, "aliases": ["bosna i hercegovina", "bosnia and herzegovina", "bosna", "bosne i hercegovine", "bosni i hercegovini", "bosnom i hercegovinom", "bosne", "bosni", "bosnu", "Bosanska drzava", "Bosna kao pojam", "gornji tok reke Bosne"], "lat": 44.15, "lng": 17.75, "kind": "region" },
+    { "id": "mileseva", "name": { "sr": "Mileševa", "en": "Mileševa Monastery" }, "aliases": ["Mileševi", "Mileševu", "Milešava"], "lat": 43.3833, "lng": 19.65, "kind": "landmark" },
+    { "id": "uzice", "name": { "sr": "Užice", "en": "Užice" }, "aliases": ["Užicu"], "lat": 43.8583, "lng": 19.8408, "kind": "battle-site" },
+    { "id": "boka-kotorska", "name": { "sr": "Boka Kotorska (Herceg Novi)", "en": "Bay of Kotor (Herceg Novi)" }, "aliases": ["Boki Kotorskoj", "Boku Kotorsku", "Novi grad", "Sveti Stefan", "Herceg Novi"], "lat": 42.4531, "lng": 18.5375, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "tvrtko-krunisanje-kralj-srba-bosne-mileseva-1377",
+      "title": { "sr": "Krunisanje bana Tvrtka za kralja Srba i Bosne", "en": "Coronation of Ban Tvrtko as King of Serbs and Bosnia" },
+      "year": 1377,
+      "yearEnd": null,
+      "placeId": "mileseva",
+      "episodeId": "17",
+      "timestamp": "45:29",
+      "type": "coronation",
+      "actors": ["Ban Tvrtko I Kotromanić"],
+      "region": "Balkan",
+      "description": { "sr": "Ban Tvrtko se 1377. godine kruniše za kralja Srba i Bosne, najverovatnije u manastiru Mileševi, pozivajući se na srodstvo sa dinastijom Nemanjića. Mavro Orbin navodi 1376. godinu, što se smatra netačnim.", "en": "In 1377, Ban Tvrtko was crowned King of Serbs and Bosnia, most likely at the Mileševa monastery, invoking his kinship with the Nemanjić dynasty. The chronicler Mavro Orbin gives the year as 1376, considered inaccurate." },
+      "quote": "izvestna je godina 1377, iako Mavro Orbin donosi 1376 u godinu, što nije tačno, ali kod Mavro Orbina se spominje Mileševa kao mesto krunisanja",
+      "confidence": "medium"
+    },
+    {
+      "id": "tvrtko-zbacen-sa-vlasti-bosna-1366",
+      "title": { "sr": "Bosanski velikaši zbacuju Tvrtka sa vlasti", "en": "Bosnian nobles overthrow Tvrtko" },
+      "year": 1366,
+      "yearEnd": null,
+      "placeId": "bosna-i-hercegovina",
+      "episodeId": "17",
+      "timestamp": "17:10",
+      "type": "uprising",
+      "actors": ["Ban Tvrtko I Kotromanić", "Vuk (brat Tvrtka)", "bosanska vlastela"],
+      "region": "Balkan",
+      "description": { "sr": "Bosanska vlastela, predvođena Tvrtkovim bratom Vukom, zbacila je mladog bana Tvrtka sa vlasti 1366. godine, uz podršku Ugarske, uplašena njegovim rastućim uspehom nakon pobede nad ugarskim kraljem.", "en": "Led by Tvrtko's brother Vuk, and backed by Hungary, Bosnian nobles overthrew the young Ban Tvrtko in 1366, alarmed by his growing success after defeating the Hungarian king." },
+      "quote": "i 1366. godine su ga zbacili sa vlasti, naravno sve to uz podršku Ugrske",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-marica-mrnjavcevici-1371",
+      "title": { "sr": "Bitka na Marici i pogibija Mrnjavčevića", "en": "Battle of Maritsa and death of the Mrnjavčević brothers" },
+      "year": 1371,
+      "yearEnd": null,
+      "placeId": "bosna-i-hercegovina",
+      "episodeId": "17",
+      "timestamp": "30:15",
+      "type": "battle",
+      "actors": ["Vukašin Mrnjavčević", "Jovan Uglješa", "car Uroš"],
+      "region": "Balkan",
+      "description": { "sr": "1371. godine dešavaju se dve prelomne stvari: pogibija Mrnjavčevića u bici na Marici, i nekoliko meseci kasnije smrt cara Uroša, čime nestaje formalna centralna vlast u srpskim zemljama.", "en": "In 1371, two pivotal events occur: the death of the Mrnjavčević brothers at the Battle of Maritsa, and a few months later the death of Emperor Uroš, ending formal central authority in the Serbian lands." },
+      "quote": "sa druge strane 1371. dešavaju se dve važne stvari, prvo Marička bitka i pogibija Mrnjavčevića i drugo, u nekoliko meseci kasnije, i smrt cara Uroša",
+      "confidence": "high"
+    },
+    {
+      "id": "vukasin-savladar-marko-mladi-kralj-1365",
+      "title": { "sr": "Vukašin postaje savladar, Marko dobija titulu mladog kralja", "en": "Vukašin becomes co-ruler, Marko named young king" },
+      "year": 1365,
+      "yearEnd": null,
+      "placeId": "bosna-i-hercegovina",
+      "episodeId": "17",
+      "timestamp": "31:25",
+      "type": "coronation",
+      "actors": ["Vukašin Mrnjavčević", "Marko Mrnjavčević", "car Uroš"],
+      "region": "Balkan",
+      "description": { "sr": "Vukašin je 1365. godine postao Uroševljev savladar sa titulom kralja i istovremeno svom sinu Marku dao titulu mladog kralja, obezbeđujući naslednika, ali su ga ostali oblasni gospodari smatrali uzurpatorom.", "en": "In 1365 Vukašin became co-ruler with Emperor Uroš under the title of king, and simultaneously gave his son Marko the title of young king to secure succession, though other regional lords regarded him as a usurper." },
+      "quote": "Vukašin je postao Urošev savladar 1365. godina, titulom kralja... drugo, on kuje novac... dajući Marku titulu mladog kralja 1365. godine",
+      "confidence": "high"
+    },
+    {
+      "id": "hvatanje-nikole-altomanovica-uzice-1373",
+      "title": { "sr": "Hvatanje i zaslepljenje Nikole Altomanovića u Užicu", "en": "Capture and blinding of Nikola Altomanović at Užice" },
+      "year": 1373,
+      "yearEnd": null,
+      "placeId": "uzice",
+      "episodeId": "17",
+      "timestamp": "27:16",
+      "type": "conquest",
+      "actors": ["Nikola Altomanović", "Knez Lazar", "Ban Tvrtko"],
+      "region": "Balkan",
+      "description": { "sr": "Nakon zajedničkog pohoda Lazara i Tvrtka, oblastni gospodar Nikola Altomanović je uhvaćen u Užicu i predat Lazarevim sestrićima Musićima, koji su ga po Lazarevom naređenju zaslepili.", "en": "After a joint campaign by Lazar and Tvrtko, the regional lord Nikola Altomanović was captured at Užice and handed over to Lazar's nephews the Musić brothers, who blinded him on Lazar's orders." },
+      "quote": "on je uhvaćen u Užicu, predat je Lazaru, predat je tačnije Lazarovim sestrićima Musićima, i oni će ga verovatno po Lazarevom naređenju i oslepeti",
+      "confidence": "high"
+    },
+    {
+      "id": "tvrtko-smrt-bosna-1391",
+      "title": { "sr": "Smrt kralja Tvrtka I", "en": "Death of King Tvrtko I" },
+      "year": 1391,
+      "yearEnd": null,
+      "placeId": "bosna-i-hercegovina",
+      "episodeId": "17",
+      "timestamp": "68:47",
+      "type": "death",
+      "actors": ["Kralj Tvrtko I Kotromanić", "Stefan Dabiša"],
+      "region": "Balkan",
+      "description": { "sr": "Kralj Tvrtko I umire 1391. godine, nedugo nakon Kosovske bitke; vlast preuzima njegov polubrat Stefan Dabiša, koji nije uspeo da sačuva centralizovanu vlast kakvu je imao Tvrtko.", "en": "King Tvrtko I died in 1391, not long after the Battle of Kosovo; power passed to his half-brother Stefan Dabiša, who failed to maintain the centralized rule Tvrtko had achieved." },
+      "quote": "trebamo da znamo da on nije mnogo naživeo kosovsku bitku, 1391. tvrtko umire, i vlast preuzima njegov brat Stefan Dabiš",
+      "confidence": "high"
+    }
+  ]
+}

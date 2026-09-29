@@ -1,0 +1,52 @@
+{
+  "places": [
+    { "id": "petrograd", "name": { "sr": "Petrograd", "en": "Petrograd" }, "aliases": ["Petrogradu"], "lat": 59.9311, "lng": 30.3609, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "prva-duma-izabrana-petrograd-1906",
+      "title": { "sr": "Izbor Prve državne Dume", "en": "Election of the First State Duma" },
+      "year": 1906,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "29",
+      "timestamp": "33:49",
+      "type": "reform",
+      "actors": ["Rusko carstvo", "kadetska partija"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Prva državna Duma izabrana je početkom 1906. godine; pošto revolucionarne partije nisu izlazile na izbore, relativnu većinu su dobili kadeti, koji su pokušali da nametnu svoj program, nakon čega je car brzo raspustio Dumu.", "en": "The First State Duma was elected in early 1906; since revolutionary parties boycotted the elections, the Constitutional Democrats (Kadets) won a relative majority and tried to impose their program, after which the tsar quickly dissolved the Duma." },
+      "quote": "Prva Duma je izabrana 1906. godine, početkom 1906. godine... Car je vrlo brzo raspustio tu Dumu.",
+      "confidence": "high"
+    },
+    {
+      "id": "junski-udar-raspustanje-druge-dume-1907",
+      "title": { "sr": "Junski državni udar — raspuštanje Druge Dume", "en": "June coup — dissolution of the Second Duma" },
+      "year": 1907,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "29",
+      "timestamp": "36:28",
+      "type": "reform",
+      "actors": ["Nikolaj II Romanov", "Petar Stolipin"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "3. juna 1907. godine car raspušta Drugu Dumu i neustavno menja izborni zakon, značajno ograničavajući izborna prava seljaka, radnika i nacionalnih manjina — događaj poznat kao 'junski državni udar'.", "en": "On 3 June 1907, the tsar dissolved the Second Duma and unconstitutionally changed the electoral law, significantly restricting the voting rights of peasants, workers, and national minorities — an event known as the 'June coup'." },
+      "quote": "ta druga Duma raspuštena, ali raspuštena na nekom vrstu državnog udara 3. juna 1907. godine. To je tzv. 3. junski državni udar.",
+      "confidence": "high"
+    },
+    {
+      "id": "pocetak-februarske-revolucije-petrograd-1917",
+      "title": { "sr": "Početak Februarske revolucije", "en": "Start of the February Revolution" },
+      "year": 1917,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "29",
+      "timestamp": "08:50",
+      "type": "uprising",
+      "actors": ["Nikolaj II Romanov", "Rusko carstvo"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Februarska revolucija izbija u februaru/martu 1917. godine i dovodi do definitivnog rušenja samodržavlja u Rusiji; nekoliko dana pre revolucije car Nikolaj II u dnevniku bezbrižno beleži svakodnevne aktivnosti, ne predviđajući skori kraj svoje vladavine.", "en": "The February Revolution broke out in February/March 1917 and led to the definitive collapse of Russian autocracy; just days before the revolution, Tsar Nicholas II casually recorded mundane daily activities in his diary, with no anticipation of the imminent end of his reign." },
+      "quote": "u Rusiji postala jedna revolucija, 1917. koja je izbila u februaru, odnosno martu 1917. godine... Samo nekoliko dana kasnije, on više neće biti ruski car",
+      "confidence": "high"
+    }
+  ]
+}

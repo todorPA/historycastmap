@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "cacak", "name": { "sr": "Čačak", "en": "Čačak" }, "aliases": ["Čačku"], "lat": 43.8914, "lng": 20.3497, "kind": "city" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "stojadinovic-rodjenje-cacak-1888",
+      "title": { "sr": "Rođenje Milana Stojadinovića", "en": "Birth of Milan Stojadinović" },
+      "year": 1888,
+      "yearEnd": null,
+      "placeId": "cacak",
+      "episodeId": "24",
+      "timestamp": "01:29",
+      "type": "birth",
+      "actors": ["Milan Stojadinović"],
+      "region": "Balkan",
+      "description": { "sr": "Milan Stojadinović, budući predsednik vlade Kraljevine Jugoslavije, rođen je 1888. godine u Čačku.", "en": "Milan Stojadinović, future prime minister of the Kingdom of Yugoslavia, was born in 1888 in Čačak." },
+      "quote": "On je rođen u Čačku, 1888. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "aleksandar-uvodi-diktaturu-1929-stojadinovic",
+      "title": { "sr": "Kralj Aleksandar uvodi diktaturu", "en": "King Alexander introduces a dictatorship" },
+      "year": 1929,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "24",
+      "timestamp": "18:55",
+      "type": "reform",
+      "actors": ["Aleksandar I Karađorđević", "Milan Stojadinović"],
+      "region": "Balkan",
+      "description": { "sr": "Kralj Aleksandar uvodi diktaturu u januaru 1929. godine; Stojadinović se deklarativno protivio davanju diktatorskih ovlašćenja kralju, iako je i dalje održavao dobre odnose sa dvorom.", "en": "King Alexander introduced a dictatorship in January 1929; Stojadinović declared himself against granting the king dictatorial powers, though he continued to maintain good relations with the court." },
+      "quote": "kada je kralj Aleksandar uveo diktaturu 1929. godine u januaru mesecu, on je bio osoba koja je deklarativno nije bila baš za tu diktaturu",
+      "confidence": "high"
+    },
+    {
+      "id": "vlada-jeftica-beograd-1935",
+      "title": { "sr": "Formiranje vlade Bogoljuba Jeftića", "en": "Formation of Bogoljub Jeftić's government" },
+      "year": 1935,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "24",
+      "timestamp": "36:25",
+      "type": "other",
+      "actors": ["Bogoljub Jeftić"],
+      "region": "Balkan",
+      "description": { "sr": "1935. godine formira se vlada Bogoljuba Jeftića, koji je bio prisutan uz kralja Aleksandra u trenutku njegovog ubistva 1934. godine.", "en": "In 1935, Bogoljub Jeftić formed a government; he had been present with King Alexander at the moment of his assassination in 1934." },
+      "quote": "Tako da formira se vlada Bogoljuba Jeftića 1935. godine. Bogoljub Jeftić je bio ministar spomnijih poslova za vreme posljednje vlade, za vreme ubisa kraja Aleksandra bio je prisutan lično sa njim",
+      "confidence": "high"
+    },
+    {
+      "id": "stojadinovic-predsednik-vlade-beograd-1935",
+      "title": { "sr": "Milan Stojadinović postaje predsednik vlade", "en": "Milan Stojadinović becomes prime minister" },
+      "year": 1935,
+      "yearEnd": 1939,
+      "placeId": "beograd",
+      "episodeId": "24",
+      "timestamp": "43:18",
+      "type": "reign",
+      "actors": ["Milan Stojadinović", "Knez Pavle", "Petar Živković"],
+      "region": "Balkan",
+      "description": { "sr": "U junu 1935. godine, nakon pada Jeftićeve vlade, knez namesnik Pavle imenuje Milana Stojadinovića za predsednika vlade; Stojadinović preuzima i funkciju ministra spoljnih poslova. Njegova vladavina traje 3 godine i 7 meseci, do smene u februaru 1939. godine.", "en": "In June 1935, after the fall of Jeftić's government, Prince Regent Paul appointed Milan Stojadinović as prime minister; Stojadinović also took on the role of foreign minister. His premiership lasted 3 years and 7 months, ending with his dismissal in February 1939." },
+      "quote": "Milan Stojadinović je imenovan za predsednika vlade. To se desilo juna 1935. godine.",
+      "confidence": "high"
+    }
+  ]
+}

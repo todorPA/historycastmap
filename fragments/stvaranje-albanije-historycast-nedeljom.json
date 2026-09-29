@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "vlore", "name": { "sr": "Valona (Vlorë)", "en": "Vlorë (Valona)" }, "aliases": ["Vljore", "Valoni", "Valonu"], "lat": 40.4667, "lng": 19.4833, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "osmansko-carstvo-pobedjuje-albansku-ligu-1881",
+      "title": { "sr": "Osmansko carstvo poražava Albansku ligu", "en": "Ottoman Empire defeats the Albanian League" },
+      "year": 1881,
+      "yearEnd": null,
+      "placeId": "vlore",
+      "episodeId": "stvaranje-albanije-historycast-nedeljom",
+      "timestamp": "17:15",
+      "type": "battle",
+      "actors": ["Osmansko carstvo", "Albanska liga (Prizrenska liga)"],
+      "region": "Balkan",
+      "description": { "sr": "1881. godine Osmansko carstvo pobeđuje Albansku ligu, nakon čega vodi panislamsku politiku prema albanskom muslimanskom stanovništvu, uz zabranu štampanja knjiga na albanskom jeziku.", "en": "In 1881, the Ottoman Empire defeated the Albanian League, after which it pursued a pan-Islamic policy toward the Albanian Muslim population, including a ban on printing books in the Albanian language." },
+      "quote": "od pobede nad Albanskom ligom 1881. vodilo politiku koja je bila zasnovana na panislamizmu... albanski jezik je bio zabranjen.",
+      "confidence": "high"
+    },
+    {
+      "id": "albanija-proglasava-nezavisnost-vlore-1912",
+      "title": { "sr": "Albanija proglašava nezavisnost", "en": "Albania declares independence" },
+      "year": 1912,
+      "yearEnd": null,
+      "placeId": "vlore",
+      "episodeId": "stvaranje-albanije-historycast-nedeljom",
+      "timestamp": "102:47",
+      "type": "founding",
+      "actors": ["Albanija"],
+      "region": "Balkan",
+      "description": { "sr": "1912. godine Albanci proglašavaju nezavisnost, nastavljajući se na prethodne albanske pobune i na oslabljeni položaj Osmanskog carstva nakon izgubljenog rata protiv Italije u Libiji; Austro-Ugarska potom nudi Albancima autonomiju, koju oni odbijaju jer smatraju da su već nezavisni.", "en": "In 1912, Albanians declared independence, building on previous Albanian uprisings and the weakened position of the Ottoman Empire following its lost war against Italy in Libya; Austria-Hungary then offered the Albanians autonomy, which they rejected, considering themselves already independent." },
+      "quote": "Albanci koji su proglasili nezavisnost u 1912... ta 1912. je počela nastavljajući se na... izgubljeni rat Osmoskog carstva protiv Italije u Libiji.",
+      "confidence": "high"
+    }
+  ]
+}

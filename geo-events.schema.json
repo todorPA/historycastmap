@@ -64,6 +64,11 @@
             },
             "required": ["sr"]
           },
+          "series": {
+            "type": "string",
+            "enum": ["main", "side"],
+            "description": "Which show this episode belongs to. 'side' = the twice-weekly thematic slot (HistoryCast četvrtkom / nedeljom); everything else, including specijali, is 'main'. Absent means 'main'. Derived from the feed title at merge time, not authored in fragments."
+          },
           "pubDate": { "type": "string" },
           "audioUrl": { "type": "string", "format": "uri", "description": "mp3 URL for deep-linking with ?t= or #t=" },
           "color": { "type": "string", "description": "hex color for this episode's markers, e.g. '#c0392b'" }

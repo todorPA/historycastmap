@@ -1,0 +1,52 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "radnicki-protesti-1931",
+      "title": { "sr": "Protesti radničke klase 1931.", "en": "Working-class protests of 1931" },
+      "year": 1931,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "istorija-kreativnosti-kroz-proteste-historycast-nedeljom",
+      "timestamp": "02:22",
+      "type": "other",
+      "actors": ["Radnička klasa"],
+      "region": "Balkan",
+      "description": { "sr": "1931. godine, u Kraljevini Jugoslaviji, odigrali su se protesti radničke klase, za razliku od kasnijih pretežno akademskih (studentskih) protesta.", "en": "In 1931, in the Kingdom of Yugoslavia, working-class protests took place, distinct from the later, predominantly academic (student) protests." },
+      "quote": "1931. ti protesti koji su bili radničke klase, ali ovi svi posle su bili akademski, znači ti 68.",
+      "confidence": "medium"
+    },
+    {
+      "id": "studentski-protesti-1968-beograd",
+      "title": { "sr": "Studentski protesti 1968.", "en": "Student protests of 1968" },
+      "year": 1968,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "istorija-kreativnosti-kroz-proteste-historycast-nedeljom",
+      "timestamp": "01:22",
+      "type": "other",
+      "actors": ["Studenti", "Filozofski fakultet"],
+      "region": "Balkan",
+      "description": { "sr": "1968. godine, u vreme socijalističke Jugoslavije, izbijaju čuveni studentski protesti pokrenuti od strane studenata, sa žarištem na Filozofskom fakultetu; iste godine osnovan je Atelje 212, koji je Kosom postavio paradigmatičnu predstavu tog perioda.", "en": "In 1968, during socialist Yugoslavia, the famous student protests broke out, initiated by students, centered at the Faculty of Philosophy; that same year Atelje 212 was founded, staging the paradigmatic play 'Kosa' (Hair) of the period." },
+      "quote": "1968. dakle, od tih čuvenih protesta studenskih u vreme socijalističke Jugoslavije... i sve se dešavalo na filozofskom fakultetu",
+      "confidence": "high"
+    },
+    {
+      "id": "peti-oktobar-2000-beograd",
+      "title": { "sr": "Petooktobarske promene", "en": "5 October overthrow" },
+      "year": 2000,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "istorija-kreativnosti-kroz-proteste-historycast-nedeljom",
+      "timestamp": "56:19",
+      "type": "other",
+      "actors": ["Građani Srbije"],
+      "region": "Balkan",
+      "description": { "sr": "5. oktobra 2000. godine dešava se završnica dugotrajnog protestnog procesa u Beogradu, doživljena kao katarza i trenutak velike nade.", "en": "On 5 October 2000, the culmination of a long protest process took place in Belgrade, experienced as a catharsis and a moment of great hope." },
+      "quote": "5. oktober 2000. je bila neka završnica tog procesa, to je bila, jel, taj katarza koja je doživljena, nada je bila velika u tom trenutku",
+      "confidence": "high"
+    }
+  ]
+}

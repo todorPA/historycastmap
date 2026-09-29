@@ -21,6 +21,7 @@ const warn = (msg) => warnings.push(msg);
 const PLACE_KINDS = ['city', 'region', 'country', 'battle-site', 'landmark', 'water', 'person-seat', 'unknown'];
 const EVENT_TYPES = ['battle', 'siege', 'conquest', 'coronation', 'treaty', 'founding', 'death', 'birth', 'reign', 'uprising', 'reform', 'other'];
 const CONFIDENCE = ['high', 'medium', 'low'];
+const SERIES = ['main', 'side'];
 const TIMESTAMP = /^\d{1,3}:\d{2}$/;
 
 // `region` is a closed set, and this is enforced rather than requested: regions are the
@@ -77,6 +78,10 @@ for (const [i, e] of (data.episodes ?? []).entries()) {
   else episodeIds.add(e.id);
   if (!e.title?.sr) err(`${at}: title.sr is required`);
   if (!e.audioUrl) err(`${at}: audioUrl is required`);
+  // Absent means 'main', so datasets predating the series field stay valid.
+  if (e.series !== undefined && !SERIES.includes(e.series)) {
+    err(`${at}: unknown series "${e.series}" — must be ${SERIES.join('|')}`);
+  }
 }
 
 const eventIds = new Set();

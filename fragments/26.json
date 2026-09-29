@@ -1,0 +1,69 @@
+{
+  "places": [
+    { "id": "gaza", "name": { "sr": "Gaza", "en": "Gaza Strip" }, "aliases": ["Gaze", "bitka kod Gaze"], "lat": 31.3547, "lng": 34.3088, "kind": "battle-site" },
+    { "id": "rodos", "name": { "sr": "Rodos", "en": "Rhodes" }, "aliases": ["Rodosa", "opsada Rodosa"], "lat": 36.4341, "lng": 28.2176, "kind": "battle-site" },
+    { "id": "ipsos", "name": { "sr": "Ips", "en": "Ipsus" }, "aliases": ["Ipsa", "bitka kod Ipsa"], "lat": 38.4667, "lng": 31.15, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "pocetak-sukoba-dijadoha-323pne",
+      "title": { "sr": "Počinju sukobi dijadoha nakon Aleksandrove smrti", "en": "Wars of the Diadochi begin after Alexander's death" },
+      "year": -323,
+      "yearEnd": null,
+      "placeId": "gaza",
+      "episodeId": "26",
+      "timestamp": "16:39",
+      "type": "uprising",
+      "actors": ["Perdika", "Antipatar", "Ptolemej"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Sukobi između Aleksandrovih naslednika (dijadoha) počinju gotovo iste godine kad Aleksandar umire, 323. godine p.n.e.; među prvim posledicama je Lamijski rat u Grčkoj, koji gasi antipatar, i otimanje Aleksandrovog tela od strane Ptolemeja, što izaziva rat sa Perdikom.", "en": "Conflicts among Alexander's successors (the Diadochi) began almost the same year Alexander died, 323 BC; among the first consequences was the Lamian War in Greece, suppressed by Antipater, and Ptolemy's seizure of Alexander's body, which triggered war with Perdiccas." },
+      "quote": "Sukobi odma počinju iste gotovo te godine, 323. 22. počinje taj neki... Perdika gine u tom pokušaju da osvoji Egipat",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-gaza-312pne",
+      "title": { "sr": "Bitka kod Gaze", "en": "Battle of Gaza" },
+      "year": -315,
+      "yearEnd": -312,
+      "placeId": "gaza",
+      "episodeId": "26",
+      "timestamp": "25:48",
+      "type": "battle",
+      "actors": ["Ptolemej", "Antigon Jednooki", "Demetrije"],
+      "region": "Bliski istok",
+      "description": { "sr": "Treći rat dijadoha, koji je trajao od 315. do 312. godine p.n.e., kulminira bitkom kod Gaze, u kojoj Ptolemej pobeđuje Antigona i Demetrija, nakon čega strane potpisuju privremeno primirje.", "en": "The Third War of the Diadochi, lasting from 315 to 312 BC, culminated in the Battle of Gaza, in which Ptolemy defeated Antigonus and Demetrius, after which the sides signed a temporary truce." },
+      "quote": "To je sukop koji traja od 315. do 312. al tako je? Glavna bitka je bitka kod Gaze. I tu gube njih, njih dvojica. Tu Ptolemej pobeđuje.",
+      "confidence": "high"
+    },
+    {
+      "id": "opsada-rodosa-305pne",
+      "title": { "sr": "Opsada Rodosa", "en": "Siege of Rhodes" },
+      "year": -305,
+      "yearEnd": -304,
+      "placeId": "rodos",
+      "episodeId": "26",
+      "timestamp": "26:52",
+      "type": "siege",
+      "actors": ["Demetrije Poliorket", "Rodos", "Ptolemej"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "Demetrije, po masivnim opsadnim spravama nazvan Poliorket, opseda Rodos koji drže Ptolemejovi Egipćani, ali ne uspeva da ga osvoji; nakon opsade Rođani podižu čuveni Kolos sa Rodosa kao znak zahvalnosti.", "en": "Demetrius, nicknamed Poliorcetes ('the Besieger') for his massive siege engines, besieged Rhodes, held by Ptolemy's Egyptians, but failed to capture it; after the siege, the Rhodians erected the famous Colossus of Rhodes in gratitude." },
+      "quote": "on sad opseda Rodos. Odakle njemu taj nadimak Demetrije Poli Orket?... on ne uspeva da osvoji. Da osvoji Rodos.",
+      "confidence": "medium"
+    },
+    {
+      "id": "bitka-ips-301pne",
+      "title": { "sr": "Bitka kod Ipsa", "en": "Battle of Ipsus" },
+      "year": -301,
+      "yearEnd": null,
+      "placeId": "ipsos",
+      "episodeId": "26",
+      "timestamp": "28:13",
+      "type": "battle",
+      "actors": ["Lizimah", "Seleuk", "Antigon Jednooki", "Demetrije"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "U bici kod Ipsa 301. godine p.n.e. koalicija Lizimaha i Seleuka pobeđuje Antigona Jednookog i Demetrija; Antigon gine u bici, čime se okončava period u kome je ijedan dijadoh pretendovao na centralnu vlast nad celim Aleksandrovim carstvom.", "en": "At the Battle of Ipsus in 301 BC, the coalition of Lysimachus and Seleucus defeated Antigonus the One-Eyed and Demetrius; Antigonus was killed in the battle, ending the period in which any Diadoch claimed central rule over Alexander's entire empire." },
+      "quote": "A 301. su ova koalicija Lizimah i, i Seleuk protiv Antigona i protiv Demetrija... u kojom policiji u 81. godini gine Antigon Jednoki.",
+      "confidence": "high"
+    }
+  ]
+}

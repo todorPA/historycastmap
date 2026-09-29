@@ -1,0 +1,68 @@
+{
+  "places": [
+    { "id": "petrograd", "name": { "sr": "Sankt Peterburg", "en": "Saint Petersburg" }, "aliases": ["Sankt-Peterburga"], "lat": 59.9311, "lng": 30.3609, "kind": "city" },
+    { "id": "poltava", "name": { "sr": "Poltava", "en": "Poltava" }, "aliases": ["Poltavu"], "lat": 49.5883, "lng": 34.5514, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "osnivanje-sankt-peterburga-1703",
+      "title": { "sr": "Osnivanje Sankt Peterburga", "en": "Founding of Saint Petersburg" },
+      "year": 1703,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "97",
+      "timestamp": "29:01",
+      "type": "founding",
+      "actors": ["Petar Veliki"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Maja 1703. godine osnovan je Sankt Peterburg, novi grad Petra Velikog koji postaje njegov prozor prema Evropi.", "en": "In May 1703, Saint Petersburg was founded, Peter the Great's new city that became his window to Europe." },
+      "quote": "maj 1703. godine se uzima kao osnivanje Sankt-Peterburga",
+      "confidence": "high"
+    },
+    {
+      "id": "bitka-poltava-1709",
+      "title": { "sr": "Bitka kod Poltave", "en": "Battle of Poltava" },
+      "year": 1709,
+      "yearEnd": null,
+      "placeId": "poltava",
+      "episodeId": "97",
+      "timestamp": "76:46",
+      "type": "battle",
+      "actors": ["Petar Veliki", "Karlo XII", "Švedska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1709. godine, u odsudnoj bici kod Poltave, Petar Veliki pobeđuje švedskog kralja Karla XII, koji nakon poraza beži na teritoriju Osmanskog carstva i nikada se neće vratiti u Švedsku.", "en": "In 1709, in the decisive Battle of Poltava, Peter the Great defeated the Swedish king Charles XII, who after his defeat fled into Ottoman territory and would never return to Sweden." },
+      "quote": "1709. godine i na teritoriju Osmanskog carstva Karlo XII.",
+      "confidence": "high"
+    },
+    {
+      "id": "nistadski-mir-1721",
+      "title": { "sr": "Ništatski mir", "en": "Treaty of Nystad" },
+      "year": 1721,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "97",
+      "timestamp": "100:01",
+      "type": "treaty",
+      "actors": ["Petar Veliki", "Švedska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "1721. godine sklopljen je Ništatski mir između Rusa i Šveđana, kojim se okončava Severni rat; Švedska gubi teritorije, uključujući Severnu Nemačku i Bremen.", "en": "In 1721, the Treaty of Nystad was concluded between the Russians and the Swedes, ending the Great Northern War; Sweden lost territories, including Northern Germany and Bremen." },
+      "quote": "I 1721. godine, sklopljen je mir. Ništatski mir.",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-petra-velikog-1725",
+      "title": { "sr": "Smrt Petra Velikog", "en": "Death of Peter the Great" },
+      "year": 1725,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "97",
+      "timestamp": "137:19",
+      "type": "death",
+      "actors": ["Petar Veliki"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Petar Veliki umire početkom 1725. godine u svojoj 52. godini, od infekcije, ne odredivši direktno naslednika.", "en": "Peter the Great died in early 1725, at age 52, from an infection, without having directly designated a successor." },
+      "quote": "on umire početkom 1725. godine u svoj 52. godini",
+      "confidence": "high"
+    }
+  ]
+}

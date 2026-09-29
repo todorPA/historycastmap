@@ -1,0 +1,38 @@
+{
+  "places": [
+    { "id": "krf", "name": { "sr": "Krf", "en": "Corfu" }, "aliases": ["Krfu"], "lat": 39.6243, "lng": 19.9217, "kind": "landmark" },
+    { "id": "bitolj", "name": { "sr": "Bitolj", "en": "Bitola" }, "aliases": ["Bitolj"], "lat": 41.0297, "lng": 21.3347, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "srpska-vojska-evakuacija-krf-1916",
+      "title": { "sr": "Evakuacija srpske vojske preko Krfa", "en": "Evacuation of the Serbian army via Corfu" },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "krf",
+      "episodeId": "78",
+      "timestamp": "19:53",
+      "type": "other",
+      "actors": ["Srpska vojska", "Francuska", "Velika Britanija"],
+      "region": "Balkan",
+      "description": { "sr": "Decembra 1915. i tokom januara i februara 1916. godine, srpska vojska se evakuiše kroz crnogorske i albanske planine i preko Krfa, u operaciji koja zavisi ključno od podrške francuskih i britanskih saveznika.", "en": "In December 1915 and through January and February 1916, the Serbian army was evacuated through the Montenegrin and Albanian mountains and via Corfu, in an operation critically dependent on French and British Allied support." },
+      "quote": "priču o decembru i januaru, koja se protegla i do februara 1916. godine, sa ljudima koji su uspeli da se evakuišu kroz Crnogorske planine",
+      "confidence": "high"
+    },
+    {
+      "id": "gibinja-vojvoda-vuka-1916",
+      "title": { "sr": "Pogibija vojvode Vuka (Vojina Popovića)", "en": "Death of voivode Vuk (Vojin Popović)" },
+      "year": 1916,
+      "yearEnd": null,
+      "placeId": "bitolj",
+      "episodeId": "78",
+      "timestamp": "85:01",
+      "type": "death",
+      "actors": ["Vojin Popović (Vojvoda Vuk)"],
+      "region": "Balkan",
+      "description": { "sr": "29. novembra 1916. godine gine vojvoda Vuk (Vojin Popović) u borbi sa Bugarima, znatan udarac za grupu oficira okupljenih oko njegove ideje.", "en": "On November 29, 1916, voivode Vuk (Vojin Popović) was killed in fighting with the Bulgarians, a major blow for the group of officers gathered around his cause." },
+      "quote": "gine Vojvoda Vuk, dakle Vojn Popović ... u borbi sa Bugarima poginuo ... 29. novembra 1916. godine.",
+      "confidence": "high"
+    }
+  ]
+}

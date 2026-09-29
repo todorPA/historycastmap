@@ -28,27 +28,47 @@ export interface Place {
   kind?: PlaceKind;
 }
 
+/**
+ * Which show an episode belongs to. `side` is the twice-weekly thematic slot
+ * (HistoryCast četvrtkom / nedeljom); everything else — including the specijali and the
+ * unbranded one-offs — is the main show.
+ *
+ * Derived from the feed title at merge time, never authored in a fragment. Membership is
+ * orthogonal to numbering in the feed ("115 = Vuk Karadžić | HistoryCast nedeljom" is both
+ * numbered and branded), and when the two signals disagree the branding decides.
+ */
+export type SeriesId = 'main' | 'side';
+
 export interface Episode {
   id: string;              // episode number as string, e.g. "09"
   title: LocalizedText;
+  series?: SeriesId;       // absent = 'main', so older datasets keep working
   pubDate?: string;
   audioUrl: string;        // mp3 URL for deep-linking (#t=<seconds>)
   color?: string;          // hex color for this episode's markers
 }
 
-export type EventType =
-  | 'battle'
-  | 'siege'
-  | 'conquest'
-  | 'coronation'
-  | 'treaty'
-  | 'founding'
-  | 'death'
-  | 'birth'
-  | 'reign'
-  | 'uprising'
-  | 'reform'
-  | 'other';
+/**
+ * The schema's event types, in the schema's order. A runtime array rather than a bare union,
+ * because three places need to *check* a value against it — the facet chips, the URL parser,
+ * and the validator — and a type alone disappears at compile time.
+ */
+export const EVENT_TYPES = [
+  'battle',
+  'siege',
+  'conquest',
+  'coronation',
+  'treaty',
+  'founding',
+  'death',
+  'birth',
+  'reign',
+  'uprising',
+  'reform',
+  'other',
+] as const;
+
+export type EventType = (typeof EVENT_TYPES)[number];
 
 export type Confidence = 'high' | 'medium' | 'low';
 

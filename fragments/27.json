@@ -1,0 +1,69 @@
+{
+  "places": [
+    { "id": "moskva", "name": { "sr": "Moskva", "en": "Moscow" }, "aliases": ["Moskvi"], "lat": 55.7558, "lng": 37.6173, "kind": "city" },
+    { "id": "kijev", "name": { "sr": "Kijev", "en": "Kyiv" }, "aliases": ["kijevske opere", "u Kijevu"], "lat": 50.4501, "lng": 30.5234, "kind": "city" },
+    { "id": "jekaterinburg", "name": { "sr": "Jekaterinburg", "en": "Yekaterinburg" }, "aliases": ["Ekaterimburg", "kuća Ipatijeva"], "lat": 56.8389, "lng": 60.6057, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "nikolaj-ii-rodjenje-moskva-1868",
+      "title": { "sr": "Rođenje Nikolaja II Romanova", "en": "Birth of Nicholas II Romanov" },
+      "year": 1868,
+      "yearEnd": null,
+      "placeId": "moskva",
+      "episodeId": "27",
+      "timestamp": "01:13",
+      "type": "birth",
+      "actors": ["Nikolaj II Romanov"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Nikolaj II Romanov, poslednji ruski car, rođen je 1868. godine.", "en": "Nicholas II Romanov, the last Russian tsar, was born in 1868." },
+      "quote": "Nikolaj II Romanov je rođen 1868. godine,",
+      "confidence": "high"
+    },
+    {
+      "id": "atentat-stolipin-kijev-1911",
+      "title": { "sr": "Ubistvo premijera Stolipina u Kijevu", "en": "Assassination of Prime Minister Stolypin in Kyiv" },
+      "year": 1911,
+      "yearEnd": null,
+      "placeId": "kijev",
+      "episodeId": "27",
+      "timestamp": "89:04",
+      "type": "death",
+      "actors": ["Petar Stolipin", "Nikolaj II Romanov"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Premijer Petar Stolipin, reformator odgovoran za rast broja seljaka-zemljoposednika, ubijen je 1911. godine u kijevskoj operi, na predstavi kojoj su prisustvovali car Nikolaj i njegove ćerke Olga i Tatjana.", "en": "Prime Minister Pyotr Stolypin, the reformer responsible for growing the number of peasant landowners, was assassinated in 1911 at the Kyiv opera, during a performance attended by Tsar Nicholas and his daughters Olga and Tatiana." },
+      "quote": "Stolipin je ubiljni 1911. godine uz rade kijevske opere na prestavi, koji su prisustovali i sam car Nikola i njegove dve čerke",
+      "confidence": "high"
+    },
+    {
+      "id": "romanovi-prebaceni-jekaterinburg-1918",
+      "title": { "sr": "Prebacivanje carske porodice u Jekaterinburg", "en": "Transfer of the imperial family to Yekaterinburg" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "jekaterinburg",
+      "episodeId": "27",
+      "timestamp": "116:12",
+      "type": "other",
+      "actors": ["Nikolaj II Romanov", "carska porodica"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "U aprilu 1918. godine, nakon Oktobarske revolucije, carska porodica je iz Tobolska prebačena u Jekaterinburg, u kuću trgovca Ipatijeva naklonjenog bolševicima, gde su njihovi uslovi života znatno pogoršani.", "en": "In April 1918, following the October Revolution, the imperial family was transferred from Tobolsk to Yekaterinburg, to the house of the merchant Ipatiev who was sympathetic to the Bolsheviks, where their living conditions markedly worsened." },
+      "quote": "Nakon toga, aprila 1918. godine, iz Tobolska, oni bivaju prebačeni u Jekaterinburg, u kuću Ipatijeva.",
+      "confidence": "high"
+    },
+    {
+      "id": "streljanje-romanovih-jekaterinburg-1918",
+      "title": { "sr": "Streljanje carske porodice Romanov", "en": "Execution of the Romanov imperial family" },
+      "year": 1918,
+      "yearEnd": null,
+      "placeId": "jekaterinburg",
+      "episodeId": "27",
+      "timestamp": "117:41",
+      "type": "death",
+      "actors": ["Nikolaj II Romanov", "carska porodica", "bolševici"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "17. jula 1918. godine, nakon 78 dana u kući Ipatijeva u Jekaterinburgu, bolševici streljaju cara Nikolaja II, njegovu porodicu i poslugu u podrumu kuće, pod izgovorom da im preteti opasnost od belogardejaca.", "en": "On 17 July 1918, after 78 days in the Ipatiev House in Yekaterinburg, the Bolsheviks executed Tsar Nicholas II, his family, and their servants in the house's basement, under the pretext that they were threatened by the approaching White Army." },
+      "quote": "I sada dolazimo do 17. jula 1918. godine... I 17. jula, dakle 78. dana boravka u kući Patjeva, u dva ujutru pozivaju cara, njegovu porodicu i poslugu da siđu u podrum",
+      "confidence": "high"
+    }
+  ]
+}

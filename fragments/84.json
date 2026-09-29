@@ -1,0 +1,67 @@
+{
+  "places": [
+    { "id": "sjeverni-atlantik", "name": { "sr": "Severni Atlantik", "en": "North Atlantic" }, "aliases": ["Atlantiku", "zapadno od Islanda"], "lat": 55.0000, "lng": -30.0000, "kind": "water" }
+  ],
+  "events": [
+    {
+      "id": "potapanje-athenia-1939",
+      "title": { "sr": "Nemačka podmornica potapa brod Athenia", "en": "German submarine sinks the ship Athenia" },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "sjeverni-atlantik",
+      "episodeId": "84",
+      "timestamp": "19:57",
+      "type": "battle",
+      "actors": ["Nemačka podmornica"],
+      "region": "Severna Evropa i Atlantik",
+      "description": { "sr": "3. septembra 1939. godine, istog dana kada je Velika Britanija objavila rat Nemačkoj, nemačka podmornica potapa civilni brod Athenia koji je plovio od Britanije prema SAD, obeležavajući praktičan početak Bitke za Atlantik.", "en": "On September 3, 1939, the same day Great Britain declared war on Germany, a German submarine sank the civilian ship Athenia, which was sailing from Britain to the US, marking the practical start of the Battle of the Atlantic." },
+      "quote": "3. september 1939. godine, bukvalno istog tog dana, jedna Nemačka podmornica potapa civilni brod",
+      "confidence": "high"
+    },
+    {
+      "id": "ginter-prin-podmornica-1939",
+      "title": { "sr": "Ginter Prin i uspesi nemačkih podmornica", "en": "Günther Prien and German submarine successes" },
+      "year": 1939,
+      "yearEnd": null,
+      "placeId": "sjeverni-atlantik",
+      "episodeId": "84",
+      "timestamp": "33:16",
+      "type": "battle",
+      "actors": ["Günther Prien"],
+      "region": "Severna Evropa i Atlantik",
+      "description": { "sr": "14. oktobra 1939. godine, kapetan Ginter Prin ostvaruje jedan od prvih velikih uspeha nemačkih podmornica u ranoj fazi Bitke za Atlantik.", "en": "On October 14, 1939, Captain Günther Prien achieved one of the first major German submarine successes in the early phase of the Battle of the Atlantic." },
+      "quote": "sam početak, dakle, taj, mislim, 14. oktobra 1939. godine, jedna podmornica, to je bio kapetan Ginter Prin",
+      "confidence": "high"
+    },
+    {
+      "id": "potapanje-bismarcka-1941",
+      "title": { "sr": "Potapanje Bismarcka", "en": "Sinking of the Bismarck" },
+      "year": 1941,
+      "yearEnd": null,
+      "placeId": "sjeverni-atlantik",
+      "episodeId": "84",
+      "timestamp": "62:48",
+      "type": "battle",
+      "actors": ["Bismarck", "Prinz Eugen", "Britanska mornarica"],
+      "region": "Severna Evropa i Atlantik",
+      "description": { "sr": "23. maja 1941. godine, nekoliko stotina kilometara zapadno od Islanda, odigrava se jedna od najpoznatijih atlantskih bitaka, kada bojni brod Bismarck i njegov pratilac Prinz Eugen kreću na svoju misiju.", "en": "On May 23, 1941, several hundred kilometers west of Iceland, one of the most famous Atlantic battles took place, when the battleship Bismarck and its escort Prinz Eugen set out on their mission." },
+      "quote": "najpoznatija Atlantska bitka, to je bilo 1941. godine 23. maja",
+      "confidence": "high"
+    },
+    {
+      "id": "rat-atlantik-izgubljen-1943",
+      "title": { "sr": "Rat na Atlantiku izgubljen za Nemce", "en": "The Battle of the Atlantic lost for the Germans" },
+      "year": 1943,
+      "yearEnd": null,
+      "placeId": "sjeverni-atlantik",
+      "episodeId": "84",
+      "timestamp": "79:04",
+      "type": "other",
+      "actors": ["Nemačka podmornička flota"],
+      "region": "Severna Evropa i Atlantik",
+      "description": { "sr": "1943. godine postaje jasno da je rat na Atlantiku izgubljen za Nemce, uprkos i dalje visokim gubicima novih posada i podmornica.", "en": "By 1943, it had become clear that the Battle of the Atlantic was lost for the Germans, despite continued heavy losses among new crews and submarines." },
+      "quote": "već je bilo jasno 1943. godine, dakle da je rat na Atlantiku, odnosno bitka na Atlantiku, izgubljena za Nemce.",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "places": [
+    { "id": "jerusalim", "name": { "sr": "Jerusalim", "en": "Jerusalem" }, "aliases": ["Jerusalimu", "Jerusalima", "pod Jerusalim"], "lat": 31.7683, "lng": 35.2137, "kind": "city" },
+    { "id": "manzikert", "name": { "sr": "Mancikert", "en": "Manzikert" }, "aliases": ["Mancikirta", "kod Mancikirta"], "lat": 39.1434, "lng": 42.5344, "kind": "battle-site" },
+    { "id": "klermon", "name": { "sr": "Klermon", "en": "Clermont" }, "aliases": ["Klermonu", "sabor u Klermonu"], "lat": 45.7772, "lng": 3.087, "kind": "landmark" },
+    { "id": "toledo", "name": { "sr": "Toledo", "en": "Toledo" }, "aliases": ["Toledo"], "lat": 39.8628, "lng": -4.0273, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "alfonso-vi-osvaja-toledo-1085",
+      "title": { "sr": "Alfonso VI oslobađa Toledo", "en": "Alfonso VI captures Toledo" },
+      "year": 1085,
+      "yearEnd": null,
+      "placeId": "toledo",
+      "episodeId": "15",
+      "timestamp": "01:41",
+      "type": "conquest",
+      "actors": ["Alfonso VI od Leona i Kastilje"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Kralj Alfonso VI od Leona i Kastilje oslobađa Toledo od arapske vlasti; transkript navodi godinu kao '1985', što je greška transkripcije — u pitanju je 1085. godina, ključan korak španske rekonkviste koji je inspirisao ideju krstaških ratova.", "en": "King Alfonso VI of León and Castile liberated Toledo from Arab rule; the transcript states the year as '1985', a transcription error — the correct year is 1085, a key step of the Spanish Reconquista that inspired the idea of the Crusades." },
+      "quote": "Uvijek je kralj Alfonso VI i kralj Leona i Kastilje 1985. godine oslobađa Toledo.",
+      "confidence": "low"
+    },
+    {
+      "id": "bitka-manzikert-1071",
+      "title": { "sr": "Bitka kod Mancikerta", "en": "Battle of Manzikert" },
+      "year": 1071,
+      "yearEnd": null,
+      "placeId": "manzikert",
+      "episodeId": "15",
+      "timestamp": "05:52",
+      "type": "battle",
+      "actors": ["Vizantija", "Seldžučki Turci"],
+      "region": "Vizantija i Egejski svet",
+      "description": { "sr": "U bici kod Mancikerta Vizantija doživljava poraz od Seldžučkih Turaka, gubeći tri četvrtine Male Azije; transkript navodi godinu kao '1971', što je greška transkripcije za 1071. godinu, jedan od najkobnijih trenutaka vizantijske istorije.", "en": "At the Battle of Manzikert, Byzantium suffered defeat by the Seljuk Turks, losing three-quarters of Asia Minor; the transcript states the year as '1971', a transcription error for 1071, one of the most catastrophic moments in Byzantine history." },
+      "quote": "kod Mancikirta, 1971. godine gde Vizantija doživljava poraz od te nove snage Turaka koji su primili islam",
+      "confidence": "low"
+    },
+    {
+      "id": "sabor-klermon-urban-ii-1095",
+      "title": { "sr": "Sabor u Klermonu — papa Urban II poziva na krstaški rat", "en": "Council of Clermont — Pope Urban II calls for crusade" },
+      "year": 1095,
+      "yearEnd": null,
+      "placeId": "klermon",
+      "episodeId": "15",
+      "timestamp": "08:31",
+      "type": "other",
+      "actors": ["Papa Urban II"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "Papa Urban II u novembru 1095. godine održava sabor u Klermonu, gde svojim govorom poziva hrišćane da povrate Jerusalim, obećavajući oprost grehova; transkript navodi godinu kao '1995', što je greška transkripcije.", "en": "In November 1095, Pope Urban II held the Council of Clermont, where his speech called on Christians to reclaim Jerusalem, promising absolution of sins; the transcript states the year as '1995', a transcription error." },
+      "quote": "koju je papa Urban proneo na saboru u Klermonu, u 1995. godine, odjeknula kao bomba.",
+      "confidence": "low"
+    },
+    {
+      "id": "pad-jerusalima-krstasi-1099",
+      "title": { "sr": "Pad Jerusalima pod krstaše", "en": "Fall of Jerusalem to the Crusaders" },
+      "year": 1099,
+      "yearEnd": null,
+      "placeId": "jerusalim",
+      "episodeId": "15",
+      "timestamp": "52:23",
+      "type": "conquest",
+      "actors": ["Krstaši", "Fatimidi"],
+      "region": "Bliski istok",
+      "description": { "sr": "13. jula 1099. godine krstaši osvajaju Jerusalim i čine masakr nad skoro čitavim stanovništvom grada; egipatska (fatimidska) vojska koja je poslata da povrati grad biva iznenađena i pobeđena kod Askalona.", "en": "On 13 July 1099, the Crusaders captured Jerusalem and massacred nearly the entire population of the city; the Egyptian (Fatimid) army sent to retake the city was ambushed and defeated at Ascalon." },
+      "quote": "I dolaze krstaši pod Jerusalim. 13. jula pada Jerusalim i krstaši tu čine neverovatan zločin. Skoro čitavo stanovništvo su stavili pod mač.",
+      "confidence": "high"
+    }
+  ]
+}

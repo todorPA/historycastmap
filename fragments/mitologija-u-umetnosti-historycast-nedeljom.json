@@ -1,0 +1,22 @@
+{
+  "places": [
+    { "id": "zagreb", "name": { "sr": "Zagreb", "en": "Zagreb" }, "aliases": ["zagreb", "zagrebu"], "lat": 45.8150, "lng": 15.9819, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "bukovac-ikarov-diptih-zagreb-1893-1898",
+      "title": { "sr": "Bukovac slika diptih o Ikaru u Zagrebu", "en": "Bukovac paints the Icarus diptych in Zagreb" },
+      "year": 1893,
+      "yearEnd": 1898,
+      "placeId": "zagreb",
+      "episodeId": "mitologija-u-umetnosti-historycast-nedeljom",
+      "timestamp": "39:32",
+      "type": "other",
+      "actors": ["Vlaho Bukovac"],
+      "region": "Balkan",
+      "description": { "sr": "Vlaho Bukovac počinje 1893. godine, po dolasku u Zagreb da osnuje slikarsku školu, da radi diptih o Ikaru i Dedalu ('Ikar u letu' i 'Ikar u padu'); nakon sukoba sa zagrebačkom sredinom, delo bolećivo završava i izlaže tek 1898. godine.", "en": "Vlaho Bukovac began working in 1893, after arriving in Zagreb to found a painting school, on a diptych of Icarus and Daedalus ('Icarus in Flight' and 'Icarus Falling'); after conflicts with the Zagreb art establishment, he painfully completed and exhibited the work only in 1898." },
+      "quote": "To platno nastaje počinje da nastaje zapravo 1893... te 1898. vrlo bolećivo završava taj diptih i izlaže ga",
+      "confidence": "high"
+    }
+  ]
+}

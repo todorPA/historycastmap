@@ -1,0 +1,37 @@
+{
+  "places": [
+    { "id": "kursk", "name": { "sr": "Kursk", "en": "Kursk" }, "aliases": ["Kursku", "Kurska izbočina"], "lat": 51.7373, "lng": 36.1874, "kind": "battle-site" }
+  ],
+  "events": [
+    {
+      "id": "bitka-za-kursk-1943",
+      "title": { "sr": "Bitka za Kursk", "en": "Battle of Kursk" },
+      "year": 1943,
+      "yearEnd": null,
+      "placeId": "kursk",
+      "episodeId": "77",
+      "timestamp": "27:11",
+      "type": "battle",
+      "actors": ["Sovjetska vojska", "Nemačka vojska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Bitka za Kursk počinje u noći sa 4. na 5. jul 1943. godine, nakon što su Sovjeti izgradili pet odbrambenih linija oko Kurske izbočine; ovo je najveća bitka Drugog svetskog rata po broju tenkova, aviona i vojnika direktno sukobljenih.", "en": "The Battle of Kursk began on the night of July 4-5, 1943, after the Soviets had built five defensive lines around the Kursk salient; it is the largest battle of World War II by the number of tanks, aircraft, and troops directly engaged." },
+      "quote": "dok ne dođemo do početka, a početak je 4. na 5. jul ... Sovjeti grade pet obrnbenih linija.",
+      "confidence": "high"
+    },
+    {
+      "id": "nemci-gube-inicijativu-istocni-front-1943",
+      "title": { "sr": "Nemci trajno gube ofanzivnu inicijativu na Istočnom frontu", "en": "Germans permanently lose the offensive initiative on the Eastern Front" },
+      "year": 1943,
+      "yearEnd": null,
+      "placeId": "kursk",
+      "episodeId": "77",
+      "timestamp": "58:05",
+      "type": "other",
+      "actors": ["Nemačka vojska", "Sovjetska vojska"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Nakon Bitke za Kursk 1943. godine, Nemci trajno gube ofanzivnu inicijativu na Istočnom frontu i prelaze u povlačenje koje se okončava na Brandenburškoj kapiji u Berlinu, aprila 1945. godine.", "en": "After the Battle of Kursk in 1943, the Germans permanently lost the offensive initiative on the Eastern Front and began a retreat that ended at the Brandenburg Gate in Berlin in April 1945." },
+      "quote": "ono što je ključno za ishod Kurske bitke je činjenica da Nemci nakon toga više nemaju ofanzivu na istočnom frontu ... koje će se završiti na Brandebučkoj kapi aprila 1945. godine",
+      "confidence": "high"
+    }
+  ]
+}

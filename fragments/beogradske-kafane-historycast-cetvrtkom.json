@@ -1,0 +1,52 @@
+{
+  "places": [
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda", "kafana znak pitanja"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "kafana-znak-pitanja-podignuta-beograd-1828",
+      "title": { "sr": "Podizanje kafane 'Znak pitanja' u Beogradu", "en": "Construction of the '?' (Question Mark) kafana in Belgrade" },
+      "year": 1828,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "beogradske-kafane-historycast-cetvrtkom",
+      "timestamp": "31:00",
+      "type": "founding",
+      "actors": ["Beograd"],
+      "region": "Balkan",
+      "description": { "sr": "Kafana 'Znak pitanja', danas smatrana 'nultom tačkom' beogradskog kafanskog života, podignuta je 1828. godine, u vreme kada su Turci još uvek bili na Beogradskoj tvrđavi.", "en": "The '?' (Question Mark) kafana, today regarded as the 'zero point' of Belgrade's café life, was built in 1828, at a time when the Turks were still present at the Belgrade Fortress." },
+      "quote": "ona je podignuta, čini mi se, 1828. Dakle, to su, to je druga decenija od 19. veka. Turci su uveliko tada na tvrđevi.",
+      "confidence": "medium"
+    },
+    {
+      "id": "osmanlije-napustaju-beograd-1867",
+      "title": { "sr": "Osmanlije napuštaju Beograd", "en": "Ottomans leave Belgrade" },
+      "year": 1867,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "beogradske-kafane-historycast-cetvrtkom",
+      "timestamp": "24:07",
+      "type": "other",
+      "actors": ["Osmansko carstvo"],
+      "region": "Balkan",
+      "description": { "sr": "Osmanlije zvanično napuštaju Beograd 1867. godine, što utiče i na razvoj i lokaciju gradskih kafana u centru grada.", "en": "The Ottomans officially left Belgrade in 1867, which also influenced the development and location of the city's cafés in the center of town." },
+      "quote": "Osmanlije zvanično napuštio Beograd 1867. godine.",
+      "confidence": "high"
+    },
+    {
+      "id": "narodno-pozoriste-otvoreno-beograd-1869",
+      "title": { "sr": "Otvaranje Narodnog pozorišta u Beogradu", "en": "Opening of the National Theatre in Belgrade" },
+      "year": 1869,
+      "yearEnd": null,
+      "placeId": "beograd",
+      "episodeId": "beogradske-kafane-historycast-cetvrtkom",
+      "timestamp": "59:12",
+      "type": "founding",
+      "actors": ["Narodno pozorište"],
+      "region": "Balkan",
+      "description": { "sr": "Narodno pozorište u Beogradu otvoreno je 1869. godine, ali prema istoričarki Dubravki Stojanović, ono nije postalo deo svakodnevnice Beograđana sve do početka Prvog svetskog rata — ljudi su radije odlazili po kafanama.", "en": "The National Theatre in Belgrade opened in 1869, but according to historian Dubravka Stojanović, it did not become part of Belgraders' everyday life until the start of the First World War — people preferred going to kafanas instead." },
+      "quote": "Narodno pozorište se otvara 1869. godine, a Dubroka Stojanović... piše da nekako Beogradjanima Narodno pozorište nije postao deo svakodnevnice čak do početka prvog svetskog rata",
+      "confidence": "high"
+    }
+  ]
+}

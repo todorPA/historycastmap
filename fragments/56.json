@@ -1,0 +1,54 @@
+{
+  "places": [
+    { "id": "zeta", "name": { "sr": "Zeta", "en": "Zeta" }, "aliases": [], "lat": 42.2911, "lng": 19.0654, "kind": "region" },
+    { "id": "drac", "name": { "sr": "Drač (Durrës)", "en": "Durrës" }, "aliases": ["Draču"], "lat": 41.3231, "lng": 19.4414, "kind": "city" },
+    { "id": "banjska", "name": { "sr": "Manastir Banjska", "en": "Banjska Monastery" }, "aliases": ["Banjskoj"], "lat": 42.9333, "lng": 20.7333, "kind": "landmark" }
+  ],
+  "events": [
+    {
+      "id": "milutin-rodjenje-1253",
+      "title": { "sr": "Rođenje kralja Milutina", "en": "Birth of King Milutin" },
+      "year": 1253,
+      "yearEnd": null,
+      "placeId": "zeta",
+      "episodeId": "56",
+      "timestamp": "04:34",
+      "type": "birth",
+      "actors": ["Kralj Milutin"],
+      "region": "Balkan",
+      "description": { "sr": "Kralj Milutin je rođen, po pretpostavci, između 1253. i 1254. godine.", "en": "King Milutin was born, presumably, between 1253 and 1254." },
+      "quote": "on je rođen, predpostavlja se negde između 1253. i 1254. godine.",
+      "confidence": "medium"
+    },
+    {
+      "id": "milutin-osvaja-drac-1296",
+      "title": { "sr": "Milutin osvaja Drač od Vizantije", "en": "Milutin conquers Durrës from Byzantium" },
+      "year": 1296,
+      "yearEnd": null,
+      "placeId": "drac",
+      "episodeId": "56",
+      "timestamp": "56:59",
+      "type": "conquest",
+      "actors": ["Kralj Milutin", "Vizantija"],
+      "region": "Balkan",
+      "description": { "sr": "1296. godine kralj Milutin uspeva da osvoji Drač od Vizantije, značajan uspeh na moru krajem 13. veka.", "en": "In 1296, King Milutin succeeded in capturing Durrës from Byzantium, a significant success at sea in the late 13th century." },
+      "quote": "1296. godina on je uspeo da osvoji drač od Vizantije",
+      "confidence": "high"
+    },
+    {
+      "id": "smrt-milutina-banjska-1321",
+      "title": { "sr": "Smrt kralja Milutina u manastiru Banjska", "en": "Death of King Milutin at Banjska Monastery" },
+      "year": 1321,
+      "yearEnd": null,
+      "placeId": "banjska",
+      "episodeId": "56",
+      "timestamp": "107:01",
+      "type": "death",
+      "actors": ["Kralj Milutin"],
+      "region": "Balkan",
+      "description": { "sr": "Kralj Milutin se razboleo krajem 1321. godine, izgubivši moć govora, i umro je 29. oktobra 1321. godine; sahranjen je u manastiru Banjska.", "en": "King Milutin fell ill in late 1321, losing the power of speech, and died on October 29, 1321; he was buried at Banjska Monastery." },
+      "quote": "krajem 1321. godine se razbolao ... pred kraj godine 29.10. 1321. godine preminuo ... sahranjen u manastiru Banjska",
+      "confidence": "high"
+    }
+  ]
+}

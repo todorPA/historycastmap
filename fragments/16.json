@@ -1,0 +1,101 @@
+{
+  "places": [
+    { "id": "kragujevac", "name": { "sr": "Kragujevac", "en": "Kragujevac" }, "aliases": ["Kragujevcu", "Kragovcu"], "lat": 44.0142, "lng": 20.9394, "kind": "city" },
+    { "id": "petrograd", "name": { "sr": "Petrograd", "en": "Petrograd" }, "aliases": ["Sankt-Petersburg", "Sankt-Peterburgu", "Petrogradu"], "lat": 59.9311, "lng": 30.3609, "kind": "city" },
+    { "id": "vienna", "name": { "sr": "Beč (Anšlus)", "en": "Vienna (Anschluss)" }, "aliases": ["Beču", "Beč", "fridjungov proces"], "lat": 48.2082, "lng": 16.3738, "kind": "city" },
+    { "id": "sofija", "name": { "sr": "Sofija (Bugarska)", "en": "Sofia (Bulgaria)" }, "aliases": ["Sofiju", "Sofiji"], "lat": 42.6977, "lng": 23.3219, "kind": "city" },
+    { "id": "beograd", "name": { "sr": "Beograd", "en": "Belgrade" }, "aliases": ["beograd", "belgrade", "beogradu", "beograda"], "lat": 44.7866, "lng": 20.4489, "kind": "city" }
+  ],
+  "events": [
+    {
+      "id": "spalajkovic-rodjenje-kragujevac-1869",
+      "title": { "sr": "Rođenje Miroslava Spalajkovića", "en": "Birth of Miroslav Spalajković" },
+      "year": 1869,
+      "yearEnd": null,
+      "placeId": "kragujevac",
+      "episodeId": "16",
+      "timestamp": "03:52",
+      "type": "birth",
+      "actors": ["Miroslav Spalajković"],
+      "region": "Balkan",
+      "description": { "sr": "Miroslav Spalajković, budući srpski diplomata, rođen je 1869. godine u Kragujevcu, u relativno bogatoj trgovačkoj porodici.", "en": "Miroslav Spalajković, the future Serbian diplomat, was born in 1869 in Kragujevac, into a relatively wealthy merchant family." },
+      "quote": "Miroslav Spolaković, on je rođen u Kragujevcu 1869. U porodici jednog relativno imućnog tragovca tog vremena.",
+      "confidence": "high"
+    },
+    {
+      "id": "spalajkovic-napusta-petrograd-1904",
+      "title": { "sr": "Spalajković napušta Sankt-Peterburg", "en": "Spalajković leaves Saint Petersburg" },
+      "year": 1904,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "16",
+      "timestamp": "09:25",
+      "type": "other",
+      "actors": ["Miroslav Spalajković", "Stojan Novaković"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Spalajković je bio sekretar srpskog poslanstva u Sankt-Peterburgu kod Stojana Novakovića; pre sredine 1904. godine napustio je Sankt-Peterburg, ubrzo nakon što se tamo zbližio sa Nikolom Pašićem.", "en": "Spalajković served as secretary of the Serbian legation in Saint Petersburg under Stojan Novaković; he left Saint Petersburg before mid-1904, shortly after growing close to Nikola Pašić there." },
+      "quote": "On je negde u, da, negde pre sredine 1904. napustio Sankt-Petersburg.",
+      "confidence": "high"
+    },
+    {
+      "id": "fridjungov-proces-moralna-pobeda-becu-1909",
+      "title": { "sr": "Fridjungov proces — srpska moralna pobeda u Beču", "en": "Friedjung trial — Serbian moral victory in Vienna" },
+      "year": 1909,
+      "yearEnd": null,
+      "placeId": "vienna",
+      "episodeId": "16",
+      "timestamp": "16:10",
+      "type": "other",
+      "actors": ["Miroslav Spalajković", "Heinrich Friedjung"],
+      "region": "Srednja Evropa",
+      "description": { "sr": "1909. godine, u sudskom procesu u Beču poznatom kao Fridjungov proces, otkriveno je da su austrijski dokumenti o navodnom srpskom podrivanju Habsburške monarhije falsifikati; Spalajković je bio jedan od ključnih svedoka, a ishod se smatra srpskom moralnom pobedom nakon aneksione krize.", "en": "In 1909, in the Vienna court proceeding known as the Friedjung trial, Austrian documents alleging Serbian subversion of the Habsburg monarchy were exposed as forgeries; Spalajković was a key witness, and the outcome was seen as a Serbian moral victory following the Annexation Crisis." },
+      "quote": "završilo se... 1909. nekom vrstom srpske moralne pobede zbog tog čuvenog fridjungovog procesa u kome Spalajković imao značajnu ulogu.",
+      "confidence": "high"
+    },
+    {
+      "id": "spalajkovic-poslanik-sofija-1911",
+      "title": { "sr": "Spalajković postaje poslanik u Sofiji", "en": "Spalajković becomes envoy to Sofia" },
+      "year": 1911,
+      "yearEnd": null,
+      "placeId": "sofija",
+      "episodeId": "16",
+      "timestamp": "19:03",
+      "type": "other",
+      "actors": ["Miroslav Spalajković", "Milovan Milovanović"],
+      "region": "Balkan",
+      "description": { "sr": "U maju 1911. godine Spalajković odlazi u Sofiju, ključno mesto u sklopu Milovanovićevog plana za savez sa Bugarskom, koji će pomoći rešavanju istočnog pitanja u korist balkanskih država.", "en": "In May 1911, Spalajković went to Sofia, a key post within Milovanović's plan for an alliance with Bulgaria, intended to help resolve the Eastern Question in favor of the Balkan states." },
+      "quote": "Baš početkom, odnosno u maju 1911... Milovanović ima vrlo smišljene planove šta želi da napravi. I jedan od najvažnijih njegovih planova je savez sa Bugarskom",
+      "confidence": "high"
+    },
+    {
+      "id": "spalajkovic-napusta-rusiju-april-1919",
+      "title": { "sr": "Spalajković napušta Rusiju kao poslednji ambasador", "en": "Spalajković leaves Russia as the last ambassador" },
+      "year": 1919,
+      "yearEnd": null,
+      "placeId": "petrograd",
+      "episodeId": "16",
+      "timestamp": "62:23",
+      "type": "other",
+      "actors": ["Miroslav Spalajković"],
+      "region": "Istočna Evropa",
+      "description": { "sr": "Spalajković je ostao u Rusiji do aprila 1919. godine, dok savezničke intervencije protiv bolševika slabe i trupe se povlače; nakon toga se javljaju mu iz Beograda da se vrati.", "en": "Spalajković remained in Russia until April 1919, as Allied interventions against the Bolsheviks weakened and troops withdrew; afterward he was summoned back from Belgrade." },
+      "quote": "Iščević u Rusiji? do aprila 1919 jer da sabjenici intervenišu ali ta intervencija prilično tamo mitala na sever... na kraju njemu kažu iz Belgrade mu javljaju da se i on putuje u Belgrade",
+      "confidence": "high"
+    },
+    {
+      "id": "ugovor-prijateljstvu-francuska-jugoslavija-1927",
+      "title": { "sr": "Ugovor o prijateljstvu Francuske i Jugoslavije", "en": "Treaty of Friendship between France and Yugoslavia" },
+      "year": 1927,
+      "yearEnd": null,
+      "placeId": "pariz",
+      "episodeId": "16",
+      "timestamp": "66:57",
+      "type": "treaty",
+      "actors": ["Miroslav Spalajković", "Francuska", "Jugoslavija"],
+      "region": "Zapadna Evropa",
+      "description": { "sr": "1927. godine potpisan je ugovor o prijateljstvu između Francuske i Jugoslavije; iako nikada nije postao formalni vojni savez, Spalajković je u javnosti voleo da govori kao da savez postoji.", "en": "In 1927, a treaty of friendship was signed between France and Yugoslavia; although it never became a formal military alliance, Spalajković liked to speak publicly as though an alliance existed." },
+      "quote": "postoji taj ugovor iz 1927. o prijateljstvu, koji je imao nešto od tijeli tog ugovora, savjez, ali vrlo neodređen.",
+      "confidence": "high"
+    }
+  ]
+}
