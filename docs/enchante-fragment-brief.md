@@ -34,12 +34,15 @@ so it needs an explicit replacement. `Karađorđe` → `karadjordje`, not `kara-
 ever unsure of a slug, print it rather than guess:
 
 ```sh
-node -e 'const s=process.argv[1].toLowerCase().replace(/đ/g,"dj").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");console.log(s)' "Karađorđe posle Karađorđa"
+node --input-type=module -e 'import { slugify } from "./scripts/lib/episode-titles.mjs"; console.log(slugify(process.argv[1]))' "Karađorđe posle Karađorđa"
 ```
+
+That calls the merge script's own function, so what it prints is exactly what the merge will
+look for.
 
 Getting this wrong does **not** fail validation. The episode merges with the title
 `Epizoda <id>`, no `pubDate`, and an empty `audioUrl` — which silently breaks "Play at
-MM:SS" for every event in it. Check the generated `episodes` entry after merging.
+MM:SS" for every event in it. `npm test` catches it (§4); the validator does not.
 
 Note the feed reuses numbers 5 and 6 across the main show and the side series. If a fragment
 is ever produced for one of those, use the slug form for the side-series one so the two
@@ -54,8 +57,8 @@ cannot collide.
 }
 ```
 
-A typical episode yields **4–6 events**. Current totals: 178 fragments, 741 events,
-283 places, covering 180 of 181 transcripts. Use `fragments/144.json` as the reference example.
+A typical episode yields **4–6 events**. Current totals: 178 fragments, 742 events,
+285 places. Use `fragments/144.json` as the reference example.
 
 ### Place
 
@@ -139,10 +142,14 @@ rows across the full archive. Pick the nearest value; never invent one.
 npm run episodes          # refresh episodes.json from the RSS feed (only if titles changed)
 HISTORYCAST_EPISODES_JSON=episodes.json node scripts/merge-fragments.mjs
 node scripts/validate-data.mjs public/data/geo-events.json --strict
+npm run chart             # regenerate the landing page counts
+npm test
 ```
 
 `--strict` turns two warnings into errors: an off-list `region`, and one place split across
 several ids. Both must be clean before committing.
 
-After merging, confirm the new episode carries a real title and a non-empty `audioUrl` — that
-is the check the validator cannot do for you.
+`npm test` covers what the validator cannot: that every fragment is named after an episode the
+feed actually knows, that its events carry that same `episodeId`, and that no merged episode
+fell back to the `Epizoda <id>` title or an empty `audioUrl`. A misnamed fragment fails here
+instead of shipping as a silent, unplayable episode.

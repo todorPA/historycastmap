@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Polyline, useMap, useMapEvents } from 'react-leaflet';
+import { spacingFor } from '../lib/graticule';
 
 /**
  * Meridians and parallels over the basemap.
@@ -15,27 +16,6 @@ import { Polyline, useMap, useMapEvents } from 'react-leaflet';
  * decorating. Hairline ink at 7%, no labels: it must never compete with the region hues,
  * which are the only meaningful colour on the surface (config/regions.ts).
  */
-
-/**
- * Degree steps, coarse to fine. A graticule that subdivides continuously turns into a mesh,
- * so the ladder is deliberately sparse and stays on round coordinates.
- */
-const STEPS = [30, 15, 10, 5, 2, 1, 0.5, 0.25, 0.1, 0.05, 0.02, 0.01, 0.005, 0.002, 0.001];
-
-/**
- * Chosen from the visible span rather than from the zoom level, so the grid holds roughly
- * four to eight divisions at *every* scale.
- *
- * A zoom→spacing table looked simpler and was wrong in the one case that matters: it bottomed
- * out at 0.5°, so past about z12 the span was smaller than the step and the graticule thinned
- * to a single line or vanished. That is exactly where the basemap has nothing to draw and the
- * grid is the only thing telling you this is a map.
- */
-function spacingFor(span: number): number {
-  const target = span / 5;
-  for (const step of STEPS) if (step <= target) return step;
-  return STEPS[STEPS.length - 1];
-}
 
 /** Lowest multiple of `step` at or below `value`. */
 function floorTo(value: number, step: number): number {
