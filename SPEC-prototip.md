@@ -10,7 +10,7 @@ npm i leaflet react-leaflet vis-timeline
 npm i -D @types/leaflet
 ```
 
-- Node 18+. Base path for GitHub Pages: set `base: '/historycastmap/'` in `vite.config.ts`.
+- Node 22.12+ (`^22.12 || ^24 || >=26`, from `package.json` `engines`; `.nvmrc` pins 22). Raised from 18+ when the test runner (Vitest 5) was added; `engine-strict` in `.npmrc` makes `npm install` refuse anything older. Base path for GitHub Pages: set `base: '/historycastmap/'` in `vite.config.ts`.
 - Copy `geo-events.sample.json` → `public/data/geo-events.sample.json`.
 - Copy `geo-events.schema.json` to repo root (for reference/validation).
 

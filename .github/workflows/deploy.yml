@@ -21,10 +21,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          # The same file a developer's nvm/fnm reads, so CI runs what local runs.
+          node-version-file: .nvmrc
           cache: npm
       - run: npm ci
       - run: npm run validate:data
+      # Gates the deploy. This workflow is what publishes the site on every push to main, so a
+      # failing test here is the only thing that stops a broken data refresh from going live.
+      - run: npm test
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
