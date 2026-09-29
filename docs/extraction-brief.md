@@ -1,6 +1,6 @@
-# Enchanté brief — producing an episode fragment
+# Extraction brief — producing an episode fragment
 
-What Enchanté delivers for each episode: **one JSON file per episode**, dropped into
+What the extraction pipeline delivers for each episode: **one JSON file per episode**, dropped into
 `fragments/`. Nothing else. The merge script turns the whole folder into
 `public/data/geo-events.json`, and the app reads only that.
 

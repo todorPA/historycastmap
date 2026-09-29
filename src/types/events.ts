@@ -1,5 +1,5 @@
 // Data model for HistoryCast Map — mirrors geo-events.schema.json (v1.0).
-// Keep in sync with the schema. Consumed by the app; produced upstream (Enchanté/LLM).
+// Keep in sync with the schema. Consumed by the app; produced upstream (LLM extraction).
 
 export type Lang = 'sr' | 'en';
 

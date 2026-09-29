@@ -44,9 +44,9 @@ Derived at merge time in `scripts/merge-fragments.mjs` from the feed title, **no
 fragments. The script already parses each title to extract the episode number; the same pass
 tests for `/nedeljom|četvrtkom/i` and stamps `series: 'side'`. Everything else is `'main'`.
 
-Three reasons this beats a fragment field: it costs Enchanté nothing, it applies retroactively
-to all 102 existing fragments with no re-extraction, and the feed title is the actual source of
-truth for which show an episode belongs to. `docs/enchante-fragment-brief.md` stays valid
+Three reasons this beats a fragment field: it costs the extraction pipeline nothing, it
+applies retroactively to all 102 existing fragments with no re-extraction, and the feed title
+is the actual source of truth for which show an episode belongs to. `docs/extraction-brief.md` stays valid
 unchanged.
 
 Because series is now displayed separately, the merge also strips branding from the display
@@ -132,11 +132,11 @@ One transcript is unconverted — episode 49, *Stefan Uroš I*, logged in `fragm
 
 The numeral-collision episodes (05, 06) were disambiguated with slug ids as this document
 recommended, and the `đ` slug bug found during that work is fixed in `slugify()` — see
-`docs/enchante-fragment-brief.md` §1.
+`docs/extraction-brief.md` §1.
 
 Only one side-series episode currently has events: **115, with 5 events of 456**. The feature is
-nearly empty at launch and fills in as Enchanté works through the 27-episode side-series backlog
-(see `docs/enchante-fragment-brief.md`).
+nearly empty at launch and fills in as the extraction pipeline works through the 27-episode
+side-series backlog (see `docs/extraction-brief.md`).
 
 Note for that backlog: the feed reuses numbers 5 and 6 across the main show and the side series
 (`05 - Istorija lala | HistoryCast četvrtkom` vs `05 - Istorija jugoslovenskog filma, 2. deo`).
