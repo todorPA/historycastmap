@@ -1,6 +1,6 @@
 import type { Lang, PlacesById } from '../types/events';
 import { pick } from './i18n';
-import { findFolded } from './fold';
+import { findFolded, fold } from './fold';
 import type { EpisodeView } from './episodeModel';
 
 /** Why an episode matched, for the list's match line (HANDOFF §5). */
@@ -31,9 +31,9 @@ export function searchEpisode(ep: EpisodeView, query: string, places: PlacesById
   if (/^\d{1,4}$/.test(q)) {
     const n = /^(\d+)/.exec(ep.id);
     if (n && Number(n[1]) === Number(q)) return { field: 'number', text: ep.id };
-    const year = Number(q);
-    if (q.length >= 2 && ep.from <= year && year <= ep.to) return { field: 'year', text: q, year };
   }
+  const year = parseYearQuery(q);
+  if (year !== null && ep.from <= year && year <= ep.to) return { field: 'year', text: q, year };
 
   for (const e of ep.events) {
     const title = pick(e.title, lang);
@@ -52,6 +52,19 @@ export function searchEpisode(ep: EpisodeView, query: string, places: PlacesById
     if (r) return { field: 'place', text: name, range: r };
   }
   return null;
+}
+
+/**
+ * A search query read as a year, or null. Two to four digits (HANDOFF §5); a bare number is
+ * AD. BC is accepted the way the app prints it — "48. p.n.e.", "48 BC" — plus "pne", "BCE"
+ * and a leading minus, because years are stored negative (lib/time.ts) and nobody types that.
+ */
+export function parseYearQuery(query: string): number | null {
+  const q = fold(query.trim());
+  const ad = /^(\d{2,4})$/.exec(q);
+  if (ad) return Number(ad[1]);
+  const bc = /^(\d{2,4})\.?\s*(?:p\.?\s*n\.?\s*e\.?|pne|bce?)$/.exec(q) ?? /^-(\d{2,4})$/.exec(q);
+  return bc ? -Number(bc[1]) : null;
 }
 
 /** Does the episode pass the search box? An empty query lets everything through. */

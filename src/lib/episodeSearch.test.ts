@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { GeoData } from '../types/events';
 import { indexById } from '../types/events';
 import { deriveEpisodes } from './episodeModel';
-import { matchesQuery, searchEpisode } from './episodeSearch';
+import { matchesQuery, parseYearQuery, searchEpisode } from './episodeSearch';
 
 import shipped from '../../public/data/geo-events.json';
 
@@ -59,7 +59,45 @@ describe('searchEpisode', () => {
     expect(searchEpisode(byId('144'), '144', places, 'sr')?.field).toBe('number');
   });
 
+  // Episode 40 spans 48–44 BC. Years are stored negative, so a bare "48" means AD 48 and must
+  // not match it; the BC forms must, written the way the app itself prints them.
+  describe('BC years', () => {
+    const cezar = () => byId('40');
+    it.each(['48. p.n.e.', '48 p.n.e.', '48 pne', '46 BC', '46 bce', '-46'])('matches "%s"', (q) => {
+      expect(searchEpisode(cezar(), q, places, 'sr')).toMatchObject({ field: 'year', year: -Number(q.replace(/\D/g, '')) });
+    });
+
+    it('reads a bare number as AD', () => {
+      expect(searchEpisode(cezar(), '46', places, 'sr')?.field).not.toBe('year');
+    });
+
+    it('never treats a BC year as an episode number', () => {
+      expect(searchEpisode(byId('43'), '-43', places, 'sr')?.field).not.toBe('number');
+      expect(searchEpisode(byId('43'), '43 BC', places, 'sr')?.field).not.toBe('number');
+    });
+  });
+
   it('returns null when nothing matches', () => {
     expect(searchEpisode(byId('43'), 'qwxz', places, 'sr')).toBeNull();
+  });
+});
+
+describe('parseYearQuery', () => {
+  it('reads two to four digits as a year, and nothing shorter or longer (§5)', () => {
+    expect(parseYearQuery('1389')).toBe(1389);
+    expect(parseYearQuery('48')).toBe(48);
+    expect(parseYearQuery('5')).toBeNull();
+    expect(parseYearQuery('12345')).toBeNull();
+    expect(parseYearQuery('5 BC')).toBeNull();
+  });
+
+  it('reads the BC forms as negative years', () => {
+    expect(parseYearQuery('1200. p.n.e.')).toBe(-1200);
+    expect(parseYearQuery('480 pne')).toBe(-480);
+    expect(parseYearQuery('480 BC')).toBe(-480);
+  });
+
+  it('is not fooled by text that merely starts with digits', () => {
+    expect(parseYearQuery('1389 kosovo')).toBeNull();
   });
 });
