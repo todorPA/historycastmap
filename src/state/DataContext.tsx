@@ -1,11 +1,13 @@
 import { createContext, useContext, useMemo } from 'react';
 import type { ReactNode } from 'react';
 import type { HistoryEvent } from '../types/events';
-import { isVisible } from '../lib/visibility';
+import { deriveEpisodes, type EpisodeView } from '../lib/episodeModel';
+import { collectionMembers, type CollectionMembers } from '../lib/episodeFilters';
+import { matchingEpisodes, visibleEvents } from '../lib/episodeVisibility';
 import type { LoadedData } from '../lib/data';
 import { useTime } from './TimeContext';
 import { useFilters } from './FilterContext';
-import { getCollection } from '../config/collections';
+import { COLLECTIONS, getCollection } from '../config/collections';
 
 const DataContext = createContext<LoadedData | null>(null);
 
@@ -43,37 +45,38 @@ export function useSideEpisodes(): ReadonlySet<string> {
   );
 }
 
-/** The single derived list every view renders from. */
+/** The episode model, derived once per dataset (lib/episodeModel.ts). */
+export function useEpisodes(): EpisodeView[] {
+  const { data } = useData();
+  return useMemo(() => deriveEpisodes(data), [data]);
+}
+
+const MEMBERS = collectionMembers(COLLECTIONS);
+
+/** Collection id → episode ids. Static: the curated lists ship with the code. */
+export function useCollectionMembers(): CollectionMembers {
+  return MEMBERS;
+}
+
+/** Episodes passing filters and search; the selected one always stays (lib/episodeVisibility.ts). */
+export function useMatchingEpisodes(): EpisodeView[] {
+  const episodes = useEpisodes();
+  const { placesById } = useData();
+  const { filters, query, lang, selectedEpisodeId } = useFilters();
+  return useMemo(
+    () => matchingEpisodes(episodes, filters, MEMBERS, query, placesById, lang, selectedEpisodeId),
+    [episodes, filters, query, placesById, lang, selectedEpisodeId],
+  );
+}
+
+/** The events the map draws: chapters of matching episodes, inside the time window. */
 export function useVisibleEvents(): HistoryEvent[] {
   const { data } = useData();
   const { range } = useTime();
-  const { activeCollectionId, activeEpisodeId, activeRegions, activeTypes, activeSeries } =
-    useFilters();
-  const activeCollectionEpisodes = useCollectionEpisodes(activeCollectionId);
-  const sideEpisodeIds = useSideEpisodes();
-
+  const { selectedEpisodeId } = useFilters();
+  const matching = useMatchingEpisodes();
   return useMemo(
-    () =>
-      data.events.filter((e) =>
-        isVisible(e, {
-          activeCollectionEpisodes,
-          activeEpisodeId,
-          activeRegions,
-          activeTypes,
-          activeSeries,
-          sideEpisodeIds,
-          range,
-        }),
-      ),
-    [
-      data.events,
-      activeCollectionEpisodes,
-      activeEpisodeId,
-      activeRegions,
-      activeTypes,
-      activeSeries,
-      sideEpisodeIds,
-      range,
-    ],
+    () => visibleEvents(data.events, new Set(matching.map((e) => e.id)), selectedEpisodeId, range),
+    [data.events, matching, selectedEpisodeId, range],
   );
 }

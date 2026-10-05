@@ -2,8 +2,8 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { DataSet, Timeline } from 'vis-timeline/standalone';
 import type { TimelineOptions } from 'vis-timeline/standalone';
 import 'vis-timeline/styles/vis-timeline-graph2d.css';
-import { useCollectionEpisodes, useData, useSideEpisodes } from '../state/DataContext';
-import { isVisible } from '../lib/visibility';
+import { useData, useMatchingEpisodes, useSideEpisodes } from '../state/DataContext';
+import { visibleEvents } from '../lib/episodeVisibility';
 import { useTime } from '../state/TimeContext';
 import { useFilters } from '../state/FilterContext';
 import { TIMELINE_SIZES } from '../state/FilterContext';
@@ -82,19 +82,16 @@ export default function TimelineView() {
   const { range, bounds, setRange } = useTime();
   const {
     lang,
-    activeCollectionId,
-    activeEpisodeId,
+    selectedEpisodeId,
     selectedEventId,
     setSelectedEventId,
-    activeRegions,
-    activeTypes,
-    activeSeries,
     timelineSize,
     setTimelineSize,
     cycleTimelineSize,
   } = useFilters();
-  const collectionEpisodes = useCollectionEpisodes(activeCollectionId);
   const sideEpisodeIds = useSideEpisodes();
+  const matching = useMatchingEpisodes();
+  const matchingIds = useMemo(() => new Set(matching.map((e) => e.id)), [matching]);
 
   // Panel height cycles small → medium → large: with many region groups the default strip
   // is too cramped to read, so the user can raise the timeline over the map.
@@ -119,27 +116,16 @@ export default function TimelineView() {
    */
   const items = useMemo<Item[]>(
     () =>
-      data.events
-        /**
-         * The same rule as the map, minus the year range. It once had its own filter chain,
-         * which forgot the facets: picking a region emptied the map but left every event on
-         * the axis, so clicking one selected an event with no marker.
-         *
-         * The range stays unbounded on purpose — scrubbing narrow would delete the very items
-         * you need in order to scrub back out. A facet has no such problem, because its own
-         * chip is how you undo it.
-         */
-        .filter((e) =>
-          isVisible(e, {
-            activeCollectionEpisodes: collectionEpisodes,
-            activeEpisodeId,
-            activeRegions,
-            activeTypes,
-            activeSeries,
-            sideEpisodeIds,
-            range: UNBOUNDED,
-          }),
-        )
+      /**
+       * The same rule as the map (lib/episodeVisibility.ts), minus the year range. The timeline
+       * once had its own filter chain, which forgot the facets: picking a region emptied the
+       * map but left every event on the axis, so clicking one selected an event with no marker.
+       *
+       * The range stays unbounded on purpose — scrubbing narrow would delete the very items you
+       * need in order to scrub back out. A filter has no such problem, because its own chip is
+       * how you undo it.
+       */
+      visibleEvents(data.events, matchingIds, selectedEpisodeId, UNBOUNDED)
         .map((e) => {
           // Same colour language as the map: region, not episode (config/regions.ts).
           const color = regionColor(e.region);
@@ -174,11 +160,8 @@ export default function TimelineView() {
         }),
     [
       data.events,
-      collectionEpisodes,
-      activeEpisodeId,
-      activeRegions,
-      activeTypes,
-      activeSeries,
+      matchingIds,
+      selectedEpisodeId,
       lang,
       sideEpisodeIds,
     ],
