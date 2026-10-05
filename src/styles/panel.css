@@ -1,0 +1,700 @@
+/* The left panel (HANDOFF §4–§8). Sizes and weights follow §15; colours are theme tokens only,
+ * so their contrast is held by styles/theme.test.ts. */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--f1);
+  border-right: 1px solid var(--line-soft);
+  color: var(--tx);
+  font-size: 14px;
+  /* Dragging across the panel should not leave the list selected; the search box overrides. */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ---------- header ---------- */
+.panel-head {
+  padding: 16px 16px 12px;
+}
+
+.panel-head__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hc-mark {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--tx);
+  border-radius: 50%;
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.panel-head__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.panel-head__sub {
+  margin: 3px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-hi);
+}
+
+.panel-head__brand .lang-toggle {
+  margin-left: auto;
+}
+
+.panel-head__universe {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--tx2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- search row ---------- */
+.search-row {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 12px;
+}
+
+.search-row__field {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 10px;
+  background: var(--f2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-6);
+  cursor: text;
+}
+
+.search-row__field:focus-within {
+  outline: 2px solid var(--gold-line);
+  outline-offset: 2px;
+}
+
+.search-row__icon {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--tx3);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.search-row__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  color: var(--tx);
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.search-row__input::placeholder {
+  color: var(--tx3);
+}
+
+.filter-btn {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: var(--f1);
+  border: 1px solid var(--line);
+  border-radius: var(--r-6);
+  cursor: pointer;
+}
+
+.filter-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--tx2);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.filter-btn:hover {
+  background: var(--f2);
+}
+
+.filter-btn.is-active {
+  background: var(--gold-bg);
+  border-color: var(--gold-line);
+}
+
+.filter-btn.is-active svg {
+  stroke: var(--gold-hi);
+}
+
+.hc-badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--on-gold);
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 0 0 2px var(--f1);
+}
+
+.filter-btn__badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+}
+
+.hc-badge--inline {
+  margin-left: 8px;
+  vertical-align: 2px;
+}
+
+/* ---------- the area the filter panel covers ---------- */
+.panel__stack {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel__content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.active-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  padding: 0 16px 10px;
+}
+
+.panel__count {
+  margin: 0;
+  padding: 2px 16px 10px;
+  font-size: 13px;
+  color: var(--tx2);
+  border-bottom: 1px solid var(--line-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.panel__count b {
+  color: var(--tx);
+  font-weight: 600;
+}
+
+/* ---------- episode list ---------- */
+.ep-list,
+.fpanel__body {
+  scrollbar-width: thin;
+  scrollbar-color: #a07f4c transparent;
+}
+
+.ep-list::-webkit-scrollbar,
+.fpanel__body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ep-list::-webkit-scrollbar-thumb,
+.fpanel__body::-webkit-scrollbar-thumb {
+  background: #a07f4c;
+  border-radius: 4px;
+}
+
+.ep-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.era-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 16px 8px;
+  background: var(--f1);
+  border-bottom: 1px solid var(--line-soft);
+  font-weight: 400;
+}
+
+.era-head__swatch {
+  flex: none;
+  align-self: center;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px var(--ring);
+}
+
+.era-head__name {
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.era-head__years,
+.era-head__count {
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.era-head__years {
+  color: var(--tx3);
+}
+
+.era-head__count {
+  margin-left: auto;
+  color: var(--tx2);
+}
+
+.ep-list__rows {
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+}
+
+.ep-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 16px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 120ms var(--ease);
+}
+
+.ep-row:hover,
+.ep-row.is-hovered {
+  background: var(--f2);
+}
+
+.ep-row.is-selected {
+  background: var(--f3);
+  box-shadow: inset 0 0 0 1.5px var(--gold-line);
+}
+
+.ep-row__body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ep-row__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--tx);
+}
+
+.ep-row.is-selected .ep-row__title {
+  font-weight: 700;
+  color: var(--gold-hi);
+}
+
+.ep-row__meta,
+.ep-row__match {
+  font-size: 12.5px;
+  color: var(--tx2);
+  font-variant-numeric: tabular-nums;
+}
+
+.ep-row mark {
+  padding: 0 1px;
+  border-radius: 2px;
+  background: var(--gold-bg);
+  color: inherit;
+  box-shadow: inset 0 -1.5px 0 var(--gold-line);
+}
+
+/* Outside the timeline window: text steps down a level, never fades by opacity (§15). */
+.ep-row.is-outside .ep-row__title {
+  color: var(--tx2);
+}
+
+.ep-row.is-outside .ep-row__meta {
+  color: var(--tx3);
+}
+
+.ep-row.is-outside .kind-glyph {
+  opacity: 0.55;
+}
+
+/* Date-type glyph in the era colour: ◆ point, ▬ range, hatched ▭ long. Every mark carries the
+ * ink ring (§14) — it is what keeps the ochre era visible on cream. */
+.kind-glyph {
+  flex: none;
+  margin-top: 5px;
+  box-shadow: 0 0 0 1px var(--ring);
+}
+
+.kind-glyph--point {
+  width: 9px;
+  height: 9px;
+  margin: 6px 4px 0 3px;
+  background: var(--c);
+  transform: rotate(45deg);
+}
+
+.kind-glyph--range,
+.kind-glyph--long {
+  width: 16px;
+  height: 8px;
+  border-radius: 3px;
+}
+
+.kind-glyph--range {
+  background: var(--c);
+}
+
+.kind-glyph--long {
+  border: 1.5px solid var(--c);
+  background: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--c) 55%, var(--f1)) 0 1px,
+    color-mix(in srgb, var(--c) 30%, var(--f1)) 1px 4px
+  );
+}
+
+.ep-empty {
+  padding: 24px 16px;
+}
+
+.ep-empty__title {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ep-empty__hint {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--tx2);
+}
+
+/* ---------- filter panel ---------- */
+.fpanel {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  background: var(--f1);
+  border-top: 1px solid var(--line-soft);
+  animation: fpanel-in 260ms var(--ease);
+}
+
+.fpanel[hidden] {
+  display: none;
+}
+
+@keyframes fpanel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.fpanel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 6px;
+}
+
+.fpanel__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hc-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-6);
+  background: transparent;
+  cursor: pointer;
+}
+
+.hc-icon-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--tx2);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.hc-icon-btn:hover {
+  background: var(--f2);
+}
+
+.fpanel__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 16px;
+}
+
+.fpanel__group {
+  padding: 12px 0 14px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.fpanel__group:last-child {
+  border-bottom: 0;
+}
+
+.hc-label {
+  margin: 0 0 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tx2);
+}
+
+.fpanel__family + .fpanel__family,
+.fpanel__family + .hc-chips {
+  margin-top: 10px;
+}
+
+.fpanel__subhead {
+  margin: 0 0 6px;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--tx2);
+}
+
+.fpanel__blurb {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--tx2);
+}
+
+.fpanel__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.fpanel__foot .hc-btn {
+  height: 36px;
+}
+
+/* ---------- chips ---------- */
+.hc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-10);
+  background: var(--f1);
+  color: var(--tx);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 120ms var(--ease);
+}
+
+.hc-chip:hover {
+  background: var(--f2);
+}
+
+.hc-chip__count {
+  font-size: 12.5px;
+  color: var(--tx2);
+  font-variant-numeric: tabular-nums;
+}
+
+.hc-chip.is-active,
+.hc-chip--removable {
+  /* 1.5 px, so the half-pixel comes out of the padding and the label does not shift. */
+  padding: 0 11.5px;
+  border: 1.5px solid var(--gold-line);
+  background: var(--gold-bg);
+  color: var(--gold-hi);
+  font-weight: 600;
+}
+
+.hc-chip.is-active .hc-chip__count {
+  color: var(--gold-hi);
+}
+
+.hc-chip__check {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hc-chip__x {
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* Unavailable with the current filters (§6.4): readable, dashed, never faded by opacity. */
+.hc-chip:disabled {
+  border: 1px dashed var(--line);
+  background: transparent;
+  color: var(--tx3);
+  font-weight: 400;
+  cursor: not-allowed;
+}
+
+.hc-chip:disabled .hc-chip__count {
+  color: var(--tx3);
+}
+
+/* ---------- buttons and links ---------- */
+.hc-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-6);
+  background: var(--f1);
+  color: var(--tx);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hc-btn--primary {
+  border-color: var(--gold-line);
+  background: var(--gold);
+  color: var(--on-gold);
+}
+
+.hc-btn--primary:hover {
+  filter: brightness(0.96);
+}
+
+.hc-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--gold-hi);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.hc-link:disabled {
+  color: var(--tx3);
+  text-decoration: none;
+  cursor: default;
+}
+
+/* ---------- footer ---------- */
+.panel-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--line-soft);
+  font-size: 12px;
+  color: var(--tx3);
+}
+
+.panel-foot a {
+  color: var(--tx2);
+}
+
+.panel-foot .hc-link {
+  font-size: 12px;
+}
+
+/* Until the phone layout (Phase 5): stacked above the map, as the old sidebar was. */
+@media (max-width: 820px) {
+  .panel {
+    border-right: 0;
+    border-bottom: 1px solid var(--line-soft);
+    max-height: 45vh;
+  }
+}

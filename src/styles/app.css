@@ -6,6 +6,7 @@
 @import './tokens.css';
 /* Explorer palette and alias re-points; after tokens.css so it wins. Not loaded by the landing page. */
 @import './theme.css';
+@import './panel.css';
 
 * {
   box-sizing: border-box;
@@ -27,7 +28,6 @@ body {
 
 /* Chrome (labels, legend, timeline axis) is furniture — dragging the map or the
    timeline shouldn't leave text selected. Popup content stays selectable. */
-.sidebar,
 .legend,
 .timeline__head,
 .vis-timeline {
@@ -37,7 +37,7 @@ body {
 
 .app {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 328px 1fr; /* HANDOFF §2 */
   height: 100%;
 }
 
@@ -62,133 +62,6 @@ body {
 .status code {
   font-size: var(--step--1);
   color: #a3211c;
-}
-
-/* ---------- sidebar ---------- */
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  background: var(--sidebar);
-  border-right: 1px solid var(--ink-500);
-  /* The episode list scrolls on its own so stats and the range reset stay reachable even
-     with 181 episodes. The sidebar itself scrolls only as a last resort: with collections,
-     episodes, filters and stats all competing, a short window can exceed the floors below
-     and `hidden` would silently clip whatever lost. */
-  overflow: hidden auto;
-}
-
-/* Takes the space it needs and no more. `flex: 1` made the list absorb every spare pixel,
-   so a three-episode dataset left a ~400px hole above the filters; `flex-grow: 0` fixes
-   that. The floor is the other half: as the only shrinkable section it then absorbed the
-   whole deficit instead, collapsing to 29px at an 800px viewport, which left the search
-   box sliced in half and no episodes visible at all.
-
-   `hidden auto` because `overflow-y: auto` alone promotes overflow-x to auto too, and an
-   8px overhang on the row counts was enough to raise a horizontal scrollbar. The sidebar
-   should never scroll sideways. */
-/* The section sizes to its content; the *list* inside it is what scrolls and what carries
-   the cap. That distinction is the whole fix.
-
-   Flex shrinks items in proportion to their base size, and with `flex-basis: auto` the base
-   is the content height: 103 episodes gave this section a base of ~4000px against the
-   filters' ~400. Capping the section with max-height does not change that base, so the
-   filters were still starved to their floor while the episodes kept 376px. Capping the list
-   instead makes the section's own base honest (~480px), and the two then give way together.
-
-   Sizing the section by flex-basis would have worked too, but it reintroduces the original
-   bug: a fixed basis leaves a hole under a three-episode dataset. */
-.sidebar__section--episodes {
-  flex: 0 1 auto;
-  /* Label, search and a few rows. Below this the section is not worth showing, and the
-     sidebar scrolls instead. Safe to set now that the base size is honest: as a floor on a
-     4000px base it was what let this section win every shrink and starve the filters. */
-  min-height: 11rem;
-  /* A column, so the list below can be told to fit whatever height the section is given. */
-  display: flex;
-  flex-direction: column;
-}
-
-/* Two bounds, and both are needed.
-   `max-height` caps the section's natural base size, which is what keeps the shrink maths
-   honest against the filters. `flex: 0 1 auto` with `min-height: 0` caps the *used* height
-   to whatever the section actually got: without it the list kept its 40vh while the section
-   shrank to 176px, and the overflow spilled straight over the filters below. */
-.episodes {
-  flex: 0 1 auto;
-  min-height: 0;
-  max-height: 40vh;
-  /* `overflow-y: auto` alone promotes overflow-x to auto as well, which raised a stray
-     horizontal scrollbar off a sub-pixel overhang. The sidebar never scrolls sideways. */
-  overflow: hidden auto;
-}
-
-.sidebar__section--stats {
-  flex: none;
-}
-
-.sidebar__head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 16px;
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.sidebar__title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 1.25rem;
-  letter-spacing: -0.01em;
-}
-
-.sidebar__subtitle {
-  margin: 4px 0 0;
-  font-size: var(--step--1);
-  color: var(--muted);
-  line-height: 1.35;
-}
-
-.sidebar__section {
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.sidebar__h2 {
-  margin: 0 0 10px;
-  font-size: var(--step--2);
-  text-transform: uppercase;
-  letter-spacing: 0.9px;
-  color: var(--muted);
-}
-
-/* Section title on the left, the count column's unit right-aligned over that column. */
-.sidebar__h2--counted {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-/* Lower-case and unspaced, so it reads as a caption rather than a second heading. */
-.sidebar__unit {
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: var(--step--2);
-  opacity: 0.7;
-}
-
-.sidebar__foot {
-  margin-top: auto;
-  padding: 14px 16px;
-  font-size: var(--step--2);
-  color: var(--muted);
-}
-
-.sidebar__foot a {
-  color: var(--muted);
 }
 
 /* ---------- language toggle ---------- */
@@ -216,166 +89,28 @@ body {
   color: var(--ink-100);
 }
 
-/* ---------- search ---------- */
-.search {
-  margin-bottom: 8px;
-}
-
-.search__input {
-  width: 100%;
-  padding: 7px 9px;
-  font: inherit;
-  font-size: var(--step--1);
-  color: var(--text);
-  background: var(--bg);
-  border: 1px solid var(--control-edge);
-  border-radius: var(--r-md);
-}
-
-.search__input::placeholder {
-  color: var(--muted);
-}
-
-.search__input:focus-visible {
-  outline: none;
-  border-color: var(--ink-100);
-  box-shadow: 0 0 0 3px rgba(26, 23, 19, 0.14);
-}
-
 /* One focus treatment for every interactive control, keyboard only. */
 .btn:focus-visible,
-.episode:focus-visible,
-.chip--btn:focus-visible,
 .lang-toggle__btn:focus-visible,
 .basemap__btn:focus-visible,
 .legend__more:focus-visible,
-.facets__clear:focus-visible,
 .timeline__resize:focus-visible {
   outline: 2px solid var(--ink-100);
   outline-offset: 2px;
 }
 
 /* Tactile press, §4.5. Cheap transform only, and reduced-motion neutralises it. */
-.btn,
-.episode,
-.chip--btn {
+.btn {
   transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1),
     border-color 120ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn:active,
-.chip--btn:active {
+.btn:active {
   transform: scale(0.98);
 }
 
 .btn:hover {
   background: var(--ink-600);
-}
-
-.episodes__empty {
-  padding: 8px 9px;
-  font-size: var(--step--1);
-  color: var(--muted);
-}
-
-/* ---------- episodes ---------- */
-.episodes {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.episodes__empty {
-  flex: none;
-}
-
-.episode {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  width: 100%;
-  padding: 8px 9px;
-  font: inherit;
-  font-size: var(--step-0);
-  text-align: left;
-  color: var(--text);
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: var(--r-md);
-  cursor: pointer;
-}
-
-.episode:hover {
-  background: var(--sidebar-2);
-}
-
-/* Gold at 1.43:1 against the panel is far too weak to mark selection on its own, so the
-   active row is a surface: a gold wash with a deep-gold edge. */
-.episode.is-active {
-  background: var(--gold-wash);
-  border-color: var(--gold-deep);
-}
-
-.episode__num {
-  flex: none;
-  min-width: 26px;
-  /* Belt to episodeBadge()'s braces: whatever ends up here can never push the title out. */
-  max-width: 4.5em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding: 1px 5px;
-  border-radius: var(--r-sm);
-  background: var(--bg);
-  color: var(--muted);
-  font-size: var(--step--2);
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  text-align: center;
-}
-
-.episode__num--all {
-  color: var(--gold-deep);
-}
-
-.episode__title {
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.episode__count {
-  flex: none;
-  font-size: var(--step--2);
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-}
-
-/* ---------- stats ---------- */
-.stats {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: var(--step--1);
-  color: var(--muted);
-}
-
-.stats__row {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.stats__row strong {
-  color: var(--text);
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
 }
 
 /* ---------- buttons ---------- */
@@ -388,11 +123,6 @@ body {
   background: var(--sidebar-2);
   color: var(--text);
   cursor: pointer;
-}
-
-.btn--ghost {
-  margin-top: 10px;
-  width: 100%;
 }
 
 .btn--play {
@@ -441,85 +171,6 @@ body {
   border: 1px solid var(--ink-500);
   box-shadow: var(--shadow-panel);
   font-size: var(--step--1);
-}
-
-/* ---------- facet filters ---------- */
-/* Shrinkable too, with its own floor. Leaving this at `flex: none` is what forced the
-   episode list to absorb every missing pixel on a short window. */
-.facets {
-  flex: 0 1 auto;
-  min-height: 6rem;
-  max-height: 34vh;
-  overflow: hidden auto;
-}
-
-.facets__head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.facets__clear {
-  padding: 0;
-  font: inherit;
-  font-size: var(--step--2);
-  background: none;
-  border: 0;
-  color: var(--gold-deep);
-  cursor: pointer;
-}
-
-.facets__label {
-  margin: 8px 0 6px;
-  font-size: var(--step--2);
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.chips--facet {
-  margin-bottom: 2px;
-}
-
-.chip--btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font: inherit;
-  font-size: var(--step--2);
-  padding: 3px 8px;
-  background: var(--bg);
-  color: var(--muted);
-  border: 1px solid var(--control-edge);
-  border-radius: var(--r-pill);
-  cursor: pointer;
-}
-
-.chip--btn:hover {
-  color: var(--text);
-}
-
-.chip--btn.is-active {
-  background: var(--gold-wash);
-  border-color: var(--gold-deep);
-  color: var(--ink-100);
-}
-
-.chip__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex: none;
-  box-shadow: 0 0 0 1px var(--swatch-ring);
-}
-
-.chip__count {
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  font-size: var(--step--2);
 }
 
 /* ---------- grouped popup (one place, one year) ---------- */
@@ -1037,96 +688,10 @@ body {
     grid-template-rows: auto 1fr;
   }
 
-  .sidebar {
-    border-right: 0;
-    border-bottom: 1px solid var(--line-soft);
-    max-height: 45vh;
-  }
-
   .legend {
     max-width: 190px;
     bottom: 10px;
   }
-}
-
-/* A facet that is active but out of scope for the current episode or range. Shown rather
-   than hidden, so an empty map has a visible, removable cause (see FacetFilters). */
-.chip--btn.is-empty {
-  opacity: 0.55;
-}
-
-.chip--btn.is-active.is-empty {
-  opacity: 1;
-  border-style: dashed;
-}
-
-/* ---------- collections ----------
-   The archive's front door, so it sits above the episode list and reads as a short menu
-   rather than another facet: full-width rows, not wrapped chips. */
-/* Short and near the top: it should hold its height rather than compete for it. */
-.collections {
-  flex: none;
-}
-
-.collections__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 2px;
-}
-
-.collection {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  width: 100%;
-  padding: 7px 9px;
-  font: inherit;
-  font-size: var(--step-0);
-  text-align: left;
-  color: var(--text);
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: var(--r-md);
-  cursor: pointer;
-  transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 120ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.collection:hover {
-  background: var(--ink-600);
-}
-
-.collection:focus-visible {
-  outline: 2px solid var(--ink-100);
-  outline-offset: 2px;
-}
-
-/* Same surface-not-border treatment as a selected episode: gold cannot carry a border on
-   this ground (see tokens.css). */
-.collection.is-active {
-  background: var(--gold-wash);
-  border-color: var(--gold-deep);
-}
-
-.collection__title {
-  flex: 1;
-  min-width: 0;
-}
-
-.collection__count {
-  font-size: var(--step--2);
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-}
-
-.collections__blurb {
-  margin: 9px 0 0;
-  font-size: var(--step--1);
-  line-height: 1.4;
-  color: var(--muted);
 }
 
 /* ---------- timeline playback ----------
@@ -1213,9 +778,6 @@ body {
 
    Radius follows the control's size, not its component. */
 .btn:active,
-.chip--btn:active,
-.episode:active,
-.collection:active,
 .lang-toggle__btn:active,
 .basemap__btn:active,
 .timeline__play:active,
@@ -1234,7 +796,6 @@ body {
 /* Nothing here is ever disabled today, but a control system without the state grows one
    by accident later. Declared once so it looks deliberate when it arrives. */
 .btn[disabled],
-.chip--btn[disabled],
 .timeline__play[disabled] {
   opacity: 0.45;
   cursor: not-allowed;

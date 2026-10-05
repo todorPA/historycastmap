@@ -7,7 +7,7 @@ import { matchingEpisodes, visibleEvents } from '../lib/episodeVisibility';
 import type { LoadedData } from '../lib/data';
 import { useTime } from './TimeContext';
 import { useFilters } from './FilterContext';
-import { COLLECTIONS, getCollection } from '../config/collections';
+import { COLLECTIONS } from '../config/collections';
 
 const DataContext = createContext<LoadedData | null>(null);
 
@@ -19,17 +19,6 @@ export function useData(): LoadedData {
   const ctx = useContext(DataContext);
   if (!ctx) throw new Error('useData must be used inside <DataProvider>');
   return ctx;
-}
-
-/**
- * Episode ids for the active collection, as a Set so visibility stays O(1) per event.
- * Memoised on the id alone: the curated lists are static.
- */
-export function useCollectionEpisodes(id: string | null): ReadonlySet<string> | null {
-  return useMemo(() => {
-    const collection = getCollection(id);
-    return collection ? new Set(collection.episodeIds) : null;
-  }, [id]);
 }
 
 /**
