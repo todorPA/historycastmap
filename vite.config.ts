@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -11,6 +12,11 @@ const here = (file: string) => new URL(file, import.meta.url).pathname;
 export default defineConfig({
   plugins: [react()],
   base: '/historycastmap/',
+  test: {
+    // Vitest blanks CSS imports by default, `?raw` included. styles/theme.test.ts reads the
+    // theme's tokens as text to check their contrast, so that one stylesheet is processed.
+    css: { include: [/theme\.css/] },
+  },
   build: {
     rollupOptions: {
       // Two pages, no router: index.html is the landing page, app.html mounts the explorer.
