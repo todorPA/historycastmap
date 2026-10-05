@@ -23,6 +23,11 @@ export function agreeSr(n: number, [one, few, many]: readonly [string, string, s
  * (and 22–24, …): "22 epizoda". Agreement wins over the handoff's literal string.
  */
 export function episodeCount(n: number, lang: Lang): string {
-  if (lang === 'en') return `${n} ${n === 1 ? 'episode' : 'episodes'}`;
-  return `${n} ${agreeSr(n, ['epizoda', 'epizode', 'epizoda'])}`;
+  return `${n} ${episodeNoun(n, lang)}`;
+}
+
+/** The noun alone, agreeing with `n` — for "12 / 178 epizoda", where it follows the total. */
+export function episodeNoun(n: number, lang: Lang): string {
+  if (lang === 'en') return n === 1 ? 'episode' : 'episodes';
+  return agreeSr(n, ['epizoda', 'epizode', 'epizoda']);
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { agreeSr, episodeCount } from './plural';
+import { agreeSr, episodeCount, episodeNoun } from './plural';
 
 describe('episodeCount', () => {
   it.each([
@@ -26,5 +26,16 @@ describe('agreeSr', () => {
   it('picks the teen form by the last two digits', () => {
     expect(agreeSr(113, ['a', 'b', 'c'])).toBe('c');
     expect(agreeSr(123, ['a', 'b', 'c'])).toBe('b');
+  });
+});
+
+describe('episodeNoun', () => {
+  // For "12 / 178 epizoda": the noun follows the number it stands next to — the total.
+  it('agrees with the number it follows', () => {
+    expect(episodeNoun(178, 'sr')).toBe('epizoda');
+    expect(episodeNoun(22, 'sr')).toBe('epizode');
+    expect(episodeNoun(1, 'sr')).toBe('epizoda');
+    expect(episodeNoun(1, 'en')).toBe('episode');
+    expect(episodeNoun(178, 'en')).toBe('episodes');
   });
 });
