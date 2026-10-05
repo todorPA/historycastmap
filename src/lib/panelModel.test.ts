@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { GeoData } from '../types/events';
 import { deriveEpisodes } from './episodeModel';
 import { EMPTY_FILTERS } from './episodeFilters';
-import { activeChips, chronological, groupByEra, universeLine } from './panelModel';
+import { activeChips, chronological, episodeDate, groupByEra, universeLine } from './panelModel';
 import shipped from '../../public/data/geo-events.json';
 
 const data = shipped as unknown as GeoData;
@@ -55,5 +55,22 @@ describe('universeLine (§4.2)', () => {
   it('reads count and span off the derived periods', () => {
     expect(universeLine(episodes, 'sr')).toBe('178 epizoda · 499. p.n.e. – 2009');
     expect(universeLine(episodes, 'en')).toBe('178 episodes · 499 BC – 2009');
+  });
+});
+
+describe('episodeDate', () => {
+  const byId = (id: string) => episodes.find((e) => e.id === id)!;
+  it('writes a span without spaces, as the list shows it (§7)', () => {
+    expect(episodeDate({ ...byId('43'), from: 1331, to: 1355 }, 'sr')).toBe('1331–1355');
+  });
+  it('writes BC spans in the reader’s language', () => {
+    expect(episodeDate({ ...byId('43'), from: -499, to: -479 }, 'sr')).toBe('499. p.n.e.–479. p.n.e.');
+    expect(episodeDate({ ...byId('43'), from: -499, to: -479 }, 'en')).toBe('499 BC–479 BC');
+  });
+  it('writes a single year once', () => {
+    expect(episodeDate({ ...byId('43'), from: 1389, to: 1389 }, 'sr')).toBe('1389');
+  });
+  it('prefers a hand-checked date label', () => {
+    expect(episodeDate({ ...byId('43'), dateLabel: { sr: '28. jun 1389.', en: '28 June 1389' } }, 'en')).toBe('28 June 1389');
   });
 });

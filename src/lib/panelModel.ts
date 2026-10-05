@@ -67,3 +67,13 @@ export function universeLine(episodes: EpisodeView[], lang: Lang): string {
   const to = Math.max(...episodes.map((e) => e.to));
   return `${episodeCount(episodes.length, lang)} · ${formatYear(from, lang)} – ${formatYear(to, lang)}`;
 }
+
+/**
+ * An episode's date as the list and card show it (HANDOFF §7): "1331–1355", "1389",
+ * "499. p.n.e.–479. p.n.e.". No spaces round the dash, unlike formatYearRange. A hand-checked
+ * dateLabel ("28. jun 1389.") wins when there is one.
+ */
+export function episodeDate(ep: Pick<EpisodeView, 'from' | 'to' | 'dateLabel'>, lang: Lang): string {
+  if (ep.dateLabel) return pick(ep.dateLabel, lang);
+  return ep.from === ep.to ? formatYear(ep.from, lang) : `${formatYear(ep.from, lang)}–${formatYear(ep.to, lang)}`;
+}
