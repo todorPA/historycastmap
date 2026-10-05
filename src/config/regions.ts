@@ -1,4 +1,5 @@
 import type { Lang } from '../types/events';
+import { contrastRatio } from '../lib/contrast';
 
 /**
  * Marker colour comes from the event's region, not its episode.
@@ -109,17 +110,8 @@ export function regionColor(region: string | undefined): string {
  * White on Srednja Evropa (#a9c641) is about 1.9:1; ink on Azija (#5552bb) is about 2.2:1.
  * Picking per fill is the only way both stay legible.
  *
- * Relative luminance per WCAG, then the higher-contrast of ink or white.
+ * The higher-contrast of ink or white, by WCAG ratio (lib/contrast.ts).
  */
 export function onColor(fill: string): string {
-  const hex = fill.replace('#', '');
-  const ch = [0, 2, 4].map((i) => {
-    const v = parseInt(hex.slice(i, i + 2), 16) / 255;
-    return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
-  });
-  const L = 0.2126 * ch[0] + 0.7152 * ch[1] + 0.0722 * ch[2];
-  // Contrast against ink (#1a1713, L ~= 0.0094) vs against white.
-  const vsInk = (L + 0.05) / (0.0094 + 0.05);
-  const vsWhite = 1.05 / (L + 0.05);
-  return vsInk >= vsWhite ? '#1a1713' : '#ffffff';
+  return contrastRatio(fill, '#1a1713') >= contrastRatio(fill, '#ffffff') ? '#1a1713' : '#ffffff';
 }
