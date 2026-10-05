@@ -7,6 +7,7 @@ import { COLLECTIONS } from '../config/collections';
 
 /** The closed region set, taken from the palette so the two can never drift apart. */
 const REGION_NAMES = Object.keys(REGION_COLORS);
+const COLLECTION_IDS = COLLECTIONS.map((c) => c.id);
 
 /**
  * The shareable view lives in the query string, so a link reproduces exactly what the
@@ -19,7 +20,7 @@ export interface UrlState {
   dataset: DatasetName;
   from: number | null;
   to: number | null;
-  collectionId: string | null;
+  collections: string[] | null;
   episodeId: string | null;
   eventId: string | null;
   lang: Lang | null;
@@ -98,10 +99,10 @@ export function parseUrlState(search: string): UrlState {
     dataset,
     from: parseYear(params.get(PARAM.from)),
     to: parseYear(params.get(PARAM.to)),
-    // Validated against the curated list, so a renamed collection degrades to "all".
-    collectionId: COLLECTIONS.some((c) => c.id === params.get(PARAM.collection))
-      ? params.get(PARAM.collection)
-      : null,
+    // A list since collections became multi-select; a legacy single id is a one-item list.
+    // Validated against the curated list, so a renamed collection drops out instead of
+    // matching nothing.
+    collections: parseAllowed(params.get(PARAM.collection), COLLECTION_IDS),
     episodeId: params.get(PARAM.episode) || null,
     eventId: params.get(PARAM.event) || null,
     lang: rawLang === 'sr' || rawLang === 'en' ? rawLang : null,
@@ -120,7 +121,7 @@ export function buildSearch(state: {
   from: number;
   to: number;
   isFullRange: boolean;
-  collectionId: string | null;
+  collections: string[];
   episodeId: string | null;
   eventId: string | null;
   lang: Lang;
@@ -137,7 +138,7 @@ export function buildSearch(state: {
     params.set(PARAM.from, String(state.from));
     params.set(PARAM.to, String(state.to));
   }
-  if (state.collectionId) params.set(PARAM.collection, state.collectionId);
+  if (state.collections.length > 0) params.set(PARAM.collection, state.collections.join(','));
   if (state.episodeId) params.set(PARAM.episode, state.episodeId);
   if (state.eventId) params.set(PARAM.event, state.eventId);
   if (state.lang !== 'sr') params.set(PARAM.lang, state.lang);

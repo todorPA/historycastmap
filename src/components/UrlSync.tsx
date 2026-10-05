@@ -13,16 +13,7 @@ const WRITE_DEBOUNCE_MS = 250;
  */
 export default function UrlSync({ dataset }: { dataset: DatasetName }) {
   const { range, bounds } = useTime();
-  const {
-    activeCollectionId,
-    activeEpisodeId,
-    selectedEventId,
-    lang,
-    basemapId,
-    activeRegions,
-    activeTypes,
-    activeSeries,
-  } = useFilters();
+  const { filters, selectedEpisodeId, selectedEventId, lang, basemapId } = useFilters();
 
   useEffect(() => {
     const id = window.setTimeout(() => {
@@ -32,14 +23,14 @@ export default function UrlSync({ dataset }: { dataset: DatasetName }) {
           from: range.from,
           to: range.to,
           isFullRange: range.from === bounds.from && range.to === bounds.to,
-          collectionId: activeCollectionId,
-          episodeId: activeEpisodeId,
+          collections: filters.collections,
+          episodeId: selectedEpisodeId,
           eventId: selectedEventId,
           lang,
           basemapId,
-          regions: activeRegions,
-          types: activeTypes,
-          series: activeSeries,
+          regions: filters.regions,
+          types: filters.types,
+          series: filters.series,
         }),
       );
     }, WRITE_DEBOUNCE_MS);
@@ -50,14 +41,11 @@ export default function UrlSync({ dataset }: { dataset: DatasetName }) {
     range.to,
     bounds.from,
     bounds.to,
-    activeCollectionId,
-    activeEpisodeId,
+    filters,
+    selectedEpisodeId,
     selectedEventId,
     lang,
     basemapId,
-    activeRegions,
-    activeTypes,
-    activeSeries,
   ]);
 
   return null;

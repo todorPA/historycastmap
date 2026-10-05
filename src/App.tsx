@@ -1,7 +1,7 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useGeoData } from './lib/data';
 import { parseUrlState } from './lib/urlState';
-import { DataProvider } from './state/DataContext';
+import { DataProvider, useData } from './state/DataContext';
 import { TimeProvider } from './state/TimeContext';
 import { FilterProvider, useFilters } from './state/FilterContext';
 import { t } from './lib/i18n';
@@ -21,6 +21,34 @@ function Shell() {
       </main>
     </div>
   );
+}
+
+/** The smallest span covering every given span, or null if there are none. */
+function unionSpan(spans: Array<{ from: number; to: number } | null>): { from: number; to: number } | null {
+  const real = spans.filter((s): s is { from: number; to: number } => s !== null);
+  if (real.length === 0) return null;
+  return { from: Math.min(...real.map((s) => s.from)), to: Math.max(...real.map((s) => s.to)) };
+}
+
+/**
+ * A link that names an event but no episode (`?e=` from before episodes were selectable)
+ * selects that event's episode once the data is in. Renders nothing.
+ */
+function SelectLinkedEvent({ urlState }: { urlState: ReturnType<typeof parseUrlState> }) {
+  const { data } = useData();
+  const { selectEpisode, setSelectedEventId } = useFilters();
+  const done = useRef(false);
+  useEffect(() => {
+    if (done.current || urlState.episodeId || !urlState.eventId) return;
+    done.current = true;
+    const event = data.events.find((e) => e.id === urlState.eventId);
+    if (!event) return;
+    // selectEpisode clears the selected event (right for a fresh pick, wrong here), so the
+    // event is set again after it; both land in one render, and the last update wins.
+    selectEpisode(event.episodeId);
+    setSelectedEventId(event.id);
+  }, [data.events, urlState, selectEpisode, setSelectedEventId]);
+  return null;
 }
 
 /** Status screens need the language toggle's default, so they live inside FilterProvider. */
@@ -50,20 +78,23 @@ function Loader({ urlState }: { urlState: ReturnType<typeof parseUrlState> }) {
   }
 
   /**
-   * An explicit period in the link always wins. Failing that, a link that names a collection
-   * opens framed on it, so `?col=antika` behaves like clicking Antika rather than showing
-   * the whole 1200 BC to 2006 axis with the collection bunched against one edge.
+   * An explicit period in the link always wins. Failing that, a link that names collections
+   * opens framed on all of them together, so `?col=antika` shows Antiquity rather than the
+   * whole axis with the collection bunched against one edge.
    */
-  const urlCollection = getCollection(urlState.collectionId);
   const initialRange =
     urlState.from != null && urlState.to != null
       ? { from: urlState.from, to: urlState.to }
-      : urlCollection
-        ? collectionSpan(urlCollection, loaded.data.events)
-        : null;
+      : unionSpan(
+          (urlState.collections ?? []).map((id) => {
+            const c = getCollection(id);
+            return c ? collectionSpan(c, loaded.data.events) : null;
+          }),
+        );
 
   return (
     <DataProvider value={loaded}>
+      <SelectLinkedEvent urlState={urlState} />
       <TimeProvider bounds={loaded.bounds} initialRange={initialRange}>
         <UrlSync dataset={urlState.dataset} />
         <Shell />
@@ -80,7 +111,7 @@ export default function App() {
     <FilterProvider
       initial={{
         lang: urlState.lang,
-        collections: urlState.collectionId ? [urlState.collectionId] : null,
+        collections: urlState.collections,
         episodeId: urlState.episodeId,
         eventId: urlState.eventId,
         basemapId: urlState.basemapId,
