@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
- * Fetches the self-hosted webfonts into public/fonts/.
+ * Fetches the self-hosted webfonts into public/fonts/, where they are committed.
  *
- * Not part of the build. The @font-face rules in src/styles/fonts.css fall through to the
- * system stack when these files are absent, so a fresh clone runs and looks correct without
- * this step; running it just upgrades the typography. Keeps the fonts out of git.
+ * Run it only to add or update a face; the build uses the committed files and never downloads.
+ * They used to be gitignored and fetched by hand, which is how the GitHub Actions deploy ended up
+ * serving none of them.
  *
- *   npm run fonts
+ *   npm run fonts            fetch what is missing
+ *   npm run fonts -- --force refetch everything
  */
 import { mkdir, writeFile, access } from 'node:fs/promises';
 import { argv, exit } from 'node:process';
@@ -14,19 +15,42 @@ import { argv, exit } from 'node:process';
 const OUT = new URL('../public/fonts/', import.meta.url);
 const CDN = 'https://cdn.jsdelivr.net/fontsource/fonts';
 
-// Two subsets per face. latin-ext carries the Serbian diacritics (č ć š ž đ); cyrillic
-// covers the handful of Cyrillic strings in the dataset. Split rather than merged so a
-// reader who never hits a Cyrillic glyph never downloads that file.
+/**
+ * Every face needs its `latin` subset as well as `latin-ext`. Fontsource's latin-ext holds the
+ * extended letters (č ć š ž đ) but NOT a–z or 0–9, and for a long time this script fetched only
+ * that one — so ordinary letters always fell back to the system font and only the diacritics
+ * rendered in the webfont. scripts/fonts.test.mjs now checks each file holds what fonts.css
+ * claims it holds.
+ *
+ * Split by subset so a reader who never meets a Cyrillic or Vietnamese glyph never downloads it;
+ * the unicode-range values in fonts.css make that choice, and must match these subsets.
+ */
+const STATIC = [
+  ['ibm-plex-sans', [400, 600], ['latin', 'latin-ext', 'cyrillic']],
+  ['ibm-plex-mono', [400, 600], ['latin', 'latin-ext']],
+  ['ibm-plex-mono', [400], ['cyrillic']],
+];
+// Variable fonts: one file per subset and style carries every weight.
+const VARIABLE = [
+  ['literata', ['normal'], ['latin', 'latin-ext', 'cyrillic']],
+  // Newsreader has no Cyrillic; Serbian content here is Latin script.
+  ['newsreader', ['normal', 'italic'], ['latin', 'latin-ext']],
+];
+
 const FILES = [
-  ['ibm-plex-sans-400.woff2', `${CDN}/ibm-plex-sans@latest/latin-ext-400-normal.woff2`],
-  ['ibm-plex-sans-600.woff2', `${CDN}/ibm-plex-sans@latest/latin-ext-600-normal.woff2`],
-  ['ibm-plex-sans-cyrillic-400.woff2', `${CDN}/ibm-plex-sans@latest/cyrillic-400-normal.woff2`],
-  ['ibm-plex-sans-cyrillic-600.woff2', `${CDN}/ibm-plex-sans@latest/cyrillic-600-normal.woff2`],
-  ['ibm-plex-mono-400.woff2', `${CDN}/ibm-plex-mono@latest/latin-ext-400-normal.woff2`],
-  ['ibm-plex-mono-600.woff2', `${CDN}/ibm-plex-mono@latest/latin-ext-600-normal.woff2`],
-  ['ibm-plex-mono-cyrillic-400.woff2', `${CDN}/ibm-plex-mono@latest/cyrillic-400-normal.woff2`],
-  ['literata.woff2', `${CDN}/literata:vf@latest/latin-ext-wght-normal.woff2`],
-  ['literata-cyrillic.woff2', `${CDN}/literata:vf@latest/cyrillic-wght-normal.woff2`],
+  ...STATIC.flatMap(([face, weights, subsets]) =>
+    weights.flatMap((w) =>
+      subsets.map((sub) => [`${face}-${sub}-${w}.woff2`, `${CDN}/${face}@latest/${sub}-${w}-normal.woff2`]),
+    ),
+  ),
+  ...VARIABLE.flatMap(([face, styles, subsets]) =>
+    styles.flatMap((style) =>
+      subsets.map((sub) => [
+        `${face}-${sub}${style === 'italic' ? '-italic' : ''}.woff2`,
+        `${CDN}/${face}:vf@latest/${sub}-wght-${style}.woff2`,
+      ]),
+    ),
+  ),
 ];
 
 const force = argv.includes('--force');
@@ -64,4 +88,4 @@ if (failed) {
   );
   exit(1);
 }
-console.log('\nFonts in public/fonts/ (gitignored). Restart the dev server to pick them up.');
+console.log('\nFonts written to public/fonts/. Commit them; restart the dev server to pick them up.');
