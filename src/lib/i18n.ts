@@ -58,6 +58,19 @@ const dict = {
     eventsHere: 'događaja na ovom mestu iste godine',
     filters: 'Filteri',
     clearFilters: 'Poništi',
+    mapaIstorije: 'Mapa istorije',
+    searchPlaceholder: 'Epizode, ličnosti, mesta, godine…',
+    searchLabel: 'Pretraga epizoda',
+    groupTypes: 'Vrsta događaja u epizodi',
+    clearAll: 'Poništi sve',
+    done: 'Gotovo',
+    removeFilter: 'Ukloni filter',
+    unavailable: 'Nije dostupno uz izabrane filtere',
+    emptyFilters: 'Nijedna epizoda ne odgovara filterima.',
+    emptyFiltersHint: 'Probaj da ukloniš neki filter ili zbirku.',
+    source: 'Izvor',
+    matchPerson: 'ličnost',
+    matchPlace: 'mesto',
     countUnit: 'događaja',
     series: 'Serijal',
     series_main: 'Glavna serija',
@@ -133,6 +146,19 @@ const dict = {
     eventsHere: 'events here in the same year',
     filters: 'Filters',
     clearFilters: 'Clear',
+    mapaIstorije: 'History map',
+    searchPlaceholder: 'Episodes, people, places, years…',
+    searchLabel: 'Search episodes',
+    groupTypes: 'Event type in episode',
+    clearAll: 'Clear all',
+    done: 'Done',
+    removeFilter: 'Remove filter',
+    unavailable: 'Not available with the selected filters',
+    emptyFilters: 'No episodes match the filters.',
+    emptyFiltersHint: 'Try removing a filter or a collection.',
+    source: 'Source',
+    matchPerson: 'person',
+    matchPlace: 'place',
     countUnit: 'events',
     series: 'Series',
     series_main: 'Main show',
@@ -153,6 +179,9 @@ const dict = {
       'OpenHistoricalMap: does not follow the timeline year (raster tiles carry no time dimension)',
   },
 } as const;
+
+/** Both dictionaries, for the parity test (i18n.test.ts). */
+export const dictionaries = dict;
 
 export type UiKey = keyof (typeof dict)['sr'];
 
