@@ -761,6 +761,12 @@ body {
   text-align: left;
 }
 
+/* The whole period already shows: readable, not faded (HANDOFF §15), and not clickable. */
+.timeline__reset:disabled {
+  color: var(--tx3);
+  cursor: default;
+}
+
 .timeline__speed:hover {
   color: var(--text);
 }

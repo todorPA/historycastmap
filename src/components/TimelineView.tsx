@@ -79,7 +79,7 @@ interface Item {
 
 export default function TimelineView() {
   const { data } = useData();
-  const { range, bounds, setRange } = useTime();
+  const { range, bounds, setRange, resetRange } = useTime();
   const {
     lang,
     selectedEpisodeId,
@@ -435,6 +435,17 @@ export default function TimelineView() {
           {/* Mono and tabular in a reserved width, so the digits climb in place during
               playback instead of shoving the controls around. */}
           <span className="timeline__range">{formatYearRange(range.from, range.to, lang)}</span>
+
+          {/* Moved here from the old sidebar's stats block (HANDOFF §4 removes it, §12.1
+              puts the reset in this header). Disabled when the whole period already shows. */}
+          <button
+            type="button"
+            className="timeline__speed timeline__reset"
+            onClick={resetRange}
+            disabled={range.from === bounds.from && range.to === bounds.to}
+          >
+            {t(lang, 'resetRange')}
+          </button>
 
           {/* Three explicit steps rather than one cycling caret: a single glyph cannot say
               "three heights, you are on the second". Same segmented idiom as the language
