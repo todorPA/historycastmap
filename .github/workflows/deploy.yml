@@ -1,7 +1,12 @@
-name: Deploy to GitHub Pages
+name: Test and deploy
 
 on:
   push:
+    branches: [main]
+  # Pull requests run the same tests and build, so a failure shows on the PR before merging
+  # instead of on main as a failed deploy. Nothing is published from a PR: the Pages steps and
+  # the deploy job below are skipped for this event.
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -10,8 +15,11 @@ permissions:
   pages: write
   id-token: write
 
+# Deploys share one group so a newer push supersedes an older one. Each PR gets its own group:
+# with a single shared group, opening or updating a PR would cancel a deploy already running
+# on main.
 concurrency:
-  group: pages
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'pages' }}
   cancel-in-progress: true
 
 jobs:
@@ -31,12 +39,15 @@ jobs:
       - run: npm test
       - run: npm run build
       - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
         with:
           path: dist
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
