@@ -80,7 +80,7 @@ export default function App() {
     <FilterProvider
       initial={{
         lang: urlState.lang,
-        collectionId: urlState.collectionId,
+        collections: urlState.collectionId ? [urlState.collectionId] : null,
         episodeId: urlState.episodeId,
         eventId: urlState.eventId,
         basemapId: urlState.basemapId,

@@ -2,46 +2,62 @@ import { createContext, useCallback, useContext, useMemo, useState } from 'react
 import type { ReactNode } from 'react';
 import type { Lang, SeriesId } from '../types/events';
 import { DEFAULT_BASEMAP_ID } from '../config/basemaps';
+import { EMPTY_FILTERS, type EpisodeFilterState, type FilterGroup } from '../lib/episodeFilters';
+import { toggleFilterValue, toggleSelection } from './filterState';
 
 /** Timeline panel height. Shared because the map must re-fit when its own height changes. */
 export const TIMELINE_SIZES = ['s', 'm', 'l'] as const;
 export type TimelineSize = (typeof TIMELINE_SIZES)[number];
 
 interface FilterContextValue {
-  /** null = the whole archive. A curated set of episodes; see config/collections.ts. */
-  activeCollectionId: string | null;
-  toggleCollection: (id: string) => void;
-
-  /** null = all episodes. */
-  activeEpisodeId: string | null;
-  /** Clicking the active episode again clears the filter. */
+  // ---------- episode-level state (HANDOFF §5–§8) ----------
+  /** Active values per filter group. Empty group = no restriction. */
+  filters: EpisodeFilterState;
+  toggleFilter: (group: FilterGroup, value: string) => void;
+  /** Clears all four groups, Zbirke included (§6.4). */
+  clearFilters: () => void;
+  query: string;
+  setQuery: (q: string) => void;
+  selectedEpisodeId: string | null;
+  selectEpisode: (id: string | null) => void;
+  /** Picking the selected episode again deselects it (§7). */
   toggleEpisode: (id: string) => void;
-  clearEpisode: () => void;
+  /** Shared so a hover in one view can highlight the same episode in the others (§17). */
+  hoveredEpisodeId: string | null;
+  setHoveredEpisodeId: (id: string | null) => void;
 
-  /** Empty = no restriction. Both are OR within a facet, AND across facets. */
-  activeRegions: string[];
-  toggleRegion: (region: string) => void;
-  activeTypes: string[];
-  toggleType: (type: string) => void;
-  /** Same semantics, but the value lives on the episode rather than the event. */
-  activeSeries: SeriesId[];
-  toggleSeries: (series: SeriesId) => void;
-  clearFacets: () => void;
-
+  // ---------- unchanged ----------
   lang: Lang;
   setLang: (lang: Lang) => void;
-
   selectedEventId: string | null;
   setSelectedEventId: (id: string | null) => void;
-
-  /** Basemap is state, not a hardcoded URL — Phase 2 adds the OHM option. */
+  /** Basemap is state, not a hardcoded URL. */
   basemapId: string;
   setBasemapId: (id: string) => void;
-
   timelineSize: TimelineSize;
   setTimelineSize: (size: TimelineSize) => void;
   /** Kept for the header's double-click shortcut. */
   cycleTimelineSize: () => void;
+
+  // ---------- deprecated: derived from the state above while components migrate ----------
+  /** @deprecated first active collection; use `filters.collections`. */
+  activeCollectionId: string | null;
+  /** @deprecated single-select collection toggle; use `toggleFilter('collections', id)`. */
+  toggleCollection: (id: string) => void;
+  /** @deprecated use `selectedEpisodeId`. */
+  activeEpisodeId: string | null;
+  /** @deprecated use `selectEpisode(null)`. */
+  clearEpisode: () => void;
+  /** @deprecated use `filters.regions` / `filters.types` / `filters.series`. */
+  activeRegions: string[];
+  activeTypes: string[];
+  activeSeries: SeriesId[];
+  /** @deprecated use `toggleFilter`. */
+  toggleRegion: (region: string) => void;
+  toggleType: (type: string) => void;
+  toggleSeries: (series: SeriesId) => void;
+  /** @deprecated clears region, type and series only; use `clearFilters`. */
+  clearFacets: () => void;
 }
 
 const FilterContext = createContext<FilterContextValue | null>(null);
@@ -53,7 +69,7 @@ export function FilterProvider({
   /** Values lifted from a shared URL; anything absent falls back to the defaults. */
   initial?: {
     lang?: Lang | null;
-    collectionId?: string | null;
+    collections?: string[] | null;
     episodeId?: string | null;
     eventId?: string | null;
     basemapId?: string | null;
@@ -63,13 +79,15 @@ export function FilterProvider({
   };
   children: ReactNode;
 }) {
-  const [activeCollectionId, setActiveCollectionId] = useState<string | null>(
-    initial?.collectionId ?? null,
-  );
-  const [activeEpisodeId, setActiveEpisodeId] = useState<string | null>(initial?.episodeId ?? null);
-  const [activeRegions, setActiveRegions] = useState<string[]>(initial?.regions ?? []);
-  const [activeTypes, setActiveTypes] = useState<string[]>(initial?.types ?? []);
-  const [activeSeries, setActiveSeries] = useState<SeriesId[]>(initial?.series ?? []);
+  const [filters, setFilters] = useState<EpisodeFilterState>(() => ({
+    collections: initial?.collections ?? [],
+    series: initial?.series ?? [],
+    regions: initial?.regions ?? [],
+    types: initial?.types ?? [],
+  }));
+  const [query, setQuery] = useState('');
+  const [selectedEpisodeId, setSelectedEpisodeId] = useState<string | null>(initial?.episodeId ?? null);
+  const [hoveredEpisodeId, setHoveredEpisodeId] = useState<string | null>(null);
   const [lang, setLang] = useState<Lang>(initial?.lang ?? 'sr');
   const [selectedEventId, setSelectedEventId] = useState<string | null>(initial?.eventId ?? null);
   const [basemapId, setBasemapId] = useState<string>(initial?.basemapId ?? DEFAULT_BASEMAP_ID);
@@ -81,68 +99,54 @@ export function FilterProvider({
     );
   }, []);
 
-  /**
-   * Picking a collection drops the episode filter. The two compose (a collection narrows the
-   * archive, an episode narrows it further) but an episode chosen before the collection is
-   * usually not in it, and that combination reads as a broken filter: a named collection
-   * showing nothing.
-   */
-  const toggleCollection = useCallback((id: string) => {
-    setActiveCollectionId((prev) => (prev === id ? null : id));
-    setActiveEpisodeId(null);
+  /** Any filter change drops the selected *event*: it may no longer be on screen. */
+  const toggleFilter = useCallback((group: FilterGroup, value: string) => {
+    setFilters((prev) => toggleFilterValue(prev, group, value));
+    setSelectedEventId(null);
+  }, []);
+
+  const clearFilters = useCallback(() => {
+    setFilters(EMPTY_FILTERS);
+    setSelectedEventId(null);
+  }, []);
+
+  const selectEpisode = useCallback((id: string | null) => {
+    setSelectedEpisodeId(id);
     setSelectedEventId(null);
   }, []);
 
   const toggleEpisode = useCallback((id: string) => {
-    setActiveEpisodeId((prev) => (prev === id ? null : id));
+    setSelectedEpisodeId((prev) => toggleSelection(prev, id));
     setSelectedEventId(null);
   }, []);
 
-  const clearEpisode = useCallback(() => {
-    setActiveEpisodeId(null);
+  // ---------- deprecated adapter ----------
+  const toggleCollection = useCallback((id: string) => {
+    setFilters((prev) => ({ ...prev, collections: prev.collections[0] === id ? [] : [id] }));
+    setSelectedEpisodeId(null);
     setSelectedEventId(null);
   }, []);
-
-  /** Toggling a facet clears the selection: the selected event may no longer be visible. */
-  const toggle = (value: string, list: string[]) =>
-    list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
-
-  const toggleRegion = useCallback((region: string) => {
-    setActiveRegions((prev) => toggle(region, prev));
-    setSelectedEventId(null);
-  }, []);
-
-  const toggleType = useCallback((type: string) => {
-    setActiveTypes((prev) => toggle(type, prev));
-    setSelectedEventId(null);
-  }, []);
-
-  const toggleSeries = useCallback((series: SeriesId) => {
-    setActiveSeries((prev) => toggle(series, prev) as SeriesId[]);
-    setSelectedEventId(null);
-  }, []);
-
+  const clearEpisode = useCallback(() => selectEpisode(null), [selectEpisode]);
+  const toggleRegion = useCallback((v: string) => toggleFilter('regions', v), [toggleFilter]);
+  const toggleType = useCallback((v: string) => toggleFilter('types', v), [toggleFilter]);
+  const toggleSeries = useCallback((v: SeriesId) => toggleFilter('series', v), [toggleFilter]);
   const clearFacets = useCallback(() => {
-    setActiveRegions([]);
-    setActiveTypes([]);
-    setActiveSeries([]);
+    setFilters((prev) => ({ ...EMPTY_FILTERS, collections: prev.collections }));
     setSelectedEventId(null);
   }, []);
 
   const value = useMemo<FilterContextValue>(
     () => ({
-      activeCollectionId,
-      toggleCollection,
-      activeEpisodeId,
+      filters,
+      toggleFilter,
+      clearFilters,
+      query,
+      setQuery,
+      selectedEpisodeId,
+      selectEpisode,
       toggleEpisode,
-      clearEpisode,
-      activeRegions,
-      toggleRegion,
-      activeTypes,
-      toggleType,
-      activeSeries,
-      toggleSeries,
-      clearFacets,
+      hoveredEpisodeId,
+      setHoveredEpisodeId,
       lang,
       setLang,
       selectedEventId,
@@ -152,26 +156,22 @@ export function FilterProvider({
       timelineSize,
       setTimelineSize,
       cycleTimelineSize,
-    }),
-    [
-      activeCollectionId,
+      activeCollectionId: filters.collections[0] ?? null,
       toggleCollection,
-      activeEpisodeId,
-      toggleEpisode,
+      activeEpisodeId: selectedEpisodeId,
       clearEpisode,
-      activeRegions,
+      activeRegions: filters.regions,
+      activeTypes: filters.types,
+      activeSeries: filters.series,
       toggleRegion,
-      activeTypes,
       toggleType,
-      activeSeries,
       toggleSeries,
       clearFacets,
-      lang,
-      selectedEventId,
-      basemapId,
-      timelineSize,
-      setTimelineSize,
-      cycleTimelineSize,
+    }),
+    [
+      filters, toggleFilter, clearFilters, query, selectedEpisodeId, selectEpisode, toggleEpisode,
+      hoveredEpisodeId, lang, selectedEventId, basemapId, timelineSize, cycleTimelineSize,
+      toggleCollection, clearEpisode, toggleRegion, toggleType, toggleSeries, clearFacets,
     ],
   );
 
