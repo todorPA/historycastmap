@@ -1,8 +1,8 @@
 # HistoryCast Map
 
-Interactive, bilingual (EN/SR) map + timeline of historical events extracted from the **HistoryCast** podcast (181 episodes, Serbian). Scrub the timeline, filter by episode, click an event to jump to the exact minute in the podcast.
+Interactive, bilingual (EN/SR) map + timeline of historical events extracted from the **HistoryCast** podcast (Serbian) — 178 episodes mapped. Scrub the timeline, filter by episode, click an event to jump to the exact minute in the podcast.
 
-**Interaktivna dvojezična (EN/SR) mapa + vremenska osa istorijskih događaja iz podkasta HistoryCast (181 epizoda).** Klizaj vremensku osu, filtriraj po epizodi, klikni na događaj da skočiš na tačan minut u podkastu.
+**Interaktivna dvojezična (EN/SR) mapa + vremenska osa istorijskih događaja iz podkasta HistoryCast (178 epizoda na mapi).** Klizaj vremensku osu, filtriraj po epizodi, klikni na događaj da skočiš na tačan minut u podkastu.
 
 ---
 
@@ -27,7 +27,7 @@ npm run dev
 
 ## Data
 - `public/data/geo-events.sample.json` — prototype dataset (3 episodes, 20 events).
-- `public/data/geo-events.json` — full dataset (all 181 episodes), added in Phase 3.
+- `public/data/geo-events.json` — full dataset (178 episodes, 742 events); what the app loads by default.
 - Contract: `geo-events.schema.json`.
 
 ## Documentation
@@ -40,10 +40,11 @@ npm run dev
 | `geo-events.schema.json` | Data contract |
 
 ## Phases
-1. **Prototype** — map + timeline + episode filter + podcast deep-links (sample data). ← current
-2. **OHM basemap** — time-aware historical borders.
-3. **Full dataset** — all 181 episodes, clustering, performance.
-4. **Polish** — routes/paths, search, share-URLs.
+1. **Prototype** — map + timeline + episode filter + podcast deep-links (sample data). Done.
+2. **OHM basemap** — time-aware historical borders. Deferred; see `SPEC-ohm.md`.
+3. **Full dataset** — 178 episodes, clustering, performance. Done.
+4. **Polish** — region filter, search and share-URLs done; routes/paths open. The episode-based
+   redesign is in progress: `docs/plans/2026-10-05-redesign.md`.
 
 ## Credits
 Content: HistoryCast podcast (rss.com/rs-historycast). Historical borders (Phase 2): OpenHistoricalMap. Base map: OpenStreetMap.
