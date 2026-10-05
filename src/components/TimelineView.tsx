@@ -3,6 +3,7 @@ import { DataSet, Timeline } from 'vis-timeline/standalone';
 import type { TimelineOptions } from 'vis-timeline/standalone';
 import 'vis-timeline/styles/vis-timeline-graph2d.css';
 import { useCollectionEpisodes, useData, useSideEpisodes } from '../state/DataContext';
+import { isVisible } from '../lib/visibility';
 import { useTime } from '../state/TimeContext';
 import { useFilters } from '../state/FilterContext';
 import { TIMELINE_SIZES } from '../state/FilterContext';
@@ -15,6 +16,9 @@ import { useTimelinePlayback } from './useTimelinePlayback';
 import type { Lang } from '../types/events';
 
 const RANGE_DEBOUNCE_MS = 150;
+
+/** Every year: the timeline's items ignore the range (see `items`). */
+const UNBOUNDED = { from: -Infinity, to: Infinity };
 
 /** Share of the viewport the timeline may occupy at each size step. */
 const SIZE_FRACTION: Record<TimelineSize, number> = { s: 0.24, m: 0.45, l: 0.7 };
@@ -116,23 +120,25 @@ export default function TimelineView() {
   const items = useMemo<Item[]>(
     () =>
       data.events
-        .filter((e) => collectionEpisodes == null || collectionEpisodes.has(e.episodeId))
-        .filter((e) => activeEpisodeId == null || e.episodeId === activeEpisodeId)
         /**
-         * Facets apply here too. They did not, and the two halves then disagreed: picking a
-         * region emptied the map but left every event on the axis, so clicking one selected an
-         * event with no marker — PanToSelected found no position and the popup never opened.
+         * The same rule as the map, minus the year range. It once had its own filter chain,
+         * which forgot the facets: picking a region emptied the map but left every event on
+         * the axis, so clicking one selected an event with no marker.
          *
-         * The year range is still deliberately excluded (see above): scrubbing narrow would
-         * delete the very items you need in order to scrub back out. A facet has no such
-         * problem, because its own chip is how you undo it.
+         * The range stays unbounded on purpose — scrubbing narrow would delete the very items
+         * you need in order to scrub back out. A facet has no such problem, because its own
+         * chip is how you undo it.
          */
-        .filter((e) => activeRegions.length === 0 || activeRegions.includes(e.region ?? ''))
-        .filter((e) => activeTypes.length === 0 || activeTypes.includes(e.type ?? ''))
-        .filter(
-          (e) =>
-            activeSeries.length === 0 ||
-            activeSeries.includes(sideEpisodeIds.has(e.episodeId) ? 'side' : 'main'),
+        .filter((e) =>
+          isVisible(e, {
+            activeCollectionEpisodes: collectionEpisodes,
+            activeEpisodeId,
+            activeRegions,
+            activeTypes,
+            activeSeries,
+            sideEpisodeIds,
+            range: UNBOUNDED,
+          }),
         )
         .map((e) => {
           // Same colour language as the map: region, not episode (config/regions.ts).

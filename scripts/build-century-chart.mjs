@@ -12,6 +12,7 @@
  * public/data/geo-events.json is replaced.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
+import { agree, emptyCenturiesPhrase } from './lib/serbian.mjs';
 
 const ROOT = new URL('..', import.meta.url);
 const data = JSON.parse(readFileSync(new URL('public/data/geo-events.json', ROOT), 'utf8'));
@@ -105,25 +106,10 @@ const peakX = x(peakIndex) + barW / 2;
 const peakY = y(peak.n);
 const noteX = peakX - 24;
 
-/**
- * "dvanaest vekova nema" used to be hardcoded next to a computed percentage, so it went
- * quietly false when the archive grew from 456 to 741 events and the empty centuries fell
- * from twelve to seven. Spelled out in words to match the surrounding copy, with noun and
- * verb agreeing with the count: 1 vek nema, 2–4 veka nemaju, 5+ vekova nema.
- */
-const NUMERALS = [
-  'nula', 'jedan', 'dva', 'tri', 'četiri', 'pet', 'šest', 'sedam', 'osam', 'devet', 'deset',
-  'jedanaest', 'dvanaest', 'trinaest', 'četrnaest', 'petnaest', 'šesnaest', 'sedamnaest',
-  'osamnaest', 'devetnaest', 'dvadeset',
-];
+// "dvanaest vekova nema" used to be hardcoded next to a computed percentage, so it went
+// quietly false when the archive grew and the empty centuries fell from twelve to seven.
 const emptyCount = centuries.filter((d) => d.n === 0).length;
-const emptyWord = NUMERALS[emptyCount] ?? String(emptyCount);
-const emptyPhrase =
-  emptyCount === 1
-    ? `${emptyWord} vek nema`
-    : emptyCount >= 2 && emptyCount <= 4
-      ? `${emptyWord} veka nemaju`
-      : `${emptyWord} vekova nema`;
+const emptyPhrase = emptyCenturiesPhrase(emptyCount);
 
 const svg = `<figure class="band band--chart">
       <svg class="cc" viewBox="0 0 ${W} ${H}" role="img"
@@ -159,24 +145,6 @@ function splice(html, start, end, body) {
     '\n    ' +
     html.slice(html.indexOf(end))
   );
-}
-
-/**
- * Serbian numeral agreement for the counted noun. The form follows the LAST digit, except
- * that the teens (11–14) always take the genitive plural: 1 epizoda, 2–4 epizode,
- * 5+ epizoda, but 11–14 epizoda.
- *
- * This exists because the landing copy used to be hand-written, and "102 epizode" silently
- * became wrong the moment the archive reached 178 — a stale number is visible, but wrong
- * grammar in the site's own language is worse.
- */
-function agree(n, [one, few, many]) {
-  const last2 = n % 100;
-  const last1 = n % 10;
-  if (last2 >= 11 && last2 <= 14) return many;
-  if (last1 === 1) return one;
-  if (last1 >= 2 && last1 <= 4) return few;
-  return many;
 }
 
 const counts = {
