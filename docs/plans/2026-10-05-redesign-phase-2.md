@@ -59,8 +59,9 @@ seven Latin faces (no a–z).
 
 **Step 3 — fetch the latin subset.** In `fetch-fonts.mjs` add, per face, the `latin-<weight>`
 file (`…/latin-400-normal.woff2`), and Newsreader: `newsreader:vf@latest/latin-wght-normal`,
-`latin-ext-wght-normal`, `latin-wght-italic`, `latin-ext-wght-italic`. Pin versions instead of
-`@latest`, so a rebuild cannot silently change the type.
+`latin-ext-wght-normal`, `latin-wght-italic`, `latin-ext-wght-italic`.
+*(Executed differently: versions stay `@latest`. They could not be looked up offline, and with
+the files committed the build never downloads, so a CDN update cannot change the site.)*
 
 **Step 4 — owner runs** (network): `npm run fonts`.
 
