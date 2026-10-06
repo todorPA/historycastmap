@@ -12,8 +12,9 @@ import PanelFooter from './panel/PanelFooter';
 
 /**
  * The left panel (HANDOFF §4): header, search + filter button, active chips, count, the
- * era-grouped list, footer. The filter panel opens over everything below the search row; while
- * it is open the rest is `inert`, so neither the mouse nor Tab can reach what it covers.
+ * era-grouped list, footer. The filter panel opens over everything below the search row,
+ * footer included; while it is open that area is `inert`, so neither the mouse nor Tab can
+ * reach what it covers.
  */
 export default function Sidebar() {
   const { filters, query, setQuery, clearFilters, selectEpisode, lang } = useFilters();
@@ -34,7 +35,18 @@ export default function Sidebar() {
   const narrowed = activeFilterCount(filters) > 0 || query.trim() !== '';
 
   return (
-    <aside className="panel">
+    <aside
+      className="panel"
+      // Esc closes the filter panel wherever focus is — the search row and header stay
+      // reachable while it is open, and a handler on the panel alone missed them. The search
+      // box keeps Esc for clearing its text and stops it there (SearchRow).
+      onKeyDown={(e) => {
+        if (filtersOpen && e.key === 'Escape') {
+          e.stopPropagation();
+          closeFilters();
+        }
+      }}
+    >
       <PanelHeader />
       <SearchRow
         ref={filterButton}
@@ -50,10 +62,12 @@ export default function Sidebar() {
             {narrowed ? ` / ${total} ${episodeNoun(total, lang)}` : ` ${episodeNoun(shown, lang)}`}
           </p>
           <EpisodeList onClearAll={clearAll} />
+          {/* Inside the covered area, so the open filter panel hides it and `inert` takes its
+              link and button out of the tab order (§6.2: the panel reaches the bottom). */}
+          <PanelFooter />
         </div>
         <FilterPanel open={filtersOpen} onClose={closeFilters} />
       </div>
-      <PanelFooter />
     </aside>
   );
 }

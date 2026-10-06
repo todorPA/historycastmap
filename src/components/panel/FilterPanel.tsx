@@ -70,12 +70,6 @@ export default function FilterPanel({ open, onClose }: { open: boolean; onClose:
       className={`fpanel${open ? ' is-open' : ''}`}
       aria-labelledby="fpanel-title"
       hidden={!open}
-      onKeyDown={(e) => {
-        if (e.key === 'Escape') {
-          e.stopPropagation();
-          onClose();
-        }
-      }}
     >
       <header className="fpanel__head">
         <h2 id="fpanel-title" className="fpanel__title" tabIndex={-1} ref={headingRef}>

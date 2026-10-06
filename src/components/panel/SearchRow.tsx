@@ -52,7 +52,10 @@ const SearchRow = forwardRef<HTMLButtonElement, {
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Escape' && query) {
+              // Clearing the text is this key press's whole job: stop it before the panel's
+              // handler would also close the filter panel.
               e.preventDefault();
+              e.stopPropagation();
               setQuery('');
             } else if (e.key === 'Enter') {
               e.preventDefault();
