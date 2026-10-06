@@ -55,6 +55,18 @@ describe('parseUrlState — collections', () => {
   });
 });
 
+describe('parseUrlState — duplicates', () => {
+  // A hand-edited or doubly-appended link must not produce two active chips for one value:
+  // the badge would count 2 and the chip row would carry duplicate keys.
+  it('keeps each value once, in first-seen order, in every list parameter', () => {
+    const s = parseUrlState('?col=antika,azija,antika&r=Balkan,Balkan&ty=battle,siege,battle&se=side,side');
+    expect(s.collections).toEqual(['antika', 'azija']);
+    expect(s.regions).toEqual(['Balkan']);
+    expect(s.types).toEqual(['battle', 'siege']);
+    expect(s.series).toEqual(['side']);
+  });
+});
+
 describe('parseUrlState — other fields', () => {
   it('accepts integer years only, BC negative', () => {
     expect(parseUrlState('?from=-480&to=1389')).toMatchObject({ from: -480, to: 1389 });

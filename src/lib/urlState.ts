@@ -44,10 +44,14 @@ const PARAM = {
   series: 'se',
 } as const;
 
-/** Comma-separated lists; empty or missing means "no restriction". */
+/**
+ * Comma-separated lists; empty or missing means "no restriction". Each value is kept once, in
+ * first-seen order: a duplicated value in a hand-edited link would otherwise become two active
+ * filters for one thing — a badge reading 2 and two identical chips.
+ */
 function parseList(raw: string | null): string[] | null {
   if (!raw) return null;
-  const values = raw.split(',').map((v) => v.trim()).filter(Boolean);
+  const values = [...new Set(raw.split(',').map((v) => v.trim()).filter(Boolean))];
   return values.length > 0 ? values : null;
 }
 
