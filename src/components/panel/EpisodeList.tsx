@@ -5,6 +5,7 @@ import { formatYear } from '../../lib/time';
 import { episodeDate, groupByEra } from '../../lib/panelModel';
 import { searchEpisode, type SearchHit } from '../../lib/episodeSearch';
 import { overlaps } from '../../lib/episodeVisibility';
+import { scrollBehavior } from '../../lib/motion';
 import type { EpisodeView } from '../../lib/episodeModel';
 import { useData, useMatchingEpisodes } from '../../state/DataContext';
 import { useFilters } from '../../state/FilterContext';
@@ -73,7 +74,7 @@ export default function EpisodeList({ onClearAll }: { onClearAll: () => void }) 
     if (!selectedEpisodeId) return;
     listRef.current
       ?.querySelector<HTMLElement>(`[data-episode="${CSS.escape(selectedEpisodeId)}"]`)
-      ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      ?.scrollIntoView({ block: 'nearest', behavior: scrollBehavior() });
   }, [selectedEpisodeId]);
 
   if (matching.length === 0) {

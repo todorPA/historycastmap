@@ -8,6 +8,7 @@ import { useData, useSideEpisodes, useVisibleEvents } from '../state/DataContext
 import { useFilters } from '../state/FilterContext';
 import { t } from '../lib/i18n';
 import { activeFilterCount } from '../lib/episodeFilters';
+import { prefersReducedMotion } from '../lib/motion';
 import BasemapLayer from './BasemapLayer';
 import Graticule from './Graticule';
 import BasemapSwitcher from './BasemapSwitcher';
@@ -84,7 +85,7 @@ function PanToSelected({ points }: { points: Map<string, LatLngTuple> }) {
   useEffect(() => {
     if (!selectedEventId) return;
     const target = points.get(selectedEventId);
-    if (target) map.panTo(target, { animate: true });
+    if (target) map.panTo(target, { animate: !prefersReducedMotion() });
   }, [selectedEventId, points, map]);
 
   return null;
