@@ -8,6 +8,7 @@ import type { LoadedData } from '../lib/data';
 import { useTime } from './TimeContext';
 import { useFilters } from './FilterContext';
 import { COLLECTIONS } from '../config/collections';
+import { EPISODE_OVERRIDES } from '../config/episodeOverrides';
 
 const DataContext = createContext<LoadedData | null>(null);
 
@@ -34,10 +35,10 @@ export function useSideEpisodes(): ReadonlySet<string> {
   );
 }
 
-/** The episode model, derived once per dataset (lib/episodeModel.ts). */
+/** The episode model, derived once per dataset, with the hand-checked overrides applied. */
 export function useEpisodes(): EpisodeView[] {
   const { data } = useData();
-  return useMemo(() => deriveEpisodes(data), [data]);
+  return useMemo(() => deriveEpisodes(data, EPISODE_OVERRIDES), [data]);
 }
 
 const MEMBERS = collectionMembers(COLLECTIONS);
