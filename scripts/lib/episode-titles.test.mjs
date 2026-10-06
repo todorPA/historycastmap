@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { parseEpisodeNumber, seriesOfTitle, slugify, stripBranding } from './episode-titles.mjs';
+import { displayTitle, parseEpisodeNumber, seriesOfTitle, slugify, stripBranding } from './episode-titles.mjs';
 
 describe('parseEpisodeNumber', () => {
   it('reads the number leading the title, whatever the separator', () => {
@@ -73,6 +73,26 @@ describe('stripBranding', () => {
 
   it('keeps the original when the title is nothing but the brand', () => {
     expect(stripBranding('HistoryCast nedeljom')).toBe('HistoryCast nedeljom');
+  });
+});
+
+describe('displayTitle', () => {
+  // The four episodes whose numbers collide (05, 06) are found by slug, and that path used to
+  // keep the number: "06 Aleksandar Makedonski" in the list, beside "Peloponeski rat".
+  it('drops the leading episode number, whichever lookup finds the episode', () => {
+    expect(displayTitle('06 Aleksandar Makedonski')).toBe('Aleksandar Makedonski');
+    expect(displayTitle('06 - Uroš Predić')).toBe('Uroš Predić');
+    expect(displayTitle('149 - Prvi srpski kralj')).toBe('Prvi srpski kralj');
+  });
+
+  it('drops the number and the side-series brand together', () => {
+    expect(displayTitle('05 - Istorija lala | HistoryCast četvrtkom')).toBe('Istorija lala');
+    expect(displayTitle('HistoryCast četvrtkom - Žiča')).toBe('Žiča');
+  });
+
+  it('leaves a title alone when its digits are not an episode number', () => {
+    expect(displayTitle('Drugi svetski rat, 1941 - Bitka za Moskvu')).toBe('Drugi svetski rat, 1941 - Bitka za Moskvu');
+    expect(displayTitle('Novogodišnja epizoda')).toBe('Novogodišnja epizoda');
   });
 });
 
