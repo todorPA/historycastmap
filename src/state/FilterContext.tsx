@@ -66,7 +66,7 @@ export function FilterProvider({
     regions: initial?.regions ?? [],
     types: initial?.types ?? [],
   }));
-  const [query, setQuery] = useState('');
+  const [query, setQueryState] = useState('');
   const [selectedEpisodeId, setSelectedEpisodeId] = useState<string | null>(initial?.episodeId ?? null);
   const [hoveredEpisodeId, setHoveredEpisodeId] = useState<string | null>(null);
   const [lang, setLang] = useState<Lang>(initial?.lang ?? 'sr');
@@ -83,6 +83,16 @@ export function FilterProvider({
   /** Any filter change drops the selected *event*: it may no longer be on screen. */
   const toggleFilter = useCallback((group: FilterGroup, value: string) => {
     setFilters((prev) => toggleFilterValue(prev, group, value));
+    setSelectedEventId(null);
+  }, []);
+
+  /**
+   * Search narrows the map like a filter does, so it drops the selected *event* too. Left in
+   * place, a selection the query hid lost its popup but stayed in state, and clearing the
+   * search then panned back to it and reopened it.
+   */
+  const setQuery = useCallback((q: string) => {
+    setQueryState(q);
     setSelectedEventId(null);
   }, []);
 
