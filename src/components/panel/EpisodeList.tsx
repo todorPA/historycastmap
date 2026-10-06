@@ -3,7 +3,7 @@ import type { Lang } from '../../types/events';
 import { pick, t } from '../../lib/i18n';
 import { formatYear } from '../../lib/time';
 import { episodeDate, groupByEra } from '../../lib/panelModel';
-import { searchEpisode, type SearchHit } from '../../lib/episodeSearch';
+import { needsMatchLine, searchEpisode, type SearchHit } from '../../lib/episodeSearch';
 import { overlaps } from '../../lib/episodeVisibility';
 import { scrollBehavior } from '../../lib/motion';
 import type { EpisodeView } from '../../lib/episodeModel';
@@ -51,8 +51,15 @@ function MatchLine({ hit, lang }: { hit: SearchHit; lang: Lang }) {
           {t(lang, 'matchPlace')}: <Highlight text={hit.text} range={hit.range} />
         </span>
       );
+    case 'title':
+      // Only reached for the title in the other language (needsMatchLine).
+      return (
+        <span className="ep-row__match">
+          ↳ <Highlight text={hit.text} range={hit.range} />
+        </span>
+      );
     default:
-      return null; // title, number and year matches are visible in the row itself
+      return null; // number and year matches are visible in the row itself
   }
 }
 
@@ -118,7 +125,8 @@ export default function EpisodeList({ onClearAll }: { onClearAll: () => void }) 
           <ul className="ep-list__rows">
             {g.episodes.map((ep) => {
               const hit = query ? searchEpisode(ep, query, placesById, lang) : null;
-              const titleRange = hit?.field === 'title' && hit.text === pick(ep.title, lang) ? hit.range : undefined;
+              const shownTitle = pick(ep.title, lang);
+              const titleRange = hit?.field === 'title' && hit.text === shownTitle ? hit.range : undefined;
               const place = placesById[ep.placeId];
               const outside = !overlaps(ep.from, ep.to, range);
               const cls = [
@@ -143,13 +151,13 @@ export default function EpisodeList({ onClearAll }: { onClearAll: () => void }) 
                     <span className={`kind-glyph kind-glyph--${ep.kind}`} style={{ '--c': ep.era.color } as React.CSSProperties} aria-hidden="true" />
                     <span className="ep-row__body">
                       <span className="ep-row__title">
-                        <Highlight text={pick(ep.title, lang)} range={titleRange} />
+                        <Highlight text={shownTitle} range={titleRange} />
                       </span>
                       <span className="ep-row__meta">
                         {episodeDate(ep, lang)}
                         {place && ` · ${pick(place.name, lang)}`}
                       </span>
-                      {hit && <MatchLine hit={hit} lang={lang} />}
+                      {hit && needsMatchLine(hit, shownTitle) && <MatchLine hit={hit} lang={lang} />}
                     </span>
                   </button>
                 </li>
