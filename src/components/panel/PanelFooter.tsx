@@ -27,14 +27,14 @@ export default function PanelFooter() {
 
   return (
     <footer className="panel-foot">
-      <span>
+      <span className="panel-foot__source">
         {t(lang, 'source')}:{' '}
         <a href="https://rss.com/podcasts/rs-historycast/" target="_blank" rel="noreferrer">
           HistoryCast
         </a>{' '}
         · OpenStreetMap
       </span>
-      <button type="button" className="hc-link" onClick={copyLink} aria-live="polite">
+      <button type="button" className="hc-link" onClick={copyLink} title={t(lang, 'copyLinkHint')} aria-live="polite">
         {copied ? t(lang, 'linkCopied') : t(lang, 'copyLink')}
       </button>
     </footer>

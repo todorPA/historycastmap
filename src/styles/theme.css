@@ -82,6 +82,12 @@
   outline-offset: 2px;
 }
 
+/* Elements focused by script so keyboard and screen-reader users land in the right place —
+ * the filter panel's heading when it opens — are not controls, and get no ring. */
+[tabindex='-1']:focus {
+  outline: none;
+}
+
 /* §15: with reduced motion, transitions and animations take ~1 ms instead of their duration. */
 @media (prefers-reduced-motion: reduce) {
   *,

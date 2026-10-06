@@ -687,7 +687,16 @@
 }
 
 .panel-foot .hc-link {
+  flex: none;
   font-size: 12px;
+  white-space: nowrap;
+}
+
+.panel-foot__source {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Until the phone layout (Phase 5): stacked above the map, as the old sidebar was. */
