@@ -9,6 +9,7 @@ import { useFilters } from '../state/FilterContext';
 import { t } from '../lib/i18n';
 import { activeFilterCount } from '../lib/episodeFilters';
 import { prefersReducedMotion } from '../lib/motion';
+import { useDebounced } from '../lib/useDebounced';
 import BasemapLayer from './BasemapLayer';
 import Graticule from './Graticule';
 import BasemapSwitcher from './BasemapSwitcher';
@@ -18,6 +19,9 @@ import Legend from './Legend';
 
 const DEFAULT_CENTER: LatLngTuple = [43.5, 20.5];
 const DEFAULT_ZOOM = 5;
+
+/** How long typing must pause before the search re-frames the map. */
+const SEARCH_REFIT_MS = 400;
 
 /** Events sharing a place get a tiny spiral offset so they stay individually clickable. */
 function offsetFor(index: number): [number, number] {
@@ -145,6 +149,9 @@ export default function MapView() {
   const { placesById, data } = useData();
   const visible = useVisibleEvents();
   const { lang, basemapId, filters, query, selectedEpisodeId, timelineSize } = useFilters();
+  // The search re-frames the map once typing pauses: in the fit key raw, the map jumped on every
+  // keystroke; left out, a search could replace every marker with ones entirely off-screen.
+  const settledQuery = useDebounced(query.trim(), SEARCH_REFIT_MS);
   const basemap = getBasemap(basemapId);
 
   const sideEpisodeIds = useSideEpisodes();
@@ -182,10 +189,10 @@ export default function MapView() {
            * filters, filtering to Azija while parked over the Balkans left every marker
            * off-screen and the map looked empty with no cause the reader could see.
            *
-           * Deliberately absent: the year range (re-fitting mid-scrub yanks the map around
-           * under the cursor) and the search query (it would re-fit on every keystroke).
+           * The search is in too, debounced (see settledQuery). Deliberately absent: the year
+           * range — re-fitting mid-scrub yanks the map around under the cursor.
            */
-          fitKey={`${data.meta.generated}|${JSON.stringify(filters)}|${selectedEpisodeId ?? 'all'}|${timelineSize}`}
+          fitKey={`${data.meta.generated}|${JSON.stringify(filters)}|${settledQuery}|${selectedEpisodeId ?? 'all'}|${timelineSize}`}
         />
         <PanToSelected points={pointsById} />
         <DeselectOnMapClick />

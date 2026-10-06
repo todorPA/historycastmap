@@ -1,22 +1,11 @@
-import { useEffect, useState } from 'react';
 import { TileLayer } from 'react-leaflet';
 import type { Basemap } from '../config/basemaps';
 import { useTime } from '../state/TimeContext';
 import { yearToOhmDate } from '../lib/time';
+import { useDebounced } from '../lib/useDebounced';
 
 /** Scrubbing the timeline must not fire a tile request per frame (SPEC-ohm.md §Performance). */
 const DATE_DEBOUNCE_MS = 300;
-
-function useDebounced<T>(value: T, delay: number): T {
-  const [settled, setSettled] = useState(value);
-
-  useEffect(() => {
-    const id = window.setTimeout(() => setSettled(value), delay);
-    return () => window.clearTimeout(id);
-  }, [value, delay]);
-
-  return settled;
-}
 
 /**
  * The only component that knows tile URLs exist. MapView passes a basemap config and this
