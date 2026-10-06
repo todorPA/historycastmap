@@ -102,6 +102,18 @@ describe('deriveEpisodes — overrides', () => {
   });
 });
 
+describe('deriveEpisodes — override titles', () => {
+  it('adds an English title from an override and keeps the Serbian one from the data', () => {
+    const [e] = deriveEpisodes(data([ev({})]), { '1': { title: { en: 'The Test' } } });
+    expect(e.title).toEqual({ sr: 'Test', en: 'The Test' });
+  });
+
+  it('leaves the title alone when the override has none', () => {
+    const [e] = deriveEpisodes(data([ev({})]), { '1': { from: 1300 } });
+    expect(e.title).toEqual({ sr: 'Test' });
+  });
+});
+
 describe('timelineExtent (§12.2)', () => {
   it('pads and rounds to the decade, as the prototype shows 550 BC – 2050', () => {
     expect(timelineExtent([{ from: -509, to: 2009 }])).toEqual({ from: -550, to: 2050 });
