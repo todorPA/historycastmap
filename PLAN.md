@@ -54,7 +54,7 @@ Turn 181 transcribed podcast episodes into an interactive, bilingual (EN/SR) web
 - See `SPEC-ohm.md` (architecture designed for this from day 1 — no refactor).
 
 ### Phase 3 — Full dataset
-- Milan/Enchanté delivers full geocoded `geo-events.json` (all 181 episodes).
+- Milan delivers the full geocoded `geo-events.json` (178 mapped episodes).
 - Performance pass: marker clustering (`leaflet.markercluster`), lazy popups.
 
 ### Phase 4 — Polish
@@ -64,7 +64,7 @@ Turn 181 transcribed podcast episodes into an interactive, bilingual (EN/SR) web
 ## 5. Data flow
 
 ```
-transkripti/*.txt  ──(Enchanté/LLM: geocode + clean)──▶  geo-events.json
+transkripti/*.txt  ──(LLM extraction: geocode + clean)──▶  geo-events.json
                                                               │
                                         React app loads static JSON
                                                               │

@@ -47,4 +47,4 @@ All boxes in `PLAN.md §8` checked, deployed URL works, sample data renders, EN/
 ## Out of scope (do NOT do yet)
 - OHM historical basemap (Phase 2).
 - Marker clustering, routes/polylines, search (Phase 3/4).
-- Generating or editing the dataset — that is produced upstream (Enchanté/LLM from transcripts). You only consume it.
+- Generating or editing the dataset — that is produced upstream (LLM extraction from transcripts). You only consume it.

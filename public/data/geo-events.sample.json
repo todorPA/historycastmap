@@ -4,7 +4,7 @@
     "generated": "2026-07-26T09:00:00Z",
     "count": 20,
     "schemaVersion": "1.0",
-    "note": "PROTOTYPE sample — 2 episodes, hand-curated & geocoded by Enchanté for Phase 1. Full dataset (all 181 episodes) comes in Phase 3."
+    "note": "PROTOTYPE sample — 3 episodes, hand-curated & geocoded for Phase 1. The full dataset (geo-events.json) has 178 episodes."
   },
 
   "places": [

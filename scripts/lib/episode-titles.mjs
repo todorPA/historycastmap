@@ -27,7 +27,7 @@ export function parseEpisodeNumber(title) {
 }
 
 // Serija se izvodi iz naslova u feedu, a ne iz fragmenta: feed je jedini izvor istine o tome
-// kom serijalu epizoda pripada, i Enchanté ne mora ništa da zna o tome.
+// kom serijalu epizoda pripada, i ekstrakcija ne mora ništa da zna o tome.
 //
 // Brendiranje pobeđuje numeraciju. U feedu to dvoje nije poravnato — "115 = Vuk Karadžić |
 // HistoryCast nedeljom" je i numerisana i brendirana — a ni datum ne rešava spor: od 27

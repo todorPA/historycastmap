@@ -106,7 +106,7 @@ for (const file of fragFiles) {
 let episodeMetaByNumber = new Map();
 let episodeMetaBySlug = new Map(); // za specijalne epizode bez broja na pocetku naslova, i za
 // numerisane naslove čiji fragment ipak koristi slug id (npr. strana serija koja deli broj sa
-// glavnom serijom, vidi docs/enchante-fragment-brief.md — epizode 5 i 6). Zato se SVAKI naslov
+// glavnom serijom, vidi docs/extraction-brief.md — epizode 5 i 6). Zato se SVAKI naslov
 // registruje ovde, ne samo oni bez vodećeg broja: fragment po slug-u mora naći svoje metapodatke
 // bez obzira da li naslov i inače počinje ciframa.
 if (EPISODES_SOURCE && fs.existsSync(EPISODES_SOURCE)) {
