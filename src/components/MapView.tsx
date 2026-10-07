@@ -1,41 +1,33 @@
-import { useEffect, useMemo, useRef } from 'react';
-import { MapContainer, useMap, useMapEvent } from 'react-leaflet';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { MapContainer, useMap } from 'react-leaflet';
 import type { LatLngBoundsExpression, LatLngTuple } from 'leaflet';
-import type { HistoryEvent, PlacesById } from '../types/events';
 import { getBasemap } from '../config/basemaps';
-import { regionColor } from '../config/regions';
-import { useData, useSideEpisodes, useVisibleEvents } from '../state/DataContext';
-import { useFilters } from '../state/FilterContext';
 import { t } from '../lib/i18n';
 import { activeFilterCount } from '../lib/episodeFilters';
+import { flyTarget } from '../lib/camera';
+import { neighbours } from '../lib/episodeCard';
 import { prefersReducedMotion } from '../lib/motion';
 import { useDebounced } from '../lib/useDebounced';
+import { useData, useMatchingEpisodes } from '../state/DataContext';
+import { useFilters } from '../state/FilterContext';
 import BasemapLayer from './BasemapLayer';
-import Graticule from './Graticule';
-import BasemapSwitcher from './BasemapSwitcher';
-import EventMarkers from './EventMarkers';
-import type { PositionedEvent } from './EventMarkers';
-import Legend from './Legend';
+import EpisodeLayer from './map/EpisodeLayer';
+import MapControls from './map/MapControls';
+import EraLegend from './map/EraLegend';
+import EpisodeCard from './card/EpisodeCard';
 
 const DEFAULT_CENTER: LatLngTuple = [43.5, 20.5];
 const DEFAULT_ZOOM = 5;
 
 /** How long typing must pause before the search re-frames the map. */
 const SEARCH_REFIT_MS = 400;
-
-/** Events sharing a place get a tiny spiral offset so they stay individually clickable. */
-function offsetFor(index: number): [number, number] {
-  if (index === 0) return [0, 0];
-  const step = 0.18;
-  const angle = (index * 2.39996) % (Math.PI * 2); // golden-angle spread
-  const radius = step * Math.sqrt(index);
-  return [radius * Math.sin(angle), radius * Math.cos(angle)];
-}
+/** HANDOFF §10.1, §18. */
+const FLY_SECONDS = 0.85;
 
 /**
- * Fits the view when the *set of events being looked at* changes — i.e. on load and on
- * episode change. Deliberately NOT on every range change: re-fitting mid-scrub yanks the
- * map around under the cursor, which makes the timeline feel broken.
+ * Fits the view when the set of episodes being looked at changes — load, filters, a settled
+ * search, the timeline's height, *Prikaži sve*. Not on a range change (re-fitting mid-scrub
+ * yanks the map around under the cursor) and not on selection, which flies instead.
  */
 function FitToMarkers({ points, fitKey }: { points: LatLngTuple[]; fitKey: string }) {
   const map = useMap();
@@ -52,12 +44,8 @@ function FitToMarkers({ points, fitKey }: { points: LatLngTuple[]; fitKey: strin
       // all. The timeline sizes itself to its content, so the map can briefly measure flat.
       const size = map.getSize();
       if (size.x < 50 || size.y < 50) return;
-
-      if (pts.length === 1) {
-        map.setView(pts[0], 7);
-        return;
-      }
-      map.fitBounds(pts as LatLngBoundsExpression, { padding: [48, 48], maxZoom: 8 });
+      if (pts.length === 1) map.setView(pts[0], 6);
+      else map.fitBounds(pts as LatLngBoundsExpression, { padding: [48, 48], maxZoom: 7 });
     }, 210);
     return () => window.clearTimeout(id);
   }, [fitKey, map]);
@@ -71,144 +59,109 @@ function FitToMarkers({ points, fitKey }: { points: LatLngTuple[]; fitKey: strin
  */
 function InvalidateOnResize({ resizeKey }: { resizeKey: string }) {
   const map = useMap();
-
   useEffect(() => {
     // Wait for the CSS height transition (160ms) to settle before measuring.
     const id = window.setTimeout(() => map.invalidateSize(), 200);
     return () => window.clearTimeout(id);
   }, [resizeKey, map]);
-
   return null;
 }
 
-/** Pans to the selected event and opens its popup (used by timeline clicks too). */
-function PanToSelected({ points }: { points: Map<string, LatLngTuple> }) {
+/**
+ * Selecting an episode flies to it (HANDOFF §10.1), offset so it lands clear of the card.
+ * Waits past FitToMarkers' settle delay, so a shared link that names an episode fits first and
+ * then flies, instead of the fit landing on top of the flight.
+ */
+function FlyToSelection({ target }: { target: LatLngTuple | null }) {
   const map = useMap();
-  const { selectedEventId } = useFilters();
-
   useEffect(() => {
-    if (!selectedEventId) return;
-    const target = points.get(selectedEventId);
-    if (target) map.panTo(target, { animate: !prefersReducedMotion() });
-  }, [selectedEventId, points, map]);
-
+    if (!target) return;
+    const id = window.setTimeout(() => {
+      const { center, zoom } = flyTarget([target[0], target[1]], { zoom: map.getZoom(), mapWidthPx: map.getSize().x, cardOpen: true });
+      if (prefersReducedMotion()) map.setView(center, zoom, { animate: false });
+      else map.flyTo(center, zoom, { duration: FLY_SECONDS });
+    }, 260);
+    return () => window.clearTimeout(id);
+    // Re-fly only when the selection moves, not when its array identity does.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [target?.[0], target?.[1], map]);
   return null;
 }
 
-/**
- * Clicking bare map deselects. Selection used to have no exit other than changing a filter,
- * so `?e=` stayed in the URL for the rest of the session and kept re-framing the map on the
- * event the reader had already moved on from. Leaflet fires this only for the background —
- * marker and popup clicks don't reach the map.
- */
-function DeselectOnMapClick() {
-  const { setSelectedEventId } = useFilters();
-  useMapEvent('click', () => setSelectedEventId(null));
-  return null;
-}
-
-/**
- * One marker per place-and-year. Events that share both are the same dot on the map — either
- * one fact covered by several episodes, or several things that happened there that year;
- * the popup lists them either way. Distinct years at one place still get the small spiral
- * offset so they stay separately clickable.
- */
-function groupEvents(
-  visible: HistoryEvent[],
-  placesById: PlacesById,
-  sideEpisodeIds: ReadonlySet<string>,
-): PositionedEvent[] {
-  const groups = new Map<string, HistoryEvent[]>();
-  for (const event of visible) {
-    if (!placesById[event.placeId]) continue; // unknown placeId: skip rather than render at 0,0
-    const key = `${event.placeId}@${event.year}`;
-    const bucket = groups.get(key);
-    if (bucket) bucket.push(event);
-    else groups.set(key, [event]);
-  }
-
-  const seenAtPlace = new Map<string, number>();
-  const out: PositionedEvent[] = [];
-  for (const [key, events] of groups) {
-    const place = placesById[events[0].placeId];
-    const index = seenAtPlace.get(events[0].placeId) ?? 0;
-    seenAtPlace.set(events[0].placeId, index + 1);
-    const [dLat, dLng] = offsetFor(index);
-    out.push({
-      id: key,
-      events,
-      position: [place.lat + dLat, place.lng + dLng],
-      color: regionColor(events[0].region),
-      side: events.every((e) => sideEpisodeIds.has(e.episodeId)),
-    });
-  }
-  return out;
+/** True while the user is typing somewhere, so a global shortcut must not fire. */
+function isTyping(target: EventTarget | null): boolean {
+  const el = target as HTMLElement | null;
+  return !!el && (el.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName));
 }
 
 export default function MapView() {
   const { placesById, data } = useData();
-  const visible = useVisibleEvents();
-  const { lang, basemapId, filters, query, selectedEpisodeId, timelineSize } = useFilters();
+  const matching = useMatchingEpisodes();
+  const { lang, basemapId, filters, query, setQuery, clearFilters, selectedEpisodeId, selectEpisode, timelineSize } = useFilters();
+  const basemap = getBasemap(basemapId);
   // The search re-frames the map once typing pauses: in the fit key raw, the map jumped on every
   // keystroke; left out, a search could replace every marker with ones entirely off-screen.
   const settledQuery = useDebounced(query.trim(), SEARCH_REFIT_MS);
-  const basemap = getBasemap(basemapId);
+  const [showAll, setShowAll] = useState(0);
 
-  const sideEpisodeIds = useSideEpisodes();
-  const positioned = useMemo(
-    () => groupEvents(visible, placesById, sideEpisodeIds),
-    [visible, placesById, sideEpisodeIds],
+  const positionOf = (id: string | null): LatLngTuple | null => {
+    const ep = id ? matching.find((e) => e.id === id) : undefined;
+    const p = ep && placesById[ep.placeId];
+    return p ? [p.lat, p.lng] : null;
+  };
+  const points = useMemo(
+    () => matching.flatMap((ep) => (placesById[ep.placeId] ? [[placesById[ep.placeId].lat, placesById[ep.placeId].lng] as LatLngTuple] : [])),
+    [matching, placesById],
   );
+  const selected = matching.find((e) => e.id === selectedEpisodeId) ?? null;
 
-  const points = useMemo(() => positioned.map((p) => p.position), [positioned]);
-  // Keyed by every event id, so a timeline selection can pan to the dot holding it.
-  const pointsById = useMemo(
-    () => new Map(positioned.flatMap((p) => p.events.map((e) => [e.id, p.position] as const))),
-    [positioned],
-  );
+  /**
+   * Esc closes the card and deselects; ←/→ step to the previous or next episode (§10.1). Caught
+   * in the capture phase so Leaflet's own arrow-key panning does not also move the map — but only
+   * while something is selected: with nothing selected, the arrows pan the map as before.
+   */
+  useEffect(() => {
+    if (!selected) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (isTyping(e.target) || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key === 'Escape') {
+        selectEpisode(null);
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        const { prev, next } = neighbours(selected, matching);
+        const to = e.key === 'ArrowLeft' ? prev : next;
+        e.preventDefault();
+        e.stopPropagation();
+        if (to) selectEpisode(to.id);
+      }
+    };
+    window.addEventListener('keydown', onKey, true);
+    return () => window.removeEventListener('keydown', onKey, true);
+  }, [selected, matching, selectEpisode]);
+
+  const narrowed = activeFilterCount(filters) > 0 || query.trim() !== '';
 
   return (
-    <div className="map-wrap">
-      <MapContainer
-        center={DEFAULT_CENTER}
-        zoom={DEFAULT_ZOOM}
-        className="map"
-        minZoom={2}
-        worldCopyJump
-        scrollWheelZoom
-      >
+    <div className={`map-wrap${selected ? ' has-card' : ''}`}>
+      <MapContainer center={DEFAULT_CENTER} zoom={DEFAULT_ZOOM} className="map" minZoom={2} zoomControl={false} worldCopyJump scrollWheelZoom>
         <BasemapLayer basemap={basemap} />
-        {/* After the tiles, before the markers: it sits on the basemap, never over the data. */}
-        <Graticule />
         <InvalidateOnResize resizeKey={timelineSize} />
-        <FitToMarkers
-          points={points}
-          /**
-           * Filters and the selected episode belong in here, for one reason: each changes
-           * *which events you are looking at*, so the view should reframe. Without the
-           * filters, filtering to Azija while parked over the Balkans left every marker
-           * off-screen and the map looked empty with no cause the reader could see.
-           *
-           * The search is in too, debounced (see settledQuery). Deliberately absent: the year
-           * range — re-fitting mid-scrub yanks the map around under the cursor.
-           */
-          fitKey={`${data.meta.generated}|${JSON.stringify(filters)}|${settledQuery}|${selectedEpisodeId ?? 'all'}|${timelineSize}`}
-        />
-        <PanToSelected points={pointsById} />
-        <DeselectOnMapClick />
-
-        <EventMarkers items={positioned} />
+        <FitToMarkers points={points} fitKey={`${data.meta.generated}|${JSON.stringify(filters)}|${settledQuery}|${timelineSize}|${showAll}`} />
+        <FlyToSelection target={positionOf(selectedEpisodeId)} />
+        <EpisodeLayer episodes={matching} />
+        <MapControls onShowAll={() => setShowAll((n) => n + 1)} />
       </MapContainer>
 
-      <Legend />
-      <BasemapSwitcher />
-      {/* Name the actual cause: blaming the period when a facet filter emptied the map sends
-          the reader to the wrong control. */}
-      {positioned.length === 0 && (
+      <EraLegend />
+      {selected && <EpisodeCard episode={selected} />}
+
+      {/* Name the cause and offer the way out (HANDOFF §6.5). */}
+      {matching.length === 0 && (
         <div className="map-empty">
-          {t(
-            lang,
-            activeFilterCount(filters) > 0 || query.trim() !== '' ? 'noEventsFilters' : 'noEvents',
+          {t(lang, narrowed ? 'emptyFilters' : 'noEvents')}{' '}
+          {narrowed && (
+            <button type="button" className="hc-link" onClick={() => { clearFilters(); setQuery(''); }}>
+              {t(lang, 'clearAll')}
+            </button>
           )}
         </div>
       )}

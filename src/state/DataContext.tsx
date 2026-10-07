@@ -1,11 +1,9 @@
 import { createContext, useContext, useMemo } from 'react';
 import type { ReactNode } from 'react';
-import type { HistoryEvent } from '../types/events';
 import { deriveEpisodes, type EpisodeView } from '../lib/episodeModel';
 import { collectionMembers, type CollectionMembers } from '../lib/episodeFilters';
-import { matchingEpisodes, visibleEvents } from '../lib/episodeVisibility';
+import { matchingEpisodes } from '../lib/episodeVisibility';
 import type { LoadedData } from '../lib/data';
-import { useTime } from './TimeContext';
 import { useFilters } from './FilterContext';
 import { COLLECTIONS } from '../config/collections';
 import { EPISODE_OVERRIDES } from '../config/episodeOverrides';
@@ -56,17 +54,5 @@ export function useMatchingEpisodes(): EpisodeView[] {
   return useMemo(
     () => matchingEpisodes(episodes, filters, MEMBERS, query, placesById, lang, selectedEpisodeId),
     [episodes, filters, query, placesById, lang, selectedEpisodeId],
-  );
-}
-
-/** The events the map draws: chapters of matching episodes, inside the time window. */
-export function useVisibleEvents(): HistoryEvent[] {
-  const { data } = useData();
-  const { range } = useTime();
-  const { selectedEpisodeId } = useFilters();
-  const matching = useMatchingEpisodes();
-  return useMemo(
-    () => visibleEvents(data.events, new Set(matching.map((e) => e.id)), selectedEpisodeId, range),
-    [data.events, matching, selectedEpisodeId, range],
   );
 }

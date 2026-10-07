@@ -85,6 +85,7 @@ export default function TimelineView() {
     selectedEpisodeId,
     selectedEventId,
     setSelectedEventId,
+    selectEpisode,
     timelineSize,
     setTimelineSize,
     cycleTimelineSize,
@@ -125,7 +126,7 @@ export default function TimelineView() {
        * need in order to scrub back out. A filter has no such problem, because its own chip is
        * how you undo it.
        */
-      visibleEvents(data.events, matchingIds, selectedEpisodeId, UNBOUNDED)
+      visibleEvents(data.events, matchingIds, UNBOUNDED)
         .map((e) => {
           // Same colour language as the map: region, not episode (config/regions.ts).
           const color = regionColor(e.region);
@@ -152,7 +153,15 @@ export default function TimelineView() {
              * left-edge notch for the side series (.vis-item--side). Same meaning as the
              * centre pip on the map.
              */
-            className: [low ? 'vis-item--low' : '', side ? 'vis-item--side' : '']
+            /**
+             * The selected episode's chapters stand out and every other episode's are quieted,
+             * as on the map (HANDOFF §11) — nothing is hidden by a selection.
+             */
+            className: [
+              low ? 'vis-item--low' : '',
+              side ? 'vis-item--side' : '',
+              selectedEpisodeId ? (e.episodeId === selectedEpisodeId ? 'is-selected-episode' : 'is-muted') : '',
+            ]
               .filter(Boolean)
               .join(' '),
             title: `${pick(e.title, lang)} — ${formatYearRange(e.year, e.yearEnd, lang)}`,
@@ -198,6 +207,8 @@ export default function TimelineView() {
   }, [items, lang]);
 
   // Latest values readable from the create-once effect without re-creating the timeline.
+  const latestEvents = useRef(data.events);
+  latestEvents.current = data.events;
   const latestItems = useRef(items);
   const latestGroups = useRef(groups);
   latestItems.current = items;
@@ -273,8 +284,12 @@ export default function TimelineView() {
       }, RANGE_DEBOUNCE_MS);
     });
 
+    // An item is a chapter: clicking it selects its episode and opens that chapter in the card.
     timeline.on('select', (props: { items: string[] }) => {
-      setSelectedEventId(props.items[0] ?? null);
+      const id = props.items[0] ?? null;
+      const event = id ? latestEvents.current.find((e) => e.id === id) : undefined;
+      if (event) selectEpisode(event.episodeId);
+      setSelectedEventId(id);
     });
 
     /**
