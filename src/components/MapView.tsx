@@ -7,6 +7,9 @@ import { regionColor } from '../config/regions';
 import { useData, useSideEpisodes, useVisibleEvents } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
 import { t } from '../lib/i18n';
+import { activeFilterCount } from '../lib/episodeFilters';
+import { prefersReducedMotion } from '../lib/motion';
+import { useDebounced } from '../lib/useDebounced';
 import BasemapLayer from './BasemapLayer';
 import Graticule from './Graticule';
 import BasemapSwitcher from './BasemapSwitcher';
@@ -16,6 +19,9 @@ import Legend from './Legend';
 
 const DEFAULT_CENTER: LatLngTuple = [43.5, 20.5];
 const DEFAULT_ZOOM = 5;
+
+/** How long typing must pause before the search re-frames the map. */
+const SEARCH_REFIT_MS = 400;
 
 /** Events sharing a place get a tiny spiral offset so they stay individually clickable. */
 function offsetFor(index: number): [number, number] {
@@ -83,7 +89,7 @@ function PanToSelected({ points }: { points: Map<string, LatLngTuple> }) {
   useEffect(() => {
     if (!selectedEventId) return;
     const target = points.get(selectedEventId);
-    if (target) map.panTo(target, { animate: true });
+    if (target) map.panTo(target, { animate: !prefersReducedMotion() });
   }, [selectedEventId, points, map]);
 
   return null;
@@ -142,16 +148,10 @@ function groupEvents(
 export default function MapView() {
   const { placesById, data } = useData();
   const visible = useVisibleEvents();
-  const {
-    lang,
-    basemapId,
-    activeCollectionId,
-    activeEpisodeId,
-    timelineSize,
-    activeRegions,
-    activeTypes,
-    activeSeries,
-  } = useFilters();
+  const { lang, basemapId, filters, query, selectedEpisodeId, timelineSize } = useFilters();
+  // The search re-frames the map once typing pauses: in the fit key raw, the map jumped on every
+  // keystroke; left out, a search could replace every marker with ones entirely off-screen.
+  const settledQuery = useDebounced(query.trim(), SEARCH_REFIT_MS);
   const basemap = getBasemap(basemapId);
 
   const sideEpisodeIds = useSideEpisodes();
@@ -184,15 +184,15 @@ export default function MapView() {
         <FitToMarkers
           points={points}
           /**
-           * Collection, episode and the facets all belong in here, for one reason: each
-           * changes *which events you are looking at*, so the view should reframe. Without
-           * the facets, filtering to Azija while parked over the Balkans left every marker
+           * Filters and the selected episode belong in here, for one reason: each changes
+           * *which events you are looking at*, so the view should reframe. Without the
+           * filters, filtering to Azija while parked over the Balkans left every marker
            * off-screen and the map looked empty with no cause the reader could see.
            *
-           * The year range is still deliberately absent — re-fitting mid-scrub yanks the map
-           * around under the cursor, which makes the timeline feel broken.
+           * The search is in too, debounced (see settledQuery). Deliberately absent: the year
+           * range — re-fitting mid-scrub yanks the map around under the cursor.
            */
-          fitKey={`${data.meta.generated}|${activeCollectionId ?? 'all'}|${activeEpisodeId ?? 'all'}|${activeRegions.join(',')}|${activeTypes.join(',')}|${activeSeries.join(',')}|${timelineSize}`}
+          fitKey={`${data.meta.generated}|${JSON.stringify(filters)}|${settledQuery}|${selectedEpisodeId ?? 'all'}|${timelineSize}`}
         />
         <PanToSelected points={pointsById} />
         <DeselectOnMapClick />
@@ -208,9 +208,7 @@ export default function MapView() {
         <div className="map-empty">
           {t(
             lang,
-            activeRegions.length > 0 || activeTypes.length > 0 || activeSeries.length > 0
-              ? 'noEventsFilters'
-              : 'noEvents',
+            activeFilterCount(filters) > 0 || query.trim() !== '' ? 'noEventsFilters' : 'noEvents',
           )}
         </div>
       )}

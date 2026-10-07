@@ -104,3 +104,22 @@ export function clusterRadius(count: number): number {
   if (count === 1) return 8;
   return Math.min(22, 11 + Math.round(Math.log2(count) * 3));
 }
+
+/** Most levels one cluster click may zoom in. */
+const MAX_CLICK_JUMP = 3;
+
+/**
+ * The zoom a cluster click goes to: where its members separate (`fitZoom`, from getBoundsZoom),
+ * but never more than three levels past the current zoom, never less than one, and never past
+ * the map's maximum.
+ *
+ * Limits the jump, not the level. A fixed `maxZoom: 7` was meant to stop one click from leaping
+ * from the world view onto blank ice (Greenland at z12), but as a ceiling it made every cluster
+ * click a no-op once the map was at 7 or closer: in Serbia at z7, all 35 clusters need z10–12 to
+ * separate, and the click only re-centred the map. A cluster that needs more than three levels
+ * now breaks apart over a second click instead.
+ */
+export function clusterClickZoom(currentZoom: number, fitZoom: number, maxZoom: number): number {
+  const target = Math.min(fitZoom, currentZoom + MAX_CLICK_JUMP);
+  return Math.min(maxZoom, Math.max(target, currentZoom + 1));
+}

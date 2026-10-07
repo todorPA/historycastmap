@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useRef, useState, Fragment } from 'react';
 import { CircleMarker, Popup, Tooltip, useMap, useMapEvents } from 'react-leaflet';
-import type { CircleMarker as CircleMarkerType, LatLngBoundsExpression } from 'leaflet';
+import { latLngBounds, point } from 'leaflet';
+import type { CircleMarker as CircleMarkerType } from 'leaflet';
 import type { HistoryEvent } from '../types/events';
 import { useFilters } from '../state/FilterContext';
-import { CELL_PX, clusterByPixel, clusterRadius } from '../lib/cluster';
+import { CELL_PX, clusterByPixel, clusterClickZoom, clusterRadius } from '../lib/cluster';
 import type { Clusterable } from '../lib/cluster';
 import EventPopup from './EventPopup';
 import EventGroupPopup from './EventGroupPopup';
@@ -221,15 +222,13 @@ export default function EventMarkers({ items }: { items: PositionedEvent[] }) {
                 // fitBounds changes the zoom, which recomputes `clusters` and re-runs the
                 // re-open effect above — pulled the map straight back to the old event.
                 setSelectedEventId(null);
-                const bounds = cluster.items.map((i) => i.position) as LatLngBoundsExpression;
-                /**
-                 * maxZoom 7, not 12. At z12 over somewhere the basemap has nothing to say —
-                 * Greenland's ice sheet, open ocean — breaking a cluster landed the reader on
-                 * a blank field with two dots and no way to tell it was still a map. z7 keeps
-                 * a coastline in frame, and a cluster that is still too dense to read can be
-                 * broken again from there.
-                 */
-                map.fitBounds(bounds, { padding: [60, 60], maxZoom: 7 });
+                const bounds = latLngBounds(cluster.items.map((i) => i.position));
+                // Where the members fit with 60 px clear on every side (getBoundsZoom takes
+                // the total padding), then a jump limited by clusterClickZoom: it always zooms
+                // in, and never leaps more than three levels from where the reader is.
+                const fitZoom = map.getBoundsZoom(bounds, false, point(120, 120));
+                const maxZoom = Number.isFinite(map.getMaxZoom()) ? map.getMaxZoom() : 18;
+                map.setView(bounds.getCenter(), clusterClickZoom(map.getZoom(), fitZoom, maxZoom));
               },
             }}
           >

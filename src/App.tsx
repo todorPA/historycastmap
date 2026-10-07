@@ -23,6 +23,13 @@ function Shell() {
   );
 }
 
+/** The smallest span covering every given span, or null if there are none. */
+function unionSpan(spans: Array<{ from: number; to: number } | null>): { from: number; to: number } | null {
+  const real = spans.filter((s): s is { from: number; to: number } => s !== null);
+  if (real.length === 0) return null;
+  return { from: Math.min(...real.map((s) => s.from)), to: Math.max(...real.map((s) => s.to)) };
+}
+
 /** Status screens need the language toggle's default, so they live inside FilterProvider. */
 function Loader({ urlState }: { urlState: ReturnType<typeof parseUrlState> }) {
   const { lang } = useFilters();
@@ -50,17 +57,19 @@ function Loader({ urlState }: { urlState: ReturnType<typeof parseUrlState> }) {
   }
 
   /**
-   * An explicit period in the link always wins. Failing that, a link that names a collection
-   * opens framed on it, so `?col=antika` behaves like clicking Antika rather than showing
-   * the whole 1200 BC to 2006 axis with the collection bunched against one edge.
+   * An explicit period in the link always wins. Failing that, a link that names collections
+   * opens framed on all of them together, so `?col=antika` shows Antiquity rather than the
+   * whole axis with the collection bunched against one edge.
    */
-  const urlCollection = getCollection(urlState.collectionId);
   const initialRange =
     urlState.from != null && urlState.to != null
       ? { from: urlState.from, to: urlState.to }
-      : urlCollection
-        ? collectionSpan(urlCollection, loaded.data.events)
-        : null;
+      : unionSpan(
+          (urlState.collections ?? []).map((id) => {
+            const c = getCollection(id);
+            return c ? collectionSpan(c, loaded.data.events) : null;
+          }),
+        );
 
   return (
     <DataProvider value={loaded}>
@@ -80,7 +89,7 @@ export default function App() {
     <FilterProvider
       initial={{
         lang: urlState.lang,
-        collectionId: urlState.collectionId,
+        collections: urlState.collections,
         episodeId: urlState.episodeId,
         eventId: urlState.eventId,
         basemapId: urlState.basemapId,

@@ -10,7 +10,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { parseEpisodeNumber, seriesOfTitle, slugify, stripBranding } from "./lib/episode-titles.mjs";
+import { displayTitle, parseEpisodeNumber, seriesOfTitle, slugify } from "./lib/episode-titles.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -118,7 +118,7 @@ if (EPISODES_SOURCE && fs.existsSync(EPISODES_SOURCE)) {
     const parsed = parseEpisodeNumber(title);
     if (parsed) {
       episodeMetaByNumber.set(parsed.number, {
-        title: stripBranding(parsed.rest || title.trim()),
+        title: displayTitle(title),
         series,
         pubDate: ep.pubDate,
         audioUrl: ep.audio_url,
@@ -126,7 +126,7 @@ if (EPISODES_SOURCE && fs.existsSync(EPISODES_SOURCE)) {
     }
     if (title) {
       episodeMetaBySlug.set(slugify(title), {
-        title: stripBranding(title),
+        title: displayTitle(title),
         series,
         pubDate: ep.pubDate,
         audioUrl: ep.audio_url,

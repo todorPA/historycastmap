@@ -71,3 +71,15 @@ export function parseYearQuery(query: string): number | null {
 export function matchesQuery(ep: EpisodeView, query: string, places: PlacesById, lang: Lang): boolean {
   return query.trim() === '' || searchEpisode(ep, query, places, lang) !== null;
 }
+
+/**
+ * Does a row need a line saying why it matched? Not when the reason is already on screen — the
+ * title as displayed (highlighted in place), the episode number, a year inside the shown period.
+ * Yes for a chapter, person or place, and for a title hit in the language NOT displayed: search
+ * checks both titles, so without the line such a row sat in the results with no visible reason.
+ */
+export function needsMatchLine(hit: SearchHit, displayedTitle: string): boolean {
+  if (hit.field === 'number' || hit.field === 'year') return false;
+  if (hit.field === 'title') return hit.text !== displayedTitle;
+  return true;
+}

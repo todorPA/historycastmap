@@ -56,6 +56,16 @@ export function stripBranding(title) {
   return stripped || title.trim();
 }
 
+/**
+ * Naslov za prikaz: bez vodećeg broja epizode i bez brenda serijala. Jedna funkcija za oba
+ * puta kojima merge nalazi epizodu (po broju i po slugu) — slug-put je ranije zadržavao broj,
+ * pa je u listi stajalo "06 Aleksandar Makedonski".
+ */
+export function displayTitle(feedTitle) {
+  const title = feedTitle || "";
+  return stripBranding(parseEpisodeNumber(title)?.rest || title);
+}
+
 // đ se mora zameniti RUČNO, pre NFD dekompozicije, i to je jedini izuzetak u srpskoj
 // latinici. č, ć, š, ž su osnovno slovo + kombinujući znak, pa ih NFD razdvaja i strip
 // U+0300–U+036F uradi svoje. đ (U+0111) je slovo s PRECRTOM — jedan nedeljiv codepoint, bez

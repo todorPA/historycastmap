@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { GeoData } from '../types/events';
 import { indexById } from '../types/events';
 import { deriveEpisodes } from './episodeModel';
-import { matchesQuery, parseYearQuery, searchEpisode } from './episodeSearch';
+import { matchesQuery, needsMatchLine, parseYearQuery, searchEpisode } from './episodeSearch';
 
 import shipped from '../../public/data/geo-events.json';
 
@@ -99,5 +99,25 @@ describe('parseYearQuery', () => {
 
   it('is not fooled by text that merely starts with digits', () => {
     expect(parseYearQuery('1389 kosovo')).toBeNull();
+  });
+});
+
+describe('needsMatchLine', () => {
+  const shown = 'Prvi krstaški rat';
+  // A hit the row already explains needs no extra line…
+  it('is false for a hit on the title as displayed, a number, or a year', () => {
+    expect(needsMatchLine({ field: 'title', text: shown, range: [0, 4] }, shown)).toBe(false);
+    expect(needsMatchLine({ field: 'number', text: '15' }, shown)).toBe(false);
+    expect(needsMatchLine({ field: 'year', text: '1096', year: 1096 }, shown)).toBe(false);
+  });
+
+  // …but a hit on the title in the OTHER language matched text that is not on screen, so
+  // without a line the row would sit in the results with no visible reason.
+  it('is true for a title hit in the language not displayed', () => {
+    expect(needsMatchLine({ field: 'title', text: 'The First Crusade', range: [4, 9] }, shown)).toBe(true);
+  });
+
+  it('is true for chapter, person and place hits', () => {
+    for (const field of ['event', 'actor', 'place'] as const) expect(needsMatchLine({ field, text: 'x' }, shown)).toBe(true);
   });
 });

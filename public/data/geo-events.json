@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "HistoryCast podcast (rss.com/rs-historycast)",
-    "generated": "2026-09-29T15:49:10.686Z",
+    "generated": "2026-10-06T07:53:25.043Z",
     "count": 742,
     "schemaVersion": "1.0"
   },
@@ -6070,7 +6070,7 @@
     {
       "id": "05-istorija-jugoslovenskog-filma-2-deo-praska-skola",
       "title": {
-        "sr": "05 - Istorija jugoslovenskog filma, 2. deo - Praška škola"
+        "sr": "Istorija jugoslovenskog filma, 2. deo - Praška škola"
       },
       "series": "main",
       "pubDate": "Wed, 04 Oct 2023 01:23:48 GMT",
@@ -6080,7 +6080,7 @@
     {
       "id": "05-istorija-lala-historycast-cetvrtkom",
       "title": {
-        "sr": "05 - Istorija lala"
+        "sr": "Istorija lala"
       },
       "series": "side",
       "pubDate": "Thu, 30 May 2024 17:05:58 GMT",
@@ -6090,7 +6090,7 @@
     {
       "id": "06-aleksandar-makedonski",
       "title": {
-        "sr": "06 Aleksandar Makedonski"
+        "sr": "Aleksandar Makedonski"
       },
       "series": "main",
       "pubDate": "Tue, 10 Oct 2023 20:06:21 GMT",
@@ -6100,7 +6100,7 @@
     {
       "id": "06-uros-predic",
       "title": {
-        "sr": "06 - Uroš Predić"
+        "sr": "Uroš Predić"
       },
       "series": "main",
       "pubDate": "Sun, 16 Jun 2024 15:29:09 GMT",

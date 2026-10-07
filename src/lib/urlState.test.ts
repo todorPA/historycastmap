@@ -6,7 +6,7 @@ const DEFAULTS = {
   from: -1200,
   to: 2009,
   isFullRange: true,
-  collectionId: null,
+  collections: [],
   episodeId: null,
   eventId: null,
   lang: 'sr' as const,
@@ -36,6 +36,34 @@ describe('parseUrlState — facets are allow-listed', () => {
   it('keeps known types and series', () => {
     expect(parseUrlState('?ty=battle,picnic,siege').types).toEqual(['battle', 'siege']);
     expect(parseUrlState('?se=side').series).toEqual(['side']);
+  });
+});
+
+describe('parseUrlState — collections', () => {
+  it('reads several collections from one parameter', () => {
+    expect(parseUrlState('?col=srpski-srednji-vek,moderna-srbija').collections).toEqual(['srpski-srednji-vek', 'moderna-srbija']);
+  });
+
+  // Links shared before collections became multi-select carried exactly one id.
+  it('still opens a legacy single-collection link', () => {
+    expect(parseUrlState('?col=antika').collections).toEqual(['antika']);
+  });
+
+  it('drops collections that do not exist, and keeps the rest', () => {
+    expect(parseUrlState('?col=antika,nepostojeca').collections).toEqual(['antika']);
+    expect(parseUrlState('?col=nepostojeca').collections).toBeNull();
+  });
+});
+
+describe('parseUrlState — duplicates', () => {
+  // A hand-edited or doubly-appended link must not produce two active chips for one value:
+  // the badge would count 2 and the chip row would carry duplicate keys.
+  it('keeps each value once, in first-seen order, in every list parameter', () => {
+    const s = parseUrlState('?col=antika,azija,antika&r=Balkan,Balkan&ty=battle,siege,battle&se=side,side');
+    expect(s.collections).toEqual(['antika', 'azija']);
+    expect(s.regions).toEqual(['Balkan']);
+    expect(s.types).toEqual(['battle', 'siege']);
+    expect(s.series).toEqual(['side']);
   });
 });
 
@@ -73,9 +101,11 @@ describe('buildSearch', () => {
       regions: ['Južna Amerika', 'Balkan'],
       types: ['battle'],
       series: ['side'],
+      collections: ['antika', 'azija'],
       lang: 'en',
     });
     expect(parseUrlState(search)).toMatchObject({
+      collections: ['antika', 'azija'],
       regions: ['Južna Amerika', 'Balkan'],
       types: ['battle'],
       series: ['side'],

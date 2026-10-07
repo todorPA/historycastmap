@@ -1,0 +1,101 @@
+/* HistoryCast Map explorer theme (HANDOFF §3). Light only; there is no theme switcher.
+ *
+ * Scoped to the explorer: app.css imports this after tokens.css, and landing.css never does.
+ * The landing page uses the --ink-* ramp from tokens.css directly and is out of the redesign's
+ * scope, so that ramp is only re-pointed here, never changed at its source.
+ *
+ * Two layers. First the handoff's tokens with their literal values — theme.test.ts reads these
+ * and holds them to the contrast the handoff claims. Then the aliases app.css already uses
+ * (--text, --muted, --gold, --control-edge …), re-pointed so the old map and timeline chrome
+ * pick up the palette now rather than staying grey until they are rebuilt. */
+
+:root {
+  /* ---------- surfaces and text (§3.1) ---------- */
+  --f0: #E3D6C0; /* app ground behind panels */
+  --f1: #F7F0E3; /* panels: left panel, timeline, card, filter panel, guide */
+  --f2: #EFE6D5; /* inputs, raised areas, track backgrounds */
+  --f3: #E6DAC5; /* hover, selected row background */
+  --f4: #D8C9AF; /* stronger fills: badge backgrounds */
+  --line: #95826A; /* control borders, 3:1 on --f1. Not a divider: that is --line-soft. */
+  --line-soft: #DCCFBA; /* dividers */
+  --tx: #21170F; /* primary text */
+  --tx2: #4A3C2F; /* secondary text */
+  --tx3: #645241; /* tertiary text and metadata */
+
+  /* ---------- gold (§3.2) — fill, text and line are three different tokens ---------- */
+  --gold: #D4AA55; /* fills only: as text on the panels it does not reach 3:1 */
+  --on-gold: #1B130D; /* text on a gold fill */
+  --gold-hi: #6A4A10; /* gold as text */
+  --gold-line: #8A6620; /* gold as a line */
+  --gold-bg: rgba(212, 170, 85, 0.22); /* active chip and selected backgrounds */
+
+  /* ---------- marks and map (§3.3) ---------- */
+  --ring: rgba(30, 20, 12, 0.8); /* ink outline on every data mark */
+  --ink: #2A2019; /* marker selection ring, cluster centre */
+  --map-land: #F2EADB;
+  --map-water: #D3D9D0;
+  --map-border: #C9B99D;
+  --map-river: #BCC9C4;
+
+  /* ---------- type, shape, motion (§3.4, §18) ---------- */
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --r-4: 4px; /* small controls */
+  --r-6: 6px; /* buttons, inputs, rows */
+  --r-10: 10px; /* card, legend, filter panel, guide, cluster list */
+  --shadow-float: 0 12px 32px rgba(60, 40, 20, 0.18); /* floating elements only */
+  --ease: cubic-bezier(0.3, 0.7, 0.2, 1);
+
+  /* ---------- aliases app.css already uses, re-pointed ---------- */
+  --bg: var(--f0);
+  --sidebar: var(--f1);
+  --sidebar-2: var(--f2);
+  --text: var(--tx);
+  --muted: var(--tx3);
+  --control-edge: var(--line);
+  --accent: var(--gold-hi);
+  --gold-deep: var(--gold-hi);
+  --gold-wash: var(--gold-bg);
+  --paper: var(--f1);
+  --lit-bg: var(--f1);
+  --lit-text: var(--tx);
+  --lit-muted: var(--tx3);
+  --lit-line: var(--f4);
+  --lit-raised: var(--f3);
+  --marker-ring: var(--ink);
+  --map-sea: var(--map-water);
+
+  /* The ramp, explorer only (900 = furthest back, 100 = primary text, as in tokens.css). */
+  --ink-900: var(--f0);
+  --ink-800: var(--f1);
+  --ink-700: var(--f2);
+  --ink-600: var(--f3);
+  --ink-500: var(--f4);
+  --ink-400: #A8977E;
+  --ink-300: var(--tx3);
+  --ink-200: var(--tx2);
+  --ink-100: var(--tx);
+}
+
+/* One focus treatment for every control, keyboard only (§3.4). */
+:focus-visible {
+  outline: 2px solid var(--gold-line);
+  outline-offset: 2px;
+}
+
+/* Elements focused by script so keyboard and screen-reader users land in the right place —
+ * the filter panel's heading when it opens — are not controls, and get no ring. */
+[tabindex='-1']:focus {
+  outline: none;
+}
+
+/* §15: with reduced motion, transitions and animations take ~1 ms instead of their duration. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
