@@ -11,6 +11,7 @@
 @import './card.css';
 @import './timeline.css';
 @import './layout.css';
+@import './guide.css';
 
 * {
   box-sizing: border-box;
