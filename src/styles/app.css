@@ -12,6 +12,7 @@
 @import './timeline.css';
 @import './layout.css';
 @import './guide.css';
+@import './phone.css';
 
 * {
   box-sizing: border-box;

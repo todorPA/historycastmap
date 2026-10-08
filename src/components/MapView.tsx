@@ -78,12 +78,21 @@ function InvalidateOnResize() {
  * Waits past FitToMarkers' settle delay, so a shared link that names an episode fits first and
  * then flies, instead of the fit landing on top of the flight.
  */
-function FlyToSelection({ target, selectionId, again }: { target: LatLngTuple | null; selectionId: string | null; again: number }) {
+/** Phone: the card's bottom sheet covers this share of the map (§19). */
+const SHEET_SHARE = 0.72;
+
+function FlyToSelection({ target, selectionId, again, phone }: { target: LatLngTuple | null; selectionId: string | null; again: number; phone: boolean }) {
   const map = useMap();
   useEffect(() => {
     if (!target) return;
     const id = window.setTimeout(() => {
-      const { center, zoom } = flyTarget([target[0], target[1]], { zoom: map.getZoom(), mapWidthPx: map.getSize().x, cardOpen: true });
+      const size = map.getSize();
+      const { center, zoom } = flyTarget([target[0], target[1]], {
+        zoom: map.getZoom(),
+        mapWidthPx: size.x,
+        cardOpen: true,
+        sheetPx: phone ? size.y * SHEET_SHARE : undefined,
+      });
       if (prefersReducedMotion()) map.setView(center, zoom, { animate: false });
       else map.flyTo(center, zoom, { duration: FLY_SECONDS });
     }, 260);
@@ -166,7 +175,7 @@ export default function MapView() {
         <BasemapLayer basemap={basemap} />
         <InvalidateOnResize />
         <FitToMarkers points={points} fitKey={`${data.meta.generated}|${JSON.stringify(filters)}|${settledQuery}|${timelineSize}|${showAll}`} />
-        <FlyToSelection target={positionOf(selectedEpisodeId)} selectionId={selectedEpisodeId} again={flyAgain} />
+        <FlyToSelection target={positionOf(selectedEpisodeId)} selectionId={selectedEpisodeId} again={flyAgain} phone={phone} />
         <EpisodeLayer episodes={matching} listOpenRef={clusterListOpen} />
         <MapControls onShowAll={() => setShowAll((n) => n + 1)} />
       </MapContainer>

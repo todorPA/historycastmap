@@ -6,6 +6,7 @@ import Sidebar from './Sidebar';
 import MapView from './MapView';
 import Timeline from './timeline/Timeline';
 import Guide from './guide/Guide';
+import PhoneBar from './PhoneBar';
 
 /**
  * The explorer's frame (HANDOFF §2, §19): panel, map, timeline. Layout state lives in classes on
@@ -49,6 +50,7 @@ export default function Shell() {
 
   return (
     <div className={classes}>
+      {phone && <PhoneBar />}
       <Sidebar />
       <main className="app__main">
         <MapView />

@@ -1,0 +1,182 @@
+/* The phone layout (HANDOFF §19), below 720 px of app width. `.is-phone` is set by Shell from
+ * the same media query (LayoutContext), so CSS and the components agree on which layout is on. */
+
+.app.is-phone {
+  position: relative;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  transition: none;
+}
+
+.app.is-phone .app__main {
+  grid-row: 2;
+}
+
+/* ---------- top bar ---------- */
+.phone-bar {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px 8px 12px;
+  border-bottom: 1px solid var(--line);
+  background: var(--f1);
+}
+
+.phone-bar__name {
+  flex: 1;
+  font: 600 16px var(--font-serif);
+}
+
+.phone-bar__name span {
+  color: var(--gold-hi);
+}
+
+/* ---------- the left panel as a full-screen sheet ---------- */
+.app.is-phone > .panel {
+  position: absolute;
+  inset: 0;
+  z-index: 3000;
+  border-right: 0;
+  transform: translateY(100%);
+  transition: transform 420ms var(--ease);
+}
+
+.app.is-phone > .panel > * {
+  min-width: 0;
+}
+
+.app.is-phone.is-sheet-open > .panel {
+  transform: none;
+}
+
+/* ---------- map ---------- */
+.app.is-phone .era-legend {
+  display: none;
+}
+
+/* The card no longer covers the right, so the controls stay put. */
+.app.is-phone .map-controls.is-shifted {
+  right: 12px;
+}
+
+.app.is-phone .map-empty {
+  left: 10px;
+  right: 58px;
+  transform: none;
+  border-radius: var(--r-10);
+  white-space: normal;
+}
+
+/* ---------- the episode card as a bottom sheet ---------- */
+.app.is-phone .ep-card {
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: 72%;
+  border-radius: 14px 14px 0 0;
+  animation: ep-sheet-in 420ms var(--ease);
+  transition: transform 420ms var(--ease);
+}
+
+@keyframes ep-sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+.app.is-phone .ep-card.is-peek {
+  transform: translateY(calc(100% - 118px));
+}
+
+.ep-card__grab {
+  flex: none;
+  display: grid;
+  place-items: center;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.ep-card__grab span {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--f4);
+}
+
+.app.is-phone .ep-card__body {
+  padding-top: 4px;
+}
+
+.app.is-phone .ep-card__title {
+  font-size: 21px;
+}
+
+/* ---------- timeline ---------- */
+.app.is-phone .tl {
+  --tl-label: 0px;
+  height: 210px;
+  max-height: none;
+}
+
+.app.is-phone .tl__title,
+.app.is-phone .tl__hint,
+.app.is-phone .tl__speed,
+.app.is-phone .tl-size,
+.app.is-phone .tl-btn--sq {
+  display: none;
+}
+
+.app.is-phone .tl__head {
+  gap: 8px;
+}
+
+.app.is-phone .tl__info {
+  gap: 5px;
+  font-size: 12px;
+}
+
+.app.is-phone .tl__info .tl__sep:first-child {
+  display: none;
+}
+
+/* Row labels overlay the top of their track; the counts and +N go (§19). */
+.app.is-phone .tl-row__label {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  z-index: 3;
+  padding: 0;
+  border: 0;
+  background: none;
+  pointer-events: none;
+}
+
+.app.is-phone .tl-row__name {
+  color: var(--tx3);
+  font-size: 10px;
+}
+
+.app.is-phone .tl-row__count,
+.app.is-phone .tl-row__more {
+  display: none;
+}
+
+.app.is-phone .tl-fade {
+  left: 0;
+}
+
+.app.is-phone .tl-more {
+  right: 20px;
+  height: 28px;
+  font-size: 12px;
+}
+
+.app.is-phone .tl-strip {
+  margin-left: 12px;
+}
