@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { View } from '../../lib/timelineAxis';
-import { easeInOutCubic } from '../../lib/timelineWindow';
+import { clampView, easeInOutCubic } from '../../lib/timelineWindow';
 import { prefersReducedMotion } from '../../lib/motion';
 import { useTime } from '../../state/TimeContext';
 
@@ -15,7 +15,13 @@ import { useTime } from '../../state/TimeContext';
  */
 export function useTimelineView() {
   const { range, bounds, setRange } = useTime();
-  const [view, setViewState] = useState<View>(range);
+  /**
+   * The time source only orders its two years, so a link like `?from=1000&to=1000` arrives as a
+   * zero-length range, and every year → x division is then by zero. The view always holds at
+   * least the Window's 8 years inside the bounds, and the normalised range is written back.
+   */
+  const normalise = (r: View) => clampView(r.from, r.to, bounds);
+  const [view, setViewState] = useState<View>(() => normalise(range));
   const viewRef = useRef(view);
   const frame = useRef(0);
 
@@ -34,12 +40,16 @@ export function useTimelineView() {
   }, []);
 
   useEffect(() => {
+    const target = normalise(range);
+    if (target.from !== range.from || target.to !== range.to) setRange(target.from, target.to);
     const v = viewRef.current;
-    if (Math.round(v.from) === range.from && Math.round(v.to) === range.to) return;
+    if (Math.round(v.from) === target.from && Math.round(v.to) === target.to) return;
     cancel();
-    viewRef.current = range;
-    setViewState(range);
-  }, [range, cancel]);
+    viewRef.current = target;
+    setViewState(target);
+    // `normalise` reads only `bounds`, listed here.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [range, bounds, cancel, setRange]);
 
   /** Tween to `target` (easeInOutCubic); instant under reduced motion. */
   const tweenTo = useCallback(
