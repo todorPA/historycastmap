@@ -165,7 +165,7 @@ const dict = {
     kindPoint: 'single date',
     kindRange: 'period',
     kindLong: 'long period',
-    listenEpisode: 'Listen to the episode',
+    listenEpisode: 'Listen to episode',
     nowPlaying: 'Now playing',
     audioBlocked: 'The browser cannot play the audio here.',
     openMp3: 'Open the mp3',

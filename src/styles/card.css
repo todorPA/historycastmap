@@ -135,7 +135,16 @@
 }
 
 .ep-card__actions .hc-btn {
+  white-space: nowrap;
   text-decoration: none;
+}
+
+/* The primary action takes the row's spare width, so a longer label (EN) shrinks the gap
+ * rather than wrapping the button onto two lines. */
+.ep-card__actions .hc-btn--primary {
+  flex: 1;
+  justify-content: center;
+  min-width: 0;
 }
 
 .hc-btn--icon {
