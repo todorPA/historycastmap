@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { agreeSr, episodeCount, episodeNoun } from './plural';
+import { agreeSr, episodeCount, episodeNoun, moreBelowLabel } from './plural';
 
 describe('episodeCount', () => {
   it.each([
@@ -37,5 +37,18 @@ describe('episodeNoun', () => {
     expect(episodeNoun(1, 'sr')).toBe('epizoda');
     expect(episodeNoun(1, 'en')).toBe('episode');
     expect(episodeNoun(178, 'en')).toBe('episodes');
+  });
+});
+
+describe('moreBelowLabel', () => {
+  it('agrees in Serbian, including the 2–4 form the handoff leaves out', () => {
+    expect(moreBelowLabel(1, 'sr')).toBe('Još 1 epizoda u ovom periodu — skroluj');
+    expect(moreBelowLabel(3, 'sr')).toBe('Još 3 epizode u ovom periodu — skroluj');
+    expect(moreBelowLabel(12, 'sr')).toBe('Još 12 epizoda u ovom periodu — skroluj');
+  });
+
+  it('pluralises in English', () => {
+    expect(moreBelowLabel(1, 'en')).toBe('1 more episode in this period — scroll');
+    expect(moreBelowLabel(5, 'en')).toBe('5 more episodes in this period — scroll');
   });
 });
