@@ -22,6 +22,8 @@ export type AudioAction =
   | { type: 'play'; seconds: number; label: string }
   | { type: 'playing' }
   | { type: 'pause' }
+  /** The file played to its end: `ended` fires, not `pause`. */
+  | { type: 'ended' }
   | { type: 'time'; time: number; duration: number }
   | { type: 'error' }
   | { type: 'reset' };
@@ -38,7 +40,7 @@ export function audioReducer(s: AudioState, a: AudioAction): AudioState {
       // Media events can arrive after a reset (the element finishes a request it had started).
       if (s.status === 'idle') return s;
       if (a.type === 'playing') return { ...s, status: 'playing' };
-      if (a.type === 'pause') return { ...s, status: 'paused' };
+      if (a.type === 'pause' || a.type === 'ended') return { ...s, status: 'paused' };
       if (a.type === 'time') return { ...s, time: a.time, duration: a.duration };
       return { ...s, status: 'error' };
   }
