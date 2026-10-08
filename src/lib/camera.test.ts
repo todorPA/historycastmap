@@ -19,6 +19,16 @@ describe('Web Mercator', () => {
 describe('flyTarget (§10.1)', () => {
   const beograd: [number, number] = [44.82, 20.46];
 
+  // Phone (§19): the card is a bottom sheet, so the episode lands in the middle of what is left
+  // above it — the centre sits half the sheet's height below the episode, with no sideways shift.
+  it('puts the episode above a bottom-sheet card instead', () => {
+    const { center, zoom } = flyTarget(beograd, { zoom: 5, mapWidthPx: 390, cardOpen: true, sheetPx: 400 });
+    const dx = project(center, zoom)[0] - project(beograd, zoom)[0];
+    const dy = project(center, zoom)[1] - project(beograd, zoom)[1];
+    expect(dx).toBeCloseTo(0, 6);
+    expect(dy).toBeCloseTo(200, 6);
+  });
+
   it('clamps the zoom to 4.5–6', () => {
     expect(flyTarget(beograd, { zoom: 3, mapWidthPx: 1200, cardOpen: true }).zoom).toBe(4.5);
     expect(flyTarget(beograd, { zoom: 9, mapWidthPx: 1200, cardOpen: true }).zoom).toBe(6);

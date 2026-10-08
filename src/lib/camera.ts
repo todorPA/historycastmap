@@ -26,15 +26,18 @@ const FLY_ZOOM = { min: 4.5, max: 6 };
 /**
  * Where the map flies on a selection (§10.1): the current zoom clamped to 4.5–6, and — while the
  * card is open over the right of the map — a centre shifted right by min(196 px, 25% of the map
- * width), so the episode lands left of centre, clear of the card.
+ * width), so the episode lands left of centre, clear of the card. On phone (§19) the card is a
+ * bottom sheet `sheetPx` tall instead, and the centre drops by half of it, so the episode lands
+ * in the middle of the map left above the sheet.
  */
 export function flyTarget(
   latLng: LatLng,
-  view: { zoom: number; mapWidthPx: number; cardOpen: boolean },
+  view: { zoom: number; mapWidthPx: number; cardOpen: boolean; sheetPx?: number },
 ): { center: LatLng; zoom: number } {
   const zoom = Math.min(FLY_ZOOM.max, Math.max(FLY_ZOOM.min, view.zoom));
   if (!view.cardOpen) return { center: latLng, zoom };
   const [x, y] = project(latLng, zoom);
+  if (view.sheetPx !== undefined) return { center: unproject([x, y + view.sheetPx / 2], zoom), zoom };
   return { center: unproject([x + Math.min(196, view.mapWidthPx * 0.25), y], zoom), zoom };
 }
 
