@@ -22,7 +22,9 @@ export default function Sidebar() {
   const total = useEpisodes().length;
   const shown = useMatchingEpisodes().length;
   const order = useListOrder();
-  const { filtersOpen, setFiltersOpen } = useLayout();
+  const { filtersOpen, setFiltersOpen, phone, panelOpen, sheetOpen } = useLayout();
+  // Collapsed (desktop) or behind its sheet (phone): out of the tab order and the a11y tree.
+  const hidden = phone ? !sheetOpen : !panelOpen;
   const filterButton = useRef<HTMLButtonElement>(null);
 
   const closeFilters = () => {
@@ -38,6 +40,7 @@ export default function Sidebar() {
   return (
     <aside
       className="panel"
+      inert={hidden}
       // Esc closes the filter panel wherever focus is — the search row and header stay
       // reachable while it is open, and a handler on the panel alone missed them. The search
       // box keeps Esc for clearing its text and stops it there (SearchRow).

@@ -2,6 +2,7 @@ import { forwardRef, useEffect, useRef } from 'react';
 import { t } from '../../lib/i18n';
 import { activeFilterCount } from '../../lib/episodeFilters';
 import { useFilters } from '../../state/FilterContext';
+import { SEARCH_INPUT_ID, useLayout } from '../../state/LayoutContext';
 
 /** True while the user is typing somewhere, so a global shortcut must not fire. */
 function isTyping(target: EventTarget | null): boolean {
@@ -23,17 +24,19 @@ const SearchRow = forwardRef<HTMLButtonElement, {
   const { query, setQuery, filters, lang } = useFilters();
   const inputRef = useRef<HTMLInputElement>(null);
   const active = activeFilterCount(filters);
+  const { openSearch } = useLayout();
 
+  // `/` reaches the search even with the panel collapsed or, on phone, behind its sheet.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey && !isTyping(e.target)) {
         e.preventDefault();
-        inputRef.current?.focus();
+        openSearch();
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [openSearch]);
 
   return (
     <div className="search-row">
@@ -44,6 +47,7 @@ const SearchRow = forwardRef<HTMLButtonElement, {
         </svg>
         <input
           ref={inputRef}
+          id={SEARCH_INPUT_ID}
           type="search"
           className="search-row__input"
           value={query}

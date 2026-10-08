@@ -10,6 +10,7 @@
 @import './map.css';
 @import './card.css';
 @import './timeline.css';
+@import './layout.css';
 
 * {
   box-sizing: border-box;
