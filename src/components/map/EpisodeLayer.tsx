@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type MutableRefObject } from 'react';
 import { Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
 import { divIcon, latLngBounds, point, type DivIcon } from 'leaflet';
 import type { LatLngTuple } from 'leaflet';
@@ -71,13 +71,22 @@ interface Item {
  * Every map mark (HANDOFF §9.1): a marker per episode, era-ringed clusters with a list for
  * stacks that zooming cannot separate, and the selected episode's chapter pins.
  */
-export default function EpisodeLayer({ episodes }: { episodes: EpisodeView[] }) {
+export default function EpisodeLayer({
+  episodes,
+  listOpenRef,
+}: {
+  episodes: EpisodeView[];
+  /** Read by MapView's Esc handler, so Esc closes an open list before it deselects anything. */
+  listOpenRef: MutableRefObject<boolean>;
+}) {
   const map = useMap();
   const { placesById } = useData();
   const { range } = useTime();
   const { lang, selectedEpisodeId, selectEpisode, hoveredEpisodeId, setHoveredEpisodeId, selectedEventId, setSelectedEventId } = useFilters();
   const [zoom, setZoom] = useState(() => map.getZoom());
-  const [list, setList] = useState<{ at: LatLngTuple; members: EpisodeView[] } | null>(null);
+  // Ids, not episodes: the members shown are re-derived on every render, so a filter, search or
+  // window change while the list is open drops the episodes that no longer belong.
+  const [list, setList] = useState<{ at: LatLngTuple; ids: ReadonlySet<string> } | null>(null);
   useMapEvents({
     zoomend: () => setZoom(map.getZoom()),
     // An empty-map click closes the list; it does not deselect (decision of 2026-10-05).
@@ -103,6 +112,24 @@ export default function EpisodeLayer({ episodes }: { episodes: EpisodeView[] }) 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [map, items, zoom, selectedEpisodeId, range.from, range.to],
   );
+
+  const listMembers = list ? items.filter((i) => list.ids.has(i.id) && !isOutside(i)).map((i) => i.ep).sort(chronological) : [];
+  const listOpen = listMembers.length > 0;
+
+  useEffect(() => {
+    listOpenRef.current = listOpen;
+    if (list && !listOpen) setList(null);
+  }, [list, listOpen, listOpenRef]);
+
+  // Esc closes the list wherever focus is (Leaflet's own Esc only works with focus in the map).
+  useEffect(() => {
+    if (!listOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setList(null);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [listOpen]);
 
   const selected = episodes.find((e) => e.id === selectedEpisodeId);
   const pins = selected ? chapterPins(selected) : [];
@@ -148,7 +175,7 @@ export default function EpisodeLayer({ episodes }: { episodes: EpisodeView[] }) 
                 const fitZoom = map.getBoundsZoom(bounds, false, point(160, 160)); // 80 px each side
                 const maxZoom = Number.isFinite(map.getMaxZoom()) ? map.getMaxZoom() : 18;
                 const action = clusterClick({ zoom: map.getZoom(), fitZoom, maxZoom });
-                if (action === 'list') setList({ at: c.position, members: [...members].sort(chronological) });
+                if (action === 'list') setList({ at: c.position, ids: new Set(members.map((e) => e.id)) });
                 else map.setView(bounds.getCenter(), action.zoomTo);
               },
             }}
@@ -172,10 +199,10 @@ export default function EpisodeLayer({ episodes }: { episodes: EpisodeView[] }) 
         );
       })}
 
-      {list && (
+      {list && listOpen && (
         <Popup position={list.at} className="cluster-list-popup" minWidth={260} maxWidth={320} eventHandlers={{ remove: () => setList(null) }}>
           <ul className="cluster-list">
-            {list.members.map((ep) => (
+            {listMembers.map((ep) => (
               <li key={ep.id}>
                 <button
                   type="button"

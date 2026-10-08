@@ -21,6 +21,13 @@ describe('audioReducer', () => {
     expect(audioReducer(s, { type: 'playing' }).status).toBe('playing');
   });
 
+  // A file that plays to its end fires `ended`, not `pause`; without this the control stayed on ❚❚.
+  it('stops playing when the file ends', () => {
+    let s = audioReducer(INITIAL_AUDIO, { type: 'play', seconds: 0, label: 'x' });
+    s = audioReducer(s, { type: 'playing' });
+    expect(audioReducer(s, { type: 'ended' }).status).toBe('paused');
+  });
+
   // The fallback link must start where the failed play was meant to.
   it('keeps the requested position when it fails, for the mp3 link', () => {
     let s = audioReducer(INITIAL_AUDIO, { type: 'play', seconds: 4000, label: 'x' });

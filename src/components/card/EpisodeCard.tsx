@@ -123,9 +123,11 @@ export default function EpisodeCard({ episode }: { episode: EpisodeView }) {
 
           <audio {...audioProps} hidden />
           {audio.status !== 'idle' && (
-            <div className={`player player--${audio.status}`} aria-live="polite">
+            // Not a live region as a whole: the timer below changes on every timeupdate, and a
+            // screen reader would read it out continuously. Only the status text is announced.
+            <div className={`player player--${audio.status}`}>
               {audio.status === 'error' ? (
-                <p className="player__error">
+                <p className="player__error" role="alert">
                   {t(lang, 'audioBlocked')}{' '}
                   <a href={`${episode.episode.audioUrl}#t=${Math.floor(audio.from)}`} target="_blank" rel="noreferrer">{t(lang, 'openMp3')} ↗</a>
                 </p>
@@ -134,7 +136,7 @@ export default function EpisodeCard({ episode }: { episode: EpisodeView }) {
                   <button type="button" className="player__toggle" onClick={toggle} aria-label={t(lang, audio.status === 'playing' ? 'pause' : 'play')}>
                     {audio.status === 'loading' ? <span className="player__spinner" aria-hidden="true" /> : audio.status === 'playing' ? '❚❚' : '▶'}
                   </button>
-                  <span className="player__label">
+                  <span className="player__label" role="status">
                     {audio.status === 'loading' ? t(lang, 'audioLoading') : <>♪ {t(lang, 'nowPlaying')}: {audio.label}</>}
                   </span>
                   <span className="player__time">{mmss(audio.time)}</span>

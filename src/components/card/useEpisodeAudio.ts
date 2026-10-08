@@ -59,6 +59,7 @@ export function useEpisodeAudio(audioUrl: string) {
       const el = ref.current;
       if (el) dispatch({ type: 'time', time: el.currentTime, duration: el.duration || 0 });
     },
+    onEnded: () => dispatch({ type: 'ended' }),
     onError: () => dispatch({ type: 'error' }),
   };
 

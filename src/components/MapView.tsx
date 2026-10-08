@@ -73,7 +73,7 @@ function InvalidateOnResize() {
  * Waits past FitToMarkers' settle delay, so a shared link that names an episode fits first and
  * then flies, instead of the fit landing on top of the flight.
  */
-function FlyToSelection({ target }: { target: LatLngTuple | null }) {
+function FlyToSelection({ target, selectionId }: { target: LatLngTuple | null; selectionId: string | null }) {
   const map = useMap();
   useEffect(() => {
     if (!target) return;
@@ -83,9 +83,10 @@ function FlyToSelection({ target }: { target: LatLngTuple | null }) {
       else map.flyTo(center, zoom, { duration: FLY_SECONDS });
     }, 260);
     return () => window.clearTimeout(id);
-    // Re-fly only when the selection moves, not when its array identity does.
+    // Re-fly when the selection changes — even to another episode at the same place (97 of 178
+    // share their spot with another) — or its position moves; not when the array identity does.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [target?.[0], target?.[1], map]);
+  }, [selectionId, target?.[0], target?.[1], map]);
   return null;
 }
 
@@ -119,6 +120,7 @@ export default function MapView() {
     [matching, placesById],
   );
   const selected = matching.find((e) => e.id === selectedEpisodeId) ?? null;
+  const clusterListOpen = useRef(false);
 
   /**
    * Esc closes the card and deselects; ←/→ step to the previous or next episode (§10.1). Caught
@@ -130,6 +132,8 @@ export default function MapView() {
     const onKey = (e: KeyboardEvent) => {
       if (ownsArrowKeys(e.target) || e.metaKey || e.ctrlKey || e.altKey) return;
       if (e.key === 'Escape') {
+        // An open cluster list takes Esc first; EpisodeLayer closes it.
+        if (clusterListOpen.current) return;
         selectEpisode(null);
       } else if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
         const { prev, next } = neighbours(selected, matching);
@@ -151,8 +155,8 @@ export default function MapView() {
         <BasemapLayer basemap={basemap} />
         <InvalidateOnResize />
         <FitToMarkers points={points} fitKey={`${data.meta.generated}|${JSON.stringify(filters)}|${settledQuery}|${timelineSize}|${showAll}`} />
-        <FlyToSelection target={positionOf(selectedEpisodeId)} />
-        <EpisodeLayer episodes={matching} />
+        <FlyToSelection target={positionOf(selectedEpisodeId)} selectionId={selectedEpisodeId} />
+        <EpisodeLayer episodes={matching} listOpenRef={clusterListOpen} />
         <MapControls onShowAll={() => setShowAll((n) => n + 1)} />
       </MapContainer>
 
