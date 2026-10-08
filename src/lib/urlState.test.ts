@@ -10,7 +10,7 @@ const DEFAULTS = {
   episodeId: null,
   eventId: null,
   lang: 'sr' as const,
-  basemapId: 'osm',
+  basemapId: 'paper',
   regions: [],
   types: [],
   series: [],

@@ -61,6 +61,29 @@ const dict = {
     source: 'Izvor',
     matchPerson: 'ličnost',
     matchPlace: 'mesto',
+    published: 'objavljena',
+    kindPoint: 'jedan datum',
+    kindRange: 'period',
+    kindLong: 'dug period',
+    listenEpisode: 'Slušaj epizodu',
+    nowPlaying: 'Sada svira',
+    audioBlocked: 'Pregledač ovde ne može da pusti audio.',
+    openMp3: 'Otvori mp3',
+    placeInHistory: 'Mesto u istoriji',
+    before: 'Pre',
+    after: 'Posle',
+    sameTime: 'U isto vreme',
+    andMore: 'i još {n}',
+    chapters: 'Poglavlja',
+    closeCard: 'Zatvori epizodu',
+    colourIsEra: 'Boja = epoha',
+    inPeriod: 'U periodu',
+    outsidePeriod: 'Van izabranog perioda',
+    hide: 'Sakrij',
+    zoomIn: 'Približi',
+    zoomOut: 'Udalji',
+    showAll: 'Prikaži sve',
+    zoomToEra: 'Prikaži epohu na vremenskoj osi',
     series: 'Serijal',
     series_main: 'Glavna serija',
     series_side: 'Tematske epizode',
@@ -138,6 +161,29 @@ const dict = {
     source: 'Source',
     matchPerson: 'person',
     matchPlace: 'place',
+    published: 'published',
+    kindPoint: 'single date',
+    kindRange: 'period',
+    kindLong: 'long period',
+    listenEpisode: 'Listen to episode',
+    nowPlaying: 'Now playing',
+    audioBlocked: 'The browser cannot play the audio here.',
+    openMp3: 'Open the mp3',
+    placeInHistory: 'Place in history',
+    before: 'Before',
+    after: 'After',
+    sameTime: 'At the same time',
+    andMore: 'and {n} more',
+    chapters: 'Chapters',
+    closeCard: 'Close the episode',
+    colourIsEra: 'Colour = era',
+    inPeriod: 'In the period',
+    outsidePeriod: 'Outside the selected period',
+    hide: 'Hide',
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
+    showAll: 'Show all',
+    zoomToEra: 'Show this era on the timeline',
     series: 'Series',
     series_main: 'Main show',
     series_side: 'Thematic episodes',
@@ -165,6 +211,11 @@ export type UiKey = keyof (typeof dict)['sr'];
 
 export function t(lang: Lang, key: UiKey): string {
   return dict[lang][key] ?? dict.sr[key];
+}
+
+/** t() with {placeholders} filled — for strings whose word order differs by language. */
+export function tf(lang: Lang, key: UiKey, vars: Record<string, string | number>): string {
+  return Object.entries(vars).reduce((s, [k, v]) => s.split(`{${k}}`).join(String(v)), t(lang, key) as string);
 }
 
 /** Pick a localized content string from data, falling back to Serbian. */

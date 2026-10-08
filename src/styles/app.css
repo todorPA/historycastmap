@@ -7,6 +7,8 @@
 /* Explorer palette and alias re-points; after tokens.css so it wins. Not loaded by the landing page. */
 @import './theme.css';
 @import './panel.css';
+@import './map.css';
+@import './card.css';
 
 * {
   box-sizing: border-box;
@@ -28,7 +30,6 @@ body {
 
 /* Chrome (labels, legend, timeline axis) is furniture — dragging the map or the
    timeline shouldn't leave text selected. Popup content stays selectable. */
-.legend,
 .timeline__head,
 .vis-timeline {
   user-select: none;
@@ -92,8 +93,6 @@ body {
 /* One focus treatment for every interactive control, keyboard only. */
 .btn:focus-visible,
 .lang-toggle__btn:focus-visible,
-.basemap__btn:focus-visible,
-.legend__more:focus-visible,
 .timeline__resize:focus-visible {
   outline: 2px solid var(--ink-100);
   outline-offset: 2px;
@@ -158,387 +157,11 @@ body {
   z-index: var(--z-map-overlay);
 }
 
-.map-empty {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: var(--z-map-ui);
-  padding: 7px 13px;
-  border-radius: var(--r-pill);
-  background: rgba(251, 250, 249, 0.93);
-  color: var(--text);
-  border: 1px solid var(--ink-500);
-  box-shadow: var(--shadow-panel);
-  font-size: var(--step--1);
-}
-
-/* ---------- grouped popup (one place, one year) ---------- */
-.group-popup__count {
-  margin: 0 0 8px;
-  font-size: var(--step--2);
-  color: var(--lit-muted);
-}
-
-.group-popup__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-height: 260px;
-  overflow-y: auto;
-}
-
-.group-popup__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--lit-raised);
-}
-
-.group-popup__item:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.group-popup__dot {
-  width: 9px;
-  height: 9px;
-  margin-top: 4px;
-  border-radius: 50%;
-  flex: none;
-  box-shadow: 0 0 0 1px var(--swatch-ring);
-}
-
-.group-popup__body {
-  flex: 1;
-  min-width: 0;
-}
-
-.group-popup__name {
-  font-size: var(--step-0);
-  line-height: 1.3;
-}
-
-.group-popup__meta {
-  margin-top: 2px;
-  font-size: var(--step--2);
-  color: var(--lit-muted);
-}
-
-.btn--tiny {
-  flex: none;
-  padding: 4px 7px;
-  font-size: var(--step--2);
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-}
-
-/* ---------- clusters ----------
-   `zoom-in` was literally accurate (clicking a cluster zooms to its members) but it read as
-   a different kind of target from the single markers beside it, which are identical circles
-   that open a popup. Zooming is already available on scroll and on the +/- control, so the
-   cursor is better spent saying the one thing that is not obvious: this circle is clickable. */
-.cluster {
-  cursor: pointer;
-}
-
-/* The count sits inside the circle; a permanent tooltip is the label. */
-.leaflet-tooltip.cluster__label {
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  color: #fff;
-  font-size: var(--step--2);
-  font-weight: 600;
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  text-shadow: 0 1px 2px rgba(26, 23, 19, 0.75);
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.leaflet-tooltip.cluster__label::before {
-  display: none;
-}
-
-/* ---------- basemap switcher ---------- */
-.basemap {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: var(--z-map-ui);
-  max-width: 210px;
-  padding: 8px;
-  border-radius: var(--r-lg);
-  background: rgba(251, 250, 249, 0.93);
-  color: var(--text);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--ink-500);
-  box-shadow: var(--shadow-panel);
-}
-
-.basemap__row {
-  display: flex;
-  gap: 4px;
-}
-
-.basemap__btn {
-  flex: 1;
-  padding: 5px 9px;
-  font: inherit;
-  font-size: var(--step--2);
-  font-weight: 600;
-  white-space: nowrap;
-  color: var(--muted);
-  background: transparent;
-  border: 1px solid var(--control-edge);
-  border-radius: var(--r-sm);
-  cursor: pointer;
-}
-
-.basemap__btn.is-active {
-  background: var(--gold);
-  border-color: var(--gold-deep);
-  color: var(--ink-100);
-}
-
-.basemap__note {
-  margin: 7px 0 0;
-  font-size: var(--step--2);
-  line-height: 1.35;
-  color: var(--muted);
-}
-
-.basemap__note strong {
-  color: var(--text);
-}
-
-/* ---------- legend ---------- */
-.legend {
-  position: absolute;
-  bottom: 18px;
-  left: 12px;
-  z-index: var(--z-map-ui);
-  max-width: 260px;
-  /* Never let the key grow tall enough to cover the map it explains. */
-  max-height: calc(100% - 60px);
-  overflow-y: auto;
-  padding: 10px 12px;
-  border-radius: var(--r-lg);
-  background: rgba(251, 250, 249, 0.93);
-  color: var(--text);
-  font-size: var(--step--2);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--ink-500);
-  box-shadow: var(--shadow-panel);
-}
-
-.legend__more {
-  margin-top: 7px;
-  padding: 0;
-  font: inherit;
-  font-size: var(--step--2);
-  background: none;
-  border: 0;
-  color: var(--gold-deep);
-  cursor: pointer;
-}
-
-.legend__title {
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  color: var(--muted);
-  margin-bottom: 7px;
-}
-
-.legend__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.legend__item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-/* The ring is what lets a region hue chosen for distinguishability sit on dark chrome
-   without a contrast failure. Same device as the map markers. */
-.legend__swatch {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex: none;
-  box-shadow: 0 0 0 1px var(--swatch-ring);
-}
-
-.legend__label {
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.legend__count {
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-}
-
-.legend__note {
-  margin-top: 8px;
-  padding-top: 7px;
-  border-top: 1px solid var(--line-soft);
-  color: var(--muted);
-}
-
-.legend__note--dashed::before {
-  content: '';
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  margin-right: 7px;
-  border-radius: 50%;
-  border: 1px dashed var(--muted);
-  opacity: 0.6;
-  vertical-align: -1px;
-}
-
-/* Side series: an outlined dot with an ink centre, matching the map's centre pip. The
-   radial-gradient draws the pip rather than a nested element, so the swatch stays one box. */
-.legend__note--pip::before {
-  content: '';
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  margin-right: 7px;
-  border-radius: 50%;
-  border: 1px solid var(--muted);
-  background: radial-gradient(circle, var(--ink-100) 0 2px, transparent 2px);
-  vertical-align: -1px;
-}
-
 /* ---------- popup ---------- */
 /* Leaflet sizes .leaflet-popup-content itself from minWidth/maxWidth — don't fight it,
    just set the box's own minimum so the content never collapses to one word per line. */
 .leaflet-popup-content {
   margin: 12px 14px;
-}
-
-.event-popup {
-  min-width: 250px;
-  color: var(--lit-text);
-  font-size: var(--step-0);
-}
-
-.event-popup__title {
-  margin: 0 0 7px;
-  font-size: var(--step-1);
-  line-height: 1.25;
-}
-
-.event-popup__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  align-items: center;
-  font-size: var(--step--2);
-  color: var(--lit-muted);
-  margin-bottom: 8px;
-}
-
-.event-popup__year {
-  font-weight: 700;
-  color: var(--lit-text);
-}
-
-.badge {
-  padding: 1px 7px;
-  border-radius: var(--r-pill);
-  border: 1px solid currentColor;
-  font-size: var(--step--2);
-}
-
-.badge--high {
-  color: #1a7a4a;
-}
-
-.badge--medium {
-  color: #8a6410;
-}
-
-.badge--low {
-  color: #a33a3a;
-}
-
-.chips {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin: 0 0 8px;
-  padding: 0;
-}
-
-.chip {
-  padding: 2px 8px;
-  border-radius: var(--r-pill);
-  background: var(--lit-raised);
-  font-size: var(--step--2);
-  color: var(--lit-muted);
-}
-
-.event-popup__desc {
-  margin: 0 0 8px;
-  line-height: 1.45;
-}
-
-.event-popup__quote {
-  margin: 0 0 8px;
-  padding-left: 9px;
-  border-left: 2px solid var(--lit-line);
-  font-style: italic;
-  font-size: var(--step--1);
-  color: var(--lit-muted);
-}
-
-.event-popup__episode {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: var(--step--2);
-  color: var(--lit-muted);
-  margin-bottom: 9px;
-}
-
-.event-popup__ep-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  flex: none;
-  box-shadow: 0 0 0 1px var(--swatch-ring);
-}
-
-.event-popup__actions {
-  display: flex;
-  gap: 7px;
-  flex-wrap: wrap;
-}
-
-.event-popup__audio {
-  width: 100%;
-  margin-top: 9px;
 }
 
 /* ---------- timeline ---------- */
@@ -665,6 +288,21 @@ body {
 
 /* Low confidence reads as a dashed edge. It must not be an opacity change: on a light
    panel that washes the fill out and takes the label with it. */
+/* While an episode is selected, every other episode's chapters are quieted (HANDOFF §11) and its
+ * own stand out. The label sits inside the bar, and §15 forbids fading text by opacity, so a
+ * quieted item turns a pale, still-readable grey instead (as in prototype-4.png). !important
+ * because vis-timeline writes each item's colours inline. */
+.vis-item.is-muted {
+  background-color: var(--f3) !important;
+  border-color: var(--line-soft) !important;
+  color: var(--tx2) !important;
+}
+
+.vis-item.is-selected-episode {
+  box-shadow: 0 0 0 2px var(--f1), 0 0 0 4px var(--gold-line);
+  font-weight: 700;
+}
+
 .vis-item--low {
   border-style: dashed;
   border-color: var(--ink-100) !important;
@@ -686,11 +324,6 @@ body {
   .app {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-  }
-
-  .legend {
-    max-width: 190px;
-    bottom: 10px;
   }
 }
 
@@ -785,7 +418,6 @@ body {
    Radius follows the control's size, not its component. */
 .btn:active,
 .lang-toggle__btn:active,
-.basemap__btn:active,
 .timeline__play:active,
 .timeline__resize:active,
 .timeline__size__btn:active {
@@ -793,7 +425,6 @@ body {
 }
 
 .lang-toggle__btn:hover:not(.is-active),
-.basemap__btn:hover:not(.is-active),
 .timeline__resize:hover {
   background: var(--ink-600);
   color: var(--text);
@@ -857,18 +488,17 @@ body {
 }
 
 /* ---------- basemap ----------
-   The governing rule of this design is that colour is the data encoding (regions.ts), and
-   raw OSM tiles break it: they bring their own green landmass, blue sea and red motorways,
-   competing with the twelve hues the palette works so hard to keep apart. Desaturating the
-   tile pane alone pushes the basemap back without touching the markers, which live in the
-   overlay pane. Same device already used on the landing hero.
-
-   saturate() is near-zero rather than partial, and contrast is raised rather than lowered:
-   see the --map-sea / --map-land note in tokens.css for why "less of everything" was the
-   wrong kind of quiet. brightness stays just under 1 so the sheet does not glare under the
-   popups, which are pure --paper. */
+   The default basemap is the paper map (config/basemaps.ts): Natural Earth drawn on a canvas in
+   the theme's --map-* colours, below the tile pane. Raw OSM tiles would break the rule that
+   colour is the data encoding — green land, blue sea, red motorways — so the close-up tiles
+   that fade in past zoom ~7 are drained of colour and warmed toward --map-land, which keeps the
+   hand-over from changing the map's colour. The fade itself is animated rather than snapped. */
 .map .leaflet-tile-pane {
-  filter: saturate(0.1) contrast(1.24) brightness(0.98);
+  filter: grayscale(1) sepia(0.22) contrast(1.08) brightness(1.04);
+}
+
+.map .leaflet-tile-pane .leaflet-layer {
+  transition: opacity 260ms var(--ease);
 }
 
 /* ---------- timeline height ----------
@@ -950,10 +580,4 @@ body {
 .btn--play[disabled] {
   opacity: 0.75;
   cursor: progress;
-}
-
-.event-popup__audio-error {
-  margin: 8px 0 0;
-  font-size: var(--step--1);
-  color: #a3211c;
 }

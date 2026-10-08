@@ -12,6 +12,8 @@ export interface EpisodeOverride {
   kind?: EpisodeKind;
   placeId?: string;
   dateLabel?: LocalizedText;
+  /** An English title; the dataset carries Serbian titles only. */
+  title?: { en?: string };
 }
 export type EpisodeOverrides = Record<string, EpisodeOverride>;
 
@@ -117,7 +119,7 @@ export function deriveEpisodes(data: GeoData, overrides: EpisodeOverrides = {}):
     out.push({
       id: episode.id,
       episode,
-      title: episode.title,
+      title: o.title?.en ? { ...episode.title, en: o.title.en } : episode.title,
       series: episode.series ?? 'main',
       events: byTimestamp(events),
       from,

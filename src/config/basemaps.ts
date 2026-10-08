@@ -23,12 +23,44 @@ export type Basemap =
       noteKey?: BasemapNoteKey;
       maxNativeZoom?: number;
       maxZoom?: number;
+    }
+  | {
+      id: string;
+      kind: 'vector';
+      labelKey: BasemapLabelKey;
+      /** Geometry file, relative to the deploy base (lib/vectorBasemap.ts has the format). */
+      path: string;
+      attribution: string;
+      /** Raster tiles that fade in over the vector sheet where its 1:50m detail runs out. */
+      closeup: {
+        url: string;
+        attribution: string;
+        fade: { from: number; to: number };
+        maxNativeZoom?: number;
+      };
+      maxZoom?: number;
     };
 
 export type BasemapLabelKey = 'basemapModern' | 'basemapHistorical';
 export type BasemapNoteKey = 'ohmStaticNote';
 
 export const BASEMAPS: Basemap[] = [
+  // The design's paper map (HANDOFF §3.3): Natural Earth land, lakes, rivers and borders drawn
+  // in the theme's map colours, with no labels to compete with the episode marks. Taken from
+  // the prototype by scripts/extract-basemap.mjs.
+  {
+    id: 'paper',
+    kind: 'vector',
+    labelKey: 'basemapModern',
+    path: 'data/basemap/ne-50m.json',
+    attribution: '<a href="https://www.naturalearthdata.com/">Natural Earth</a>',
+    closeup: {
+      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      fade: { from: 6.5, to: 7.5 },
+    },
+    maxZoom: 18,
+  },
   {
     id: 'osm',
     kind: 'modern',
@@ -53,7 +85,7 @@ export const BASEMAPS: Basemap[] = [
   // Adding MapLibre (SPEC-ohm.md Option B) is what's left — see SPEC-ohm.md for findings.
 ];
 
-export const DEFAULT_BASEMAP_ID = 'osm';
+export const DEFAULT_BASEMAP_ID = 'paper';
 
 export function getBasemap(id: string): Basemap {
   return BASEMAPS.find((b) => b.id === id) ?? BASEMAPS[0];
