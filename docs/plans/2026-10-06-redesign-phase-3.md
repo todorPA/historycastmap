@@ -135,8 +135,8 @@ actor chips, confidence as text + three dots. Close × deselects.
 - Remove: `EventPopup`, `EventGroupPopup`, `EventMarkers`, `Legend` (old), `Graticule` + `lib/graticule.ts`, `BasemapSwitcher` UI (config infra stays), `DeselectOnMapClick`, `clusterClickZoom`, and their CSS (same dead-CSS sweep as Phase 2).
 
 ### Task 13 — Natural Earth basemap *(separable; last)*
-- Owner downloads the 1:50m layers (land, lakes, rivers + lake centrelines, admin-0 boundary lines) — commands given at this task.
-- `scripts/build-basemap.mjs`: coordinate rounding + Douglas–Peucker simplification, no dependencies; writes `public/data/basemap/*.json`, committed. Size budget stated in the PR.
+- ~~Owner downloads the 1:50m layers~~ — not needed: the exported prototype embeds the geometry it was designed on (`HC_GEO`: land, lakes, rivers, borders, already rounded to 0.01°).
+- `scripts/extract-basemap.mjs` (`npm run basemap`) copies it to `public/data/basemap/ne-50m.json`, committed: 847 KB, 348 KB gzipped, fetched once after the episode data.
 - `config/basemaps.ts` gains a `vector` kind (layers + §3.3 colours); `BasemapLayer` renders it on a canvas renderer and cross-fades to the tinted tiles above the zoom where 1:50m gets coarse. Basemap still comes from config, never hardcoded (CLAUDE.md).
 - Attribution: *Natural Earth · Leaflet* (and OSM when tiles show); the panel footer follows.
 

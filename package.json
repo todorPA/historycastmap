@@ -18,7 +18,8 @@
     "deploy": "npm test && npm run build && gh-pages -d dist",
     "fonts": "node scripts/fetch-fonts.mjs",
     "episodes": "node scripts/fetch-episodes.mjs",
-    "chart": "node scripts/build-century-chart.mjs"
+    "chart": "node scripts/build-century-chart.mjs",
+    "basemap": "node scripts/extract-basemap.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
