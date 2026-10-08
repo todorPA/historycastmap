@@ -9,6 +9,7 @@
 @import './panel.css';
 @import './map.css';
 @import './card.css';
+@import './timeline.css';
 
 * {
   box-sizing: border-box;
@@ -26,14 +27,6 @@ body {
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
-}
-
-/* Chrome (labels, legend, timeline axis) is furniture — dragging the map or the
-   timeline shouldn't leave text selected. Popup content stays selectable. */
-.timeline__head,
-.vis-timeline {
-  user-select: none;
-  -webkit-user-select: none;
 }
 
 .app {
@@ -92,8 +85,7 @@ body {
 
 /* One focus treatment for every interactive control, keyboard only. */
 .btn:focus-visible,
-.lang-toggle__btn:focus-visible,
-.timeline__resize:focus-visible {
+.lang-toggle__btn:focus-visible {
   outline: 2px solid var(--ink-100);
   outline-offset: 2px;
 }
@@ -164,244 +156,12 @@ body {
   margin: 12px 14px;
 }
 
-/* ---------- timeline ---------- */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  border-top: 1px solid var(--ink-500);
-  background: var(--sidebar);
-  /* No fixed height: the panel is as tall as vis's content, which vis itself caps in pixels
-     (see maxHeightPx). Whatever the timeline doesn't need goes to the map. */
-}
-
-.timeline__resize {
-  font: inherit;
-  font-size: var(--step--1);
-  line-height: 1;
-  padding: 5px 9px;
-  border: 1px solid var(--control-edge);
-  border-radius: var(--r-sm);
-  background: var(--ink-700);
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.timeline__resize:hover {
-  color: var(--text);
-}
-
-.timeline__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 14px;
-}
-
-.timeline__head h2 {
-  margin: 0;
-  font-size: var(--step--2);
-  text-transform: uppercase;
-  letter-spacing: 0.9px;
-  color: var(--muted);
-}
-
-.timeline__tools {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
-}
-
-.timeline__range {
-  font-size: var(--step--1);
-  color: var(--text);
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  /* Reserve the widest reading ("1200. p.n.e. - 2006") so the row does not reflow as the
-     digits climb during playback, and set it off from the controls: a readout is output,
-     not another thing to press. */
-  min-width: 19ch;
-  text-align: right;
-  margin-left: var(--sp-2);
-}
-
-.timeline__canvas {
-  /* vis sets its own height (capped in px) and scrolls its groups internally. */
-  overflow: hidden;
-}
-
-/* vis-timeline on a dark panel */
-.vis-timeline {
-  border: 0;
-  font-family: var(--font-sans);
-  font-size: var(--step--2);
-  color: var(--text);
-}
-
-.vis-panel .vis-content,
-.vis-panel.vis-bottom,
-.vis-panel.vis-center,
-.vis-panel.vis-left,
-.vis-panel.vis-right,
-.vis-panel.vis-top {
-  border-color: var(--line-soft);
-}
-
-.vis-time-axis .vis-text {
-  color: var(--muted);
-}
-
-.vis-time-axis .vis-grid.vis-minor {
-  border-color: #e2dcd5;
-}
-
-.vis-time-axis .vis-grid.vis-major {
-  border-color: var(--ink-500);
-}
-
-/* vis paints its own group/label backgrounds; keep them on the panel surface. */
-.vis-labelset .vis-label,
-.vis-foreground .vis-group,
-.vis-panel.vis-left,
-.vis-panel.vis-center,
-.vis-panel.vis-top {
-  background: var(--sidebar);
-}
-
-.vis-labelset .vis-label,
-.vis-foreground .vis-group {
-  border-color: var(--line-soft);
-  color: var(--muted);
-}
-
-/* Label colour arrives per item from TimelineView (see onColor in config/regions.ts),
-   because no single value is readable on all twelve region fills. */
-.vis-item {
-  border-width: 1px;
-  border-radius: var(--r-sm);
-}
-
-.vis-item.vis-selected {
-  box-shadow: 0 0 0 2px var(--ink-100);
-  border-color: var(--ink-100) !important;
-}
-
-/* Low confidence reads as a dashed edge. It must not be an opacity change: on a light
-   panel that washes the fill out and takes the label with it. */
-/* While an episode is selected, every other episode's chapters are quieted (HANDOFF §11) and its
- * own stand out. The label sits inside the bar, and §15 forbids fading text by opacity, so a
- * quieted item turns a pale, still-readable grey instead (as in prototype-4.png). !important
- * because vis-timeline writes each item's colours inline. */
-.vis-item.is-muted {
-  background-color: var(--f3) !important;
-  border-color: var(--line-soft) !important;
-  color: var(--tx2) !important;
-}
-
-.vis-item.is-selected-episode {
-  box-shadow: 0 0 0 2px var(--f1), 0 0 0 4px var(--gold-line);
-  font-weight: 700;
-}
-
-.vis-item--low {
-  border-style: dashed;
-  border-color: var(--ink-100) !important;
-}
-
-/* Side series: an ink notch on the leading edge. Composes with .vis-item--low, which owns
-   the border — this uses an inset shadow so the two marks never fight over one property. */
-.vis-item--side {
-  box-shadow: inset 3px 0 0 var(--ink-100);
-}
-
-.vis-tooltip {
-  font-family: var(--font-sans) !important;
-  font-size: var(--step--2) !important;
-}
-
 /* ---------- responsive: sidebar becomes a top drawer ---------- */
 @media (max-width: 820px) {
   .app {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
   }
-}
-
-/* ---------- timeline playback ----------
-   The axis is the transport: it already shows position and takes a drag, so nothing here
-   repeats it.
-
-   Only the action carries a border. Speed is a setting *for* that action, not a peer of it,
-   and giving both the same box made them read as two equal buttons sitting beside a third
-   numeric string that was not a button at all. */
-.timeline__play {
-  font: inherit;
-  font-size: var(--step--1);
-  line-height: 1;
-  padding: 5px 10px;
-  border: 1px solid var(--control-edge);
-  border-radius: var(--r-sm);
-  background: var(--ink-700);
-  color: var(--text);
-  cursor: pointer;
-  transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 120ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.timeline__play {
-  /* One label swaps for the other, so hold the wider of the two and let neither shift the
-     row when it changes. */
-  min-width: 6.5ch;
-}
-
-.timeline__play:hover {
-  background: var(--ink-600);
-}
-
-.timeline__play:active,
-.timeline__speed:active {
-  transform: scale(0.98);
-}
-
-.timeline__play:focus-visible,
-.timeline__speed:focus-visible {
-  outline: 2px solid var(--ink-100);
-  outline-offset: 2px;
-}
-
-/* Running state borrows the language and basemap toggles' treatment exactly: gold is a
-   fill carrying ink, never a glyph or a line (tokens.css). No new visual language. */
-.timeline__play.is-playing {
-  background: var(--gold);
-  border-color: var(--gold-deep);
-  color: var(--ink-100);
-  font-weight: 600;
-}
-
-.timeline__speed {
-  font: inherit;
-  font-size: var(--step--2);
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-  padding: 4px 2px;
-  border: 0;
-  background: none;
-  color: var(--muted);
-  cursor: pointer;
-  /* Reserved so cycling 40 -> 120 -> 400 never nudges the readout beside it. */
-  min-width: 9ch;
-  text-align: left;
-}
-
-/* The whole period already shows: readable, not faded (HANDOFF §15), and not clickable. */
-.timeline__reset:disabled {
-  color: var(--tx3);
-  cursor: default;
-}
-
-.timeline__speed:hover {
-  color: var(--text);
 }
 
 /* ---------- one control system ----------
@@ -417,23 +177,18 @@ body {
 
    Radius follows the control's size, not its component. */
 .btn:active,
-.lang-toggle__btn:active,
-.timeline__play:active,
-.timeline__resize:active,
-.timeline__size__btn:active {
+.lang-toggle__btn:active {
   transform: scale(0.98);
 }
 
-.lang-toggle__btn:hover:not(.is-active),
-.timeline__resize:hover {
+.lang-toggle__btn:hover:not(.is-active) {
   background: var(--ink-600);
   color: var(--text);
 }
 
 /* Nothing here is ever disabled today, but a control system without the state grows one
    by accident later. Declared once so it looks deliberate when it arrives. */
-.btn[disabled],
-.timeline__play[disabled] {
+.btn[disabled] {
   opacity: 0.45;
   cursor: not-allowed;
   transform: none;
@@ -499,45 +254,6 @@ body {
 
 .map .leaflet-tile-pane .leaflet-layer {
   transition: opacity 260ms var(--ease);
-}
-
-/* ---------- timeline height ----------
-   Was a single cycling caret. One glyph cannot say "three steps, you are on the second",
-   so it became a segmented control in the same idiom as the language toggle: the state is
-   visible instead of inferred. */
-.timeline__size {
-  display: inline-flex;
-  border: 1px solid var(--control-edge);
-  border-radius: var(--r-sm);
-  overflow: hidden;
-  flex: none;
-}
-
-.timeline__size__btn {
-  padding: 4px 8px;
-  font: inherit;
-  font-size: var(--step--2);
-  font-weight: 600;
-  line-height: 1.2;
-  background: transparent;
-  color: var(--muted);
-  border: 0;
-  cursor: pointer;
-}
-
-.timeline__size__btn:hover:not(.is-active) {
-  background: var(--ink-600);
-  color: var(--text);
-}
-
-.timeline__size__btn:focus-visible {
-  outline: 2px solid var(--ink-100);
-  outline-offset: -2px;
-}
-
-.timeline__size__btn.is-active {
-  background: var(--gold);
-  color: var(--ink-100);
 }
 
 /* ---------- audio loading ----------
