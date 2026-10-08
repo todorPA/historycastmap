@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { episodeNoun } from '../lib/plural';
 import { activeFilterCount } from '../lib/episodeFilters';
 import { useEpisodes, useMatchingEpisodes } from '../state/DataContext';
 import { useFilters } from '../state/FilterContext';
+import { useLayout } from '../state/LayoutContext';
 import PanelHeader from './panel/PanelHeader';
 import SearchRow from './panel/SearchRow';
 import FilterPanel from './panel/FilterPanel';
@@ -21,7 +22,7 @@ export default function Sidebar() {
   const total = useEpisodes().length;
   const shown = useMatchingEpisodes().length;
   const order = useListOrder();
-  const [filtersOpen, setFiltersOpen] = useState(false);
+  const { filtersOpen, setFiltersOpen } = useLayout();
   const filterButton = useRef<HTMLButtonElement>(null);
 
   const closeFilters = () => {
