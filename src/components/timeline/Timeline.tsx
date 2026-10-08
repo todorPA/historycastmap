@@ -9,7 +9,7 @@ import { markerState } from '../../lib/episodeMarkers';
 import { overlaps } from '../../lib/episodeVisibility';
 import { scrollBehavior } from '../../lib/motion';
 import { axisTicks, eraSegments, yearToX } from '../../lib/timelineAxis';
-import { buildRows, LANE_PX } from '../../lib/timelineLayout';
+import { buildRows, LANE_PX, UNPLACED_FAMILY } from '../../lib/timelineLayout';
 import { histogram } from '../../lib/timelineStrip';
 import { centreView, eraView, selectionView, zoomView } from '../../lib/timelineWindow';
 import { useTimelinePlayback } from '../useTimelinePlayback';
@@ -113,17 +113,23 @@ export default function Timeline() {
   const isFull = win.from === bounds.from && win.to === bounds.to;
 
   /**
-   * Selecting an episode frames it (§12.2). Skips the selection a shared link opened with, so a
-   * link's own period is not overridden on arrival.
+   * Selecting an episode frames it (§12.2) — including the one a shared link opens with. A link
+   * that also carries its own period keeps it: UrlSync writes from/to only when the period is
+   * narrower than the full extent, so on arrival a full view means "no period was shared".
    */
-  const lastSelected = useRef(selectedEpisodeId);
+  const lastSelected = useRef<string | null>(null);
+  const arriving = useRef(true);
   useEffect(() => {
+    const isArrival = arriving.current;
+    arriving.current = false;
     if (selectedEpisodeId === lastSelected.current) return;
     lastSelected.current = selectedEpisodeId;
     if (!selected) return;
-    const next = selectionView(viewRef.current, selected, bounds);
+    const current = viewRef.current;
+    if (isArrival && (current.from !== bounds.from || current.to !== bounds.to)) return;
+    const next = selectionView(current, selected, bounds);
     if (next) tweenTo(next, 520);
-    const id = window.setTimeout(() => revealRow(selected.family?.id), next ? 540 : 0);
+    const id = window.setTimeout(() => revealRow((selected.family ?? UNPLACED_FAMILY).id), next ? 540 : 0);
     return () => window.clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedEpisodeId]);
