@@ -127,6 +127,12 @@ export interface Row<E extends LayoutEpisode = LayoutEpisode> {
 }
 
 export const LANE_PX = { s: 24, m: 30, l: 40 } as const;
+
+/**
+ * The last row, for an episode none of whose chapters has a region with a row. Timeline-only:
+ * the filter panel's region groups stay the six real families.
+ */
+export const UNPLACED_FAMILY: RegionFamily = { id: 'ostalo', name: { sr: 'Ostalo', en: 'Other' }, regions: [] };
 const CULL_PX = 20;
 
 /** Top of an item's box inside its track. */
@@ -155,8 +161,8 @@ export function buildRows<E extends LayoutEpisode>(
   },
 ): Row<E>[] {
   const rows: Row<E>[] = [];
-  for (const family of REGION_FAMILIES) {
-    const all = episodes.filter((e) => e.family?.id === family.id);
+  for (const family of [...REGION_FAMILIES, UNPLACED_FAMILY]) {
+    const all = episodes.filter((e) => (e.family ?? UNPLACED_FAMILY).id === family.id);
     if (all.length === 0) continue;
     const counted = ctx.matches ? all.filter(ctx.matches) : all;
     const items = all

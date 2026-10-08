@@ -99,6 +99,13 @@ describe('buildRows', () => {
     expect(rows.map((r) => r.family.id)).toEqual(['balkan', 'azija']);
   });
 
+  // Never drop an episode the timeline is asked to show: one without a row gets "Ostalo", last.
+  it('puts episodes without a family in a last "Ostalo" row', () => {
+    const rows = buildRows([ep({ id: 'x', family: undefined }), ep({ id: 'y' })], base);
+    expect(rows.map((r) => r.family.id)).toEqual(['balkan', 'ostalo']);
+    expect(rows[1].placed.map((p) => p.ep.id)).toEqual(['x']);
+  });
+
   it('counts the row against the window, and the height from the lanes', () => {
     const rows = buildRows([ep({ id: 'a', from: 1100, to: 1100, anchor: 1100 }), ep({ id: 'b', from: 1900, to: 1900, anchor: 1900 })], { ...base, window: { from: 1000, to: 1500 } });
     expect(rows[0]).toMatchObject({ inWindow: 1, total: 2, lanes: 1, height: 38, toggle: null });
