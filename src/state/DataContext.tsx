@@ -9,9 +9,16 @@ import { COLLECTIONS } from '../config/collections';
 import { EPISODE_OVERRIDES } from '../config/episodeOverrides';
 
 const DataContext = createContext<LoadedData | null>(null);
+const EpisodesContext = createContext<EpisodeView[] | null>(null);
 
+/** Derives the episode model once per dataset, for every view that reads it. */
 export function DataProvider({ value, children }: { value: LoadedData; children: ReactNode }) {
-  return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
+  const episodes = useMemo(() => deriveEpisodes(value.data, EPISODE_OVERRIDES), [value.data]);
+  return (
+    <DataContext.Provider value={value}>
+      <EpisodesContext.Provider value={episodes}>{children}</EpisodesContext.Provider>
+    </DataContext.Provider>
+  );
 }
 
 export function useData(): LoadedData {
@@ -35,8 +42,9 @@ export function useSideEpisodes(): ReadonlySet<string> {
 
 /** The episode model, derived once per dataset, with the hand-checked overrides applied. */
 export function useEpisodes(): EpisodeView[] {
-  const { data } = useData();
-  return useMemo(() => deriveEpisodes(data, EPISODE_OVERRIDES), [data]);
+  const ctx = useContext(EpisodesContext);
+  if (!ctx) throw new Error('useEpisodes must be used inside <DataProvider>');
+  return ctx;
 }
 
 const MEMBERS = collectionMembers(COLLECTIONS);

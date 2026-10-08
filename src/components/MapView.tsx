@@ -54,16 +54,17 @@ function FitToMarkers({ points, fitKey }: { points: LatLngTuple[]; fitKey: strin
 }
 
 /**
- * Raising the timeline shrinks the map's container. Leaflet doesn't observe that, so tell
- * it the size changed — otherwise tiles and marker positions stay stale.
+ * Leaflet does not observe its container, and the map's box changes whenever the timeline does
+ * — S/M/L, and S growing with its content. Without invalidateSize, tiles and marker positions
+ * stay stale. Told on every container resize, not on a guess at when that happens.
  */
-function InvalidateOnResize({ resizeKey }: { resizeKey: string }) {
+function InvalidateOnResize() {
   const map = useMap();
   useEffect(() => {
-    // Wait for the CSS height transition (160ms) to settle before measuring.
-    const id = window.setTimeout(() => map.invalidateSize(), 200);
-    return () => window.clearTimeout(id);
-  }, [resizeKey, map]);
+    const ro = new ResizeObserver(() => map.invalidateSize({ pan: false }));
+    ro.observe(map.getContainer());
+    return () => ro.disconnect();
+  }, [map]);
   return null;
 }
 
@@ -90,9 +91,13 @@ function FlyToSelection({ target, selectionId }: { target: LatLngTuple | null; s
 }
 
 /** True while the user is typing somewhere, so a global shortcut must not fire. */
-function isTyping(target: EventTarget | null): boolean {
+/** Focus is somewhere that uses the arrow keys itself: a text field, or the timeline's Window. */
+function ownsArrowKeys(target: EventTarget | null): boolean {
   const el = target as HTMLElement | null;
-  return !!el && (el.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName));
+  return (
+    !!el &&
+    (el.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName) || el.getAttribute('role') === 'slider')
+  );
 }
 
 export default function MapView() {
@@ -125,7 +130,7 @@ export default function MapView() {
   useEffect(() => {
     if (!selected) return;
     const onKey = (e: KeyboardEvent) => {
-      if (isTyping(e.target) || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (ownsArrowKeys(e.target) || e.metaKey || e.ctrlKey || e.altKey) return;
       if (e.key === 'Escape') {
         // An open cluster list takes Esc first; EpisodeLayer closes it.
         if (clusterListOpen.current) return;
@@ -148,7 +153,7 @@ export default function MapView() {
     <div className={`map-wrap${selected ? ' has-card' : ''}`}>
       <MapContainer center={DEFAULT_CENTER} zoom={DEFAULT_ZOOM} className="map" minZoom={2} maxZoom={basemap.maxZoom} zoomControl={false} worldCopyJump scrollWheelZoom>
         <BasemapLayer basemap={basemap} />
-        <InvalidateOnResize resizeKey={timelineSize} />
+        <InvalidateOnResize />
         <FitToMarkers points={points} fitKey={`${data.meta.generated}|${JSON.stringify(filters)}|${settledQuery}|${timelineSize}|${showAll}`} />
         <FlyToSelection target={positionOf(selectedEpisodeId)} selectionId={selectedEpisodeId} />
         <EpisodeLayer episodes={matching} listOpenRef={clusterListOpen} />

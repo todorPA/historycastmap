@@ -1,0 +1,768 @@
+/* The episode timeline (HANDOFF §12–§13). Theme tokens only, except where §12 gives a literal
+ * colour for the strip and rail. The label column (132 px) and the rail gutter (16 px) frame the
+ * era band, axis, rows and strip identically, so a year sits at the same x in all four. */
+
+.tl {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  border-top: 1px solid var(--line);
+  background: var(--f1);
+  color: var(--tx);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* §12.8: S shrinks to its content up to its cap; M and L are fixed shares of the app. */
+.tl--s {
+  max-height: max(150px, 24vh);
+}
+
+.tl--m {
+  height: max(150px, 45vh);
+}
+
+.tl--l {
+  height: max(150px, 70vh);
+}
+
+/* ---------- header (§12.1) ---------- */
+.tl__head {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px 6px 14px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tl__title {
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tx2);
+}
+
+.tl-btn {
+  display: inline-grid;
+  place-items: center;
+  height: 30px;
+  min-width: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-4);
+  background: var(--f1);
+  color: var(--tx);
+  font: 500 13px var(--font-sans);
+  cursor: pointer;
+}
+
+.tl-btn:hover:not(:disabled) {
+  background: var(--f3);
+}
+
+.tl-btn:disabled {
+  border-color: var(--line-soft);
+  color: var(--tx3);
+  cursor: default;
+}
+
+.tl-btn--sq {
+  padding: 0;
+  font-size: 16px;
+}
+
+/* §13: a word, not ▶ (reserved for audio); gold while playing. */
+.tl-btn--play {
+  min-width: 7ch;
+  font-weight: 600;
+}
+
+.tl-btn--play.is-playing,
+.tl-btn--play.is-playing:hover:not(:disabled) {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--on-gold);
+}
+
+.tl__speed {
+  height: 30px;
+  min-width: 8.5ch;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--tx2);
+  font: 500 12.5px var(--font-sans);
+  text-align: left;
+  cursor: pointer;
+}
+
+.tl__speed:hover {
+  color: var(--tx);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tl__hint {
+  font-size: 12.5px;
+  color: var(--tx2);
+}
+
+.tl__info {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--tx2);
+  font-variant-numeric: tabular-nums;
+}
+
+.tl__info b {
+  font-weight: 600;
+  color: var(--tx);
+}
+
+.tl__sep {
+  color: var(--tx3);
+}
+
+.tl__yrs {
+  font-weight: 600;
+  color: var(--gold-hi);
+}
+
+.tl__sp {
+  flex: 1;
+}
+
+.tl-size {
+  display: inline-flex;
+  margin-left: 4px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r-4);
+}
+
+.tl-size button {
+  width: 30px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: var(--f1);
+  color: var(--tx2);
+  font: 600 12.5px var(--font-sans);
+  cursor: pointer;
+}
+
+.tl-size button + button {
+  border-left: 1px solid var(--line);
+}
+
+.tl-size button:hover:not(.is-active) {
+  background: var(--f3);
+  color: var(--tx);
+}
+
+.tl-size button.is-active {
+  background: var(--gold);
+  color: var(--on-gold);
+}
+
+/* ---------- grid: era band, axis, rows, strip ---------- */
+.tl__grid {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tl-eras,
+.tl-axis {
+  position: relative;
+  flex: none;
+  margin: 0 16px 0 132px;
+}
+
+.tl-eras {
+  height: 26px;
+}
+
+.tl-era {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  overflow: hidden;
+  border: 0;
+  border-left: 3px solid var(--c);
+  border-radius: 3px;
+  background: var(--f2);
+  color: var(--tx);
+  font: italic 500 13px var(--font-serif);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tl-era:hover {
+  background: var(--f3);
+}
+
+.tl-axis {
+  height: 23px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.tl-tick {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 4px 0 0 5px;
+  border-left: 1px solid var(--line-soft);
+  color: var(--tx2);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.tl-tick.is-major {
+  border-left-color: var(--line);
+  color: var(--tx);
+  font-weight: 500;
+}
+
+/* ---------- rows (§12.3) ---------- */
+.tl__viewport {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+}
+
+.tl-rows {
+  flex: 1;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 16px;
+  /* §12.7: the custom rail replaces the native scrollbar, which macOS hides. */
+  scrollbar-width: none;
+}
+
+.tl-rows::-webkit-scrollbar {
+  display: none;
+}
+
+.tl-rows__content {
+  position: relative;
+}
+
+.tl-rows__under {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 132px;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.tl-gridl {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid var(--line-soft);
+}
+
+/* The selected episode's span across every row (§12.2). */
+.tl-focus {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid var(--gold-line);
+  border-right: 1px solid var(--gold-line);
+  background: rgba(212, 170, 85, 0.12);
+}
+
+.tl-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.tl-row__label {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 6px 8px 6px 14px;
+  border-right: 1px solid var(--line-soft);
+  background: var(--f1);
+}
+
+.tl-row__name {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.tl-row__count {
+  font-size: 12px;
+  color: var(--tx2);
+  font-variant-numeric: tabular-nums;
+}
+
+.tl-row__more {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--gold-hi);
+  font: 600 12.5px var(--font-sans);
+  cursor: pointer;
+}
+
+.tl-row__more:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tl-row__track {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---------- items (§12.4) ---------- */
+.tl-it {
+  position: absolute;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tl-it__m {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 260ms var(--ease), box-shadow 260ms var(--ease);
+}
+
+.tl-it--point .tl-it__m {
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  border-radius: 2px;
+  background: var(--c);
+  box-shadow: 0 0 0 1px var(--ring);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.tl-it--range .tl-it__m {
+  height: 14px;
+  border-radius: 3px;
+  background: var(--c);
+  box-shadow: 0 0 0 1px var(--ring);
+}
+
+.tl-it--long .tl-it__m {
+  box-sizing: border-box;
+  height: 14px;
+  border: 1.5px solid var(--c);
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--c) 55%, var(--f1)) 0 1px,
+    color-mix(in srgb, var(--c) 30%, var(--f1)) 1px 7px
+  );
+}
+
+.tl-it__lbl {
+  position: absolute;
+  top: 50%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  color: var(--tx);
+  font-size: 13px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.tl-it__lbl small {
+  display: none;
+  margin-left: 8px;
+  color: var(--tx2);
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.tl-it.is-hover .tl-it__lbl small,
+.tl-it.is-selected .tl-it__lbl small {
+  display: inline;
+}
+
+/* Inside a solid bar: ink or white per fill (labelInk). On a hatched bar, --tx with a halo. */
+.tl-it__lbl.in {
+  color: var(--on);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.tl-it__lbl.in small {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.tl-it--long .tl-it__lbl.in {
+  color: var(--tx);
+  text-shadow: 0 0 2px var(--f1), 0 0 4px var(--f1), 0 0 6px var(--f1);
+}
+
+.tl-it.is-hover {
+  z-index: 3;
+}
+
+.tl-it.is-hover .tl-it__lbl {
+  color: var(--gold-hi);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tl-it.is-hover .tl-it__lbl.in {
+  color: var(--on);
+}
+
+.tl-it.is-selected {
+  z-index: 4;
+}
+
+.tl-it.is-selected .tl-it__m {
+  box-shadow: 0 0 0 2px var(--f1), 0 0 0 6px var(--gold-line);
+}
+
+.tl-it.is-selected .tl-it__lbl {
+  color: var(--gold-hi);
+  font-weight: 700;
+}
+
+.tl-it.is-selected .tl-it__lbl.in {
+  color: var(--on);
+}
+
+.tl-it.is-hover.tl-it--long .tl-it__lbl.in,
+.tl-it.is-selected.tl-it--long .tl-it__lbl.in {
+  color: var(--tx);
+}
+
+.tl-it.is-muted .tl-it__m {
+  opacity: 0.4;
+}
+
+.tl-it.is-muted .tl-it__lbl {
+  color: var(--tx2);
+}
+
+.tl-it.is-outside .tl-it__m {
+  opacity: 0.22;
+}
+
+.tl-it.is-outside .tl-it__lbl {
+  color: var(--tx3);
+  opacity: 0.75;
+  text-shadow: none;
+}
+
+/* What did not fit under the lane cap: a tick at its anchor. */
+.tl-ovf {
+  position: absolute;
+  width: 2px;
+  height: 11px;
+  margin-left: -1px;
+  border-radius: 1px;
+  box-shadow: 0 0 0 0.5px var(--ring);
+}
+
+/* The selection, scrolled off one side of the view. */
+.tl-edge {
+  position: absolute;
+  top: 6px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 22px;
+  padding: 0 9px;
+  border: 1px solid var(--gold-line);
+  border-radius: 11px;
+  background: var(--f2);
+  color: var(--gold-hi);
+  font: 600 12.5px var(--font-sans);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tl-edge:hover {
+  background: var(--f3);
+}
+
+.tl-edge--l {
+  left: 6px;
+}
+
+.tl-edge--r {
+  right: 6px;
+}
+
+.tl-num {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- vertical rail, fades, pill (§12.7) ---------- */
+.tl-rail {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  z-index: 7;
+  width: 10px;
+  border-radius: 5px;
+  background: #eadfcb;
+  box-shadow: inset 0 0 0 1px #c9b48e;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.tl-rail__thumb {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  border-radius: 3px;
+  background: #a07f4c;
+  transition: background 140ms;
+}
+
+.tl-rail:hover .tl-rail__thumb,
+.tl-rail.is-drag .tl-rail__thumb {
+  background: #7e5e2c;
+}
+
+.tl-fade {
+  position: absolute;
+  left: 132px;
+  right: 18px;
+  z-index: 4;
+  height: 26px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms;
+}
+
+.tl-fade.is-on {
+  opacity: 1;
+}
+
+.tl-fade--top {
+  top: 0;
+  background: linear-gradient(var(--f1), transparent);
+}
+
+.tl-fade--bot {
+  bottom: 0;
+  background: linear-gradient(transparent, var(--f1));
+}
+
+.tl-more {
+  position: absolute;
+  right: 24px;
+  bottom: 10px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 13px;
+  border: 1.5px solid var(--gold-line);
+  border-radius: 15px;
+  background: var(--f3);
+  color: var(--tx);
+  font: 600 13px var(--font-sans);
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(60, 40, 20, 0.16);
+  cursor: pointer;
+}
+
+.tl-more:hover {
+  background: var(--f4);
+}
+
+.tl-more.is-up {
+  border-color: var(--line);
+}
+
+.tl-more svg {
+  flex: none;
+  fill: none;
+  stroke: var(--gold-hi);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- overview strip and the Window (§12.6) ---------- */
+.tl-strip {
+  position: relative;
+  flex: none;
+  height: 52px;
+  margin: 2px 16px 8px 132px;
+}
+
+.tl-strip__track {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.tl-strip__hist {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  padding: 0 1px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--f2);
+}
+
+.tl-strip__hist i {
+  flex: 1;
+  border-radius: 1px 1px 0 0;
+  background: #b7a48a;
+}
+
+.tl-strip__dim {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 6px;
+  background: rgba(221, 209, 190, 0.62);
+  pointer-events: none;
+}
+
+.tl-window {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  box-sizing: border-box;
+  border: 2px solid var(--gold-line);
+  border-radius: 6px;
+  background: rgba(212, 170, 85, 0.22);
+  box-shadow: 0 0 0 1px rgba(60, 40, 20, 0.25);
+  cursor: grab;
+  touch-action: none;
+  transition: background 140ms, box-shadow 140ms;
+}
+
+.tl-window:hover {
+  background: rgba(212, 170, 85, 0.32);
+  box-shadow: 0 0 0 1px rgba(60, 40, 20, 0.25), 0 0 0 4px rgba(212, 170, 85, 0.25);
+}
+
+.tl-strip__track.is-dragging .tl-window {
+  background: rgba(212, 170, 85, 0.4);
+  cursor: grabbing;
+}
+
+.tl-window__grip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  gap: 3px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.tl-window__grip i {
+  width: 2px;
+  height: 12px;
+  border-radius: 1px;
+  background: var(--gold-line);
+}
+
+.tl-window__h {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 30px;
+  margin-top: -15px;
+  cursor: ew-resize;
+  touch-action: none;
+}
+
+.tl-window__h--l {
+  left: -9px;
+}
+
+.tl-window__h--r {
+  right: -9px;
+}
+
+.tl-window__h::after {
+  content: '';
+  width: 10px;
+  height: 26px;
+  border-radius: 4px;
+  background: var(--gold);
+  box-shadow: 0 0 0 1.5px var(--f1), inset 0 0 0 3.5px var(--gold), inset 0 0 0 4.5px var(--gold-line);
+  pointer-events: none;
+}
+
+.tl-strip__labels {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 14px;
+}
+
+.tl-strip__labels span {
+  position: absolute;
+  transform: translateX(-50%);
+  color: var(--tx2);
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* The ends sit inside the strip rather than half over its edge. */
+.tl-strip__labels span:first-child {
+  transform: none;
+}
+
+.tl-strip__labels span:last-child {
+  transform: translateX(-100%);
+}

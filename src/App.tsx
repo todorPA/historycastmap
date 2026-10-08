@@ -1,14 +1,16 @@
 import { useMemo } from 'react';
 import { useGeoData } from './lib/data';
 import { parseUrlState } from './lib/urlState';
-import { DataProvider } from './state/DataContext';
-import { TimeProvider } from './state/TimeContext';
+import { DataProvider, useEpisodes } from './state/DataContext';
+import { TimeProvider, type YearRange } from './state/TimeContext';
 import { FilterProvider, useFilters } from './state/FilterContext';
 import { t } from './lib/i18n';
 import { collectionSpan, getCollection, validateCollections } from './config/collections';
 import Sidebar from './components/Sidebar';
 import MapView from './components/MapView';
-import TimelineView from './components/TimelineView';
+import Timeline from './components/timeline/Timeline';
+import { timelineExtent } from './lib/episodeModel';
+import type { ReactNode } from 'react';
 import UrlSync from './components/UrlSync';
 
 function Shell() {
@@ -17,9 +19,24 @@ function Shell() {
       <Sidebar />
       <main className="app__main">
         <MapView />
-        <TimelineView />
+        <Timeline />
       </main>
     </div>
+  );
+}
+
+/**
+ * Time runs over the episodes' padded extent (HANDOFF §12.2), not the chapters' years: the
+ * timeline shows episodes, and its full period must frame them. Falls back to the data's own
+ * bounds for a dataset with no episodes.
+ */
+function EpisodeTime({ fallback, initialRange, children }: { fallback: YearRange; initialRange: YearRange | null; children: ReactNode }) {
+  const episodes = useEpisodes();
+  const bounds = useMemo(() => (episodes.length ? timelineExtent(episodes) : fallback), [episodes, fallback]);
+  return (
+    <TimeProvider bounds={bounds} initialRange={initialRange}>
+      {children}
+    </TimeProvider>
   );
 }
 
@@ -34,7 +51,6 @@ function unionSpan(spans: Array<{ from: number; to: number } | null>): { from: n
 function Loader({ urlState }: { urlState: ReturnType<typeof parseUrlState> }) {
   const { lang } = useFilters();
   const { loaded, error, reload } = useGeoData(urlState.dataset);
-
   if (error) {
     return (
       <div className="status status--error">
@@ -73,10 +89,10 @@ function Loader({ urlState }: { urlState: ReturnType<typeof parseUrlState> }) {
 
   return (
     <DataProvider value={loaded}>
-      <TimeProvider bounds={loaded.bounds} initialRange={initialRange}>
+      <EpisodeTime fallback={loaded.bounds} initialRange={initialRange}>
         <UrlSync dataset={urlState.dataset} />
         <Shell />
-      </TimeProvider>
+      </EpisodeTime>
     </DataProvider>
   );
 }
