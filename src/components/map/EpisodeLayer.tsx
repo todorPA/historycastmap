@@ -107,7 +107,7 @@ export default function EpisodeLayer({
   const isOutside = (i: Item) => i.id !== selectedEpisodeId && markerState(i.ep, { ...ctx, hoveredId: null }) === 'outside';
   const outside = items.filter(isOutside);
   const clusters = useMemo(
-    () => clusterByPixel(map, items.filter((i) => !isOutside(i)), CELL_PX, (i) => i.id === selectedEpisodeId),
+    () => clusterByPixel(map, items.filter((i) => !isOutside(i)), CELL_PX, (i) => i.id === selectedEpisodeId, clusterSize),
     // `zoom` is what changes the projection; the map object itself never changes identity.
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [map, items, zoom, selectedEpisodeId, range.from, range.to],
