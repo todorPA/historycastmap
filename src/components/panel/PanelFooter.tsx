@@ -32,7 +32,7 @@ export default function PanelFooter() {
         <a href="https://rss.com/podcasts/rs-historycast/" target="_blank" rel="noreferrer">
           HistoryCast
         </a>{' '}
-        · OpenStreetMap
+        · Natural Earth
       </span>
       <button type="button" className="hc-link" onClick={copyLink} title={t(lang, 'copyLinkHint')} aria-live="polite">
         {copied ? t(lang, 'linkCopied') : t(lang, 'copyLink')}

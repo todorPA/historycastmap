@@ -142,7 +142,7 @@ export default function MapView() {
 
   return (
     <div className={`map-wrap${selected ? ' has-card' : ''}`}>
-      <MapContainer center={DEFAULT_CENTER} zoom={DEFAULT_ZOOM} className="map" minZoom={2} zoomControl={false} worldCopyJump scrollWheelZoom>
+      <MapContainer center={DEFAULT_CENTER} zoom={DEFAULT_ZOOM} className="map" minZoom={2} maxZoom={basemap.maxZoom} zoomControl={false} worldCopyJump scrollWheelZoom>
         <BasemapLayer basemap={basemap} />
         <InvalidateOnResize resizeKey={timelineSize} />
         <FitToMarkers points={points} fitKey={`${data.meta.generated}|${JSON.stringify(filters)}|${settledQuery}|${timelineSize}|${showAll}`} />

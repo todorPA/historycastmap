@@ -488,18 +488,17 @@ body {
 }
 
 /* ---------- basemap ----------
-   The governing rule of this design is that colour is the data encoding (regions.ts), and
-   raw OSM tiles break it: they bring their own green landmass, blue sea and red motorways,
-   competing with the twelve hues the palette works so hard to keep apart. Desaturating the
-   tile pane alone pushes the basemap back without touching the markers, which live in the
-   overlay pane. Same device already used on the landing hero.
-
-   saturate() is near-zero rather than partial, and contrast is raised rather than lowered:
-   see the --map-sea / --map-land note in tokens.css for why "less of everything" was the
-   wrong kind of quiet. brightness stays just under 1 so the sheet does not glare under the
-   popups, which are pure --paper. */
+   The default basemap is the paper map (config/basemaps.ts): Natural Earth drawn on a canvas in
+   the theme's --map-* colours, below the tile pane. Raw OSM tiles would break the rule that
+   colour is the data encoding — green land, blue sea, red motorways — so the close-up tiles
+   that fade in past zoom ~7 are drained of colour and warmed toward --map-land, which keeps the
+   hand-over from changing the map's colour. The fade itself is animated rather than snapped. */
 .map .leaflet-tile-pane {
-  filter: saturate(0.1) contrast(1.24) brightness(0.98);
+  filter: grayscale(1) sepia(0.22) contrast(1.08) brightness(1.04);
+}
+
+.map .leaflet-tile-pane .leaflet-layer {
+  transition: opacity 260ms var(--ease);
 }
 
 /* ---------- timeline height ----------
