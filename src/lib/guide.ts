@@ -40,18 +40,22 @@ export function cardPlacement(step: 0 | 1, target: Rect, viewport: { width: numb
   return { side: 'above', left, bottom: viewport.height - target.top + GAP, width: STEP2_WIDTH };
 }
 
-/** Storage can throw (private mode, blocked cookies): a guide that cannot remember stays quiet. */
-export function guideSeen(storage: Pick<Storage, 'getItem'> | undefined = globalThis.localStorage): boolean {
+/**
+ * Storage can throw (private mode, blocked cookies) — on the `localStorage` getter itself, not
+ * only on its methods, so the default is resolved inside the try. A guide that cannot remember
+ * stays quiet rather than reappearing on every load.
+ */
+export function guideSeen(storage?: Pick<Storage, 'getItem'>): boolean {
   try {
-    return storage?.getItem(GUIDE_KEY) === '1';
+    return (storage ?? globalThis.localStorage)?.getItem(GUIDE_KEY) === '1';
   } catch {
     return true;
   }
 }
 
-export function markGuideSeen(storage: Pick<Storage, 'setItem'> | undefined = globalThis.localStorage): void {
+export function markGuideSeen(storage?: Pick<Storage, 'setItem'>): void {
   try {
-    storage?.setItem(GUIDE_KEY, '1');
+    (storage ?? globalThis.localStorage)?.setItem(GUIDE_KEY, '1');
   } catch {
     // Nothing to do: it will simply show again next time.
   }

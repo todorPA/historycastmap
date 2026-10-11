@@ -41,6 +41,20 @@ describe('guideSeen / markGuideSeen', () => {
     expect(guideSeen(s)).toBe(true);
   });
 
+  // Blocked storage can throw on the *getter*, before any method is called: resolving the
+  // default outside the try would crash the shell's effect.
+  it('survives a localStorage getter that throws', () => {
+    const before = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
+    Object.defineProperty(globalThis, 'localStorage', { configurable: true, get: () => { throw new Error('SecurityError'); } });
+    try {
+      expect(guideSeen()).toBe(true);
+      expect(() => markGuideSeen()).not.toThrow();
+    } finally {
+      if (before) Object.defineProperty(globalThis, 'localStorage', before);
+      else delete (globalThis as { localStorage?: unknown }).localStorage;
+    }
+  });
+
   it('treats storage that throws as already seen, and marking as a no-op', () => {
     const broken = { getItem: () => { throw new Error('denied'); }, setItem: () => { throw new Error('denied'); } };
     expect(guideSeen(broken)).toBe(true);
