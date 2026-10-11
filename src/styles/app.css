@@ -159,14 +159,6 @@ body {
   margin: 12px 14px;
 }
 
-/* ---------- responsive: sidebar becomes a top drawer ---------- */
-@media (max-width: 820px) {
-  .app {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-  }
-}
-
 /* ---------- one control system ----------
    Measured drift before this: two border tokens for the same job, press feedback on four
    of nine controls, hover missing on two. The rule now:
