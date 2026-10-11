@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import type { GeoData, HistoryEvent } from '../types/events';
+import type { GeoData } from '../types/events';
 import { indexById } from '../types/events';
 import { COLLECTIONS } from '../config/collections';
 import { deriveEpisodes } from './episodeModel';
 import { EMPTY_FILTERS, collectionMembers } from './episodeFilters';
-import { matchingEpisodes, overlaps, visibleEvents } from './episodeVisibility';
+import { matchingEpisodes, overlaps } from './episodeVisibility';
 import shipped from '../../public/data/geo-events.json';
 
 const data = shipped as unknown as GeoData;
@@ -46,20 +46,5 @@ describe('overlaps', () => {
   it('excludes a span entirely outside', () => {
     expect(overlaps(1200, 1299, window)).toBe(false);
     expect(overlaps(1401, 1500, window)).toBe(false);
-  });
-});
-
-describe('visibleEvents', () => {
-  const ev = (id: string, episodeId: string, year: number, yearEnd?: number): HistoryEvent =>
-    ({ id, episodeId, year, yearEnd, title: { sr: id }, placeId: 'p', description: { sr: '' }, confidence: 'high' }) as HistoryEvent;
-  const events = [ev('a', '1', 1350), ev('b', '1', 1500), ev('c', '2', 1360), ev('d', '3', 1200, 1380)];
-  const all = { from: -Infinity, to: Infinity };
-
-  it('draws every chapter of every matching episode', () => {
-    expect(ids(visibleEvents(events, new Set(['1', '3']), all))).toEqual(['a', 'b', 'd']);
-  });
-
-  it('keeps only chapters that overlap the window, spans included', () => {
-    expect(ids(visibleEvents(events, new Set(['1', '2', '3']), { from: 1340, to: 1400 }))).toEqual(['a', 'c', 'd']);
   });
 });

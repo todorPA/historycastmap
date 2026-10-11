@@ -1,4 +1,4 @@
-import type { HistoryEvent, Lang, PlacesById } from '../types/events';
+import type { Lang, PlacesById } from '../types/events';
 import type { EpisodeView } from './episodeModel';
 import { matchesFilters, type CollectionMembers, type EpisodeFilterState } from './episodeFilters';
 import { matchesQuery } from './episodeSearch';
@@ -25,17 +25,4 @@ export function matchingEpisodes(
 /** Does a span overlap the window? A span counts, not just its start. */
 export function overlaps(from: number, to: number, range: { from: number; to: number }): boolean {
   return to >= range.from && from <= range.to;
-}
-
-/**
- * The events the event-based timeline still draws, until Phase 4 replaces it: every chapter of
- * a matching episode that overlaps the window. A selection no longer narrows it — the map quiets
- * the other episodes instead of hiding them (HANDOFF §11), and the timeline does the same.
- */
-export function visibleEvents(
-  events: HistoryEvent[],
-  matchingIds: ReadonlySet<string>,
-  range: { from: number; to: number },
-): HistoryEvent[] {
-  return events.filter((e) => matchingIds.has(e.episodeId) && overlaps(e.year, e.yearEnd ?? e.year, range));
 }

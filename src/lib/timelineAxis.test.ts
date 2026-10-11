@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { axisTicks, eraSegments, niceStep, xToYear, yearToX } from './timelineAxis';
+import { axisTicks, eraSegments, niceStep, yearToX } from './timelineAxis';
 
 describe('niceStep', () => {
   it('takes the first step that gives at least 70 px', () => {
@@ -15,13 +15,12 @@ describe('niceStep', () => {
   });
 });
 
-describe('yearToX / xToYear', () => {
+describe('yearToX', () => {
   const view = { from: 1000, to: 1500 };
 
-  it('maps the view linearly onto the width, and back', () => {
+  it('maps the view linearly onto the width', () => {
     expect(yearToX(1000, view, 1000)).toBe(0);
     expect(yearToX(1250, view, 1000)).toBe(500);
-    expect(xToYear(500, view, 1000)).toBe(1250);
   });
 });
 
