@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { fillStrings } from './fillStrings';
+import { fillPlaceholders, fillStrings } from './fillStrings';
 
 describe('fillStrings', () => {
   it('fills empty keyed elements, inline markup in the string included', () => {
@@ -16,5 +16,13 @@ describe('fillStrings', () => {
 
   it('does not confuse similar attributes', () => {
     expect(fillStrings('<img data-img="a"><b data-i="a"></b>', { a: 'x' }).html).toBe('<img data-img="a"><b data-i="a">x</b>');
+  });
+});
+
+describe('fillPlaceholders', () => {
+  it('fills attribute placeholders, escaped for an attribute', () => {
+    const { html, missing } = fillPlaceholders('<img alt="%%a%%"><title>%%b%%</title><x y="%%zz%%">', { a: 'Mapa: "Vikinzi" & <b>', b: 'Naslov' });
+    expect(html).toBe('<img alt="Mapa: &quot;Vikinzi&quot; &amp; &lt;b>"><title>Naslov</title><x y="%%zz%%">');
+    expect(missing).toEqual(['zz']);
   });
 });

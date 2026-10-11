@@ -5,7 +5,7 @@ import dataset from './public/data/geo-events.json';
 import type { GeoData } from './src/types/events';
 import { archiveStats } from './src/landing/archiveStats';
 import { landingStrings } from './src/landing/strings';
-import { fillStrings } from './src/landing/fillStrings';
+import { fillPlaceholders, fillStrings } from './src/landing/fillStrings';
 
 // GitHub Pages serves this project from /historycastmap/.
 // All runtime data fetches must go through import.meta.env.BASE_URL.
@@ -32,9 +32,12 @@ function landingPage(): Plugin {
       order: 'pre',
       handler(html, ctx) {
         if (!ctx.filename.endsWith('index.html')) return html;
-        const { html: filled, missing } = fillStrings(html, landingStrings(stats).sr);
-        if (missing.length) throw new Error(`index.html: no string for data-i ${missing.join(', ')}`);
-        return filled;
+        const sr = landingStrings(stats).sr;
+        const elements = fillStrings(html, sr);
+        const attributes = fillPlaceholders(elements.html, sr);
+        const missing = [...elements.missing, ...attributes.missing];
+        if (missing.length) throw new Error(`index.html: no string for ${missing.join(', ')}`);
+        return attributes.html;
       },
     },
   };

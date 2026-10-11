@@ -18,3 +18,20 @@ export function fillStrings(html: string, strings: Record<string, string>): { ht
   });
   return { html: out, missing };
 }
+
+/**
+ * `%%key%%` in attribute values the same way — the page title, the meta description and the
+ * screenshots' alt texts, which cannot be element content.
+ */
+export function fillPlaceholders(html: string, strings: Record<string, string>): { html: string; missing: string[] } {
+  const missing: string[] = [];
+  const out = html.replace(/%%(\w+)%%/g, (all, key: string) => {
+    const text = strings[key];
+    if (text === undefined) {
+      missing.push(key);
+      return all;
+    }
+    return text.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+  });
+  return { html: out, missing };
+}

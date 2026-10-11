@@ -3,6 +3,7 @@ import type { GeoData } from '../types/events';
 import shipped from '../../public/data/geo-events.json';
 import { archiveStats } from './archiveStats';
 import { chartText, landingStrings } from './strings';
+import page from '../../index.html?raw';
 
 const strings = landingStrings(archiveStats(shipped as unknown as GeoData));
 
@@ -22,6 +23,22 @@ describe('landingStrings', () => {
     expect(strings.sr.p_note).toContain('Umetničkog faktora');
     expect(strings.sr.g_p).not.toMatch(/nedelj/);
     expect(strings.en.g_p).not.toMatch(/week/);
+  });
+});
+
+describe('index.html', () => {
+  // The build fails on a key with no Serbian string; English would fail silently, keeping Serbian.
+  it('has a string in both languages for every key it uses', () => {
+    const keys = new Set([...page.matchAll(/data-(?:i|alt)="(\w+)"/g), ...page.matchAll(/%%(\w+)%%/g)].map((m) => m[1]));
+    expect(keys.size).toBeGreaterThan(90);
+    for (const k of keys) {
+      expect(strings.sr, `sr.${k}`).toHaveProperty(k);
+      expect(strings.en, `en.${k}`).toHaveProperty(k);
+    }
+  });
+
+  it('types no archive number by hand', () => {
+    expect(page).not.toMatch(/>\s*(178|742|279|285)\s*</);
   });
 });
 

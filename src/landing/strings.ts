@@ -3,9 +3,30 @@ import type { Lang } from '../types/events';
 import type { ArchiveStats } from './archiveStats';
 import { BASE } from './baseStrings';
 
-export type LandingKey = keyof (typeof BASE)['sr'] | NumberedKey | RoleKey;
-type NumberedKey = 'c_p' | 's1n' | 's1l' | 's2n' | 's2l' | 's3n' | 's3l' | 'u_ep_n' | 'u_ch_n' | 'growCap' | 'growEnd';
+export type LandingKey = keyof (typeof BASE)['sr'] | NumberedKey | RoleKey | AltKey;
+type NumberedKey = 'meta_title' | 'meta_desc' | 'c_p' | 's1n' | 's1l' | 's2n' | 's2l' | 's3n' | 's3l' | 'u_ep_n' | 'u_ch_n' | 'growCap' | 'growEnd';
 type RoleKey = 'role_hist' | 'role_art_f' | 'role_art_m' | 'role_prod';
+type AltKey = keyof typeof ALT_SR;
+
+/** Screenshot descriptions; the design had Serbian only. */
+const ALT_SR = {
+  alt_a_map: 'Mapa: epizoda Vikinzi označena na Lindisfarnu, sa numerisanim poglavljima',
+  alt_a_panel: 'Levi panel: lista epizoda, izabrana epizoda Vikinzi',
+  alt_a_tl: 'Vremenska osa: Vikinzi, 793–1066, među drugim epizodama tog perioda',
+  alt_t_search: 'Pretraga Beograd: pogodak u poglavlju epizode Pad Berlina',
+  alt_t_map: 'Mapa: oznaka epizode Pad Berlina i numerisana poglavlja po Evropi',
+  alt_t_card: 'Lista poglavlja epizode sa vremenskim oznakama',
+  alt_app: 'Cela aplikacija: levi panel, mapa i vremenska osa',
+} as const;
+const ALT_EN: Record<AltKey, string> = {
+  alt_a_map: 'Map: the episode Vikinzi (Vikings) marked at Lindisfarne, with numbered chapters',
+  alt_a_panel: 'Left panel: the episode list, with the episode Vikinzi selected',
+  alt_a_tl: 'Timeline: Vikinzi, 793–1066, among other episodes of the period',
+  alt_t_search: 'Search for Beograd: a hit in a chapter of the episode Pad Berlina (Fall of Berlin)',
+  alt_t_map: 'Map: the episode Pad Berlina and its numbered chapters across Europe',
+  alt_t_card: 'The episode’s chapter list with timestamps',
+  alt_app: 'The whole app: left panel, map and timeline',
+};
 
 const chapterNoun = (n: number, lang: Lang) =>
   lang === 'en' ? (n === 1 ? 'chapter' : 'chapters') : agreeSr(n, ['poglavlje', 'poglavlja', 'poglavlja']);
@@ -21,6 +42,11 @@ const eventNoun = (n: number, lang: Lang) => (lang === 'en' ? (n === 1 ? 'event'
 export function landingStrings(stats: ArchiveStats): Record<Lang, Record<LandingKey, string>> {
   const { episodes: e, chapters: c, places: p } = stats;
   const numbered = (lang: Lang): Record<NumberedKey, string> => ({
+    meta_title: lang === 'en' ? 'HistoryCast Map — the podcast archive in place and time' : 'HistoryCast Mapa — arhiva podkasta u prostoru i vremenu',
+    meta_desc:
+      lang === 'en'
+        ? `${c} ${chapterNoun(c, 'en')} from ${episodeCount(e, 'en')} of the HistoryCast podcast, on a map and a timeline. Each chapter plays from its minute in the episode.`
+        : `${c} ${chapterNoun(c, 'sr')} iz ${e} ${agreeSr(e, ['epizode', 'epizoda', 'epizoda'])} podkasta HistoryCast, na mapi i vremenskoj osi. Svako poglavlje se sluša od svog minuta u epizodi.`,
     c_p:
       lang === 'en'
         ? `${episodeCount(e, 'en')}, ${c} ${chapterNoun(c, 'en')} and ${p} ${placeNoun(p, 'en')}, spread across two and a half thousand years.`
@@ -41,8 +67,8 @@ export function landingStrings(stats: ArchiveStats): Record<Lang, Record<Landing
     en: { role_hist: 'Historian, author and presenter', role_art_f: 'Art historian', role_art_m: 'Art historian', role_prod: 'Podcast production' },
   };
   return {
-    sr: { ...BASE.sr, ...numbered('sr'), ...roles.sr },
-    en: { ...BASE.en, ...numbered('en'), ...roles.en },
+    sr: { ...BASE.sr, ...numbered('sr'), ...roles.sr, ...ALT_SR },
+    en: { ...BASE.en, ...numbered('en'), ...roles.en, ...ALT_EN },
   };
 }
 
