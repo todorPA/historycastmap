@@ -108,6 +108,11 @@ export const chartText = {
     centuryFrom: (c: number) => (c < 0 ? `${-c / 100}. veka p.n.e.` : `${c / 100 + 1}. veka`),
     tick: (c: number) => (c < 0 ? `${-c}. p.n.e.` : String(c)),
     count: (n: number, unit: 'ep' | 'ch') => (unit === 'ep' ? episodeCount(n, 'sr') : `${n} ${chapterNoun(n, 'sr')}`),
+    unitName: (unit: 'ep' | 'ch') => (unit === 'ep' ? 'epizode' : 'poglavlja'),
+    centuryHead: 'Vek',
+    totalHead: 'Ukupno',
+    quarterHead: 'Tromesečje',
+    addedHead: 'Novih epizoda',
   },
   en: {
     peak: (share: number, n: number, total: number, century: string) => `${century}: ${n} of ${total} (${share}%)`,
@@ -121,5 +126,10 @@ export const chartText = {
     centuryFrom: (c: number): string => chartText.en.century(c),
     tick: (c: number) => (c < 0 ? `${-c} BC` : String(c)),
     count: (n: number, unit: 'ep' | 'ch') => (unit === 'ep' ? episodeCount(n, 'en') : `${n} ${chapterNoun(n, 'en')}`),
+    unitName: (unit: 'ep' | 'ch') => (unit === 'ep' ? 'episodes' : 'chapters'),
+    centuryHead: 'Century',
+    totalHead: 'Total',
+    quarterHead: 'Quarter',
+    addedHead: 'New episodes',
   },
 };

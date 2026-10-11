@@ -20,6 +20,8 @@ const $$ = <T extends Element = HTMLElement>(sel: string) => [...document.queryS
 const ERA_ORDER = ERAS.map((e) => e.id);
 const eraName = (id: EraId, lang: Lang) => ERAS.find((e) => e.id === id)!.name[lang] ?? '';
 const eraColour = (id: EraId) => ERAS.find((e) => e.id === id)!.color;
+/** The app's --ring: the ink outline on every data mark. */
+const RING = 'rgba(30, 20, 12, 0.8)';
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 
 let lang: Lang = 'sr';
@@ -110,7 +112,8 @@ function renderChart() {
       const h = Math.max(2, (d.byEra[e] ?? 0) * k);
       y -= h;
       const gap = j < eras.length - 1 ? 2 : 0;
-      seg += `<rect x="${x(i)}" y="${y}" width="${bw}" height="${h - gap}" rx="${j === eras.length - 1 ? 3 : 0}" fill="${eraColour(e)}"/>`;
+      // The ink edge every era-coloured mark carries (config/eras.ts): ochre alone is under 3:1 on cream.
+      seg += `<rect x="${x(i)}" y="${y}" width="${bw}" height="${h - gap}" rx="${j === eras.length - 1 ? 3 : 0}" fill="${eraColour(e)}" stroke="${RING}" stroke-width="1"/>`;
     });
     const label =
       `${ct.century(d.century)} · ${ct.count(d.n, unit)}` +
@@ -130,8 +133,27 @@ function renderChart() {
     `<line x1="${px - 4}" y1="${py - 20}" x2="${px}" y2="${py - 6}" stroke="#645241" stroke-width="1"/>` +
     `<text class="note" x="${P.l}" y="18">${esc(unit === 'ep' ? ct.emptyEpisodes(empty, ct.centuryFrom(cs[firstFilled].century)) : ct.emptyChapters(empty))}</text>`;
 
+  // The drawing is for the eye; the same numbers go to assistive technology as a table, so the
+  // chart is not one opaque image with only the section heading for a name.
+  const usedEras = ERA_ORDER.filter((e) => cs.some((d) => d.byEra[e]));
+  const table =
+    `<table class="vh"><caption>${esc(`${STRINGS[lang].d_h} — ${ct.unitName(unit)}`)}</caption>` +
+    `<thead><tr><th scope="col">${esc(ct.centuryHead)}</th><th scope="col">${esc(ct.totalHead)}</th>` +
+    usedEras.map((e) => `<th scope="col">${esc(eraName(e, lang))}</th>`).join('') +
+    '</tr></thead><tbody>' +
+    cs
+      .filter((d) => d.n)
+      .map(
+        (d) =>
+          `<tr><th scope="row">${esc(ct.century(d.century))}</th><td>${d.n}</td>` +
+          usedEras.map((e) => `<td>${d.byEra[e] ?? 0}</td>`).join('') +
+          '</tr>',
+      )
+      .join('') +
+    '</tbody></table>';
   host.innerHTML =
-    `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(STRINGS[lang].d_h)}"><line class="dots" x1="${P.l}" x2="${W - P.r}" y1="${base}" y2="${base}"/>${grid}${runs}${bars}${ticks}${note}</svg>` +
+    table +
+    `<svg viewBox="0 0 ${W} ${H}" aria-hidden="true" focusable="false"><line class="dots" x1="${P.l}" x2="${W - P.r}" y1="${base}" y2="${base}"/>${grid}${runs}${bars}${ticks}${note}</svg>` +
     '<div class="tip" id="tip" hidden></div>';
   const legend = $('#legend');
   if (legend) legend.innerHTML = ERAS.map((e) => `<span><i style="background:${e.color}"></i>${esc(eraName(e.id, lang))}</span>`).join('');
@@ -186,14 +208,22 @@ function renderGrowth() {
     )
     .join('');
   const last = pts.length - 1;
+  const ct = chartText[lang];
+  const table =
+    `<table class="vh"><caption>${esc(t.growCap)}</caption><thead><tr><th scope="col">${esc(ct.quarterHead)}</th>` +
+    `<th scope="col">${esc(ct.addedHead)}</th><th scope="col">${esc(ct.totalHead)}</th></tr></thead><tbody>` +
+    pts.map((p) => `<tr><th scope="row">${p.year} Q${p.quarter}</th><td>${p.added}</td><td>${p.total}</td></tr>`).join('') +
+    '</tbody></table>';
   host.innerHTML =
-    `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t.growCap)}">` +
+    table +
+    `<svg viewBox="0 0 ${W} ${H}" aria-hidden="true" focusable="false">` +
     `<line x1="${P.l}" x2="${W - P.r}" y1="${Y(0)}" y2="${Y(0)}" stroke="#95826A"/>` +
     `<line x1="${P.l}" x2="${W - P.r}" y1="${Y(100)}" y2="${Y(100)}" stroke="#DCCFBA"/><text x="${P.l}" y="${Y(100) - 5}">100</text>` +
     `<path d="${area}" fill="rgba(212,170,85,.22)"/><path d="${line}" fill="none" stroke="#8A6620" stroke-width="2" stroke-linejoin="round"/>` +
     `<circle cx="${X(last)}" cy="${Y(pts[last].total)}" r="5" fill="#D4AA55" stroke="#21170F" stroke-width="1.5"/>` +
     `<text class="end" x="${X(last) + 10}" y="${Y(pts[last].total) + 4}">${esc(t.growEnd)}</text>${ticks}</svg>` +
-    `<figcaption class="muted" style="margin-top:6px;font-size:12.5px">${esc(t.growCap)}</figcaption>`;
+    // Already the table's caption for assistive technology; this copy is for the eye.
+    `<figcaption class="muted" style="margin-top:6px;font-size:12.5px" aria-hidden="true">${esc(t.growCap)}</figcaption>`;
 }
 
 /* ---------- header: the phone menu, and which section you are in ---------- */
