@@ -3,11 +3,11 @@ import { useFilters } from '../state/FilterContext';
 import { useLayout } from '../state/LayoutContext';
 
 /** Phone top bar (HANDOFF §19): mark, name, and search, which opens the panel as a sheet. */
-export default function PhoneBar() {
+export default function PhoneBar({ inert }: { inert: boolean }) {
   const { lang } = useFilters();
   const { openSearch } = useLayout();
   return (
-    <header className="phone-bar">
+    <header className="phone-bar" inert={inert}>
       <span className="hc-mark hc-mark--sm" aria-hidden="true">
         HC
       </span>

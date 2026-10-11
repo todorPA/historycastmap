@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { GUIDE_DELAY_MS, guideSeen, markGuideSeen } from '../lib/guide';
 import { useFilters } from '../state/FilterContext';
 import { useLayout } from '../state/LayoutContext';
@@ -44,15 +44,32 @@ export default function Shell() {
     if (phone && selectedEpisodeId) setSheetOpen(false);
   }, [phone, selectedEpisodeId, setSheetOpen]);
 
+  /**
+   * Phone: the sheet covers the top bar and the map, so while it is open they are `inert` — Tab
+   * and screen readers stay in the sheet — and closing it returns focus to whatever opened it.
+   */
+  const covered = phone && sheetOpen;
+  const opener = useRef<HTMLElement | null>(null);
+  // A layout effect: the browser moves focus off an element that has just turned inert, so the
+  // opener must be read before it gets the chance.
+  useLayoutEffect(() => {
+    if (covered) {
+      opener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      return;
+    }
+    if (opener.current?.isConnected) opener.current.focus({ preventScroll: true });
+    opener.current = null;
+  }, [covered]);
+
   const classes = ['app', phone ? 'is-phone' : !panelOpen && 'is-panel-closed', phone && sheetOpen && 'is-sheet-open']
     .filter(Boolean)
     .join(' ');
 
   return (
     <div className={classes}>
-      {phone && <PhoneBar />}
+      {phone && <PhoneBar inert={covered} />}
       <Sidebar />
-      <main className="app__main">
+      <main className="app__main" inert={covered}>
         <MapView />
         <Timeline />
       </main>
