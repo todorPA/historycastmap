@@ -27,19 +27,6 @@ export function useData(): LoadedData {
   return ctx;
 }
 
-/**
- * Episode ids in the side series, as a Set so visibility stays O(1) per event. Built once
- * from the loaded dataset; `series` is absent on datasets predating the field, which reads
- * as 'main' and leaves the set empty.
- */
-export function useSideEpisodes(): ReadonlySet<string> {
-  const { data } = useData();
-  return useMemo(
-    () => new Set(data.episodes.filter((e) => e.series === 'side').map((e) => e.id)),
-    [data.episodes],
-  );
-}
-
 /** The episode model, derived once per dataset, with the hand-checked overrides applied. */
 export function useEpisodes(): EpisodeView[] {
   const ctx = useContext(EpisodesContext);

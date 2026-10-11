@@ -1,4 +1,4 @@
-import type { Lang, LocalizedText } from '../types/events';
+import type { LocalizedText } from '../types/events';
 
 /**
  * Curated entry points into the archive.
@@ -128,14 +128,6 @@ export function collectionSpan(
 
 export function getCollection(id: string | null | undefined): Collection | undefined {
   return id ? COLLECTIONS.find((c) => c.id === id) : undefined;
-}
-
-export function collectionTitle(collection: Collection, lang: Lang): string {
-  return (lang === 'en' ? collection.title.en : collection.title.sr) || collection.title.sr;
-}
-
-export function collectionBlurb(collection: Collection, lang: Lang): string {
-  return (lang === 'en' ? collection.blurb.en : collection.blurb.sr) || collection.blurb.sr;
 }
 
 /**

@@ -13,10 +13,6 @@ export function yearToX(year: number, view: View, widthPx: number): number {
   return ((year - view.from) / (view.to - view.from)) * widthPx;
 }
 
-export function xToYear(x: number, view: View, widthPx: number): number {
-  return view.from + (x / widthPx) * (view.to - view.from);
-}
-
 const STEPS = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000];
 const MIN_TICK_PX = 70;
 
