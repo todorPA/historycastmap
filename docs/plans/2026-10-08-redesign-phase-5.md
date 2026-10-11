@@ -9,7 +9,7 @@ and two small leftovers from earlier phases. Branch `feat/redesign-5-guide-phone
 
 **Architecture:** As before: pure, tested modules for geometry and rules (guide placement, the
 nearest episode, cluster merging); components render them. Layout state (panel open, filters
-open, phone) joins FilterContext so the guide, the pill and the phone sheets can drive it.
+open, phone) lives in `LayoutContext` so the guide, the pill and the phone sheets can drive it.
 Reference: the prototype's `first-use guide`, `nav collapse` and `is-m` code and CSS.
 
 ---
