@@ -4,8 +4,7 @@ import type { Lang } from '../types/events';
  * Serbian numeral agreement: the form follows the last digit, except that the teens (11–14)
  * always take the genitive plural — 1 epizoda, 2–4 epizode, 5+ epizoda, but 11–14 epizoda.
  *
- * The same rule as scripts/lib/serbian.mjs, which writes the landing page; a parity test keeps
- * the two in step (scripts/lib/plural-parity.test.mjs).
+ * One rule for the explorer and the landing page, which builds its copy through it too.
  */
 export function agreeSr(n: number, [one, few, many]: readonly [string, string, string] | string[]): string {
   const last2 = n % 100;

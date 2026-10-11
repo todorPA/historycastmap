@@ -1,690 +1,248 @@
-/**
- * Landing page styles.
- *
- * Shares the token layer with the explorer (tokens.css) so the two never drift, but runs a
- * different register: low density, editorial, one display serif. The explorer is a cockpit;
- * this is a cover. Both are light, which keeps one theme across the whole site.
- *
- * The only chroma here is the brand gold (as a fill) and the twelve region hues. Nothing
- * on this page invents a colour.
- */
-
+/* The landing page (docs/plans/2026-10-11-landing.md). Taken from the Claude Design export
+ * (docs/design/landing/design.html) as it stands: its tokens are the explorer's own values
+ * (src/styles/theme.css), restated here because the landing page does not load the app's theme.
+ * Fonts are the self-hosted set, not the export's Google Fonts link. */
 @import './fonts.css';
-@import './tokens.css';
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/**
- * Body copy is set in the display serif, not the UI sans.
- *
- * Borrowed from "Searching for Birds", where the essay is set in a slab serif and only the
- * headings are sans: it is what gives that page its printed quality. Zilla Slab itself is
- * out, for the same reason Satoshi and Cabinet Grotesk were: it ships no Cyrillic subset,
- * and this dataset contains Cyrillic. Literata is already here, already carries both
- * subsets, and was cut for long-form reading in the first place.
- *
- * Serifs want a little more leading than a sans at the same size.
- */
-body {
-  margin: 0;
-  background: var(--ink-900);
-  color: var(--ink-100);
-  font-family: var(--font-display);
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* The chrome stays on the UI sans: nav, buttons and the region key are interface, not prose. */
-.nav,
-.cta,
-.tally__label,
-.regions,
-.foot {
-  font-family: var(--font-sans);
-}
-
-.wrap {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 var(--sp-5);
-}
-
-a {
-  color: inherit;
-}
-
-/* ---------- nav: single line, 64px ---------- */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: var(--z-drawer);
-  height: 64px;
-  display: flex;
-  align-items: center;
-  gap: var(--sp-4);
-  background: rgba(224, 219, 214, 0.88);
-  backdrop-filter: blur(10px);
-  /* A deep-gold hairline is the one place the brand colour appears as a line rather than
-     a fill; at 4.9:1 on this ground it is legible rather than decorative haze. */
-  border-bottom: 1px solid var(--gold-deep);
-}
-
-.nav__inner {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-4);
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 var(--sp-5);
-}
-
-/* Was tracked-out caps in mono, which is template chrome rather than a wordmark. Now the
-   product's name in the display face. No attempt is made to imitate the real HistoryCast
-   badge (ornate gold lettering on black); when that artwork is available it should replace
-   this text outright rather than be approximated here. */
-.nav__brand {
-  font-family: var(--font-display);
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  text-decoration: none;
-  margin-right: auto;
-}
-
-.nav__link {
-  font-size: var(--step--1);
-  color: var(--ink-200);
-  text-decoration: none;
-}
-
-.nav__link:hover {
-  color: var(--paper);
-}
-
-@media (max-width: 640px) {
-  .nav__link--secondary {
-    display: none;
-  }
-}
-
-/* ---------- buttons ---------- */
-.cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  padding: 11px 20px;
-  border-radius: var(--r-md);
-  border: 1px solid transparent;
-  font: inherit;
-  font-size: var(--step-0);
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 140ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 140ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Brand gold, carrying ink: 11.2:1. Gold can only ever be a fill (see tokens.css). */
-.cta--primary {
-  background: var(--gold);
-  color: var(--ink-100);
-  border-color: var(--gold-deep);
-}
-
-.cta--primary:hover {
-  background: #f0d492;
-}
-
-/* ink on the page ground: 13.0:1, with a stroke so the target edge is visible */
-.cta--ghost {
-  background: transparent;
-  color: var(--ink-100);
-  border-color: var(--ink-400);
-}
-
-.cta--ghost:hover {
-  border-color: var(--ink-300);
-  background: var(--ink-700);
-}
-
-.cta:active {
-  transform: translateY(1px);
-}
-
-.cta:focus-visible {
-  outline: 2px solid var(--ink-100);
-  outline-offset: 3px;
-}
-
-/* ---------- hero ----------
-   The text column holds the page's measure; the map runs past the container to the viewport
-   edge. A bordered, rounded, shadowed card would have framed the map as a product
-   screenshot — one tidy object among several. Cropped at the edge it reads as a view onto
-   something larger than the page, which is what the archive actually is. */
-.hero {
-  padding: var(--sp-6) 0;
-}
-
-/* The container's own left edge, so the hero text starts on the same axis as every
-   section below it even though the hero itself is not inside .wrap. */
-:root {
-  --gutter: max(var(--sp-5), calc((100vw - 1240px) / 2 + var(--sp-5)));
-}
-
-.hero__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-5);
-  align-items: center;
-  padding: 0 var(--sp-5);
-}
-
-@media (min-width: 900px) {
-  .hero {
-    padding-top: 5rem;
-    padding-bottom: 4.5rem;
-  }
-
-  .hero__grid {
-    grid-template-columns: minmax(0, 27rem) minmax(0, 1fr);
-    column-gap: clamp(var(--sp-6), 5vw, 4.5rem);
-    padding: 0 0 0 var(--gutter);
-  }
-}
-
-.hero__title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(2.25rem, 4.4vw, 3.5rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-}
-
-.hero__title em {
-  font-style: italic;
-  /* Descender clearance for the italic 'j' and 'g'. */
-  line-height: 1.12;
-  padding-bottom: 0.08em;
-}
-
-.hero__sub {
-  margin: var(--sp-4) 0 0;
-  max-width: 40ch;
-  color: var(--ink-200);
-  font-size: 1.0625rem;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-3);
-  margin-top: var(--sp-5);
-}
-
-/* The frame now belongs to the map itself, so the caption can sit outside it on the page
-   ground instead of being boxed in with the tiles. */
-.hero__figure {
-  margin: 0;
-}
-
-/* ---------- tally ----------
-   Was a four-figure band of its own between the hero and the first section: the default
-   stat strip, and read as three trophies and a filler ("3206 godina", which the chart's own
-   axis states better). It now heads the chart, where the numbers are what the bars count.
-   column-reverse puts the figure above its noun while keeping the markup a valid <dl>, where
-   the term has to come first. */
-.tally {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-5) clamp(var(--sp-6), 5vw, 4rem);
-  margin: var(--sp-6) 0 0;
-}
-
-.tally__item {
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.tally__n {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  font-size: clamp(1.75rem, 3.4vw, 2.25rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-}
-
-.tally__label {
-  margin-top: var(--sp-2);
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  color: var(--ink-300);
-}
-
-/* ---------- section scaffolding ---------- */
-.section {
-  padding: 4.5rem 0;
-}
-
-.section__title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-}
-
-.section__body {
-  margin: var(--sp-3) 0 0;
-  max-width: 62ch;
-  color: var(--ink-200);
-}
-
-/* ---------- how it works ----------
-   This content is genuinely a sequence (filter, then read, then listen), so it is set as
-   one: rows read top to bottom, the verb held in a fixed left column so the three align on
-   a common axis. Only the rules *between* steps are drawn — the outer two boxed the list in
-   without separating anything, and hairlines were already doing most of the structural work
-   on this page. */
-.steps {
-  list-style: none;
-  margin: var(--sp-6) 0 0;
-  padding: 0;
-}
-
-.step {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-1) var(--sp-5);
-  padding: var(--sp-5) 0;
-}
-
-.step + .step {
-  border-top: 1px solid var(--line);
-}
-
-@media (min-width: 720px) {
-  .step {
-    grid-template-columns: 13rem 1fr;
-    align-items: baseline;
-  }
-}
-
-.step__verb {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 1.375rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-}
-
-.step__text {
-  margin: 0;
-  max-width: 58ch;
-  color: var(--ink-200);
-  font-size: var(--step-0);
-}
-
-/* ---------- regions ----------
-   The twelve hues are the section's subject, so they are rendered rather than screenshotted.
-   Twelve underlined rows in three columns read as a form; as two columns of six with no
-   rules and a swatch big enough to judge a colour by, it reads as the key it is. Colour is
-   the only thing holding the rows apart, which is the point the section is making. */
-.regions {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-3) var(--sp-5);
-  margin: var(--sp-6) 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-@media (min-width: 620px) {
-  .regions {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.region {
-  display: grid;
-  grid-template-columns: 16px 1fr;
-  align-items: center;
-  gap: var(--sp-3);
-  font-size: var(--step-0);
-  color: var(--ink-200);
-}
-
-.region__dot {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px var(--swatch-ring);
-}
-
-/* ---------- full-width band ---------- */
-.band {
-  margin: var(--sp-5) 0 0;
-}
-
-/* ---------- closing ----------
-   The one full-bleed surface change on the page. Everything above sits on the page ground,
-   so the scroll ends on a floor rather than trailing off; --gold-wash is the product's own
-   "active" surface, which makes the last thing on the page the same colour as a chosen row
-   inside the map. */
-.close-band {
-  background: var(--gold-wash);
-  border-top: 1px solid var(--gold-deep);
-  padding: clamp(3rem, 7vw, 5rem) 0;
-}
-
-.close-band__inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: end;
-  justify-content: space-between;
-  gap: var(--sp-5);
-}
-
-.close-band .section__body {
-  color: var(--ink-200);
-}
-
-/* ---------- footer ---------- */
-.foot {
-  border-top: 1px solid var(--line);
-  padding: var(--sp-5) 0;
-  color: var(--ink-300);
-  font-size: var(--step--1);
-}
-
-.foot__inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-3) var(--sp-5);
-  align-items: center;
-}
-
-.foot a {
-  color: var(--ink-200);
-}
-
-/* ---------- motion ---------- */
-/* The page's only non-interactive motion: a single staged entrance on the hero, so the
-   eye is walked headline -> claim -> action -> map exactly once. Everything below the
-   fold is still, which is what makes this moment read as deliberate. Armed by .js-ready,
-   so without the module the content is simply visible. */
-.js-ready [data-enter] {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.js-ready.is-entered [data-enter] {
-  opacity: 1;
-  transform: none;
-  transition: opacity 560ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.js-ready.is-entered [data-enter='1'] { transition-delay: 0ms; }
-.js-ready.is-entered [data-enter='2'] { transition-delay: 70ms; }
-.js-ready.is-entered [data-enter='3'] { transition-delay: 140ms; }
-.js-ready.is-entered [data-enter='4'] { transition-delay: 60ms; }
-
-
-
-@media (prefers-reduced-motion: reduce) {
-  .js-ready [data-enter] {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
-/* ---------- hero map ----------
-   The figure holds a fixed aspect ratio so the live map lands in exactly the space the
-   static fallback occupied: no reflow when Leaflet arrives, and CLS stays at zero.
-
-   Rounded and bordered on the left only. The right side is a crop, not an edge, so giving
-   it a corner would undo the whole point of running the map off the page. */
-.hero__map {
-  position: relative;
-  aspect-ratio: 3 / 2;
-  width: 100%;
-  background: var(--ink-800);
-  border: 1px solid var(--ink-500);
-  border-right: 0;
-  border-radius: var(--r-lg) 0 0 var(--r-lg);
-  overflow: hidden;
-}
-
-@media (max-width: 899px) {
-  /* Stacked, the map is inside the page padding again, so it gets all four sides back. */
-  .hero__map {
-    aspect-ratio: 4 / 3;
-    border-right: 1px solid var(--ink-500);
-    border-radius: var(--r-lg);
-  }
-}
-
-.hero__map img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Both the fallback image and the live map fill the ratio box, so the swap is invisible. */
-.hero__map > * {
-  position: absolute;
-  inset: 0;
-}
-
-.hero__map-canvas {
-  width: 100%;
-  height: 100%;
-}
-
-.hero__caption {
-  margin-top: var(--sp-2);
-  font-size: var(--step--1);
-  color: var(--ink-300);
-}
-
-/* Leaflet chrome, toned to the page rather than left at library defaults. */
-.hero__map .leaflet-container {
-  background: var(--ink-600);
-  font-family: var(--font-sans);
-}
-
-/* The basemap exists to locate the markers, not to compete with them. Desaturating only
-   the tile pane pushes the green landmass and blue sea back, and leaves the region hues
-   (which live in the overlay pane) at full strength. */
-.hero__map .leaflet-tile-pane {
-  filter: saturate(0.62) contrast(0.98);
-}
-
-.hero__map .leaflet-control-attribution {
-  background: rgba(255, 255, 255, 0.78);
-  font-size: 10px;
-}
-
-.hero__map .leaflet-popup-content {
-  font-size: var(--step--1);
-  line-height: 1.5;
-}
-
-.hero__map .leaflet-popup-content a {
-  color: #16202b;
-}
-
-/* ---------- spacing: sections were a fixed 4.5rem regardless of content ----------
-   At wide viewports that left dead bands between short sections, which reads as
-   unfinished rather than airy. Vertical rhythm now comes from the content's own size. */
-.section {
-  padding: clamp(2.75rem, 6vw, 4.25rem) 0;
-}
-
-/* Consecutive prose-and-media sections share a boundary, so they should not each pay
-   full padding into the same gap. */
-.section + .section {
-  padding-top: 0;
-}
-
-/* No-JS message in place of the hero map. */
-.hero__map-fallback {
-  margin: 0;
-  padding: var(--sp-5);
-  color: var(--ink-200);
-  font-size: var(--step-0);
-}
-
-/* ---------- editorial rhythm ----------
-   Narrow prose against wide graphics. The measure was the full 1240px wrap, which is far
-   past a comfortable line length and left the charts no width to be wider *than*. */
-.prose {
-  max-width: 34rem;
-}
-
-.prose .section__body {
-  max-width: none;
-}
-
-/* Section links, so a paragraph of this page can be cited the way a view of the map can.
-   A "#" rather than a drawn icon: it is a character, not an illustration to maintain. */
-.anchor {
-  margin-left: 0.4ch;
-  color: var(--ink-400);
-  text-decoration: none;
-  opacity: 0;
-  transition: opacity 120ms ease;
-}
-
-.section__title:hover .anchor,
-.anchor:focus-visible {
-  opacity: 1;
-}
-
-.anchor:focus-visible {
-  outline: 2px solid var(--ink-100);
-  outline-offset: 2px;
-}
-
-/* ---------- margin note ----------
-   For the sentence that supports a claim without being the claim. Beside the content on a
-   wide screen, beneath it on a narrow one. */
-.with-note {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-5);
-  margin-top: var(--sp-5);
-}
-
-@media (min-width: 900px) {
-  .with-note {
-    grid-template-columns: minmax(0, 1fr) 17rem;
-    gap: var(--sp-6);
-    align-items: start;
-  }
-}
-
-.note {
-  font-size: var(--step-0);
-  font-style: italic;
-  line-height: 1.6;
-  color: var(--ink-200);
-  border-top: 1px solid var(--ink-500);
-  padding-top: var(--sp-3);
-}
-
-/* ---------- century chart ----------
-   The archive's own shape in time, replacing a screenshot of the timeline UI. Region colour
-   is deliberately absent: this chart is about *when*, and twelve hues here would compete
-   with the key directly above it. Gold marks the one bar the annotation points at, which is
-   the same job gold does everywhere else in the product. */
-.band--chart {
-  border: 0;
-  background: none;
-  border-radius: 0;
-  margin-top: var(--sp-6);
-}
-
-.cc {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
-.cc__bar {
-  fill: var(--ink-300);
-}
-
-.cc__bar.is-peak {
-  fill: var(--gold);
-  stroke: var(--gold-deep);
-  stroke-width: 1;
-}
-
-.cc__axis {
-  stroke: var(--ink-300);
-  stroke-width: 1;
-}
-
-/* The baseline under the centuries that hold nothing. Dotted rather than absent, so the
-   twelve silent centuries are something the chart says rather than somewhere it stops. */
-.cc__gap {
-  stroke: var(--ink-400);
-  stroke-width: 1;
-  stroke-dasharray: 2 4;
-}
-
-.cc__lead {
-  stroke: var(--gold-deep);
-  stroke-width: 1;
-  stroke-dasharray: 3 3;
-}
-
-.cc__note {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 15px;
-  fill: var(--ink-200);
-}
-
-.cc__tick {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  fill: var(--ink-300);
-}
-
-.band__caption {
-  margin-top: var(--sp-3);
-  max-width: 52rem;
-  font-size: var(--step-0);
-  color: var(--ink-300);
-}
-
-@media (max-width: 719px) {
-  /* The chart survives narrow widths where the screenshot could not, so unlike the old
-     band it is not hidden here; only the tick labels thin out. */
-  .cc__note {
-    font-size: 20px;
-  }
-
-  .cc__tick {
-    font-size: 17px;
-  }
+/* Layout: a calm archival reading column with wide "plates" (real map fragments) — same paper, ink and gold as the locked map (light theme). Single deliberate light look, like the map. */
+:root{
+  color-scheme:light;
+  /* map light tokens (source of truth: map app.css, Update 6) */
+  --f0:#E3D6C0; --f1:#F7F0E3; --f2:#EFE6D5; --f3:#E6DAC5; --f4:#D8C9AF;
+  --line:#95826A; --line-soft:#DCCFBA;
+  --tx:#21170F; --tx2:#4A3C2F; --tx3:#645241;
+  --gold:#D4AA55; --gold-hi:#6A4A10; --gold-line:#8A6620; --gold-bg:rgba(212,170,85,.22);
+  --on-gold:#1B130D; --ink:#21170F; --paper:#F2EADB;
+  /* era colours (map, palette A) */
+  --anc:#8A6A9E; --mid:#3F7F8C; --early:#6E8B3D; --c19:#C08A2E; --c20:#B4553A;
+  --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --r1:4px; --r2:6px; --r3:10px;
+  --shadow:0 10px 28px rgba(60,40,20,.16);
+  --wrap:1180px;
+  --hdr:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 12px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--f1);color:var(--tx);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--gold-hi);text-decoration:underline;text-decoration-color:var(--gold-line);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold-line);outline-offset:2px;border-radius:2px}
+.num{font-variant-numeric:tabular-nums lining-nums}
+img{max-width:100%;display:block}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ───────── header (mirrors the map's brand row) ───────── */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(247,240,227,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line-soft)}
+.hdr__in{max-width:var(--wrap);margin:0 auto;padding:0 24px;height:var(--hdr);display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;min-width:0}
+.logo{width:47px;height:34px;flex:none;border-radius:var(--r2);background:var(--ink);display:grid;place-items:center;padding:2px 3px}
+.logo img{width:100%;height:100%;object-fit:contain}
+.brand__txt{line-height:1.1;min-width:0;display:flex;flex-direction:column}
+.brand__name{font:600 17px/1.1 var(--serif);letter-spacing:.01em;color:var(--tx);white-space:nowrap}
+.brand__sub{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-hi);margin-top:3px;white-space:nowrap}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;flex:none}
+.lang button{padding:3px 7px;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--tx3)}
+.lang button[aria-pressed="true"]{background:var(--gold);color:var(--on-gold)}
+.lang button:hover:not([aria-pressed="true"]){background:var(--f3);color:var(--tx)}
+.hdr__sp{flex:1}
+.nav{display:flex;align-items:center;gap:2px}
+.nav a{padding:6px 10px;border-radius:var(--r2);font-size:13.5px;font-weight:500;color:var(--tx2);text-decoration:none}
+.nav a:hover{background:var(--f3);color:var(--tx)}
+.nav a.is-here{color:var(--tx);box-shadow:inset 0 -2px 0 var(--gold-line);border-radius:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 14px;border-radius:var(--r2);font-weight:500;font-size:13.5px;border:1px solid var(--line);color:var(--tx);text-decoration:none;white-space:nowrap;background:transparent}
+.btn:hover{background:var(--f3);text-decoration:none}
+.btn--pri{background:var(--gold);border-color:var(--gold-line);color:var(--on-gold);font-weight:600}
+.btn--pri:hover{background:#E2BE70}
+.btn--lg{height:52px;padding:0 26px;font-size:17px;border-radius:var(--r2)}
+.btn svg{flex:none}
+.l-short{display:none}
+.menu{display:none;width:36px;height:36px;border:1px solid var(--line);border-radius:var(--r2);place-items:center;color:var(--tx2)}
+
+/* ───────── sections ───────── */
+.sec{padding-block:clamp(56px,8vh,96px);border-top:1px solid var(--line-soft)}
+.sec--deep{background:var(--f0);border-top-color:var(--f4)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:24px}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-hi);margin:0 0 14px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--gold-line)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--tx);margin:0;text-wrap:balance;letter-spacing:-.005em}
+h1{font-size:clamp(34px,4.2vw,50px);line-height:1.08}
+h2{font-size:clamp(28px,3.2vw,40px);line-height:1.12}
+h3{font-size:21px;line-height:1.25}
+h1 em,h2 em{font-style:italic;color:var(--gold-hi)}
+.lead{font-size:18px;line-height:1.6;color:var(--tx2);max-width:60ch;margin:18px 0 0}
+p{margin:0}
+.prose{display:grid;gap:14px;max-width:62ch;color:var(--tx2)}
+.prose strong{color:var(--tx);font-weight:600}
+.muted{color:var(--tx3);font-size:14px}
+
+/* 1 · Arhiva */
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:start}
+.hero figure{margin:0;padding-top:118px}
+.qs{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:22px 0 0;padding:0;list-style:none;border-top:1px solid var(--line-soft);max-width:540px}
+.qs li{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:baseline;padding:10px 12px 10px 0;border-bottom:1px solid var(--line-soft);font-size:14.5px;color:var(--tx2);line-height:1.4}
+.qs b{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-hi)}
+.hero__copy .prose{margin-top:20px}
+.credit{margin-top:22px;padding:14px 16px;border:1px solid var(--line-soft);border-left:3px solid var(--gold);border-radius:0 var(--r2) var(--r2) 0;background:var(--f2);font-size:14.5px;color:var(--tx2);max-width:60ch}
+.hero__cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:24px}
+.plate{position:relative;width:100%;aspect-ratio:760/540;max-width:100%}
+.frag{position:absolute;border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;background:var(--f1);box-shadow:var(--shadow)}
+.frag img{width:100%;height:100%;object-fit:cover}
+.plate svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.tag{position:absolute;display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 4px;border-radius:999px;background:var(--ink);color:var(--f1);font-size:12.5px;font-weight:500;white-space:nowrap;box-shadow:0 3px 10px rgba(30,20,12,.25);transform:translate(-50%,-50%)}
+.tag i{width:20px;height:20px;border-radius:50%;background:var(--gold);color:var(--on-gold);font:700 11.5px/20px var(--sans);text-align:center;font-style:normal}
+.plate__cap{margin-top:14px;font-size:13px;color:var(--tx3);text-align:right}
+
+/* 2 · Autori */
+.two{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 18px;margin:0;padding:0;list-style:none}
+.person{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:center}
+.ph{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--f3);border:1px solid var(--line);font:500 19px/1 var(--serif);color:var(--tx2);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.person b{display:block;font-weight:600;font-size:15px;line-height:1.3;color:var(--tx)}
+.person .role{display:block;font-size:13px;color:var(--tx3);line-height:1.35;margin-top:2px}
+.person--org .ph{background:var(--ink);border-color:var(--ink)}
+.person--org .ph img{object-fit:contain;padding:6px}
+.layer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:28px;font-size:13.5px;color:var(--tx2)}
+.layer span{padding:5px 11px;border:1px solid var(--line);border-radius:12px;background:var(--f1)}
+.layer span.on{background:var(--gold-bg);border-color:var(--gold-line);color:var(--gold-hi);font-weight:600}
+.layer svg{color:var(--tx3)}
+
+.dist{margin-top:72px;padding-top:40px;border-top:1px dashed var(--line-soft)}
+.dist__h{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.dist__h .prose{max-width:58ch;margin-top:10px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.seg button{height:30px;padding:0 12px;font-size:12.5px;font-weight:600;color:var(--tx3)}
+.seg button[aria-pressed="true"]{background:var(--gold);color:var(--on-gold)}
+.seg button:hover:not([aria-pressed="true"]){background:var(--f3);color:var(--tx)}
+.chart{position:relative;margin-top:22px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart svg{display:block;width:100%;min-width:680px;height:auto}
+.chart text{font-family:var(--sans);fill:var(--tx3);font-size:12px}
+.chart .peak{fill:var(--tx);font-weight:600;font-size:13px}
+.chart .note{fill:var(--tx2);font-size:12.5px}
+.chart .base{stroke:var(--tx3);stroke-width:1}
+.chart .dots{stroke:var(--line);stroke-width:1.2;stroke-dasharray:1.5 4;stroke-linecap:round}
+.chart .grid{stroke:var(--line-soft);stroke-width:1}
+.chart .hit{fill:transparent}
+.chart .hit:hover+g rect,.chart g.bar:hover rect{opacity:.85}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:12.5px;color:var(--tx2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;box-shadow:0 0 0 1.5px rgba(30,20,12,.8)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--f1);font-size:12.5px;line-height:1.35;padding:7px 10px;border-radius:var(--r2);white-space:nowrap;transform:translate(-50%,calc(-100% - 10px));box-shadow:0 4px 12px rgba(30,20,12,.25)}
+.tip b{font-weight:600}
+
+/* 3 · Statistika */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:36px;border-top:2px solid var(--tx);border-bottom:1px solid var(--line-soft)}
+.stat{padding:26px 24px 26px 0}
+.stat+.stat{padding-left:24px;border-left:1px solid var(--line-soft)}
+.stat__n{font:500 clamp(54px,6.4vw,84px)/1 var(--serif);letter-spacing:-.02em;color:var(--tx)}
+.stat__l{margin-top:10px;font-size:15px;font-weight:600;color:var(--tx)}
+.stat__d{margin-top:4px;font-size:13.5px;color:var(--tx3);max-width:30ch}
+.grow{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:48px;align-items:center;margin-top:44px}
+.grow h3{font-size:22px}
+.grow .prose{margin-top:10px}
+.spark svg{display:block;width:100%;height:auto}
+.spark text{font-family:var(--sans);fill:var(--tx3);font-size:12px}
+.spark .end{fill:var(--tx);font-weight:600;font-size:13px}
+
+/* 4 · Transkripti */
+.tr-head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:48px;align-items:end}
+.tr-head h2{font-size:clamp(32px,3.8vw,46px)}
+.markers{display:grid;gap:12px}
+.mk{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;padding:12px 14px;background:var(--f1);border:1px solid var(--line);border-radius:var(--r3)}
+.mk__img{width:52px;height:52px;border-radius:var(--r2);overflow:hidden;border:1px solid var(--line-soft);background:var(--paper)}
+.mk__img img{width:100%;height:100%;object-fit:cover;image-rendering:auto}
+.mk b{display:block;font-size:15px;font-weight:600}
+.mk span{display:block;font-size:13.5px;color:var(--tx2);line-height:1.4}
+.steps{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.5fr) minmax(0,.9fr);gap:22px;margin:40px 0 0;padding:0;list-style:none;align-items:start}
+.step__k{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-hi)}
+.step__k i{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--f1);font:600 12px/22px var(--sans);text-align:center;font-style:normal;letter-spacing:0}
+.step h3{margin-top:8px;font-size:19px}
+.step p{margin-top:6px;font-size:14.5px;color:var(--tx2);line-height:1.5}
+.shot{margin-top:14px;border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;background:var(--f1);box-shadow:var(--shadow)}
+.shot img{width:100%;height:auto}
+.shot--clip{aspect-ratio:656/600}
+.shot--clip img{height:100%;object-fit:cover;object-position:top}
+.vals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:44px 0 0;padding:0;list-style:none;border-top:1px solid var(--f4)}
+.vals li{padding:16px 18px 0 0;font-size:14px;color:var(--tx2);line-height:1.45}
+.vals b{display:block;font-family:var(--serif);font-size:19px;font-weight:500;color:var(--tx);margin-bottom:2px}
+.tr-note{margin-top:22px;font-size:15px;color:var(--tx2);max-width:70ch}
+
+/* 5 · Kako radi */
+.how{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:44px;align-items:start;margin-top:34px}
+.app{position:relative;border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;box-shadow:var(--shadow);background:var(--f1)}
+.app img{width:100%;height:auto}
+.zone{position:absolute;border:2px solid var(--gold-line);border-radius:var(--r2);background:rgba(212,170,85,.08)}
+.zone .tag{transform:none;left:8px;top:8px}
+.arrows{position:absolute;display:flex;gap:6px}
+.arr{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:999px;background:var(--gold);color:var(--on-gold);font-size:12px;font-weight:600;box-shadow:0 3px 10px rgba(30,20,12,.2);white-space:nowrap}
+.parts{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.parts li{padding:16px 0;border-bottom:1px solid var(--line-soft)}
+.parts li:first-child{padding-top:0}
+.parts h3{display:flex;align-items:center;gap:10px;font-size:19px}
+.parts h3 i{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--f1);font:600 12px/22px var(--sans);text-align:center;font-style:normal}
+.parts p{margin-top:6px;font-size:14.5px;color:var(--tx2);line-height:1.5}
+.tlnav{display:grid;gap:8px;margin-top:10px}
+.tlnav div{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;font-size:14px;color:var(--tx2);line-height:1.45}
+.tlnav svg{color:var(--gold-hi);margin-top:1px}
+.tlnav b{color:var(--tx);font-weight:600}
+.flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 12px;margin-top:40px;padding:18px 20px;border:1px solid var(--line-soft);border-radius:var(--r3);background:var(--f2)}
+.flow span{font-family:var(--serif);font-size:19px;color:var(--tx)}
+.flow svg{color:var(--gold-line);flex:none}
+.sync{margin-top:12px;text-align:center;font-size:14px;color:var(--tx3)}
+.sync b{font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:var(--tx2)}
+
+/* 6 · CTA */
+.cta{background:var(--ink);color:var(--f1);border-top:0;text-align:center;padding-block:clamp(72px,11vh,120px)}
+.cta .logo{width:88px;height:64px;margin:0 auto 22px;background:transparent;padding:0}
+.cta h2{color:var(--f1);font-size:clamp(32px,4vw,48px)}
+.cta h2 em{color:var(--gold)}
+.cta p{margin:14px auto 0;max-width:52ch;color:#D9CBB4;font-size:17px}
+.cta .btn--pri{margin-top:30px;border-color:var(--gold)}
+.cta .muted{margin-top:14px;color:#B9A88F;font-size:13px}
+.foot{background:var(--ink);color:#B9A88F;font-size:13px;border-top:1px solid #3A2E24}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;padding-block:20px}
+.foot a{color:#E3D3B6;text-decoration-color:#7D6A50}
+
+/* responsive */
+@media (max-width:1080px){
+  .nav a{padding:6px 7px;font-size:13px}
+  .hero,.two,.how,.tr-head,.grow{grid-template-columns:1fr;gap:36px}
+  .steps{grid-template-columns:1fr;gap:40px}
+  .shot{max-width:600px}
+  .hero figure{padding-top:0}
+}
+@media (max-width:860px){
+  .menu{display:grid}
+  .nav{display:none;position:absolute;left:0;right:0;top:var(--hdr);flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 14px;background:var(--f1);border-bottom:1px solid var(--line-soft);box-shadow:0 10px 20px rgba(60,40,20,.12)}
+  .nav.is-open{display:flex}
+  .nav a{padding:12px 4px;font-size:15px;border-bottom:1px solid var(--line-soft);border-radius:0}
+  .nav a.is-here{box-shadow:none;color:var(--gold-hi)}
+  .hdr__in{padding:0 16px;gap:10px}
+  .wrap{padding-inline:16px}
+  .people{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr}
+  .stat,.stat+.stat{padding:20px 0;border-left:0}
+  .stat+.stat{border-top:1px solid var(--line-soft)}
+  .vals{grid-template-columns:1fr 1fr;gap:4px 16px}
+}
+@media (max-width:560px){
+  .brand__sub{display:none}
+  .hdr .btn--pri .l-long{display:none}
+  .hdr .btn--pri .l-short{display:inline}
+  .hdr__in{gap:8px}
+  .zone .tag > span{display:none}
+  .zone .tag{padding:2px}
+  .hdr .btn--pri{padding:0 11px}
+  .qs{grid-template-columns:1fr}
+  .people{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .tag{font-size:10.5px;padding:2px 7px 2px 2px;gap:5px}
+  .tag i{width:16px;height:16px;line-height:16px;font-size:10px}
+  .zone .tag{left:4px;top:4px}
+  .arrows{display:none}
+  .flow span{font-size:17px}
+  .flow{justify-content:flex-start}
+  .lead{font-size:17px}
 }

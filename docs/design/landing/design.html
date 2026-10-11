@@ -1,0 +1,653 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>HistoryCast Mapa istorije (Copy)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
+<style>
+/* Layout: a calm archival reading column with wide "plates" (real map fragments) — same paper, ink and gold as the locked map (light theme). Single deliberate light look, like the map. */
+:root{
+  color-scheme:light;
+  /* map light tokens (source of truth: map app.css, Update 6) */
+  --f0:#E3D6C0; --f1:#F7F0E3; --f2:#EFE6D5; --f3:#E6DAC5; --f4:#D8C9AF;
+  --line:#95826A; --line-soft:#DCCFBA;
+  --tx:#21170F; --tx2:#4A3C2F; --tx3:#645241;
+  --gold:#D4AA55; --gold-hi:#6A4A10; --gold-line:#8A6620; --gold-bg:rgba(212,170,85,.22);
+  --on-gold:#1B130D; --ink:#21170F; --paper:#F2EADB;
+  /* era colours (map, palette A) */
+  --anc:#8A6A9E; --mid:#3F7F8C; --early:#6E8B3D; --c19:#C08A2E; --c20:#B4553A;
+  --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --r1:4px; --r2:6px; --r3:10px;
+  --shadow:0 10px 28px rgba(60,40,20,.16);
+  --wrap:1180px;
+  --hdr:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 12px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--f1);color:var(--tx);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--gold-hi);text-decoration:underline;text-decoration-color:var(--gold-line);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold-line);outline-offset:2px;border-radius:2px}
+.num{font-variant-numeric:tabular-nums lining-nums}
+img{max-width:100%;display:block}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ───────── header (mirrors the map's brand row) ───────── */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(247,240,227,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line-soft)}
+.hdr__in{max-width:var(--wrap);margin:0 auto;padding:0 24px;height:var(--hdr);display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;min-width:0}
+.logo{width:47px;height:34px;flex:none;border-radius:var(--r2);background:var(--ink);display:grid;place-items:center;padding:2px 3px}
+.logo img{width:100%;height:100%;object-fit:contain}
+.brand__txt{line-height:1.1;min-width:0;display:flex;flex-direction:column}
+.brand__name{font:600 17px/1.1 var(--serif);letter-spacing:.01em;color:var(--tx);white-space:nowrap}
+.brand__sub{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-hi);margin-top:3px;white-space:nowrap}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;flex:none}
+.lang button{padding:3px 7px;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--tx3)}
+.lang button[aria-pressed="true"]{background:var(--gold);color:var(--on-gold)}
+.lang button:hover:not([aria-pressed="true"]){background:var(--f3);color:var(--tx)}
+.hdr__sp{flex:1}
+.nav{display:flex;align-items:center;gap:2px}
+.nav a{padding:6px 10px;border-radius:var(--r2);font-size:13.5px;font-weight:500;color:var(--tx2);text-decoration:none}
+.nav a:hover{background:var(--f3);color:var(--tx)}
+.nav a.is-here{color:var(--tx);box-shadow:inset 0 -2px 0 var(--gold-line);border-radius:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 14px;border-radius:var(--r2);font-weight:500;font-size:13.5px;border:1px solid var(--line);color:var(--tx);text-decoration:none;white-space:nowrap;background:transparent}
+.btn:hover{background:var(--f3);text-decoration:none}
+.btn--pri{background:var(--gold);border-color:var(--gold-line);color:var(--on-gold);font-weight:600}
+.btn--pri:hover{background:#E2BE70}
+.btn--lg{height:52px;padding:0 26px;font-size:17px;border-radius:var(--r2)}
+.btn svg{flex:none}
+.l-short{display:none}
+.menu{display:none;width:36px;height:36px;border:1px solid var(--line);border-radius:var(--r2);place-items:center;color:var(--tx2)}
+
+/* ───────── sections ───────── */
+.sec{padding-block:clamp(56px,8vh,96px);border-top:1px solid var(--line-soft)}
+.sec--deep{background:var(--f0);border-top-color:var(--f4)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:24px}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-hi);margin:0 0 14px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--gold-line)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--tx);margin:0;text-wrap:balance;letter-spacing:-.005em}
+h1{font-size:clamp(34px,4.2vw,50px);line-height:1.08}
+h2{font-size:clamp(28px,3.2vw,40px);line-height:1.12}
+h3{font-size:21px;line-height:1.25}
+h1 em,h2 em{font-style:italic;color:var(--gold-hi)}
+.lead{font-size:18px;line-height:1.6;color:var(--tx2);max-width:60ch;margin:18px 0 0}
+p{margin:0}
+.prose{display:grid;gap:14px;max-width:62ch;color:var(--tx2)}
+.prose strong{color:var(--tx);font-weight:600}
+.muted{color:var(--tx3);font-size:14px}
+
+/* 1 · Arhiva */
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:start}
+.hero figure{margin:0;padding-top:118px}
+.qs{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:22px 0 0;padding:0;list-style:none;border-top:1px solid var(--line-soft);max-width:540px}
+.qs li{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:baseline;padding:10px 12px 10px 0;border-bottom:1px solid var(--line-soft);font-size:14.5px;color:var(--tx2);line-height:1.4}
+.qs b{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-hi)}
+.hero__copy .prose{margin-top:20px}
+.credit{margin-top:22px;padding:14px 16px;border:1px solid var(--line-soft);border-left:3px solid var(--gold);border-radius:0 var(--r2) var(--r2) 0;background:var(--f2);font-size:14.5px;color:var(--tx2);max-width:60ch}
+.hero__cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:24px}
+.plate{position:relative;width:100%;aspect-ratio:760/540;max-width:100%}
+.frag{position:absolute;border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;background:var(--f1);box-shadow:var(--shadow)}
+.frag img{width:100%;height:100%;object-fit:cover}
+.plate svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.tag{position:absolute;display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 4px;border-radius:999px;background:var(--ink);color:var(--f1);font-size:12.5px;font-weight:500;white-space:nowrap;box-shadow:0 3px 10px rgba(30,20,12,.25);transform:translate(-50%,-50%)}
+.tag i{width:20px;height:20px;border-radius:50%;background:var(--gold);color:var(--on-gold);font:700 11.5px/20px var(--sans);text-align:center;font-style:normal}
+.plate__cap{margin-top:14px;font-size:13px;color:var(--tx3);text-align:right}
+
+/* 2 · Autori */
+.two{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 18px;margin:0;padding:0;list-style:none}
+.person{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:center}
+.ph{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--f3);border:1px solid var(--line);font:500 19px/1 var(--serif);color:var(--tx2);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.person b{display:block;font-weight:600;font-size:15px;line-height:1.3;color:var(--tx)}
+.person .role{display:block;font-size:13px;color:var(--tx3);line-height:1.35;margin-top:2px}
+.person--org .ph{background:var(--ink);border-color:var(--ink)}
+.person--org .ph img{object-fit:contain;padding:6px}
+.layer{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:28px;font-size:13.5px;color:var(--tx2)}
+.layer span{padding:5px 11px;border:1px solid var(--line);border-radius:12px;background:var(--f1)}
+.layer span.on{background:var(--gold-bg);border-color:var(--gold-line);color:var(--gold-hi);font-weight:600}
+.layer svg{color:var(--tx3)}
+
+.dist{margin-top:72px;padding-top:40px;border-top:1px dashed var(--line-soft)}
+.dist__h{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.dist__h .prose{max-width:58ch;margin-top:10px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.seg button{height:30px;padding:0 12px;font-size:12.5px;font-weight:600;color:var(--tx3)}
+.seg button[aria-pressed="true"]{background:var(--gold);color:var(--on-gold)}
+.seg button:hover:not([aria-pressed="true"]){background:var(--f3);color:var(--tx)}
+.chart{position:relative;margin-top:22px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart svg{display:block;width:100%;min-width:680px;height:auto}
+.chart text{font-family:var(--sans);fill:var(--tx3);font-size:12px}
+.chart .peak{fill:var(--tx);font-weight:600;font-size:13px}
+.chart .note{fill:var(--tx2);font-size:12.5px}
+.chart .base{stroke:var(--tx3);stroke-width:1}
+.chart .dots{stroke:var(--line);stroke-width:1.2;stroke-dasharray:1.5 4;stroke-linecap:round}
+.chart .grid{stroke:var(--line-soft);stroke-width:1}
+.chart .hit{fill:transparent}
+.chart .hit:hover+g rect,.chart g.bar:hover rect{opacity:.85}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:12.5px;color:var(--tx2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;box-shadow:0 0 0 1.5px rgba(30,20,12,.8)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--f1);font-size:12.5px;line-height:1.35;padding:7px 10px;border-radius:var(--r2);white-space:nowrap;transform:translate(-50%,calc(-100% - 10px));box-shadow:0 4px 12px rgba(30,20,12,.25)}
+.tip b{font-weight:600}
+
+/* 3 · Statistika */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:36px;border-top:2px solid var(--tx);border-bottom:1px solid var(--line-soft)}
+.stat{padding:26px 24px 26px 0}
+.stat+.stat{padding-left:24px;border-left:1px solid var(--line-soft)}
+.stat__n{font:500 clamp(54px,6.4vw,84px)/1 var(--serif);letter-spacing:-.02em;color:var(--tx)}
+.stat__l{margin-top:10px;font-size:15px;font-weight:600;color:var(--tx)}
+.stat__d{margin-top:4px;font-size:13.5px;color:var(--tx3);max-width:30ch}
+.grow{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:48px;align-items:center;margin-top:44px}
+.grow h3{font-size:22px}
+.grow .prose{margin-top:10px}
+.spark svg{display:block;width:100%;height:auto}
+.spark text{font-family:var(--sans);fill:var(--tx3);font-size:12px}
+.spark .end{fill:var(--tx);font-weight:600;font-size:13px}
+
+/* 4 · Transkripti */
+.tr-head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:48px;align-items:end}
+.tr-head h2{font-size:clamp(32px,3.8vw,46px)}
+.markers{display:grid;gap:12px}
+.mk{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;padding:12px 14px;background:var(--f1);border:1px solid var(--line);border-radius:var(--r3)}
+.mk__img{width:52px;height:52px;border-radius:var(--r2);overflow:hidden;border:1px solid var(--line-soft);background:var(--paper)}
+.mk__img img{width:100%;height:100%;object-fit:cover;image-rendering:auto}
+.mk b{display:block;font-size:15px;font-weight:600}
+.mk span{display:block;font-size:13.5px;color:var(--tx2);line-height:1.4}
+.steps{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.5fr) minmax(0,.9fr);gap:22px;margin:40px 0 0;padding:0;list-style:none;align-items:start}
+.step__k{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-hi)}
+.step__k i{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--f1);font:600 12px/22px var(--sans);text-align:center;font-style:normal;letter-spacing:0}
+.step h3{margin-top:8px;font-size:19px}
+.step p{margin-top:6px;font-size:14.5px;color:var(--tx2);line-height:1.5}
+.shot{margin-top:14px;border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;background:var(--f1);box-shadow:var(--shadow)}
+.shot img{width:100%;height:auto}
+.shot--clip{aspect-ratio:656/600}
+.shot--clip img{height:100%;object-fit:cover;object-position:top}
+.vals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:44px 0 0;padding:0;list-style:none;border-top:1px solid var(--f4)}
+.vals li{padding:16px 18px 0 0;font-size:14px;color:var(--tx2);line-height:1.45}
+.vals b{display:block;font-family:var(--serif);font-size:19px;font-weight:500;color:var(--tx);margin-bottom:2px}
+.tr-note{margin-top:22px;font-size:15px;color:var(--tx2);max-width:70ch}
+
+/* 5 · Kako radi */
+.how{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:44px;align-items:start;margin-top:34px}
+.app{position:relative;border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;box-shadow:var(--shadow);background:var(--f1)}
+.app img{width:100%;height:auto}
+.zone{position:absolute;border:2px solid var(--gold-line);border-radius:var(--r2);background:rgba(212,170,85,.08)}
+.zone .tag{transform:none;left:8px;top:8px}
+.arrows{position:absolute;display:flex;gap:6px}
+.arr{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:999px;background:var(--gold);color:var(--on-gold);font-size:12px;font-weight:600;box-shadow:0 3px 10px rgba(30,20,12,.2);white-space:nowrap}
+.parts{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.parts li{padding:16px 0;border-bottom:1px solid var(--line-soft)}
+.parts li:first-child{padding-top:0}
+.parts h3{display:flex;align-items:center;gap:10px;font-size:19px}
+.parts h3 i{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--f1);font:600 12px/22px var(--sans);text-align:center;font-style:normal}
+.parts p{margin-top:6px;font-size:14.5px;color:var(--tx2);line-height:1.5}
+.tlnav{display:grid;gap:8px;margin-top:10px}
+.tlnav div{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;font-size:14px;color:var(--tx2);line-height:1.45}
+.tlnav svg{color:var(--gold-hi);margin-top:1px}
+.tlnav b{color:var(--tx);font-weight:600}
+.flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 12px;margin-top:40px;padding:18px 20px;border:1px solid var(--line-soft);border-radius:var(--r3);background:var(--f2)}
+.flow span{font-family:var(--serif);font-size:19px;color:var(--tx)}
+.flow svg{color:var(--gold-line);flex:none}
+.sync{margin-top:12px;text-align:center;font-size:14px;color:var(--tx3)}
+.sync b{font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:var(--tx2)}
+
+/* 6 · CTA */
+.cta{background:var(--ink);color:var(--f1);border-top:0;text-align:center;padding-block:clamp(72px,11vh,120px)}
+.cta .logo{width:88px;height:64px;margin:0 auto 22px;background:transparent;padding:0}
+.cta h2{color:var(--f1);font-size:clamp(32px,4vw,48px)}
+.cta h2 em{color:var(--gold)}
+.cta p{margin:14px auto 0;max-width:52ch;color:#D9CBB4;font-size:17px}
+.cta .btn--pri{margin-top:30px;border-color:var(--gold)}
+.cta .muted{margin-top:14px;color:#B9A88F;font-size:13px}
+.foot{background:var(--ink);color:#B9A88F;font-size:13px;border-top:1px solid #3A2E24}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;padding-block:20px}
+.foot a{color:#E3D3B6;text-decoration-color:#7D6A50}
+
+/* responsive */
+@media (max-width:1080px){
+  .nav a{padding:6px 7px;font-size:13px}
+  .hero,.two,.how,.tr-head,.grow{grid-template-columns:1fr;gap:36px}
+  .steps{grid-template-columns:1fr;gap:40px}
+  .shot{max-width:600px}
+  .hero figure{padding-top:0}
+}
+@media (max-width:860px){
+  .menu{display:grid}
+  .nav{display:none;position:absolute;left:0;right:0;top:var(--hdr);flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 14px;background:var(--f1);border-bottom:1px solid var(--line-soft);box-shadow:0 10px 20px rgba(60,40,20,.12)}
+  .nav.is-open{display:flex}
+  .nav a{padding:12px 4px;font-size:15px;border-bottom:1px solid var(--line-soft);border-radius:0}
+  .nav a.is-here{box-shadow:none;color:var(--gold-hi)}
+  .hdr__in{padding:0 16px;gap:10px}
+  .wrap{padding-inline:16px}
+  .people{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr}
+  .stat,.stat+.stat{padding:20px 0;border-left:0}
+  .stat+.stat{border-top:1px solid var(--line-soft)}
+  .vals{grid-template-columns:1fr 1fr;gap:4px 16px}
+}
+@media (max-width:560px){
+  .brand__sub{display:none}
+  .hdr .btn--pri .l-long{display:none}
+  .hdr .btn--pri .l-short{display:inline}
+  .hdr__in{gap:8px}
+  .zone .tag > span{display:none}
+  .zone .tag{padding:2px}
+  .hdr .btn--pri{padding:0 11px}
+  .qs{grid-template-columns:1fr}
+  .people{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .tag{font-size:10.5px;padding:2px 7px 2px 2px;gap:5px}
+  .tag i{width:16px;height:16px;line-height:16px;font-size:10px}
+  .zone .tag{left:4px;top:4px}
+  .arrows{display:none}
+  .flow span{font-size:17px}
+  .flow{justify-content:flex-start}
+  .lead{font-size:17px}
+}
+</style>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="#arhiva" aria-label="HistoryCast Mapa istorije">
+      <span class="logo"><img src="img/logo.webp" alt="" width="132" height="96"></span>
+      <span class="brand__txt"><span class="brand__name">HistoryCast</span><span class="brand__sub" data-i="sub">Mapa istorije</span></span>
+    </a>
+    <div class="lang" role="group" aria-label="Jezik / Language"><button type="button" data-lang="sr" aria-pressed="true">SR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <span class="hdr__sp"></span>
+    <nav class="nav" id="nav" aria-label="Sadržaj">
+      <a href="#arhiva" data-i="n1">Arhiva</a>
+      <a href="#autori" data-i="n2">Autori</a>
+      <a href="#statistika" data-i="n3">Statistika</a>
+      <a href="#transkripti" data-i="n4">Transkripti</a>
+      <a href="#kako-radi" data-i="n5">Kako radi</a>
+    </nav>
+    <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Meni"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <a class="btn btn--pri js-map" href="#"><span class="l-long" data-i="open">Otvori mapu</span><span class="l-short" data-i="open_s">Mapa</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</header>
+
+<main>
+<!-- 1 · ARHIVA -->
+<section class="sec" id="arhiva" style="border-top:0">
+  <div class="wrap hero">
+    <div class="hero__copy">
+      <p class="eyebrow" data-i="a_eye">Arhiva podkasta HistoryCast</p>
+      <h1 data-i="a_h">Svaka epizoda ima svoje <em>mesto</em> i svoje <em>vreme</em>.</h1>
+      <p class="lead" data-i="a_lead">Posle epizode o istoriji često ostanu pitanja koja istoričar postavi sam od sebe, a slušalac ne zna gde da potraži odgovor:</p>
+      <ul class="qs">
+        <li><b data-i="q1k">Pre</b><span data-i="q1">Šta je prethodilo?</span></li>
+        <li><b data-i="q2k">Okidač</b><span data-i="q2">Šta je pokrenulo događaje?</span></li>
+        <li><b data-i="q3k">Istovremeno</b><span data-i="q3">Šta se tada dešavalo drugde?</span></li>
+        <li><b data-i="q4k">Posle</b><span data-i="q4">Šta je usledilo i na šta je uticalo?</span></li>
+      </ul>
+      <div class="prose">
+        <p data-i="a_p1"><strong>HistoryCast Mapa</strong> raspoređuje epizode po mestu i po vremenu. Tako arhiva postaje mentalna mapa istorije: vidite gde se nešto dogodilo, kada, i šta ga okružuje.</p>
+        <p data-i="a_p2">Korisna je ljubiteljima istorije, studentima, istraživačima i svima koji istoriju uče sami. Nastavnicima i učenicima može biti dodatni materijal uz nastavu, ali nije zvanični obrazovni program.</p>
+      </div>
+      <p class="credit" data-i="a_credit">Sve što je na mapi potiče iz epizoda podkasta <a href="https://rss.com/podcasts/rs-historycast/" target="_blank" rel="noreferrer">HistoryCast</a> u produkciji <a href="https://podmedia.rs/historycast/" target="_blank" rel="noreferrer">PodMedia</a>. Mapa samo slaže njihovu arhivu u prostor i vreme. Epizode slušajte na <a href="https://podcasts.apple.com/rs/podcast/historycast/id1669889519" target="_blank" rel="noreferrer">Apple Podcasts</a>, a podkast možete podržati na <a href="https://patreon.com/historycast" target="_blank" rel="noreferrer">Patreonu</a>.</p>
+    </div>
+    <figure style="margin:0">
+      <div class="plate" id="plate">
+        <div class="frag" style="left:27.63%;top:0;width:72.37%;height:67.9%"><img data-img="a-map" src="img/a-map-sr.webp" alt="Mapa: epizoda Vikinzi označena na Lindisfarnu, sa numerisanim poglavljima" width="1020" height="680"></div>
+        <div class="frag" style="left:0;top:10.37%;width:31.58%;height:49.44%"><img data-img="a-panel" src="img/a-panel-sr.webp" alt="Levi panel: lista epizoda, izabrana epizoda Vikinzi" width="656" height="730"></div>
+        <div class="frag" style="left:10.53%;top:60.85%;width:89.47%;height:39.15%"><img data-img="a-tl" src="img/a-tl-sr.webp" alt="Vremenska osa: Vikinzi, 793–1066, među drugim epizodama tog perioda" width="2220" height="690"></div>
+        <svg viewBox="0 0 760 540" aria-hidden="true">
+          <rect x="3" y="283" width="234" height="38" rx="6" fill="none" stroke="#8A6620" stroke-width="2.5"/>
+          <circle cx="369.6" cy="126.2" r="21" fill="none" stroke="#8A6620" stroke-width="2.5"/>
+          <rect x="357" y="455" width="206" height="19" rx="5" fill="none" stroke="#8A6620" stroke-width="2.5"/>
+          <path d="M237 297 C 300 290, 320 170, 350 140" fill="none" stroke="#8A6620" stroke-width="2" stroke-dasharray="5 5"/>
+          <path d="M237 312 C 290 330, 330 420, 357 459" fill="none" stroke="#8A6620" stroke-width="2" stroke-dasharray="5 5"/>
+        </svg>
+        <span class="tag" style="left:16%;top:47.5%"><i>1</i><span data-i="t1">Epizoda</span></span>
+        <span class="tag" style="left:62%;top:91%"><i>2</i><span data-i="t2">Kada</span></span>
+        <span class="tag" style="left:48.6%;top:13.5%"><i>3</i><span data-i="t3">Gde</span></span>
+      </div>
+      <figcaption class="plate__cap" data-i="a_cap">Isečci iz aplikacije: epizoda „Vikinzi“ u listi, na vremenskoj osi i na mapi.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 2 · AUTORI -->
+<section class="sec" id="autori">
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <p class="eyebrow" data-i="p_eye">Ljudi iza podkasta</p>
+        <h2 data-i="p_h">Mapa postoji zato što oni snimaju epizode.</h2>
+        <div class="prose" style="margin-top:18px">
+          <p data-i="p_p1">HistoryCast „otkriva priče iza istorijskih činjenica, upoznaje ljude iza istorijskih likova i nalazi život iza istorijskih datuma“. Istraživanje, razgovori i pripovedanje su njihov rad.</p>
+          <p data-i="p_p2">Mapa ne stvara istorijski sadržaj. Ona preuzima postojeću arhivu i dodaje joj sloj organizacije, pa se teme, događaji, periodi, epohe i mesta lakše pronalaze.</p>
+        </div>
+        <div class="layer" aria-label="Slojevi">
+          <span data-i="l1">Epizode HistoryCast-a</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <span class="on" data-i="l2">Mapa · vremenska osa · pretraga</span>
+        </div>
+      </div>
+      <div>
+        <ul class="people" id="people"></ul>
+        <p class="muted" style="margin-top:22px" data-i="p_note">Imena i uloge prema opisima epizoda u zvaničnom RSS feedu podkasta.</p>
+      </div>
+    </div>
+
+    <div class="dist" id="raspodela">
+      <div class="dist__h">
+        <div>
+          <h3 data-i="d_h">Arhiva kroz vekove</h3>
+          <div class="prose"><p data-i="d_p">Neki vekovi imaju mnogo epizoda, neki nijednu. Grafikon prikazuje raspodelu epizoda HistoryCast-a, ne količinu istorije koja se tada dogodila. Tako je arhiva prirodno rasla, tema po tema.</p></div>
+        </div>
+        <div class="seg" role="group" aria-label="Brojanje"><button type="button" data-unit="ep" aria-pressed="true"><span data-i="u_ep">Epizode</span> <span class="num">178</span></button><button type="button" data-unit="ch" aria-pressed="false"><span data-i="u_ch">Poglavlja</span> <span class="num">742</span></button></div>
+      </div>
+      <div class="chart" id="chart"></div>
+      <div class="legend" id="legend"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · STATISTIKA -->
+<section class="sec" id="statistika">
+  <div class="wrap">
+    <p class="eyebrow" data-i="s_eye">Statistika</p>
+    <h2 data-i="s_h">Arhiva koja je već velika, i raste.</h2>
+    <div class="stats">
+      <div class="stat"><div class="stat__n num">742</div><div class="stat__l" data-i="s1l">događaja</div><div class="stat__d" data-i="s1d">poglavlja izdvojena iz transkripata, svako sa godinom i mestom</div></div>
+      <div class="stat"><div class="stat__n num">178</div><div class="stat__l" data-i="s2l">epizoda</div><div class="stat__d" data-i="s2d">od antičke Grčke do kraja 20. veka</div></div>
+      <div class="stat"><div class="stat__n num">285</div><div class="stat__l" data-i="s3l">mesta na mapi</div><div class="stat__d" data-i="s3d">gradova, bojišta i oblasti na kojima se poglavlja dešavaju</div></div>
+    </div>
+    <div class="grow">
+      <div>
+        <h3 data-i="g_h">Kako raste HistoryCast, raste i mapa.</h3>
+        <div class="prose"><p data-i="g_p">Mapa se redovno ažurira novim epizodama, približno jednom nedeljno. Svaka nova epizoda dobija svoje mesto, vreme i poglavlja.</p></div>
+      </div>
+      <figure class="spark" style="margin:0" id="spark"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · TRANSKRIPTI -->
+<section class="sec sec--deep" id="transkripti">
+  <div class="wrap">
+    <div class="tr-head">
+      <div>
+        <p class="eyebrow" data-i="r_eye">Transkripti i poglavlja</p>
+        <h2 data-i="r_h">Od transkripta do <em>tačnog minuta</em>.</h2>
+        <p class="lead" data-i="r_lead">Za svaku epizodu postoji transkript. Iz njega su izdvojena poglavlja: svako ima svoju temu, mesto, godinu i minut u snimku. Zato ne tražite samo epizodu, već i tačno onaj deo koji vas zanima.</p>
+      </div>
+      <div class="markers" aria-label="Oznake na mapi">
+        <div class="mk"><div class="mk__img"><img src="img/mk-ep.webp" alt="Oznaka epizode" width="72" height="72"></div><div><b data-i="m1">Epizoda</b><span data-i="m1d">Veća istorijska tema. Krug u boji epohe, na glavnom mestu epizode.</span></div></div>
+        <div class="mk"><div class="mk__img"><img src="img/mk-ch.webp" alt="Oznaka poglavlja" width="68" height="68"></div><div><b data-i="m2">Poglavlje</b><span data-i="m2d">Određena tema unutar epizode, sa svojim mestom, godinom i minutom. Broj je redosled u epizodi.</span></div></div>
+      </div>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <div class="step__k"><i>1</i><span data-i="r1k">Pretražite</span></div>
+        <h3 data-i="r1h">„Beograd“</h3>
+        <p data-i="r1p">Pogodak nije samo epizoda o Beogradu. Epizoda „Pad Berlina“ ima poglavlje <i>Oslobođenje Beograda</i>, i pretraga ga nalazi.</p>
+        <div class="shot"><img data-img="t-search" src="img/t-search-sr.webp" alt="Pretraga Beograd: pogodak u poglavlju epizode Pad Berlina" width="656" height="354"></div>
+      </li>
+      <li class="step">
+        <div class="step__k"><i>2</i><span data-i="r2k">Pogledajte na mapi</span></div>
+        <h3 data-i="r2h">Epizoda i njena poglavlja</h3>
+        <p data-i="r2p">„Pad Berlina“ je jedna epizoda, ali njena poglavlja vode do Beograda, Budimpešte, Ardena i Varšave.</p>
+        <div class="shot"><img data-img="t-map" src="img/t-map-sr.webp" alt="Mapa: oznaka epizode Pad Berlina i numerisana poglavlja po Evropi" width="960" height="560"></div>
+      </li>
+      <li class="step">
+        <div class="step__k"><i>3</i><span data-i="r3k">Slušajte od tog minuta</span></div>
+        <h3 class="num">▶ 12:48</h3>
+        <p data-i="r3p">Dugme pored poglavlja pušta epizodu od tog dela, bez premotavanja kroz dva sata snimka.</p>
+        <div class="shot"><img data-img="t-card" src="img/t-card-sr.webp" alt="Lista poglavlja epizode sa vremenskim oznakama" width="744" height="942"></div>
+      </li>
+    </ol>
+
+    <ul class="vals">
+      <li><b data-i="v1">Pretraživo</b><span data-i="v1d">ličnosti, mesta i godine unutar epizoda</span></li>
+      <li><b data-i="v2">Preciznije</b><span data-i="v2d">tačan deo, ne cela epizoda</span></li>
+      <li><b data-i="v3">Lakše za povratak</b><span data-i="v3d">ponovo nađete ono što ste već čuli</span></li>
+      <li><b data-i="v4">Za učenje i istraživanje</b><span data-i="v4d">teme povezane kroz celu arhivu</span></li>
+    </ul>
+    <p class="tr-note" data-i="r_note">Podkast ostaje isti. Transkript mu dodaje sloj po kome se znanje iz epizoda može pretraživati.</p>
+  </div>
+</section>
+
+<!-- 5 · KAKO RADI -->
+<section class="sec" id="kako-radi">
+  <div class="wrap">
+    <p class="eyebrow" data-i="h_eye">Kako radi</p>
+    <h2 data-i="h_h">Tri dela, jedna slika istorije.</h2>
+    <div class="how">
+      <div class="app">
+        <img data-img="app" src="img/app-sr.webp" alt="Cela aplikacija: levi panel, mapa i vremenska osa" width="1800" height="1125">
+        <div class="zone" style="left:.3%;top:.4%;width:22.2%;height:99.2%"><span class="tag"><i>1</i><span data-i="z1">Levi panel</span></span></div>
+        <div class="zone" style="left:23%;top:.4%;width:76.7%;height:54.2%"><span class="tag"><i>2</i><span data-i="z2">Mapa</span></span></div>
+        <div class="zone" style="left:23%;top:55.6%;width:76.7%;height:44%"><span class="tag"><i>3</i><span data-i="z3">Vremenska osa</span></span></div>
+        <div class="arrows" style="left:40%;top:80%"><span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg><span data-i="ah">kroz vreme</span></span><span class="arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4"/></svg><span data-i="av">više epizoda</span></span></div>
+      </div>
+      <ol class="parts">
+        <li><h3><i>1</i><span data-i="h1">Levi panel</span></h3><p data-i="h1p">Pretraga i lista svih epizoda. Filteri sužavaju arhivu po serijalu, regionu, vrsti događaja i zbirkama.</p></li>
+        <li><h3><i>2</i><span data-i="h2">Mapa</span></h3><p data-i="h2p">Gde se epizoda dešava, i gde su njena poglavlja.</p></li>
+        <li><h3><i>3</i><span data-i="h3">Vremenska osa</span></h3><p data-i="h3p">Kada se dešava i šta je oko nje. Osa nije slika, već alat za kretanje kroz istoriju:</p>
+          <div class="tlnav">
+            <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg><span data-i="tn1"><b>Horizontalno</b> kroz vekove: prevucite zlatni prozor ispod ose.</span></div>
+            <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4"/></svg><span data-i="tn2"><b>Vertikalno</b> kroz ostale epizode istog perioda: skrolujte redove.</span></div>
+            <div><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg><span data-i="tn3"><b>Pusti</b> i osa sama klizi kroz istoriju, a mapa se menja s njom.</span></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div class="flow" aria-label="Tok">
+      <span data-i="f1">Pronađite epizodu</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span data-i="f2">pogledajte kada</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span data-i="f3">pogledajte gde</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span data-i="f4">istražite šta je bilo oko nje</span>
+    </div>
+    <p class="sync" data-i="sync"><b>Levi panel ↔ Vremenska osa ↔ Mapa</b> · izbor u jednom delu odmah se vidi u druga dva.</p>
+  </div>
+</section>
+
+<!-- 6 · CTA -->
+<section class="sec cta" id="mapa">
+  <div class="wrap">
+    <div class="logo"><img src="img/logo.webp" alt="HistoryCast" width="132" height="96"></div>
+    <h2 data-i="c_h">Počnite od bilo koje epizode.</h2>
+    <p data-i="c_p">178 epizoda, 742 poglavlja i 285 mesta, raspoređenih kroz dve i po hiljade godina.</p>
+    <a class="btn btn--pri btn--lg js-map" href="#"><span data-i="open">Otvori mapu</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="muted" data-i="c_lang">Mapa se otvara na srpskom.</p>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <span data-i="ft1">Sadržaj epizoda: HistoryCast · PodMedia. Mapa je nezavisan projekat zasnovan na njihovoj arhivi.</span>
+    <span><a href="https://github.com/todorPA/historycastmap" target="_blank" rel="noreferrer" data-i="ft2">Izvorni kod</a> · Natural Earth</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+const MAP_URL = 'https://claude.ai/artifact/CeEShwny3j6ZWfuYDyGxNC'; // production: 'app.html?lang=' + lang
+const KEY = 'hcm-lang';
+const ERA = {anc:['Antika','Antiquity'], mid:['Srednji vek','Middle Ages'], early:['Rani novi vek','Early modern'], c19:['Dugi 19. vek','Long 19th century'], c20:['20. vek i posle','20th century on']};
+const ERA_C = {anc:'#8A6A9E', mid:'#3F7F8C', early:'#6E8B3D', c19:'#C08A2E', c20:'#B4553A'};
+const EP = {"-600":{"anc":1},"-500":{"anc":3},"-400":{"anc":2},"-300":{"anc":2},"-200":{"anc":1},"-100":{"anc":3},"0":{"anc":1},"300":{"anc":2},"400":{"anc":2},"600":{"mid":1},"700":{"mid":3},"800":{"mid":1},"1000":{"mid":2},"1100":{"mid":5},"1200":{"mid":6},"1300":{"mid":8},"1400":{"mid":6,"early":4},"1500":{"early":5},"1600":{"early":5},"1700":{"early":4,"c19":1},"1800":{"c19":46},"1900":{"c19":8,"c20":56}};
+const CH = {"-1200":{"anc":1},"-600":{"anc":1},"-500":{"anc":10},"-400":{"anc":6},"-300":{"anc":6},"-200":{"anc":2},"-100":{"anc":21},"0":{"anc":4},"300":{"anc":3},"400":{"anc":3},"500":{"anc":3},"600":{"mid":1},"700":{"mid":5},"800":{"mid":10},"900":{"mid":6},"1000":{"mid":8},"1100":{"mid":13},"1200":{"mid":25},"1300":{"mid":44},"1400":{"mid":13,"early":18},"1500":{"early":21},"1600":{"early":23},"1700":{"early":18,"c19":6},"1800":{"c19":114},"1900":{"c19":44,"c20":307},"2000":{"c20":6}};
+// episodes on the map by quarter of publication (RSS pubDate), cumulative
+const GROW = [['2023 Q3',4],['Q4',13],['2024 Q1',14],['Q2',19],['Q3',13],['Q4',21],['2025 Q1',17],['Q2',23],['Q3',14],['Q4',13],['2026 Q1',12],['Q2',12],['Q3',3]];
+const PEOPLE = [
+  {n:'Nikola Đukić', r:['Istoričar, voditelj','Historian, host']},
+  {n:'Nikola Šipka', r:['Sagovornik u epizodama','Co-host in episodes']},
+  {n:'Ivan Drljača', r:['Sagovornik u epizodama','Co-host in episodes']},
+  {n:'dr Jovana Milovanović', en:'Dr Jovana Milovanović', r:['Istoričarka umetnosti','Art historian']},
+  {n:'dr Nikola Piperski', en:'Dr Nikola Piperski', r:['Sagovornik u epizodama','Co-host in episodes']},
+  {n:'PodMedia', org:true, r:['Produkcija podkasta','Podcast production']}
+];
+
+const T = {
+sr:{sub:'Mapa istorije',n1:'Arhiva',n2:'Autori',n3:'Statistika',n4:'Transkripti',n5:'Kako radi',open:'Otvori mapu',open_s:'Mapa',
+a_eye:'Arhiva podkasta HistoryCast',a_h:'Svaka epizoda ima svoje <em>mesto</em> i svoje <em>vreme</em>.',
+a_lead:'Posle epizode o istoriji često ostanu pitanja koja istoričar postavi sam od sebe, a slušalac ne zna gde da potraži odgovor:',
+q1k:'Pre',q1:'Šta je prethodilo?',q2k:'Okidač',q2:'Šta je pokrenulo događaje?',q3k:'Istovremeno',q3:'Šta se tada dešavalo drugde?',q4k:'Posle',q4:'Šta je usledilo i na šta je uticalo?',
+a_p1:'<strong>HistoryCast Mapa</strong> raspoređuje epizode po mestu i po vremenu. Tako arhiva postaje mentalna mapa istorije: vidite gde se nešto dogodilo, kada, i šta ga okružuje.',
+a_p2:'Korisna je ljubiteljima istorije, studentima, istraživačima i svima koji istoriju uče sami. Nastavnicima i učenicima može biti dodatni materijal uz nastavu, ali nije zvanični obrazovni program.',
+a_credit:'Sve što je na mapi potiče iz epizoda podkasta <a href="https://rss.com/podcasts/rs-historycast/" target="_blank" rel="noreferrer">HistoryCast</a> u produkciji <a href="https://podmedia.rs/historycast/" target="_blank" rel="noreferrer">PodMedia</a>. Mapa samo slaže njihovu arhivu u prostor i vreme. Epizode slušajte na <a href="https://podcasts.apple.com/rs/podcast/historycast/id1669889519" target="_blank" rel="noreferrer">Apple Podcasts</a>, a podkast možete podržati na <a href="https://patreon.com/historycast" target="_blank" rel="noreferrer">Patreonu</a>.',
+t1:'Epizoda',t2:'Kada',t3:'Gde',a_cap:'Isečci iz aplikacije: epizoda „Vikinzi“ u listi, na vremenskoj osi i na mapi.',
+p_eye:'Ljudi iza podkasta',p_h:'Mapa postoji zato što oni snimaju epizode.',
+p_p1:'HistoryCast „otkriva priče iza istorijskih činjenica, upoznaje ljude iza istorijskih likova i nalazi život iza istorijskih datuma“. Istraživanje, razgovori i pripovedanje su njihov rad.',
+p_p2:'Mapa ne stvara istorijski sadržaj. Ona preuzima postojeću arhivu i dodaje joj sloj organizacije, pa se teme, događaji, periodi, epohe i mesta lakše pronalaze.',
+l1:'Epizode HistoryCast-a',l2:'Mapa · vremenska osa · pretraga',p_note:'Imena i uloge prema opisima epizoda u zvaničnom RSS feedu podkasta.',
+d_h:'Arhiva kroz vekove',d_p:'Neki vekovi imaju mnogo epizoda, neki nijednu. Grafikon prikazuje raspodelu epizoda HistoryCast-a, ne količinu istorije koja se tada dogodila. Tako je arhiva prirodno rasla, tema po tema.',
+u_ep:'Epizode',u_ch:'Poglavlja',
+s_eye:'Statistika',s_h:'Arhiva koja je već velika, i raste.',s1l:'događaja',s1d:'poglavlja izdvojena iz transkripata, svako sa godinom i mestom',s2l:'epizoda',s2d:'od antičke Grčke do kraja 20. veka',s3l:'mesta na mapi',s3d:'gradova, bojišta i oblasti na kojima se poglavlja dešavaju',
+g_h:'Kako raste HistoryCast, raste i mapa.',g_p:'Mapa se redovno ažurira novim epizodama, približno jednom nedeljno. Svaka nova epizoda dobija svoje mesto, vreme i poglavlja.',
+r_eye:'Transkripti i poglavlja',r_h:'Od transkripta do <em>tačnog minuta</em>.',r_lead:'Za svaku epizodu postoji transkript. Iz njega su izdvojena poglavlja: svako ima svoju temu, mesto, godinu i minut u snimku. Zato ne tražite samo epizodu, već i tačno onaj deo koji vas zanima.',
+m1:'Epizoda',m1d:'Veća istorijska tema. Krug u boji epohe, na glavnom mestu epizode.',m2:'Poglavlje',m2d:'Određena tema unutar epizode, sa svojim mestom, godinom i minutom. Broj je redosled u epizodi.',
+r1k:'Pretražite',r1h:'„Beograd“',r1p:'Pogodak nije samo epizoda o Beogradu. Epizoda „Pad Berlina“ ima poglavlje <i>Oslobođenje Beograda</i>, i pretraga ga nalazi.',
+r2k:'Pogledajte na mapi',r2h:'Epizoda i njena poglavlja',r2p:'„Pad Berlina“ je jedna epizoda, ali njena poglavlja vode do Beograda, Budimpešte, Ardena i Varšave.',
+r3k:'Slušajte od tog minuta',r3p:'Dugme pored poglavlja pušta epizodu od tog dela, bez premotavanja kroz dva sata snimka.',
+v1:'Pretraživo',v1d:'ličnosti, mesta i godine unutar epizoda',v2:'Preciznije',v2d:'tačan deo, ne cela epizoda',v3:'Lakše za povratak',v3d:'ponovo nađete ono što ste već čuli',v4:'Za učenje i istraživanje',v4d:'teme povezane kroz celu arhivu',
+r_note:'Podkast ostaje isti. Transkript mu dodaje sloj po kome se znanje iz epizoda može pretraživati.',
+h_eye:'Kako radi',h_h:'Tri dela, jedna slika istorije.',z1:'Levi panel',z2:'Mapa',z3:'Vremenska osa',ah:'kroz vreme',av:'više epizoda',
+h1:'Levi panel',h1p:'Pretraga i lista svih epizoda. Filteri sužavaju arhivu po serijalu, regionu, vrsti događaja i zbirkama.',h2:'Mapa',h2p:'Gde se epizoda dešava, i gde su njena poglavlja.',h3:'Vremenska osa',h3p:'Kada se dešava i šta je oko nje. Osa nije slika, već alat za kretanje kroz istoriju:',
+tn1:'<b>Horizontalno</b> kroz vekove: prevucite zlatni prozor ispod ose.',tn2:'<b>Vertikalno</b> kroz ostale epizode istog perioda: skrolujte redove.',tn3:'<b>Pusti</b> i osa sama klizi kroz istoriju, a mapa se menja s njom.',
+f1:'Pronađite epizodu',f2:'pogledajte kada',f3:'pogledajte gde',f4:'istražite šta je bilo oko nje',sync:'<b>Levi panel ↔ Vremenska osa ↔ Mapa</b> · izbor u jednom delu odmah se vidi u druga dva.',
+c_h:'Počnite od bilo koje epizode.',c_p:'178 epizoda, 742 poglavlja i 285 mesta, raspoređenih kroz dve i po hiljade godina.',c_lang:'Mapa se otvara na srpskom.',
+ft1:'Sadržaj epizoda: HistoryCast · PodMedia. Mapa je nezavisan projekat zasnovan na njihovoj arhivi.',ft2:'Izvorni kod',
+chartPeak:(p,n,t,c)=>`${c}: ${n} od ${t} (${p}%)`, chartEmpty:k=>`${k} ${k===1?'vek':'veka'} bez ijedne epizode`, chartEmptyCh:k=>`${k} vekova bez poglavlja`,
+cent:c=>c<0?`${-c/100}. vek p.n.e.`:`${c/100+1}. vek`, tick:c=>c<0?`${-c}. p.n.e.`:String(c), epN:n=>`${n} ${n===1?'epizoda':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14))?'epizode':'epizoda'}`, chN:n=>`${n} ${n===1?'poglavlje':(n%10>=2&&n%10<=4&&(n%100<12||n%100>14))?'poglavlja':'poglavlja'}`,
+growCap:'Epizode na mapi po datumu objavljivanja, zbirno', growEnd:'178 epizoda'},
+en:{sub:'History map',n1:'Archive',n2:'Creators',n3:'In numbers',n4:'Transcripts',n5:'How it works',open:'Open the map',open_s:'Map',
+a_eye:'The HistoryCast podcast archive',a_h:'Every episode has its <em>place</em> and its <em>time</em>.',
+a_lead:'A history episode often leaves the questions a historian would ask out of habit, and a listener does not know where to look for answers:',
+q1k:'Before',q1:'What came before?',q2k:'Trigger',q2:'What set events in motion?',q3k:'Meanwhile',q3:'What was happening elsewhere?',q4k:'After',q4:'What followed, and what did it shape?',
+a_p1:'<strong>HistoryCast Map</strong> places every episode by location and by time. The archive becomes a mental map of history: you see where something happened, when, and what surrounds it.',
+a_p2:'It is useful for history enthusiasts, students, researchers and anyone learning history on their own. Teachers and pupils may use it as supplementary material; it is not an official educational programme.',
+a_credit:'Everything on the map comes from episodes of the <a href="https://rss.com/podcasts/rs-historycast/" target="_blank" rel="noreferrer">HistoryCast</a> podcast, produced by <a href="https://podmedia.rs/historycast/" target="_blank" rel="noreferrer">PodMedia</a>. The map only arranges their archive in space and time. Listen on <a href="https://podcasts.apple.com/rs/podcast/historycast/id1669889519" target="_blank" rel="noreferrer">Apple Podcasts</a>, and support the podcast on <a href="https://patreon.com/historycast" target="_blank" rel="noreferrer">Patreon</a>.',
+t1:'Episode',t2:'When',t3:'Where',a_cap:'Fragments of the app: the episode “Vikinzi” (Vikings) in the list, on the timeline and on the map.',
+p_eye:'The people behind the podcast',p_h:'The map exists because they record the episodes.',
+p_p1:'HistoryCast “uncovers the stories behind historical facts, introduces the people behind historical figures and finds the life behind historical dates”. The research, conversation and storytelling are their work.',
+p_p2:'The map does not create historical content. It takes the existing archive and adds a layer of organisation, so topics, events, periods, eras and places are easier to find.',
+l1:'HistoryCast episodes',l2:'Map · timeline · search',p_note:'Names and roles as given in episode descriptions in the podcast’s official RSS feed.',
+d_h:'The archive across the centuries',d_p:'Some centuries have many episodes, others none. The chart shows how HistoryCast episodes are distributed, not how much history happened. This is how the archive grew, one topic at a time.',
+u_ep:'Episodes',u_ch:'Chapters',
+s_eye:'In numbers',s_h:'An archive that is already large, and growing.',s1l:'events',s1d:'chapters taken from the transcripts, each with a year and a place',s2l:'episodes',s2d:'from ancient Greece to the late 20th century',s3l:'places on the map',s3d:'cities, battlefields and regions where chapters take place',
+g_h:'As HistoryCast grows, the map grows with it.',g_p:'The map is updated regularly with new episodes, roughly once a week. Each new episode gets its place, its time and its chapters.',
+r_eye:'Transcripts and chapters',r_h:'From transcript to the <em>exact minute</em>.',r_lead:'Every episode has a transcript. Chapters are drawn from it, each with its own topic, place, year and minute in the recording. So you can search for the exact part you need, not just the episode.',
+m1:'Episode',m1d:'A larger historical topic. A circle in the era’s colour, at the episode’s main place.',m2:'Chapter',m2d:'A specific topic within the episode, with its own place, year and minute. The number is its order in the episode.',
+r1k:'Search',r1h:'“Belgrade”',r1p:'The hit is not only an episode about Belgrade. The episode “Fall of Berlin” has a chapter <i>Liberation of Belgrade</i>, and search finds it.',
+r2k:'See it on the map',r2h:'An episode and its chapters',r2p:'“Fall of Berlin” is one episode, but its chapters lead to Belgrade, Budapest, the Ardennes and Warsaw.',
+r3k:'Listen from that minute',r3p:'The button next to a chapter plays the episode from that point, with no scrubbing through two hours of audio.',
+v1:'Searchable',v1d:'people, places and years inside episodes',v2:'More precise',v2d:'the exact part, not the whole episode',v3:'Easier to revisit',v3d:'find again what you have already heard',v4:'For learning and research',v4d:'topics connected across the whole archive',
+r_note:'The podcast stays the same. The transcript adds a layer that makes the knowledge in its episodes searchable.',
+h_eye:'How it works',h_h:'Three parts, one picture of history.',z1:'Left panel',z2:'Map',z3:'Timeline',ah:'through time',av:'more episodes',
+h1:'Left panel',h1p:'Search and the list of all episodes. Filters narrow the archive by series, region, event type and collection.',h2:'Map',h2p:'Where the episode takes place, and where its chapters are.',h3:'Timeline',h3p:'When it happens and what surrounds it. The timeline is a tool for moving through history, not a picture:',
+tn1:'<b>Horizontally</b> through the centuries: drag the gold window below the axis.',tn2:'<b>Vertically</b> through other episodes in the same period: scroll the rows.',tn3:'<b>Play</b> and the timeline moves through history by itself, with the map following.',
+f1:'Find an episode',f2:'see when',f3:'see where',f4:'explore what surrounded it',sync:'<b>Left panel ↔ Timeline ↔ Map</b> · a choice in one shows up in the other two.',
+c_h:'Start from any episode.',c_p:'178 episodes, 742 chapters and 285 places, spread across two and a half thousand years.',c_lang:'The map opens in English.',
+ft1:'Episode content: HistoryCast · PodMedia. The map is an independent project built on their archive.',ft2:'Source code',
+chartPeak:(p,n,t,c)=>`${c}: ${n} of ${t} (${p}%)`, chartEmpty:k=>`${k} ${k===1?'century':'centuries'} without a single episode`, chartEmptyCh:k=>`${k} centuries without a chapter`,
+cent:c=>{const n=c<0?-c/100:c/100+1;const s=(n%10===1&&n%100!==11)?'st':(n%10===2&&n%100!==12)?'nd':(n%10===3&&n%100!==13)?'rd':'th';return c<0?`${n}${s} century BC`:`${n}${s} century`}, tick:c=>c<0?`${-c} BC`:String(c), epN:n=>`${n} episode${n===1?'':'s'}`, chN:n=>`${n} chapter${n===1?'':'s'}`,
+growCap:'Episodes on the map by publication date, cumulative', growEnd:'178 episodes'}
+};
+
+let lang = 'sr', unit = 'ep';
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+function initialLang(){
+  const h = (location.hash||'').slice(1).toLowerCase();
+  if (h === 'en' || h === 'sr') return h;
+  try { const v = localStorage.getItem(KEY); if (v === 'en' || v === 'sr') return v; } catch(_){}
+  return 'sr';
+}
+function setLang(l){
+  lang = l; const t = T[l];
+  document.documentElement.lang = l === 'en' ? 'en' : 'sr-Latn';
+  $$('[data-i]').forEach(el => { const v = t[el.dataset.i]; if (typeof v === 'string') el.innerHTML = v; });
+  $$('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
+  $$('img[data-img]').forEach(img => { img.src = `img/${img.dataset.img}-${l}.webp`; });
+  $$('.js-map').forEach(a => { a.href = MAP_URL + '#' + l; a.target = '_blank'; a.rel = 'noopener'; });
+  $('#nav').setAttribute('aria-label', l === 'en' ? 'Contents' : 'Sadržaj');
+  try { localStorage.setItem(KEY, l); } catch(_){}
+  renderPeople(); renderChart(); renderGrow();
+}
+$$('[data-lang]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+function initials(n){ return n.replace(/^dr\s+/i,'').split(/\s+/).map(w => w[0]).slice(0,2).join(''); }
+function renderPeople(){
+  $('#people').innerHTML = PEOPLE.map(p => `<li class="person${p.org?' person--org':''}"><div class="ph" aria-hidden="true">${p.org ? '<img src="img/logo.webp" alt="">' : initials(p.n)}</div><div><b>${lang==='en' && p.en ? p.en : p.n}</b><span class="role">${p.r[lang==='en'?1:0]}</span></div></li>`).join('');
+}
+
+/* distribution chart: developer's form (century bars, dotted baseline with solid runs, peak note), now stacked by era colour */
+function renderChart(){
+  const D = unit === 'ep' ? EP : CH, t = T[lang];
+  const FIRST = -1200, LAST = 2000, STEP = 100;
+  const cs = []; for (let c = FIRST; c <= LAST; c += STEP) { const o = D[c] || {}; cs.push({c, o, n: Object.values(o).reduce((a,b)=>a+b,0)}); }
+  const total = cs.reduce((a,b)=>a+b.n,0), peak = cs.reduce((a,b)=>b.n>a.n?b:a);
+  const W = 1000, H = 330, P = {t:58, r:14, b:34, l:14}, pw = W-P.l-P.r, ph = H-P.t-P.b;
+  const slot = pw/cs.length, bw = Math.max(6, slot-6), x = i => P.l + i*slot + (slot-bw)/2, base = P.t+ph;
+  const k = ph/peak.n;
+  // grid at nice steps
+  const stepV = unit === 'ep' ? 20 : 100; let g = '';
+  for (let v = stepV; v <= peak.n; v += stepV) g += `<line class="grid" x1="${P.l}" x2="${W-P.r}" y1="${base-v*k}" y2="${base-v*k}"/><text x="${W-P.r}" y="${base-v*k-5}" text-anchor="end">${v}</text>`;
+  // baseline runs
+  let runs = '', i0 = -1;
+  cs.forEach((d,i) => { if (d.n && i0<0) i0 = i; if ((!d.n || i===cs.length-1) && i0>=0) { const e = d.n ? i : i-1; runs += `<line class="base" x1="${x(i0)}" x2="${x(e)+bw}" y1="${base}" y2="${base}"/>`; i0 = -1; } });
+  const firstFilled = cs.findIndex(d=>d.n);
+  const empty = cs.slice(firstFilled).filter(d=>!d.n).length;
+  let bars = '';
+  cs.forEach((d,i) => {
+    let y = base; let seg = '';
+    const order = ['anc','mid','early','c19','c20'].filter(e => d.o[e]);
+    order.forEach((e,j) => { const h = Math.max(2, d.o[e]*k); y -= h; const gap = j < order.length-1 ? 2 : 0;
+      seg += `<rect x="${x(i)}" y="${y}" width="${bw}" height="${h-gap}" rx="${j===order.length-1?3:0}" fill="${ERA_C[e]}"/>`; });
+    const label = `${t.cent(d.c)} · ${unit==='ep'?t.epN(d.n):t.chN(d.n)}` + (order.length>1 ? ' · ' + order.map(e=>`${ERA[e][lang==='en'?1:0]} ${d.o[e]}`).join(', ') : '');
+    bars += `<g class="bar" data-tip="${label}"><rect class="hit" x="${P.l+i*slot}" y="${P.t-20}" width="${slot}" height="${ph+20+P.b}"/>${seg}</g>`;
+  });
+  const ticks = [-1200,-800,-400,0,400,800,1200,1600,2000].map(c => { const i = (c-FIRST)/STEP; return `<text x="${x(i)+bw/2}" y="${H-10}" text-anchor="middle">${t.tick(c)}</text>`; }).join('');
+  const pi = cs.indexOf(peak), px = x(pi)+bw/2, py = base-peak.n*k;
+  const share = Math.round(peak.n/total*100);
+  const note = `<text class="peak" x="${px-8}" y="${py-24}" text-anchor="end">${t.chartPeak(share, peak.n, total, t.cent(peak.c))}</text><line x1="${px-4}" y1="${py-20}" x2="${px}" y2="${py-6}" stroke="${'#645241'}" stroke-width="1"/>
+    <text class="note" x="${P.l}" y="18">${unit==='ep' ? t.chartEmpty(empty) : t.chartEmptyCh(empty)}${unit==='ep' ? (lang==='en'?' (from the 7th century BC on)':' (od 7. veka p.n.e.)') : ''}</text>`;
+  $('#chart').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${t.d_h}"><line class="dots" x1="${P.l}" x2="${W-P.r}" y1="${base}" y2="${base}"/>${g}${runs}${bars}${ticks}${note}</svg><div class="tip" id="tip" hidden></div>`;
+  $('#legend').innerHTML = Object.keys(ERA).map(e => `<span><i style="background:${ERA_C[e]}"></i>${ERA[e][lang==='en'?1:0]}</span>`).join('');
+  const tip = $('#tip'), box = $('#chart');
+  $$('#chart g.bar').forEach(gb => {
+    gb.addEventListener('pointerenter', () => { tip.hidden = false; tip.textContent = gb.dataset.tip; });
+    gb.addEventListener('pointermove', ev => { const r = box.getBoundingClientRect(); tip.style.left = (ev.clientX - r.left + box.scrollLeft) + 'px'; tip.style.top = (ev.clientY - r.top) + 'px'; });
+    gb.addEventListener('pointerleave', () => { tip.hidden = true; });
+  });
+}
+$$('[data-unit]').forEach(b => b.addEventListener('click', () => { unit = b.dataset.unit; $$('[data-unit]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); renderChart(); }));
+
+function renderGrow(){
+  const t = T[lang], W = 620, H = 200, P = {t:22, r:96, b:30, l:8};
+  let s = 0; const pts = GROW.map(([q,n]) => (s += n, {q, s}));
+  const max = 180, pw = W-P.l-P.r, ph = H-P.t-P.b;
+  const X = i => P.l + i*pw/(pts.length-1), Y = v => P.t + ph - v/max*ph;
+  const line = pts.map((p,i)=>`${i?'L':'M'}${X(i).toFixed(1)} ${Y(p.s).toFixed(1)}`).join(' ');
+  const area = line + ` L${X(pts.length-1)} ${Y(0)} L${X(0)} ${Y(0)} Z`;
+  const ticks = pts.map((p,i) => /20\d\d/.test(p.q) ? `<text x="${X(i)}" y="${H-8}" text-anchor="start">${p.q.slice(0,4)}</text><line x1="${X(i)}" x2="${X(i)}" y1="${Y(0)}" y2="${Y(0)+5}" stroke="#95826A"/>` : '').join('');
+  const L = pts.length-1;
+  $('#spark').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${t.growCap}">
+    <line x1="${P.l}" x2="${W-P.r}" y1="${Y(0)}" y2="${Y(0)}" stroke="#95826A"/>
+    <line x1="${P.l}" x2="${W-P.r}" y1="${Y(100)}" y2="${Y(100)}" stroke="#DCCFBA"/><text x="${P.l}" y="${Y(100)-5}">100</text>
+    <path d="${area}" fill="rgba(212,170,85,.22)"/><path d="${line}" fill="none" stroke="#8A6620" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="${X(L)}" cy="${Y(pts[L].s)}" r="5" fill="#D4AA55" stroke="#21170F" stroke-width="1.5"/>
+    <text class="end" x="${X(L)+10}" y="${Y(pts[L].s)+4}">${t.growEnd}</text>${ticks}</svg>
+    <figcaption class="muted" style="margin-top:6px;font-size:12.5px">${t.growCap}</figcaption>`;
+}
+
+// header: mobile menu + current section
+const menu = $('#menu'), nav = $('#nav');
+menu.addEventListener('click', () => { const o = !nav.classList.contains('is-open'); nav.classList.toggle('is-open', o); menu.setAttribute('aria-expanded', String(o)); });
+nav.addEventListener('click', e => { if (e.target.closest('a')) { nav.classList.remove('is-open'); menu.setAttribute('aria-expanded','false'); } });
+const links = $$('#nav a');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('is-here', a.getAttribute('href') === '#' + e.target.id)); }), {rootMargin:'-45% 0px -50% 0px'});
+  $$('main section[id]').forEach(s => io.observe(s));
+}
+setLang(initialLang());
+})();
+</script>
+
+</body></html>
