@@ -29,12 +29,19 @@ describe('landingStrings', () => {
 describe('index.html', () => {
   // The build fails on a key with no Serbian string; English would fail silently, keeping Serbian.
   it('has a string in both languages for every key it uses', () => {
-    const keys = new Set([...page.matchAll(/data-(?:i|alt)="(\w+)"/g), ...page.matchAll(/%%(\w+)%%/g)].map((m) => m[1]));
+    const keys = new Set([...page.matchAll(/data-(?:i|alt|aria)="(\w+)"/g), ...page.matchAll(/%%(\w+)%%/g)].map((m) => m[1]));
     expect(keys.size).toBeGreaterThan(90);
     for (const k of keys) {
       expect(strings.sr, `sr.${k}`).toHaveProperty(k);
       expect(strings.en, `en.${k}`).toHaveProperty(k);
     }
+  });
+
+  // Every accessible name and image description goes through the string table, so switching to
+  // English leaves no Serbian label behind. Allowed literals: bilingual or a proper name.
+  it('has no untranslated accessible name or alt text', () => {
+    const literal = [...page.matchAll(/\s(?:aria-label|alt|title)="([^"%]+)"/g)].map((m) => m[1]);
+    expect(literal.filter((v) => !['Jezik / Language', 'HistoryCast'].includes(v))).toEqual([]);
   });
 
   it('types no archive number by hand', () => {

@@ -3,13 +3,36 @@ import type { Lang } from '../types/events';
 import type { ArchiveStats } from './archiveStats';
 import { BASE } from './baseStrings';
 
-export type LandingKey = keyof (typeof BASE)['sr'] | NumberedKey | RoleKey | AltKey;
+export type LandingKey = keyof (typeof BASE)['sr'] | NumberedKey | RoleKey | AltKey | AriaKey;
 type NumberedKey = 'meta_title' | 'meta_desc' | 'c_p' | 's1n' | 's1l' | 's2n' | 's2l' | 's3n' | 's3l' | 'u_ep_n' | 'u_ch_n' | 'growCap' | 'growEnd';
 type RoleKey = 'role_hist' | 'role_art_f' | 'role_art_m' | 'role_prod';
 type AltKey = keyof typeof ALT_SR;
+type AriaKey = keyof typeof ARIA_SR;
+
+/** Accessible names for groups and controls, so assistive technology hears one language. */
+const ARIA_SR = {
+  aria_brand: 'HistoryCast Mapa istorije',
+  aria_nav: 'Sadržaj',
+  aria_menu: 'Meni',
+  aria_layers: 'Slojevi',
+  aria_count: 'Brojanje',
+  aria_markers: 'Oznake na mapi',
+  aria_flow: 'Tok',
+} as const;
+const ARIA_EN: Record<AriaKey, string> = {
+  aria_brand: 'HistoryCast History map',
+  aria_nav: 'Contents',
+  aria_menu: 'Menu',
+  aria_layers: 'Layers',
+  aria_count: 'Count by',
+  aria_markers: 'Marks on the map',
+  aria_flow: 'Flow',
+};
 
 /** Screenshot descriptions; the design had Serbian only. */
 const ALT_SR = {
+  alt_mk_ep: 'Oznaka epizode',
+  alt_mk_ch: 'Oznaka poglavlja',
   alt_a_map: 'Mapa: epizoda Vikinzi označena na Lindisfarnu, sa numerisanim poglavljima',
   alt_a_panel: 'Levi panel: lista epizoda, izabrana epizoda Vikinzi',
   alt_a_tl: 'Vremenska osa: Vikinzi, 793–1066, među drugim epizodama tog perioda',
@@ -19,6 +42,8 @@ const ALT_SR = {
   alt_app: 'Cela aplikacija: levi panel, mapa i vremenska osa',
 } as const;
 const ALT_EN: Record<AltKey, string> = {
+  alt_mk_ep: 'Episode marker',
+  alt_mk_ch: 'Chapter marker',
   alt_a_map: 'Map: the episode Vikinzi (Vikings) marked at Lindisfarne, with numbered chapters',
   alt_a_panel: 'Left panel: the episode list, with the episode Vikinzi selected',
   alt_a_tl: 'Timeline: Vikinzi, 793–1066, among other episodes of the period',
@@ -67,8 +92,8 @@ export function landingStrings(stats: ArchiveStats): Record<Lang, Record<Landing
     en: { role_hist: 'Historian, author and presenter', role_art_f: 'Art historian', role_art_m: 'Art historian', role_prod: 'Podcast production' },
   };
   return {
-    sr: { ...BASE.sr, ...numbered('sr'), ...roles.sr, ...ALT_SR },
-    en: { ...BASE.en, ...numbered('en'), ...roles.en, ...ALT_EN },
+    sr: { ...BASE.sr, ...numbered('sr'), ...roles.sr, ...ALT_SR, ...ARIA_SR },
+    en: { ...BASE.en, ...numbered('en'), ...roles.en, ...ALT_EN, ...ARIA_EN },
   };
 }
 

@@ -16,20 +16,20 @@
      Serbian string at build time (vite.config.ts); the page script swaps in English. -->
 <header class="hdr">
   <div class="hdr__in">
-    <a class="brand" href="#arhiva" aria-label="HistoryCast Mapa istorije">
+    <a class="brand" href="#arhiva" aria-label="%%aria_brand%%" data-aria="aria_brand">
       <span class="logo"><img src="./img/landing/logo.webp" alt="" width="132" height="96"></span>
       <span class="brand__txt"><span class="brand__name">HistoryCast</span><span class="brand__sub" data-i="sub"></span></span>
     </a>
     <div class="lang" role="group" aria-label="Jezik / Language"><button type="button" data-lang="sr" aria-pressed="true">SR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
     <span class="hdr__sp"></span>
-    <nav class="nav" id="nav" aria-label="Sadržaj">
+    <nav class="nav" id="nav" aria-label="%%aria_nav%%" data-aria="aria_nav">
       <a href="#arhiva" data-i="n1"></a>
       <a href="#autori" data-i="n2"></a>
       <a href="#statistika" data-i="n3"></a>
       <a href="#transkripti" data-i="n4"></a>
       <a href="#kako-radi" data-i="n5"></a>
     </nav>
-    <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Meni"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="%%aria_menu%%" data-aria="aria_menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <a class="btn btn--pri js-map" href="./app.html?lang=sr"><span class="l-long" data-i="open"></span><span class="l-short" data-i="open_s"></span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </header>
@@ -86,7 +86,7 @@
           <p data-i="p_p1"></p>
           <p data-i="p_p2"></p>
         </div>
-        <div class="layer" aria-label="Slojevi">
+        <div class="layer" aria-label="%%aria_layers%%" data-aria="aria_layers">
           <span data-i="l1"></span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           <span class="on" data-i="l2"></span>
@@ -112,7 +112,7 @@
           <h3 data-i="d_h"></h3>
           <div class="prose"><p data-i="d_p"></p></div>
         </div>
-        <div class="seg" role="group" aria-label="Brojanje"><button type="button" data-unit="ep" aria-pressed="true"><span data-i="u_ep"></span> <span class="num" data-i="u_ep_n"></span></button><button type="button" data-unit="ch" aria-pressed="false"><span data-i="u_ch"></span> <span class="num" data-i="u_ch_n"></span></button></div>
+        <div class="seg" role="group" aria-label="%%aria_count%%" data-aria="aria_count"><button type="button" data-unit="ep" aria-pressed="true"><span data-i="u_ep"></span> <span class="num" data-i="u_ep_n"></span></button><button type="button" data-unit="ch" aria-pressed="false"><span data-i="u_ch"></span> <span class="num" data-i="u_ch_n"></span></button></div>
       </div>
       <div class="chart" id="chart"></div>
       <div class="legend" id="legend"></div>
@@ -149,9 +149,9 @@
         <h2 data-i="r_h"></h2>
         <p class="lead" data-i="r_lead"></p>
       </div>
-      <div class="markers" aria-label="Oznake na mapi">
-        <div class="mk"><div class="mk__img"><img src="./img/landing/mk-ep.webp" alt="Oznaka epizode" width="72" height="72"></div><div><b data-i="m1"></b><span data-i="m1d"></span></div></div>
-        <div class="mk"><div class="mk__img"><img src="./img/landing/mk-ch.webp" alt="Oznaka poglavlja" width="68" height="68"></div><div><b data-i="m2"></b><span data-i="m2d"></span></div></div>
+      <div class="markers" aria-label="%%aria_markers%%" data-aria="aria_markers">
+        <div class="mk"><div class="mk__img"><img src="./img/landing/mk-ep.webp" alt="%%alt_mk_ep%%" data-alt="alt_mk_ep" width="72" height="72"></div><div><b data-i="m1"></b><span data-i="m1d"></span></div></div>
+        <div class="mk"><div class="mk__img"><img src="./img/landing/mk-ch.webp" alt="%%alt_mk_ch%%" data-alt="alt_mk_ch" width="68" height="68"></div><div><b data-i="m2"></b><span data-i="m2d"></span></div></div>
       </div>
     </div>
 
@@ -211,7 +211,7 @@
         </li>
       </ol>
     </div>
-    <div class="flow" aria-label="Tok">
+    <div class="flow" aria-label="%%aria_flow%%" data-aria="aria_flow">
       <span data-i="f1"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       <span data-i="f2"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       <span data-i="f3"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

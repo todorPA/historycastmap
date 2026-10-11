@@ -48,10 +48,9 @@ function setLang(next: Lang) {
   }
   for (const img of $$<HTMLImageElement>('img[data-img]')) img.src = `${BASE}img/landing/${img.dataset.img}-${lang}.webp`;
   for (const img of $$<HTMLImageElement>('img[data-alt]')) img.alt = t[img.dataset.alt as LandingKey] ?? img.alt;
+  for (const el of $$('[data-aria]')) el.setAttribute('aria-label', t[el.dataset.aria as LandingKey] ?? '');
   for (const a of $$<HTMLAnchorElement>('.js-map')) a.href = `${BASE}app.html?lang=${lang}`;
   for (const b of $$('[data-lang]')) b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
-  $('#nav')?.setAttribute('aria-label', lang === 'en' ? 'Contents' : 'Sadržaj');
-  $('#menu')?.setAttribute('aria-label', lang === 'en' ? 'Menu' : 'Meni');
   try {
     localStorage.setItem(LANG_KEY, lang);
   } catch {
