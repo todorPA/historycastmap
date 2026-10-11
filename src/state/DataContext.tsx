@@ -1,18 +1,24 @@
 import { createContext, useContext, useMemo } from 'react';
 import type { ReactNode } from 'react';
-import type { HistoryEvent } from '../types/events';
 import { deriveEpisodes, type EpisodeView } from '../lib/episodeModel';
 import { collectionMembers, type CollectionMembers } from '../lib/episodeFilters';
-import { matchingEpisodes, visibleEvents } from '../lib/episodeVisibility';
+import { matchingEpisodes } from '../lib/episodeVisibility';
 import type { LoadedData } from '../lib/data';
-import { useTime } from './TimeContext';
 import { useFilters } from './FilterContext';
 import { COLLECTIONS } from '../config/collections';
+import { EPISODE_OVERRIDES } from '../config/episodeOverrides';
 
 const DataContext = createContext<LoadedData | null>(null);
+const EpisodesContext = createContext<EpisodeView[] | null>(null);
 
+/** Derives the episode model once per dataset, for every view that reads it. */
 export function DataProvider({ value, children }: { value: LoadedData; children: ReactNode }) {
-  return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
+  const episodes = useMemo(() => deriveEpisodes(value.data, EPISODE_OVERRIDES), [value.data]);
+  return (
+    <DataContext.Provider value={value}>
+      <EpisodesContext.Provider value={episodes}>{children}</EpisodesContext.Provider>
+    </DataContext.Provider>
+  );
 }
 
 export function useData(): LoadedData {
@@ -34,10 +40,11 @@ export function useSideEpisodes(): ReadonlySet<string> {
   );
 }
 
-/** The episode model, derived once per dataset (lib/episodeModel.ts). */
+/** The episode model, derived once per dataset, with the hand-checked overrides applied. */
 export function useEpisodes(): EpisodeView[] {
-  const { data } = useData();
-  return useMemo(() => deriveEpisodes(data), [data]);
+  const ctx = useContext(EpisodesContext);
+  if (!ctx) throw new Error('useEpisodes must be used inside <DataProvider>');
+  return ctx;
 }
 
 const MEMBERS = collectionMembers(COLLECTIONS);
@@ -55,17 +62,5 @@ export function useMatchingEpisodes(): EpisodeView[] {
   return useMemo(
     () => matchingEpisodes(episodes, filters, MEMBERS, query, placesById, lang, selectedEpisodeId),
     [episodes, filters, query, placesById, lang, selectedEpisodeId],
-  );
-}
-
-/** The events the map draws: chapters of matching episodes, inside the time window. */
-export function useVisibleEvents(): HistoryEvent[] {
-  const { data } = useData();
-  const { range } = useTime();
-  const { selectedEpisodeId } = useFilters();
-  const matching = useMatchingEpisodes();
-  return useMemo(
-    () => visibleEvents(data.events, new Set(matching.map((e) => e.id)), selectedEpisodeId, range),
-    [data.events, matching, selectedEpisodeId, range],
   );
 }

@@ -31,3 +31,12 @@ export function episodeNoun(n: number, lang: Lang): string {
   if (lang === 'en') return n === 1 ? 'episode' : 'episodes';
   return agreeSr(n, ['epizoda', 'epizode', 'epizoda']);
 }
+
+/**
+ * The timeline's "more below" pill (HANDOFF §12.7). The handoff has one string for n = 1 and one
+ * for the rest; Serbian needs the 2–4 form too, and the verb-less phrase agrees with the noun.
+ */
+export function moreBelowLabel(n: number, lang: Lang): string {
+  if (lang === 'en') return `${n} more ${episodeNoun(n, lang)} in this period — scroll`;
+  return `Još ${n} ${episodeNoun(n, lang)} u ovom periodu — skroluj`;
+}

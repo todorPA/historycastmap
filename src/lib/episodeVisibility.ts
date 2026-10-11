@@ -28,21 +28,14 @@ export function overlaps(from: number, to: number, range: { from: number; to: nu
 }
 
 /**
- * The events the event-based map and timeline still draw: every chapter of a matching episode
- * that overlaps the window.
- *
- * Interim until the new map (Phase 3): with an episode selected, only its chapters — the old
- * episode filter's behaviour. The new map quiets the others instead of hiding them.
+ * The events the event-based timeline still draws, until Phase 4 replaces it: every chapter of
+ * a matching episode that overlaps the window. A selection no longer narrows it — the map quiets
+ * the other episodes instead of hiding them (HANDOFF §11), and the timeline does the same.
  */
 export function visibleEvents(
   events: HistoryEvent[],
   matchingIds: ReadonlySet<string>,
-  selectedId: string | null,
   range: { from: number; to: number },
 ): HistoryEvent[] {
-  return events.filter(
-    (e) =>
-      (selectedId ? e.episodeId === selectedId : matchingIds.has(e.episodeId)) &&
-      overlaps(e.year, e.yearEnd ?? e.year, range),
-  );
+  return events.filter((e) => matchingIds.has(e.episodeId) && overlaps(e.year, e.yearEnd ?? e.year, range));
 }

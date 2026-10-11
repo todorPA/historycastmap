@@ -93,12 +93,15 @@ export async function mountHeroMap(host: HTMLElement): Promise<void> {
   });
 
   // Same registry as the explorer (config/basemaps.ts), so the hero can never drift from it.
+  // The landing is not part of the redesign yet: it keeps tiles, which for the paper basemap
+  // are its close-up layer.
   const basemap = getBasemap(DEFAULT_BASEMAP_ID);
-  if (basemap.kind === 'modern') {
-    L.tileLayer(basemap.url, {
-      attribution: basemap.attribution,
+  const tiles = basemap.kind === 'modern' ? basemap : basemap.kind === 'vector' ? basemap.closeup : null;
+  if (tiles) {
+    L.tileLayer(tiles.url, {
+      attribution: tiles.attribution,
       maxZoom: basemap.maxZoom ?? 19,
-      maxNativeZoom: basemap.maxNativeZoom,
+      maxNativeZoom: tiles.maxNativeZoom,
     }).addTo(map);
   }
 

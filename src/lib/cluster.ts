@@ -5,10 +5,9 @@ import type { Map as LeafletMap, LatLngTuple } from 'leaflet';
  * and merge whatever shares a cell. Clusters therefore break apart as you zoom in, which is
  * the behaviour people expect from a map.
  *
- * Deliberately not leaflet.markercluster: our markers are CircleMarkers coloured per
- * episode with confidence encoded in stroke and opacity, and that library wants to own
- * marker rendering. This keeps the visual language ours — which matters because the cluster
- * design is still an open question for the designer (see docs/design/DESIGN-BRIEF.md).
+ * Deliberately not leaflet.markercluster: that library wants to own marker rendering, and the
+ * episode markers and era-ringed clusters (HANDOFF §9.1) are drawn by us, as divIcons whose
+ * state is CSS. What a click on a cluster does lives in lib/episodeMarkers.ts.
  */
 
 /** Cell size in screen pixels. Roughly twice a marker's diameter, so clusters form before overlap. */
@@ -97,29 +96,4 @@ export function clusterByPixel<T extends Clusterable>(
   }
 
   return clusters;
-}
-
-/** Marker radius grows with member count, but sub-linearly so big clusters stay usable. */
-export function clusterRadius(count: number): number {
-  if (count === 1) return 8;
-  return Math.min(22, 11 + Math.round(Math.log2(count) * 3));
-}
-
-/** Most levels one cluster click may zoom in. */
-const MAX_CLICK_JUMP = 3;
-
-/**
- * The zoom a cluster click goes to: where its members separate (`fitZoom`, from getBoundsZoom),
- * but never more than three levels past the current zoom, never less than one, and never past
- * the map's maximum.
- *
- * Limits the jump, not the level. A fixed `maxZoom: 7` was meant to stop one click from leaping
- * from the world view onto blank ice (Greenland at z12), but as a ceiling it made every cluster
- * click a no-op once the map was at 7 or closer: in Serbia at z7, all 35 clusters need z10–12 to
- * separate, and the click only re-centred the map. A cluster that needs more than three levels
- * now breaks apart over a second click instead.
- */
-export function clusterClickZoom(currentZoom: number, fitZoom: number, maxZoom: number): number {
-  const target = Math.min(fitZoom, currentZoom + MAX_CLICK_JUMP);
-  return Math.min(maxZoom, Math.max(target, currentZoom + 1));
 }

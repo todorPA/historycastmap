@@ -12,6 +12,8 @@ export interface EpisodeOverride {
   kind?: EpisodeKind;
   placeId?: string;
   dateLabel?: LocalizedText;
+  /** An English title; the dataset carries Serbian titles only. */
+  title?: { en?: string };
 }
 export type EpisodeOverrides = Record<string, EpisodeOverride>;
 
@@ -117,7 +119,7 @@ export function deriveEpisodes(data: GeoData, overrides: EpisodeOverrides = {}):
     out.push({
       id: episode.id,
       episode,
-      title: episode.title,
+      title: o.title?.en ? { ...episode.title, en: o.title.en } : episode.title,
       series: episode.series ?? 'main',
       events: byTimestamp(events),
       from,
@@ -126,7 +128,9 @@ export function deriveEpisodes(data: GeoData, overrides: EpisodeOverrides = {}):
       anchor,
       era: eraOf(anchor),
       placeId: o.placeId ?? mostFrequent(kept, (e) => e.placeId)!,
-      family: familyOf(mostFrequent(kept, (e) => e.region)),
+      // Only regions that have a row are counted: an older region name with no row (the sample
+      // dataset's Vizantija, Srpsko carstvo …) must not outvote one that has.
+      family: familyOf(mostFrequent(kept, (e) => (familyOf(e.region) ? e.region : undefined))),
       regions: new Set(events.map((e) => e.region).filter((r): r is string => !!r)),
       types: new Set<string>(events.flatMap((e) => (e.type ? [e.type] : []))),
       dateLabel: o.dateLabel,

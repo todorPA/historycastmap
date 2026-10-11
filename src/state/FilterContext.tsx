@@ -72,7 +72,7 @@ export function FilterProvider({
   const [lang, setLang] = useState<Lang>(initial?.lang ?? 'sr');
   const [selectedEventId, setSelectedEventId] = useState<string | null>(initial?.eventId ?? null);
   const [basemapId, setBasemapId] = useState<string>(initial?.basemapId ?? DEFAULT_BASEMAP_ID);
-  const [timelineSize, setTimelineSize] = useState<TimelineSize>('s');
+  const [timelineSize, setTimelineSize] = useState<TimelineSize>('m');
 
   const cycleTimelineSize = useCallback(() => {
     setTimelineSize(

@@ -56,15 +56,10 @@ describe('visibleEvents', () => {
   const all = { from: -Infinity, to: Infinity };
 
   it('draws every chapter of every matching episode', () => {
-    expect(ids(visibleEvents(events, new Set(['1', '3']), null, all))).toEqual(['a', 'b', 'd']);
+    expect(ids(visibleEvents(events, new Set(['1', '3']), all))).toEqual(['a', 'b', 'd']);
   });
 
   it('keeps only chapters that overlap the window, spans included', () => {
-    expect(ids(visibleEvents(events, new Set(['1', '2', '3']), null, { from: 1340, to: 1400 }))).toEqual(['a', 'c', 'd']);
-  });
-
-  // Interim until Phase 3: a selection narrows the old map and timeline to that episode.
-  it('narrows to the selected episode', () => {
-    expect(ids(visibleEvents(events, new Set(['1', '2', '3']), '2', all))).toEqual(['c']);
+    expect(ids(visibleEvents(events, new Set(['1', '2', '3']), { from: 1340, to: 1400 }))).toEqual(['a', 'c', 'd']);
   });
 });

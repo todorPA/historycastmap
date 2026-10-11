@@ -72,6 +72,17 @@ describe('deriveEpisodes — place, row and facets', () => {
     expect(e.family?.id).toBe('mediteran');
   });
 
+  // The sample dataset's chapters use older region names (Vizantija, Srpsko carstvo, …) that
+  // belong to no row; counting them let an unplaceable name win and the episode left the timeline.
+  it('counts only regions that belong to a row when choosing it', () => {
+    const e = one([ev({ region: 'Srpsko carstvo' }), ev({ region: 'Srpsko carstvo' }), ev({ region: 'Vizantija' }), ev({ region: 'Balkan' })]);
+    expect(e.family?.id).toBe('balkan');
+  });
+
+  it('has no row only when no chapter has a region that belongs to one', () => {
+    expect(one([ev({ region: 'Srpsko carstvo' })]).family).toBeUndefined();
+  });
+
   it('collects every region and type for filtering, including trimmed chapters', () => {
     const e = one([ev({ year: 1389, region: 'Balkan', type: 'battle' }), ev({ year: 1389 }), ev({ year: 1389 }), ev({ year: 1998, region: 'Azija', type: 'other' })]);
     expect([...e.regions].sort()).toEqual(['Azija', 'Balkan']);
@@ -99,6 +110,18 @@ describe('deriveEpisodes — overrides', () => {
     expect([e.from, e.to]).toEqual([1095, 1099]);
     expect(e.kind).toBe('range');
     expect(e.dateLabel?.sr).toBe('27. novembar 1095.');
+  });
+});
+
+describe('deriveEpisodes — override titles', () => {
+  it('adds an English title from an override and keeps the Serbian one from the data', () => {
+    const [e] = deriveEpisodes(data([ev({})]), { '1': { title: { en: 'The Test' } } });
+    expect(e.title).toEqual({ sr: 'Test', en: 'The Test' });
+  });
+
+  it('leaves the title alone when the override has none', () => {
+    const [e] = deriveEpisodes(data([ev({})]), { '1': { from: 1300 } });
+    expect(e.title).toEqual({ sr: 'Test' });
   });
 });
 
