@@ -13,7 +13,7 @@ import { contrastRatio } from '../lib/contrast';
  * Balkans" is information.
  *
  * Episode stays the filter — see FilterContext. `episodes[].color` is left untouched in the
- * data so this can be revisited (docs/design/DESIGN-BRIEF.md).
+ * data so this can be revisited (the September 2026 design brief, now in git history).
  */
 /**
  * Twelve hues, solved rather than picked.
