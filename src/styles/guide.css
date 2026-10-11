@@ -1,0 +1,182 @@
+/* The first-use guide (HANDOFF §16), in the episode card's language. */
+
+.guide {
+  position: fixed;
+  inset: 0;
+  z-index: 6000;
+}
+
+/* One element does both jobs: the 9999 px shadow dims everything else, the inner rings outline
+ * the target. It glides between the steps. */
+.guide__spot {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 0 0 3px #fff8ec, 0 0 0 6px var(--gold-line), 0 0 0 9999px rgba(33, 23, 15, 0.58);
+  pointer-events: none;
+  transition: left 420ms var(--ease), top 420ms var(--ease), width 420ms var(--ease), height 420ms var(--ease);
+}
+
+.guide__ring {
+  position: absolute;
+  border: 2.5px dashed var(--gold-line);
+  border-radius: 8px;
+  box-shadow: 0 0 0 2px rgba(255, 248, 236, 0.9);
+  pointer-events: none;
+  animation: guide-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes guide-pulse {
+  50% {
+    box-shadow: 0 0 0 6px rgba(212, 170, 85, 0.35);
+  }
+}
+
+.guide__tag {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px 0 6px;
+  border-radius: 16px;
+  background: var(--gold);
+  color: var(--on-gold);
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 0 0 2px #fff8ec, 0 4px 12px rgba(20, 12, 6, 0.35);
+  pointer-events: none;
+}
+
+.guide__tag span,
+.guide__num {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--on-gold);
+  color: #fff8ec;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.guide__card {
+  position: absolute;
+  padding: 14px 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-10);
+  background: var(--f1);
+  color: var(--tx);
+  box-shadow: 0 12px 32px rgba(20, 12, 6, 0.35);
+  animation: guide-pop 200ms var(--ease);
+}
+
+@keyframes guide-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+/* The 14 px arrow pointing at the target: left for step 1, down for step 2. */
+.guide__card--right::before,
+.guide__card--above::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--line);
+  background: var(--f1);
+  transform: rotate(45deg);
+}
+
+.guide__card--right::before {
+  top: 30px;
+  left: -8px;
+  border-top: 0;
+  border-right: 0;
+}
+
+.guide__card--above::after {
+  bottom: -8px;
+  left: calc(50% - 7px);
+  border-top: 0;
+  border-left: 0;
+}
+
+.guide__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -4px -8px 4px 0;
+}
+
+.guide__step {
+  color: var(--tx2);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.guide__title {
+  margin: 0 0 6px;
+  font: 600 21px/1.2 var(--font-serif);
+  text-wrap: balance;
+}
+
+.guide__body {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.guide__row {
+  display: grid;
+  grid-template-columns: 22px 22px 1fr;
+  align-items: start;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.guide__row:first-of-type {
+  border-top: 0;
+}
+
+.guide__icon {
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  fill: none;
+  stroke: var(--gold-hi);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.guide__row b {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.guide__row p {
+  margin: 2px 0 0;
+  color: var(--tx2);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.guide__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.guide__actions .hc-btn {
+  height: 38px;
+}

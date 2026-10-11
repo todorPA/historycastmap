@@ -15,6 +15,7 @@ import { centreView, eraView, selectionView, zoomView } from '../../lib/timeline
 import { useTimelinePlayback } from '../useTimelinePlayback';
 import { measureLabel, useFontsReady } from './measureText';
 import { useTimelineView } from './useTimelineView';
+import { useLayout } from '../../state/LayoutContext';
 import TimelineRows, { type FocusBand } from './TimelineRows';
 import TimelineStrip from './TimelineStrip';
 import TimelineRail from './TimelineRail';
@@ -22,8 +23,11 @@ import TimelineRail from './TimelineRail';
 /** Label column and the rail's gutter, in px; the axis, era band and strip line up with them. */
 const LABEL_COL = 132;
 const RAIL_GUTTER = 16;
-/** Lanes per row before the rest become overflow ticks (2 on phone, Phase 5). */
+/** Lanes per row before the rest become overflow ticks; 2 on phone (§12.3). */
 const LANE_CAP = 3;
+const PHONE_LANE_CAP = 2;
+/** Phone: the row label overlays the top of its track, so lanes start this far down (§19). */
+const PHONE_LABEL_PX = 12;
 const ZOOM_STEP = 0.6;
 
 /**
@@ -40,18 +44,20 @@ export default function Timeline() {
   } = useFilters();
   const { view, viewRef, bounds, commit, tweenTo, cancel } = useTimelineView();
   const fontsVersion = useFontsReady();
+  const { phone } = useLayout();
+  const labelCol = phone ? 0 : LABEL_COL;
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [widthPx, setWidthPx] = useState(800);
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    const read = () => setWidthPx(Math.max(50, el.clientWidth - LABEL_COL - RAIL_GUTTER));
+    const read = () => setWidthPx(Math.max(50, el.clientWidth - labelCol - RAIL_GUTTER));
     read();
     const ro = new ResizeObserver(read);
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+  }, [labelCol]);
 
   const [expanded, setExpanded] = useState<ReadonlySet<string>>(new Set());
   const toggleRow = (id: string) =>
@@ -77,7 +83,7 @@ export default function Timeline() {
         widthPx,
         measure: measureLabel,
         lanePx,
-        cap: LANE_CAP,
+        cap: phone ? PHONE_LANE_CAP : LANE_CAP,
         expanded,
         selectedId: selectedEpisodeId,
         stateOf: (ep) => markerState(ep, { selectedId: selectedEpisodeId, hoveredId: hoveredEpisodeId, range: win }),
@@ -86,7 +92,7 @@ export default function Timeline() {
       }),
     // fontsVersion: re-measure once the web font has replaced the fallback.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [shown, view, win, widthPx, lanePx, expanded, selectedEpisodeId, hoveredEpisodeId, lang, matchingIds, fontsVersion],
+    [shown, view, win, widthPx, lanePx, expanded, selectedEpisodeId, hoveredEpisodeId, lang, matchingIds, fontsVersion, phone],
   );
 
   const ticks = useMemo(() => axisTicks(view, widthPx), [view, widthPx]);
@@ -241,6 +247,7 @@ export default function Timeline() {
               ticks={ticks}
               focus={focus}
               lanePx={lanePx}
+              topPad={phone ? PHONE_LABEL_PX : 0}
               lang={lang}
               selected={selected}
               onSelect={(id) => selectEpisode(id)}
@@ -249,7 +256,7 @@ export default function Timeline() {
               onEdge={bringSelectionIntoView}
             />
           </div>
-          <TimelineRail scrollRef={scrollRef} rows={rows} lanePx={lanePx} lang={lang} />
+          <TimelineRail scrollRef={scrollRef} rows={rows} lanePx={lanePx} topPad={phone ? PHONE_LABEL_PX : 0} lang={lang} />
         </div>
 
         <TimelineStrip

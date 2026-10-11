@@ -1,0 +1,122 @@
+/* The explorer's frame (HANDOFF §2): the collapsible left column and its floating pill. */
+
+.app {
+  transition: grid-template-columns 420ms var(--ease);
+}
+
+/* Collapsed: the column animates to 0 and clips the panel, which keeps its own 328 px so its
+ * contents never reflow mid-transition. `inert` (Sidebar) takes it out of the tab order. */
+.app.is-panel-closed {
+  grid-template-columns: 0px 1fr;
+}
+
+.app > .panel {
+  min-width: 0;
+}
+
+.app > .panel > * {
+  min-width: 328px;
+}
+
+.panel-head__collapse {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: -6px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-4);
+  background: none;
+  color: var(--tx2);
+  cursor: pointer;
+}
+
+.panel-head__collapse:hover {
+  background: var(--f3);
+  color: var(--tx);
+}
+
+.panel-head__collapse svg,
+.map-pill__btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hc-mark--sm {
+  width: 30px;
+  height: 30px;
+  font-size: 11px;
+}
+
+/* ---------- the collapsed panel's pill ---------- */
+.map-pill {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-10);
+  background: var(--f1);
+  box-shadow: 0 6px 18px rgba(60, 40, 20, 0.16);
+  /* Appears once the column has mostly closed, not on top of it. */
+  animation: map-pill-in 260ms var(--ease) 180ms both;
+}
+
+@keyframes map-pill-in {
+  from {
+    opacity: 0;
+    transform: translateX(-8px) scale(0.96);
+  }
+}
+
+.map-pill .hc-mark {
+  margin-right: 2px;
+}
+
+.map-pill__btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-6);
+  background: none;
+  color: var(--tx);
+  cursor: pointer;
+}
+
+.map-pill__btn:hover,
+.map-pill__sel:hover {
+  background: var(--f3);
+}
+
+.map-pill__badge {
+  margin: 0 4px;
+}
+
+.map-pill__sel {
+  max-width: 200px;
+  height: 32px;
+  padding: 0 10px;
+  overflow: hidden;
+  border: 0;
+  border-left: 1px solid var(--line-soft);
+  border-radius: 0;
+  background: none;
+  color: var(--gold-hi);
+  font: 600 13px var(--font-sans);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}

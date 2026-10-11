@@ -24,6 +24,7 @@ export default function TimelineRows({
   ticks,
   focus,
   lanePx,
+  topPad,
   lang,
   onSelect,
   onHover,
@@ -31,6 +32,8 @@ export default function TimelineRows({
   onEdge,
   selected,
 }: {
+  /** Extra space above the first lane, where the phone layout overlays the row label. */
+  topPad: number;
   rows: Row<EpisodeView>[];
   ticks: Tick[];
   focus: FocusBand | null;
@@ -53,7 +56,7 @@ export default function TimelineRows({
       </div>
 
       {rows.map((row) => (
-        <div key={row.family.id} className="tl-row" data-family={row.family.id} style={{ minHeight: row.height }}>
+        <div key={row.family.id} className="tl-row" data-family={row.family.id} style={{ minHeight: row.height + topPad }}>
           <div className="tl-row__label">
             <span className="tl-row__name">{pick(row.family.name, lang)}</span>
             <span className="tl-row__count">
@@ -66,12 +69,12 @@ export default function TimelineRows({
             )}
           </div>
 
-          <div className="tl-row__track" style={{ height: row.height }}>
+          <div className="tl-row__track" style={{ height: row.height + topPad }}>
             {row.placed.map((it) => (
-              <Item key={it.ep.id} it={it} lanePx={lanePx} lang={lang} onSelect={onSelect} onHover={onHover} />
+              <Item key={it.ep.id} it={it} lanePx={lanePx} topPad={topPad} lang={lang} onSelect={onSelect} onHover={onHover} />
             ))}
             {row.overflow.map((it) => (
-              <i key={it.ep.id} className="tl-ovf" style={{ left: it.xa, top: row.height - 12, background: it.ep.era.color }} />
+              <i key={it.ep.id} className="tl-ovf" style={{ left: it.xa, top: row.height + topPad - 12, background: it.ep.era.color }} />
             ))}
             {row.edge && selected && (
               <button type="button" className={`tl-edge tl-edge--${row.edge}`} onClick={onEdge} title={`${t(lang, 'goTo')} ${pick(selected.title, lang)}`}>
@@ -90,12 +93,14 @@ export default function TimelineRows({
 function Item({
   it,
   lanePx,
+  topPad,
   lang,
   onSelect,
   onHover,
 }: {
   it: Packed<EpisodeView>;
   lanePx: number;
+  topPad: number;
   lang: Lang;
   onSelect: (id: string) => void;
   onHover: (id: string | null) => void;
@@ -108,7 +113,7 @@ function Item({
     ep.kind === 'point' ? { left: (it.m0 + it.m1) / 2 - it.e0 } : { left: it.m0 - it.e0, width: it.m1 - it.m0 };
   const style: Vars = {
     left: it.e0,
-    top: itemTop(it.lane, lanePx),
+    top: topPad + itemTop(it.lane, lanePx),
     width: it.e1 - it.e0,
     height: lanePx - 6,
     '--c': colour,

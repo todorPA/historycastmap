@@ -48,9 +48,13 @@ export function seriesOfTitle(title) {
 // Karadžić". Radi na oba mesta jer feed koristi oba rasporeda.
 const BRAND_SUFFIX = /\s*[|,\-–—]?\s*(?:\|\s*)?HistoryCast\s+(?:nedeljom|[čc]etvrtkom)\s*$/i;
 const BRAND_PREFIX = /^\s*HistoryCast\s+(?:nedeljom|[čc]etvrtkom)\s*[|,\-–—]\s*/i;
+// Main-series titles end in a bare "| HistoryCast" (once "} HistoryCast", a typo in the feed).
+// Only after a pipe or brace, and only at the very end: "Kosovska bitka, HistoryCast specijal"
+// names the special and stays.
+const BARE_BRAND_SUFFIX = /\s*[|}]\s*HistoryCast\s*$/i;
 
 export function stripBranding(title) {
-  const stripped = title.replace(BRAND_PREFIX, "").replace(BRAND_SUFFIX, "").trim();
+  const stripped = title.replace(BRAND_PREFIX, "").replace(BRAND_SUFFIX, "").replace(BARE_BRAND_SUFFIX, "").trim();
   // Ako od naslova ne ostane ništa (naslov je bio samo brend), zadrži original — prazan
   // naslov u aplikaciji je gori od suvišnog brenda.
   return stripped || title.trim();

@@ -46,14 +46,15 @@ export function railToScroll(p: { y: number; grab: number; thumb: number; railPx
 
 /**
  * How many episodes in the period lie below the visible part of the rows — the "Još N" pill.
- * Out-of-window items are not counted: the pill is about this period.
+ * Out-of-window items are not counted: the pill is about this period. `topPad` is the space the
+ * phone layout adds above each row's lanes for its overlaid label (TimelineRows).
  */
-export function itemsBelow<E extends LayoutEpisode>(rows: Row<E>[], lanePx: number, visibleBottom: number): number {
+export function itemsBelow<E extends LayoutEpisode>(rows: Row<E>[], lanePx: number, visibleBottom: number, topPad = 0): number {
   let top = 0;
   let n = 0;
   for (const r of rows) {
-    for (const p of r.placed) if (p.state !== 'outside' && top + itemTop(p.lane, lanePx) > visibleBottom - 6) n++;
-    top += r.height;
+    for (const p of r.placed) if (p.state !== 'outside' && top + topPad + itemTop(p.lane, lanePx) > visibleBottom - 6) n++;
+    top += r.height + topPad;
   }
   return n;
 }

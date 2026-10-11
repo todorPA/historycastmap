@@ -19,11 +19,14 @@ export default function TimelineRail({
   scrollRef,
   rows,
   lanePx,
+  topPad,
   lang,
 }: {
   scrollRef: RefObject<HTMLDivElement | null>;
   rows: Row<EpisodeView>[];
   lanePx: number;
+  /** As in TimelineRows: the phone's per-row label space. */
+  topPad: number;
   lang: Lang;
 }) {
   const [m, setM] = useState({ scrollTop: 0, clientHeight: 0, scrollHeight: 0 });
@@ -51,7 +54,7 @@ export default function TimelineRail({
 
   const atTop = m.scrollTop < EDGE;
   const atEnd = m.scrollTop + m.clientHeight >= m.scrollHeight - EDGE;
-  const below = itemsBelow(rows, lanePx, m.scrollTop + m.clientHeight);
+  const below = itemsBelow(rows, lanePx, m.scrollTop + m.clientHeight, topPad);
   const up = atEnd || below === 0;
 
   function scrollTo(clientY: number, rail: HTMLElement) {

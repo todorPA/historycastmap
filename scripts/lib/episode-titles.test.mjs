@@ -67,6 +67,13 @@ describe('stripBranding', () => {
     expect(stripBranding('Beogradski grand prix, 1939 | HistoryCast nedeljom')).toBe('Beogradski grand prix, 1939');
   });
 
+  // Main-series titles in the feed end with a bare brand, once with a typo'd brace for the pipe.
+  it('removes a bare trailing brand after a pipe', () => {
+    expect(stripBranding('Novogodišnji specijal | HistoryCast')).toBe('Novogodišnji specijal');
+    expect(stripBranding('SPECIJAL - Istorija papske moći | HistoryCast')).toBe('SPECIJAL - Istorija papske moći');
+    expect(stripBranding('Invazija na Normandiju, zapadni front } HistoryCast')).toBe('Invazija na Normandiju, zapadni front');
+  });
+
   it('leaves non-side-series branding alone', () => {
     expect(stripBranding('Kosovska bitka, HistoryCast specijal')).toBe('Kosovska bitka, HistoryCast specijal');
   });

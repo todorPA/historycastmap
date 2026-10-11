@@ -1,4 +1,5 @@
 import type { Map as LeafletMap, LatLngTuple } from 'leaflet';
+import { mergeOverlapping } from './clusterMerge';
 
 /**
  * Pixel-grid clustering: project each point at the current zoom, drop it in a square cell,
@@ -49,12 +50,15 @@ function dominantColor<T extends Clusterable>(items: T[]): string {
  *   gets swallowed into a count badge has no marker of its own, so it cannot be styled as
  *   selected and has no popup to open. Clicking a timeline item then looked like nothing
  *   happened at all, which is exactly what it looked like.
+ * @param diameter The drawn bubble's diameter for n members. When given, clusters whose bubbles
+ *   overlap are merged after the grid pass (lib/clusterMerge.ts).
  */
 export function clusterByPixel<T extends Clusterable>(
   map: LeafletMap,
   items: T[],
   cellPx: number = CELL_PX,
   keepSeparate?: (item: T) => boolean,
+  diameter?: (n: number) => number,
 ): Cluster<T>[] {
   const zoom = map.getZoom();
   const cells = new Map<string, T[]>();
@@ -78,21 +82,31 @@ export function clusterByPixel<T extends Clusterable>(
     items: [only],
     color: only.color,
   }));
+  let groups: Array<{ key: string; items: T[] }> = [];
   for (const [key, members] of cells) {
     if (members.length === 1) {
       const [only] = members;
       clusters.push({ key: only.id, position: only.position, items: members, color: only.color });
-      continue;
+    } else {
+      // Cell-based key, so the cluster survives re-renders at the same zoom.
+      groups.push({ key: `c${zoom}:${key}`, items: members });
     }
+  }
+
+  if (diameter && groups.length > 1) {
+    const keyOf = new Map(groups.map((g) => [g.items[0].id, g.key]));
+    const pixel = groups.map((g) => {
+      const pts = g.items.map((i) => map.project(i.position, zoom));
+      return { x: pts.reduce((s, p) => s + p.x, 0) / pts.length, y: pts.reduce((s, p) => s + p.y, 0) / pts.length, items: g.items };
+    });
+    // A merged group keeps the key of the largest group in it, whose members come first.
+    groups = mergeOverlapping(pixel, diameter).map((g) => ({ key: keyOf.get(g.items[0].id) ?? `c${zoom}:${g.items[0].id}`, items: g.items }));
+  }
+
+  for (const { key, items: members } of groups) {
     const lat = members.reduce((sum, m) => sum + m.position[0], 0) / members.length;
     const lng = members.reduce((sum, m) => sum + m.position[1], 0) / members.length;
-    clusters.push({
-      // Cell-based key, so the cluster survives re-renders at the same zoom.
-      key: `c${zoom}:${key}`,
-      position: [lat, lng],
-      items: members,
-      color: dominantColor(members),
-    });
+    clusters.push({ key, position: [lat, lng], items: members, color: dominantColor(members) });
   }
 
   return clusters;

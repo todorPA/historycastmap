@@ -67,4 +67,12 @@ describe('itemsBelow', () => {
     expect(itemsBelow(rows, 30, 40)).toBe(3); // 36, 66 and 104 are past 40 − 6
     expect(itemsBelow(rows, 30, 500)).toBe(0);
   });
+
+  // Phone overlays each row's label, adding 12 px above every row's lanes: tops become 18, 48,
+  // 78, then 122 and 152 — the second row starts at 98 + 12 = 110.
+  it('counts with the per-row padding the phone layout adds', () => {
+    const rows = [row([[0, 'normal'], [1, 'normal'], [2, 'normal']], 98), row([[0, 'normal'], [1, 'normal']], 68)];
+    expect(itemsBelow(rows, 30, 120, 12)).toBe(2);
+    expect(itemsBelow(rows, 30, 120)).toBe(1);
+  });
 });

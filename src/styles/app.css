@@ -10,6 +10,9 @@
 @import './map.css';
 @import './card.css';
 @import './timeline.css';
+@import './layout.css';
+@import './guide.css';
+@import './phone.css';
 
 * {
   box-sizing: border-box;
@@ -154,14 +157,6 @@ body {
    just set the box's own minimum so the content never collapses to one word per line. */
 .leaflet-popup-content {
   margin: 12px 14px;
-}
-
-/* ---------- responsive: sidebar becomes a top drawer ---------- */
-@media (max-width: 820px) {
-  .app {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-  }
 }
 
 /* ---------- one control system ----------

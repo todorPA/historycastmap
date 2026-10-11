@@ -11,6 +11,7 @@ import { kindLabel, mmss, neighbours, publishedLabel, sameTime, youtubeSearchUrl
 import { scrollBehavior } from '../../lib/motion';
 import { useCollectionMembers, useData, useMatchingEpisodes } from '../../state/DataContext';
 import { useFilters } from '../../state/FilterContext';
+import { useLayout } from '../../state/LayoutContext';
 import Chip from '../panel/Chip';
 import { useEpisodeAudio } from './useEpisodeAudio';
 
@@ -41,6 +42,9 @@ export default function EpisodeCard({ episode }: { episode: EpisodeView }) {
   const matching = useMatchingEpisodes();
   const members = useCollectionMembers();
   const { lang, filters, toggleFilter, selectEpisode, selectedEventId, setSelectedEventId } = useFilters();
+  const { phone, cardPeek, setCardPeek } = useLayout();
+  // A newly selected episode opens the sheet fully, even if the last one was folded.
+  useEffect(() => setCardPeek(false), [episode.id, setCardPeek]);
   const { state: audio, play, toggle, audioProps } = useEpisodeAudio(episode.episode.audioUrl);
   const [copied, setCopied] = useState(false);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -73,7 +77,13 @@ export default function EpisodeCard({ episode }: { episode: EpisodeView }) {
   const progress = audio.duration > 0 ? Math.min(100, (audio.time / audio.duration) * 100) : 0;
 
   return (
-    <aside className="ep-card" aria-labelledby="ep-card-title">
+    <aside className={`ep-card${phone && cardPeek ? ' is-peek' : ''}`} aria-labelledby="ep-card-title">
+      {/* Phone: the card is a bottom sheet; the handle folds it to a 118 px peek and back (§19). */}
+      {phone && (
+        <button type="button" className="ep-card__grab" onClick={() => setCardPeek(!cardPeek)} aria-label={t(lang, 'cardHandle')} aria-expanded={!cardPeek}>
+          <span aria-hidden="true" />
+        </button>
+      )}
       {/* Keyed on the episode, so switching episodes replays the 150 ms content cross-fade. */}
       <div className="ep-card__body" ref={bodyRef} key={episode.id}>
         <header className="ep-card__head">

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { MapContainer, useMap } from 'react-leaflet';
 import type { LatLngBoundsExpression, LatLngTuple } from 'leaflet';
 import { getBasemap } from '../config/basemaps';
-import { t } from '../lib/i18n';
+import { pick, t } from '../lib/i18n';
 import { activeFilterCount } from '../lib/episodeFilters';
 import { flyTarget } from '../lib/camera';
 import { neighbours } from '../lib/episodeCard';
@@ -15,6 +15,11 @@ import EpisodeLayer from './map/EpisodeLayer';
 import MapControls from './map/MapControls';
 import EraLegend from './map/EraLegend';
 import EpisodeCard from './card/EpisodeCard';
+import MapPill from './map/MapPill';
+import { useLayout } from '../state/LayoutContext';
+import { useTime } from '../state/TimeContext';
+import { nearestOutside } from '../lib/emptyPeriod';
+import { episodeDate } from '../lib/panelModel';
 
 const DEFAULT_CENTER: LatLngTuple = [43.5, 20.5];
 const DEFAULT_ZOOM = 5;
@@ -73,12 +78,21 @@ function InvalidateOnResize() {
  * Waits past FitToMarkers' settle delay, so a shared link that names an episode fits first and
  * then flies, instead of the fit landing on top of the flight.
  */
-function FlyToSelection({ target, selectionId }: { target: LatLngTuple | null; selectionId: string | null }) {
+/** Phone: the card's bottom sheet covers this share of the map (§19). */
+const SHEET_SHARE = 0.72;
+
+function FlyToSelection({ target, selectionId, again, phone }: { target: LatLngTuple | null; selectionId: string | null; again: number; phone: boolean }) {
   const map = useMap();
   useEffect(() => {
     if (!target) return;
     const id = window.setTimeout(() => {
-      const { center, zoom } = flyTarget([target[0], target[1]], { zoom: map.getZoom(), mapWidthPx: map.getSize().x, cardOpen: true });
+      const size = map.getSize();
+      const { center, zoom } = flyTarget([target[0], target[1]], {
+        zoom: map.getZoom(),
+        mapWidthPx: size.x,
+        cardOpen: true,
+        sheetPx: phone ? size.y * SHEET_SHARE : undefined,
+      });
       if (prefersReducedMotion()) map.setView(center, zoom, { animate: false });
       else map.flyTo(center, zoom, { duration: FLY_SECONDS });
     }, 260);
@@ -86,7 +100,8 @@ function FlyToSelection({ target, selectionId }: { target: LatLngTuple | null; s
     // Re-fly when the selection changes — even to another episode at the same place (97 of 178
     // share their spot with another) — or its position moves; not when the array identity does.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectionId, target?.[0], target?.[1], map]);
+    // `again`: an explicit "take me back to it" (the collapsed panel's pill), same selection.
+  }, [selectionId, again, target?.[0], target?.[1], map]);
   return null;
 }
 
@@ -109,6 +124,9 @@ export default function MapView() {
   // keystroke; left out, a search could replace every marker with ones entirely off-screen.
   const settledQuery = useDebounced(query.trim(), SEARCH_REFIT_MS);
   const [showAll, setShowAll] = useState(0);
+  const [flyAgain, setFlyAgain] = useState(0);
+  const { phone, panelOpen } = useLayout();
+  const { range } = useTime();
 
   const positionOf = (id: string | null): LatLngTuple | null => {
     const ep = id ? matching.find((e) => e.id === id) : undefined;
@@ -148,6 +166,8 @@ export default function MapView() {
   }, [selected, matching, selectEpisode]);
 
   const narrowed = activeFilterCount(filters) > 0 || query.trim() !== '';
+  // §20: the filters match, but nothing falls in the window — offer the nearest episode.
+  const nearest = nearestOutside(matching, range);
 
   return (
     <div className={`map-wrap${selected ? ' has-card' : ''}`}>
@@ -155,15 +175,24 @@ export default function MapView() {
         <BasemapLayer basemap={basemap} />
         <InvalidateOnResize />
         <FitToMarkers points={points} fitKey={`${data.meta.generated}|${JSON.stringify(filters)}|${settledQuery}|${timelineSize}|${showAll}`} />
-        <FlyToSelection target={positionOf(selectedEpisodeId)} selectionId={selectedEpisodeId} />
+        <FlyToSelection target={positionOf(selectedEpisodeId)} selectionId={selectedEpisodeId} again={flyAgain} phone={phone} />
         <EpisodeLayer episodes={matching} listOpenRef={clusterListOpen} />
         <MapControls onShowAll={() => setShowAll((n) => n + 1)} />
       </MapContainer>
 
+      {!panelOpen && !phone && <MapPill selected={selected} onFlyBack={() => setFlyAgain((n) => n + 1)} />}
       <EraLegend />
       {selected && <EpisodeCard episode={selected} />}
 
       {/* Name the cause and offer the way out (HANDOFF §6.5). */}
+      {nearest && (
+        <div className="map-empty">
+          {t(lang, 'emptyPeriod')} {t(lang, 'nearest')}{' '}
+          <button type="button" className="hc-link" onClick={() => selectEpisode(nearest.id)}>
+            {pick(nearest.title, lang)} {episodeDate(nearest, lang)}
+          </button>
+        </div>
+      )}
       {matching.length === 0 && (
         <div className="map-empty">
           {t(lang, narrowed ? 'emptyFilters' : 'noEvents')}{' '}

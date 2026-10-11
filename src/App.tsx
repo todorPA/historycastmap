@@ -6,24 +6,11 @@ import { TimeProvider, type YearRange } from './state/TimeContext';
 import { FilterProvider, useFilters } from './state/FilterContext';
 import { t } from './lib/i18n';
 import { collectionSpan, getCollection, validateCollections } from './config/collections';
-import Sidebar from './components/Sidebar';
-import MapView from './components/MapView';
-import Timeline from './components/timeline/Timeline';
+import Shell from './components/Shell';
+import { LayoutProvider } from './state/LayoutContext';
 import { timelineExtent } from './lib/episodeModel';
 import type { ReactNode } from 'react';
 import UrlSync from './components/UrlSync';
-
-function Shell() {
-  return (
-    <div className="app">
-      <Sidebar />
-      <main className="app__main">
-        <MapView />
-        <Timeline />
-      </main>
-    </div>
-  );
-}
 
 /**
  * Time runs over the episodes' padded extent (HANDOFF §12.2), not the chapters' years: the
@@ -91,7 +78,9 @@ function Loader({ urlState }: { urlState: ReturnType<typeof parseUrlState> }) {
     <DataProvider value={loaded}>
       <EpisodeTime fallback={loaded.bounds} initialRange={initialRange}>
         <UrlSync dataset={urlState.dataset} />
-        <Shell />
+        <LayoutProvider>
+          <Shell />
+        </LayoutProvider>
       </EpisodeTime>
     </DataProvider>
   );
