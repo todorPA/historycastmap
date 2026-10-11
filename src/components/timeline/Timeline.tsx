@@ -256,7 +256,7 @@ export default function Timeline() {
               onEdge={bringSelectionIntoView}
             />
           </div>
-          <TimelineRail scrollRef={scrollRef} rows={rows} lanePx={lanePx} lang={lang} />
+          <TimelineRail scrollRef={scrollRef} rows={rows} lanePx={lanePx} topPad={phone ? PHONE_LABEL_PX : 0} lang={lang} />
         </div>
 
         <TimelineStrip
