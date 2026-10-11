@@ -142,9 +142,10 @@ rows across the full archive. Pick the nearest value; never invent one.
 npm run episodes          # refresh episodes.json from the RSS feed (only if titles changed)
 HISTORYCAST_EPISODES_JSON=episodes.json node scripts/merge-fragments.mjs
 node scripts/validate-data.mjs public/data/geo-events.json --strict
-npm run chart             # regenerate the landing page counts
 npm test
 ```
+
+The landing page's numbers and charts need no step: the build computes them from the dataset.
 
 `--strict` turns two warnings into errors: an off-list `region`, and one place split across
 several ids. Both must be clean before committing.
