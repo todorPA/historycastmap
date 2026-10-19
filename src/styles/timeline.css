@@ -489,6 +489,39 @@
   text-shadow: none;
 }
 
+/* Hover sits on top of the muted and outside states rather than replacing them (it is drawn,
+ * never laid out: lib/timelineLayout LayoutState), so it has to win over them here. The layout
+ * reserves no room for the hover date, so a label beside its mark may grow over a neighbour,
+ * on a paper backing; a label inside a bar keeps to the bar. */
+.tl-it.is-hover .tl-it__m {
+  opacity: 1;
+}
+
+.tl-it.is-hover.is-muted .tl-it__lbl:not(.in),
+.tl-it.is-hover.is-outside .tl-it__lbl:not(.in) {
+  color: var(--gold-hi);
+  opacity: 1;
+}
+
+/* In a bar the label's colour is chosen for the fill, so it stays inside the bar. */
+.tl-it.is-hover.is-muted .tl-it__lbl.in,
+.tl-it.is-hover.is-outside .tl-it__lbl.in {
+  color: var(--on);
+  opacity: 1;
+}
+
+.tl-it.is-hover.tl-it--long.is-muted .tl-it__lbl.in,
+.tl-it.is-hover.tl-it--long.is-outside .tl-it__lbl.in {
+  color: var(--tx);
+}
+
+.tl-it.is-hover .tl-it__lbl:not(.in) {
+  max-width: none !important;
+  padding-right: 4px;
+  background: var(--f1);
+  box-shadow: 0 0 0 3px var(--f1);
+}
+
 /* What did not fit under the lane cap: a tick at its anchor. */
 .tl-ovf {
   position: absolute;
