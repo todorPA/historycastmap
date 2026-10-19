@@ -25,6 +25,7 @@ export default function TimelineRows({
   focus,
   lanePx,
   topPad,
+  hoveredId,
   lang,
   onSelect,
   onHover,
@@ -34,6 +35,8 @@ export default function TimelineRows({
 }: {
   /** Extra space above the first lane, where the phone layout overlays the row label. */
   topPad: number;
+  /** Drawn on top of the layout, never fed into it (lib/timelineLayout: LayoutState). */
+  hoveredId: string | null;
   rows: Row<EpisodeView>[];
   ticks: Tick[];
   focus: FocusBand | null;
@@ -71,7 +74,7 @@ export default function TimelineRows({
 
           <div className="tl-row__track" style={{ height: row.height + topPad }}>
             {row.placed.map((it) => (
-              <Item key={it.ep.id} it={it} lanePx={lanePx} topPad={topPad} lang={lang} onSelect={onSelect} onHover={onHover} />
+              <Item key={it.ep.id} it={it} hovered={it.ep.id === hoveredId} lanePx={lanePx} topPad={topPad} lang={lang} onSelect={onSelect} onHover={onHover} />
             ))}
             {row.overflow.map((it) => (
               <i key={it.ep.id} className="tl-ovf" style={{ left: it.xa, top: row.height + topPad - 12, background: it.ep.era.color }} />
@@ -92,6 +95,7 @@ export default function TimelineRows({
 
 function Item({
   it,
+  hovered,
   lanePx,
   topPad,
   lang,
@@ -99,6 +103,7 @@ function Item({
   onHover,
 }: {
   it: Packed<EpisodeView>;
+  hovered: boolean;
   lanePx: number;
   topPad: number;
   lang: Lang;
@@ -125,7 +130,7 @@ function Item({
     <button
       type="button"
       tabIndex={-1}
-      className={`tl-it tl-it--${ep.kind} is-${it.state}`}
+      className={`tl-it tl-it--${ep.kind} is-${it.state}${hovered && it.state !== 'selected' ? ' is-hover' : ''}`}
       style={style}
       title={`${title} · ${date}`}
       onClick={() => onSelect(ep.id)}

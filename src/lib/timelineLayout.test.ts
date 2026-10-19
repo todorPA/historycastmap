@@ -4,8 +4,7 @@ import { EPISODE_OVERRIDES } from '../config/episodeOverrides';
 import { REGION_FAMILIES } from '../config/regionFamilies';
 import { ERAS } from '../config/eras';
 import { deriveEpisodes, timelineExtent } from './episodeModel';
-import { markerState } from './episodeMarkers';
-import { buildRows, itemTop, labelInk, layoutItem, packRow, type ItemLayout, type LayoutEpisode, type Measure } from './timelineLayout';
+import { buildRows, itemTop, labelInk, layoutItem, layoutState, packRow, type ItemLayout, type LayoutEpisode, type Measure } from './timelineLayout';
 import shipped from '../../public/data/geo-events.json';
 
 /** Every character 7 px wide; bold 8. */
@@ -47,10 +46,10 @@ describe('layoutItem', () => {
     expect(it.m1 - it.m0).toBe(6);
   });
 
-  it('adds the date for hover and selection, and the selection is bold', () => {
+  it('adds the date for the selection, in bold', () => {
     const p = ep({ id: 'g', from: 1389, to: 1389, anchor: 1389 });
-    expect(layoutItem(p, text, 'hover', ctx).lw).toBe(42 + 12 + 28);
     expect(layoutItem(p, text, 'selected', ctx).lw).toBe(48 + 12 + 28);
+    expect(layoutItem(p, text, 'normal', ctx).lw).toBe(42);
   });
 
   it('caps the title at 280 px', () => {
@@ -75,9 +74,12 @@ describe('packRow', () => {
     expect(r.overflow.map((p) => p.ep.id)).toEqual(['c']);
   });
 
-  it('packs in priority order: selected, hovered, normal, muted, outside', () => {
-    const r = packRow([box('out', 0, 10, 'outside'), box('mut', 0, 10, 'muted'), box('nor', 0, 10, 'normal'), box('hov', 0, 10, 'hover'), box('sel', 0, 10, 'selected')], 3);
-    expect(r.placed.map((p) => p.ep.id)).toEqual(['sel', 'hov', 'nor']);
+  // Hover is not a layout state. When it was, hovering an item widened it and moved it up the
+  // packing order, the rows re-packed, another item slid under the pointer and the hover jumped
+  // between the two on every frame.
+  it('packs in priority order: selected, normal, muted, outside', () => {
+    const r = packRow([box('out', 0, 10, 'outside'), box('mut', 0, 10, 'muted'), box('nor', 0, 10, 'normal'), box('sel', 0, 10, 'selected')], 2);
+    expect(r.placed.map((p) => p.ep.id)).toEqual(['sel', 'nor']);
     expect(r.overflow.map((p) => p.ep.id)).toEqual(['mut', 'out']);
   });
 
@@ -149,7 +151,7 @@ describe('buildRows over the real data', () => {
       const selectedId = '43';
       const rows = buildRows(episodes, {
         view: v, window: v, widthPx: 1200, measure: measureReal, lanePx: 30, cap: 3, expanded: new Set(), selectedId,
-        stateOf: (e) => markerState(e as never, { selectedId, hoveredId: null, range: v }),
+        stateOf: (e) => layoutState(e as never, { selectedId, range: v }),
         text: (e) => ({ title: e.title.sr, date: String(e.from) }),
       });
       for (const r of rows) {

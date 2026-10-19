@@ -1,6 +1,7 @@
 import { REGION_FAMILIES, type RegionFamily } from '../config/regionFamilies';
 import { contrastRatio } from './contrast';
-import type { MarkerState } from './episodeMarkers';
+import { markerState, type MarkerState } from './episodeMarkers';
+import type { EpisodeView } from './episodeModel';
 import type { EpisodeKind } from './episodeModel';
 import { overlaps } from './episodeVisibility';
 import { yearToX, type View } from './timelineAxis';
@@ -13,6 +14,18 @@ import { yearToX, type View } from './timelineAxis';
 
 export type Measure = (text: string, bold: boolean) => number;
 
+/**
+ * The states that shape the layout. Hover is deliberately not one: it is drawn on top of a
+ * settled layout (TimelineRows), because a hover that re-packed the rows moved other items under
+ * the pointer and the hover jumped between them on every frame.
+ */
+export type LayoutState = Exclude<MarkerState, 'hover'>;
+
+/** An episode's state for layout: markerState with nothing hovered. */
+export function layoutState(ep: EpisodeView, ctx: { selectedId: string | null; range: { from: number; to: number } }): LayoutState {
+  return markerState(ep, { ...ctx, hoveredId: null }) as LayoutState;
+}
+
 export interface LayoutEpisode {
   id: string;
   from: number;
@@ -24,13 +37,13 @@ export interface LayoutEpisode {
 
 export interface ItemLayout<E extends LayoutEpisode = LayoutEpisode> {
   ep: E;
-  state: MarkerState;
+  state: LayoutState;
   /** The mark: a diamond centred on `from` for points, the bar from `from` to `to + 1` otherwise. */
   m0: number;
   m1: number;
   /** Where the overflow tick goes: the anchor (mid-year for bars). */
   xa: number;
-  /** The label's left edge and width (title, plus the date for hover and selection). */
+  /** The label's left edge and width (title, plus the date for the selection). */
   lx: number;
   lw: number;
   /** The label sits inside the bar, stuck to its visible left edge. */
@@ -48,12 +61,12 @@ const MIN_BAR = 6;
 export function layoutItem<E extends LayoutEpisode>(
   ep: E,
   text: { title: string; date: string },
-  state: MarkerState,
+  state: LayoutState,
   ctx: { view: View; widthPx: number; measure: Measure },
 ): ItemLayout<E> {
   const { view, widthPx, measure } = ctx;
   const X = (y: number) => yearToX(y, view, widthPx);
-  const loud = state === 'selected' || state === 'hover';
+  const loud = state === 'selected';
   const lw = Math.min(measure(text.title, state === 'selected'), LABEL_MAX) + (loud ? DATE_GAP + measure(text.date, false) : 0);
   const point = ep.kind === 'point';
   const x0 = X(ep.from);
@@ -82,15 +95,15 @@ export function layoutItem<E extends LayoutEpisode>(
   return { ep, state, m0, m1, xa, lx, lw, inside, e0, e1 };
 }
 
-const PRIORITY: Record<MarkerState, number> = { selected: 0, hover: 1, normal: 2, muted: 3, outside: 4 };
+const PRIORITY: Record<LayoutState, number> = { selected: 0, normal: 1, muted: 2, outside: 3 };
 
 export interface Packed<E extends LayoutEpisode = LayoutEpisode> extends ItemLayout<E> {
   lane: number;
 }
 
 /**
- * Greedy first-fit into at most `cap` lanes, in priority order (selected, hovered, normal, muted,
- * outside; then left to right). The selection always gets a lane, even past the cap; anything
+ * Greedy first-fit into at most `cap` lanes, in priority order (selected, normal, muted, outside;
+ * then left to right). The selection always gets a lane, even past the cap; anything
  * else that does not fit becomes an overflow tick.
  */
 export function packRow<E extends LayoutEpisode>(items: ItemLayout<E>[], cap: number): { placed: Packed<E>[]; overflow: ItemLayout<E>[]; lanes: number } {
@@ -154,7 +167,7 @@ export function buildRows<E extends LayoutEpisode>(
     cap: number;
     expanded: ReadonlySet<string>;
     selectedId: string | null;
-    stateOf: (ep: E) => MarkerState;
+    stateOf: (ep: E) => LayoutState;
     text: (ep: E) => { title: string; date: string };
     /** Counted in `inWindow/total`. The selection is drawn even when it does not match. */
     matches?: (ep: E) => boolean;

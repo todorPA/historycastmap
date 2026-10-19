@@ -5,11 +5,10 @@ import { pick, t, type UiKey } from '../../lib/i18n';
 import { formatYear } from '../../lib/time';
 import { episodeNoun } from '../../lib/plural';
 import { episodeDate } from '../../lib/panelModel';
-import { markerState } from '../../lib/episodeMarkers';
 import { overlaps } from '../../lib/episodeVisibility';
 import { scrollBehavior } from '../../lib/motion';
 import { axisTicks, eraSegments, yearToX } from '../../lib/timelineAxis';
-import { buildRows, LANE_PX, UNPLACED_FAMILY } from '../../lib/timelineLayout';
+import { buildRows, LANE_PX, layoutState, UNPLACED_FAMILY } from '../../lib/timelineLayout';
 import { histogram } from '../../lib/timelineStrip';
 import { centreView, eraView, selectionView, zoomView } from '../../lib/timelineWindow';
 import { useTimelinePlayback } from '../useTimelinePlayback';
@@ -86,13 +85,14 @@ export default function Timeline() {
         cap: phone ? PHONE_LANE_CAP : LANE_CAP,
         expanded,
         selectedId: selectedEpisodeId,
-        stateOf: (ep) => markerState(ep, { selectedId: selectedEpisodeId, hoveredId: hoveredEpisodeId, range: win }),
+        // Hover stays out of the layout (lib/timelineLayout: LayoutState); TimelineRows draws it.
+        stateOf: (ep) => layoutState(ep, { selectedId: selectedEpisodeId, range: win }),
         text: (ep) => ({ title: pick(ep.title, lang), date: episodeDate(ep, lang) }),
         matches: (ep) => matchingIds.has(ep.id),
       }),
     // fontsVersion: re-measure once the web font has replaced the fallback.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [shown, view, win, widthPx, lanePx, expanded, selectedEpisodeId, hoveredEpisodeId, lang, matchingIds, fontsVersion, phone],
+    [shown, view, win, widthPx, lanePx, expanded, selectedEpisodeId, lang, matchingIds, fontsVersion, phone],
   );
 
   const ticks = useMemo(() => axisTicks(view, widthPx), [view, widthPx]);
@@ -247,6 +247,7 @@ export default function Timeline() {
               ticks={ticks}
               focus={focus}
               lanePx={lanePx}
+              hoveredId={hoveredEpisodeId}
               topPad={phone ? PHONE_LABEL_PX : 0}
               lang={lang}
               selected={selected}
